@@ -1,10 +1,9 @@
-﻿using Repositories.Entities;
-using Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,86 +13,77 @@ namespace UIs
 {
     public partial class C_AssignTask : Form
     {
-        PhongBanService phongBanService = new PhongBanService();
-        QuanLyService quanLyService = new QuanLyService();
-        GiaoViecService giaoViecService = new GiaoViecService();
-        CanHoService canHoService = new CanHoService();
-        NhanSuService nhanSuService = new NhanSuService();
-        MailService mailService = new MailService();
         public C_AssignTask()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void userPanel_Paint(object sender, PaintEventArgs e)
+        {
+            GraphicsPath path = new GraphicsPath();
+            int radius = 30;
+            int diameter = radius * 2;
+
+            Rectangle rectTopLeft = new Rectangle(0, 0, diameter, diameter);
+            Rectangle rectTopRight = new Rectangle(userPanel.Width - diameter, 0, diameter, diameter);
+            Rectangle rectBottomLeft = new Rectangle(0, userPanel.Height - diameter, diameter, diameter);
+            Rectangle rectBottomRight = new Rectangle(userPanel.Width - diameter, userPanel.Height - diameter, diameter, diameter);
+
+            // Vẽ góc trên bên trái
+            path.AddArc(rectTopLeft, 180, 90);
+            // Vẽ đoạn thẳng ở trên
+            path.AddLine(radius, 0, userPanel.Width - radius, 0);
+            // Vẽ góc trên bên phải
+            path.AddArc(rectTopRight, 270, 90);
+            // Vẽ đoạn thẳng ở phải
+            path.AddLine(userPanel.Width, radius, userPanel.Width, userPanel.Height - radius);
+            // Vẽ góc dưới bên phải
+            path.AddArc(rectBottomRight, 0, 90);
+            // Vẽ đoạn thẳng ở dưới
+            path.AddLine(userPanel.Width - radius, userPanel.Height, radius, userPanel.Height);
+            // Vẽ góc dưới bên trái
+            path.AddArc(rectBottomLeft, 90, 90);
+            // Vẽ đoạn thẳng ở trái
+            path.AddLine(0, userPanel.Height - radius, 0, radius);
+            // Kết thúc
+            path.CloseFigure();
+
+            userPanel.Region = new Region(path);
+        }
+
+        private void label10_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void C_AssignTask_Load(object sender, EventArgs e)
+        private void label12_Click(object sender, EventArgs e)
         {
-            List<CanHo> apartments = canHoService.getAllApartments();
-            apartmentsBox.Items.Clear();
-            foreach (var apartment in apartments)
-            {
-                apartmentsBox.Items.Add(apartment.MaCh);
-            }
+
         }
 
-        private void receiverTypeBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            if (receiverTypeBox.SelectedItem != null && receiverTypeBox.SelectedItem.ToString() == "Phòng ban")
-            {
-                List<PhongBan> departments = phongBanService.getAllDepartment();
 
-                // Delete current value of receiverBox
-                receiverBox.Items.Clear();
-
-                // Add department to receiverBox
-                foreach (var department in departments)
-                {
-                    receiverBox.Items.Add(department.MaPb);
-                }
-            }
         }
 
-        private void receiverBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (receiverBox.SelectedItem != null)
-            {
-                // Get receiverID
-                string receiverID = quanLyService.findManager(receiverBox.SelectedItem.ToString()).MaThanhVien;
-            }
+
         }
 
-        private void assignButton_Click(object sender, EventArgs e)
+        private void customButton1_Click(object sender, EventArgs e)
         {
-            QuanLi manager = quanLyService.findManager(receiverBox.SelectedItem.ToString());
-            string receiverID = manager.MaThanhVien;
-            string CEOID = "GD-001";
-            string description = taskDescription.Text;
-            string name = taskName.Text;
-            string file = taskFile.Text;
-            DateTime deadlineDate = taskDeadline.Value.Date; 
-            string deadline = deadlineDate.ToString("yyyyMMdd");
-            int mode = taskMode.SelectedItem.ToString() == "Có" ? 1 : 0;
-            string status = "Chưa hoàn thành";
-            string assignID = giaoViecService.getAssignTaskID(CEOID);
-            DateTime today = DateTime.Now;
-            string day = today.ToString("yyyyMMdd");
-            string? apartmentID = apartmentsBox?.SelectedItem?.ToString();
-            int isCEO = 1;
 
-            string departmentQuery = $"EXEC taoViec N'{description}', '{day}', '{deadline}', N'{status}', '{file}', '{assignID}', '{receiverID}', {mode}, N'{name}', {isCEO}, '{CEOID}', '{apartmentID}'";
-            MessageBox.Show(departmentQuery);
-            bool isSuccess = giaoViecService.assignTask(description, day, deadline, status, file, assignID, mode, name, apartmentID, receiverID, isCEO, CEOID);
-            if (isSuccess)
-            {
-                string mailSubject = "THÔNG BÁO NHẬN VIỆC";
-                string mailContent = "Nhận việc từ Lê Vĩ";
-                string toEmail = "otakuanime285@gmail.com";
-                mailService.sendMail(mailSubject, mailContent, toEmail);
-            }
         }
-}
+
+        private void customButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
