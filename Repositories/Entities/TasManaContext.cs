@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Azure.Messaging;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Repositories.Entities;
 
-namespace Repositories;
+namespace Repositories.Entities;
 
 public partial class TasManaContext : DbContext
 {
@@ -45,18 +42,8 @@ public partial class TasManaContext : DbContext
     public virtual DbSet<QuanLi> QuanLis { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer(GetConnectionString());
-
-    // Get connectString
-    public string? GetConnectionString()
-    {
-        IConfiguration configuration = new ConfigurationBuilder()
-            // The current path of the line belows is bad so I need to assign like this
-            .SetBasePath("/TasMana Application/UIs")
-            .AddJsonFile("appsettings.json", true, true)
-            .Build();
-        return configuration["ConnectionStrings:DBDefault"];
-    }
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Data Source=LAPTOP-SM9GFST3;Initial Catalog=TasMana;Integrated Security=True;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -106,6 +93,10 @@ public partial class TasManaContext : DbContext
                 .HasMaxLength(10)
                 .IsUnicode(false)
                 .HasColumnName("maThanhVien");
+            entity.Property(e => e.HoVaTen)
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasColumnName("hoVaTen");
 
             entity.HasOne(d => d.MaThanhVienNavigation).WithOne(p => p.Ceo)
                 .HasForeignKey<Ceo>(d => d.MaThanhVien)
@@ -321,10 +312,16 @@ public partial class TasManaContext : DbContext
                 .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasColumnName("CCCD");
+            entity.Property(e => e.DiaChi)
+                .HasMaxLength(100)
+                .HasColumnName("diaChi");
             entity.Property(e => e.Email)
                 .HasMaxLength(200)
                 .IsUnicode(false)
                 .HasColumnName("email");
+            entity.Property(e => e.GioiTinh)
+                .HasMaxLength(10)
+                .HasColumnName("gioiTinh");
             entity.Property(e => e.HoVaTen)
                 .HasMaxLength(100)
                 .HasColumnName("hoVaTen");
@@ -334,6 +331,7 @@ public partial class TasManaContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("matKhau");
             entity.Property(e => e.NamSinh).HasColumnName("namSinh");
+            entity.Property(e => e.NgayBatDau).HasColumnName("ngayBatDau");
             entity.Property(e => e.NghiViec).HasColumnName("nghiViec");
             entity.Property(e => e.Sdt)
                 .HasMaxLength(15)
@@ -345,9 +343,6 @@ public partial class TasManaContext : DbContext
                 .HasColumnName("userID");
         });
 
-
-
-
         modelBuilder.Entity<NhanVien>(entity =>
         {
             entity.HasKey(e => e.MaThanhVien).HasName("PK__NhanVien__53586E4914B0BE4B");
@@ -358,6 +353,7 @@ public partial class TasManaContext : DbContext
                 .HasMaxLength(10)
                 .IsUnicode(false)
                 .HasColumnName("maThanhVien");
+            entity.Property(e => e.LaQuanLi).HasColumnName("laQuanLi");
             entity.Property(e => e.LaTruongNhom).HasColumnName("laTruongNhom");
             entity.Property(e => e.MaNhom)
                 .HasMaxLength(10)
@@ -443,6 +439,10 @@ public partial class TasManaContext : DbContext
                 .HasMaxLength(10)
                 .IsUnicode(false)
                 .HasColumnName("maThanhVien");
+            entity.Property(e => e.HoVaTen)
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasColumnName("hoVaTen");
 
             entity.HasOne(d => d.MaThanhVienNavigation).WithOne(p => p.QuanLi)
                 .HasForeignKey<QuanLi>(d => d.MaThanhVien)

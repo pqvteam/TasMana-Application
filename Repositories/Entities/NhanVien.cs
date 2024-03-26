@@ -13,6 +13,8 @@ public partial class NhanVien
 
     public string? MaNhom { get; set; }
 
+    public bool? LaQuanLi { get; set; }
+
     public virtual Nhom? MaNhomNavigation { get; set; }
 
     public virtual PhongBan MaPbNavigation { get; set; } = null!;

@@ -27,6 +27,12 @@ public partial class NhanSu
 
     public bool LaQuanLi { get; set; }
 
+    public string? GioiTinh { get; set; }
+
+    public string? DiaChi { get; set; }
+
+    public DateOnly? NgayBatDau { get; set; }
+
     public virtual Ceo? Ceo { get; set; }
 
     public virtual NhanVien? NhanVien { get; set; }
