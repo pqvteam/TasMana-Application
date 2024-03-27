@@ -1,6 +1,6 @@
 ﻿namespace UIs
 {
-    partial class C_AssignTask
+    partial class M_AssignTask
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_AssignTask));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M_AssignTask));
             mainPanel = new Panel();
             taskPriority = new CustomComponent.CustomComboBox();
             taskStatus = new CustomComponent.CustomComboBox();
@@ -1351,7 +1351,7 @@
             panel3.Size = new Size(554, 49);
             panel3.TabIndex = 41;
             // 
-            // C_AssignTask
+            // M_AssignTask
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -1359,10 +1359,10 @@
             Controls.Add(sidePanel);
             Controls.Add(headerPanel);
             Controls.Add(mainPanel);
-            Name = "C_AssignTask";
+            Name = "M_AssignTask";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "C_AssignTask";
-            Load += C_AssignTask_Load;
+            Text = "M_AssignTask";
+            Load += M_AssignTask_Load;
             mainPanel.ResumeLayout(false);
             mainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
