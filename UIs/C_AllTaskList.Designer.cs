@@ -45,6 +45,7 @@
             panel1 = new Panel();
             mainPanel = new Panel();
             panel4 = new Panel();
+            customButton18 = new CustomComponent.CustomButton();
             membersGrid = new DataGridView();
             seButton = new CustomComponent.CustomButton();
             maButton = new CustomComponent.CustomButton();
@@ -59,6 +60,10 @@
             label7 = new Label();
             pictureBox5 = new PictureBox();
             panel5 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
+            rjTextBox8 = new CustomControls.RJControls.RJTextBox();
+            customButton19 = new CustomComponent.CustomButton();
             customDateTimePicker1 = new CustomComponent.CustomDateTimePicker();
             rjTextBox4 = new CustomControls.RJControls.RJTextBox();
             pictureBox6 = new PictureBox();
@@ -94,7 +99,6 @@
             label2 = new Label();
             customPictureBox3 = new CustomComponent.CustomPictureBox();
             rjTextBox2 = new CustomControls.RJControls.RJTextBox();
-            customButton18 = new CustomComponent.CustomButton();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             mainPanel.SuspendLayout();
@@ -400,6 +404,26 @@
             panel4.Size = new Size(1382, 694);
             panel4.TabIndex = 58;
             // 
+            // customButton18
+            // 
+            customButton18.BackColor = Color.FromArgb(24, 23, 23);
+            customButton18.BackgroundColor = Color.FromArgb(24, 23, 23);
+            customButton18.BorderColor = Color.FromArgb(0, 190, 255);
+            customButton18.BorderRadius = 0;
+            customButton18.BorderSize = 2;
+            customButton18.FlatAppearance.BorderSize = 0;
+            customButton18.FlatStyle = FlatStyle.Flat;
+            customButton18.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton18.ForeColor = Color.White;
+            customButton18.Location = new Point(351, 352);
+            customButton18.Name = "customButton18";
+            customButton18.Size = new Size(133, 50);
+            customButton18.TabIndex = 67;
+            customButton18.Text = "ALL COMPANY";
+            customButton18.TextColor = Color.White;
+            customButton18.UseVisualStyleBackColor = false;
+            customButton18.Click += customButton18_Click;
+            // 
             // membersGrid
             // 
             membersGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -423,6 +447,7 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            membersGrid.Enabled = false;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(42, 42, 42);
             membersGrid.Location = new Point(363, 437);
@@ -472,6 +497,7 @@
             maButton.Text = "MAINTAINANCE";
             maButton.TextColor = Color.White;
             maButton.UseVisualStyleBackColor = false;
+            maButton.Click += maButton_Click;
             // 
             // coButton
             // 
@@ -491,6 +517,7 @@
             coButton.Text = "CONSTRUCTION";
             coButton.TextColor = Color.White;
             coButton.UseVisualStyleBackColor = false;
+            coButton.Click += coButton_Click;
             // 
             // fiButton
             // 
@@ -510,6 +537,7 @@
             fiButton.Text = "FINANCIAL ACOUNTING";
             fiButton.TextColor = Color.White;
             fiButton.UseVisualStyleBackColor = false;
+            fiButton.Click += fiButton_Click;
             // 
             // saButton
             // 
@@ -529,6 +557,7 @@
             saButton.Text = "SANTINATION";
             saButton.TextColor = Color.White;
             saButton.UseVisualStyleBackColor = false;
+            saButton.Click += saButton_Click;
             // 
             // hrButton
             // 
@@ -631,12 +660,97 @@
             // 
             // panel5
             // 
+            panel5.Controls.Add(button2);
+            panel5.Controls.Add(button1);
+            panel5.Controls.Add(rjTextBox8);
+            panel5.Controls.Add(customButton19);
             panel5.Controls.Add(customDateTimePicker1);
             panel5.Controls.Add(rjTextBox4);
             panel5.Location = new Point(1071, 18);
             panel5.Name = "panel5";
-            panel5.Size = new Size(311, 182);
+            panel5.Size = new Size(311, 328);
             panel5.TabIndex = 53;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(42, 42, 42);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Copperplate Gothic Light", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(51, 239);
+            button2.Margin = new Padding(0);
+            button2.Name = "button2";
+            button2.Size = new Size(206, 60);
+            button2.TabIndex = 59;
+            button2.Text = "SORT";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(42, 42, 42);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Copperplate Gothic Light", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(51, 185);
+            button1.Margin = new Padding(0);
+            button1.Name = "button1";
+            button1.Size = new Size(206, 54);
+            button1.TabIndex = 58;
+            button1.Text = "FILLTER";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // rjTextBox8
+            // 
+            rjTextBox8.BackColor = Color.FromArgb(42, 42, 42);
+            rjTextBox8.BorderColor = Color.FromArgb(42, 42, 42);
+            rjTextBox8.BorderFocusColor = Color.Black;
+            rjTextBox8.BorderRadius = 30;
+            rjTextBox8.BorderSize = 1;
+            rjTextBox8.Enabled = false;
+            rjTextBox8.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rjTextBox8.ForeColor = Color.FromArgb(64, 64, 64);
+            rjTextBox8.Location = new Point(13, 181);
+            rjTextBox8.Margin = new Padding(4);
+            rjTextBox8.Multiline = true;
+            rjTextBox8.Name = "rjTextBox8";
+            rjTextBox8.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox8.PasswordChar = false;
+            rjTextBox8.PlaceholderColor = Color.DarkGray;
+            rjTextBox8.PlaceholderText = "";
+            rjTextBox8.Size = new Size(285, 118);
+            rjTextBox8.TabIndex = 57;
+            rjTextBox8.Texts = "";
+            rjTextBox8.UnderlinedStyle = false;
+            // 
+            // customButton19
+            // 
+            customButton19.BackColor = Color.Black;
+            customButton19.BackgroundColor = Color.Black;
+            customButton19.BorderColor = Color.PaleVioletRed;
+            customButton19.BorderRadius = 28;
+            customButton19.BorderSize = 0;
+            customButton19.FlatAppearance.BorderSize = 0;
+            customButton19.FlatStyle = FlatStyle.Flat;
+            customButton19.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton19.ForeColor = Color.White;
+            customButton19.Image = (Image)resources.GetObject("customButton19.Image");
+            customButton19.ImageAlign = ContentAlignment.MiddleLeft;
+            customButton19.Location = new Point(51, 92);
+            customButton19.Name = "customButton19";
+            customButton19.Padding = new Padding(12, 0, 0, 0);
+            customButton19.Size = new Size(206, 59);
+            customButton19.TabIndex = 56;
+            customButton19.Text = "ADD TASK";
+            customButton19.TextAlign = ContentAlignment.MiddleRight;
+            customButton19.TextColor = Color.White;
+            customButton19.TextImageRelation = TextImageRelation.ImageBeforeText;
+            customButton19.UseVisualStyleBackColor = false;
             // 
             // customDateTimePicker1
             // 
@@ -900,7 +1014,7 @@
             rjTextBox6.PasswordChar = false;
             rjTextBox6.PlaceholderColor = Color.DarkGray;
             rjTextBox6.PlaceholderText = "";
-            rjTextBox6.Size = new Size(285, 660);
+            rjTextBox6.Size = new Size(285, 664);
             rjTextBox6.TabIndex = 53;
             rjTextBox6.Texts = "";
             rjTextBox6.UnderlinedStyle = false;
@@ -1228,25 +1342,6 @@
             rjTextBox2.UnderlinedStyle = false;
             rjTextBox2._TextChanged += rjTextBox2__TextChanged;
             // 
-            // customButton18
-            // 
-            customButton18.BackColor = Color.FromArgb(24, 23, 23);
-            customButton18.BackgroundColor = Color.FromArgb(24, 23, 23);
-            customButton18.BorderColor = Color.FromArgb(0, 190, 255);
-            customButton18.BorderRadius = 0;
-            customButton18.BorderSize = 2;
-            customButton18.FlatAppearance.BorderSize = 0;
-            customButton18.FlatStyle = FlatStyle.Flat;
-            customButton18.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton18.ForeColor = Color.White;
-            customButton18.Location = new Point(351, 352);
-            customButton18.Name = "customButton18";
-            customButton18.Size = new Size(133, 50);
-            customButton18.TabIndex = 67;
-            customButton18.Text = "ALL COMPANY";
-            customButton18.TextColor = Color.White;
-            customButton18.UseVisualStyleBackColor = false;
-            // 
             // C_AllTaskList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1348,5 +1443,9 @@
         private CustomComponent.CustomButton saButton;
         private CustomComponent.CustomButton hrButton;
         private CustomComponent.CustomButton customButton18;
+        private CustomComponent.CustomButton customButton19;
+        private CustomControls.RJControls.RJTextBox rjTextBox8;
+        private Button button1;
+        private Button button2;
     }
 }
