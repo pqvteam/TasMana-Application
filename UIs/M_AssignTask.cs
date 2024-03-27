@@ -154,7 +154,8 @@ namespace UIs
                 receiverLabel.Text = "";
                 venueLabel.Text = "";
                 MessageBox.Show("Assign task successfully!");
-            } else
+            }
+            else
             {
                 MessageBox.Show(tID);
                 MessageBox.Show(tStart);
@@ -181,6 +182,11 @@ namespace UIs
         {
             venueLabel.Text = venueId;
             venueID = venueId;
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M_AssignTask));
             mainPanel = new Panel();
+            panel3 = new Panel();
+            taskName = new TextBox();
             taskPriority = new CustomComponent.CustomComboBox();
             taskStatus = new CustomComponent.CustomComboBox();
             taskEnd = new CustomComponent.CustomDateTimePicker();
@@ -51,7 +53,6 @@
             taskDescription = new TextBox();
             label7 = new Label();
             pictureBox5 = new PictureBox();
-            taskName = new TextBox();
             label6 = new Label();
             pictureBox4 = new PictureBox();
             userPanel = new Panel();
@@ -112,8 +113,8 @@
             customButton1 = new CustomComponent.CustomButton();
             customButton2 = new CustomComponent.CustomButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            panel3 = new Panel();
             mainPanel.SuspendLayout();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
@@ -137,7 +138,6 @@
             customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // mainPanel
@@ -173,6 +173,26 @@
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(1085, 696);
             mainPanel.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(42, 42, 42);
+            panel3.Controls.Add(taskName);
+            panel3.Location = new Point(510, 22);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(554, 49);
+            panel3.TabIndex = 41;
+            // 
+            // taskName
+            // 
+            taskName.BackColor = Color.FromArgb(42, 42, 42);
+            taskName.BorderStyle = BorderStyle.None;
+            taskName.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            taskName.ForeColor = Color.White;
+            taskName.Location = new Point(7, 16);
+            taskName.Name = "taskName";
+            taskName.Size = new Size(541, 19);
+            taskName.TabIndex = 15;
             // 
             // taskPriority
             // 
@@ -418,17 +438,6 @@
             pictureBox5.Size = new Size(40, 35);
             pictureBox5.TabIndex = 16;
             pictureBox5.TabStop = false;
-            // 
-            // taskName
-            // 
-            taskName.BackColor = Color.FromArgb(42, 42, 42);
-            taskName.BorderStyle = BorderStyle.None;
-            taskName.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            taskName.ForeColor = Color.White;
-            taskName.Location = new Point(7, 16);
-            taskName.Name = "taskName";
-            taskName.Size = new Size(541, 19);
-            taskName.TabIndex = 15;
             // 
             // label6
             // 
@@ -1092,6 +1101,7 @@
             cancelButton.Text = "CANCEL";
             cancelButton.TextColor = Color.White;
             cancelButton.UseVisualStyleBackColor = false;
+            cancelButton.Click += cancelButton_Click;
             // 
             // customPanel1
             // 
@@ -1342,15 +1352,6 @@
             customButton2.UseVisualStyleBackColor = false;
             customButton2.Click += customButton2_Click;
             // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(42, 42, 42);
-            panel3.Controls.Add(taskName);
-            panel3.Location = new Point(510, 22);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(554, 49);
-            panel3.TabIndex = 41;
-            // 
             // M_AssignTask
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1365,6 +1366,8 @@
             Load += M_AssignTask_Load;
             mainPanel.ResumeLayout(false);
             mainPanel.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
@@ -1391,8 +1394,6 @@
             customPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
