@@ -12,5 +12,7 @@ static class Program
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
         Application.Run(new C_AssignTask());
+        // Application.Run(new A_ShowMember());
+        // Application.Run(new A_ShowVenue());
     }    
 }

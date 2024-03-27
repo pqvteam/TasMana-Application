@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Repositories.Utilities;
+using Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,8 @@ namespace UIs
 {
     public partial class C_AssignTask : Form
     {
+        private string receiverID = "";
+        private string venueID = "";
         public C_AssignTask()
         {
             InitializeComponent();
@@ -84,6 +88,96 @@ namespace UIs
         private void pictureBox14_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void editReceiverButton_Click(object sender, EventArgs e)
+        {
+            A_ShowMember showMembersForm = new A_ShowMember();
+            showMembersForm.MemberSelected += ShowMembersForm_MemberSelected;
+            showMembersForm.ShowDialog();
+        }
+
+        private void ShowMembersForm_MemberSelected(string memberId)
+        {
+            receiverLabel.Text = memberId;
+            receiverID = memberId;
+        }
+
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void C_AssignTask_Load(object sender, EventArgs e)
+        {
+            taskStatus.SelectedIndex = 0;
+            taskPriority.SelectedIndex = 0;
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            GiaoViecService giaoViecService = new GiaoViecService();
+            string tCEOID = "GD-001";
+            string tID = GiaoViecUtilities.createAssignTaskID(tCEOID);
+            string tName = taskName.Text;
+            string tDescription = taskDescription.Text;
+            string tStart = taskStart.Value.ToString("yyyyMMdd");
+            string tEnd = taskEnd.Value.ToString("yyyyMMdd");
+            string tFile = taskFile.Text;
+            string tStatus = taskStatus.SelectedItem.ToString();
+            string tPriority = taskPriority.SelectedItem.ToString();
+            string tSubject = $"THÔNG BÁO GIAO VIỆC - {tName}";
+            string tGiaoViec = $"Kính gửi {tName},\nChúng ta đã xác định một công việc mới cần hoàn thành, và tôi muốn giao nhiệm vụ này cho bạn. Dưới đây là thông tin chi tiết về công việc:\nTên công việc: {tName}\nMô tả: {tDescription}\nThời hạn: {tEnd}\nƯu tiên: {tPriority}\nNgười giao việc: {tCEOID}\nXin vui lòng kiểm tra thông tin trên và bắt đầu làm việc ngay khi bạn có thể. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\n{tCEOID}";
+            string tTo = "otakuanime285@gmail.com";
+
+            int tMode = taskMode.Checked ? 1 : 0;
+            int tIsCEO = 1;
+
+            bool isSuccess = giaoViecService.assignTask(tDescription, tStart, tEnd, tStatus, tFile, tID, tMode, tName, venueID, receiverID, tIsCEO, tCEOID);
+
+            if (isSuccess)
+            {
+                MailService mailService = new MailService();
+                mailService.sendMail(tSubject, tGiaoViec, tTo);
+                taskName.Text = "";
+                taskDescription.Text = "";
+                taskStart.Value = DateTime.Now;
+                taskEnd.Value = DateTime.Now;
+                taskFile.Text = "";
+                taskStatus.SelectedIndex = 0;
+                taskPriority.SelectedIndex = 0;
+                taskMode.Checked = false;
+                receiverLabel.Text = "";
+                venueLabel.Text = "";
+                MessageBox.Show("Assign task successfully!");
+            } else
+            {
+                MessageBox.Show(tID);
+                MessageBox.Show(tStart);
+                MessageBox.Show(tEnd);
+                MessageBox.Show(tName);
+                MessageBox.Show(tDescription);
+                MessageBox.Show(tFile);
+                MessageBox.Show(tStatus);
+                MessageBox.Show(tPriority);
+                MessageBox.Show(tMode.ToString());
+                MessageBox.Show(receiverID);
+                MessageBox.Show(venueID);
+            }
+
+        }
+        private void venueEditButton_Click(object sender, EventArgs e)
+        {
+            A_ShowVenue showVenueForm = new A_ShowVenue();
+            showVenueForm.VenueSelected += ShowVenueForm_VenueSelected;
+            showVenueForm.ShowDialog();
+        }
+
+        private void ShowVenueForm_VenueSelected(string venueId)
+        {
+            venueLabel.Text = venueId;
+            venueID = venueId;
         }
     }
 }
