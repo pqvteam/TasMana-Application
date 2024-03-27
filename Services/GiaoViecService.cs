@@ -26,6 +26,12 @@ namespace Services
             return GiaoViecUtilities.createAssignTaskID(assignerID);
         }
         public List<GiaoViec> getAll()
-        { return repository.GetAll(); }
+        {
+            return repository.GetAll(); 
+        }
+        public List<GiaoViec> getTaskOfDeparment(string department)
+        {
+            return repository.getAllTaskOfDepartment(department);
+        }
     }
 }

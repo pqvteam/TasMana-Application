@@ -77,7 +77,7 @@ namespace UIs
         private void hrButton_Click(object sender, EventArgs e)
         {
             membersGrid.Rows.Clear();
-            List<NhanVien> members = nhanVienService.getAllStaffOfDepartments("VS");
+            List<NhanVien> members = nhanVienService.getAllStaffOfDepartments("DV");
             foreach (NhanVien member in members)
             {
                 DataGridViewRow row = new DataGridViewRow();
@@ -154,6 +154,7 @@ namespace UIs
             foreach (NhanVien member in members)
             {
                 DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(membersGrid);
                 row.Cells[0].Value = "";
                 row.Cells[1].Value = member.MaThanhVien;
                 row.Cells[2].Value = nhanSuService.findMember(member.MaThanhVien).HoVaTen;
