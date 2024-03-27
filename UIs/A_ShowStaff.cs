@@ -77,7 +77,7 @@ namespace UIs
         private void hrButton_Click(object sender, EventArgs e)
         {
             membersGrid.Rows.Clear();
-            List<NhanVien> members = nhanVienService.getAllStaffOfDepartments("VS");
+            List<NhanVien> members = nhanVienService.getAllStaffOfDepartments("DV");
             foreach (NhanVien member in members)
             {
                 DataGridViewRow row = new DataGridViewRow();
