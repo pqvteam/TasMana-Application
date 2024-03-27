@@ -21,5 +21,10 @@ namespace Services
         {
             return nhanVienRepository.getAll();
         }
+
+        public List<NhanVien> getAllStaffOfDepartments(string departmentID)
+        {
+            return nhanVienRepository.getAllStaffOfDepartment(departmentID);
+        }
     }
 }
