@@ -73,6 +73,26 @@ namespace UIs.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendarDark {
+            get {
+                object obj = ResourceManager.GetObject("calendarDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendarWhite {
+            get {
+                object obj = ResourceManager.GetObject("calendarWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap group_icon {
             get {
                 object obj = ResourceManager.GetObject("group_icon", resourceCulture);
@@ -96,6 +116,16 @@ namespace UIs.Properties {
         internal static System.Drawing.Bitmap password_icon_change {
             get {
                 object obj = ResourceManager.GetObject("password_icon_change", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap triangle_icon {
+            get {
+                object obj = ResourceManager.GetObject("triangle_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
