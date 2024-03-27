@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_AllTaskList));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             headerPanel = new Panel();
             panel2 = new Panel();
             customButton14 = new CustomComponent.CustomButton();
@@ -43,6 +45,14 @@
             panel1 = new Panel();
             mainPanel = new Panel();
             panel4 = new Panel();
+            membersGrid = new DataGridView();
+            seButton = new CustomComponent.CustomButton();
+            maButton = new CustomComponent.CustomButton();
+            coButton = new CustomComponent.CustomButton();
+            fiButton = new CustomComponent.CustomButton();
+            saButton = new CustomComponent.CustomButton();
+            hrButton = new CustomComponent.CustomButton();
+            rjTextBox7 = new CustomControls.RJControls.RJTextBox();
             pictureBox7 = new PictureBox();
             pictureBox3 = new PictureBox();
             label6 = new Label();
@@ -84,11 +94,12 @@
             label2 = new Label();
             customPictureBox3 = new CustomComponent.CustomPictureBox();
             rjTextBox2 = new CustomControls.RJControls.RJTextBox();
-            rjTextBox7 = new CustomControls.RJControls.RJTextBox();
+            customButton18 = new CustomComponent.CustomButton();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             mainPanel.SuspendLayout();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)membersGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -364,6 +375,14 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(31, 31, 32);
+            panel4.Controls.Add(customButton18);
+            panel4.Controls.Add(membersGrid);
+            panel4.Controls.Add(seButton);
+            panel4.Controls.Add(maButton);
+            panel4.Controls.Add(coButton);
+            panel4.Controls.Add(fiButton);
+            panel4.Controls.Add(saButton);
+            panel4.Controls.Add(hrButton);
             panel4.Controls.Add(rjTextBox7);
             panel4.Controls.Add(pictureBox7);
             panel4.Controls.Add(pictureBox3);
@@ -380,6 +399,179 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1382, 694);
             panel4.TabIndex = 58;
+            // 
+            // membersGrid
+            // 
+            membersGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            membersGrid.BackgroundColor = Color.FromArgb(42, 42, 42);
+            membersGrid.BorderStyle = BorderStyle.None;
+            membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            membersGrid.EnableHeadersVisualStyles = false;
+            membersGrid.GridColor = Color.FromArgb(42, 42, 42);
+            membersGrid.Location = new Point(363, 437);
+            membersGrid.Name = "membersGrid";
+            membersGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            membersGrid.RowHeadersVisible = false;
+            membersGrid.RowHeadersWidth = 51;
+            membersGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            membersGrid.Size = new Size(989, 216);
+            membersGrid.TabIndex = 66;
+            // 
+            // seButton
+            // 
+            seButton.BackColor = Color.FromArgb(24, 23, 23);
+            seButton.BackgroundColor = Color.FromArgb(24, 23, 23);
+            seButton.BorderColor = Color.FromArgb(0, 190, 255);
+            seButton.BorderRadius = 0;
+            seButton.BorderSize = 2;
+            seButton.FlatAppearance.BorderSize = 0;
+            seButton.FlatStyle = FlatStyle.Flat;
+            seButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            seButton.ForeColor = Color.White;
+            seButton.Location = new Point(912, 352);
+            seButton.Name = "seButton";
+            seButton.Size = new Size(133, 50);
+            seButton.TabIndex = 65;
+            seButton.Text = "SECURITY";
+            seButton.TextColor = Color.White;
+            seButton.UseVisualStyleBackColor = false;
+            seButton.Click += seButton_Click;
+            // 
+            // maButton
+            // 
+            maButton.BackColor = Color.FromArgb(24, 23, 23);
+            maButton.BackgroundColor = Color.FromArgb(24, 23, 23);
+            maButton.BorderColor = Color.FromArgb(0, 190, 255);
+            maButton.BorderRadius = 0;
+            maButton.BorderSize = 2;
+            maButton.FlatAppearance.BorderSize = 0;
+            maButton.FlatStyle = FlatStyle.Flat;
+            maButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            maButton.ForeColor = Color.White;
+            maButton.Location = new Point(586, 352);
+            maButton.Name = "maButton";
+            maButton.Size = new Size(161, 50);
+            maButton.TabIndex = 64;
+            maButton.Text = "MAINTAINANCE";
+            maButton.TextColor = Color.White;
+            maButton.UseVisualStyleBackColor = false;
+            // 
+            // coButton
+            // 
+            coButton.BackColor = Color.FromArgb(24, 23, 23);
+            coButton.BackgroundColor = Color.FromArgb(24, 23, 23);
+            coButton.BorderColor = Color.FromArgb(0, 190, 255);
+            coButton.BorderRadius = 0;
+            coButton.BorderSize = 2;
+            coButton.FlatAppearance.BorderSize = 0;
+            coButton.FlatStyle = FlatStyle.Flat;
+            coButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            coButton.ForeColor = Color.White;
+            coButton.Location = new Point(745, 352);
+            coButton.Name = "coButton";
+            coButton.Size = new Size(169, 50);
+            coButton.TabIndex = 63;
+            coButton.Text = "CONSTRUCTION";
+            coButton.TextColor = Color.White;
+            coButton.UseVisualStyleBackColor = false;
+            // 
+            // fiButton
+            // 
+            fiButton.BackColor = Color.FromArgb(24, 23, 23);
+            fiButton.BackgroundColor = Color.FromArgb(24, 23, 23);
+            fiButton.BorderColor = Color.FromArgb(0, 190, 255);
+            fiButton.BorderRadius = 0;
+            fiButton.BorderSize = 2;
+            fiButton.FlatAppearance.BorderSize = 0;
+            fiButton.FlatStyle = FlatStyle.Flat;
+            fiButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            fiButton.ForeColor = Color.White;
+            fiButton.Location = new Point(1043, 352);
+            fiButton.Name = "fiButton";
+            fiButton.Size = new Size(162, 50);
+            fiButton.TabIndex = 62;
+            fiButton.Text = "FINANCIAL ACOUNTING";
+            fiButton.TextColor = Color.White;
+            fiButton.UseVisualStyleBackColor = false;
+            // 
+            // saButton
+            // 
+            saButton.BackColor = Color.FromArgb(24, 23, 23);
+            saButton.BackgroundColor = Color.FromArgb(24, 23, 23);
+            saButton.BorderColor = Color.FromArgb(0, 190, 255);
+            saButton.BorderRadius = 0;
+            saButton.BorderSize = 2;
+            saButton.FlatAppearance.BorderSize = 0;
+            saButton.FlatStyle = FlatStyle.Flat;
+            saButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            saButton.ForeColor = Color.White;
+            saButton.Location = new Point(1202, 352);
+            saButton.Name = "saButton";
+            saButton.Size = new Size(150, 50);
+            saButton.TabIndex = 61;
+            saButton.Text = "SANTINATION";
+            saButton.TextColor = Color.White;
+            saButton.UseVisualStyleBackColor = false;
+            // 
+            // hrButton
+            // 
+            hrButton.BackColor = Color.FromArgb(24, 23, 23);
+            hrButton.BackgroundColor = Color.FromArgb(24, 23, 23);
+            hrButton.BorderColor = Color.FromArgb(0, 190, 255);
+            hrButton.BorderRadius = 0;
+            hrButton.BorderSize = 2;
+            hrButton.FlatAppearance.BorderSize = 0;
+            hrButton.FlatStyle = FlatStyle.Flat;
+            hrButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            hrButton.ForeColor = Color.White;
+            hrButton.Location = new Point(481, 352);
+            hrButton.Name = "hrButton";
+            hrButton.Size = new Size(107, 50);
+            hrButton.TabIndex = 60;
+            hrButton.Text = "HR & RS";
+            hrButton.TextColor = Color.White;
+            hrButton.UseVisualStyleBackColor = false;
+            hrButton.Click += hrButton_Click;
+            // 
+            // rjTextBox7
+            // 
+            rjTextBox7.BackColor = Color.FromArgb(42, 42, 42);
+            rjTextBox7.BorderColor = Color.FromArgb(42, 42, 42);
+            rjTextBox7.BorderFocusColor = Color.Black;
+            rjTextBox7.BorderRadius = 50;
+            rjTextBox7.BorderSize = 1;
+            rjTextBox7.Enabled = false;
+            rjTextBox7.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rjTextBox7.ForeColor = Color.FromArgb(64, 64, 64);
+            rjTextBox7.Location = new Point(336, 410);
+            rjTextBox7.Margin = new Padding(4);
+            rjTextBox7.Multiline = true;
+            rjTextBox7.Name = "rjTextBox7";
+            rjTextBox7.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox7.PasswordChar = false;
+            rjTextBox7.PlaceholderColor = Color.DarkGray;
+            rjTextBox7.PlaceholderText = "";
+            rjTextBox7.Size = new Size(1033, 272);
+            rjTextBox7.TabIndex = 59;
+            rjTextBox7.Texts = "";
+            rjTextBox7.UnderlinedStyle = false;
             // 
             // pictureBox7
             // 
@@ -1036,28 +1228,24 @@
             rjTextBox2.UnderlinedStyle = false;
             rjTextBox2._TextChanged += rjTextBox2__TextChanged;
             // 
-            // rjTextBox7
+            // customButton18
             // 
-            rjTextBox7.BackColor = Color.FromArgb(42, 42, 42);
-            rjTextBox7.BorderColor = Color.FromArgb(42, 42, 42);
-            rjTextBox7.BorderFocusColor = Color.Black;
-            rjTextBox7.BorderRadius = 50;
-            rjTextBox7.BorderSize = 1;
-            rjTextBox7.Enabled = false;
-            rjTextBox7.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rjTextBox7.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox7.Location = new Point(336, 410);
-            rjTextBox7.Margin = new Padding(4);
-            rjTextBox7.Multiline = true;
-            rjTextBox7.Name = "rjTextBox7";
-            rjTextBox7.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox7.PasswordChar = false;
-            rjTextBox7.PlaceholderColor = Color.DarkGray;
-            rjTextBox7.PlaceholderText = "";
-            rjTextBox7.Size = new Size(1033, 272);
-            rjTextBox7.TabIndex = 59;
-            rjTextBox7.Texts = "";
-            rjTextBox7.UnderlinedStyle = false;
+            customButton18.BackColor = Color.FromArgb(24, 23, 23);
+            customButton18.BackgroundColor = Color.FromArgb(24, 23, 23);
+            customButton18.BorderColor = Color.FromArgb(0, 190, 255);
+            customButton18.BorderRadius = 0;
+            customButton18.BorderSize = 2;
+            customButton18.FlatAppearance.BorderSize = 0;
+            customButton18.FlatStyle = FlatStyle.Flat;
+            customButton18.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton18.ForeColor = Color.White;
+            customButton18.Location = new Point(351, 352);
+            customButton18.Name = "customButton18";
+            customButton18.Size = new Size(133, 50);
+            customButton18.TabIndex = 67;
+            customButton18.Text = "ALL COMPANY";
+            customButton18.TextColor = Color.White;
+            customButton18.UseVisualStyleBackColor = false;
             // 
             // C_AllTaskList
             // 
@@ -1075,6 +1263,7 @@
             mainPanel.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)membersGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -1151,5 +1340,13 @@
         private CustomControls.RJControls.RJTextBox rjTextBox6;
         private PictureBox pictureBox7;
         private CustomControls.RJControls.RJTextBox rjTextBox7;
+        private DataGridView membersGrid;
+        private CustomComponent.CustomButton seButton;
+        private CustomComponent.CustomButton maButton;
+        private CustomComponent.CustomButton coButton;
+        private CustomComponent.CustomButton fiButton;
+        private CustomComponent.CustomButton saButton;
+        private CustomComponent.CustomButton hrButton;
+        private CustomComponent.CustomButton customButton18;
     }
 }

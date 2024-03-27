@@ -10,7 +10,7 @@ namespace Services
         GiaoViecRepository repository = new GiaoViecRepository();
 
         public GiaoViec? findAssignedTask(string assignedTaskID)
-        {   
+        {
             GiaoViec? assignedTask = repository.Get(assignedTaskID);
             if (assignedTask == null) return null;
             return assignedTask;
@@ -25,5 +25,7 @@ namespace Services
         {
             return GiaoViecUtilities.createAssignTaskID(assignerID);
         }
+        public List<GiaoViec> getAll()
+        { return repository.GetAll(); }
     }
 }
