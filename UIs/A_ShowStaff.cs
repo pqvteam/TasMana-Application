@@ -154,6 +154,7 @@ namespace UIs
             foreach (NhanVien member in members)
             {
                 DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(membersGrid);
                 row.Cells[0].Value = "";
                 row.Cells[1].Value = member.MaThanhVien;
                 row.Cells[2].Value = nhanSuService.findMember(member.MaThanhVien).HoVaTen;
