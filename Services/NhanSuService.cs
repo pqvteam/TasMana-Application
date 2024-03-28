@@ -15,5 +15,15 @@ namespace Services
         {
             return nhanSuRepository.findMember(ID);
         }
+
+        public List<NhanSu> getAllMembersOfDepartment(string departmentID)
+        {
+            return nhanSuRepository.getAllMembersOfDepartment(departmentID);
+        }
+
+        public List<NhanSu> getAllMembers()
+        {
+            return nhanSuRepository.getAllMembers();
+        }
     }
 }

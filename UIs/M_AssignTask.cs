@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace UIs
 {
-    public partial class C_AssignTask : Form
+    public partial class M_AssignTask : Form
     {
         private string receiverID = "";
         private string venueID = "";
-        public C_AssignTask()
+        public M_AssignTask()
         {
             InitializeComponent();
         }
@@ -92,12 +92,12 @@ namespace UIs
 
         private void editReceiverButton_Click(object sender, EventArgs e)
         {
-            A_ShowMember showMembersForm = new A_ShowMember();
-            showMembersForm.MemberSelected += ShowMembersForm_MemberSelected;
-            showMembersForm.ShowDialog();
+            A_ShowStaff showStaffsForm = new A_ShowStaff();
+            showStaffsForm.StaffSelected += ShowStaffsForm_StaffSelected;
+            showStaffsForm.ShowDialog();
         }
 
-        private void ShowMembersForm_MemberSelected(string memberId)
+        private void ShowStaffsForm_StaffSelected(string memberId)
         {
             receiverLabel.Text = memberId;
             receiverID = memberId;
@@ -109,7 +109,7 @@ namespace UIs
 
         }
 
-        private void C_AssignTask_Load(object sender, EventArgs e)
+        private void M_AssignTask_Load(object sender, EventArgs e)
         {
             taskStatus.SelectedIndex = 0;
             taskPriority.SelectedIndex = 0;
@@ -119,10 +119,10 @@ namespace UIs
         {
             GiaoViecService giaoViecService = new GiaoViecService();
             NhanSuService nhanSuService = new NhanSuService();
-            string tCEOID = "GD-001";
-            string tCEOName = nhanSuService.findMember(tCEOID).HoVaTen;
-            string tReceiverName = nhanSuService.findMember(receiverID).HoVaTen;
-            string tID = GiaoViecUtilities.createAssignTaskID(tCEOID);
+            string tStaffName = nhanSuService.findMember(receiverID).HoVaTen;
+            string tManagerName = nhanSuService.findMember("KT-503").HoVaTen;
+            string tManagerID = "KT-503";
+            string tID = GiaoViecUtilities.createAssignTaskID(tManagerID);
             string tName = taskName.Text;
             string tDescription = taskDescription.Text;
             string tStart = taskStart.Value.ToString("yyyyMMdd");
@@ -131,13 +131,13 @@ namespace UIs
             string tStatus = taskStatus.SelectedItem.ToString();
             string tPriority = taskPriority.SelectedItem.ToString();
             string tSubject = $"THÔNG BÁO GIAO VIỆC - {tName}";
-            string tGiaoViec = $"Kính gửi {tReceiverName},\nChúng ta đã xác định một công việc mới cần hoàn thành, và tôi muốn giao nhiệm vụ này cho bạn. Dưới đây là thông tin chi tiết về công việc:\nTên công việc: {tName}\nMô tả: {tDescription}\nThời hạn: {tEnd}\nƯu tiên: {tPriority}\nNgười giao việc: {tCEOName}\nXin vui lòng kiểm tra thông tin trên và bắt đầu làm việc ngay khi bạn có thể. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\nCEO {tCEOName}";
+            string tGiaoViec = $"Kính gửi {tStaffName},\nChúng ta đã xác định một công việc mới cần hoàn thành, và tôi muốn giao nhiệm vụ này cho bạn. Dưới đây là thông tin chi tiết về công việc:\nTên công việc: {tName}\nMô tả: {tDescription}\nThời hạn: {tEnd}\nƯu tiên: {tPriority}\nNgười giao việc: {tManagerName}\nXin vui lòng kiểm tra thông tin trên và bắt đầu làm việc ngay khi bạn có thể. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\nQuản lý {tManagerName}";
             string tTo = nhanSuService.findMember(receiverID).Email;
 
             int tMode = taskMode.Checked ? 1 : 0;
-            int tIsCEO = 1;
+            int tIsCEO = 0;
 
-            bool isSuccess = giaoViecService.assignTask(tDescription, tStart, tEnd, tStatus, tFile, tID, tMode, tName, venueID, receiverID, tIsCEO, tCEOID);
+            bool isSuccess = giaoViecService.assignTask(tDescription, tStart, tEnd, tStatus, tFile, tID, tMode, tName, venueID, receiverID, tIsCEO, tManagerID);
 
             if (isSuccess)
             {
@@ -187,11 +187,6 @@ namespace UIs
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void customButton7_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
