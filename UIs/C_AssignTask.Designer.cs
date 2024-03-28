@@ -82,6 +82,8 @@
             name = new Label();
             heading = new Label();
             headerPanel = new Panel();
+            customButton18 = new CustomComponent.CustomButton();
+            customButton17 = new CustomComponent.CustomButton();
             panel2 = new Panel();
             customButton14 = new CustomComponent.CustomButton();
             customButton13 = new CustomComponent.CustomButton();
@@ -307,9 +309,10 @@
             // pictureBox10
             // 
             pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(865, 355);
+            pictureBox10.Location = new Point(865, 356);
             pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(40, 35);
+            pictureBox10.Size = new Size(40, 37);
+            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox10.TabIndex = 28;
             pictureBox10.TabStop = false;
             // 
@@ -328,9 +331,10 @@
             // pictureBox9
             // 
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(650, 355);
+            pictureBox9.Location = new Point(657, 359);
             pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(40, 35);
+            pictureBox9.Size = new Size(26, 26);
+            pictureBox9.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox9.TabIndex = 26;
             pictureBox9.TabStop = false;
             // 
@@ -339,7 +343,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.Yellow;
-            label10.Location = new Point(523, 363);
+            label10.Location = new Point(529, 363);
             label10.Name = "label10";
             label10.Size = new Size(110, 19);
             label10.TabIndex = 25;
@@ -348,10 +352,12 @@
             // 
             // pictureBox8
             // 
-            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(490, 355);
+            pictureBox8.Image = Properties.Resources.deadline_icon;
+            pictureBox8.ImageLocation = "";
+            pictureBox8.Location = new Point(487, 351);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(40, 35);
+            pictureBox8.Size = new Size(40, 40);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox8.TabIndex = 24;
             pictureBox8.TabStop = false;
             // 
@@ -360,7 +366,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Yellow;
-            label9.Location = new Point(374, 363);
+            label9.Location = new Point(385, 363);
             label9.Name = "label9";
             label9.Size = new Size(71, 19);
             label9.TabIndex = 23;
@@ -369,9 +375,10 @@
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(340, 355);
+            pictureBox7.Location = new Point(341, 355);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(40, 35);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 22;
             pictureBox7.TabStop = false;
             // 
@@ -401,9 +408,10 @@
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(340, 173);
+            pictureBox6.Location = new Point(338, 168);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(40, 35);
+            pictureBox6.Size = new Size(39, 36);
+            pictureBox6.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox6.TabIndex = 19;
             pictureBox6.TabStop = false;
             // 
@@ -433,9 +441,10 @@
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(340, 67);
+            pictureBox5.Location = new Point(335, 63);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(40, 35);
+            pictureBox5.Size = new Size(40, 40);
+            pictureBox5.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox5.TabIndex = 16;
             pictureBox5.TabStop = false;
             // 
@@ -453,9 +462,10 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(340, 22);
+            pictureBox4.Location = new Point(330, 15);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(40, 35);
+            pictureBox4.Size = new Size(50, 46);
+            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox4.TabIndex = 13;
             pictureBox4.TabStop = false;
             // 
@@ -663,9 +673,10 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(16, 517);
+            pictureBox3.Location = new Point(13, 517);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(40, 35);
+            pictureBox3.Size = new Size(38, 40);
+            pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox3.TabIndex = 11;
             pictureBox3.TabStop = false;
             // 
@@ -697,9 +708,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(16, 420);
+            pictureBox2.Location = new Point(9, 417);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(40, 35);
+            pictureBox2.Size = new Size(40, 38);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox2.TabIndex = 8;
             pictureBox2.TabStop = false;
             // 
@@ -730,9 +742,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.group_icon;
-            pictureBox1.Location = new Point(8, 309);
+            pictureBox1.Location = new Point(12, 305);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(40, 35);
+            pictureBox1.Size = new Size(42, 42);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
@@ -810,6 +823,8 @@
             // headerPanel
             // 
             headerPanel.BackColor = Color.FromArgb(13, 13, 13);
+            headerPanel.Controls.Add(customButton18);
+            headerPanel.Controls.Add(customButton17);
             headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton12);
             headerPanel.Controls.Add(customButton11);
@@ -825,11 +840,57 @@
             headerPanel.Size = new Size(1382, 59);
             headerPanel.TabIndex = 1;
             // 
+            // customButton18
+            // 
+            customButton18.AutoEllipsis = true;
+            customButton18.BackColor = Color.Black;
+            customButton18.BackgroundColor = Color.Black;
+            customButton18.BorderColor = Color.PaleVioletRed;
+            customButton18.BorderRadius = 28;
+            customButton18.BorderSize = 0;
+            customButton18.FlatAppearance.BorderSize = 0;
+            customButton18.FlatStyle = FlatStyle.Flat;
+            customButton18.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton18.ForeColor = Color.White;
+            customButton18.Image = (Image)resources.GetObject("customButton18.Image");
+            customButton18.ImageAlign = ContentAlignment.MiddleLeft;
+            customButton18.Location = new Point(717, 4);
+            customButton18.Name = "customButton18";
+            customButton18.Size = new Size(188, 48);
+            customButton18.TabIndex = 25;
+            customButton18.Text = "APARTMENT & RESIDENT";
+            customButton18.TextAlign = ContentAlignment.MiddleRight;
+            customButton18.TextColor = Color.White;
+            customButton18.UseVisualStyleBackColor = false;
+            // 
+            // customButton17
+            // 
+            customButton17.BackColor = Color.Black;
+            customButton17.BackgroundColor = Color.Black;
+            customButton17.BorderColor = Color.PaleVioletRed;
+            customButton17.BorderRadius = 28;
+            customButton17.BorderSize = 0;
+            customButton17.FlatAppearance.BorderSize = 0;
+            customButton17.FlatStyle = FlatStyle.Flat;
+            customButton17.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton17.ForeColor = Color.White;
+            customButton17.Image = (Image)resources.GetObject("customButton17.Image");
+            customButton17.ImageAlign = ContentAlignment.MiddleLeft;
+            customButton17.Location = new Point(509, 5);
+            customButton17.Name = "customButton17";
+            customButton17.Size = new Size(202, 48);
+            customButton17.TabIndex = 24;
+            customButton17.Text = "ACCOUNTING MANAGEMENT";
+            customButton17.TextAlign = ContentAlignment.MiddleRight;
+            customButton17.TextColor = Color.White;
+            customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
+            customButton17.UseVisualStyleBackColor = false;
+            // 
             // panel2
             // 
             panel2.Controls.Add(customButton14);
             panel2.Controls.Add(customButton13);
-            panel2.Location = new Point(1246, 0);
+            panel2.Location = new Point(1261, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(117, 59);
             panel2.TabIndex = 23;
@@ -886,7 +947,7 @@
             customButton12.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton12.ForeColor = Color.White;
             customButton12.Image = Properties.Resources.bell_icon;
-            customButton12.Location = new Point(1182, 8);
+            customButton12.Location = new Point(1208, 8);
             customButton12.Name = "customButton12";
             customButton12.Size = new Size(51, 40);
             customButton12.TabIndex = 22;
@@ -904,13 +965,13 @@
             customButton11.BorderSize = 0;
             customButton11.FlatAppearance.BorderSize = 0;
             customButton11.FlatStyle = FlatStyle.Flat;
-            customButton11.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton11.ForeColor = Color.White;
             customButton11.Image = Properties.Resources.triangle_icon;
             customButton11.ImageAlign = ContentAlignment.MiddleRight;
-            customButton11.Location = new Point(1026, 0);
+            customButton11.Location = new Point(1077, 0);
             customButton11.Name = "customButton11";
-            customButton11.Size = new Size(150, 51);
+            customButton11.Size = new Size(120, 51);
             customButton11.TabIndex = 21;
             customButton11.Text = "English";
             customButton11.TextAlign = ContentAlignment.MiddleRight;
@@ -927,14 +988,13 @@
             customButton10.BorderSize = 0;
             customButton10.FlatAppearance.BorderSize = 0;
             customButton10.FlatStyle = FlatStyle.Flat;
-            customButton10.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton10.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton10.ForeColor = Color.White;
             customButton10.Image = (Image)resources.GetObject("customButton10.Image");
             customButton10.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton10.Location = new Point(693, 0);
+            customButton10.Location = new Point(908, 2);
             customButton10.Name = "customButton10";
-            customButton10.Padding = new Padding(12, 0, 0, 0);
-            customButton10.Size = new Size(321, 51);
+            customButton10.Size = new Size(156, 51);
             customButton10.TabIndex = 20;
             customButton10.Text = "RESIDENT SERVICE";
             customButton10.TextAlign = ContentAlignment.MiddleRight;
@@ -951,14 +1011,13 @@
             customButton9.BorderSize = 0;
             customButton9.FlatAppearance.BorderSize = 0;
             customButton9.FlatStyle = FlatStyle.Flat;
-            customButton9.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton9.ForeColor = Color.White;
             customButton9.Image = (Image)resources.GetObject("customButton9.Image");
             customButton9.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton9.Location = new Point(527, 3);
+            customButton9.Location = new Point(367, 6);
             customButton9.Name = "customButton9";
-            customButton9.Padding = new Padding(12, 0, 0, 0);
-            customButton9.Size = new Size(162, 48);
+            customButton9.Size = new Size(137, 48);
             customButton9.TabIndex = 19;
             customButton9.Text = "REPORT";
             customButton9.TextAlign = ContentAlignment.MiddleRight;
@@ -975,14 +1034,13 @@
             customButton8.BorderSize = 0;
             customButton8.FlatAppearance.BorderSize = 0;
             customButton8.FlatStyle = FlatStyle.Flat;
-            customButton8.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton8.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton8.ForeColor = Color.White;
             customButton8.Image = (Image)resources.GetObject("customButton8.Image");
             customButton8.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton8.Location = new Point(341, 5);
+            customButton8.Location = new Point(202, 8);
             customButton8.Name = "customButton8";
-            customButton8.Padding = new Padding(12, 0, 0, 0);
-            customButton8.Size = new Size(193, 48);
+            customButton8.Size = new Size(158, 48);
             customButton8.TabIndex = 18;
             customButton8.Text = "STATISTIC";
             customButton8.TextAlign = ContentAlignment.MiddleRight;
@@ -999,20 +1057,20 @@
             customButton7.BorderSize = 0;
             customButton7.FlatAppearance.BorderSize = 0;
             customButton7.FlatStyle = FlatStyle.Flat;
-            customButton7.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton7.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton7.ForeColor = Color.White;
             customButton7.Image = (Image)resources.GetObject("customButton7.Image");
             customButton7.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton7.Location = new Point(192, 5);
+            customButton7.Location = new Point(75, 8);
             customButton7.Name = "customButton7";
-            customButton7.Padding = new Padding(12, 0, 0, 0);
-            customButton7.Size = new Size(143, 48);
+            customButton7.Size = new Size(117, 48);
             customButton7.TabIndex = 17;
             customButton7.Text = "WORK";
             customButton7.TextAlign = ContentAlignment.MiddleRight;
             customButton7.TextColor = Color.White;
             customButton7.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton7.UseVisualStyleBackColor = false;
+            customButton7.Click += customButton7_Click;
             // 
             // customButton6
             // 
@@ -1023,16 +1081,14 @@
             customButton6.BorderSize = 0;
             customButton6.FlatAppearance.BorderSize = 0;
             customButton6.FlatStyle = FlatStyle.Flat;
-            customButton6.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton6.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton6.ForeColor = Color.White;
-            customButton6.Image = Properties.Resources.password_icon_change;
+            customButton6.Image = (Image)resources.GetObject("customButton6.Image");
             customButton6.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton6.Location = new Point(8, 5);
+            customButton6.Location = new Point(12, 0);
             customButton6.Name = "customButton6";
-            customButton6.Padding = new Padding(12, 0, 0, 0);
-            customButton6.Size = new Size(178, 48);
+            customButton6.Size = new Size(60, 60);
             customButton6.TabIndex = 16;
-            customButton6.Text = "TASMANA";
             customButton6.TextAlign = ContentAlignment.MiddleRight;
             customButton6.TextColor = Color.White;
             customButton6.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -1157,9 +1213,10 @@
             // pictureBox13
             // 
             pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
-            pictureBox13.Location = new Point(17, 13);
+            pictureBox13.Location = new Point(8, 10);
             pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new Size(40, 35);
+            pictureBox13.Size = new Size(46, 46);
+            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox13.TabIndex = 39;
             pictureBox13.TabStop = false;
             // 
@@ -1188,9 +1245,10 @@
             // pictureBox12
             // 
             pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
-            pictureBox12.Location = new Point(17, 69);
+            pictureBox12.Location = new Point(8, 62);
             pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(40, 35);
+            pictureBox12.Size = new Size(46, 46);
+            pictureBox12.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox12.TabIndex = 37;
             pictureBox12.TabStop = false;
             // 
@@ -1249,7 +1307,7 @@
             customButton5.FlatStyle = FlatStyle.Flat;
             customButton5.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton5.ForeColor = Color.White;
-            customButton5.Image = Properties.Resources.password_icon_change;
+            customButton5.Image = (Image)resources.GetObject("customButton5.Image");
             customButton5.ImageAlign = ContentAlignment.MiddleLeft;
             customButton5.Location = new Point(7, 439);
             customButton5.Name = "customButton5";
@@ -1258,6 +1316,7 @@
             customButton5.TabIndex = 4;
             customButton5.Text = "ATTACHMENT";
             customButton5.TextColor = Color.White;
+            customButton5.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton5.UseVisualStyleBackColor = false;
             // 
             // customButton3
@@ -1271,7 +1330,7 @@
             customButton3.FlatStyle = FlatStyle.Flat;
             customButton3.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton3.ForeColor = Color.White;
-            customButton3.Image = Properties.Resources.password_icon_change;
+            customButton3.Image = (Image)resources.GetObject("customButton3.Image");
             customButton3.ImageAlign = ContentAlignment.MiddleLeft;
             customButton3.Location = new Point(7, 572);
             customButton3.Name = "customButton3";
@@ -1280,6 +1339,7 @@
             customButton3.TabIndex = 3;
             customButton3.Text = "DELETE TASK";
             customButton3.TextColor = Color.White;
+            customButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton3.UseVisualStyleBackColor = false;
             // 
             // customButton4
@@ -1291,9 +1351,9 @@
             customButton4.BorderSize = 0;
             customButton4.FlatAppearance.BorderSize = 0;
             customButton4.FlatStyle = FlatStyle.Flat;
-            customButton4.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton4.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton4.ForeColor = Color.White;
-            customButton4.Image = Properties.Resources.password_icon_change;
+            customButton4.Image = (Image)resources.GetObject("customButton4.Image");
             customButton4.ImageAlign = ContentAlignment.MiddleLeft;
             customButton4.Location = new Point(6, 505);
             customButton4.Name = "customButton4";
@@ -1317,7 +1377,7 @@
             customButton1.FlatStyle = FlatStyle.Flat;
             customButton1.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton1.ForeColor = Color.White;
-            customButton1.Image = Properties.Resources.password_icon_change;
+            customButton1.Image = (Image)resources.GetObject("customButton1.Image");
             customButton1.ImageAlign = ContentAlignment.MiddleLeft;
             customButton1.Location = new Point(6, 373);
             customButton1.Name = "customButton1";
@@ -1326,6 +1386,7 @@
             customButton1.TabIndex = 1;
             customButton1.Text = "DEADLINE";
             customButton1.TextColor = Color.White;
+            customButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton1.UseVisualStyleBackColor = false;
             // 
             // customButton2
@@ -1337,9 +1398,9 @@
             customButton2.BorderSize = 0;
             customButton2.FlatAppearance.BorderSize = 0;
             customButton2.FlatStyle = FlatStyle.Flat;
-            customButton2.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton2.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton2.ForeColor = Color.White;
-            customButton2.Image = Properties.Resources.password_icon_change;
+            customButton2.Image = (Image)resources.GetObject("customButton2.Image");
             customButton2.ImageAlign = ContentAlignment.MiddleLeft;
             customButton2.Location = new Point(5, 306);
             customButton2.Name = "customButton2";
@@ -1349,6 +1410,7 @@
             customButton2.Text = "UPDATE PROCESS";
             customButton2.TextAlign = ContentAlignment.MiddleRight;
             customButton2.TextColor = Color.White;
+            customButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton2.UseVisualStyleBackColor = false;
             customButton2.Click += customButton2_Click;
             // 
@@ -1483,5 +1545,7 @@
         private CustomComponent.CustomToggleButton customToggleButton2;
         private CustomComponent.CustomToggleButton taskMode;
         private Panel panel3;
+        private CustomComponent.CustomButton customButton18;
+        private CustomComponent.CustomButton customButton17;
     }
 }

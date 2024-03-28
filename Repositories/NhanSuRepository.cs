@@ -19,5 +19,10 @@ namespace Repositories
         {
             return tasManaContext.NhanSus.Where(x => x.MaThanhVien.Contains(departmentID)).ToList();
         }
+
+        public List<NhanSu> getAllMembers()
+        {
+            return tasManaContext.NhanSus.ToList();
+        }
     }
 }
