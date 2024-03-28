@@ -19,6 +19,15 @@ namespace Repositories
             return db.GiaoViecs.FirstOrDefault(x => x.MaGiaoViec.Equals(assignTaskID));
         }
 
+        public List<GiaoViec> getAllTaskOfDepartment(string departmentID)
+        {
+            return db.GiaoViecs.Where(x => x.MaGiaoViec.Contains(departmentID)).ToList();
+        }
+
+        public List<GiaoViec> GetAll() { 
+            return db.GiaoViecs.ToList();
+        }
+
         public bool Create(string description, string day, string deadline, string status, string file, string id, int mode, string name, string venue, string receiverID, int isCEO, string CEOID)
         {
             // Mở kết nối đến cơ sở dữ liệu

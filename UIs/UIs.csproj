@@ -20,6 +20,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="A_ShowStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="A_ShowVenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="M_AssignTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

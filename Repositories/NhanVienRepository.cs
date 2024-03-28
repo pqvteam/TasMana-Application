@@ -20,6 +20,11 @@ namespace Repositories
             return db.NhanViens.ToList();
         }
 
+        public List<NhanVien> getAllStaffOfDepartment(string departmentID)
+        {
+            return db.NhanViens.Where(x => x.MaThanhVien.Contains(departmentID)).ToList();
+        }
+
         public void create(NhanVien nhanVien)
         {
             db.NhanViens.Add(nhanVien);
