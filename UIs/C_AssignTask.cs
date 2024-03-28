@@ -188,5 +188,10 @@ namespace UIs
         {
             this.Close();
         }
+
+        private void customButton7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -63,6 +63,16 @@ namespace UIs.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap actived_account {
+            get {
+                object obj = ResourceManager.GetObject("actived_account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bell_icon {
             get {
                 object obj = ResourceManager.GetObject("bell_icon", resourceCulture);
@@ -86,6 +96,16 @@ namespace UIs.Properties {
         internal static System.Drawing.Bitmap calendarWhite {
             get {
                 object obj = ResourceManager.GetObject("calendarWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap deadline_icon {
+            get {
+                object obj = ResourceManager.GetObject("deadline_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
