@@ -110,6 +110,7 @@
             customButton1 = new CustomComponent.CustomButton();
             customButton2 = new CustomComponent.CustomButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            comboBox1 = new ComboBox();
             mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
@@ -279,7 +280,6 @@
             label12.Size = new Size(100, 19);
             label12.TabIndex = 29;
             label12.Text = "PRIORITY";
-            label12.Click += label12_Click;
             // 
             // pictureBox10
             // 
@@ -320,7 +320,6 @@
             label10.Size = new Size(110, 19);
             label10.TabIndex = 25;
             label10.Text = "DEADLINE";
-            label10.Click += label10_Click;
             // 
             // pictureBox8
             // 
@@ -1081,6 +1080,7 @@
             customPanel1.BorderColor = Color.Black;
             customPanel1.BorderRadius = 28;
             customPanel1.BorderWidth = 1;
+            customPanel1.Controls.Add(comboBox1);
             customPanel1.Controls.Add(pictureBox13);
             customPanel1.Controls.Add(label19);
             customPanel1.Controls.Add(label18);
@@ -1290,7 +1290,14 @@
             customButton2.TextAlign = ContentAlignment.MiddleRight;
             customButton2.TextColor = Color.White;
             customButton2.UseVisualStyleBackColor = false;
-            customButton2.Click += customButton2_Click;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(83, 125);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 41;
             // 
             // C_AssignTask
             // 
@@ -1417,5 +1424,6 @@
         private Label label21;
         private CustomComponent.CustomPictureBox customPictureBox2;
         private Label label20;
+        private ComboBox comboBox1;
     }
 }
