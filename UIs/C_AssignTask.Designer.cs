@@ -115,6 +115,7 @@
             customButton1 = new CustomComponent.CustomButton();
             customButton2 = new CustomComponent.CustomButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            comboBox1 = new ComboBox();
             mainPanel.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -304,7 +305,6 @@
             label12.Size = new Size(100, 19);
             label12.TabIndex = 29;
             label12.Text = "PRIORITY";
-            label12.Click += label12_Click;
             // 
             // pictureBox10
             // 
@@ -348,7 +348,6 @@
             label10.Size = new Size(110, 19);
             label10.TabIndex = 25;
             label10.Text = "DEADLINE";
-            label10.Click += label10_Click;
             // 
             // pictureBox8
             // 
@@ -1412,7 +1411,14 @@
             customButton2.TextColor = Color.White;
             customButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton2.UseVisualStyleBackColor = false;
-            customButton2.Click += customButton2_Click;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(83, 125);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 41;
             // 
             // C_AssignTask
             // 
