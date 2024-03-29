@@ -780,6 +780,7 @@
             Controls.Add(customPanel1);
             Controls.Add(headerPanel);
             Name = "E_InformationEdit";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "E_InformationEdit";
             Load += E_InformationEdit_Load;
             headerPanel.ResumeLayout(false);

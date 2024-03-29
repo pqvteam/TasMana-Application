@@ -74,6 +74,7 @@ namespace UIs
             if (isSuccess)
             {
                 MessageBox.Show("Successfully");
+                this.Close();
             }
         }
 
