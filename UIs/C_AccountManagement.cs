@@ -27,22 +27,41 @@ namespace UIs
 
         private void C_AccountManagement_Load(object sender, EventArgs e)
         {
-            // Tạo các cột cho DataGridView
+            CeoService ceoService = new CeoService();
+            QuanLyService quanLyService = new QuanLyService();
             membersGrid.Columns.Add("ID", "ID");
             membersGrid.Columns.Add("Name", "Name");
+            membersGrid.Columns.Add("Type Account", "Type Account");
             membersGrid.Columns.Add("Department", "Department");
+            membersGrid.Columns.Add("Role", "Role");
             membersGrid.Columns.Add("Startdate", "Start Date");
-            membersGrid.Columns.Add("Enddate", "Is Still Member");
 
-            // Lấy danh sách thành viên
+            DataGridViewButtonColumn btnColumn = new DataGridViewButtonColumn();
+            btnColumn.HeaderText = "Appoint";
+            btnColumn.Text = "Appoint";
+            btnColumn.Name = "btnAppoint";
+            btnColumn.UseColumnTextForButtonValue = true;
+            membersGrid.Columns.Add(btnColumn);
+
+            membersGrid.Columns.Add("Fired", "Fired");
+
             List<NhanSu> members = nhanSuService.getAllMembers();
 
-            // Đổ dữ liệu vào DataGridView
             foreach (var member in members)
             {
-                membersGrid.Rows.Add(member.MaThanhVien, member.HoVaTen, member.Email, member.NgayBatDau, member.NghiViec);
+                string role = "Staff";
+                if (ceoService.getCeo(member.MaThanhVien) != null)
+                {
+                    role = "CEO";
+                } else if (quanLyService.findManager(member.MaThanhVien) != null)
+                {
+                    role = "Manager";
+                }
+                string departmentID = member.MaThanhVien.Split("-")[0];
+                membersGrid.Rows.Add(member.MaThanhVien, member.HoVaTen, role, departmentID, role, member.NgayBatDau, member.NghiViec);
             }
         }
+
 
         private void customComboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
         {
@@ -50,6 +69,11 @@ namespace UIs
         }
 
         private void customPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void membersGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
