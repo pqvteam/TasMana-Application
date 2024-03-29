@@ -71,8 +71,7 @@ namespace UIs
         private void EDIT_Click(object sender, EventArgs e)
         {
             E_InformationEdit newForm = new E_InformationEdit();
-            newForm.Show();
-            this.Hide();
+            newForm.ShowDialog();
         }
     }
 }
