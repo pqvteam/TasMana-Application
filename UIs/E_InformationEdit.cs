@@ -68,13 +68,18 @@ namespace UIs
 
         private void SUBMIT_Click(object sender, EventArgs e)
         {
-            NhanSuService currentEmployee = new NhanSuService();
-            NhanSu ns = currentEmployee.findMember(managerID);
-            InformationEditUtilities.editInformation(ns.HoVaTen, ns.Sdt, ns.NamSinh, ns.Cccd, ns.Email, ns.DiaChi, ns.GioiTinh);
-            MessageBox.Show("Edit successfully");
-            E_Information newForm = new E_Information();
-            newForm.Show();
-            this.Hide();
+            NhanSuService nhanSuService = new NhanSuService();
+            NhanSu ns = nhanSuService.findMember(managerID);
+            bool isSuccess = nhanSuService.updateInformation(UserName.Text, Number.Text, Birth.Value.ToString("yyyyMMdd"), CID.Text, Email.Text, Add.Text, Gender.Text);
+            if (isSuccess)
+            {
+                MessageBox.Show("Successfully");
+            }
+        }
+
+        private void Birth_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,5 +12,6 @@ static class Program
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
         Application.Run(new C_AccountManagement());
+        // Application.Run(new E_InformationEdit());
     }    
 }
