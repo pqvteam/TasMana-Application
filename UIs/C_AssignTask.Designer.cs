@@ -115,7 +115,6 @@
             customButton1 = new CustomComponent.CustomButton();
             customButton2 = new CustomComponent.CustomButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            comboBox1 = new ComboBox();
             mainPanel.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -1411,14 +1410,6 @@
             customButton2.TextColor = Color.White;
             customButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton2.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(83, 125);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 41;
             // 
             // C_AssignTask
             // 

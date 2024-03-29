@@ -4,34 +4,32 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
-using Microsoft.VisualBasic.ApplicationServices;
 using Repositories.Entities;
+using Repositories.Utilities;
 using Services;
 
 namespace UIs
 {
-    public partial class E_Information : Form
+    public partial class E_InformationEdit : Form
     {
-        public E_Information()
+        string connectionString = @"Data Source=LAPTOP-BQI9C1O9;Initial Catalog=TasMana;Integrated Security=True";
+        string managerID = "DV-102";
+        public E_InformationEdit()
         {
             InitializeComponent();
         }
 
-        private void E_Information_Load(object sender, EventArgs e)
+        private void E_InformationEdit_Load(object sender, EventArgs e)
         {
             displayEmployeeData();
         }
 
         private void displayEmployeeData()
         {
-            // UserID
-            string managerID = "DV-102";
-
             NhanSuService currentEmployee = new NhanSuService();
             NhanSu ns = currentEmployee.findMember(managerID);
             UserName.Text = ns.HoVaTen.ToString();
@@ -68,9 +66,13 @@ namespace UIs
             Group.Text = group.TenNhom.ToString();
         }
 
-        private void EDIT_Click(object sender, EventArgs e)
+        private void SUBMIT_Click(object sender, EventArgs e)
         {
-            E_InformationEdit newForm = new E_InformationEdit();
+            NhanSuService currentEmployee = new NhanSuService();
+            NhanSu ns = currentEmployee.findMember(managerID);
+            InformationEditUtilities.editInformation(ns.HoVaTen, ns.Sdt, ns.NamSinh, ns.Cccd, ns.Email, ns.DiaChi, ns.GioiTinh);
+            MessageBox.Show("Edit successfully");
+            E_Information newForm = new E_Information();
             newForm.Show();
             this.Hide();
         }
