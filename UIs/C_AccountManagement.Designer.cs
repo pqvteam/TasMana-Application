@@ -595,6 +595,7 @@
             membersGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             membersGrid.Size = new Size(1357, 517);
             membersGrid.TabIndex = 60;
+            membersGrid.CellContentClick += membersGrid_CellContentClick;
             // 
             // C_AccountManagement
             // 
