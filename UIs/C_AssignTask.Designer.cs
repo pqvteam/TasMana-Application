@@ -1411,9 +1411,7 @@
             customButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton2.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
-            // 
-            // 
+
             // C_AssignTask
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
