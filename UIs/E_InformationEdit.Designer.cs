@@ -50,11 +50,11 @@
             heading = new Label();
             UserName1 = new Label();
             customPanel1 = new CustomComponent.CustomPanel();
+            Birth = new CustomComponent.CustomDateTimePicker();
             Number = new TextBox();
             Email = new TextBox();
             CID = new TextBox();
             Add = new TextBox();
-            Birth = new TextBox();
             Gender = new TextBox();
             UserName = new TextBox();
             StartDate = new Label();
@@ -457,11 +457,11 @@
             customPanel1.BorderColor = Color.Black;
             customPanel1.BorderRadius = 28;
             customPanel1.BorderWidth = 1;
+            customPanel1.Controls.Add(Birth);
             customPanel1.Controls.Add(Number);
             customPanel1.Controls.Add(Email);
             customPanel1.Controls.Add(CID);
             customPanel1.Controls.Add(Add);
-            customPanel1.Controls.Add(Birth);
             customPanel1.Controls.Add(Gender);
             customPanel1.Controls.Add(UserName);
             customPanel1.Controls.Add(StartDate);
@@ -487,6 +487,21 @@
             customPanel1.Name = "customPanel1";
             customPanel1.Size = new Size(914, 552);
             customPanel1.TabIndex = 21;
+            // 
+            // Birth
+            // 
+            Birth.BorderColor = Color.PaleVioletRed;
+            Birth.BorderSize = 0;
+            Birth.Font = new Font("Segoe UI", 9.5F);
+            Birth.Format = DateTimePickerFormat.Short;
+            Birth.Location = new Point(499, 213);
+            Birth.MinimumSize = new Size(0, 35);
+            Birth.Name = "Birth";
+            Birth.Size = new Size(412, 35);
+            Birth.SkinColor = SystemColors.ScrollBar;
+            Birth.TabIndex = 29;
+            Birth.TextColor = Color.Black;
+            Birth.ValueChanged += Birth_ValueChanged;
             // 
             // Number
             // 
@@ -535,18 +550,6 @@
             Add.Size = new Size(414, 29);
             Add.TabIndex = 25;
             Add.TextAlign = HorizontalAlignment.Center;
-            // 
-            // Birth
-            // 
-            Birth.BackColor = SystemColors.ScrollBar;
-            Birth.BorderStyle = BorderStyle.None;
-            Birth.Font = new Font("Calibri", 13.8F);
-            Birth.ForeColor = SystemColors.InfoText;
-            Birth.Location = new Point(497, 217);
-            Birth.Name = "Birth";
-            Birth.Size = new Size(414, 29);
-            Birth.TabIndex = 24;
-            Birth.TextAlign = HorizontalAlignment.Center;
             // 
             // Gender
             // 
@@ -832,8 +835,8 @@
         private TextBox Email;
         private TextBox CID;
         private TextBox Add;
-        private TextBox Birth;
         private TextBox Gender;
         private TextBox UserName;
+        private CustomComponent.CustomDateTimePicker Birth;
     }
 }
