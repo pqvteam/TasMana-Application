@@ -48,7 +48,6 @@ namespace UIs
             NhanSuService currentEmployee = new NhanSuService();
             currentEmployee.findMember(managerID);
 
-            UserName.Text = currentEmployee.GetType("maThanhVien");
         }
     }
 }
