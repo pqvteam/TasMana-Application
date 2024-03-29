@@ -1411,6 +1411,7 @@
             customButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton2.UseVisualStyleBackColor = false;
             // 
+
             // C_AssignTask
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
