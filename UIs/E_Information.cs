@@ -72,6 +72,7 @@ namespace UIs
         {
             E_InformationEdit newForm = new E_InformationEdit();
             newForm.ShowDialog();
+            displayEmployeeData();
         }
     }
 }
