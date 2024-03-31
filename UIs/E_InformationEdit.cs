@@ -16,7 +16,6 @@ namespace UIs
 {
     public partial class E_InformationEdit : Form
     {
-        string connectionString = @"Data Source=LAPTOP-BQI9C1O9;Initial Catalog=TasMana;Integrated Security=True";
         string managerID = "DV-102";
         public E_InformationEdit()
         {
