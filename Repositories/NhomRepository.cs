@@ -15,5 +15,10 @@ namespace Repositories
             // Access DB
             return db.Nhoms.FirstOrDefault(x => x.MaNhom.Equals(groupID));
         }
+
+        public List<Nhom> GetAll()
+        {
+            return db.Nhoms.ToList();
+        }
     }
 }

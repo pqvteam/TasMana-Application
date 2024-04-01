@@ -17,5 +17,10 @@ namespace Services
             if (groupID == null) return null;
             return group;
         }
+
+        public List<Nhom> findGroups()
+        {
+            return repository.GetAll();
+        }
     }
 }
