@@ -1,4 +1,5 @@
-﻿using Repositories.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Repositories.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,16 @@ namespace Repositories
         public List<NhanVien> getAllStaffOfDepartment(string departmentID)
         {
             return db.NhanViens.Where(x => x.MaThanhVien.Contains(departmentID)).ToList();
+        }
+
+        public List<NhanVien> getAllNoGroup()
+        {
+            return db.NhanViens.Where(x => x.MaNhom == null && x.LaQuanLi == false).ToList();
+        }
+
+        public NhanVien? findLeaderOfGroup(string groupID)
+        {
+            return db.NhanViens.FirstOrDefault(x => x.MaNhom == groupID && x.LaTruongNhom == true);
         }
 
         public void create(NhanVien nhanVien)
