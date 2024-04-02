@@ -74,5 +74,11 @@ namespace UIs
         {
             this.Close();
         }
+
+        private void messageText_Click(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }

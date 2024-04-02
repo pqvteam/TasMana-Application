@@ -11,6 +11,7 @@ static class Program
         // To customize application configuration such as set high DPI settings or default font,
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
+        // Application.Run(new CM_CreateGroup());
         // Application.Run(new A_Appoint());
         Application.Run(new C_AccountManagement());
         // Application.Run(new E_Information());

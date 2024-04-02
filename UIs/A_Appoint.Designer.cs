@@ -45,6 +45,7 @@
             nameBox = new TextBox();
             customButton4 = new CustomComponent.CustomButton();
             customButton5 = new CustomComponent.CustomButton();
+            createButton = new CustomComponent.CustomButton();
             SuspendLayout();
             // 
             // customButton10
@@ -88,7 +89,7 @@
             idBox.BorderStyle = BorderStyle.None;
             idBox.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             idBox.ForeColor = Color.White;
-            idBox.Location = new Point(143, 111);
+            idBox.Location = new Point(143, 108);
             idBox.Name = "idBox";
             idBox.Size = new Size(375, 27);
             idBox.TabIndex = 50;
@@ -225,7 +226,7 @@
             confirmButton.Name = "confirmButton";
             confirmButton.Size = new Size(122, 48);
             confirmButton.TabIndex = 64;
-            confirmButton.Text = "CONTINUTE";
+            confirmButton.Text = "CONTINUE";
             confirmButton.TextColor = Color.White;
             confirmButton.UseVisualStyleBackColor = false;
             confirmButton.Click += confirmButton_Click;
@@ -267,7 +268,7 @@
             nameBox.BorderStyle = BorderStyle.None;
             nameBox.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nameBox.ForeColor = Color.White;
-            nameBox.Location = new Point(142, 203);
+            nameBox.Location = new Point(142, 200);
             nameBox.Name = "nameBox";
             nameBox.Size = new Size(375, 27);
             nameBox.TabIndex = 65;
@@ -310,12 +311,33 @@
             customButton5.UseVisualStyleBackColor = false;
             customButton5.Click += cancelButton_Click;
             // 
+            // createButton
+            // 
+            createButton.BackColor = Color.Yellow;
+            createButton.BackgroundColor = Color.Yellow;
+            createButton.BorderColor = Color.PaleVioletRed;
+            createButton.BorderRadius = 12;
+            createButton.BorderSize = 0;
+            createButton.FlatAppearance.BorderSize = 0;
+            createButton.FlatStyle = FlatStyle.Flat;
+            createButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            createButton.ForeColor = Color.Black;
+            createButton.Location = new Point(198, 470);
+            createButton.Name = "createButton";
+            createButton.Size = new Size(122, 48);
+            createButton.TabIndex = 69;
+            createButton.Text = "CREATE NEW GROUP";
+            createButton.TextColor = Color.Black;
+            createButton.UseVisualStyleBackColor = false;
+            createButton.Click += createButton_Click;
+            // 
             // A_Appoint
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 23, 23);
             ClientSize = new Size(700, 540);
+            Controls.Add(createButton);
             Controls.Add(customButton5);
             Controls.Add(label3);
             Controls.Add(nameBox);
@@ -359,5 +381,6 @@
         private TextBox nameBox;
         private CustomComponent.CustomButton customButton4;
         private CustomComponent.CustomButton customButton5;
+        private CustomComponent.CustomButton createButton;
     }
 }

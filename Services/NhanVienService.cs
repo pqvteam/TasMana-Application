@@ -17,6 +17,11 @@ namespace Services
             return nhanVienRepository.get(ID);
         }
 
+        public NhanVien? getLeaderOfGroup(string ID)
+        {
+            return nhanVienRepository.findLeaderOfGroup(ID);
+        }
+
         public List<NhanVien> getAllStaffs()
         {
             return nhanVienRepository.getAll();
@@ -27,5 +32,9 @@ namespace Services
             return nhanVienRepository.getAllStaffOfDepartment(departmentID);
         }
 
+        public List<NhanVien> getStaffsDoNotHaveGroup()
+        {
+            return nhanVienRepository.getAllNoGroup();
+        }
     }
 }
