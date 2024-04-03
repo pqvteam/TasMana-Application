@@ -23,7 +23,7 @@ public partial class NhanSu
 
     public bool NghiViec { get; set; }
 
-    public string AnhDaiDien { get; set; } = null!;
+    public byte[] AnhDaiDien { get; set; } = null!;
 
     public bool LaQuanLi { get; set; }
 
