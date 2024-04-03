@@ -1,5 +1,7 @@
-﻿using Repositories;
+﻿using Microsoft.Data.SqlClient;
+using Repositories;
 using Repositories.Entities;
+using Repositories.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +21,21 @@ namespace Services
         public List<NhanSu> getAllMembersOfDepartment(string departmentID)
         {
             return nhanSuRepository.getAllMembersOfDepartment(departmentID);
+        }
+
+        public List<NhanSu> getAllMembers()
+        {
+            return nhanSuRepository.getAllMembers();
+        }
+
+        public List<NhanSu> getAllStaffs()
+        {
+            return nhanSuRepository.getAllStaffs();
+        }
+
+        public bool updateInformation(string newUserName, string newNumber, string newBirth, string newCID, string newEmail, string newAddress, string newGender)
+        {
+            return nhanSuRepository.EditInformation(newUserName, newNumber, newBirth, newCID, newEmail, newAddress, newGender);
         }
     }
 }

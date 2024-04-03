@@ -118,7 +118,10 @@ namespace UIs
         private void saveButton_Click(object sender, EventArgs e)
         {
             GiaoViecService giaoViecService = new GiaoViecService();
+            NhanSuService nhanSuService = new NhanSuService();
             string tCEOID = "GD-001";
+            string tCEOName = nhanSuService.findMember(tCEOID).HoVaTen;
+            string tReceiverName = nhanSuService.findMember(receiverID).HoVaTen;
             string tID = GiaoViecUtilities.createAssignTaskID(tCEOID);
             string tName = taskName.Text;
             string tDescription = taskDescription.Text;
@@ -128,8 +131,8 @@ namespace UIs
             string tStatus = taskStatus.SelectedItem.ToString();
             string tPriority = taskPriority.SelectedItem.ToString();
             string tSubject = $"THÔNG BÁO GIAO VIỆC - {tName}";
-            string tGiaoViec = $"Kính gửi {tName},\nChúng ta đã xác định một công việc mới cần hoàn thành, và tôi muốn giao nhiệm vụ này cho bạn. Dưới đây là thông tin chi tiết về công việc:\nTên công việc: {tName}\nMô tả: {tDescription}\nThời hạn: {tEnd}\nƯu tiên: {tPriority}\nNgười giao việc: {tCEOID}\nXin vui lòng kiểm tra thông tin trên và bắt đầu làm việc ngay khi bạn có thể. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\n{tCEOID}";
-            string tTo = "otakuanime285@gmail.com";
+            string tGiaoViec = $"Kính gửi {tReceiverName},\nChúng ta đã xác định một công việc mới cần hoàn thành, và tôi muốn giao nhiệm vụ này cho bạn. Dưới đây là thông tin chi tiết về công việc:\nTên công việc: {tName}\nMô tả: {tDescription}\nThời hạn: {tEnd}\nƯu tiên: {tPriority}\nNgười giao việc: {tCEOName}\nXin vui lòng kiểm tra thông tin trên và bắt đầu làm việc ngay khi bạn có thể. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\nCEO {tCEOName}";
+            string tTo = nhanSuService.findMember(receiverID).Email;
 
             int tMode = taskMode.Checked ? 1 : 0;
             int tIsCEO = 1;
@@ -151,7 +154,8 @@ namespace UIs
                 receiverLabel.Text = "";
                 venueLabel.Text = "";
                 MessageBox.Show("Assign task successfully!");
-            } else
+            }
+            else
             {
                 MessageBox.Show(tID);
                 MessageBox.Show(tStart);
@@ -178,6 +182,16 @@ namespace UIs
         {
             venueLabel.Text = venueId;
             venueID = venueId;
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void customButton7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
