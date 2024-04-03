@@ -17,6 +17,8 @@ namespace UIs
 {
     public partial class E_Information : Form
     {
+        NhanVienService employee = new NhanVienService();
+
         public E_Information()
         {
             InitializeComponent();
@@ -44,8 +46,12 @@ namespace UIs
             Email.Text = ns.Email.ToString();
             Number.Text = ns.Sdt.ToString();
             StartDate.Text = ns.NgayBatDau.ToString();
+            if (ns.AnhDaiDien != null && IsValidImageData(ns.AnhDaiDien))
+            {
+                avatarBox.Image = convertByteToImage(ns.AnhDaiDien);
+            }
 
-            if (ns.LaQuanLi)
+            if (employee.checkLeader(ns.MaThanhVien))
             {
                 Position.Text = "Trưởng nhóm";
             }
@@ -54,7 +60,6 @@ namespace UIs
                 Position.Text = "Thành viên";
             }
 
-            NhanVienService employee = new NhanVienService();
             NhanVien nv = employee.get(managerID);
 
             PhongBanService currentDepartment = new PhongBanService();
@@ -63,9 +68,28 @@ namespace UIs
             Department.Text = pb.TenPb.ToString();
 
             NhomService groupService = new NhomService();
-            Nhom group = groupService.findGroup(nv.MaNhom);
+            Nhom? group = groupService.findGroup(nv.MaNhom);
 
-            Group.Text = group.TenNhom.ToString();
+            if (group != null)
+            {
+                Group.Text = group?.TenNhom.ToString();
+            }
+        }
+
+        private bool IsValidImageData(byte[] imageData)
+        {
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    Image.FromStream(ms);
+                }
+                return true; // Image data is valid
+            }
+            catch (Exception)
+            {
+                return false; // Image data is not valid
+            }
         }
 
         private void EDIT_Click(object sender, EventArgs e)
@@ -73,6 +97,14 @@ namespace UIs
             E_InformationEdit newForm = new E_InformationEdit();
             newForm.ShowDialog();
             displayEmployeeData();
+        }
+
+        public Image convertByteToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
         }
     }
 }
