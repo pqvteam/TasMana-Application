@@ -27,6 +27,11 @@ namespace Repositories
             return tasManaContext.NhanSus.ToList();
         }
 
+        public List<NhanSu> getAllStaffs()
+        {
+            return tasManaContext.NhanSus.Where(x => x.LaQuanLi == false && !x.MaThanhVien.StartsWith("GD")).ToList();
+        }
+
         public bool EditInformation(string ID, string newUserName, string newNumber, string newBirth, string newCID, string newEmail, string newAddress, string newGender)
         {
             bool success = false; // Initialize success flag
