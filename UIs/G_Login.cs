@@ -81,5 +81,10 @@ namespace UIs
             this.Hide();
             forgotPassword.Show();
         }
+
+        private void customButton5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

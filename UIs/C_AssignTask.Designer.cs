@@ -350,12 +350,13 @@
             // 
             // pictureBox8
             // 
-            pictureBox8.Image = Properties.Resources.deadline_icon;
+            pictureBox8.Enabled = false;
+            pictureBox8.Image = Properties.Resources.deadline_icon1;
             pictureBox8.ImageLocation = "";
-            pictureBox8.Location = new Point(487, 351);
+            pictureBox8.Location = new Point(486, 354);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(40, 40);
-            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 24;
             pictureBox8.TabStop = false;
             // 
@@ -568,7 +569,6 @@
             customPictureBox4.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             customPictureBox4.BorderSize = 2;
             customPictureBox4.GradientAngle = 50F;
-            customPictureBox4.Image = Properties.Resources.kimi_no_nawa;
             customPictureBox4.Location = new Point(8, 347);
             customPictureBox4.Name = "customPictureBox4";
             customPictureBox4.Size = new Size(48, 48);
@@ -595,7 +595,7 @@
             customPictureBox3.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             customPictureBox3.BorderSize = 2;
             customPictureBox3.GradientAngle = 50F;
-            customPictureBox3.Image = Properties.Resources.kimi_no_nawa;
+            customPictureBox3.Image = Properties.Resources.kimi_no_nawa2;
             customPictureBox3.Location = new Point(8, 135);
             customPictureBox3.Name = "customPictureBox3";
             customPictureBox3.Size = new Size(48, 48);
@@ -616,13 +616,13 @@
             // 
             // customPictureBox2
             // 
+            customPictureBox2.BackgroundImage = Properties.Resources.kimi_no_nawa3;
             customPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
             customPictureBox2.BorderColor = Color.Transparent;
             customPictureBox2.BorderColor2 = Color.Transparent;
             customPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             customPictureBox2.BorderSize = 2;
             customPictureBox2.GradientAngle = 50F;
-            customPictureBox2.Image = Properties.Resources.kimi_no_nawa;
             customPictureBox2.Location = new Point(8, 236);
             customPictureBox2.Name = "customPictureBox2";
             customPictureBox2.Size = new Size(48, 48);
@@ -649,7 +649,7 @@
             customPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             customPictureBox1.BorderSize = 2;
             customPictureBox1.GradientAngle = 50F;
-            customPictureBox1.Image = Properties.Resources.kimi_no_nawa;
+            customPictureBox1.Image = Properties.Resources.kimi_no_nawa4;
             customPictureBox1.Location = new Point(8, 44);
             customPictureBox1.Name = "customPictureBox1";
             customPictureBox1.Size = new Size(48, 48);
@@ -739,10 +739,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.group_icon;
+            pictureBox1.Image = Properties.Resources.customer_icon;
             pictureBox1.Location = new Point(12, 305);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(42, 42);
+            pictureBox1.Size = new Size(36, 34);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
@@ -904,7 +904,7 @@
             customButton14.FlatStyle = FlatStyle.Flat;
             customButton14.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton14.ForeColor = Color.White;
-            customButton14.Image = Properties.Resources.triangle_icon;
+            customButton14.Image = Properties.Resources.triangle_icon2;
             customButton14.ImageAlign = ContentAlignment.MiddleRight;
             customButton14.Location = new Point(67, 4);
             customButton14.Name = "customButton14";
@@ -925,7 +925,7 @@
             customButton13.FlatAppearance.BorderSize = 0;
             customButton13.FlatStyle = FlatStyle.Flat;
             customButton13.ForeColor = Color.White;
-            customButton13.Image = Properties.Resources.kimi_no_nawa;
+            customButton13.Image = Properties.Resources.kimi_no_nawa1;
             customButton13.Location = new Point(14, 3);
             customButton13.Name = "customButton13";
             customButton13.Size = new Size(50, 50);
@@ -944,7 +944,7 @@
             customButton12.FlatStyle = FlatStyle.Flat;
             customButton12.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton12.ForeColor = Color.White;
-            customButton12.Image = Properties.Resources.bell_icon;
+            customButton12.Image = Properties.Resources.triangle_icon1;
             customButton12.Location = new Point(1208, 8);
             customButton12.Name = "customButton12";
             customButton12.Size = new Size(51, 40);
@@ -965,7 +965,6 @@
             customButton11.FlatStyle = FlatStyle.Flat;
             customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton11.ForeColor = Color.White;
-            customButton11.Image = Properties.Resources.triangle_icon;
             customButton11.ImageAlign = ContentAlignment.MiddleRight;
             customButton11.Location = new Point(1077, 0);
             customButton11.Name = "customButton11";
@@ -1411,7 +1410,6 @@
             customButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton2.UseVisualStyleBackColor = false;
             // 
-
             // C_AssignTask
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
