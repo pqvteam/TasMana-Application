@@ -32,7 +32,7 @@
             box_username = new TextBox();
             box_password = new TextBox();
             label_forgotPassword = new Label();
-            checkbox_remember = new CheckBox();
+            checkbox_Remember = new CheckBox();
             button_Login = new Button();
             pictureBox_username = new PictureBox();
             pictureBox_password = new PictureBox();
@@ -56,21 +56,28 @@
             // 
             // box_username
             // 
-            box_username.Font = new Font("Times New Roman", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            box_username.Font = new Font("Times New Roman", 13.2000008F, FontStyle.Italic, GraphicsUnit.Point, 0);
             box_username.Location = new Point(79, 151);
             box_username.Name = "box_username";
             box_username.Size = new Size(340, 33);
-            box_username.TabIndex = 1;
-            box_username.Text = "  User ID";
+            box_username.TabIndex = 0;
+            box_username.TabStop = false;
+            box_username.Text = "User ID";
+            box_username.Enter += box_username_Enter;
+            box_username.Leave += box_username_Leave;
             // 
             // box_password
             // 
-            box_password.Font = new Font("Times New Roman", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            box_password.Font = new Font("Times New Roman", 13.2000008F, FontStyle.Italic, GraphicsUnit.Point, 0);
             box_password.Location = new Point(79, 204);
             box_password.Name = "box_password";
             box_password.Size = new Size(340, 33);
-            box_password.TabIndex = 2;
-            box_password.Text = "  Password";
+            box_password.TabIndex = 0;
+            box_password.TabStop = false;
+            box_password.Text = "Password";
+            box_password.Enter += box_password_Enter;
+            box_password.KeyDown += box_password_KeyDown;
+            box_password.Leave += box_password_Leave;
             // 
             // label_forgotPassword
             // 
@@ -81,17 +88,18 @@
             label_forgotPassword.Size = new Size(179, 26);
             label_forgotPassword.TabIndex = 3;
             label_forgotPassword.Text = "Forgot password?";
+            label_forgotPassword.Click += label_forgotPassword_Click;
             // 
-            // checkbox_remember
+            // checkbox_Remember
             // 
-            checkbox_remember.AutoSize = true;
-            checkbox_remember.Font = new Font("Times New Roman", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkbox_remember.Location = new Point(38, 263);
-            checkbox_remember.Name = "checkbox_remember";
-            checkbox_remember.Size = new Size(135, 30);
-            checkbox_remember.TabIndex = 4;
-            checkbox_remember.Text = "Remember";
-            checkbox_remember.UseVisualStyleBackColor = true;
+            checkbox_Remember.AutoSize = true;
+            checkbox_Remember.Font = new Font("Times New Roman", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkbox_Remember.Location = new Point(38, 263);
+            checkbox_Remember.Name = "checkbox_Remember";
+            checkbox_Remember.Size = new Size(135, 30);
+            checkbox_Remember.TabIndex = 4;
+            checkbox_Remember.Text = "Remember";
+            checkbox_Remember.UseVisualStyleBackColor = true;
             // 
             // button_Login
             // 
@@ -135,7 +143,7 @@
             panel1.Controls.Add(pictureBox_password);
             panel1.Controls.Add(pictureBox_username);
             panel1.Controls.Add(button_Login);
-            panel1.Controls.Add(checkbox_remember);
+            panel1.Controls.Add(checkbox_Remember);
             panel1.Controls.Add(label_forgotPassword);
             panel1.Controls.Add(box_password);
             panel1.Controls.Add(box_username);
@@ -181,7 +189,7 @@
         private TextBox box_username;
         private TextBox box_password;
         private Label label_forgotPassword;
-        private CheckBox checkbox_remember;
+        private CheckBox checkbox_Remember;
         private Button button_Login;
         private PictureBox pictureBox_username;
         private PictureBox pictureBox_password;
