@@ -17,6 +17,7 @@ namespace UIs
     public partial class C_AccountManagement : Form
     {
         NhanSuService nhanSuService = new NhanSuService();
+        NhanVienService nhanVienService = new NhanVienService();    
         CeoService ceoService = new CeoService();
         QuanLyService quanLyService = new QuanLyService();
         PhongBanService phongBanService = new PhongBanService();
@@ -38,10 +39,14 @@ namespace UIs
             membersGrid.Columns.Add("Role", "Role");
             membersGrid.Columns.Add("Startdate", "Start Date");
 
-            DataGridViewCheckBoxColumn btnColumn = new DataGridViewCheckBoxColumn();
-            btnColumn.HeaderText = "Appoint";
-            btnColumn.Name = "btnAppoint";
-            membersGrid.Columns.Add(btnColumn);
+            DataGridViewCheckBoxColumn btnManagerColumn = new DataGridViewCheckBoxColumn();
+            btnManagerColumn.HeaderText = "Manager";
+            btnManagerColumn.Name = "btnAppoint";
+            membersGrid.Columns.Add(btnManagerColumn);
+            DataGridViewCheckBoxColumn btnLeaderColumn = new DataGridViewCheckBoxColumn();
+            btnLeaderColumn.HeaderText = "Leader";
+            btnLeaderColumn.Name = "btnLeader";
+            membersGrid.Columns.Add(btnLeaderColumn);
 
             DataGridViewCheckBoxColumn firedColumn = new DataGridViewCheckBoxColumn();
             firedColumn.HeaderText = "Fired";
@@ -86,11 +91,18 @@ namespace UIs
                 if (role == "Manager")
                 {
                     membersGrid.Rows[rowIndex].Cells["btnAppoint"].Value = true;
+                    membersGrid.Rows[rowIndex].Cells["btnLeader"].ReadOnly = true;
                 }
 
                 if (role == "CEO")
                 {
                     membersGrid.Rows[rowIndex].Cells["btnAppoint"].ReadOnly = true;
+                    membersGrid.Rows[rowIndex].Cells["btnLeader"].ReadOnly = true;
+                }
+
+                if (nhanVienService.checkLeader(member.MaThanhVien))
+                {
+                    membersGrid.Rows[rowIndex].Cells["btnLeader"].Value = true;
                 }
 
                 membersGrid.Rows[rowIndex].Cells["Fired"].Value = member.NghiViec;
@@ -108,14 +120,14 @@ namespace UIs
 
         private void membersGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string? memberId = membersGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+            bool isManager =
+                membersGrid.Rows[e.RowIndex].Cells["btnAppoint"].Value != null
+                    ? (bool)membersGrid.Rows[e.RowIndex].Cells["btnAppoint"].Value
+                    : false;
+            string CEOID = "GD-001";
             if (e.ColumnIndex == membersGrid.Columns["btnAppoint"].Index && e.RowIndex >= 0)
             {
-                string? memberId = membersGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
-                bool isManager =
-                    membersGrid.Rows[e.RowIndex].Cells["btnAppoint"].Value != null
-                        ? (bool)membersGrid.Rows[e.RowIndex].Cells["btnAppoint"].Value
-                        : false;
-                string CEOID = "GD-001";
                 if (memberId != null)
                 {
                     if (isManager)
@@ -136,14 +148,32 @@ namespace UIs
                             }
                         };
                         confirmForm.ShowDialog();
-                    }
-                    else
+                    } else
                     {
-                        A_Appoint appointForm = new A_Appoint(memberId, CEOID);
-                        appointForm.ShowDialog();
-                        PerformSearch();
+                        string confirmMessage = "ARE YOU SURE TO APPOINT THIS MANAGER?";
+                        A_Confirm confirmForm = new A_Confirm(confirmMessage, "confirm");
+                        confirmForm.ConfirmClicked += (confirmSender, confirmArgs) =>
+                        {
+                            bool isSuccess = ceoService.appointManager(memberId, CEOID);
+                            if (isSuccess)
+                            {
+                                MessageBox.Show("Appoint manager successfully");
+                                PerformSearch();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Appoint manager failure");
+                            }
+                        };
+                        confirmForm.ShowDialog();
                     }
                 }
+            }
+            else if (e.ColumnIndex == membersGrid.Columns["btnLeader"].Index && e.RowIndex >= 0)
+            {
+                A_Appoint appointForm = new A_Appoint(memberId, CEOID);
+                appointForm.ShowDialog();
+                PerformSearch();
             }
         }
 
@@ -601,6 +631,11 @@ namespace UIs
                                     {
                                         membersGrid.Rows[rowIndex].Cells["btnAppoint"].ReadOnly =
                                             true;
+                                    }
+
+                                    if (nhanVienService.checkLeader(ID))
+                                    {
+                                        membersGrid.Rows[rowIndex].Cells["btnLeader"].Value = true;
                                     }
                                 }
                             }

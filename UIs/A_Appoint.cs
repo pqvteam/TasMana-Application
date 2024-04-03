@@ -35,14 +35,23 @@ namespace UIs
 
         private void departmentsBox_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            if (rolesBox.SelectedItem != null && rolesBox.SelectedItem.ToString() == "Leader")
+            if (rolesBox.SelectedItem != null && rolesBox.SelectedItem.ToString() == "Manager")
             {
-                groupsBox.Enabled = true;
+                groupsBox.Visible = false;
+                groupButton.Visible = false;
+                groupLabel.Visible = false;
+
+            } else if (rolesBox.SelectedItem != null && rolesBox.SelectedItem.ToString() == "Leader")
+            {
+                groupsBox.Visible = true;
+                groupButton.Visible = true;
+                groupLabel.Visible = true;
             }
         }
 
         private void A_Appoint_Load(object sender, EventArgs e)
         {
+            rolesBox.SelectedItem = "Leader";
             NhanSu member = nhanSuService.findMember(staffID);
             NhanVien? staff = nhanVienService.get(staffID);
 
@@ -58,7 +67,6 @@ namespace UIs
 
             idBox.Text = staffID;
             nameBox.Text = member.HoVaTen;
-            groupsBox.Enabled = false;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
