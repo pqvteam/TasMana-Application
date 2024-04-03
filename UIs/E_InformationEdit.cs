@@ -16,8 +16,7 @@ namespace UIs
 {
     public partial class E_InformationEdit : Form
     {
-        string connectionString = @"Data Source=LAPTOP-BQI9C1O9;Initial Catalog=TasMana;Integrated Security=True";
-        string managerID = "DV-102";
+        string managerID = "KT-502";
         public E_InformationEdit()
         {
             InitializeComponent();
@@ -70,7 +69,7 @@ namespace UIs
         {
             NhanSuService nhanSuService = new NhanSuService();
             NhanSu ns = nhanSuService.findMember(managerID);
-            bool isSuccess = nhanSuService.updateInformation(UserName.Text, Number.Text, Birth.Value.ToString("yyyyMMdd"), CID.Text, Email.Text, Add.Text, Gender.Text);
+            bool isSuccess = nhanSuService.updateInformation(managerID, UserName.Text, Number.Text, Birth.Value.ToString("yyyyMMdd"), CID.Text, Email.Text, Add.Text, Gender.Text);
             if (isSuccess)
             {
                 MessageBox.Show("Successfully");

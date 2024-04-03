@@ -28,14 +28,15 @@ namespace Services
             return nhanSuRepository.getAllMembers();
         }
 
+        
         public List<NhanSu> getAllStaffs()
         {
             return nhanSuRepository.getAllStaffs();
         }
 
-        public bool updateInformation(string newUserName, string newNumber, string newBirth, string newCID, string newEmail, string newAddress, string newGender)
+        public bool updateInformation(string ID, string newUserName, string newNumber, string newBirth, string newCID, string newEmail, string newAddress, string newGender)
         {
-            return nhanSuRepository.EditInformation(newUserName, newNumber, newBirth, newCID, newEmail, newAddress, newGender);
+            return nhanSuRepository.EditInformation(ID, newUserName, newNumber, newBirth, newCID, newEmail, newAddress, newGender);
         }
     }
 }
