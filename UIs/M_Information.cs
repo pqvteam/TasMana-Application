@@ -38,6 +38,34 @@ namespace UIs
             CID.Text = ns.Cccd.ToString();
             Email.Text = ns.Email.ToString();
             Number.Text = ns.Sdt.ToString();
+            if (ns.AnhDaiDien != null && IsValidImageData(ns.AnhDaiDien))
+            {
+                avatarBox.Image = convertByteToImage(ns.AnhDaiDien);
+            }
+        }
+
+        public Image convertByteToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private bool IsValidImageData(byte[] imageData)
+        {
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    Image.FromStream(ms);
+                }
+                return true; // Image data is valid
+            }
+            catch (Exception)
+            {
+                return false; // Image data is not valid
+            }
         }
 
         private void EDIT_Click(object sender, EventArgs e)
@@ -45,6 +73,11 @@ namespace UIs
             M_InformationEdit newForm = new M_InformationEdit();
             newForm.ShowDialog();
             displayManagerData();
+        }
+
+        private void customPictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

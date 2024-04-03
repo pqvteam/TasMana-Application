@@ -46,7 +46,6 @@
             customButton6 = new CustomComponent.CustomButton();
             customPanel1 = new CustomComponent.CustomPanel();
             button2 = new Button();
-            button1 = new Button();
             pictureBox6 = new PictureBox();
             searchBox = new TextBox();
             customButton1 = new CustomComponent.CustomButton();
@@ -59,6 +58,7 @@
             customButton19 = new CustomComponent.CustomButton();
             membersGrid = new DataGridView();
             label1 = new Label();
+            button3 = new Button();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             customPanel1.SuspendLayout();
@@ -345,8 +345,8 @@
             customPanel1.BorderColor = Color.Black;
             customPanel1.BorderRadius = 0;
             customPanel1.BorderWidth = 1;
+            customPanel1.Controls.Add(button3);
             customPanel1.Controls.Add(button2);
-            customPanel1.Controls.Add(button1);
             customPanel1.GradientAngle = 0F;
             customPanel1.GradientEndColor = Color.White;
             customPanel1.GradientStartColor = Color.White;
@@ -363,28 +363,13 @@
             button2.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(255, 1);
+            button2.Location = new Point(270, 1);
             button2.Name = "button2";
             button2.Size = new Size(258, 44);
             button2.TabIndex = 5;
             button2.Text = "INACTIVED ACCOUNT";
             button2.TextImageRelation = TextImageRelation.ImageBeforeText;
             button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.bell_icon;
-            button1.Location = new Point(0, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(253, 45);
-            button1.TabIndex = 4;
-            button1.Text = "ACTIVED ACCOUNT";
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = true;
             // 
             // pictureBox6
             // 
@@ -603,6 +588,21 @@
             label1.TabIndex = 49;
             label1.Text = "SEARCH";
             // 
+            // button3
+            // 
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.White;
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.Location = new Point(3, 1);
+            button3.Name = "button3";
+            button3.Size = new Size(264, 44);
+            button3.TabIndex = 6;
+            button3.Text = "ACTIVED ACCOUNT";
+            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button3.UseVisualStyleBackColor = true;
+            // 
             // C_AccountManagement
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -651,7 +651,6 @@
         private CustomComponent.CustomButton customButton7;
         private CustomComponent.CustomButton customButton6;
         private CustomComponent.CustomPanel customPanel1;
-        private Button button1;
         private Button button2;
         private PictureBox pictureBox6;
         private TextBox searchBox;
@@ -665,5 +664,6 @@
         private CustomComponent.CustomButton customButton19;
         private DataGridView membersGrid;
         private Label label1;
+        private Button button3;
     }
 }
