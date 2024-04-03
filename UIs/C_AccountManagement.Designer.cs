@@ -377,7 +377,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.actived_account;
+            button1.Image = Properties.Resources.bell_icon;
             button1.Location = new Point(0, 2);
             button1.Name = "button1";
             button1.Size = new Size(253, 45);
