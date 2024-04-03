@@ -1,4 +1,5 @@
-﻿using Repositories.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Repositories.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,16 @@ namespace Repositories
             return db.NhanViens.Where(x => x.MaThanhVien.Contains(departmentID)).ToList();
         }
 
+        public List<NhanVien> getAllNoGroup()
+        {
+            return db.NhanViens.Where(x => x.MaNhom == null && x.LaQuanLi == false).ToList();
+        }
+
+        public NhanVien? findLeaderOfGroup(string groupID)
+        {
+            return db.NhanViens.FirstOrDefault(x => x.MaNhom == groupID && x.LaTruongNhom == true);
+        }
+
         public void create(NhanVien nhanVien)
         {
             db.NhanViens.Add(nhanVien);
@@ -45,6 +56,11 @@ namespace Repositories
                 db.NhanViens.Remove(foundStaff);
                 db.SaveChanges();
             }
+        }
+
+        public bool checkLeader(string ID)
+        {
+            return db.NhanViens.FirstOrDefault(x => x.MaThanhVien == ID && x.LaTruongNhom == true) != null ? true : false;
         }
     }
 }

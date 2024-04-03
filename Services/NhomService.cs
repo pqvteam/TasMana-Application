@@ -17,5 +17,25 @@ namespace Services
             if (groupID == null) return null;
             return group;
         }
+
+        public List<Nhom> findGroups()
+        {
+            return repository.GetAll();
+        }
+
+        public bool createGroup(string name, string IDs, string ID)
+        {
+            return repository.Create(name, IDs, ID);
+        }
+
+        public bool appointLeader(string staffID, string ID)
+        {
+            return repository.Appoint(staffID, ID);
+        }
+
+        public bool deposeLeader(string staffID, string ID)
+        {
+            return repository.Depose(staffID, ID);
+        }
     }
 }

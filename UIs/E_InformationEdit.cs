@@ -16,7 +16,7 @@ namespace UIs
 {
     public partial class E_InformationEdit : Form
     {
-        string managerID = "DV-102";
+        string managerID = "KT-502";
         public E_InformationEdit()
         {
             InitializeComponent();
