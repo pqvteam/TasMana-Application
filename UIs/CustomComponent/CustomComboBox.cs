@@ -141,7 +141,6 @@ namespace UIs.CustomComponent
                 graph.DrawPath(pen, path);
             }
         }
-
         //Properties
         //-> Appearance
         [Category("RJ Code - Appearance")]
