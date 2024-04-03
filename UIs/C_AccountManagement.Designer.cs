@@ -48,17 +48,17 @@
             button2 = new Button();
             button1 = new Button();
             pictureBox6 = new PictureBox();
-            textBox2 = new TextBox();
+            searchBox = new TextBox();
             customButton1 = new CustomComponent.CustomButton();
-            label1 = new Label();
             label2 = new Label();
-            customComboBox1 = new CustomComponent.CustomComboBox();
+            departmentsBox = new CustomComponent.CustomComboBox();
             customButton2 = new CustomComponent.CustomButton();
-            customComboBox2 = new CustomComponent.CustomComboBox();
+            typeAccountBox = new CustomComponent.CustomComboBox();
             label3 = new Label();
             customButton3 = new CustomComponent.CustomButton();
             customButton19 = new CustomComponent.CustomButton();
             membersGrid = new DataGridView();
+            label1 = new Label();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             customPanel1.SuspendLayout();
@@ -118,7 +118,7 @@
             customButton17.FlatAppearance.BorderSize = 0;
             customButton17.FlatStyle = FlatStyle.Flat;
             customButton17.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton17.ForeColor = Color.White;
+            customButton17.ForeColor = Color.Yellow;
             customButton17.Image = (Image)resources.GetObject("customButton17.Image");
             customButton17.ImageAlign = ContentAlignment.MiddleLeft;
             customButton17.Location = new Point(509, 5);
@@ -127,7 +127,7 @@
             customButton17.TabIndex = 24;
             customButton17.Text = "ACCOUNTING MANAGEMENT";
             customButton17.TextAlign = ContentAlignment.MiddleRight;
-            customButton17.TextColor = Color.White;
+            customButton17.TextColor = Color.Yellow;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
             // 
@@ -377,7 +377,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.actived_account;
+            button1.Image = Properties.Resources.bell_icon;
             button1.Location = new Point(0, 2);
             button1.Name = "button1";
             button1.Size = new Size(253, 45);
@@ -396,19 +396,20 @@
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 47;
             pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
-            // textBox2
+            // searchBox
             // 
-            textBox2.BackColor = Color.FromArgb(42, 42, 42);
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox2.ForeColor = Color.White;
-            textBox2.Location = new Point(33, 171);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Enter an account name...";
-            textBox2.Size = new Size(375, 20);
-            textBox2.TabIndex = 46;
-            textBox2.TextChanged += textBox2_TextChanged;
+            searchBox.BackColor = Color.FromArgb(42, 42, 42);
+            searchBox.BorderStyle = BorderStyle.None;
+            searchBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            searchBox.ForeColor = Color.White;
+            searchBox.Location = new Point(33, 171);
+            searchBox.Name = "searchBox";
+            searchBox.PlaceholderText = "Enter an account name...";
+            searchBox.Size = new Size(375, 20);
+            searchBox.TabIndex = 46;
+            searchBox.TextChanged += textBox2_TextChanged;
             // 
             // customButton1
             // 
@@ -428,17 +429,6 @@
             customButton1.TextColor = Color.White;
             customButton1.UseVisualStyleBackColor = false;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(10, 134);
-            label1.Name = "label1";
-            label1.Size = new Size(91, 19);
-            label1.TabIndex = 49;
-            label1.Text = "SEARCH";
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -450,25 +440,25 @@
             label2.TabIndex = 53;
             label2.Text = "DEPARTMENT";
             // 
-            // customComboBox1
+            // departmentsBox
             // 
-            customComboBox1.BackColor = Color.FromArgb(42, 42, 42);
-            customComboBox1.BorderColor = Color.FromArgb(42, 42, 42);
-            customComboBox1.BorderSize = 1;
-            customComboBox1.DropDownStyle = ComboBoxStyle.DropDown;
-            customComboBox1.Font = new Font("Segoe UI", 10F);
-            customComboBox1.ForeColor = Color.DimGray;
-            customComboBox1.IconColor = Color.White;
-            customComboBox1.ListBackColor = Color.FromArgb(230, 228, 245);
-            customComboBox1.ListTextColor = Color.DimGray;
-            customComboBox1.Location = new Point(493, 163);
-            customComboBox1.MinimumSize = new Size(200, 30);
-            customComboBox1.Name = "customComboBox1";
-            customComboBox1.Padding = new Padding(1);
-            customComboBox1.Size = new Size(282, 36);
-            customComboBox1.TabIndex = 54;
-            customComboBox1.Texts = "";
-            customComboBox1.OnSelectedIndexChanged += customComboBox1_OnSelectedIndexChanged;
+            departmentsBox.BackColor = Color.FromArgb(42, 42, 42);
+            departmentsBox.BorderColor = Color.FromArgb(42, 42, 42);
+            departmentsBox.BorderSize = 1;
+            departmentsBox.DropDownStyle = ComboBoxStyle.DropDown;
+            departmentsBox.Font = new Font("Segoe UI", 10F);
+            departmentsBox.ForeColor = Color.DimGray;
+            departmentsBox.IconColor = Color.White;
+            departmentsBox.ListBackColor = Color.FromArgb(230, 228, 245);
+            departmentsBox.ListTextColor = Color.DimGray;
+            departmentsBox.Location = new Point(493, 163);
+            departmentsBox.MinimumSize = new Size(200, 30);
+            departmentsBox.Name = "departmentsBox";
+            departmentsBox.Padding = new Padding(1);
+            departmentsBox.Size = new Size(282, 36);
+            departmentsBox.TabIndex = 54;
+            departmentsBox.Texts = "";
+            departmentsBox.OnSelectedIndexChanged += departmentsBox_OnSelectedIndexChanged;
             // 
             // customButton2
             // 
@@ -488,24 +478,26 @@
             customButton2.TextColor = Color.White;
             customButton2.UseVisualStyleBackColor = false;
             // 
-            // customComboBox2
+            // typeAccountBox
             // 
-            customComboBox2.BackColor = Color.FromArgb(42, 42, 42);
-            customComboBox2.BorderColor = Color.FromArgb(42, 42, 42);
-            customComboBox2.BorderSize = 1;
-            customComboBox2.DropDownStyle = ComboBoxStyle.DropDown;
-            customComboBox2.Font = new Font("Segoe UI", 10F);
-            customComboBox2.ForeColor = Color.DimGray;
-            customComboBox2.IconColor = Color.White;
-            customComboBox2.ListBackColor = Color.FromArgb(230, 228, 245);
-            customComboBox2.ListTextColor = Color.DimGray;
-            customComboBox2.Location = new Point(812, 163);
-            customComboBox2.MinimumSize = new Size(200, 30);
-            customComboBox2.Name = "customComboBox2";
-            customComboBox2.Padding = new Padding(1);
-            customComboBox2.Size = new Size(282, 36);
-            customComboBox2.TabIndex = 57;
-            customComboBox2.Texts = "";
+            typeAccountBox.BackColor = Color.FromArgb(42, 42, 42);
+            typeAccountBox.BorderColor = Color.FromArgb(42, 42, 42);
+            typeAccountBox.BorderSize = 1;
+            typeAccountBox.DropDownStyle = ComboBoxStyle.DropDown;
+            typeAccountBox.Font = new Font("Segoe UI", 10F);
+            typeAccountBox.ForeColor = Color.DimGray;
+            typeAccountBox.IconColor = Color.White;
+            typeAccountBox.Items.AddRange(new object[] { "CEO", "Manager", "Staff", "All" });
+            typeAccountBox.ListBackColor = Color.FromArgb(230, 228, 245);
+            typeAccountBox.ListTextColor = Color.DimGray;
+            typeAccountBox.Location = new Point(812, 163);
+            typeAccountBox.MinimumSize = new Size(200, 30);
+            typeAccountBox.Name = "typeAccountBox";
+            typeAccountBox.Padding = new Padding(1);
+            typeAccountBox.Size = new Size(282, 36);
+            typeAccountBox.TabIndex = 57;
+            typeAccountBox.Texts = "";
+            typeAccountBox.OnSelectedIndexChanged += typeAccountBox_OnSelectedIndexChanged;
             // 
             // label3
             // 
@@ -562,6 +554,9 @@
             // 
             // membersGrid
             // 
+            membersGrid.AllowUserToAddRows = false;
+            membersGrid.AllowUserToResizeColumns = false;
+            membersGrid.AllowUserToResizeRows = false;
             membersGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             membersGrid.BackgroundColor = Color.FromArgb(24, 23, 23);
             membersGrid.BorderStyle = BorderStyle.None;
@@ -597,6 +592,17 @@
             membersGrid.TabIndex = 60;
             membersGrid.CellContentClick += membersGrid_CellContentClick;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(10, 134);
+            label1.Name = "label1";
+            label1.Size = new Size(91, 19);
+            label1.TabIndex = 49;
+            label1.Text = "SEARCH";
+            // 
             // C_AccountManagement
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -605,14 +611,14 @@
             ClientSize = new Size(1382, 753);
             Controls.Add(membersGrid);
             Controls.Add(customButton19);
-            Controls.Add(customComboBox2);
+            Controls.Add(typeAccountBox);
             Controls.Add(label3);
             Controls.Add(customButton3);
-            Controls.Add(customComboBox1);
+            Controls.Add(departmentsBox);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox6);
-            Controls.Add(textBox2);
+            Controls.Add(searchBox);
             Controls.Add(customPanel1);
             Controls.Add(headerPanel);
             Controls.Add(customButton1);
@@ -648,16 +654,16 @@
         private Button button1;
         private Button button2;
         private PictureBox pictureBox6;
-        private TextBox textBox2;
+        private TextBox searchBox;
         private CustomComponent.CustomButton customButton1;
-        private Label label1;
         private Label label2;
-        private CustomComponent.CustomComboBox customComboBox1;
+        private CustomComponent.CustomComboBox departmentsBox;
         private CustomComponent.CustomButton customButton2;
-        private CustomComponent.CustomComboBox customComboBox2;
+        private CustomComponent.CustomComboBox typeAccountBox;
         private Label label3;
         private CustomComponent.CustomButton customButton3;
         private CustomComponent.CustomButton customButton19;
         private DataGridView membersGrid;
+        private Label label1;
     }
 }
