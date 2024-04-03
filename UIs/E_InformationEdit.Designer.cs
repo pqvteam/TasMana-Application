@@ -50,7 +50,6 @@
             heading = new Label();
             UserName1 = new Label();
             customPanel1 = new CustomComponent.CustomPanel();
-            Birth = new CustomComponent.CustomDateTimePicker();
             Number = new TextBox();
             Email = new TextBox();
             CID = new TextBox();
@@ -73,6 +72,7 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
+            Birth = new CustomComponent.CustomDateTimePicker();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             customPanel2.SuspendLayout();
@@ -488,21 +488,6 @@
             customPanel1.Size = new Size(914, 552);
             customPanel1.TabIndex = 21;
             // 
-            // Birth
-            // 
-            Birth.BorderColor = Color.PaleVioletRed;
-            Birth.BorderSize = 0;
-            Birth.Font = new Font("Segoe UI", 9.5F);
-            Birth.Format = DateTimePickerFormat.Short;
-            Birth.Location = new Point(499, 213);
-            Birth.MinimumSize = new Size(0, 35);
-            Birth.Name = "Birth";
-            Birth.Size = new Size(412, 35);
-            Birth.SkinColor = SystemColors.ScrollBar;
-            Birth.TabIndex = 29;
-            Birth.TextColor = Color.Black;
-            Birth.ValueChanged += Birth_ValueChanged;
-            // 
             // Number
             // 
             Number.BackColor = SystemColors.ScrollBar;
@@ -770,6 +755,24 @@
             label3.Text = "DEPARTMENT";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // Birth
+            // 
+            Birth.AccessibleRole = AccessibleRole.None;
+            Birth.BorderColor = Color.PaleVioletRed;
+            Birth.BorderSize = 0;
+            Birth.CalendarFont = new Font("Calibri", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Birth.CustomFormat = "";
+            Birth.Font = new Font("Calibri", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Birth.Format = DateTimePickerFormat.Short;
+            Birth.Location = new Point(497, 213);
+            Birth.MinimumSize = new Size(0, 35);
+            Birth.Name = "Birth";
+            Birth.Size = new Size(414, 36);
+            Birth.SkinColor = SystemColors.ScrollBar;
+            Birth.TabIndex = 29;
+            Birth.TextColor = Color.Black;
+            Birth.ValueChanged += Birth_ValueChanged;
+            // 
             // E_InformationEdit
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -838,6 +841,7 @@
         private TextBox Add;
         private TextBox Gender;
         private TextBox UserName;
+        private CustomComponent.CustomDateTimePicker Birth1;
         private CustomComponent.CustomDateTimePicker Birth;
     }
 }

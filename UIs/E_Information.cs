@@ -30,7 +30,7 @@ namespace UIs
         private void displayEmployeeData()
         {
             // UserID
-            string managerID = "DV-102";
+            string managerID = "KT-502";
 
             NhanSuService currentEmployee = new NhanSuService();
             NhanSu ns = currentEmployee.findMember(managerID);
@@ -72,6 +72,7 @@ namespace UIs
         {
             E_InformationEdit newForm = new E_InformationEdit();
             newForm.ShowDialog();
+            displayEmployeeData();
         }
     }
 }
