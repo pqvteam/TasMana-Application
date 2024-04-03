@@ -277,16 +277,18 @@
             label13.AutoSize = true;
             label13.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label13.ForeColor = Color.FromArgb(197, 224, 180);
-            label13.Location = new Point(374, 455);
+            label13.Location = new Point(385, 455);
             label13.Name = "label13";
             label13.Size = new Size(68, 19);
             label13.TabIndex = 35;
             label13.Text = "TO DO";
+            label13.Click += label13_Click;
             // 
             // pictureBox11
             // 
+            pictureBox11.ErrorImage = (Image)resources.GetObject("pictureBox11.ErrorImage");
             pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
-            pictureBox11.Location = new Point(340, 447);
+            pictureBox11.Location = new Point(343, 447);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(40, 35);
             pictureBox11.TabIndex = 34;
@@ -307,9 +309,10 @@
             // pictureBox10
             // 
             pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(865, 355);
+            pictureBox10.Location = new Point(865, 358);
             pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(40, 35);
+            pictureBox10.Size = new Size(28, 27);
+            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox10.TabIndex = 28;
             pictureBox10.TabStop = false;
             // 
@@ -328,9 +331,10 @@
             // pictureBox9
             // 
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(650, 355);
+            pictureBox9.Location = new Point(655, 356);
             pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(40, 35);
+            pictureBox9.Size = new Size(26, 26);
+            pictureBox9.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox9.TabIndex = 26;
             pictureBox9.TabStop = false;
             // 
@@ -339,7 +343,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.Yellow;
-            label10.Location = new Point(523, 363);
+            label10.Location = new Point(530, 363);
             label10.Name = "label10";
             label10.Size = new Size(110, 19);
             label10.TabIndex = 25;
@@ -349,9 +353,10 @@
             // pictureBox8
             // 
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(490, 355);
+            pictureBox8.Location = new Point(488, 349);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(40, 35);
+            pictureBox8.Size = new Size(40, 40);
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 24;
             pictureBox8.TabStop = false;
             // 
@@ -360,7 +365,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Yellow;
-            label9.Location = new Point(374, 363);
+            label9.Location = new Point(394, 363);
             label9.Name = "label9";
             label9.Size = new Size(71, 19);
             label9.TabIndex = 23;
@@ -369,9 +374,10 @@
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(340, 355);
+            pictureBox7.Location = new Point(338, 355);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(40, 35);
+            pictureBox7.Size = new Size(54, 38);
+            pictureBox7.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox7.TabIndex = 22;
             pictureBox7.TabStop = false;
             // 
@@ -392,7 +398,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.FromArgb(197, 224, 180);
-            label8.Location = new Point(374, 181);
+            label8.Location = new Point(382, 181);
             label8.Name = "label8";
             label8.Size = new Size(174, 19);
             label8.TabIndex = 20;
@@ -401,9 +407,10 @@
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(340, 173);
+            pictureBox6.Location = new Point(340, 169);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(40, 35);
+            pictureBox6.Size = new Size(40, 40);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 19;
             pictureBox6.TabStop = false;
             // 
@@ -424,7 +431,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.FromArgb(197, 224, 180);
-            label7.Location = new Point(374, 75);
+            label7.Location = new Point(381, 75);
             label7.Name = "label7";
             label7.Size = new Size(142, 19);
             label7.TabIndex = 17;
@@ -444,7 +451,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(197, 224, 180);
-            label6.Location = new Point(374, 30);
+            label6.Location = new Point(384, 35);
             label6.Name = "label6";
             label6.Size = new Size(122, 19);
             label6.TabIndex = 14;
@@ -453,9 +460,10 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(340, 22);
+            pictureBox4.Location = new Point(334, 22);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(40, 35);
+            pictureBox4.Size = new Size(50, 46);
+            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox4.TabIndex = 13;
             pictureBox4.TabStop = false;
             // 
@@ -663,9 +671,10 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(16, 517);
+            pictureBox3.Location = new Point(12, 517);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(40, 35);
+            pictureBox3.Size = new Size(38, 40);
+            pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox3.TabIndex = 11;
             pictureBox3.TabStop = false;
             // 
@@ -697,9 +706,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(16, 420);
+            pictureBox2.Location = new Point(11, 416);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(40, 35);
+            pictureBox2.Size = new Size(40, 38);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox2.TabIndex = 8;
             pictureBox2.TabStop = false;
             // 
@@ -1249,7 +1259,7 @@
             customButton5.FlatStyle = FlatStyle.Flat;
             customButton5.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton5.ForeColor = Color.White;
-            customButton5.Image = Properties.Resources.password_icon_change;
+            customButton5.Image = (Image)resources.GetObject("customButton5.Image");
             customButton5.ImageAlign = ContentAlignment.MiddleLeft;
             customButton5.Location = new Point(7, 439);
             customButton5.Name = "customButton5";
@@ -1271,7 +1281,7 @@
             customButton3.FlatStyle = FlatStyle.Flat;
             customButton3.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton3.ForeColor = Color.White;
-            customButton3.Image = Properties.Resources.password_icon_change;
+            customButton3.Image = (Image)resources.GetObject("customButton3.Image");
             customButton3.ImageAlign = ContentAlignment.MiddleLeft;
             customButton3.Location = new Point(7, 572);
             customButton3.Name = "customButton3";
@@ -1280,6 +1290,7 @@
             customButton3.TabIndex = 3;
             customButton3.Text = "DELETE TASK";
             customButton3.TextColor = Color.White;
+            customButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton3.UseVisualStyleBackColor = false;
             // 
             // customButton4
@@ -1291,9 +1302,9 @@
             customButton4.BorderSize = 0;
             customButton4.FlatAppearance.BorderSize = 0;
             customButton4.FlatStyle = FlatStyle.Flat;
-            customButton4.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton4.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton4.ForeColor = Color.White;
-            customButton4.Image = Properties.Resources.password_icon_change;
+            customButton4.Image = (Image)resources.GetObject("customButton4.Image");
             customButton4.ImageAlign = ContentAlignment.MiddleLeft;
             customButton4.Location = new Point(6, 505);
             customButton4.Name = "customButton4";
@@ -1317,7 +1328,7 @@
             customButton1.FlatStyle = FlatStyle.Flat;
             customButton1.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton1.ForeColor = Color.White;
-            customButton1.Image = Properties.Resources.password_icon_change;
+            customButton1.Image = (Image)resources.GetObject("customButton1.Image");
             customButton1.ImageAlign = ContentAlignment.MiddleLeft;
             customButton1.Location = new Point(6, 373);
             customButton1.Name = "customButton1";
@@ -1339,7 +1350,7 @@
             customButton2.FlatStyle = FlatStyle.Flat;
             customButton2.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton2.ForeColor = Color.White;
-            customButton2.Image = Properties.Resources.password_icon_change;
+            customButton2.Image = (Image)resources.GetObject("customButton2.Image");
             customButton2.ImageAlign = ContentAlignment.MiddleLeft;
             customButton2.Location = new Point(5, 306);
             customButton2.Name = "customButton2";
