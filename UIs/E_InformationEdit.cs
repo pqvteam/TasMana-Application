@@ -16,7 +16,9 @@ namespace UIs
 {
     public partial class E_InformationEdit : Form
     {
+        NhanSuService nhanSuService = new NhanSuService();
         string managerID = "KT-502";
+
         public E_InformationEdit()
         {
             InitializeComponent();
@@ -62,14 +64,53 @@ namespace UIs
             NhomService groupService = new NhomService();
             Nhom group = groupService.findGroup(nv.MaNhom);
 
-            Group.Text = group.TenNhom.ToString();
+            if (group != null)
+            {
+                Group.Text = group?.TenNhom.ToString();
+            }
+            if (ns.AnhDaiDien != null && IsValidImageData(ns.AnhDaiDien))
+            {
+                avatarBox.Image = convertByteToImage(ns.AnhDaiDien);
+            }
+        }
+
+        public Image convertByteToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private bool IsValidImageData(byte[] imageData)
+        {
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    Image.FromStream(ms);
+                }
+                return true; // Image data is valid
+            }
+            catch (Exception)
+            {
+                return false; // Image data is not valid
+            }
         }
 
         private void SUBMIT_Click(object sender, EventArgs e)
         {
-            NhanSuService nhanSuService = new NhanSuService();
             NhanSu ns = nhanSuService.findMember(managerID);
-            bool isSuccess = nhanSuService.updateInformation(managerID, UserName.Text, Number.Text, Birth.Value.ToString("yyyyMMdd"), CID.Text, Email.Text, Add.Text, Gender.Text);
+            bool isSuccess = nhanSuService.updateInformation(
+                managerID,
+                UserName.Text,
+                Number.Text,
+                Birth.Value.ToString("yyyyMMdd"),
+                CID.Text,
+                Email.Text,
+                Add.Text,
+                Gender.Text
+            );
             if (isSuccess)
             {
                 MessageBox.Show("Successfully");
@@ -77,9 +118,33 @@ namespace UIs
             }
         }
 
-        private void Birth_ValueChanged(object sender, EventArgs e)
-        {
+        private void Birth_ValueChanged(object sender, EventArgs e) { }
 
+        private void changeAvatarButton_Click(object sender, EventArgs e)
+        {
+            using (
+                OpenFileDialog ofd = new OpenFileDialog()
+                {
+                    Filter = "Image files(*.jpg;*.jpeg)|*.jpg;*.jpeg",
+                    Multiselect = false
+                }
+            )
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    avatarBox.Image = Image.FromFile(ofd.FileName);
+                    nhanSuService.insertImage(convertImageToByte(avatarBox.Image), managerID);
+                }
+            }
+        }
+
+        private byte[] convertImageToByte(Image img)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
         }
     }
 }

@@ -58,7 +58,7 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             customPanel2 = new CustomComponent.CustomPanel();
             EDIT = new CustomComponent.CustomButton();
-            customPictureBox1 = new CustomComponent.CustomPictureBox();
+            avatarBox = new CustomComponent.CustomPictureBox();
             UserID = new Label();
             heading = new Label();
             UserName1 = new Label();
@@ -70,7 +70,7 @@
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             customPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)customPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)avatarBox).BeginInit();
             customPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -500,7 +500,7 @@
             customPanel2.BorderRadius = 28;
             customPanel2.BorderWidth = 1;
             customPanel2.Controls.Add(EDIT);
-            customPanel2.Controls.Add(customPictureBox1);
+            customPanel2.Controls.Add(avatarBox);
             customPanel2.Controls.Add(UserID);
             customPanel2.Controls.Add(heading);
             customPanel2.Controls.Add(UserName1);
@@ -532,22 +532,23 @@
             EDIT.UseVisualStyleBackColor = false;
             EDIT.Click += EDIT_Click;
             // 
-            // customPictureBox1
+            // avatarBox
             // 
-            customPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            customPictureBox1.BorderColor = Color.RoyalBlue;
-            customPictureBox1.BorderColor2 = Color.HotPink;
-            customPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            customPictureBox1.BorderSize = 2;
-            customPictureBox1.GradientAngle = 50F;
-            customPictureBox1.Image = (Image)resources.GetObject("customPictureBox1.Image");
-            customPictureBox1.InitialImage = null;
-            customPictureBox1.Location = new Point(94, 70);
-            customPictureBox1.Name = "customPictureBox1";
-            customPictureBox1.Size = new Size(248, 248);
-            customPictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            customPictureBox1.TabIndex = 4;
-            customPictureBox1.TabStop = false;
+            avatarBox.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            avatarBox.BorderColor = Color.RoyalBlue;
+            avatarBox.BorderColor2 = Color.HotPink;
+            avatarBox.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            avatarBox.BorderSize = 2;
+            avatarBox.GradientAngle = 50F;
+            avatarBox.Image = (Image)resources.GetObject("avatarBox.Image");
+            avatarBox.InitialImage = null;
+            avatarBox.Location = new Point(94, 70);
+            avatarBox.Name = "avatarBox";
+            avatarBox.Size = new Size(248, 248);
+            avatarBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            avatarBox.TabIndex = 4;
+            avatarBox.TabStop = false;
+            avatarBox.Click += customPictureBox1_Click;
             // 
             // UserID
             // 
@@ -676,7 +677,7 @@
             panel2.ResumeLayout(false);
             customPanel2.ResumeLayout(false);
             customPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)customPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)avatarBox).EndInit();
             customPanel1.ResumeLayout(false);
             customPanel1.PerformLayout();
             ResumeLayout(false);
@@ -712,7 +713,7 @@
         private ContextMenuStrip contextMenuStrip1;
         private CustomComponent.CustomPanel customPanel2;
         private CustomComponent.CustomButton EDIT;
-        private CustomComponent.CustomPictureBox customPictureBox1;
+        private CustomComponent.CustomPictureBox avatarBox;
         private Label UserID;
         private Label heading;
         private Label UserName1;
