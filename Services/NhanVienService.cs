@@ -36,5 +36,10 @@ namespace Services
         {
             return nhanVienRepository.getAllNoGroup();
         }
+
+        public bool checkLeader(string ID)
+        {
+            return nhanVienRepository.checkLeader(ID);
+        }
     }
 }

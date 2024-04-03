@@ -34,8 +34,8 @@
             idBox = new TextBox();
             customButton1 = new CustomComponent.CustomButton();
             label1 = new Label();
-            label2 = new Label();
-            customButton3 = new CustomComponent.CustomButton();
+            groupLabel = new Label();
+            groupButton = new CustomComponent.CustomButton();
             customButton2 = new CustomComponent.CustomButton();
             rolesBox = new CustomComponent.CustomComboBox();
             groupsBox = new CustomComponent.CustomComboBox();
@@ -123,34 +123,34 @@
             label1.TabIndex = 56;
             label1.Text = "ROLE";
             // 
-            // label2
+            // groupLabel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(117, 363);
-            label2.Name = "label2";
-            label2.Size = new Size(80, 19);
-            label2.TabIndex = 59;
-            label2.Text = "GROUP";
+            groupLabel.AutoSize = true;
+            groupLabel.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupLabel.ForeColor = Color.White;
+            groupLabel.Location = new Point(117, 363);
+            groupLabel.Name = "groupLabel";
+            groupLabel.Size = new Size(80, 19);
+            groupLabel.TabIndex = 59;
+            groupLabel.Text = "GROUP";
             // 
-            // customButton3
+            // groupButton
             // 
-            customButton3.BackColor = Color.FromArgb(42, 42, 42);
-            customButton3.BackgroundColor = Color.FromArgb(42, 42, 42);
-            customButton3.BorderColor = Color.White;
-            customButton3.BorderRadius = 8;
-            customButton3.BorderSize = 1;
-            customButton3.Enabled = false;
-            customButton3.FlatAppearance.BorderSize = 0;
-            customButton3.FlatStyle = FlatStyle.Flat;
-            customButton3.ForeColor = Color.White;
-            customButton3.Location = new Point(117, 385);
-            customButton3.Name = "customButton3";
-            customButton3.Size = new Size(456, 50);
-            customButton3.TabIndex = 58;
-            customButton3.TextColor = Color.White;
-            customButton3.UseVisualStyleBackColor = false;
+            groupButton.BackColor = Color.FromArgb(42, 42, 42);
+            groupButton.BackgroundColor = Color.FromArgb(42, 42, 42);
+            groupButton.BorderColor = Color.White;
+            groupButton.BorderRadius = 8;
+            groupButton.BorderSize = 1;
+            groupButton.Enabled = false;
+            groupButton.FlatAppearance.BorderSize = 0;
+            groupButton.FlatStyle = FlatStyle.Flat;
+            groupButton.ForeColor = Color.White;
+            groupButton.Location = new Point(117, 385);
+            groupButton.Name = "groupButton";
+            groupButton.Size = new Size(456, 50);
+            groupButton.TabIndex = 58;
+            groupButton.TextColor = Color.White;
+            groupButton.UseVisualStyleBackColor = false;
             // 
             // customButton2
             // 
@@ -347,8 +347,8 @@
             Controls.Add(groupsBox);
             Controls.Add(rolesBox);
             Controls.Add(customButton2);
-            Controls.Add(label2);
-            Controls.Add(customButton3);
+            Controls.Add(groupLabel);
+            Controls.Add(groupButton);
             Controls.Add(label1);
             Controls.Add(idLabel);
             Controls.Add(idBox);
@@ -370,8 +370,8 @@
         private TextBox idBox;
         private CustomComponent.CustomButton customButton1;
         private Label label1;
-        private Label label2;
-        private CustomComponent.CustomButton customButton3;
+        private Label groupLabel;
+        private CustomComponent.CustomButton groupButton;
         private CustomComponent.CustomButton customButton2;
         private CustomComponent.CustomComboBox rolesBox;
         private CustomComponent.CustomComboBox groupsBox;

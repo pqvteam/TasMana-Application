@@ -57,5 +57,10 @@ namespace Repositories
                 db.SaveChanges();
             }
         }
+
+        public bool checkLeader(string ID)
+        {
+            return db.NhanViens.FirstOrDefault(x => x.MaThanhVien == ID && x.LaTruongNhom == true) != null ? true : false;
+        }
     }
 }
