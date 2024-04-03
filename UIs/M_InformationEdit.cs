@@ -7,27 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
 using Repositories.Entities;
-using Repositories.Utilities;
 using Services;
 
 namespace UIs
 {
-    public partial class E_InformationEdit : Form
+    public partial class M_InformationEdit : Form
     {
-        string managerID = "DV-102";
-        public E_InformationEdit()
+        string managerID = "DV-101";
+        public M_InformationEdit()
         {
             InitializeComponent();
         }
 
-        private void E_InformationEdit_Load(object sender, EventArgs e)
+        private void M_InformationEdit_Load(object sender, EventArgs e)
         {
-            displayEmployeeData();
+            displayManagerData();
         }
 
-        private void displayEmployeeData()
+        private void displayManagerData()
         {
             NhanSuService currentEmployee = new NhanSuService();
             NhanSu ns = currentEmployee.findMember(managerID);
@@ -40,29 +38,6 @@ namespace UIs
             CID.Text = ns.Cccd.ToString();
             Email.Text = ns.Email.ToString();
             Number.Text = ns.Sdt.ToString();
-            StartDate.Text = ns.NgayBatDau.ToString();
-
-            if (ns.LaQuanLi)
-            {
-                Position.Text = "Trưởng nhóm";
-            }
-            else
-            {
-                Position.Text = "Thành viên";
-            }
-
-            NhanVienService employee = new NhanVienService();
-            NhanVien nv = employee.get(managerID);
-
-            PhongBanService currentDepartment = new PhongBanService();
-            PhongBan pb = currentDepartment.getDepartment(nv.MaPb);
-
-            Department.Text = pb.TenPb.ToString();
-
-            NhomService groupService = new NhomService();
-            Nhom group = groupService.findGroup(nv.MaNhom);
-
-            Group.Text = group.TenNhom.ToString();
         }
 
         private void SUBMIT_Click(object sender, EventArgs e)
@@ -75,11 +50,6 @@ namespace UIs
                 MessageBox.Show("Successfully");
                 this.Close();
             }
-        }
-
-        private void Birth_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
