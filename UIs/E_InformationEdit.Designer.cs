@@ -44,6 +44,7 @@
             customButton6 = new CustomComponent.CustomButton();
             panel1 = new Panel();
             customPanel2 = new CustomComponent.CustomPanel();
+            changeAvatarButton = new CustomComponent.CustomButton();
             SUBMIT = new CustomComponent.CustomButton();
             avatarBox = new CustomComponent.CustomPictureBox();
             UserID = new Label();
@@ -73,7 +74,6 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            changeAvatarButton = new CustomComponent.CustomButton();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             customPanel2.SuspendLayout();
@@ -381,6 +381,27 @@
             customPanel2.Name = "customPanel2";
             customPanel2.Size = new Size(432, 552);
             customPanel2.TabIndex = 20;
+            // 
+            // changeAvatarButton
+            // 
+            changeAvatarButton.AutoSize = true;
+            changeAvatarButton.BackColor = Color.White;
+            changeAvatarButton.BackgroundColor = Color.White;
+            changeAvatarButton.BorderColor = Color.PaleVioletRed;
+            changeAvatarButton.BorderRadius = 20;
+            changeAvatarButton.BorderSize = 0;
+            changeAvatarButton.FlatAppearance.BorderSize = 0;
+            changeAvatarButton.FlatStyle = FlatStyle.Flat;
+            changeAvatarButton.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            changeAvatarButton.ForeColor = Color.Transparent;
+            changeAvatarButton.Image = (Image)resources.GetObject("changeAvatarButton.Image");
+            changeAvatarButton.Location = new Point(270, 273);
+            changeAvatarButton.Name = "changeAvatarButton";
+            changeAvatarButton.Size = new Size(47, 45);
+            changeAvatarButton.TabIndex = 8;
+            changeAvatarButton.TextColor = Color.Transparent;
+            changeAvatarButton.UseVisualStyleBackColor = false;
+            changeAvatarButton.Click += changeAvatarButton_Click;
             // 
             // SUBMIT
             // 
@@ -774,27 +795,6 @@
             label3.TabIndex = 6;
             label3.Text = "DEPARTMENT";
             label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // changeAvatarButton
-            // 
-            changeAvatarButton.AutoSize = true;
-            changeAvatarButton.BackColor = Color.Green;
-            changeAvatarButton.BackgroundColor = Color.Green;
-            changeAvatarButton.BorderColor = Color.PaleVioletRed;
-            changeAvatarButton.BorderRadius = 20;
-            changeAvatarButton.BorderSize = 0;
-            changeAvatarButton.FlatAppearance.BorderSize = 0;
-            changeAvatarButton.FlatStyle = FlatStyle.Flat;
-            changeAvatarButton.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            changeAvatarButton.ForeColor = Color.Black;
-            changeAvatarButton.Location = new Point(113, 330);
-            changeAvatarButton.Name = "changeAvatarButton";
-            changeAvatarButton.Size = new Size(204, 45);
-            changeAvatarButton.TabIndex = 8;
-            changeAvatarButton.Text = "Change Avatar";
-            changeAvatarButton.TextColor = Color.Black;
-            changeAvatarButton.UseVisualStyleBackColor = false;
-            changeAvatarButton.Click += changeAvatarButton_Click;
             // 
             // E_InformationEdit
             // 

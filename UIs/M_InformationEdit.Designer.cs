@@ -591,8 +591,8 @@
             // changeAvatarButton
             // 
             changeAvatarButton.AutoSize = true;
-            changeAvatarButton.BackColor = Color.Green;
-            changeAvatarButton.BackgroundColor = Color.Green;
+            changeAvatarButton.BackColor = Color.White;
+            changeAvatarButton.BackgroundColor = Color.White;
             changeAvatarButton.BorderColor = Color.PaleVioletRed;
             changeAvatarButton.BorderRadius = 20;
             changeAvatarButton.BorderSize = 0;
@@ -600,11 +600,12 @@
             changeAvatarButton.FlatStyle = FlatStyle.Flat;
             changeAvatarButton.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             changeAvatarButton.ForeColor = Color.Black;
-            changeAvatarButton.Location = new Point(124, 324);
+            changeAvatarButton.Image = (Image)resources.GetObject("changeAvatarButton.Image");
+            changeAvatarButton.Location = new Point(270, 273);
             changeAvatarButton.Name = "changeAvatarButton";
-            changeAvatarButton.Size = new Size(189, 45);
+            changeAvatarButton.Size = new Size(47, 45);
             changeAvatarButton.TabIndex = 8;
-            changeAvatarButton.Text = "CHANGE AVATAR";
+            changeAvatarButton.TextAlign = ContentAlignment.MiddleRight;
             changeAvatarButton.TextColor = Color.Black;
             changeAvatarButton.UseVisualStyleBackColor = false;
             changeAvatarButton.Click += changeAvatarButton_Click;
