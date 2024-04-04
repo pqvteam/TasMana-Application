@@ -450,7 +450,6 @@
             UserID.TabIndex = 6;
             UserID.Text = "#ID";
             UserID.TextAlign = ContentAlignment.MiddleCenter;
-            UserID.Click += this.UserID_Click;
             // 
             // heading
             // 
