@@ -380,7 +380,7 @@
             button1.Image = Properties.Resources.bell_icon;
             button1.Location = new Point(0, 2);
             button1.Name = "button1";
-            button1.Size = new Size(253, 45);
+            button1.Size = new Size(249, 45);
             button1.TabIndex = 4;
             button1.Text = "ACTIVED ACCOUNT";
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
