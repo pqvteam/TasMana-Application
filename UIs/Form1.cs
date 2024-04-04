@@ -45,7 +45,7 @@ namespace UIs
         {
             dataGridView1.Columns.Clear();
             sqlcon.Open();
-            sqlcmd = new SqlCommand("select maGiaoViec from GiaoViec where maGiaoViec='KT-501.002'", sqlcon);
+            sqlcmd = new SqlCommand("select maGiaoViec from GiaoViec where maGiaoViec='GD-001.002'", sqlcon);
             da = new SqlDataAdapter(sqlcmd);
             dt = new DataTable();
             da.Fill(dt);
@@ -129,7 +129,7 @@ namespace UIs
                 byte[] dbbyte;
 
                 sqlcon.Open();
-                sqlcmd = new SqlCommand("select dinhKemFile from GiaoViec where maGiaoViec = 'KT-501.002'", sqlcon);
+                sqlcmd = new SqlCommand("select dinhKemFile from GiaoViec where maGiaoViec = 'AN-402.001'", sqlcon);
                 da = new SqlDataAdapter(sqlcmd);
                 dt = new DataTable();
                 da.Fill(dt);

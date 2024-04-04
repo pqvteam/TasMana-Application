@@ -113,6 +113,7 @@
             customButton1 = new CustomComponent.CustomButton();
             customButton2 = new CustomComponent.CustomButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            uploadButton = new CustomComponent.CustomButton();
             mainPanel.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -143,6 +144,7 @@
             // mainPanel
             // 
             mainPanel.BackColor = Color.FromArgb(31, 31, 32);
+            mainPanel.Controls.Add(uploadButton);
             mainPanel.Controls.Add(panel3);
             mainPanel.Controls.Add(taskPriority);
             mainPanel.Controls.Add(taskStatus);
@@ -390,7 +392,7 @@
             taskFile.Location = new Point(339, 216);
             taskFile.Multiline = true;
             taskFile.Name = "taskFile";
-            taskFile.Size = new Size(726, 133);
+            taskFile.Size = new Size(591, 133);
             taskFile.TabIndex = 21;
             // 
             // label8
@@ -1366,6 +1368,26 @@
             customButton2.UseVisualStyleBackColor = false;
             customButton2.Click += customButton2_Click;
             // 
+            // uploadButton
+            // 
+            uploadButton.BackColor = Color.Yellow;
+            uploadButton.BackgroundColor = Color.Yellow;
+            uploadButton.BorderColor = Color.PaleVioletRed;
+            uploadButton.BorderRadius = 12;
+            uploadButton.BorderSize = 0;
+            uploadButton.FlatAppearance.BorderSize = 0;
+            uploadButton.FlatStyle = FlatStyle.Flat;
+            uploadButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            uploadButton.ForeColor = Color.Black;
+            uploadButton.Location = new Point(936, 255);
+            uploadButton.Name = "uploadButton";
+            uploadButton.Size = new Size(129, 51);
+            uploadButton.TabIndex = 43;
+            uploadButton.Text = "BROWSE";
+            uploadButton.TextColor = Color.Black;
+            uploadButton.UseVisualStyleBackColor = false;
+            uploadButton.Click += uploadButton_Click;
+            // 
             // M_AssignTask
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1497,5 +1519,6 @@
         private CustomComponent.CustomToggleButton customToggleButton2;
         private CustomComponent.CustomToggleButton taskMode;
         private Panel panel3;
+        private CustomComponent.CustomButton uploadButton;
     }
 }

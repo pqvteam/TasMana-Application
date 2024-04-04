@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_AssignTask));
             mainPanel = new Panel();
+            uploadButton = new CustomComponent.CustomButton();
             panel3 = new Panel();
             taskName = new TextBox();
             taskPriority = new CustomComponent.CustomComboBox();
@@ -115,7 +116,6 @@
             customButton1 = new CustomComponent.CustomButton();
             customButton2 = new CustomComponent.CustomButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            uploadButton = new CustomComponent.CustomButton();
             mainPanel.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -177,6 +177,26 @@
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(1085, 696);
             mainPanel.TabIndex = 0;
+            // 
+            // uploadButton
+            // 
+            uploadButton.BackColor = Color.Yellow;
+            uploadButton.BackgroundColor = Color.Yellow;
+            uploadButton.BorderColor = Color.PaleVioletRed;
+            uploadButton.BorderRadius = 12;
+            uploadButton.BorderSize = 0;
+            uploadButton.FlatAppearance.BorderSize = 0;
+            uploadButton.FlatStyle = FlatStyle.Flat;
+            uploadButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            uploadButton.ForeColor = Color.Black;
+            uploadButton.Location = new Point(929, 237);
+            uploadButton.Name = "uploadButton";
+            uploadButton.Size = new Size(129, 51);
+            uploadButton.TabIndex = 42;
+            uploadButton.Text = "BROWSE";
+            uploadButton.TextColor = Color.Black;
+            uploadButton.UseVisualStyleBackColor = false;
+            uploadButton.Click += uploadButton_Click;
             // 
             // panel3
             // 
@@ -389,10 +409,10 @@
             taskFile.BorderStyle = BorderStyle.None;
             taskFile.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskFile.ForeColor = Color.White;
-            taskFile.Location = new Point(339, 216);
+            taskFile.Location = new Point(338, 214);
             taskFile.Multiline = true;
             taskFile.Name = "taskFile";
-            taskFile.Size = new Size(726, 74);
+            taskFile.Size = new Size(579, 124);
             taskFile.TabIndex = 21;
             // 
             // label8
@@ -1411,25 +1431,6 @@
             customButton2.TextColor = Color.White;
             customButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton2.UseVisualStyleBackColor = false;
-            // 
-            // uploadButton
-            // 
-            uploadButton.BackColor = Color.MediumSlateBlue;
-            uploadButton.BackgroundColor = Color.MediumSlateBlue;
-            uploadButton.BorderColor = Color.PaleVioletRed;
-            uploadButton.BorderRadius = 8;
-            uploadButton.BorderSize = 0;
-            uploadButton.FlatAppearance.BorderSize = 0;
-            uploadButton.FlatStyle = FlatStyle.Flat;
-            uploadButton.ForeColor = Color.White;
-            uploadButton.Location = new Point(921, 306);
-            uploadButton.Name = "uploadButton";
-            uploadButton.Size = new Size(144, 40);
-            uploadButton.TabIndex = 42;
-            uploadButton.Text = "Browse";
-            uploadButton.TextColor = Color.White;
-            uploadButton.UseVisualStyleBackColor = false;
-            uploadButton.Click += uploadButton_Click;
             // 
             // C_AssignTask
             // 
