@@ -621,7 +621,7 @@
             SUBMIT.FlatStyle = FlatStyle.Flat;
             SUBMIT.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SUBMIT.ForeColor = Color.Black;
-            SUBMIT.Location = new Point(113, 483);
+            SUBMIT.Location = new Point(113, 453);
             SUBMIT.Name = "SUBMIT";
             SUBMIT.Size = new Size(204, 45);
             SUBMIT.TabIndex = 7;
@@ -651,7 +651,7 @@
             // 
             UserID.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
             UserID.ForeColor = Color.White;
-            UserID.Location = new Point(0, 437);
+            UserID.Location = new Point(0, 407);
             UserID.Name = "UserID";
             UserID.Size = new Size(432, 34);
             UserID.TabIndex = 6;
@@ -673,7 +673,7 @@
             // 
             UserName1.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
             UserName1.ForeColor = Color.White;
-            UserName1.Location = new Point(0, 378);
+            UserName1.Location = new Point(0, 348);
             UserName1.Name = "UserName1";
             UserName1.Size = new Size(432, 34);
             UserName1.TabIndex = 5;
