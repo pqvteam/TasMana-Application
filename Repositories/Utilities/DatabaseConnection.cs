@@ -11,13 +11,10 @@ namespace Repositories.Utilities
     {
         static TasManaContext tasManaContext = new TasManaContext();
 
-           // The link to database
         private static string connectionString = tasManaContext.GetConnectionString();
 
-            // Database instance
         private static SqlConnection connection;
 
-            // (Singleton)
         private static readonly Lazy<DatabaseConnection> instance = new Lazy<DatabaseConnection>(() => new DatabaseConnection());
 
         public static DatabaseConnection Instance => instance.Value;
