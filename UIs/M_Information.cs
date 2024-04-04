@@ -4,36 +4,29 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
-using Microsoft.VisualBasic.ApplicationServices;
 using Repositories.Entities;
 using Services;
 
 namespace UIs
 {
-    public partial class E_Information : Form
+    public partial class M_Information : Form
     {
-        NhanVienService employee = new NhanVienService();
-
-        public E_Information()
+        string managerID = "DV-101";
+        public M_Information()
         {
             InitializeComponent();
         }
 
-        private void E_Information_Load(object sender, EventArgs e)
+        private void M_Information_Load(object sender, EventArgs e)
         {
-            displayEmployeeData();
+            displayManagerData();
         }
 
-        private void displayEmployeeData()
+        private void displayManagerData()
         {
-            // UserID
-            string managerID = "KT-502";
-
             NhanSuService currentEmployee = new NhanSuService();
             NhanSu ns = currentEmployee.findMember(managerID);
             UserName.Text = ns.HoVaTen.ToString();
@@ -45,34 +38,17 @@ namespace UIs
             CID.Text = ns.Cccd.ToString();
             Email.Text = ns.Email.ToString();
             Number.Text = ns.Sdt.ToString();
-            StartDate.Text = ns.NgayBatDau.ToString();
             if (ns.AnhDaiDien != null && IsValidImageData(ns.AnhDaiDien))
             {
                 avatarBox.Image = convertByteToImage(ns.AnhDaiDien);
             }
+        }
 
-            if (employee.checkLeader(ns.MaThanhVien))
+        public Image convertByteToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
             {
-                Position.Text = "Trưởng nhóm";
-            }
-            else
-            {
-                Position.Text = "Thành viên";
-            }
-
-            NhanVien nv = employee.get(managerID);
-
-            PhongBanService currentDepartment = new PhongBanService();
-            PhongBan pb = currentDepartment.getDepartment(nv.MaPb);
-
-            Department.Text = pb.TenPb.ToString();
-
-            NhomService groupService = new NhomService();
-            Nhom? group = groupService.findGroup(nv.MaNhom);
-
-            if (group != null)
-            {
-                Group.Text = group?.TenNhom.ToString();
+                return Image.FromStream(ms);
             }
         }
 
@@ -94,17 +70,14 @@ namespace UIs
 
         private void EDIT_Click(object sender, EventArgs e)
         {
-            E_InformationEdit newForm = new E_InformationEdit();
+            M_InformationEdit newForm = new M_InformationEdit();
             newForm.ShowDialog();
-            displayEmployeeData();
+            displayManagerData();
         }
 
-        public Image convertByteToImage(byte[] data)
+        private void customPictureBox1_Click(object sender, EventArgs e)
         {
-            using (MemoryStream ms = new MemoryStream(data))
-            {
-                return Image.FromStream(ms);
-            }
+
         }
     }
 }

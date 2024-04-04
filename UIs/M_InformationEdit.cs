@@ -4,36 +4,31 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
-using Microsoft.VisualBasic.ApplicationServices;
 using Repositories.Entities;
 using Services;
 
 namespace UIs
 {
-    public partial class E_Information : Form
+    public partial class M_InformationEdit : Form
     {
-        NhanVienService employee = new NhanVienService();
-
-        public E_Information()
+        NhanSuService nhanSuService = new NhanSuService();
+        string managerID = "DV-101";
+        public M_InformationEdit()
         {
             InitializeComponent();
         }
 
-        private void E_Information_Load(object sender, EventArgs e)
+        private void M_InformationEdit_Load(object sender, EventArgs e)
         {
-            displayEmployeeData();
+            displayManagerData();
         }
 
-        private void displayEmployeeData()
+        private void displayManagerData()
         {
-            // UserID
-            string managerID = "KT-502";
-
             NhanSuService currentEmployee = new NhanSuService();
             NhanSu ns = currentEmployee.findMember(managerID);
             UserName.Text = ns.HoVaTen.ToString();
@@ -45,34 +40,40 @@ namespace UIs
             CID.Text = ns.Cccd.ToString();
             Email.Text = ns.Email.ToString();
             Number.Text = ns.Sdt.ToString();
-            StartDate.Text = ns.NgayBatDau.ToString();
             if (ns.AnhDaiDien != null && IsValidImageData(ns.AnhDaiDien))
             {
                 avatarBox.Image = convertByteToImage(ns.AnhDaiDien);
             }
+        }
 
-            if (employee.checkLeader(ns.MaThanhVien))
+        public Image convertByteToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
             {
-                Position.Text = "Trưởng nhóm";
+                return Image.FromStream(ms);
             }
-            else
+        }
+
+        private void SUBMIT_Click(object sender, EventArgs e)
+        {
+            NhanSu ns = nhanSuService.findMember(managerID);
+            bool isSuccess = nhanSuService.updateInformation(managerID, UserName.Text, Number.Text, Birth.Value.ToString("yyyyMMdd"), CID.Text, Email.Text, Add.Text, Gender.Text);
+            if (isSuccess)
             {
-                Position.Text = "Thành viên";
+                MessageBox.Show("Successfully");
+                this.Close();
             }
+        }
 
-            NhanVien nv = employee.get(managerID);
-
-            PhongBanService currentDepartment = new PhongBanService();
-            PhongBan pb = currentDepartment.getDepartment(nv.MaPb);
-
-            Department.Text = pb.TenPb.ToString();
-
-            NhomService groupService = new NhomService();
-            Nhom? group = groupService.findGroup(nv.MaNhom);
-
-            if (group != null)
+        private void changeAvatarButton_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Image files(*.jpg;*.jpeg)|*.jpg;*.jpeg", Multiselect = false })
             {
-                Group.Text = group?.TenNhom.ToString();
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    avatarBox.Image = Image.FromFile(ofd.FileName);
+                    nhanSuService.insertImage(convertImageToByte(avatarBox.Image), managerID);
+                }
             }
         }
 
@@ -92,19 +93,15 @@ namespace UIs
             }
         }
 
-        private void EDIT_Click(object sender, EventArgs e)
+        // Convert Image to byte array
+        private byte[] convertImageToByte(Image img)
         {
-            E_InformationEdit newForm = new E_InformationEdit();
-            newForm.ShowDialog();
-            displayEmployeeData();
-        }
-
-        public Image convertByteToImage(byte[] data)
-        {
-            using (MemoryStream ms = new MemoryStream(data))
+            using (MemoryStream ms = new MemoryStream())
             {
-                return Image.FromStream(ms);
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Png); 
+                return ms.ToArray(); 
             }
         }
+
     }
 }
