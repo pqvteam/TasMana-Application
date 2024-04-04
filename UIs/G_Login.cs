@@ -28,11 +28,37 @@ namespace UIs
             {
                 MessageBox.Show("Đã lưu mật khẩu của bạn");
             }
-            else
+            else if(checkbox_Remember.Checked && service.savePassword(userID, password)==false)
             {
                 MessageBox.Show("Mật khẩu của bạn lưu thất bại");
             }
             MessageBox.Show(result);
+
+            // Session lưu các thông tin quan trọng của tài khoản
+            if (result == "Đăng nhập thành công")
+            {
+                Session.Instance.UserName = box_username.Text;
+                if (service.getEmailAccount(userID) != "Không tìm thấy mail của nhân viên này! Kiểm tra lại mã đăng nhập!")
+                {
+                    Session.Instance.Email = box_password.Text;
+                }
+                if(service.laCEO(userID))
+                {
+                    Session.Instance.laCEO = true;
+                }
+                else if (service.laQuanLi(userID))
+                {
+                    Session.Instance.laQuanLi = true;
+                }
+                else if (service.laTruongNhom(userID))
+                {
+                    Session.Instance.laTruongNhom = true;
+                }
+                if (service.daNghiViec(userID))
+                {
+                    Session.Instance.daNghiViec = true;
+                }
+            }
         }
 
         private void box_username_Enter(object sender, EventArgs e)
