@@ -3,15 +3,24 @@ using Repositories.Entities;
 using Repositories.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
+using SixLabors.ImageSharp.PixelFormats;
+using System.IO;
+using System.Drawing;
 
 namespace Repositories
 {
     public class NhanSuRepository
     {
+
         TasManaContext tasManaContext = new TasManaContext();
+        static TasManaContext context = new TasManaContext();
+        private static string connectionString = context.GetConnectionString();
         public NhanSu? findMember(string ID)
         {
             return tasManaContext.NhanSus.FirstOrDefault(x => x.MaThanhVien == ID);
@@ -32,7 +41,7 @@ namespace Repositories
             return tasManaContext.NhanSus.Where(x => x.LaQuanLi == false && !x.MaThanhVien.StartsWith("GD")).ToList();
         }
 
-        public bool EditInformation(string newUserName, string newNumber, string newBirth, string newCID, string newEmail, string newAddress, string newGender)
+        public bool EditInformation(string ID, string newUserName, string newNumber, string newBirth, string newCID, string newEmail, string newAddress, string newGender)
         {
             bool success = false; // Initialize success flag
             try
@@ -45,7 +54,7 @@ namespace Repositories
                 using (conn)
                 {
                     // Corrected query with parameter names matching
-                    string queryEdit = "UPDATE NhanSu SET hoVaTen = @UserName, SDT = @Number, namSinh = @Birth, CCCD = @CID, email = @Email, diaChi = @Address, gioiTinh = @Gender WHERE maThanhVien = 'DV-102'";
+                    string queryEdit = "UPDATE NhanSu SET hoVaTen = @UserName, SDT = @Number, namSinh = @Birth, CCCD = @CID, email = @Email, diaChi = @Address, gioiTinh = @Gender WHERE maThanhVien = '" + ID + "'";
 
                     using (SqlCommand command = new SqlCommand(queryEdit, conn))
                     {
@@ -76,5 +85,47 @@ namespace Repositories
             return success; // Return whether the operation was successful
         }
 
+        public void insertAvatar(byte[] image, string userID)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+
+                conn.Open();
+
+                using (SqlCommand command = new SqlCommand("UPDATE NhanSu SET anhDaiDien = @image WHERE maThanhVien = @userID", conn))
+                {
+                    command.Parameters.AddWithValue("@image", image);
+                    command.Parameters.AddWithValue("@userID", userID);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+        public byte[] convertImageToByte(Image<Rgba32> img)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.SaveAsPng(ms);
+                return ms.ToArray();
+            }
+        }
+
+        public Image<Rgba32> convertByteToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.Load<Rgba32>(ms);
+            }
+        }
     }
 }

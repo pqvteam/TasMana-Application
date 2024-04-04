@@ -1,6 +1,6 @@
 ﻿namespace UIs
 {
-    partial class C_AccountManagement
+    partial class M_Information
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_AccountManagement));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M_Information));
             headerPanel = new Panel();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
@@ -44,26 +43,35 @@
             customButton8 = new CustomComponent.CustomButton();
             customButton7 = new CustomComponent.CustomButton();
             customButton6 = new CustomComponent.CustomButton();
+            panel1 = new Panel();
+            Number = new Label();
+            Email = new Label();
+            CID = new Label();
+            Add = new Label();
+            Birth = new Label();
+            Gender = new Label();
+            UserName = new Label();
+            label14 = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            customPanel2 = new CustomComponent.CustomPanel();
+            EDIT = new CustomComponent.CustomButton();
+            avatarBox = new CustomComponent.CustomPictureBox();
+            UserID = new Label();
+            heading = new Label();
+            UserName1 = new Label();
             customPanel1 = new CustomComponent.CustomPanel();
-            button2 = new Button();
-            pictureBox6 = new PictureBox();
-            searchBox = new TextBox();
-            customButton1 = new CustomComponent.CustomButton();
-            label2 = new Label();
-            departmentsBox = new CustomComponent.CustomComboBox();
-            customButton2 = new CustomComponent.CustomButton();
-            typeAccountBox = new CustomComponent.CustomComboBox();
-            label3 = new Label();
-            customButton3 = new CustomComponent.CustomButton();
-            customButton19 = new CustomComponent.CustomButton();
-            membersGrid = new DataGridView();
-            label1 = new Label();
-            button3 = new Button();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
+            customPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)avatarBox).BeginInit();
             customPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)membersGrid).BeginInit();
             SuspendLayout();
             // 
             // headerPanel
@@ -79,11 +87,12 @@
             headerPanel.Controls.Add(customButton8);
             headerPanel.Controls.Add(customButton7);
             headerPanel.Controls.Add(customButton6);
+            headerPanel.Controls.Add(panel1);
             headerPanel.Dock = DockStyle.Top;
             headerPanel.Location = new Point(0, 0);
             headerPanel.Name = "headerPanel";
-            headerPanel.Size = new Size(1382, 62);
-            headerPanel.TabIndex = 2;
+            headerPanel.Size = new Size(1382, 59);
+            headerPanel.TabIndex = 21;
             // 
             // customButton18
             // 
@@ -118,7 +127,7 @@
             customButton17.FlatAppearance.BorderSize = 0;
             customButton17.FlatStyle = FlatStyle.Flat;
             customButton17.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton17.ForeColor = Color.Yellow;
+            customButton17.ForeColor = Color.White;
             customButton17.Image = (Image)resources.GetObject("customButton17.Image");
             customButton17.ImageAlign = ContentAlignment.MiddleLeft;
             customButton17.Location = new Point(509, 5);
@@ -127,7 +136,7 @@
             customButton17.TabIndex = 24;
             customButton17.Text = "ACCOUNTING MANAGEMENT";
             customButton17.TextAlign = ContentAlignment.MiddleRight;
-            customButton17.TextColor = Color.Yellow;
+            customButton17.TextColor = Color.White;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
             // 
@@ -329,7 +338,7 @@
             customButton6.ForeColor = Color.White;
             customButton6.Image = (Image)resources.GetObject("customButton6.Image");
             customButton6.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton6.Location = new Point(12, 3);
+            customButton6.Location = new Point(12, 0);
             customButton6.Name = "customButton6";
             customButton6.Size = new Size(60, 60);
             customButton6.TabIndex = 16;
@@ -338,301 +347,340 @@
             customButton6.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton6.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            panel1.Location = new Point(694, 59);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(250, 125);
+            panel1.TabIndex = 2;
+            // 
+            // Number
+            // 
+            Number.AutoSize = true;
+            Number.Font = new Font("Calibri", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Number.ForeColor = Color.White;
+            Number.Location = new Point(397, 448);
+            Number.Name = "Number";
+            Number.Size = new Size(152, 28);
+            Number.TabIndex = 28;
+            Number.Text = "Phone Number";
+            Number.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // Email
+            // 
+            Email.AutoSize = true;
+            Email.Font = new Font("Calibri", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Email.ForeColor = Color.White;
+            Email.Location = new Point(397, 398);
+            Email.Name = "Email";
+            Email.Size = new Size(62, 28);
+            Email.TabIndex = 27;
+            Email.Text = "Email";
+            Email.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // CID
+            // 
+            CID.AutoSize = true;
+            CID.Font = new Font("Calibri", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CID.ForeColor = Color.White;
+            CID.Location = new Point(397, 348);
+            CID.Name = "CID";
+            CID.Size = new Size(44, 28);
+            CID.TabIndex = 26;
+            CID.Text = "CID";
+            CID.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // Add
+            // 
+            Add.AutoSize = true;
+            Add.Font = new Font("Calibri", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Add.ForeColor = Color.White;
+            Add.Location = new Point(397, 298);
+            Add.Name = "Add";
+            Add.Size = new Size(86, 28);
+            Add.TabIndex = 25;
+            Add.Text = "Address";
+            Add.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // Birth
+            // 
+            Birth.AutoSize = true;
+            Birth.Font = new Font("Calibri", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Birth.ForeColor = Color.White;
+            Birth.Location = new Point(397, 248);
+            Birth.Name = "Birth";
+            Birth.Size = new Size(130, 28);
+            Birth.TabIndex = 24;
+            Birth.Text = "Date of birth";
+            Birth.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // Gender
+            // 
+            Gender.AutoSize = true;
+            Gender.Font = new Font("Calibri", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Gender.ForeColor = Color.White;
+            Gender.Location = new Point(397, 198);
+            Gender.Name = "Gender";
+            Gender.Size = new Size(81, 28);
+            Gender.TabIndex = 23;
+            Gender.Text = "Gender";
+            Gender.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // UserName
+            // 
+            UserName.AutoSize = true;
+            UserName.Font = new Font("Calibri", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            UserName.ForeColor = Color.White;
+            UserName.Location = new Point(397, 148);
+            UserName.Name = "UserName";
+            UserName.Size = new Size(115, 28);
+            UserName.TabIndex = 22;
+            UserName.Text = "User Name";
+            UserName.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Copperplate Gothic Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.White;
+            label14.Location = new Point(234, 448);
+            label14.Name = "label14";
+            label14.Size = new Size(121, 25);
+            label14.TabIndex = 17;
+            label14.Text = "MOBILE:";
+            label14.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Copperplate Gothic Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(234, 348);
+            label13.Name = "label13";
+            label13.Size = new Size(156, 25);
+            label13.TabIndex = 16;
+            label13.Text = "CITIZEN ID:";
+            label13.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Copperplate Gothic Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(234, 398);
+            label12.Name = "label12";
+            label12.Size = new Size(101, 25);
+            label12.TabIndex = 15;
+            label12.Text = "EMAIL:";
+            label12.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Copperplate Gothic Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(234, 298);
+            label11.Name = "label11";
+            label11.Size = new Size(146, 25);
+            label11.TabIndex = 14;
+            label11.Text = "ADDRESS:";
+            label11.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
+            // customPanel2
+            // 
+            customPanel2.BackColor = Color.FromArgb(42, 42, 42);
+            customPanel2.BackgroundColor = Color.Transparent;
+            customPanel2.BorderColor = Color.Black;
+            customPanel2.BorderRadius = 28;
+            customPanel2.BorderWidth = 1;
+            customPanel2.Controls.Add(EDIT);
+            customPanel2.Controls.Add(avatarBox);
+            customPanel2.Controls.Add(UserID);
+            customPanel2.Controls.Add(heading);
+            customPanel2.Controls.Add(UserName1);
+            customPanel2.GradientAngle = 0F;
+            customPanel2.GradientEndColor = Color.White;
+            customPanel2.GradientStartColor = Color.White;
+            customPanel2.Location = new Point(12, 122);
+            customPanel2.Name = "customPanel2";
+            customPanel2.Size = new Size(432, 552);
+            customPanel2.TabIndex = 19;
+            // 
+            // EDIT
+            // 
+            EDIT.BackColor = Color.Green;
+            EDIT.BackgroundColor = Color.Green;
+            EDIT.BorderColor = Color.PaleVioletRed;
+            EDIT.BorderRadius = 20;
+            EDIT.BorderSize = 0;
+            EDIT.FlatAppearance.BorderSize = 0;
+            EDIT.FlatStyle = FlatStyle.Flat;
+            EDIT.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            EDIT.ForeColor = Color.Black;
+            EDIT.Location = new Point(113, 456);
+            EDIT.Name = "EDIT";
+            EDIT.Size = new Size(204, 45);
+            EDIT.TabIndex = 7;
+            EDIT.Text = "EDIT";
+            EDIT.TextColor = Color.Black;
+            EDIT.UseVisualStyleBackColor = false;
+            EDIT.Click += EDIT_Click;
+            // 
+            // avatarBox
+            // 
+            avatarBox.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            avatarBox.BorderColor = Color.RoyalBlue;
+            avatarBox.BorderColor2 = Color.HotPink;
+            avatarBox.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            avatarBox.BorderSize = 2;
+            avatarBox.GradientAngle = 50F;
+            avatarBox.Image = (Image)resources.GetObject("avatarBox.Image");
+            avatarBox.InitialImage = null;
+            avatarBox.Location = new Point(94, 70);
+            avatarBox.Name = "avatarBox";
+            avatarBox.Size = new Size(248, 248);
+            avatarBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            avatarBox.TabIndex = 4;
+            avatarBox.TabStop = false;
+            avatarBox.Click += customPictureBox1_Click;
+            // 
+            // UserID
+            // 
+            UserID.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
+            UserID.ForeColor = Color.White;
+            UserID.Location = new Point(0, 397);
+            UserID.Name = "UserID";
+            UserID.Size = new Size(432, 34);
+            UserID.TabIndex = 6;
+            UserID.Text = "#ID";
+            UserID.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // heading
+            // 
+            heading.AutoSize = true;
+            heading.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            heading.ForeColor = Color.FromArgb(250, 86, 87);
+            heading.Location = new Point(126, 24);
+            heading.Name = "heading";
+            heading.Size = new Size(191, 34);
+            heading.TabIndex = 3;
+            heading.Text = "MANAGER";
+            // 
+            // UserName1
+            // 
+            UserName1.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
+            UserName1.ForeColor = Color.White;
+            UserName1.Location = new Point(0, 338);
+            UserName1.Name = "UserName1";
+            UserName1.Size = new Size(432, 34);
+            UserName1.TabIndex = 5;
+            UserName1.Text = "#USERNAME";
+            UserName1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // customPanel1
             // 
-            customPanel1.BackColor = Color.FromArgb(59, 56, 56);
+            customPanel1.BackColor = Color.FromArgb(42, 42, 42);
             customPanel1.BackgroundColor = Color.Transparent;
             customPanel1.BorderColor = Color.Black;
-            customPanel1.BorderRadius = 0;
+            customPanel1.BorderRadius = 28;
             customPanel1.BorderWidth = 1;
-            customPanel1.Controls.Add(button3);
-            customPanel1.Controls.Add(button2);
+            customPanel1.Controls.Add(Number);
+            customPanel1.Controls.Add(Email);
+            customPanel1.Controls.Add(CID);
+            customPanel1.Controls.Add(Add);
+            customPanel1.Controls.Add(Birth);
+            customPanel1.Controls.Add(Gender);
+            customPanel1.Controls.Add(UserName);
+            customPanel1.Controls.Add(label14);
+            customPanel1.Controls.Add(label13);
+            customPanel1.Controls.Add(label12);
+            customPanel1.Controls.Add(label11);
+            customPanel1.Controls.Add(label10);
+            customPanel1.Controls.Add(label9);
+            customPanel1.Controls.Add(label8);
+            customPanel1.Controls.Add(label7);
             customPanel1.GradientAngle = 0F;
             customPanel1.GradientEndColor = Color.White;
             customPanel1.GradientStartColor = Color.White;
-            customPanel1.Location = new Point(0, 62);
+            customPanel1.Location = new Point(456, 122);
             customPanel1.Name = "customPanel1";
-            customPanel1.Size = new Size(1382, 48);
-            customPanel1.TabIndex = 3;
-            customPanel1.Paint += customPanel1_Paint;
+            customPanel1.Size = new Size(914, 552);
+            customPanel1.TabIndex = 20;
             // 
-            // button2
+            // label10
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(270, 1);
-            button2.Name = "button2";
-            button2.Size = new Size(258, 44);
-            button2.TabIndex = 5;
-            button2.Text = "INACTIVED ACCOUNT";
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = true;
+            label10.AutoSize = true;
+            label10.Font = new Font("Copperplate Gothic Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(234, 248);
+            label10.Name = "label10";
+            label10.Size = new Size(155, 25);
+            label10.TabIndex = 13;
+            label10.Text = "BIRTHDAY:";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox6
+            // label9
             // 
-            pictureBox6.BackColor = Color.FromArgb(42, 42, 42);
-            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
-            pictureBox6.Location = new Point(419, 166);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(35, 35);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 47;
-            pictureBox6.TabStop = false;
-            pictureBox6.Click += pictureBox6_Click;
+            label9.AutoSize = true;
+            label9.Font = new Font("Copperplate Gothic Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(234, 198);
+            label9.Name = "label9";
+            label9.Size = new Size(131, 25);
+            label9.TabIndex = 12;
+            label9.Text = "GENDER:";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // searchBox
+            // label8
             // 
-            searchBox.BackColor = Color.FromArgb(42, 42, 42);
-            searchBox.BorderStyle = BorderStyle.None;
-            searchBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            searchBox.ForeColor = Color.White;
-            searchBox.Location = new Point(33, 171);
-            searchBox.Name = "searchBox";
-            searchBox.PlaceholderText = "Enter an account name...";
-            searchBox.Size = new Size(375, 20);
-            searchBox.TabIndex = 46;
-            searchBox.TextChanged += textBox2_TextChanged;
+            label8.AutoSize = true;
+            label8.Font = new Font("Copperplate Gothic Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(234, 148);
+            label8.Name = "label8";
+            label8.Size = new Size(97, 25);
+            label8.TabIndex = 11;
+            label8.Text = "NAME:";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // customButton1
+            // label7
             // 
-            customButton1.BackColor = Color.FromArgb(42, 42, 42);
-            customButton1.BackgroundColor = Color.FromArgb(42, 42, 42);
-            customButton1.BorderColor = Color.White;
-            customButton1.BorderRadius = 8;
-            customButton1.BorderSize = 1;
-            customButton1.Enabled = false;
-            customButton1.FlatAppearance.BorderSize = 0;
-            customButton1.FlatStyle = FlatStyle.Flat;
-            customButton1.ForeColor = Color.White;
-            customButton1.Location = new Point(10, 156);
-            customButton1.Name = "customButton1";
-            customButton1.Size = new Size(456, 50);
-            customButton1.TabIndex = 48;
-            customButton1.TextColor = Color.White;
-            customButton1.UseVisualStyleBackColor = false;
+            label7.AutoSize = true;
+            label7.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(250, 86, 87);
+            label7.Location = new Point(347, 65);
+            label7.Name = "label7";
+            label7.Size = new Size(317, 34);
+            label7.TabIndex = 10;
+            label7.Text = "PROFILE DETAILS";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(482, 134);
-            label2.Name = "label2";
-            label2.Size = new Size(143, 19);
-            label2.TabIndex = 53;
-            label2.Text = "DEPARTMENT";
-            // 
-            // departmentsBox
-            // 
-            departmentsBox.BackColor = Color.FromArgb(42, 42, 42);
-            departmentsBox.BorderColor = Color.FromArgb(42, 42, 42);
-            departmentsBox.BorderSize = 1;
-            departmentsBox.DropDownStyle = ComboBoxStyle.DropDown;
-            departmentsBox.Font = new Font("Segoe UI", 10F);
-            departmentsBox.ForeColor = Color.DimGray;
-            departmentsBox.IconColor = Color.White;
-            departmentsBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            departmentsBox.ListTextColor = Color.DimGray;
-            departmentsBox.Location = new Point(493, 163);
-            departmentsBox.MinimumSize = new Size(200, 30);
-            departmentsBox.Name = "departmentsBox";
-            departmentsBox.Padding = new Padding(1);
-            departmentsBox.Size = new Size(282, 36);
-            departmentsBox.TabIndex = 54;
-            departmentsBox.Texts = "";
-            departmentsBox.OnSelectedIndexChanged += departmentsBox_OnSelectedIndexChanged;
-            // 
-            // customButton2
-            // 
-            customButton2.BackColor = Color.FromArgb(42, 42, 42);
-            customButton2.BackgroundColor = Color.FromArgb(42, 42, 42);
-            customButton2.BorderColor = Color.White;
-            customButton2.BorderRadius = 8;
-            customButton2.BorderSize = 1;
-            customButton2.Enabled = false;
-            customButton2.FlatAppearance.BorderSize = 0;
-            customButton2.FlatStyle = FlatStyle.Flat;
-            customButton2.ForeColor = Color.White;
-            customButton2.Location = new Point(482, 156);
-            customButton2.Name = "customButton2";
-            customButton2.Size = new Size(304, 50);
-            customButton2.TabIndex = 55;
-            customButton2.TextColor = Color.White;
-            customButton2.UseVisualStyleBackColor = false;
-            // 
-            // typeAccountBox
-            // 
-            typeAccountBox.BackColor = Color.FromArgb(42, 42, 42);
-            typeAccountBox.BorderColor = Color.FromArgb(42, 42, 42);
-            typeAccountBox.BorderSize = 1;
-            typeAccountBox.DropDownStyle = ComboBoxStyle.DropDown;
-            typeAccountBox.Font = new Font("Segoe UI", 10F);
-            typeAccountBox.ForeColor = Color.DimGray;
-            typeAccountBox.IconColor = Color.White;
-            typeAccountBox.Items.AddRange(new object[] { "CEO", "Manager", "Staff", "All" });
-            typeAccountBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            typeAccountBox.ListTextColor = Color.DimGray;
-            typeAccountBox.Location = new Point(812, 163);
-            typeAccountBox.MinimumSize = new Size(200, 30);
-            typeAccountBox.Name = "typeAccountBox";
-            typeAccountBox.Padding = new Padding(1);
-            typeAccountBox.Size = new Size(282, 36);
-            typeAccountBox.TabIndex = 57;
-            typeAccountBox.Texts = "";
-            typeAccountBox.OnSelectedIndexChanged += typeAccountBox_OnSelectedIndexChanged;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(801, 134);
-            label3.Name = "label3";
-            label3.Size = new Size(159, 19);
-            label3.TabIndex = 56;
-            label3.Text = "TYPE ACCOUNT";
-            // 
-            // customButton3
-            // 
-            customButton3.BackColor = Color.FromArgb(42, 42, 42);
-            customButton3.BackgroundColor = Color.FromArgb(42, 42, 42);
-            customButton3.BorderColor = Color.White;
-            customButton3.BorderRadius = 8;
-            customButton3.BorderSize = 1;
-            customButton3.Enabled = false;
-            customButton3.FlatAppearance.BorderSize = 0;
-            customButton3.FlatStyle = FlatStyle.Flat;
-            customButton3.ForeColor = Color.White;
-            customButton3.Location = new Point(801, 156);
-            customButton3.Name = "customButton3";
-            customButton3.Size = new Size(304, 50);
-            customButton3.TabIndex = 58;
-            customButton3.TextColor = Color.White;
-            customButton3.UseVisualStyleBackColor = false;
-            // 
-            // customButton19
-            // 
-            customButton19.BackColor = Color.Black;
-            customButton19.BackgroundColor = Color.Black;
-            customButton19.BorderColor = Color.PaleVioletRed;
-            customButton19.BorderRadius = 28;
-            customButton19.BorderSize = 0;
-            customButton19.FlatAppearance.BorderSize = 0;
-            customButton19.FlatStyle = FlatStyle.Flat;
-            customButton19.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton19.ForeColor = Color.White;
-            customButton19.Image = (Image)resources.GetObject("customButton19.Image");
-            customButton19.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton19.Location = new Point(1116, 153);
-            customButton19.Name = "customButton19";
-            customButton19.Padding = new Padding(12, 0, 0, 0);
-            customButton19.Size = new Size(251, 59);
-            customButton19.TabIndex = 59;
-            customButton19.Text = "CREATE NEW ONE";
-            customButton19.TextAlign = ContentAlignment.MiddleRight;
-            customButton19.TextColor = Color.White;
-            customButton19.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton19.UseVisualStyleBackColor = false;
-            // 
-            // membersGrid
-            // 
-            membersGrid.AllowUserToAddRows = false;
-            membersGrid.AllowUserToResizeColumns = false;
-            membersGrid.AllowUserToResizeRows = false;
-            membersGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            membersGrid.BackgroundColor = Color.FromArgb(24, 23, 23);
-            membersGrid.BorderStyle = BorderStyle.None;
-            membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.Yellow;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            membersGrid.ColumnHeadersHeight = 50;
-            membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
-            membersGrid.EnableHeadersVisualStyles = false;
-            membersGrid.GridColor = Color.FromArgb(24, 23, 23);
-            membersGrid.Location = new Point(10, 224);
-            membersGrid.Name = "membersGrid";
-            membersGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            membersGrid.RowHeadersVisible = false;
-            membersGrid.RowHeadersWidth = 51;
-            membersGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            membersGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            membersGrid.Size = new Size(1357, 517);
-            membersGrid.TabIndex = 60;
-            membersGrid.CellContentClick += membersGrid_CellContentClick;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(10, 134);
-            label1.Name = "label1";
-            label1.Size = new Size(91, 19);
-            label1.TabIndex = 49;
-            label1.Text = "SEARCH";
-            // 
-            // button3
-            // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(3, 1);
-            button3.Name = "button3";
-            button3.Size = new Size(264, 44);
-            button3.TabIndex = 6;
-            button3.Text = "ACTIVED ACCOUNT";
-            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // C_AccountManagement
+            // M_Information
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(31, 31, 32);
             ClientSize = new Size(1382, 753);
-            Controls.Add(membersGrid);
-            Controls.Add(customButton19);
-            Controls.Add(typeAccountBox);
-            Controls.Add(label3);
-            Controls.Add(customButton3);
-            Controls.Add(departmentsBox);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(pictureBox6);
-            Controls.Add(searchBox);
-            Controls.Add(customPanel1);
             Controls.Add(headerPanel);
-            Controls.Add(customButton1);
-            Controls.Add(customButton2);
-            Name = "C_AccountManagement";
-            Text = "C_AccountManagement";
-            Load += C_AccountManagement_Load;
+            Controls.Add(customPanel2);
+            Controls.Add(customPanel1);
+            Name = "M_Information";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "M_Information";
+            Load += M_Information_Load;
             headerPanel.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            customPanel2.ResumeLayout(false);
+            customPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)avatarBox).EndInit();
             customPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)membersGrid).EndInit();
+            customPanel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -650,20 +698,29 @@
         private CustomComponent.CustomButton customButton8;
         private CustomComponent.CustomButton customButton7;
         private CustomComponent.CustomButton customButton6;
+        private Panel panel1;
+        private Label Number;
+        private Label Email;
+        private Label CID;
+        private Label Add;
+        private Label Birth;
+        private Label Gender;
+        private Label UserName;
+        private Label label14;
+        private Label label13;
+        private Label label12;
+        private Label label11;
+        private ContextMenuStrip contextMenuStrip1;
+        private CustomComponent.CustomPanel customPanel2;
+        private CustomComponent.CustomButton EDIT;
+        private CustomComponent.CustomPictureBox avatarBox;
+        private Label UserID;
+        private Label heading;
+        private Label UserName1;
         private CustomComponent.CustomPanel customPanel1;
-        private Button button2;
-        private PictureBox pictureBox6;
-        private TextBox searchBox;
-        private CustomComponent.CustomButton customButton1;
-        private Label label2;
-        private CustomComponent.CustomComboBox departmentsBox;
-        private CustomComponent.CustomButton customButton2;
-        private CustomComponent.CustomComboBox typeAccountBox;
-        private Label label3;
-        private CustomComponent.CustomButton customButton3;
-        private CustomComponent.CustomButton customButton19;
-        private DataGridView membersGrid;
-        private Label label1;
-        private Button button3;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private Label label7;
     }
 }

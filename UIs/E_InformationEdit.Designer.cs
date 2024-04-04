@@ -45,7 +45,7 @@
             panel1 = new Panel();
             customPanel2 = new CustomComponent.CustomPanel();
             SUBMIT = new CustomComponent.CustomButton();
-            customPictureBox1 = new CustomComponent.CustomPictureBox();
+            avatarBox = new CustomComponent.CustomPictureBox();
             UserID = new Label();
             heading = new Label();
             UserName1 = new Label();
@@ -73,10 +73,11 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
+            changeAvatarButton = new CustomComponent.CustomButton();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             customPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)customPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)avatarBox).BeginInit();
             customPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -367,8 +368,9 @@
             customPanel2.BorderColor = Color.Black;
             customPanel2.BorderRadius = 28;
             customPanel2.BorderWidth = 1;
+            customPanel2.Controls.Add(changeAvatarButton);
             customPanel2.Controls.Add(SUBMIT);
-            customPanel2.Controls.Add(customPictureBox1);
+            customPanel2.Controls.Add(avatarBox);
             customPanel2.Controls.Add(UserID);
             customPanel2.Controls.Add(heading);
             customPanel2.Controls.Add(UserName1);
@@ -391,7 +393,7 @@
             SUBMIT.FlatStyle = FlatStyle.Flat;
             SUBMIT.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SUBMIT.ForeColor = Color.Black;
-            SUBMIT.Location = new Point(113, 456);
+            SUBMIT.Location = new Point(113, 496);
             SUBMIT.Name = "SUBMIT";
             SUBMIT.Size = new Size(204, 45);
             SUBMIT.TabIndex = 7;
@@ -400,28 +402,28 @@
             SUBMIT.UseVisualStyleBackColor = false;
             SUBMIT.Click += SUBMIT_Click;
             // 
-            // customPictureBox1
+            // avatarBox
             // 
-            customPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            customPictureBox1.BorderColor = Color.RoyalBlue;
-            customPictureBox1.BorderColor2 = Color.HotPink;
-            customPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            customPictureBox1.BorderSize = 2;
-            customPictureBox1.GradientAngle = 50F;
-            customPictureBox1.Image = (Image)resources.GetObject("customPictureBox1.Image");
-            customPictureBox1.InitialImage = null;
-            customPictureBox1.Location = new Point(94, 70);
-            customPictureBox1.Name = "customPictureBox1";
-            customPictureBox1.Size = new Size(248, 248);
-            customPictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            customPictureBox1.TabIndex = 4;
-            customPictureBox1.TabStop = false;
+            avatarBox.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            avatarBox.BorderColor = Color.RoyalBlue;
+            avatarBox.BorderColor2 = Color.HotPink;
+            avatarBox.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            avatarBox.BorderSize = 2;
+            avatarBox.GradientAngle = 50F;
+            avatarBox.Image = (Image)resources.GetObject("avatarBox.Image");
+            avatarBox.InitialImage = null;
+            avatarBox.Location = new Point(94, 70);
+            avatarBox.Name = "avatarBox";
+            avatarBox.Size = new Size(248, 248);
+            avatarBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            avatarBox.TabIndex = 4;
+            avatarBox.TabStop = false;
             // 
             // UserID
             // 
             UserID.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
             UserID.ForeColor = Color.White;
-            UserID.Location = new Point(0, 397);
+            UserID.Location = new Point(0, 437);
             UserID.Name = "UserID";
             UserID.Size = new Size(432, 34);
             UserID.TabIndex = 6;
@@ -443,7 +445,7 @@
             // 
             UserName1.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
             UserName1.ForeColor = Color.White;
-            UserName1.Location = new Point(0, 338);
+            UserName1.Location = new Point(0, 378);
             UserName1.Name = "UserName1";
             UserName1.Size = new Size(432, 34);
             UserName1.TabIndex = 5;
@@ -490,14 +492,17 @@
             // 
             // Birth
             // 
+            Birth.AccessibleRole = AccessibleRole.None;
             Birth.BorderColor = Color.PaleVioletRed;
             Birth.BorderSize = 0;
-            Birth.Font = new Font("Segoe UI", 9.5F);
+            Birth.CalendarFont = new Font("Calibri", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Birth.CustomFormat = "";
+            Birth.Font = new Font("Calibri", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Birth.Format = DateTimePickerFormat.Short;
-            Birth.Location = new Point(499, 213);
+            Birth.Location = new Point(497, 213);
             Birth.MinimumSize = new Size(0, 35);
             Birth.Name = "Birth";
-            Birth.Size = new Size(412, 35);
+            Birth.Size = new Size(414, 36);
             Birth.SkinColor = SystemColors.ScrollBar;
             Birth.TabIndex = 29;
             Birth.TextColor = Color.Black;
@@ -770,6 +775,27 @@
             label3.Text = "DEPARTMENT";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // changeAvatarButton
+            // 
+            changeAvatarButton.AutoSize = true;
+            changeAvatarButton.BackColor = Color.Green;
+            changeAvatarButton.BackgroundColor = Color.Green;
+            changeAvatarButton.BorderColor = Color.PaleVioletRed;
+            changeAvatarButton.BorderRadius = 20;
+            changeAvatarButton.BorderSize = 0;
+            changeAvatarButton.FlatAppearance.BorderSize = 0;
+            changeAvatarButton.FlatStyle = FlatStyle.Flat;
+            changeAvatarButton.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            changeAvatarButton.ForeColor = Color.Black;
+            changeAvatarButton.Location = new Point(113, 330);
+            changeAvatarButton.Name = "changeAvatarButton";
+            changeAvatarButton.Size = new Size(204, 45);
+            changeAvatarButton.TabIndex = 8;
+            changeAvatarButton.Text = "Change Avatar";
+            changeAvatarButton.TextColor = Color.Black;
+            changeAvatarButton.UseVisualStyleBackColor = false;
+            changeAvatarButton.Click += changeAvatarButton_Click;
+            // 
             // E_InformationEdit
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -787,7 +813,7 @@
             panel2.ResumeLayout(false);
             customPanel2.ResumeLayout(false);
             customPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)customPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)avatarBox).EndInit();
             customPanel1.ResumeLayout(false);
             customPanel1.PerformLayout();
             ResumeLayout(false);
@@ -811,7 +837,7 @@
         private Panel panel1;
         private CustomComponent.CustomPanel customPanel2;
         private CustomComponent.CustomButton SUBMIT;
-        private CustomComponent.CustomPictureBox customPictureBox1;
+        private CustomComponent.CustomPictureBox avatarBox;
         private Label UserID;
         private Label heading;
         private Label UserName1;
@@ -838,6 +864,8 @@
         private TextBox Add;
         private TextBox Gender;
         private TextBox UserName;
+        private CustomComponent.CustomDateTimePicker Birth1;
         private CustomComponent.CustomDateTimePicker Birth;
+        private CustomComponent.CustomButton changeAvatarButton;
     }
 }
