@@ -120,8 +120,8 @@ namespace UIs
             GiaoViecService giaoViecService = new GiaoViecService();
             NhanSuService nhanSuService = new NhanSuService();
             string tStaffName = nhanSuService.findMember(receiverID).HoVaTen;
-            string tManagerName = nhanSuService.findMember("KT-503").HoVaTen;
-            string tManagerID = "KT-503";
+            string tManagerName = nhanSuService.findMember("AN-402").HoVaTen;
+            string tManagerID = "AN-402";
             string tID = GiaoViecUtilities.createAssignTaskID(tManagerID);
             string tName = taskName.Text;
             string tDescription = taskDescription.Text;
@@ -192,6 +192,18 @@ namespace UIs
         private void label13_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void uploadButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fDialog = new OpenFileDialog();
+            fDialog.Title = "Select file to be upload";
+            //fDialog.Filter = "PDF Files|*.pdf|All Files|*.*";
+            fDialog.Filter = "PDF Files|*.pdf";
+            if (fDialog.ShowDialog() == DialogResult.OK)
+            {
+                taskFile.Text = fDialog.FileName.ToString();
+            }
         }
     }
 }
