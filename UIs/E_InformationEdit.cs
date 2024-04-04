@@ -146,5 +146,10 @@ namespace UIs
                 return ms.ToArray();
             }
         }
+
+        private void UserName1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
