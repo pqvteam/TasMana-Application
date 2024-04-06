@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_AssignTask));
             mainPanel = new Panel();
+            uploadButton = new CustomComponent.CustomButton();
             panel3 = new Panel();
             taskName = new TextBox();
             taskPriority = new CustomComponent.CustomComboBox();
@@ -145,6 +146,7 @@
             // mainPanel
             // 
             mainPanel.BackColor = Color.FromArgb(31, 31, 32);
+            mainPanel.Controls.Add(uploadButton);
             mainPanel.Controls.Add(panel3);
             mainPanel.Controls.Add(taskPriority);
             mainPanel.Controls.Add(taskStatus);
@@ -175,6 +177,26 @@
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(1085, 696);
             mainPanel.TabIndex = 0;
+            // 
+            // uploadButton
+            // 
+            uploadButton.BackColor = Color.Yellow;
+            uploadButton.BackgroundColor = Color.Yellow;
+            uploadButton.BorderColor = Color.PaleVioletRed;
+            uploadButton.BorderRadius = 12;
+            uploadButton.BorderSize = 0;
+            uploadButton.FlatAppearance.BorderSize = 0;
+            uploadButton.FlatStyle = FlatStyle.Flat;
+            uploadButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            uploadButton.ForeColor = Color.Black;
+            uploadButton.Location = new Point(929, 237);
+            uploadButton.Name = "uploadButton";
+            uploadButton.Size = new Size(129, 51);
+            uploadButton.TabIndex = 42;
+            uploadButton.Text = "BROWSE";
+            uploadButton.TextColor = Color.Black;
+            uploadButton.UseVisualStyleBackColor = false;
+            uploadButton.Click += uploadButton_Click;
             // 
             // panel3
             // 
@@ -387,10 +409,10 @@
             taskFile.BorderStyle = BorderStyle.None;
             taskFile.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskFile.ForeColor = Color.White;
-            taskFile.Location = new Point(339, 216);
+            taskFile.Location = new Point(338, 214);
             taskFile.Multiline = true;
             taskFile.Name = "taskFile";
-            taskFile.Size = new Size(726, 133);
+            taskFile.Size = new Size(579, 124);
             taskFile.TabIndex = 21;
             // 
             // label8
@@ -1543,5 +1565,6 @@
         private Panel panel3;
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
+        private CustomComponent.CustomButton uploadButton;
     }
 }
