@@ -440,7 +440,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(340, 67);
+            pictureBox5.Location = new Point(339, 67);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(40, 35);
             pictureBox5.TabIndex = 16;
@@ -740,9 +740,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.group_icon;
-            pictureBox1.Location = new Point(8, 309);
+            pictureBox1.Location = new Point(12, 302);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(40, 35);
+            pictureBox1.Size = new Size(42, 42);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
@@ -1169,7 +1170,8 @@
             pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
             pictureBox13.Location = new Point(17, 13);
             pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new Size(40, 35);
+            pictureBox13.Size = new Size(40, 40);
+            pictureBox13.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox13.TabIndex = 39;
             pictureBox13.TabStop = false;
             // 
@@ -1198,9 +1200,10 @@
             // pictureBox12
             // 
             pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
-            pictureBox12.Location = new Point(17, 69);
+            pictureBox12.Location = new Point(13, 65);
             pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(40, 35);
+            pictureBox12.Size = new Size(46, 46);
+            pictureBox12.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox12.TabIndex = 37;
             pictureBox12.TabStop = false;
             // 

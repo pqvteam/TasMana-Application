@@ -16,6 +16,7 @@ static class Program
         // Application.Run(new A_ShowVenue());
         //Application.Run(new G_Login());
         // Application.Run(new G_ForgotPassword());
-        Application.Run(new CM_CreateAccount());
+        //Application.Run(new CM_CreateAccount());
+        Application.Run(new C_AccountManagement());
     }    
 }

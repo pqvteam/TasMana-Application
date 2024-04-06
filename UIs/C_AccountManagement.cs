@@ -17,7 +17,7 @@ namespace UIs
     public partial class C_AccountManagement : Form
     {
         NhanSuService nhanSuService = new NhanSuService();
-        NhanVienService nhanVienService = new NhanVienService();    
+        NhanVienService nhanVienService = new NhanVienService();
         CeoService ceoService = new CeoService();
         QuanLyService quanLyService = new QuanLyService();
         PhongBanService phongBanService = new PhongBanService();
@@ -31,6 +31,11 @@ namespace UIs
 
         private void C_AccountManagement_Load(object sender, EventArgs e)
         {
+            Session.Instance.UserName = "GD-101";
+            if (!(Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi))
+            {
+                customButton19.Enabled = false;
+            }
             membersGrid.Columns.Add("ID", "ID");
             membersGrid.Columns.Add("Name", "Name");
             membersGrid.Columns.Add("Birthday", "Birthday");
@@ -116,6 +121,12 @@ namespace UIs
             departmentsBox.Items.Add("All");
         }
 
+        public void ReloadDataGrid()
+        {
+            // Thực hiện lại việc tải dữ liệu cho grid
+            reload();
+        }
+
         private void customPanel1_Paint(object sender, PaintEventArgs e) { }
 
         private void membersGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -148,7 +159,8 @@ namespace UIs
                             }
                         };
                         confirmForm.ShowDialog();
-                    } else
+                    }
+                    else
                     {
                         string confirmMessage = "ARE YOU SURE TO APPOINT THIS MANAGER?";
                         A_Confirm confirmForm = new A_Confirm(confirmMessage, "confirm");
@@ -655,6 +667,17 @@ namespace UIs
             {
                 DatabaseConnection.Instance.CloseConnection();
             }
+        }
+
+        private void customButton19_Click(object sender, EventArgs e)
+        {
+            CM_CreateAccount frm = new CM_CreateAccount();
+            frm.ShowDialog();
+        }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

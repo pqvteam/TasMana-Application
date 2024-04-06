@@ -23,7 +23,7 @@ public partial class NhanSu
 
     public bool NghiViec { get; set; }
 
-    public string AnhDaiDien { get; set; } = null!;
+    public byte[] AnhDaiDien { get; set; } = null!;
 
     public bool LaQuanLi { get; set; }
 
@@ -32,6 +32,10 @@ public partial class NhanSu
     public string? DiaChi { get; set; }
 
     public DateOnly? NgayBatDau { get; set; }
+
+    public string? LoaiNhanSu { get; set; }
+
+    public string? QuocTich { get; set; }
 
     public virtual Ceo? Ceo { get; set; }
 
