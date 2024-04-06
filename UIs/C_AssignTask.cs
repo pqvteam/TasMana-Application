@@ -1,15 +1,19 @@
-﻿using Repositories.Utilities;
+﻿using Microsoft.Data.SqlClient;
+using Repositories.Utilities;
 using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UIs
 {
@@ -17,6 +21,10 @@ namespace UIs
     {
         private string receiverID = "";
         private string venueID = "";
+        SqlConnection sqlcon = new SqlConnection(@"Data Source=LAPTOP-SM9GFST3\SQLEXPRESS;Initial Catalog=TasMana;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
+        SqlCommand sqlcmd = new SqlCommand();
+        SqlDataAdapter da = new SqlDataAdapter();
+        DataTable dt = new DataTable();
         public C_AssignTask()
         {
             InitializeComponent();
@@ -192,6 +200,123 @@ namespace UIs
         private void customButton7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //void LoadGrid()
+        //{
+        //    dataGridView1.Columns.Clear();
+        //    sqlcon.Open();
+        //    sqlcmd = new SqlCommand("select maGiaoViec from GiaoViec where maGiaoViec='KT-501.002'", sqlcon);
+        //    da = new SqlDataAdapter(sqlcmd);
+        //    dt = new DataTable();
+        //    da.Fill(dt);
+        //    sqlcon.Close();
+        //    if (dt.Rows.Count > 0)
+        //    {
+        //        DataGridViewLinkColumn links = new DataGridViewLinkColumn();
+        //        links.UseColumnTextForLinkValue = true;
+        //        links.HeaderText = "Download";
+        //        links.DataPropertyName = "lnkColumn";
+        //        links.ActiveLinkColor = Color.White;
+        //        links.LinkBehavior = LinkBehavior.SystemDefault;
+        //        links.LinkColor = Color.Blue;
+        //        links.Text = "Click here";
+        //        links.TrackVisitedState = true;
+        //        links.VisitedLinkColor = Color.YellowGreen;
+        //        dataGridView1.Columns.Add(links);
+        //        dataGridView1.DataSource = dt;
+
+        //        dataGridView1.AutoResizeColumns();
+        //    }
+        //}
+
+        private async void uploadButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fDialog = new OpenFileDialog();
+            fDialog.Title = "Select file to be upload";
+            //fDialog.Filter = "PDF Files|*.pdf|All Files|*.*";
+            fDialog.Filter = "PDF Files|*.pdf";
+            if (fDialog.ShowDialog() == DialogResult.OK)
+            {
+                taskFile.Text = fDialog.FileName.ToString();
+            }
+        }
+
+        private void customButton19_Click(object sender, EventArgs e)
+        {
+            string filetype;
+            string filename;
+
+            filetype = taskFile.Text.Substring(Convert.ToInt32(taskFile.Text.LastIndexOf(".")) + 1, taskFile.Text.Length - (Convert.ToInt32(taskFile.Text.LastIndexOf(".")) + 1));
+
+            if (filetype.ToUpper() != "PDF")
+            {
+                MessageBox.Show("Upload Only PDF Files");
+                return;
+            }
+
+            byte[] FileBytes = null;
+
+            try
+            {
+                // Open file to read using file path
+                FileStream FS = new FileStream(taskFile.Text, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+
+                // Add filestream to binary reader
+                BinaryReader BR = new BinaryReader(FS);
+
+                // get total byte length of the file
+                long allbytes = new FileInfo(taskFile.Text).Length;
+
+                // read entire file into buffer
+                FileBytes = BR.ReadBytes((Int32)allbytes);
+
+                // close all instances
+                FS.Close();
+                FS.Dispose();
+                BR.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error during File Read " + ex.ToString());
+            }
+
+            sqlcon.Open();
+            SqlCommand sqlcmd = new SqlCommand("update GiaoViec set dinhKemFile = @FB where maGiaoViec = 'KT-501.002'", sqlcon);
+            sqlcmd.Parameters.AddWithValue("@FB", FileBytes);
+            sqlcmd.ExecuteNonQuery();
+            sqlcon.Close();
+            //LoadGrid();
+            MessageBox.Show("Upload file successfully!");
+        }
+
+        private void currentFileGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                string id;
+                FileStream FS = null;
+                byte[] dbbyte;
+
+                sqlcon.Open();
+                sqlcmd = new SqlCommand("select dinhKemFile from GiaoViec where maGiaoViec = 'KT-501.002'", sqlcon);
+                da = new SqlDataAdapter(sqlcmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                sqlcon.Close();
+
+
+                if (dt.Rows.Count > 0)
+                {
+                    dbbyte = (byte[])dt.Rows[0]["dinhKemFile"];
+
+                    string filepath = "D:\\temp.pdf";
+
+                    File.WriteAllBytes(filepath, dbbyte);
+
+                    Process.Start("explorer", filepath);
+                }
+            }
         }
     }
 }

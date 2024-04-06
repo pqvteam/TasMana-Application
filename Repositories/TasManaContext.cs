@@ -52,8 +52,12 @@ public partial class TasManaContext : DbContext
     {
         IConfiguration configuration = new ConfigurationBuilder()
             // The current path of the line belows is bad so I need to assign like this
+<<<<<<< HEAD
 
             .SetBasePath("C:\\Users\\ASUS\\source\\repos\\TasMana-Application\\UIs")
+=======
+            .SetBasePath("C:\\Users\\ADMIN\\source\\repos\\TasMana-Application\\UIs")
+>>>>>>> 004a9a167b55e196f85eba3bf02ba5cbb7e0cfb2
             .AddJsonFile("appsettings.json", true, true)
             .Build();
         return configuration["ConnectionStrings:DBDefault"];

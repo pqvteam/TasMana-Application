@@ -591,8 +591,8 @@
             // changeAvatarButton
             // 
             changeAvatarButton.AutoSize = true;
-            changeAvatarButton.BackColor = Color.Green;
-            changeAvatarButton.BackgroundColor = Color.Green;
+            changeAvatarButton.BackColor = Color.White;
+            changeAvatarButton.BackgroundColor = Color.White;
             changeAvatarButton.BorderColor = Color.PaleVioletRed;
             changeAvatarButton.BorderRadius = 20;
             changeAvatarButton.BorderSize = 0;
@@ -600,11 +600,12 @@
             changeAvatarButton.FlatStyle = FlatStyle.Flat;
             changeAvatarButton.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             changeAvatarButton.ForeColor = Color.Black;
-            changeAvatarButton.Location = new Point(124, 324);
+            changeAvatarButton.Image = (Image)resources.GetObject("changeAvatarButton.Image");
+            changeAvatarButton.Location = new Point(270, 273);
             changeAvatarButton.Name = "changeAvatarButton";
-            changeAvatarButton.Size = new Size(189, 45);
+            changeAvatarButton.Size = new Size(47, 45);
             changeAvatarButton.TabIndex = 8;
-            changeAvatarButton.Text = "CHANGE AVATAR";
+            changeAvatarButton.TextAlign = ContentAlignment.MiddleRight;
             changeAvatarButton.TextColor = Color.Black;
             changeAvatarButton.UseVisualStyleBackColor = false;
             changeAvatarButton.Click += changeAvatarButton_Click;
@@ -620,7 +621,7 @@
             SUBMIT.FlatStyle = FlatStyle.Flat;
             SUBMIT.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SUBMIT.ForeColor = Color.Black;
-            SUBMIT.Location = new Point(113, 483);
+            SUBMIT.Location = new Point(113, 453);
             SUBMIT.Name = "SUBMIT";
             SUBMIT.Size = new Size(204, 45);
             SUBMIT.TabIndex = 7;
@@ -650,7 +651,7 @@
             // 
             UserID.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
             UserID.ForeColor = Color.White;
-            UserID.Location = new Point(0, 437);
+            UserID.Location = new Point(0, 407);
             UserID.Name = "UserID";
             UserID.Size = new Size(432, 34);
             UserID.TabIndex = 6;
@@ -672,7 +673,7 @@
             // 
             UserName1.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
             UserName1.ForeColor = Color.White;
-            UserName1.Location = new Point(0, 378);
+            UserName1.Location = new Point(0, 348);
             UserName1.Name = "UserName1";
             UserName1.Size = new Size(432, 34);
             UserName1.TabIndex = 5;

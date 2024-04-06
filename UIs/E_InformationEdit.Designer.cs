@@ -44,6 +44,7 @@
             customButton6 = new CustomComponent.CustomButton();
             panel1 = new Panel();
             customPanel2 = new CustomComponent.CustomPanel();
+            changeAvatarButton = new CustomComponent.CustomButton();
             SUBMIT = new CustomComponent.CustomButton();
             avatarBox = new CustomComponent.CustomPictureBox();
             UserID = new Label();
@@ -73,7 +74,6 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            changeAvatarButton = new CustomComponent.CustomButton();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             customPanel2.SuspendLayout();
@@ -382,6 +382,27 @@
             customPanel2.Size = new Size(432, 552);
             customPanel2.TabIndex = 20;
             // 
+            // changeAvatarButton
+            // 
+            changeAvatarButton.AutoSize = true;
+            changeAvatarButton.BackColor = Color.White;
+            changeAvatarButton.BackgroundColor = Color.White;
+            changeAvatarButton.BorderColor = Color.PaleVioletRed;
+            changeAvatarButton.BorderRadius = 20;
+            changeAvatarButton.BorderSize = 0;
+            changeAvatarButton.FlatAppearance.BorderSize = 0;
+            changeAvatarButton.FlatStyle = FlatStyle.Flat;
+            changeAvatarButton.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            changeAvatarButton.ForeColor = Color.Transparent;
+            changeAvatarButton.Image = (Image)resources.GetObject("changeAvatarButton.Image");
+            changeAvatarButton.Location = new Point(270, 273);
+            changeAvatarButton.Name = "changeAvatarButton";
+            changeAvatarButton.Size = new Size(47, 45);
+            changeAvatarButton.TabIndex = 8;
+            changeAvatarButton.TextColor = Color.Transparent;
+            changeAvatarButton.UseVisualStyleBackColor = false;
+            changeAvatarButton.Click += changeAvatarButton_Click;
+            // 
             // SUBMIT
             // 
             SUBMIT.BackColor = Color.Green;
@@ -393,7 +414,7 @@
             SUBMIT.FlatStyle = FlatStyle.Flat;
             SUBMIT.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SUBMIT.ForeColor = Color.Black;
-            SUBMIT.Location = new Point(113, 496);
+            SUBMIT.Location = new Point(113, 462);
             SUBMIT.Name = "SUBMIT";
             SUBMIT.Size = new Size(204, 45);
             SUBMIT.TabIndex = 7;
@@ -423,12 +444,13 @@
             // 
             UserID.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
             UserID.ForeColor = Color.White;
-            UserID.Location = new Point(0, 437);
+            UserID.Location = new Point(0, 403);
             UserID.Name = "UserID";
             UserID.Size = new Size(432, 34);
             UserID.TabIndex = 6;
             UserID.Text = "#ID";
             UserID.TextAlign = ContentAlignment.MiddleCenter;
+            UserID.Click += this.UserID_Click;
             // 
             // heading
             // 
@@ -445,12 +467,13 @@
             // 
             UserName1.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
             UserName1.ForeColor = Color.White;
-            UserName1.Location = new Point(0, 378);
+            UserName1.Location = new Point(0, 344);
             UserName1.Name = "UserName1";
             UserName1.Size = new Size(432, 34);
             UserName1.TabIndex = 5;
             UserName1.Text = "#USERNAME";
             UserName1.TextAlign = ContentAlignment.MiddleCenter;
+            UserName1.Click += UserName1_Click;
             // 
             // customPanel1
             // 
@@ -774,27 +797,6 @@
             label3.TabIndex = 6;
             label3.Text = "DEPARTMENT";
             label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // changeAvatarButton
-            // 
-            changeAvatarButton.AutoSize = true;
-            changeAvatarButton.BackColor = Color.Green;
-            changeAvatarButton.BackgroundColor = Color.Green;
-            changeAvatarButton.BorderColor = Color.PaleVioletRed;
-            changeAvatarButton.BorderRadius = 20;
-            changeAvatarButton.BorderSize = 0;
-            changeAvatarButton.FlatAppearance.BorderSize = 0;
-            changeAvatarButton.FlatStyle = FlatStyle.Flat;
-            changeAvatarButton.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            changeAvatarButton.ForeColor = Color.Black;
-            changeAvatarButton.Location = new Point(113, 330);
-            changeAvatarButton.Name = "changeAvatarButton";
-            changeAvatarButton.Size = new Size(204, 45);
-            changeAvatarButton.TabIndex = 8;
-            changeAvatarButton.Text = "Change Avatar";
-            changeAvatarButton.TextColor = Color.Black;
-            changeAvatarButton.UseVisualStyleBackColor = false;
-            changeAvatarButton.Click += changeAvatarButton_Click;
             // 
             // E_InformationEdit
             // 
