@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CM_CreateAccount));
             elipseControl1 = new CustomComponent.ElipseControl();
             customButton10 = new CustomComponent.CustomButton();
-            departmentsBox = new CustomComponent.CustomComboBox();
+            typeBox = new CustomComponent.CustomComboBox();
             label2 = new Label();
             customButton2 = new CustomComponent.CustomButton();
-            customComboBox1 = new CustomComponent.CustomComboBox();
+            deparmentsBox = new CustomComponent.CustomComboBox();
             label1 = new Label();
             customButton1 = new CustomComponent.CustomButton();
             label3 = new Label();
@@ -56,28 +56,26 @@
             cancelButton = new CustomComponent.CustomButton();
             customButton14 = new CustomComponent.CustomButton();
             panel1 = new Panel();
-            textBox1 = new TextBox();
+            citizenIDBox = new TextBox();
             panel2 = new Panel();
-            textBox2 = new TextBox();
+            emailBox = new TextBox();
             panel3 = new Panel();
-            textBox3 = new TextBox();
+            passPortBox = new TextBox();
             panel4 = new Panel();
-            textBox4 = new TextBox();
+            userNameBox = new TextBox();
             panel5 = new Panel();
-            textBox5 = new TextBox();
+            genderBox = new TextBox();
             panel6 = new Panel();
-            textBox6 = new TextBox();
-            panel7 = new Panel();
-            textBox7 = new TextBox();
+            mobileBox = new TextBox();
             panel8 = new Panel();
-            textBox8 = new TextBox();
+            addressBox = new TextBox();
+            birthdateBox = new CustomComponent.CustomDateTimePicker();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
-            panel7.SuspendLayout();
             panel8.SuspendLayout();
             SuspendLayout();
             // 
@@ -109,33 +107,35 @@
             customButton10.TextColor = Color.Yellow;
             customButton10.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton10.UseVisualStyleBackColor = false;
+            customButton10.Click += customButton10_Click;
             // 
-            // departmentsBox
+            // typeBox
             // 
-            departmentsBox.BackColor = Color.FromArgb(42, 42, 42);
-            departmentsBox.BorderColor = Color.FromArgb(42, 42, 42);
-            departmentsBox.BorderSize = 1;
-            departmentsBox.DropDownStyle = ComboBoxStyle.DropDown;
-            departmentsBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            departmentsBox.ForeColor = Color.White;
-            departmentsBox.IconColor = Color.White;
-            departmentsBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            departmentsBox.ListTextColor = Color.DimGray;
-            departmentsBox.Location = new Point(57, 137);
-            departmentsBox.MinimumSize = new Size(200, 30);
-            departmentsBox.Name = "departmentsBox";
-            departmentsBox.Padding = new Padding(1);
-            departmentsBox.Size = new Size(344, 40);
-            departmentsBox.TabIndex = 57;
-            departmentsBox.Texts = "";
-            departmentsBox.OnSelectedIndexChanged += departmentsBox_OnSelectedIndexChanged;
+            typeBox.BackColor = Color.FromArgb(42, 42, 42);
+            typeBox.BorderColor = Color.FromArgb(42, 42, 42);
+            typeBox.BorderSize = 1;
+            typeBox.DropDownStyle = ComboBoxStyle.DropDown;
+            typeBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            typeBox.ForeColor = Color.White;
+            typeBox.IconColor = Color.White;
+            typeBox.Items.AddRange(new object[] { "Intern", "Fulltime", "Partime" });
+            typeBox.ListBackColor = Color.FromArgb(230, 228, 245);
+            typeBox.ListTextColor = Color.DimGray;
+            typeBox.Location = new Point(57, 139);
+            typeBox.MinimumSize = new Size(200, 30);
+            typeBox.Name = "typeBox";
+            typeBox.Padding = new Padding(1);
+            typeBox.Size = new Size(395, 40);
+            typeBox.TabIndex = 57;
+            typeBox.Texts = "";
+            typeBox.OnSelectedIndexChanged += departmentsBox_OnSelectedIndexChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(0, 176, 240);
-            label2.Location = new Point(37, 111);
+            label2.Location = new Point(37, 113);
             label2.Name = "label2";
             label2.Size = new Size(162, 19);
             label2.TabIndex = 56;
@@ -152,38 +152,39 @@
             customButton2.FlatAppearance.BorderSize = 0;
             customButton2.FlatStyle = FlatStyle.Flat;
             customButton2.ForeColor = Color.White;
-            customButton2.Location = new Point(37, 133);
+            customButton2.Location = new Point(37, 135);
             customButton2.Name = "customButton2";
-            customButton2.Size = new Size(378, 45);
+            customButton2.Size = new Size(429, 45);
             customButton2.TabIndex = 58;
             customButton2.TextColor = Color.White;
             customButton2.UseVisualStyleBackColor = false;
             // 
-            // customComboBox1
+            // deparmentsBox
             // 
-            customComboBox1.BackColor = Color.FromArgb(42, 42, 42);
-            customComboBox1.BorderColor = Color.FromArgb(42, 42, 42);
-            customComboBox1.BorderSize = 1;
-            customComboBox1.DropDownStyle = ComboBoxStyle.DropDown;
-            customComboBox1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customComboBox1.ForeColor = Color.White;
-            customComboBox1.IconColor = Color.White;
-            customComboBox1.ListBackColor = Color.FromArgb(230, 228, 245);
-            customComboBox1.ListTextColor = Color.DimGray;
-            customComboBox1.Location = new Point(57, 213);
-            customComboBox1.MinimumSize = new Size(200, 30);
-            customComboBox1.Name = "customComboBox1";
-            customComboBox1.Padding = new Padding(1);
-            customComboBox1.Size = new Size(344, 40);
-            customComboBox1.TabIndex = 60;
-            customComboBox1.Texts = "";
+            deparmentsBox.BackColor = Color.FromArgb(42, 42, 42);
+            deparmentsBox.BorderColor = Color.FromArgb(42, 42, 42);
+            deparmentsBox.BorderSize = 1;
+            deparmentsBox.DropDownStyle = ComboBoxStyle.DropDown;
+            deparmentsBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            deparmentsBox.ForeColor = Color.White;
+            deparmentsBox.IconColor = Color.White;
+            deparmentsBox.ListBackColor = Color.FromArgb(230, 228, 245);
+            deparmentsBox.ListTextColor = Color.DimGray;
+            deparmentsBox.Location = new Point(57, 216);
+            deparmentsBox.MinimumSize = new Size(200, 30);
+            deparmentsBox.Name = "deparmentsBox";
+            deparmentsBox.Padding = new Padding(1);
+            deparmentsBox.Size = new Size(395, 40);
+            deparmentsBox.TabIndex = 60;
+            deparmentsBox.Texts = "";
+            deparmentsBox.OnSelectedIndexChanged += departmentsBox_OnSelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(0, 176, 240);
-            label1.Location = new Point(37, 187);
+            label1.Location = new Point(37, 190);
             label1.Name = "label1";
             label1.Size = new Size(148, 19);
             label1.TabIndex = 59;
@@ -200,9 +201,9 @@
             customButton1.FlatAppearance.BorderSize = 0;
             customButton1.FlatStyle = FlatStyle.Flat;
             customButton1.ForeColor = Color.White;
-            customButton1.Location = new Point(37, 209);
+            customButton1.Location = new Point(37, 212);
             customButton1.Name = "customButton1";
-            customButton1.Size = new Size(378, 45);
+            customButton1.Size = new Size(429, 45);
             customButton1.TabIndex = 61;
             customButton1.TextColor = Color.White;
             customButton1.UseVisualStyleBackColor = false;
@@ -212,7 +213,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(0, 176, 240);
-            label3.Location = new Point(37, 266);
+            label3.Location = new Point(37, 269);
             label3.Name = "label3";
             label3.Size = new Size(122, 19);
             label3.TabIndex = 62;
@@ -229,9 +230,9 @@
             customButton3.FlatAppearance.BorderSize = 0;
             customButton3.FlatStyle = FlatStyle.Flat;
             customButton3.ForeColor = Color.White;
-            customButton3.Location = new Point(37, 289);
+            customButton3.Location = new Point(37, 292);
             customButton3.Name = "customButton3";
-            customButton3.Size = new Size(378, 45);
+            customButton3.Size = new Size(429, 45);
             customButton3.TabIndex = 64;
             customButton3.TextColor = Color.White;
             customButton3.UseVisualStyleBackColor = false;
@@ -241,7 +242,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(0, 176, 240);
-            label4.Location = new Point(37, 345);
+            label4.Location = new Point(37, 347);
             label4.Name = "label4";
             label4.Size = new Size(84, 19);
             label4.TabIndex = 65;
@@ -258,9 +259,9 @@
             customButton4.FlatAppearance.BorderSize = 0;
             customButton4.FlatStyle = FlatStyle.Flat;
             customButton4.ForeColor = Color.White;
-            customButton4.Location = new Point(37, 367);
+            customButton4.Location = new Point(37, 369);
             customButton4.Name = "customButton4";
-            customButton4.Size = new Size(378, 45);
+            customButton4.Size = new Size(429, 45);
             customButton4.TabIndex = 67;
             customButton4.TextColor = Color.White;
             customButton4.UseVisualStyleBackColor = false;
@@ -287,9 +288,9 @@
             customButton5.FlatAppearance.BorderSize = 0;
             customButton5.FlatStyle = FlatStyle.Flat;
             customButton5.ForeColor = Color.White;
-            customButton5.Location = new Point(37, 449);
+            customButton5.Location = new Point(37, 451);
             customButton5.Name = "customButton5";
-            customButton5.Size = new Size(378, 45);
+            customButton5.Size = new Size(429, 45);
             customButton5.TabIndex = 70;
             customButton5.TextColor = Color.White;
             customButton5.UseVisualStyleBackColor = false;
@@ -299,7 +300,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(0, 176, 240);
-            label6.Location = new Point(636, 111);
+            label6.Location = new Point(579, 112);
             label6.Name = "label6";
             label6.Size = new Size(127, 19);
             label6.TabIndex = 71;
@@ -316,9 +317,9 @@
             customButton6.FlatAppearance.BorderSize = 0;
             customButton6.FlatStyle = FlatStyle.Flat;
             customButton6.ForeColor = Color.White;
-            customButton6.Location = new Point(636, 133);
+            customButton6.Location = new Point(579, 134);
             customButton6.Name = "customButton6";
-            customButton6.Size = new Size(378, 45);
+            customButton6.Size = new Size(429, 45);
             customButton6.TabIndex = 73;
             customButton6.TextColor = Color.White;
             customButton6.UseVisualStyleBackColor = false;
@@ -328,7 +329,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.FromArgb(0, 176, 240);
-            label7.Location = new Point(636, 188);
+            label7.Location = new Point(579, 189);
             label7.Name = "label7";
             label7.Size = new Size(104, 19);
             label7.TabIndex = 74;
@@ -345,19 +346,20 @@
             customButton7.FlatAppearance.BorderSize = 0;
             customButton7.FlatStyle = FlatStyle.Flat;
             customButton7.ForeColor = Color.White;
-            customButton7.Location = new Point(636, 210);
+            customButton7.Location = new Point(579, 211);
             customButton7.Name = "customButton7";
-            customButton7.Size = new Size(378, 45);
+            customButton7.Size = new Size(429, 45);
             customButton7.TabIndex = 76;
             customButton7.TextColor = Color.White;
             customButton7.UseVisualStyleBackColor = false;
+            customButton7.Click += customButton7_Click;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.FromArgb(0, 176, 240);
-            label8.Location = new Point(636, 267);
+            label8.Location = new Point(579, 268);
             label8.Name = "label8";
             label8.Size = new Size(96, 19);
             label8.TabIndex = 77;
@@ -374,9 +376,9 @@
             customButton8.FlatAppearance.BorderSize = 0;
             customButton8.FlatStyle = FlatStyle.Flat;
             customButton8.ForeColor = Color.White;
-            customButton8.Location = new Point(636, 289);
+            customButton8.Location = new Point(579, 290);
             customButton8.Name = "customButton8";
-            customButton8.Size = new Size(378, 45);
+            customButton8.Size = new Size(429, 45);
             customButton8.TabIndex = 79;
             customButton8.TextColor = Color.White;
             customButton8.UseVisualStyleBackColor = false;
@@ -386,7 +388,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.FromArgb(0, 176, 240);
-            label9.Location = new Point(636, 342);
+            label9.Location = new Point(579, 343);
             label9.Name = "label9";
             label9.Size = new Size(134, 19);
             label9.TabIndex = 80;
@@ -403,9 +405,9 @@
             customButton9.FlatAppearance.BorderSize = 0;
             customButton9.FlatStyle = FlatStyle.Flat;
             customButton9.ForeColor = Color.White;
-            customButton9.Location = new Point(636, 368);
+            customButton9.Location = new Point(579, 369);
             customButton9.Name = "customButton9";
-            customButton9.Size = new Size(378, 45);
+            customButton9.Size = new Size(429, 45);
             customButton9.TabIndex = 82;
             customButton9.TextColor = Color.White;
             customButton9.UseVisualStyleBackColor = false;
@@ -415,7 +417,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.FromArgb(0, 176, 240);
-            label10.Location = new Point(636, 428);
+            label10.Location = new Point(579, 429);
             label10.Name = "label10";
             label10.Size = new Size(123, 19);
             label10.TabIndex = 83;
@@ -432,9 +434,9 @@
             customButton11.FlatAppearance.BorderSize = 0;
             customButton11.FlatStyle = FlatStyle.Flat;
             customButton11.ForeColor = Color.White;
-            customButton11.Location = new Point(636, 450);
+            customButton11.Location = new Point(579, 451);
             customButton11.Name = "customButton11";
-            customButton11.Size = new Size(378, 45);
+            customButton11.Size = new Size(429, 45);
             customButton11.TabIndex = 85;
             customButton11.TextColor = Color.White;
             customButton11.UseVisualStyleBackColor = false;
@@ -457,6 +459,7 @@
             cancelButton.Text = "CANCEL";
             cancelButton.TextColor = Color.White;
             cancelButton.UseVisualStyleBackColor = false;
+            cancelButton.Click += cancelButton_Click;
             // 
             // customButton14
             // 
@@ -476,158 +479,154 @@
             customButton14.Text = "CREATE";
             customButton14.TextColor = Color.White;
             customButton14.UseVisualStyleBackColor = false;
+            customButton14.Click += customButton14_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(42, 42, 42);
-            panel1.Controls.Add(textBox1);
-            panel1.Location = new Point(57, 301);
+            panel1.Controls.Add(citizenIDBox);
+            panel1.Location = new Point(57, 304);
             panel1.Name = "panel1";
-            panel1.Size = new Size(344, 22);
+            panel1.Size = new Size(395, 22);
             panel1.TabIndex = 104;
             // 
-            // textBox1
+            // citizenIDBox
             // 
-            textBox1.BackColor = Color.FromArgb(42, 42, 42);
-            textBox1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(-2, -2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(350, 26);
-            textBox1.TabIndex = 0;
+            citizenIDBox.BackColor = Color.FromArgb(42, 42, 42);
+            citizenIDBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            citizenIDBox.ForeColor = Color.White;
+            citizenIDBox.Location = new Point(-2, -2);
+            citizenIDBox.Name = "citizenIDBox";
+            citizenIDBox.Size = new Size(399, 26);
+            citizenIDBox.TabIndex = 0;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(42, 42, 42);
-            panel2.Controls.Add(textBox2);
-            panel2.Location = new Point(54, 380);
+            panel2.Controls.Add(emailBox);
+            panel2.Location = new Point(54, 382);
             panel2.Name = "panel2";
-            panel2.Size = new Size(344, 22);
+            panel2.Size = new Size(395, 22);
             panel2.TabIndex = 105;
             // 
-            // textBox2
+            // emailBox
             // 
-            textBox2.BackColor = Color.FromArgb(42, 42, 42);
-            textBox2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.ForeColor = Color.White;
-            textBox2.Location = new Point(-2, -2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(350, 26);
-            textBox2.TabIndex = 0;
+            emailBox.BackColor = Color.FromArgb(42, 42, 42);
+            emailBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            emailBox.ForeColor = Color.White;
+            emailBox.Location = new Point(-2, -2);
+            emailBox.Name = "emailBox";
+            emailBox.Size = new Size(399, 26);
+            emailBox.TabIndex = 0;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(42, 42, 42);
-            panel3.Controls.Add(textBox3);
-            panel3.Location = new Point(57, 461);
+            panel3.Controls.Add(passPortBox);
+            panel3.Location = new Point(57, 465);
             panel3.Name = "panel3";
-            panel3.Size = new Size(344, 22);
+            panel3.Size = new Size(395, 22);
             panel3.TabIndex = 106;
             // 
-            // textBox3
+            // passPortBox
             // 
-            textBox3.BackColor = Color.FromArgb(42, 42, 42);
-            textBox3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.ForeColor = Color.White;
-            textBox3.Location = new Point(-2, -2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(350, 26);
-            textBox3.TabIndex = 0;
+            passPortBox.BackColor = Color.FromArgb(42, 42, 42);
+            passPortBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passPortBox.ForeColor = Color.White;
+            passPortBox.Location = new Point(-2, -2);
+            passPortBox.Name = "passPortBox";
+            passPortBox.Size = new Size(399, 26);
+            passPortBox.TabIndex = 0;
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(42, 42, 42);
-            panel4.Controls.Add(textBox4);
-            panel4.Location = new Point(652, 145);
+            panel4.Controls.Add(userNameBox);
+            panel4.Location = new Point(595, 146);
             panel4.Name = "panel4";
-            panel4.Size = new Size(344, 22);
+            panel4.Size = new Size(395, 22);
             panel4.TabIndex = 107;
             // 
-            // textBox4
+            // userNameBox
             // 
-            textBox4.BackColor = Color.FromArgb(42, 42, 42);
-            textBox4.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.ForeColor = Color.White;
-            textBox4.Location = new Point(-2, -2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(350, 26);
-            textBox4.TabIndex = 0;
+            userNameBox.BackColor = Color.FromArgb(42, 42, 42);
+            userNameBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userNameBox.ForeColor = Color.White;
+            userNameBox.Location = new Point(-2, -2);
+            userNameBox.Name = "userNameBox";
+            userNameBox.Size = new Size(399, 26);
+            userNameBox.TabIndex = 0;
+            userNameBox.TextChanged += textBox4_TextChanged;
             // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(42, 42, 42);
-            panel5.Controls.Add(textBox5);
-            panel5.Location = new Point(652, 222);
+            panel5.Controls.Add(genderBox);
+            panel5.Location = new Point(595, 223);
             panel5.Name = "panel5";
-            panel5.Size = new Size(344, 22);
+            panel5.Size = new Size(395, 22);
             panel5.TabIndex = 108;
             // 
-            // textBox5
+            // genderBox
             // 
-            textBox5.BackColor = Color.FromArgb(42, 42, 42);
-            textBox5.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.ForeColor = Color.White;
-            textBox5.Location = new Point(-2, -2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(350, 26);
-            textBox5.TabIndex = 0;
+            genderBox.BackColor = Color.FromArgb(42, 42, 42);
+            genderBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            genderBox.ForeColor = Color.White;
+            genderBox.Location = new Point(-2, -2);
+            genderBox.Name = "genderBox";
+            genderBox.Size = new Size(399, 26);
+            genderBox.TabIndex = 0;
             // 
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(42, 42, 42);
-            panel6.Controls.Add(textBox6);
-            panel6.Location = new Point(652, 302);
+            panel6.Controls.Add(mobileBox);
+            panel6.Location = new Point(595, 303);
             panel6.Name = "panel6";
-            panel6.Size = new Size(344, 22);
+            panel6.Size = new Size(395, 22);
             panel6.TabIndex = 109;
             // 
-            // textBox6
+            // mobileBox
             // 
-            textBox6.BackColor = Color.FromArgb(42, 42, 42);
-            textBox6.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.ForeColor = Color.White;
-            textBox6.Location = new Point(-2, -2);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(350, 26);
-            textBox6.TabIndex = 0;
-            // 
-            // panel7
-            // 
-            panel7.BackColor = Color.FromArgb(42, 42, 42);
-            panel7.Controls.Add(textBox7);
-            panel7.Location = new Point(652, 380);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(344, 22);
-            panel7.TabIndex = 110;
-            // 
-            // textBox7
-            // 
-            textBox7.BackColor = Color.FromArgb(42, 42, 42);
-            textBox7.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox7.ForeColor = Color.White;
-            textBox7.Location = new Point(-2, -2);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(350, 26);
-            textBox7.TabIndex = 0;
+            mobileBox.BackColor = Color.FromArgb(42, 42, 42);
+            mobileBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            mobileBox.ForeColor = Color.White;
+            mobileBox.Location = new Point(-2, -2);
+            mobileBox.Name = "mobileBox";
+            mobileBox.Size = new Size(399, 26);
+            mobileBox.TabIndex = 0;
             // 
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(42, 42, 42);
-            panel8.Controls.Add(textBox8);
-            panel8.Location = new Point(654, 463);
+            panel8.Controls.Add(addressBox);
+            panel8.Location = new Point(597, 464);
             panel8.Name = "panel8";
-            panel8.Size = new Size(344, 22);
+            panel8.Size = new Size(395, 22);
             panel8.TabIndex = 111;
             // 
-            // textBox8
+            // addressBox
             // 
-            textBox8.BackColor = Color.FromArgb(42, 42, 42);
-            textBox8.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox8.ForeColor = Color.White;
-            textBox8.Location = new Point(-2, -2);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(350, 26);
-            textBox8.TabIndex = 0;
+            addressBox.BackColor = Color.FromArgb(42, 42, 42);
+            addressBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addressBox.ForeColor = Color.White;
+            addressBox.Location = new Point(-2, -2);
+            addressBox.Name = "addressBox";
+            addressBox.Size = new Size(399, 26);
+            addressBox.TabIndex = 0;
+            // 
+            // birthdateBox
+            // 
+            birthdateBox.BorderColor = Color.PaleVioletRed;
+            birthdateBox.BorderSize = 0;
+            birthdateBox.Font = new Font("Segoe UI", 9.5F);
+            birthdateBox.Location = new Point(593, 374);
+            birthdateBox.MinimumSize = new Size(0, 35);
+            birthdateBox.Name = "birthdateBox";
+            birthdateBox.Size = new Size(397, 35);
+            birthdateBox.SkinColor = Color.FromArgb(42, 42, 42);
+            birthdateBox.TabIndex = 112;
+            birthdateBox.TextColor = Color.White;
             // 
             // CM_CreateAccount
             // 
@@ -635,8 +634,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 23, 23);
             ClientSize = new Size(1061, 730);
+            Controls.Add(birthdateBox);
             Controls.Add(panel8);
-            Controls.Add(panel7);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel4);
@@ -661,10 +660,10 @@
             Controls.Add(customButton4);
             Controls.Add(label3);
             Controls.Add(customButton3);
-            Controls.Add(customComboBox1);
+            Controls.Add(deparmentsBox);
             Controls.Add(label1);
             Controls.Add(customButton1);
-            Controls.Add(departmentsBox);
+            Controls.Add(typeBox);
             Controls.Add(label2);
             Controls.Add(customButton2);
             Controls.Add(customButton10);
@@ -685,8 +684,6 @@
             panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             ResumeLayout(false);
@@ -697,12 +694,12 @@
 
         private CustomComponent.ElipseControl elipseControl1;
         private CustomComponent.CustomButton customButton10;
-        private CustomComponent.CustomComboBox departmentsBox;
+        private CustomComponent.CustomComboBox typeBox;
         private Label label2;
         private CustomComponent.CustomButton customButton2;
         private Label label3;
         private CustomComponent.CustomButton customButton3;
-        private CustomComponent.CustomComboBox customComboBox1;
+        private CustomComponent.CustomComboBox deparmentsBox;
         private Label label1;
         private CustomComponent.CustomButton customButton1;
         private Label label10;
@@ -722,20 +719,19 @@
         private CustomComponent.CustomButton customButton14;
         private CustomComponent.CustomButton cancelButton;
         private Panel panel1;
-        private TextBox textBox1;
+        private TextBox citizenIDBox;
         private Panel panel8;
-        private TextBox textBox8;
-        private Panel panel7;
-        private TextBox textBox7;
+        private TextBox addressBox;
         private Panel panel6;
-        private TextBox textBox6;
+        private TextBox mobileBox;
         private Panel panel5;
-        private TextBox textBox5;
+        private TextBox genderBox;
         private Panel panel4;
-        private TextBox textBox4;
+        private TextBox userNameBox;
         private Panel panel3;
-        private TextBox textBox3;
+        private TextBox passPortBox;
         private Panel panel2;
-        private TextBox textBox2;
+        private TextBox emailBox;
+        private CustomComponent.CustomDateTimePicker birthdateBox;
     }
 }

@@ -60,8 +60,9 @@
             panel1 = new Panel();
             customPanel1 = new CustomComponent.CustomPanel();
             customPanel2 = new CustomComponent.CustomPanel();
+            changeAvatarButton = new CustomComponent.CustomButton();
             SUBMIT = new CustomComponent.CustomButton();
-            customPictureBox1 = new CustomComponent.CustomPictureBox();
+            avatarBox = new CustomComponent.CustomPictureBox();
             UserID = new Label();
             heading = new Label();
             UserName1 = new Label();
@@ -69,7 +70,7 @@
             panel2.SuspendLayout();
             customPanel1.SuspendLayout();
             customPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)customPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)avatarBox).BeginInit();
             SuspendLayout();
             // 
             // Birth
@@ -573,8 +574,9 @@
             customPanel2.BorderColor = Color.Black;
             customPanel2.BorderRadius = 28;
             customPanel2.BorderWidth = 1;
+            customPanel2.Controls.Add(changeAvatarButton);
             customPanel2.Controls.Add(SUBMIT);
-            customPanel2.Controls.Add(customPictureBox1);
+            customPanel2.Controls.Add(avatarBox);
             customPanel2.Controls.Add(UserID);
             customPanel2.Controls.Add(heading);
             customPanel2.Controls.Add(UserName1);
@@ -585,6 +587,27 @@
             customPanel2.Name = "customPanel2";
             customPanel2.Size = new Size(432, 552);
             customPanel2.TabIndex = 23;
+            // 
+            // changeAvatarButton
+            // 
+            changeAvatarButton.AutoSize = true;
+            changeAvatarButton.BackColor = Color.Green;
+            changeAvatarButton.BackgroundColor = Color.Green;
+            changeAvatarButton.BorderColor = Color.PaleVioletRed;
+            changeAvatarButton.BorderRadius = 20;
+            changeAvatarButton.BorderSize = 0;
+            changeAvatarButton.FlatAppearance.BorderSize = 0;
+            changeAvatarButton.FlatStyle = FlatStyle.Flat;
+            changeAvatarButton.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            changeAvatarButton.ForeColor = Color.Black;
+            changeAvatarButton.Location = new Point(124, 324);
+            changeAvatarButton.Name = "changeAvatarButton";
+            changeAvatarButton.Size = new Size(189, 45);
+            changeAvatarButton.TabIndex = 8;
+            changeAvatarButton.Text = "CHANGE AVATAR";
+            changeAvatarButton.TextColor = Color.Black;
+            changeAvatarButton.UseVisualStyleBackColor = false;
+            changeAvatarButton.Click += changeAvatarButton_Click;
             // 
             // SUBMIT
             // 
@@ -597,7 +620,7 @@
             SUBMIT.FlatStyle = FlatStyle.Flat;
             SUBMIT.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SUBMIT.ForeColor = Color.Black;
-            SUBMIT.Location = new Point(113, 456);
+            SUBMIT.Location = new Point(113, 483);
             SUBMIT.Name = "SUBMIT";
             SUBMIT.Size = new Size(204, 45);
             SUBMIT.TabIndex = 7;
@@ -606,28 +629,28 @@
             SUBMIT.UseVisualStyleBackColor = false;
             SUBMIT.Click += SUBMIT_Click;
             // 
-            // customPictureBox1
+            // avatarBox
             // 
-            customPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            customPictureBox1.BorderColor = Color.RoyalBlue;
-            customPictureBox1.BorderColor2 = Color.HotPink;
-            customPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            customPictureBox1.BorderSize = 2;
-            customPictureBox1.GradientAngle = 50F;
-            customPictureBox1.Image = (Image)resources.GetObject("customPictureBox1.Image");
-            customPictureBox1.InitialImage = null;
-            customPictureBox1.Location = new Point(94, 70);
-            customPictureBox1.Name = "customPictureBox1";
-            customPictureBox1.Size = new Size(248, 248);
-            customPictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            customPictureBox1.TabIndex = 4;
-            customPictureBox1.TabStop = false;
+            avatarBox.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            avatarBox.BorderColor = Color.RoyalBlue;
+            avatarBox.BorderColor2 = Color.HotPink;
+            avatarBox.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            avatarBox.BorderSize = 2;
+            avatarBox.GradientAngle = 50F;
+            avatarBox.Image = (Image)resources.GetObject("avatarBox.Image");
+            avatarBox.InitialImage = null;
+            avatarBox.Location = new Point(94, 70);
+            avatarBox.Name = "avatarBox";
+            avatarBox.Size = new Size(248, 248);
+            avatarBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            avatarBox.TabIndex = 4;
+            avatarBox.TabStop = false;
             // 
             // UserID
             // 
             UserID.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
             UserID.ForeColor = Color.White;
-            UserID.Location = new Point(0, 397);
+            UserID.Location = new Point(0, 437);
             UserID.Name = "UserID";
             UserID.Size = new Size(432, 34);
             UserID.TabIndex = 6;
@@ -649,7 +672,7 @@
             // 
             UserName1.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
             UserName1.ForeColor = Color.White;
-            UserName1.Location = new Point(0, 338);
+            UserName1.Location = new Point(0, 378);
             UserName1.Name = "UserName1";
             UserName1.Size = new Size(432, 34);
             UserName1.TabIndex = 5;
@@ -674,7 +697,7 @@
             customPanel1.PerformLayout();
             customPanel2.ResumeLayout(false);
             customPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)customPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)avatarBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -712,9 +735,10 @@
         private CustomComponent.CustomPanel customPanel1;
         private CustomComponent.CustomPanel customPanel2;
         private CustomComponent.CustomButton SUBMIT;
-        private CustomComponent.CustomPictureBox customPictureBox1;
+        private CustomComponent.CustomPictureBox avatarBox;
         private Label UserID;
         private Label heading;
         private Label UserName1;
+        private CustomComponent.CustomButton changeAvatarButton;
     }
 }

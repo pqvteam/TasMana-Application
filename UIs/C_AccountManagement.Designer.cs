@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_AccountManagement));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             headerPanel = new Panel();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
@@ -45,8 +45,8 @@
             customButton7 = new CustomComponent.CustomButton();
             customButton6 = new CustomComponent.CustomButton();
             customPanel1 = new CustomComponent.CustomPanel();
+            button3 = new Button();
             button2 = new Button();
-            button1 = new Button();
             pictureBox6 = new PictureBox();
             searchBox = new TextBox();
             customButton1 = new CustomComponent.CustomButton();
@@ -345,8 +345,8 @@
             customPanel1.BorderColor = Color.Black;
             customPanel1.BorderRadius = 0;
             customPanel1.BorderWidth = 1;
+            customPanel1.Controls.Add(button3);
             customPanel1.Controls.Add(button2);
-            customPanel1.Controls.Add(button1);
             customPanel1.GradientAngle = 0F;
             customPanel1.GradientEndColor = Color.White;
             customPanel1.GradientStartColor = Color.White;
@@ -356,6 +356,21 @@
             customPanel1.TabIndex = 3;
             customPanel1.Paint += customPanel1_Paint;
             // 
+            // button3
+            // 
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.White;
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.Location = new Point(3, 1);
+            button3.Name = "button3";
+            button3.Size = new Size(264, 44);
+            button3.TabIndex = 6;
+            button3.Text = "ACTIVED ACCOUNT";
+            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button3.UseVisualStyleBackColor = true;
+            // 
             // button2
             // 
             button2.FlatAppearance.BorderSize = 0;
@@ -363,28 +378,13 @@
             button2.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(255, 1);
+            button2.Location = new Point(270, 1);
             button2.Name = "button2";
             button2.Size = new Size(258, 44);
             button2.TabIndex = 5;
             button2.Text = "INACTIVED ACCOUNT";
             button2.TextImageRelation = TextImageRelation.ImageBeforeText;
             button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.bell_icon;
-            button1.Location = new Point(0, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(249, 45);
-            button1.TabIndex = 4;
-            button1.Text = "ACTIVED ACCOUNT";
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = true;
             // 
             // pictureBox6
             // 
@@ -404,7 +404,7 @@
             searchBox.BorderStyle = BorderStyle.None;
             searchBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             searchBox.ForeColor = Color.White;
-            searchBox.Location = new Point(33, 171);
+            searchBox.Location = new Point(41, 171);
             searchBox.Name = "searchBox";
             searchBox.PlaceholderText = "Enter an account name...";
             searchBox.Size = new Size(375, 20);
@@ -421,13 +421,16 @@
             customButton1.Enabled = false;
             customButton1.FlatAppearance.BorderSize = 0;
             customButton1.FlatStyle = FlatStyle.Flat;
+            customButton1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton1.ForeColor = Color.White;
             customButton1.Location = new Point(10, 156);
             customButton1.Name = "customButton1";
             customButton1.Size = new Size(456, 50);
             customButton1.TabIndex = 48;
             customButton1.TextColor = Color.White;
+            customButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton1.UseVisualStyleBackColor = false;
+            customButton1.Click += customButton1_Click;
             // 
             // label2
             // 
@@ -551,6 +554,7 @@
             customButton19.TextColor = Color.White;
             customButton19.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton19.UseVisualStyleBackColor = false;
+            customButton19.Click += customButton19_Click;
             // 
             // membersGrid
             // 
@@ -561,24 +565,24 @@
             membersGrid.BackgroundColor = Color.FromArgb(24, 23, 23);
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.Yellow;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.Yellow;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             membersGrid.ColumnHeadersHeight = 50;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle4;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(24, 23, 23);
             membersGrid.Location = new Point(10, 224);
@@ -651,7 +655,6 @@
         private CustomComponent.CustomButton customButton7;
         private CustomComponent.CustomButton customButton6;
         private CustomComponent.CustomPanel customPanel1;
-        private Button button1;
         private Button button2;
         private PictureBox pictureBox6;
         private TextBox searchBox;
@@ -665,5 +668,6 @@
         private CustomComponent.CustomButton customButton19;
         private DataGridView membersGrid;
         private Label label1;
+        private Button button3;
     }
 }
