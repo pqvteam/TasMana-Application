@@ -28,7 +28,7 @@ namespace UIs
             {
                 MessageBox.Show("Đã lưu mật khẩu của bạn");
             }
-            else if(checkbox_Remember.Checked && service.savePassword(userID, password)==false)
+            else if (checkbox_Remember.Checked && service.savePassword(userID, password) == false)
             {
                 MessageBox.Show("Mật khẩu của bạn lưu thất bại");
             }
@@ -42,7 +42,7 @@ namespace UIs
                 {
                     Session.Instance.Email = box_password.Text;
                 }
-                if(service.laCEO(userID))
+                if (service.laCEO(userID))
                 {
                     Session.Instance.laCEO = true;
                 }
@@ -111,6 +111,11 @@ namespace UIs
         private void customButton5_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void G_Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
