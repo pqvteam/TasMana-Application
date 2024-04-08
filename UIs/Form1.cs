@@ -45,7 +45,7 @@ namespace UIs
         {
             dataGridView1.Columns.Clear();
             sqlcon.Open();
-            sqlcmd = new SqlCommand("select maGiaoViec from GiaoViec where maGiaoViec='GD-001.002'", sqlcon);
+            sqlcmd = new SqlCommand("select maGiaoViec from GiaoViec where maGiaoViec='GD-001.003'", sqlcon);
             da = new SqlDataAdapter(sqlcmd);
             dt = new DataTable();
             da.Fill(dt);
@@ -113,7 +113,7 @@ namespace UIs
             //Store File Bytes in database image filed 
 
             sqlcon.Open();
-            SqlCommand sqlcmd = new SqlCommand("update GiaoViec set dinhKemFile = @FB where maGiaoViec = 'KT-501.002'", sqlcon);
+            SqlCommand sqlcmd = new SqlCommand("update GiaoViec set dinhKemFile = @FB where maGiaoViec = 'GD-001.003'", sqlcon);
             sqlcmd.Parameters.AddWithValue("@FB", FileBytes);
             sqlcmd.ExecuteNonQuery();
             sqlcon.Close();
@@ -129,7 +129,7 @@ namespace UIs
                 byte[] dbbyte;
 
                 sqlcon.Open();
-                sqlcmd = new SqlCommand("select dinhKemFile from GiaoViec where maGiaoViec = 'AN-402.001'", sqlcon);
+                sqlcmd = new SqlCommand("select dinhKemFile from GiaoViec where maGiaoViec = 'GD-001.003'", sqlcon);
                 da = new SqlDataAdapter(sqlcmd);
                 dt = new DataTable();
                 da.Fill(dt);
