@@ -51,7 +51,6 @@
             taskFile = new TextBox();
             label8 = new Label();
             pictureBox6 = new PictureBox();
-            taskDescription = new TextBox();
             label7 = new Label();
             pictureBox5 = new PictureBox();
             label6 = new Label();
@@ -82,6 +81,8 @@
             label1 = new Label();
             name = new Label();
             heading = new Label();
+            panel4 = new Panel();
+            taskDescription = new TextBox();
             headerPanel = new Panel();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
@@ -100,7 +101,7 @@
             saveButton = new CustomComponent.CustomButton();
             cancelButton = new CustomComponent.CustomButton();
             customPanel1 = new CustomComponent.CustomPanel();
-            customToggleButton2 = new CustomComponent.CustomToggleButton();
+            taskHighlight = new CustomComponent.CustomToggleButton();
             taskMode = new CustomComponent.CustomToggleButton();
             pictureBox13 = new PictureBox();
             label19 = new Label();
@@ -135,6 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel4.SuspendLayout();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             sidePanel.SuspendLayout();
@@ -166,13 +168,13 @@
             mainPanel.Controls.Add(taskFile);
             mainPanel.Controls.Add(label8);
             mainPanel.Controls.Add(pictureBox6);
-            mainPanel.Controls.Add(taskDescription);
             mainPanel.Controls.Add(label7);
             mainPanel.Controls.Add(pictureBox5);
             mainPanel.Controls.Add(label6);
             mainPanel.Controls.Add(pictureBox4);
             mainPanel.Controls.Add(userPanel);
             mainPanel.Controls.Add(heading);
+            mainPanel.Controls.Add(panel4);
             mainPanel.Location = new Point(0, 59);
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(1085, 696);
@@ -192,7 +194,7 @@
             uploadButton.Location = new Point(929, 237);
             uploadButton.Name = "uploadButton";
             uploadButton.Size = new Size(129, 51);
-            uploadButton.TabIndex = 42;
+            uploadButton.TabIndex = 3;
             uploadButton.Text = "BROWSE";
             uploadButton.TextColor = Color.Black;
             uploadButton.UseVisualStyleBackColor = false;
@@ -202,27 +204,29 @@
             // 
             panel3.BackColor = Color.FromArgb(42, 42, 42);
             panel3.Controls.Add(taskName);
-            panel3.Location = new Point(510, 22);
+            panel3.Location = new Point(510, 15);
             panel3.Name = "panel3";
-            panel3.Size = new Size(554, 49);
-            panel3.TabIndex = 41;
+            panel3.Size = new Size(554, 46);
+            panel3.TabIndex = 1;
             // 
             // taskName
             // 
             taskName.BackColor = Color.FromArgb(42, 42, 42);
             taskName.BorderStyle = BorderStyle.None;
-            taskName.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            taskName.Cursor = Cursors.Hand;
+            taskName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskName.ForeColor = Color.White;
-            taskName.Location = new Point(7, 16);
+            taskName.Location = new Point(19, 10);
             taskName.Name = "taskName";
-            taskName.Size = new Size(541, 19);
-            taskName.TabIndex = 15;
+            taskName.Size = new Size(515, 23);
+            taskName.TabIndex = 0;
             // 
             // taskPriority
             // 
             taskPriority.BackColor = Color.FromArgb(89, 89, 89);
             taskPriority.BorderColor = Color.DimGray;
             taskPriority.BorderSize = 1;
+            taskPriority.Cursor = Cursors.Hand;
             taskPriority.DropDownStyle = ComboBoxStyle.DropDown;
             taskPriority.Font = new Font("Segoe UI", 10F);
             taskPriority.ForeColor = Color.White;
@@ -235,7 +239,7 @@
             taskPriority.Name = "taskPriority";
             taskPriority.Padding = new Padding(1);
             taskPriority.Size = new Size(200, 36);
-            taskPriority.TabIndex = 40;
+            taskPriority.TabIndex = 7;
             taskPriority.Texts = "";
             // 
             // taskStatus
@@ -243,6 +247,7 @@
             taskStatus.BackColor = Color.FromArgb(89, 89, 89);
             taskStatus.BorderColor = Color.DimGray;
             taskStatus.BorderSize = 1;
+            taskStatus.Cursor = Cursors.Hand;
             taskStatus.DropDownStyle = ComboBoxStyle.DropDown;
             taskStatus.Font = new Font("Segoe UI", 10F);
             taskStatus.ForeColor = Color.White;
@@ -255,13 +260,14 @@
             taskStatus.Name = "taskStatus";
             taskStatus.Padding = new Padding(1);
             taskStatus.Size = new Size(200, 35);
-            taskStatus.TabIndex = 39;
+            taskStatus.TabIndex = 6;
             taskStatus.Texts = "";
             // 
             // taskEnd
             // 
             taskEnd.BorderColor = Color.PaleVioletRed;
             taskEnd.BorderSize = 0;
+            taskEnd.Cursor = Cursors.Hand;
             taskEnd.Font = new Font("Copperplate Gothic Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskEnd.Format = DateTimePickerFormat.Short;
             taskEnd.Location = new Point(489, 398);
@@ -269,13 +275,14 @@
             taskEnd.Name = "taskEnd";
             taskEnd.Size = new Size(144, 35);
             taskEnd.SkinColor = Color.FromArgb(42, 42, 42);
-            taskEnd.TabIndex = 38;
+            taskEnd.TabIndex = 5;
             taskEnd.TextColor = Color.White;
             // 
             // taskStart
             // 
             taskStart.BorderColor = Color.PaleVioletRed;
             taskStart.BorderSize = 0;
+            taskStart.Cursor = Cursors.Hand;
             taskStart.Font = new Font("Copperplate Gothic Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskStart.Format = DateTimePickerFormat.Short;
             taskStart.Location = new Point(340, 398);
@@ -283,7 +290,7 @@
             taskStart.Name = "taskStart";
             taskStart.Size = new Size(133, 35);
             taskStart.SkinColor = Color.FromArgb(42, 42, 42);
-            taskStart.TabIndex = 37;
+            taskStart.TabIndex = 4;
             taskStart.TextColor = Color.White;
             // 
             // dataGridView1
@@ -294,7 +301,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(722, 197);
-            dataGridView1.TabIndex = 36;
+            dataGridView1.TabIndex = 0;
             // 
             // label13
             // 
@@ -304,7 +311,7 @@
             label13.Location = new Point(374, 455);
             label13.Name = "label13";
             label13.Size = new Size(68, 19);
-            label13.TabIndex = 35;
+            label13.TabIndex = 0;
             label13.Text = "TO DO";
             // 
             // pictureBox11
@@ -324,7 +331,7 @@
             label12.Location = new Point(899, 363);
             label12.Name = "label12";
             label12.Size = new Size(100, 19);
-            label12.TabIndex = 29;
+            label12.TabIndex = 0;
             label12.Text = "PRIORITY";
             // 
             // pictureBox10
@@ -345,7 +352,7 @@
             label11.Location = new Point(684, 363);
             label11.Name = "label11";
             label11.Size = new Size(102, 19);
-            label11.TabIndex = 27;
+            label11.TabIndex = 0;
             label11.Text = "PROCESS";
             label11.Click += label11_Click;
             // 
@@ -367,7 +374,7 @@
             label10.Location = new Point(529, 363);
             label10.Name = "label10";
             label10.Size = new Size(110, 19);
-            label10.TabIndex = 25;
+            label10.TabIndex = 0;
             label10.Text = "DEADLINE";
             // 
             // pictureBox8
@@ -390,7 +397,7 @@
             label9.Location = new Point(385, 363);
             label9.Name = "label9";
             label9.Size = new Size(71, 19);
-            label9.TabIndex = 23;
+            label9.TabIndex = 0;
             label9.Text = "START";
             // 
             // pictureBox7
@@ -407,13 +414,16 @@
             // 
             taskFile.BackColor = Color.FromArgb(42, 42, 42);
             taskFile.BorderStyle = BorderStyle.None;
-            taskFile.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            taskFile.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskFile.ForeColor = Color.White;
             taskFile.Location = new Point(338, 214);
             taskFile.Multiline = true;
             taskFile.Name = "taskFile";
+            taskFile.ReadOnly = true;
             taskFile.Size = new Size(579, 124);
-            taskFile.TabIndex = 21;
+            taskFile.TabIndex = 0;
+            taskFile.TabStop = false;
+            taskFile.Tag = "None";
             // 
             // label8
             // 
@@ -423,7 +433,7 @@
             label8.Location = new Point(374, 181);
             label8.Name = "label8";
             label8.Size = new Size(174, 19);
-            label8.TabIndex = 20;
+            label8.TabIndex = 0;
             label8.Text = "ATTACHED FILES";
             // 
             // pictureBox6
@@ -436,18 +446,6 @@
             pictureBox6.TabIndex = 19;
             pictureBox6.TabStop = false;
             // 
-            // taskDescription
-            // 
-            taskDescription.BackColor = Color.FromArgb(42, 42, 42);
-            taskDescription.BorderStyle = BorderStyle.None;
-            taskDescription.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            taskDescription.ForeColor = Color.White;
-            taskDescription.Location = new Point(338, 108);
-            taskDescription.Multiline = true;
-            taskDescription.Name = "taskDescription";
-            taskDescription.Size = new Size(726, 52);
-            taskDescription.TabIndex = 18;
-            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -456,7 +454,7 @@
             label7.Location = new Point(374, 75);
             label7.Name = "label7";
             label7.Size = new Size(142, 19);
-            label7.TabIndex = 17;
+            label7.TabIndex = 0;
             label7.Text = "DESCRIPTION";
             // 
             // pictureBox5
@@ -477,7 +475,7 @@
             label6.Location = new Point(374, 30);
             label6.Name = "label6";
             label6.Size = new Size(122, 19);
-            label6.TabIndex = 14;
+            label6.TabIndex = 0;
             label6.Text = "TASK NAME";
             // 
             // pictureBox4
@@ -520,7 +518,7 @@
             userPanel.Location = new Point(12, 40);
             userPanel.Name = "userPanel";
             userPanel.Size = new Size(302, 642);
-            userPanel.TabIndex = 1;
+            userPanel.TabIndex = 7;
             userPanel.Paint += userPanel_Paint;
             // 
             // customButton16
@@ -537,7 +535,8 @@
             customButton16.Location = new Point(121, 567);
             customButton16.Name = "customButton16";
             customButton16.Size = new Size(107, 33);
-            customButton16.TabIndex = 52;
+            customButton16.TabIndex = 0;
+            customButton16.TabStop = false;
             customButton16.Text = "Checking";
             customButton16.TextColor = Color.Black;
             customButton16.UseVisualStyleBackColor = false;
@@ -556,7 +555,8 @@
             customButton15.Location = new Point(8, 567);
             customButton15.Name = "customButton15";
             customButton15.Size = new Size(107, 33);
-            customButton15.TabIndex = 51;
+            customButton15.TabIndex = 0;
+            customButton15.TabStop = false;
             customButton15.Text = "Checking";
             customButton15.TextColor = Color.Black;
             customButton15.UseVisualStyleBackColor = false;
@@ -569,7 +569,7 @@
             venueLabel.Location = new Point(16, 466);
             venueLabel.Name = "venueLabel";
             venueLabel.Size = new Size(142, 19);
-            venueLabel.TabIndex = 50;
+            venueLabel.TabIndex = 0;
             venueLabel.Text = "DESCRIPTION";
             // 
             // label23
@@ -580,7 +580,7 @@
             label23.Location = new Point(59, 364);
             label23.Name = "label23";
             label23.Size = new Size(142, 19);
-            label23.TabIndex = 47;
+            label23.TabIndex = 0;
             label23.Text = "DESCRIPTION";
             // 
             // customPictureBox4
@@ -606,7 +606,7 @@
             label22.Location = new Point(59, 152);
             label22.Name = "label22";
             label22.Size = new Size(142, 19);
-            label22.TabIndex = 45;
+            label22.TabIndex = 0;
             label22.Text = "DESCRIPTION";
             // 
             // customPictureBox3
@@ -633,7 +633,7 @@
             label21.Location = new Point(59, 253);
             label21.Name = "label21";
             label21.Size = new Size(142, 19);
-            label21.TabIndex = 43;
+            label21.TabIndex = 0;
             label21.Text = "DESCRIPTION";
             // 
             // customPictureBox2
@@ -660,7 +660,7 @@
             receiverLabel.Location = new Point(59, 61);
             receiverLabel.Name = "receiverLabel";
             receiverLabel.Size = new Size(142, 19);
-            receiverLabel.TabIndex = 41;
+            receiverLabel.TabIndex = 0;
             receiverLabel.Text = "DESCRIPTION";
             // 
             // customPictureBox1
@@ -687,7 +687,7 @@
             label5.Location = new Point(50, 525);
             label5.Name = "label5";
             label5.Size = new Size(70, 23);
-            label5.TabIndex = 12;
+            label5.TabIndex = 0;
             label5.Text = "TAGS";
             // 
             // pictureBox3
@@ -702,6 +702,7 @@
             // 
             // venueEditButton
             // 
+            venueEditButton.Cursor = Cursors.Hand;
             venueEditButton.FlatAppearance.BorderSize = 0;
             venueEditButton.FlatStyle = FlatStyle.Flat;
             venueEditButton.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -709,7 +710,7 @@
             venueEditButton.Location = new Point(218, 426);
             venueEditButton.Name = "venueEditButton";
             venueEditButton.Size = new Size(71, 29);
-            venueEditButton.TabIndex = 10;
+            venueEditButton.TabIndex = 13;
             venueEditButton.Text = "<EDIT>";
             venueEditButton.UseVisualStyleBackColor = true;
             venueEditButton.Click += venueEditButton_Click;
@@ -722,7 +723,7 @@
             label4.Location = new Point(50, 428);
             label4.Name = "label4";
             label4.Size = new Size(159, 23);
-            label4.TabIndex = 9;
+            label4.TabIndex = 0;
             label4.Text = "WORKPLACE";
             // 
             // pictureBox2
@@ -737,6 +738,7 @@
             // 
             // button2
             // 
+            button2.Cursor = Cursors.Hand;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -744,7 +746,7 @@
             button2.Location = new Point(197, 315);
             button2.Name = "button2";
             button2.Size = new Size(71, 29);
-            button2.TabIndex = 7;
+            button2.TabIndex = 12;
             button2.Text = "<EDIT>";
             button2.UseVisualStyleBackColor = true;
             // 
@@ -756,7 +758,7 @@
             label3.Location = new Point(54, 317);
             label3.Name = "label3";
             label3.Size = new Size(137, 23);
-            label3.TabIndex = 6;
+            label3.TabIndex = 0;
             label3.Text = "CUSTOMER";
             // 
             // pictureBox1
@@ -771,6 +773,7 @@
             // 
             // button1
             // 
+            button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -778,12 +781,13 @@
             button1.Location = new Point(230, 206);
             button1.Name = "button1";
             button1.Size = new Size(71, 29);
-            button1.TabIndex = 4;
+            button1.TabIndex = 11;
             button1.Text = "<EDIT>";
             button1.UseVisualStyleBackColor = true;
             // 
             // editReceiverButton
             // 
+            editReceiverButton.Cursor = Cursors.Hand;
             editReceiverButton.FlatAppearance.BorderSize = 0;
             editReceiverButton.FlatStyle = FlatStyle.Flat;
             editReceiverButton.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -791,7 +795,7 @@
             editReceiverButton.Location = new Point(187, 16);
             editReceiverButton.Name = "editReceiverButton";
             editReceiverButton.Size = new Size(83, 29);
-            editReceiverButton.TabIndex = 3;
+            editReceiverButton.TabIndex = 10;
             editReceiverButton.Text = "<EDIT>";
             editReceiverButton.UseVisualStyleBackColor = true;
             editReceiverButton.Click += editReceiverButton_Click;
@@ -815,7 +819,7 @@
             label1.Location = new Point(8, 108);
             label1.Name = "label1";
             label1.Size = new Size(162, 23);
-            label1.TabIndex = 1;
+            label1.TabIndex = 0;
             label1.Text = "ASSIGNED BY";
             // 
             // name
@@ -840,6 +844,28 @@
             heading.TabIndex = 0;
             heading.Text = "TASK DETAILS";
             // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(42, 42, 42);
+            panel4.Controls.Add(taskDescription);
+            panel4.Location = new Point(335, 108);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(729, 49);
+            panel4.TabIndex = 2;
+            // 
+            // taskDescription
+            // 
+            taskDescription.BackColor = Color.FromArgb(42, 42, 42);
+            taskDescription.BorderStyle = BorderStyle.None;
+            taskDescription.Cursor = Cursors.Hand;
+            taskDescription.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            taskDescription.ForeColor = Color.White;
+            taskDescription.Location = new Point(19, 10);
+            taskDescription.Multiline = true;
+            taskDescription.Name = "taskDescription";
+            taskDescription.Size = new Size(692, 28);
+            taskDescription.TabIndex = 1;
+            // 
             // headerPanel
             // 
             headerPanel.BackColor = Color.FromArgb(13, 13, 13);
@@ -858,7 +884,7 @@
             headerPanel.Location = new Point(0, 0);
             headerPanel.Name = "headerPanel";
             headerPanel.Size = new Size(1382, 59);
-            headerPanel.TabIndex = 1;
+            headerPanel.TabIndex = 0;
             // 
             // customButton18
             // 
@@ -868,6 +894,7 @@
             customButton18.BorderColor = Color.PaleVioletRed;
             customButton18.BorderRadius = 28;
             customButton18.BorderSize = 0;
+            customButton18.Cursor = Cursors.Hand;
             customButton18.FlatAppearance.BorderSize = 0;
             customButton18.FlatStyle = FlatStyle.Flat;
             customButton18.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -877,7 +904,8 @@
             customButton18.Location = new Point(717, 4);
             customButton18.Name = "customButton18";
             customButton18.Size = new Size(188, 48);
-            customButton18.TabIndex = 25;
+            customButton18.TabIndex = 0;
+            customButton18.TabStop = false;
             customButton18.Text = "APARTMENT & RESIDENT";
             customButton18.TextAlign = ContentAlignment.MiddleRight;
             customButton18.TextColor = Color.White;
@@ -890,6 +918,7 @@
             customButton17.BorderColor = Color.PaleVioletRed;
             customButton17.BorderRadius = 28;
             customButton17.BorderSize = 0;
+            customButton17.Cursor = Cursors.Hand;
             customButton17.FlatAppearance.BorderSize = 0;
             customButton17.FlatStyle = FlatStyle.Flat;
             customButton17.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -899,7 +928,8 @@
             customButton17.Location = new Point(509, 5);
             customButton17.Name = "customButton17";
             customButton17.Size = new Size(202, 48);
-            customButton17.TabIndex = 24;
+            customButton17.TabIndex = 0;
+            customButton17.TabStop = false;
             customButton17.Text = "ACCOUNTING MANAGEMENT";
             customButton17.TextAlign = ContentAlignment.MiddleRight;
             customButton17.TextColor = Color.White;
@@ -913,7 +943,7 @@
             panel2.Location = new Point(1261, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(117, 59);
-            panel2.TabIndex = 23;
+            panel2.TabIndex = 0;
             // 
             // customButton14
             // 
@@ -922,6 +952,7 @@
             customButton14.BorderColor = Color.PaleVioletRed;
             customButton14.BorderRadius = 28;
             customButton14.BorderSize = 0;
+            customButton14.Cursor = Cursors.Hand;
             customButton14.FlatAppearance.BorderSize = 0;
             customButton14.FlatStyle = FlatStyle.Flat;
             customButton14.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -931,7 +962,8 @@
             customButton14.Location = new Point(67, 4);
             customButton14.Name = "customButton14";
             customButton14.Size = new Size(39, 51);
-            customButton14.TabIndex = 24;
+            customButton14.TabIndex = 0;
+            customButton14.TabStop = false;
             customButton14.TextAlign = ContentAlignment.MiddleRight;
             customButton14.TextColor = Color.White;
             customButton14.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -944,6 +976,7 @@
             customButton13.BorderColor = Color.Transparent;
             customButton13.BorderRadius = 28;
             customButton13.BorderSize = 0;
+            customButton13.Cursor = Cursors.Hand;
             customButton13.FlatAppearance.BorderSize = 0;
             customButton13.FlatStyle = FlatStyle.Flat;
             customButton13.ForeColor = Color.White;
@@ -951,7 +984,8 @@
             customButton13.Location = new Point(14, 3);
             customButton13.Name = "customButton13";
             customButton13.Size = new Size(50, 50);
-            customButton13.TabIndex = 37;
+            customButton13.TabIndex = 0;
+            customButton13.TabStop = false;
             customButton13.TextColor = Color.White;
             customButton13.UseVisualStyleBackColor = false;
             // 
@@ -962,6 +996,7 @@
             customButton12.BorderColor = Color.PaleVioletRed;
             customButton12.BorderRadius = 28;
             customButton12.BorderSize = 0;
+            customButton12.Cursor = Cursors.Hand;
             customButton12.FlatAppearance.BorderSize = 0;
             customButton12.FlatStyle = FlatStyle.Flat;
             customButton12.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -970,7 +1005,8 @@
             customButton12.Location = new Point(1208, 8);
             customButton12.Name = "customButton12";
             customButton12.Size = new Size(51, 40);
-            customButton12.TabIndex = 22;
+            customButton12.TabIndex = 0;
+            customButton12.TabStop = false;
             customButton12.TextAlign = ContentAlignment.MiddleRight;
             customButton12.TextColor = Color.White;
             customButton12.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -983,6 +1019,7 @@
             customButton11.BorderColor = Color.PaleVioletRed;
             customButton11.BorderRadius = 28;
             customButton11.BorderSize = 0;
+            customButton11.Cursor = Cursors.Hand;
             customButton11.FlatAppearance.BorderSize = 0;
             customButton11.FlatStyle = FlatStyle.Flat;
             customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -991,7 +1028,8 @@
             customButton11.Location = new Point(1077, 0);
             customButton11.Name = "customButton11";
             customButton11.Size = new Size(120, 51);
-            customButton11.TabIndex = 21;
+            customButton11.TabIndex = 0;
+            customButton11.TabStop = false;
             customButton11.Text = "English";
             customButton11.TextAlign = ContentAlignment.MiddleRight;
             customButton11.TextColor = Color.White;
@@ -1005,6 +1043,7 @@
             customButton10.BorderColor = Color.PaleVioletRed;
             customButton10.BorderRadius = 28;
             customButton10.BorderSize = 0;
+            customButton10.Cursor = Cursors.Hand;
             customButton10.FlatAppearance.BorderSize = 0;
             customButton10.FlatStyle = FlatStyle.Flat;
             customButton10.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1014,7 +1053,8 @@
             customButton10.Location = new Point(908, 2);
             customButton10.Name = "customButton10";
             customButton10.Size = new Size(156, 51);
-            customButton10.TabIndex = 20;
+            customButton10.TabIndex = 0;
+            customButton10.TabStop = false;
             customButton10.Text = "RESIDENT SERVICE";
             customButton10.TextAlign = ContentAlignment.MiddleRight;
             customButton10.TextColor = Color.White;
@@ -1028,6 +1068,7 @@
             customButton9.BorderColor = Color.PaleVioletRed;
             customButton9.BorderRadius = 28;
             customButton9.BorderSize = 0;
+            customButton9.Cursor = Cursors.Hand;
             customButton9.FlatAppearance.BorderSize = 0;
             customButton9.FlatStyle = FlatStyle.Flat;
             customButton9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1037,7 +1078,8 @@
             customButton9.Location = new Point(367, 6);
             customButton9.Name = "customButton9";
             customButton9.Size = new Size(137, 48);
-            customButton9.TabIndex = 19;
+            customButton9.TabIndex = 0;
+            customButton9.TabStop = false;
             customButton9.Text = "REPORT";
             customButton9.TextAlign = ContentAlignment.MiddleRight;
             customButton9.TextColor = Color.White;
@@ -1051,6 +1093,7 @@
             customButton8.BorderColor = Color.PaleVioletRed;
             customButton8.BorderRadius = 28;
             customButton8.BorderSize = 0;
+            customButton8.Cursor = Cursors.Hand;
             customButton8.FlatAppearance.BorderSize = 0;
             customButton8.FlatStyle = FlatStyle.Flat;
             customButton8.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1060,7 +1103,8 @@
             customButton8.Location = new Point(202, 8);
             customButton8.Name = "customButton8";
             customButton8.Size = new Size(158, 48);
-            customButton8.TabIndex = 18;
+            customButton8.TabIndex = 0;
+            customButton8.TabStop = false;
             customButton8.Text = "STATISTIC";
             customButton8.TextAlign = ContentAlignment.MiddleRight;
             customButton8.TextColor = Color.White;
@@ -1074,6 +1118,7 @@
             customButton7.BorderColor = Color.PaleVioletRed;
             customButton7.BorderRadius = 28;
             customButton7.BorderSize = 0;
+            customButton7.Cursor = Cursors.Hand;
             customButton7.FlatAppearance.BorderSize = 0;
             customButton7.FlatStyle = FlatStyle.Flat;
             customButton7.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1083,7 +1128,8 @@
             customButton7.Location = new Point(75, 8);
             customButton7.Name = "customButton7";
             customButton7.Size = new Size(117, 48);
-            customButton7.TabIndex = 17;
+            customButton7.TabIndex = 0;
+            customButton7.TabStop = false;
             customButton7.Text = "WORK";
             customButton7.TextAlign = ContentAlignment.MiddleRight;
             customButton7.TextColor = Color.White;
@@ -1098,6 +1144,7 @@
             customButton6.BorderColor = Color.PaleVioletRed;
             customButton6.BorderRadius = 28;
             customButton6.BorderSize = 0;
+            customButton6.Cursor = Cursors.Hand;
             customButton6.FlatAppearance.BorderSize = 0;
             customButton6.FlatStyle = FlatStyle.Flat;
             customButton6.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1107,7 +1154,8 @@
             customButton6.Location = new Point(12, 0);
             customButton6.Name = "customButton6";
             customButton6.Size = new Size(60, 60);
-            customButton6.TabIndex = 16;
+            customButton6.TabIndex = 0;
+            customButton6.TabStop = false;
             customButton6.TextAlign = ContentAlignment.MiddleRight;
             customButton6.TextColor = Color.White;
             customButton6.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -1118,7 +1166,7 @@
             panel1.Location = new Point(694, 59);
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 125);
-            panel1.TabIndex = 2;
+            panel1.TabIndex = 0;
             // 
             // sidePanel
             // 
@@ -1136,7 +1184,7 @@
             sidePanel.Location = new Point(1086, 59);
             sidePanel.Name = "sidePanel";
             sidePanel.Size = new Size(296, 696);
-            sidePanel.TabIndex = 2;
+            sidePanel.TabIndex = 1;
             // 
             // saveButton
             // 
@@ -1145,6 +1193,7 @@
             saveButton.BorderColor = Color.PaleVioletRed;
             saveButton.BorderRadius = 12;
             saveButton.BorderSize = 0;
+            saveButton.Cursor = Cursors.Hand;
             saveButton.FlatAppearance.BorderSize = 0;
             saveButton.FlatStyle = FlatStyle.Flat;
             saveButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1152,7 +1201,7 @@
             saveButton.Location = new Point(155, 638);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(122, 48);
-            saveButton.TabIndex = 56;
+            saveButton.TabIndex = 14;
             saveButton.Text = "SAVE";
             saveButton.TextColor = Color.White;
             saveButton.UseVisualStyleBackColor = false;
@@ -1165,6 +1214,7 @@
             cancelButton.BorderColor = Color.PaleVioletRed;
             cancelButton.BorderRadius = 12;
             cancelButton.BorderSize = 0;
+            cancelButton.Cursor = Cursors.Hand;
             cancelButton.FlatAppearance.BorderSize = 0;
             cancelButton.FlatStyle = FlatStyle.Flat;
             cancelButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1172,7 +1222,7 @@
             cancelButton.Location = new Point(27, 638);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(122, 48);
-            cancelButton.TabIndex = 55;
+            cancelButton.TabIndex = 15;
             cancelButton.Text = "CANCEL";
             cancelButton.TextColor = Color.White;
             cancelButton.UseVisualStyleBackColor = false;
@@ -1185,7 +1235,7 @@
             customPanel1.BorderColor = Color.Black;
             customPanel1.BorderRadius = 28;
             customPanel1.BorderWidth = 1;
-            customPanel1.Controls.Add(customToggleButton2);
+            customPanel1.Controls.Add(taskHighlight);
             customPanel1.Controls.Add(taskMode);
             customPanel1.Controls.Add(pictureBox13);
             customPanel1.Controls.Add(label19);
@@ -1199,25 +1249,28 @@
             customPanel1.Location = new Point(7, 46);
             customPanel1.Name = "customPanel1";
             customPanel1.Size = new Size(279, 208);
-            customPanel1.TabIndex = 15;
+            customPanel1.TabIndex = 8;
             // 
-            // customToggleButton2
+            // taskHighlight
             // 
-            customToggleButton2.AutoSize = true;
-            customToggleButton2.Location = new Point(192, 15);
-            customToggleButton2.MinimumSize = new Size(60, 30);
-            customToggleButton2.Name = "customToggleButton2";
-            customToggleButton2.OffBackColor = Color.Gray;
-            customToggleButton2.OffToggleColor = Color.Gainsboro;
-            customToggleButton2.OnBackColor = Color.FromArgb(35, 211, 35);
-            customToggleButton2.OnToggleColor = Color.WhiteSmoke;
-            customToggleButton2.Size = new Size(60, 30);
-            customToggleButton2.TabIndex = 42;
-            customToggleButton2.UseVisualStyleBackColor = true;
+            taskHighlight.AutoSize = true;
+            taskHighlight.Cursor = Cursors.Hand;
+            taskHighlight.Location = new Point(192, 15);
+            taskHighlight.MinimumSize = new Size(60, 30);
+            taskHighlight.Name = "taskHighlight";
+            taskHighlight.OffBackColor = Color.Gray;
+            taskHighlight.OffToggleColor = Color.Gainsboro;
+            taskHighlight.OnBackColor = Color.FromArgb(35, 211, 35);
+            taskHighlight.OnToggleColor = Color.WhiteSmoke;
+            taskHighlight.Size = new Size(60, 30);
+            taskHighlight.TabIndex = 8;
+            taskHighlight.TabStop = false;
+            taskHighlight.UseVisualStyleBackColor = true;
             // 
             // taskMode
             // 
             taskMode.AutoSize = true;
+            taskMode.Cursor = Cursors.Hand;
             taskMode.Location = new Point(192, 132);
             taskMode.MinimumSize = new Size(60, 30);
             taskMode.Name = "taskMode";
@@ -1226,7 +1279,8 @@
             taskMode.OnBackColor = Color.FromArgb(35, 211, 35);
             taskMode.OnToggleColor = Color.WhiteSmoke;
             taskMode.Size = new Size(60, 30);
-            taskMode.TabIndex = 41;
+            taskMode.TabIndex = 9;
+            taskMode.TabStop = false;
             taskMode.UseVisualStyleBackColor = true;
             // 
             // pictureBox13
@@ -1247,7 +1301,7 @@
             label19.Location = new Point(60, 20);
             label19.Name = "label19";
             label19.Size = new Size(119, 19);
-            label19.TabIndex = 40;
+            label19.TabIndex = 5;
             label19.Text = "HIGHLIGHT";
             // 
             // label18
@@ -1258,7 +1312,7 @@
             label18.Location = new Point(22, 127);
             label18.Name = "label18";
             label18.Size = new Size(108, 19);
-            label18.TabIndex = 38;
+            label18.TabIndex = 5;
             label18.Text = "COMPANY";
             // 
             // pictureBox12
@@ -1279,7 +1333,7 @@
             label17.Location = new Point(22, 159);
             label17.Name = "label17";
             label17.Size = new Size(143, 19);
-            label17.TabIndex = 38;
+            label17.TabIndex = 0;
             label17.Text = "DEPARTMENT";
             // 
             // label16
@@ -1290,7 +1344,7 @@
             label16.Location = new Point(60, 77);
             label16.Name = "label16";
             label16.Size = new Size(165, 19);
-            label16.TabIndex = 37;
+            label16.TabIndex = 0;
             label16.Text = "PUBLIC ACCESS";
             // 
             // label15
@@ -1301,7 +1355,7 @@
             label15.Location = new Point(7, 12);
             label15.Name = "label15";
             label15.Size = new Size(96, 23);
-            label15.TabIndex = 14;
+            label15.TabIndex = 0;
             label15.Text = "STATUS";
             // 
             // label14
@@ -1312,7 +1366,7 @@
             label14.Location = new Point(7, 267);
             label14.Name = "label14";
             label14.Size = new Size(140, 23);
-            label14.TabIndex = 13;
+            label14.TabIndex = 9;
             label14.Text = "MODIFYING";
             // 
             // customButton5
@@ -1322,6 +1376,7 @@
             customButton5.BorderColor = Color.PaleVioletRed;
             customButton5.BorderRadius = 28;
             customButton5.BorderSize = 0;
+            customButton5.Cursor = Cursors.Hand;
             customButton5.FlatAppearance.BorderSize = 0;
             customButton5.FlatStyle = FlatStyle.Flat;
             customButton5.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1332,7 +1387,8 @@
             customButton5.Name = "customButton5";
             customButton5.Padding = new Padding(12, 0, 0, 0);
             customButton5.Size = new Size(281, 60);
-            customButton5.TabIndex = 4;
+            customButton5.TabIndex = 9;
+            customButton5.TabStop = false;
             customButton5.Text = "ATTACHMENT";
             customButton5.TextColor = Color.White;
             customButton5.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -1345,6 +1401,7 @@
             customButton3.BorderColor = Color.PaleVioletRed;
             customButton3.BorderRadius = 28;
             customButton3.BorderSize = 0;
+            customButton3.Cursor = Cursors.Hand;
             customButton3.FlatAppearance.BorderSize = 0;
             customButton3.FlatStyle = FlatStyle.Flat;
             customButton3.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1355,7 +1412,8 @@
             customButton3.Name = "customButton3";
             customButton3.Padding = new Padding(12, 0, 0, 0);
             customButton3.Size = new Size(281, 60);
-            customButton3.TabIndex = 3;
+            customButton3.TabIndex = 9;
+            customButton3.TabStop = false;
             customButton3.Text = "DELETE TASK";
             customButton3.TextColor = Color.White;
             customButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -1368,6 +1426,7 @@
             customButton4.BorderColor = Color.PaleVioletRed;
             customButton4.BorderRadius = 28;
             customButton4.BorderSize = 0;
+            customButton4.Cursor = Cursors.Hand;
             customButton4.FlatAppearance.BorderSize = 0;
             customButton4.FlatStyle = FlatStyle.Flat;
             customButton4.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1378,7 +1437,8 @@
             customButton4.Name = "customButton4";
             customButton4.Padding = new Padding(12, 0, 0, 0);
             customButton4.Size = new Size(281, 60);
-            customButton4.TabIndex = 2;
+            customButton4.TabIndex = 9;
+            customButton4.TabStop = false;
             customButton4.Text = "DECENTRALIZATION";
             customButton4.TextAlign = ContentAlignment.MiddleRight;
             customButton4.TextColor = Color.White;
@@ -1392,6 +1452,7 @@
             customButton1.BorderColor = Color.PaleVioletRed;
             customButton1.BorderRadius = 28;
             customButton1.BorderSize = 0;
+            customButton1.Cursor = Cursors.Hand;
             customButton1.FlatAppearance.BorderSize = 0;
             customButton1.FlatStyle = FlatStyle.Flat;
             customButton1.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1402,7 +1463,8 @@
             customButton1.Name = "customButton1";
             customButton1.Padding = new Padding(12, 0, 0, 0);
             customButton1.Size = new Size(281, 60);
-            customButton1.TabIndex = 1;
+            customButton1.TabIndex = 9;
+            customButton1.TabStop = false;
             customButton1.Text = "DEADLINE";
             customButton1.TextColor = Color.White;
             customButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -1415,6 +1477,7 @@
             customButton2.BorderColor = Color.PaleVioletRed;
             customButton2.BorderRadius = 28;
             customButton2.BorderSize = 0;
+            customButton2.Cursor = Cursors.Hand;
             customButton2.FlatAppearance.BorderSize = 0;
             customButton2.FlatStyle = FlatStyle.Flat;
             customButton2.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1425,7 +1488,8 @@
             customButton2.Name = "customButton2";
             customButton2.Padding = new Padding(12, 0, 0, 0);
             customButton2.Size = new Size(281, 60);
-            customButton2.TabIndex = 0;
+            customButton2.TabIndex = 9;
+            customButton2.TabStop = false;
             customButton2.Text = "UPDATE PROCESS";
             customButton2.TextAlign = ContentAlignment.MiddleRight;
             customButton2.TextColor = Color.White;
@@ -1466,6 +1530,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             headerPanel.ResumeLayout(false);
             panel2.ResumeLayout(false);
             sidePanel.ResumeLayout(false);
@@ -1560,11 +1626,12 @@
         private Label receiverLabel;
         private CustomComponent.CustomButton saveButton;
         private CustomComponent.CustomButton cancelButton;
-        private CustomComponent.CustomToggleButton customToggleButton2;
+        private CustomComponent.CustomToggleButton taskHighlight;
         private CustomComponent.CustomToggleButton taskMode;
         private Panel panel3;
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
         private CustomComponent.CustomButton uploadButton;
+        private Panel panel4;
     }
 }

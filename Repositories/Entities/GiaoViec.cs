@@ -13,7 +13,7 @@ public partial class GiaoViec
 
     public string TinhTrangCongViec { get; set; } = null!;
 
-    public string? DinhKemFile { get; set; }
+    public byte[] DinhKemFile { get; set; }
 
     public string MaGiaoViec { get; set; } = null!;
 

@@ -21,6 +21,11 @@ namespace Services
             return repository.Create(description, day, deadline, status, file, id, mode, name, vanue, receiverID, isCEO, CEOID);
         }
 
+        public void downloadAttachedFile(string id)
+        {
+            repository.DownLoadFile(id);
+        }
+
         public string getAssignTaskID(string assignerID)
         {
             return GiaoViecUtilities.createAssignTaskID(assignerID);
