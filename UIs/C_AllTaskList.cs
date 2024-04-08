@@ -1,9 +1,12 @@
-﻿using Repositories.Entities;
+﻿using Microsoft.Data.SqlClient;
+using Repositories.Entities;
 using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -42,10 +45,12 @@ namespace UIs
         private void C_AllTaskList_Load(object sender, EventArgs e)
         {
 
-            membersGrid.Columns.Add("MaGiaoViec", "MaGiaoViec");
-            membersGrid.Columns.Add("TenCongViec", "TenCongViec");
-            membersGrid.Columns.Add("MoTaCongViec", "MoTaCongViec");
-            membersGrid.Columns.Add("NgayGiao", "NgayGiao");
+            membersGrid.Columns.Add("MaGiaoViec", "ID");
+            membersGrid.Columns.Add("TenCongViec", "Name");
+            membersGrid.Columns.Add("MoTaCongViec", "Description");
+            membersGrid.Columns.Add("NgayGiao", "Start Day");
+            membersGrid.Columns.Add("HanHoanThanh", "End Day");
+            membersGrid.Columns.Add("TinhTrangCongViec", "Status");
             List<GiaoViec> members = giaoViecService.getAll();
             foreach (GiaoViec member in members)
             {
@@ -55,8 +60,22 @@ namespace UIs
                 row.Cells[1].Value = member.TenCongViec;
                 row.Cells[2].Value = member.MoTaCongViec;
                 row.Cells[3].Value = member.NgayGiao;
+                row.Cells[4].Value = member.HanHoanThanh;
+                row.Cells[5].Value = member.TinhTrangCongViec;
                 membersGrid.Rows.Add(row);
             }
+            DataGridViewLinkColumn links = new DataGridViewLinkColumn();
+            links.UseColumnTextForLinkValue = true;
+            links.HeaderText = "Download";
+            links.DataPropertyName = "lnkColumn";
+            links.Name = "lnkColumn";
+            links.ActiveLinkColor = Color.White;
+            links.LinkBehavior = LinkBehavior.SystemDefault;
+            links.LinkColor = Color.Blue;
+            links.Text = "Click here";
+            links.TrackVisitedState = true;
+            links.VisitedLinkColor = Color.YellowGreen;
+            membersGrid.Columns.Add(links);
         }
 
         private void hrButton_Click(object sender, EventArgs e)
@@ -169,6 +188,21 @@ namespace UIs
                 row.Cells[3].Value = member.NgayGiao;
                 membersGrid.Rows.Add(row);
             }
+        }
+
+        private void membersGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == membersGrid.Columns["lnkColumn"].Index && e.RowIndex >= 0)
+            {
+                string id = membersGrid.Rows[e.RowIndex].Cells["MaGiaoViec"].Value.ToString(); 
+                giaoViecService.downloadAttachedFile(id);
+            }
+        }
+
+        private void customButton19_Click(object sender, EventArgs e)
+        {
+            C_AssignTask assignTask = new C_AssignTask();
+            assignTask.ShowDialog();
         }
     }
 }

@@ -119,8 +119,7 @@ namespace UIs
 
         private void C_AssignTask_Load(object sender, EventArgs e)
         {
-            taskStatus.SelectedIndex = 0;
-            taskPriority.SelectedIndex = 0;
+            taskName.Focus();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -288,6 +287,18 @@ namespace UIs
             sqlcon.Close();
             //LoadGrid();
             MessageBox.Show("Upload file successfully!");
+        }
+
+        private void RemoveDefaultTabOrder(Control.ControlCollection controls)
+        {
+            foreach (Control control in controls)
+            {
+                control.TabStop = false; // Set TabStop to false
+                if (control.HasChildren) // If control has children, recursively call RemoveDefaultTabOrder
+                {
+                    RemoveDefaultTabOrder(control.Controls);
+                }
+            }
         }
 
         private void currentFileGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
