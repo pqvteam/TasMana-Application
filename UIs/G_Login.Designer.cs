@@ -36,13 +36,13 @@
             checkbox_Remember = new CheckBox();
             button_Login = new Button();
             panel1 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
             pictureBox_logo = new PictureBox();
             elipseControl1 = new CustomComponent.ElipseControl();
             pictureBox1 = new PictureBox();
             elipseControl2 = new CustomComponent.ElipseControl();
             customButton5 = new CustomComponent.CustomButton();
-            button1 = new Button();
-            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -144,6 +144,30 @@
             panel1.Size = new Size(458, 476);
             panel1.TabIndex = 8;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.Transparent;
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(37, 204);
+            button2.Name = "button2";
+            button2.Size = new Size(43, 41);
+            button2.TabIndex = 10;
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = Properties.Resources.snapedit_1712151680966;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(35, 145);
+            button1.Name = "button1";
+            button1.Size = new Size(43, 41);
+            button1.TabIndex = 9;
+            button1.UseVisualStyleBackColor = false;
+            // 
             // pictureBox_logo
             // 
             pictureBox_logo.BackColor = Color.Transparent;
@@ -196,30 +220,6 @@
             customButton5.UseVisualStyleBackColor = false;
             customButton5.Click += customButton5_Click;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.Transparent;
-            button1.BackgroundImage = Properties.Resources.snapedit_1712151680966;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(35, 145);
-            button1.Name = "button1";
-            button1.Size = new Size(43, 41);
-            button1.TabIndex = 9;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Transparent;
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(37, 204);
-            button2.Name = "button2";
-            button2.Size = new Size(43, 41);
-            button2.TabIndex = 10;
-            button2.UseVisualStyleBackColor = false;
-            // 
             // G_Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -235,6 +235,7 @@
             Name = "G_Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login Interface";
+            Load += G_Login_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_logo).EndInit();

@@ -33,6 +33,10 @@ public partial class NhanSu
 
     public DateOnly? NgayBatDau { get; set; }
 
+    public string? LoaiNhanSu { get; set; }
+
+    public string? QuocTich { get; set; }
+
     public virtual Ceo? Ceo { get; set; }
 
     public virtual NhanVien? NhanVien { get; set; }
