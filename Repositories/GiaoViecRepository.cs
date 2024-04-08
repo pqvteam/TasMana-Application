@@ -4,6 +4,7 @@ using Repositories.Entities;
 using Repositories.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Formats.Tar;
 
 namespace Repositories
@@ -11,8 +12,9 @@ namespace Repositories
     public class GiaoViecRepository
     {
         // We interact with DB here
+        static TasManaContext tasManaContext = new TasManaContext();
         TasManaContext db = new TasManaContext();
-
+        private static string connectionString = tasManaContext.GetConnectionString();
 
         public GiaoViec? Get(string assignTaskID)
         {
@@ -27,6 +29,26 @@ namespace Repositories
 
         public List<GiaoViec> GetAll() { 
             return db.GiaoViecs.ToList();
+        }
+
+        public void DownLoadFile(string id)
+        {
+            byte[] dbbyte;
+
+            using (SqlConnection sqlcon = new SqlConnection(connectionString))
+            {
+                sqlcon.Open();
+                SqlCommand sqlcmd = new SqlCommand("SELECT dinhKemFile FROM GiaoViec WHERE maGiaoViec = @MaGiaoViec", sqlcon);
+                sqlcmd.Parameters.AddWithValue("@MaGiaoViec", id);
+                dbbyte = (byte[])sqlcmd.ExecuteScalar();
+            }
+
+            if (dbbyte != null)
+            {
+                string filepath = $"D:\\Task_{id}_File.pdf";
+                File.WriteAllBytes(filepath, dbbyte);
+                Process.Start("explorer", filepath);
+            }
         }
 
         public bool Create(string description, string day, string deadline, string status, string file, string id, int mode, string name, string venue, string receiverID, int isCEO, string CEOID)
