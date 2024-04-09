@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M_AssignTask));
             mainPanel = new Panel();
+            membersGrid = new DataGridView();
             uploadButton = new CustomComponent.CustomButton();
             panel3 = new Panel();
             taskName = new TextBox();
@@ -37,7 +40,6 @@
             taskStatus = new CustomComponent.CustomComboBox();
             taskEnd = new CustomComponent.CustomDateTimePicker();
             taskStart = new CustomComponent.CustomDateTimePicker();
-            dataGridView1 = new DataGridView();
             label13 = new Label();
             pictureBox11 = new PictureBox();
             label12 = new Label();
@@ -115,8 +117,8 @@
             customButton2 = new CustomComponent.CustomButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             mainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)membersGrid).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
@@ -144,13 +146,13 @@
             // mainPanel
             // 
             mainPanel.BackColor = Color.FromArgb(31, 31, 32);
+            mainPanel.Controls.Add(membersGrid);
             mainPanel.Controls.Add(uploadButton);
             mainPanel.Controls.Add(panel3);
             mainPanel.Controls.Add(taskPriority);
             mainPanel.Controls.Add(taskStatus);
             mainPanel.Controls.Add(taskEnd);
             mainPanel.Controls.Add(taskStart);
-            mainPanel.Controls.Add(dataGridView1);
             mainPanel.Controls.Add(label13);
             mainPanel.Controls.Add(pictureBox11);
             mainPanel.Controls.Add(label12);
@@ -176,6 +178,42 @@
             mainPanel.Size = new Size(1085, 696);
             mainPanel.TabIndex = 0;
             // 
+            // membersGrid
+            // 
+            membersGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            membersGrid.BackgroundColor = Color.FromArgb(24, 23, 23);
+            membersGrid.BorderStyle = BorderStyle.None;
+            membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            membersGrid.EnableHeadersVisualStyles = false;
+            membersGrid.GridColor = Color.FromArgb(24, 23, 23);
+            membersGrid.Location = new Point(341, 486);
+            membersGrid.Name = "membersGrid";
+            membersGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            membersGrid.RowHeadersVisible = false;
+            membersGrid.RowHeadersWidth = 51;
+            membersGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            membersGrid.Size = new Size(722, 196);
+            membersGrid.TabIndex = 100;
+            membersGrid.CellClick += membersGrid_CellContentClick;
+            membersGrid.CellContentClick += membersGrid_CellContentClick;
+            // 
             // uploadButton
             // 
             uploadButton.BackColor = Color.Yellow;
@@ -187,7 +225,7 @@
             uploadButton.FlatStyle = FlatStyle.Flat;
             uploadButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             uploadButton.ForeColor = Color.Black;
-            uploadButton.Location = new Point(936, 255);
+            uploadButton.Location = new Point(936, 213);
             uploadButton.Name = "uploadButton";
             uploadButton.Size = new Size(129, 51);
             uploadButton.TabIndex = 2;
@@ -228,11 +266,11 @@
             taskPriority.Items.AddRange(new object[] { "Normal", "High" });
             taskPriority.ListBackColor = Color.FromArgb(230, 228, 245);
             taskPriority.ListTextColor = Color.DimGray;
-            taskPriority.Location = new Point(865, 397);
+            taskPriority.Location = new Point(713, 399);
             taskPriority.MinimumSize = new Size(200, 30);
             taskPriority.Name = "taskPriority";
             taskPriority.Padding = new Padding(1);
-            taskPriority.Size = new Size(200, 36);
+            taskPriority.Size = new Size(350, 36);
             taskPriority.TabIndex = 6;
             taskPriority.Texts = "";
             // 
@@ -248,11 +286,11 @@
             taskStatus.Items.AddRange(new object[] { "Processing", "Completed", "Postponed" });
             taskStatus.ListBackColor = Color.FromArgb(230, 228, 245);
             taskStatus.ListTextColor = Color.DimGray;
-            taskStatus.Location = new Point(650, 398);
+            taskStatus.Location = new Point(343, 400);
             taskStatus.MinimumSize = new Size(200, 30);
             taskStatus.Name = "taskStatus";
             taskStatus.Padding = new Padding(1);
-            taskStatus.Size = new Size(200, 35);
+            taskStatus.Size = new Size(350, 35);
             taskStatus.TabIndex = 5;
             taskStatus.Texts = "";
             // 
@@ -262,10 +300,10 @@
             taskEnd.BorderSize = 0;
             taskEnd.Font = new Font("Copperplate Gothic Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskEnd.Format = DateTimePickerFormat.Short;
-            taskEnd.Location = new Point(489, 398);
+            taskEnd.Location = new Point(713, 318);
             taskEnd.MinimumSize = new Size(0, 35);
             taskEnd.Name = "taskEnd";
-            taskEnd.Size = new Size(144, 35);
+            taskEnd.Size = new Size(350, 35);
             taskEnd.SkinColor = Color.FromArgb(42, 42, 42);
             taskEnd.TabIndex = 4;
             taskEnd.TextColor = Color.White;
@@ -276,23 +314,13 @@
             taskStart.BorderSize = 0;
             taskStart.Font = new Font("Copperplate Gothic Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskStart.Format = DateTimePickerFormat.Short;
-            taskStart.Location = new Point(340, 398);
+            taskStart.Location = new Point(343, 318);
             taskStart.MinimumSize = new Size(0, 35);
             taskStart.Name = "taskStart";
-            taskStart.Size = new Size(133, 35);
+            taskStart.Size = new Size(350, 35);
             taskStart.SkinColor = Color.FromArgb(42, 42, 42);
             taskStart.TabIndex = 3;
             taskStart.TextColor = Color.White;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.FromArgb(42, 42, 42);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(342, 485);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(722, 197);
-            dataGridView1.TabIndex = 36;
             // 
             // label13
             // 
@@ -301,9 +329,9 @@
             label13.ForeColor = Color.FromArgb(197, 224, 180);
             label13.Location = new Point(385, 455);
             label13.Name = "label13";
-            label13.Size = new Size(68, 19);
+            label13.Size = new Size(153, 19);
             label13.TabIndex = 35;
-            label13.Text = "TO DO";
+            label13.Text = "AUTHORIZE BY";
             label13.Click += label13_Click;
             // 
             // pictureBox11
@@ -321,7 +349,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.Yellow;
-            label12.Location = new Point(899, 363);
+            label12.Location = new Point(747, 365);
             label12.Name = "label12";
             label12.Size = new Size(100, 19);
             label12.TabIndex = 29;
@@ -331,7 +359,7 @@
             // pictureBox10
             // 
             pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(865, 358);
+            pictureBox10.Location = new Point(713, 360);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(28, 27);
             pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -343,7 +371,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.Yellow;
-            label11.Location = new Point(684, 363);
+            label11.Location = new Point(375, 369);
             label11.Name = "label11";
             label11.Size = new Size(102, 19);
             label11.TabIndex = 27;
@@ -353,7 +381,7 @@
             // pictureBox9
             // 
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(655, 356);
+            pictureBox9.Location = new Point(346, 362);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(26, 26);
             pictureBox9.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -365,7 +393,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.Yellow;
-            label10.Location = new Point(530, 363);
+            label10.Location = new Point(755, 283);
             label10.Name = "label10";
             label10.Size = new Size(110, 19);
             label10.TabIndex = 25;
@@ -375,7 +403,7 @@
             // pictureBox8
             // 
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(488, 349);
+            pictureBox8.Location = new Point(713, 269);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(40, 40);
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -387,7 +415,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Yellow;
-            label9.Location = new Point(394, 363);
+            label9.Location = new Point(397, 283);
             label9.Name = "label9";
             label9.Size = new Size(71, 19);
             label9.TabIndex = 23;
@@ -396,7 +424,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(338, 355);
+            pictureBox7.Location = new Point(341, 275);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(54, 38);
             pictureBox7.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -412,7 +440,7 @@
             taskFile.Location = new Point(339, 216);
             taskFile.Multiline = true;
             taskFile.Name = "taskFile";
-            taskFile.Size = new Size(591, 133);
+            taskFile.Size = new Size(591, 48);
             taskFile.TabIndex = 21;
             taskFile.TabStop = false;
             // 
@@ -1429,9 +1457,9 @@
             Load += M_AssignTask_Load;
             mainPanel.ResumeLayout(false);
             mainPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)membersGrid).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
@@ -1498,9 +1526,6 @@
         private PictureBox pictureBox10;
         private Label label11;
         private PictureBox pictureBox9;
-        private Label label13;
-        private PictureBox pictureBox11;
-        private DataGridView dataGridView1;
         private CustomComponent.CustomButton customButton1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private CustomComponent.CustomButton customButton2;
@@ -1547,5 +1572,8 @@
         private CustomComponent.CustomToggleButton taskMode;
         private Panel panel3;
         private CustomComponent.CustomButton uploadButton;
+        private Label label13;
+        private PictureBox pictureBox11;
+        private DataGridView membersGrid;
     }
 }

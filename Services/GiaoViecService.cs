@@ -16,9 +16,9 @@ namespace Services
             return assignedTask;
         }
 
-        public bool assignTask(string description, string day, string deadline, string status, string file, string id, int mode, string name, string vanue, string receiverID, int isCEO, string CEOID)
+        public bool assignTask(string description, string day, string deadline, string status, string file, string id, int mode, string name, string vanue, string receiverID, int isCEO, string CEOID, string authorizedBy)
         {
-            return repository.Create(description, day, deadline, status, file, id, mode, name, vanue, receiverID, isCEO, CEOID);
+            return repository.Create(description, day, deadline, status, file, id, mode, name, vanue, receiverID, isCEO, CEOID, authorizedBy);
         }
 
         public void downloadAttachedFile(string id)

@@ -13,15 +13,21 @@ namespace Repositories
 {
     public class DangNhapRepository
     {
+        static TasManaContext tasManaContext = new TasManaContext();
+        TasManaContext db = new TasManaContext();
+        private static string connectionString = tasManaContext.GetConnectionString();
+
         //Login Function
+
         public string check(string username, string password)
         {
+            SqlConnection conn = new SqlConnection(connectionString);
             try
             {
-                DatabaseConnection.Instance.OpenConnection();
-                SqlConnection conn = DatabaseConnection.Instance.GetConnection();
-                string sqlCommand = $"DECLARE @response NVARCHAR(30);" +
-                    $"EXEC @response = dangNhap @maThanhVien = '{username}', @matKhau = '{password}';SELECT @response AS Response;";
+                conn.Open();
+                string sqlCommand =
+                    $"DECLARE @response NVARCHAR(30);"
+                    + $"EXEC @response = dangNhap @maThanhVien = '{username}', @matKhau = '{password}';SELECT @response AS Response;";
                 SqlCommand command = new SqlCommand(sqlCommand, conn);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -36,8 +42,12 @@ namespace Repositories
             {
                 return "Lỗi kết nối!!";
             }
-            finally { DatabaseConnection.Instance.CloseConnection(); }
+            finally
+            {
+                conn.Close();
+            }
         }
+
         public bool savePassword(string username, string password)
         {
             try
@@ -52,7 +62,8 @@ namespace Repositories
                 if (reader.Read())
                 {
                     reader.Close();
-                    string sqlCommand1 = $"update LuuMatKhau set matkhau = '{password}' where userID='{username}'";
+                    string sqlCommand1 =
+                        $"update LuuMatKhau set matkhau = '{password}' where userID='{username}'";
                     SqlCommand command1 = new SqlCommand(sqlCommand1, conn);
                     int reader1 = command1.ExecuteNonQuery();
                     if (reader1 > 0)
@@ -63,7 +74,8 @@ namespace Repositories
                 else
                 {
                     reader.Close();
-                    string sqlCommand1 = $"insert into LuuMatKhau(userID,matkhau) values('{username}','{password}')";
+                    string sqlCommand1 =
+                        $"insert into LuuMatKhau(userID,matkhau) values('{username}','{password}')";
                     SqlCommand command1 = new SqlCommand(sqlCommand1, conn);
                     int reader1 = command1.ExecuteNonQuery();
                     if (reader1 > 0)
@@ -109,6 +121,7 @@ namespace Repositories
                 DatabaseConnection.Instance.CloseConnection();
             }
         }
+
         //Session function
         public string laCEO(string username)
         {
@@ -117,7 +130,8 @@ namespace Repositories
                 DatabaseConnection.Instance.OpenConnection();
                 SqlConnection conn = DatabaseConnection.Instance.GetConnection();
 
-                string sqlCommand = $"select count(*) as laCEO from NhanSu,CEO where NhanSu.maThanhVien=CEO.maThanhVien and NhanSu.maThanhVien='{username}'";
+                string sqlCommand =
+                    $"select count(*) as laCEO from NhanSu,CEO where NhanSu.maThanhVien=CEO.maThanhVien and NhanSu.maThanhVien='{username}'";
                 SqlCommand command = new SqlCommand(sqlCommand, conn);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -136,6 +150,7 @@ namespace Repositories
                 DatabaseConnection.Instance.CloseConnection();
             }
         }
+
         public string laQuanLi(string username)
         {
             try
@@ -162,6 +177,7 @@ namespace Repositories
                 DatabaseConnection.Instance.CloseConnection();
             }
         }
+
         public string laTruongNhom(string username)
         {
             try
@@ -169,7 +185,8 @@ namespace Repositories
                 DatabaseConnection.Instance.OpenConnection();
                 SqlConnection conn = DatabaseConnection.Instance.GetConnection();
 
-                string sqlCommand = $"select NhanVien.laTruongNhom from NhanSu,NhanVien where NhanSu.maThanhVien=NhanVien.maThanhVien and NhanSu.maThanhVien='{username}'";
+                string sqlCommand =
+                    $"select NhanVien.laTruongNhom from NhanSu,NhanVien where NhanSu.maThanhVien=NhanVien.maThanhVien and NhanSu.maThanhVien='{username}'";
                 SqlCommand command = new SqlCommand(sqlCommand, conn);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -188,6 +205,7 @@ namespace Repositories
                 DatabaseConnection.Instance.CloseConnection();
             }
         }
+
         public string daNghiViec(string username)
         {
             try
@@ -214,6 +232,7 @@ namespace Repositories
                 DatabaseConnection.Instance.CloseConnection();
             }
         }
+
         //ForgotPassword function
         public bool saveCode(string username, string code)
         {
@@ -222,7 +241,8 @@ namespace Repositories
                 DatabaseConnection.Instance.OpenConnection();
                 SqlConnection conn = DatabaseConnection.Instance.GetConnection();
 
-                string sqlCommand = $"update LuuMatKhau set maxacnhan='{code}' where userID='{username}'";
+                string sqlCommand =
+                    $"update LuuMatKhau set maxacnhan='{code}' where userID='{username}'";
                 SqlCommand command = new SqlCommand(sqlCommand, conn);
                 int reader = command.ExecuteNonQuery();
 
@@ -241,7 +261,8 @@ namespace Repositories
                 DatabaseConnection.Instance.CloseConnection();
             }
         }
-        public bool confirmCode(string username ,string code)
+
+        public bool confirmCode(string username, string code)
         {
             try
             {
@@ -255,7 +276,7 @@ namespace Repositories
                 if (reader.Read())
                 {
                     string maXacNhan = $"{reader["maXacNhan"]}";
-                    if(code.Equals(maXacNhan))
+                    if (code.Equals(maXacNhan))
                     {
                         return true;
                     }
@@ -271,6 +292,7 @@ namespace Repositories
                 DatabaseConnection.Instance.CloseConnection();
             }
         }
+
         public string getPassword(string username)
         {
             try
@@ -284,7 +306,7 @@ namespace Repositories
 
                 if (reader.Read())
                 {
-                    return $"{reader["matkhau"]}";  
+                    return $"{reader["matkhau"]}";
                 }
                 return "Lỗi kết nối dữ liệu!";
             }
@@ -297,6 +319,5 @@ namespace Repositories
                 DatabaseConnection.Instance.CloseConnection();
             }
         }
-        
     }
 }
