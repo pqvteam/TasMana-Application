@@ -144,7 +144,7 @@ namespace UIs
             int tMode = taskMode.Checked ? 1 : 0;
             int tIsCEO = 1;
 
-            bool isSuccess = giaoViecService.assignTask(tDescription, tStart, tEnd, tStatus, tFile, tID, tMode, tName, venueID, receiverID, tIsCEO, tCEOID);
+            bool isSuccess = giaoViecService.assignTask(tDescription, tStart, tEnd, tStatus, tFile, tID, tMode, tName, venueID, receiverID, tIsCEO, tCEOID, "");
 
             if (isSuccess)
             {

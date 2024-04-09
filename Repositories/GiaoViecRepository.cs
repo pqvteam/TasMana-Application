@@ -51,7 +51,7 @@ namespace Repositories
             }
         }
 
-        public bool Create(string description, string day, string deadline, string status, string file, string id, int mode, string name, string venue, string receiverID, int isCEO, string CEOID)
+        public bool Create(string description, string day, string deadline, string status, string file, string id, int mode, string name, string venue, string receiverID, int isCEO, string CEOID, string authorizedBy)
         {
             DatabaseConnection.Instance.OpenConnection();
 
@@ -91,7 +91,7 @@ namespace Repositories
             }
 
             // Assign Task
-            string departmentQuery = $"EXEC taoViec N'{description}', '{day}', '{deadline}', N'{status}', '{FileBytes}', '{id}', '{receiverID}', {mode}, N'{name}', {isCEO}, '{CEOID}', '{venue}'";
+            string departmentQuery = $"EXEC taoViec N'{description}', '{day}', '{deadline}', N'{status}', '{FileBytes}', '{id}', '{receiverID}', {mode}, N'{name}', {isCEO}, '{CEOID}', '{venue}', '{authorizedBy}'";
             using (SqlCommand cmd = new SqlCommand(departmentQuery, conn))
             {
                 int rowsAffected = cmd.ExecuteNonQuery();
