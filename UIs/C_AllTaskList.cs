@@ -37,9 +37,9 @@ namespace UIs
         {
             GetWeather getWeather = new GetWeather();
             string[] currentWeather = getWeather.getWeatherData("Ho Chi Minh City");
-            weatherType.Text = currentWeather[0];
-            weatherTempurature.Text = currentWeather[1];
-            weatherWindSpeed.Text = currentWeather[2];
+            weatherType.Text = currentWeather[1];
+            weatherTempurature.Text = currentWeather[2];
+            weatherWindSpeed.Text = currentWeather[3];
             weatherLocation.Text = "Ho Chi Minh City";
             //MessageBox.Show($"0: {currentWeather[0]}");
             //MessageBox.Show($"1: {currentWeather[1]}");
@@ -289,7 +289,8 @@ namespace UIs
             {
                 C_AssignTask cassignTask = new C_AssignTask();
                 cassignTask.ShowDialog();
-            } else
+            }
+            else
             {
                 M_AssignTask massignTask = new M_AssignTask();
                 massignTask.ShowDialog();
@@ -314,5 +315,11 @@ namespace UIs
         }
 
         private void weatherTempurature_Click(object sender, EventArgs e) { }
+
+        private void customButton22_Click(object sender, EventArgs e)
+        {
+            E_Information information = new E_Information();
+            information.ShowDialog();
+        }
     }
 }

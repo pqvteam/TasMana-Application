@@ -32,7 +32,7 @@ namespace UIs
         private void displayEmployeeData()
         {
             // UserID
-            string managerID = "KT-502";
+            string managerID = Session.Instance.UserName;
 
             NhanSuService currentEmployee = new NhanSuService();
             NhanSu ns = currentEmployee.findMember(managerID);
