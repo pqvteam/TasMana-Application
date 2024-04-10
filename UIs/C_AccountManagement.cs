@@ -17,7 +17,7 @@ namespace UIs
     public partial class C_AccountManagement : Form
     {
         NhanSuService nhanSuService = new NhanSuService();
-        NhanVienService nhanVienService = new NhanVienService();    
+        NhanVienService nhanVienService = new NhanVienService();
         CeoService ceoService = new CeoService();
         QuanLyService quanLyService = new QuanLyService();
         PhongBanService phongBanService = new PhongBanService();
@@ -31,6 +31,10 @@ namespace UIs
 
         private void C_AccountManagement_Load(object sender, EventArgs e)
         {
+            if (!(Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi))
+            {
+                customButton19.Visible = false;
+            }
             membersGrid.Columns.Add("ID", "ID");
             membersGrid.Columns.Add("Name", "Name");
             membersGrid.Columns.Add("Birthday", "Birthday");
@@ -53,26 +57,39 @@ namespace UIs
             firedColumn.Name = "Fired";
             firedColumn.ReadOnly = true;
             membersGrid.Columns.Add(firedColumn);
+            List<PhongBan> departments = phongBanService.getAllDepartment();
+            departmentsBox.Items.Clear();
+            foreach (PhongBan department in departments)
+            {
+                departmentsBox.Items.Add(department.MaPb);
+            }
+            departmentsBox.Items.Add("All");
             reload();
         }
 
         private void reload()
         {
             DatabaseConnection.Instance.OpenConnection();
-            List<PhongBan> departments = phongBanService.getAllDepartment();
             List<NhanSu> members = nhanSuService.getAllMembers();
             membersGrid.Rows.Clear();
 
             foreach (var member in members)
             {
+                string memberType = "";
                 string role = "Staff";
                 if (ceoService.getCeo(member.MaThanhVien) != null)
                 {
                     role = "CEO";
+                    memberType = "CEO";
                 }
                 else if (quanLyService.findManager(member.MaThanhVien) != null)
                 {
                     role = "Manager";
+                    memberType = "Manager";
+                }
+                else
+                {
+                    memberType = member.LoaiNhanSu;
                 }
                 string departmentID = member.MaThanhVien.Split("-")[0];
                 DateOnly dateOnly = member.NgayBatDau.Value;
@@ -82,7 +99,7 @@ namespace UIs
                     member.MaThanhVien,
                     member.HoVaTen,
                     member.NamSinh.ToString("dd/MM/yyyy"),
-                    role,
+                    memberType,
                     departmentID,
                     role,
                     start
@@ -108,12 +125,13 @@ namespace UIs
                 membersGrid.Rows[rowIndex].Cells["Fired"].Value = member.NghiViec;
             }
 
-            departmentsBox.Items.Clear();
-            foreach (PhongBan department in departments)
-            {
-                departmentsBox.Items.Add(department.MaPb);
-            }
-            departmentsBox.Items.Add("All");
+            
+        }
+
+        public void ReloadDataGrid()
+        {
+            // Thực hiện lại việc tải dữ liệu cho grid
+            reload();
         }
 
         private void customPanel1_Paint(object sender, PaintEventArgs e) { }
@@ -148,7 +166,8 @@ namespace UIs
                             }
                         };
                         confirmForm.ShowDialog();
-                    } else
+                    }
+                    else
                     {
                         string confirmMessage = "ARE YOU SURE TO APPOINT THIS MANAGER?";
                         A_Confirm confirmForm = new A_Confirm(confirmMessage, "confirm");
@@ -175,6 +194,7 @@ namespace UIs
                 appointForm.ShowDialog();
                 PerformSearch();
             }
+            reload();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -204,6 +224,12 @@ namespace UIs
                             {
                                 string ID = reader.GetString(reader.GetOrdinal("maThanhVien"));
                                 string name = reader.GetString(reader.GetOrdinal("hoVaTen"));
+                                string memberType = "";
+                                if (!reader.IsDBNull(reader.GetOrdinal("loaiNhanSu")))
+                                {
+                                    memberType = reader.GetString(reader.GetOrdinal("loaiNhanSu"));
+                                    // Thực hiện các thao tác khác với giá trị của cột "loaiNhanSu"
+                                }
                                 string birthday = reader
                                     .GetDateTime("namSinh")
                                     .ToString("dd/MM/yyyy");
@@ -224,10 +250,12 @@ namespace UIs
                                 if (ceoService.getCeo(ID) != null)
                                 {
                                     role = "CEO";
+                                    memberType = "CEO";
                                 }
                                 else if (quanLyService.findManager(ID) != null)
                                 {
                                     role = "Manager";
+                                    memberType = "Manager";
                                 }
 
                                 if (
@@ -239,7 +267,7 @@ namespace UIs
                                         ID,
                                         name,
                                         birthday,
-                                        role,
+                                        memberType,
                                         departmentID,
                                         role,
                                         start
@@ -340,7 +368,7 @@ namespace UIs
                                                 ID,
                                                 name,
                                                 birthday,
-                                                selectedType,
+                                                memberType,
                                                 departmentID,
                                                 selectedType,
                                                 start
@@ -377,7 +405,7 @@ namespace UIs
                                             ID,
                                             name,
                                             birthday,
-                                            role,
+                                            memberType,
                                             departmentID,
                                             role,
                                             start
@@ -486,7 +514,7 @@ namespace UIs
                                                     ID,
                                                     name,
                                                     birthday,
-                                                    selectedType,
+                                                    memberType,
                                                     departmentID,
                                                     selectedType,
                                                     start
@@ -580,6 +608,12 @@ namespace UIs
                             {
                                 string ID = reader.GetString(reader.GetOrdinal("maThanhVien"));
                                 string name = reader.GetString(reader.GetOrdinal("hoVaTen"));
+                                string memberType = "";
+                                if (!reader.IsDBNull(reader.GetOrdinal("loaiNhanSu")))
+                                {
+                                    memberType = reader.GetString(reader.GetOrdinal("loaiNhanSu"));
+                                    // Thực hiện các thao tác khác với giá trị của cột "loaiNhanSu"
+                                }
                                 string birthday = reader
                                     .GetDateTime("namSinh")
                                     .ToString("dd/MM/yyyy");
@@ -593,10 +627,12 @@ namespace UIs
                                 if (ceoService.getCeo(ID) != null)
                                 {
                                     role = "CEO";
+                                    memberType = "CEO";
                                 }
                                 else if (quanLyService.findManager(ID) != null)
                                 {
                                     role = "Manager";
+                                    memberType = "Manager";
                                 }
 
                                 bool isValidDepartment =
@@ -614,7 +650,7 @@ namespace UIs
                                         ID,
                                         name,
                                         birthday,
-                                        role,
+                                        memberType,
                                         departmentID,
                                         role,
                                         start
@@ -649,12 +685,38 @@ namespace UIs
             }
             catch (Exception e)
             {
+                string logFilePath = "error.log"; // Đường dẫn tới tệp tin log, bạn có thể thay đổi đường dẫn này
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"Error occurred at {DateTime.Now}: {e.Message}");
+                    writer.WriteLine($"Stack trace: {e.StackTrace}");
+                    writer.WriteLine("----------------------------------------------");
+                }
                 MessageBox.Show(e.Message);
             }
             finally
             {
                 DatabaseConnection.Instance.CloseConnection();
             }
+        }
+
+        private void customButton19_Click(object sender, EventArgs e)
+        {
+            CM_CreateAccount frm = new CM_CreateAccount();
+            frm.ShowDialog();
+        }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customButton4_Click(object sender, EventArgs e)
+        {
+            reload();
+            searchBox.Clear();
+            typeAccountBox.SelectedIndex = -1;
+            departmentsBox.SelectedIndex = -1;
         }
     }
 }

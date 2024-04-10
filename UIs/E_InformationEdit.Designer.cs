@@ -345,9 +345,9 @@
             customButton6.ForeColor = Color.White;
             customButton6.Image = (Image)resources.GetObject("customButton6.Image");
             customButton6.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton6.Location = new Point(12, 0);
+            customButton6.Location = new Point(12, 4);
             customButton6.Name = "customButton6";
-            customButton6.Size = new Size(60, 60);
+            customButton6.Size = new Size(57, 54);
             customButton6.TabIndex = 16;
             customButton6.TextAlign = ContentAlignment.MiddleRight;
             customButton6.TextColor = Color.White;
@@ -807,7 +807,7 @@
             Controls.Add(customPanel1);
             Controls.Add(headerPanel);
             Name = "E_InformationEdit";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "E_InformationEdit";
             Load += E_InformationEdit_Load;
             headerPanel.ResumeLayout(false);

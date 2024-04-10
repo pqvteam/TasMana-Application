@@ -12,6 +12,8 @@ using SixLabors.ImageSharp.Processing;
 using SixLabors.ImageSharp.PixelFormats;
 using System.IO;
 using System.Drawing;
+using System.Net;
+using System.Numerics;
 
 namespace Repositories
 {
@@ -110,6 +112,31 @@ namespace Repositories
             }
         }
 
+        public void insertType(string type, string userID)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+
+                conn.Open();
+
+                using (SqlCommand command = new SqlCommand("UPDATE NhanSu SET loaiNhanSu = @type WHERE maThanhVien = @userID", conn))
+                {
+                    command.Parameters.AddWithValue("@type", type);
+                    command.Parameters.AddWithValue("@userID", userID);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
 
         public byte[] convertImageToByte(Image<Rgba32> img)
         {
@@ -126,6 +153,92 @@ namespace Repositories
             {
                 return Image.Load<Rgba32>(ms);
             }
+        }
+        public string createIDEmployye(string maPB)
+        {
+            string ID = "";
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+
+
+                // Using the existing connection from DatabaseConnection
+                conn.Open();
+                using (conn)
+                {
+                    string queryID = "SELECT dbo.taoMaNhanVien ('" + maPB + "')";
+
+                    using (SqlCommand command = new SqlCommand(queryID, conn))
+                    {
+                        ID = command.ExecuteScalar().ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exception (log, display message, etc.)
+                // Ghi log lỗi vào tệp tin
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return ID;
+        }
+        public bool createEmployee(string ID, string password, string name, string phone, string birthdate, string citizenID, string email, string maPB, string sex, string address, string datenow, string type, string passport)
+        {
+            bool success = false; // Initialize success flag
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+                conn.Open();
+                using (conn)
+                {
+                    // Corrected query with parameter names matching
+                    string queryEdit = $"EXEC taoNhanSu '{ID}', '{password}', N'{name}', '{phone}', '{birthdate}', '{citizenID}', '{email}', 0, '', 0, '{maPB}', N'Nhân Viên', N'{sex}', N'{address}', '{datenow}', '{type}', '{passport}' ";
+
+                    using (SqlCommand command = new SqlCommand(queryEdit, conn))
+                    {
+                        // Set parameter values
+                        //command.Parameters.AddWithValue("@ID", ID);
+                        //command.Parameters.AddWithValue("@password", password);
+                        //command.Parameters.AddWithValue("@name", name);
+                        //command.Parameters.AddWithValue("@phone", phone);
+                        //command.Parameters.AddWithValue("@birthdate", birthdate);
+                        //command.Parameters.AddWithValue("@citizenID", citizenID);
+                        //command.Parameters.AddWithValue("@email", email);
+                        //command.Parameters.AddWithValue("@maPB", maPB);
+                        //command.Parameters.AddWithValue("@sex", sex);
+                        //command.Parameters.AddWithValue("@passport", passport);
+                        //command.Parameters.AddWithValue("@type", type);
+                        //command.Parameters.AddWithValue("@datenow", datenow);
+
+                        // Execute query
+                        int rowsAffected = command.ExecuteNonQuery();
+                        success = rowsAffected > 0; // Set success flag based on rows affected
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exception (log, display message, etc.)
+                // Ghi log lỗi vào tệp tin
+                string logFilePath = "error.log"; // Đường dẫn tới tệp tin log, bạn có thể thay đổi đường dẫn này
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"Error occurred at {DateTime.Now}: {ex.Message}");
+                    writer.WriteLine($"Stack trace: {ex.StackTrace}");
+                    writer.WriteLine("----------------------------------------------");
+                }
+
+                // Hiển thị thông báo lỗi cho người dùng
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return success; // Return whether the operation was successful
         }
     }
 }

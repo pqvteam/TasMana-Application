@@ -20,7 +20,7 @@ namespace UIs.CustomComponent
 
         //-> Other Values
         private bool droppedDown = false;
-        private Image calendarIcon = Properties.Resources.calendarWhite;
+        private Image calendarIcon = Properties.Resources.schedule_icon; // Sử dụng biểu tượng thông tin của hệ thống
         private RectangleF iconButtonArea;
         private const int calendarIconWidth = 34;
         private const int arrowIconWidth = 17;
@@ -41,8 +41,8 @@ namespace UIs.CustomComponent
             {
                 skinColor = value;
                 if (skinColor.GetBrightness() >= 0.8F)
-                    calendarIcon = Properties.Resources.calendarDark;
-                else calendarIcon = Properties.Resources.calendarWhite;
+                    calendarIcon = Properties.Resources.schedule_icon;
+                else calendarIcon = Properties.Resources.schedule_icon;
                 this.Invalidate();
             }
         }

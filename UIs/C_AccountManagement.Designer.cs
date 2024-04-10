@@ -45,6 +45,7 @@
             customButton7 = new CustomComponent.CustomButton();
             customButton6 = new CustomComponent.CustomButton();
             customPanel1 = new CustomComponent.CustomPanel();
+            button3 = new Button();
             button2 = new Button();
             pictureBox6 = new PictureBox();
             searchBox = new TextBox();
@@ -58,7 +59,7 @@
             customButton19 = new CustomComponent.CustomButton();
             membersGrid = new DataGridView();
             label1 = new Label();
-            button3 = new Button();
+            customButton4 = new CustomComponent.CustomButton();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             customPanel1.SuspendLayout();
@@ -356,6 +357,21 @@
             customPanel1.TabIndex = 3;
             customPanel1.Paint += customPanel1_Paint;
             // 
+            // button3
+            // 
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.White;
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.Location = new Point(3, 1);
+            button3.Name = "button3";
+            button3.Size = new Size(264, 44);
+            button3.TabIndex = 6;
+            button3.Text = "ACTIVED ACCOUNT";
+            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button3.UseVisualStyleBackColor = true;
+            // 
             // button2
             // 
             button2.FlatAppearance.BorderSize = 0;
@@ -389,7 +405,7 @@
             searchBox.BorderStyle = BorderStyle.None;
             searchBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             searchBox.ForeColor = Color.White;
-            searchBox.Location = new Point(33, 171);
+            searchBox.Location = new Point(41, 171);
             searchBox.Name = "searchBox";
             searchBox.PlaceholderText = "Enter an account name...";
             searchBox.Size = new Size(375, 20);
@@ -406,13 +422,16 @@
             customButton1.Enabled = false;
             customButton1.FlatAppearance.BorderSize = 0;
             customButton1.FlatStyle = FlatStyle.Flat;
+            customButton1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton1.ForeColor = Color.White;
             customButton1.Location = new Point(10, 156);
             customButton1.Name = "customButton1";
             customButton1.Size = new Size(456, 50);
             customButton1.TabIndex = 48;
             customButton1.TextColor = Color.White;
+            customButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton1.UseVisualStyleBackColor = false;
+            customButton1.Click += customButton1_Click;
             // 
             // label2
             // 
@@ -529,13 +548,14 @@
             customButton19.Location = new Point(1116, 153);
             customButton19.Name = "customButton19";
             customButton19.Padding = new Padding(12, 0, 0, 0);
-            customButton19.Size = new Size(251, 59);
+            customButton19.Size = new Size(155, 59);
             customButton19.TabIndex = 59;
-            customButton19.Text = "CREATE NEW ONE";
+            customButton19.Text = "CREATE";
             customButton19.TextAlign = ContentAlignment.MiddleRight;
             customButton19.TextColor = Color.White;
             customButton19.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton19.UseVisualStyleBackColor = false;
+            customButton19.Click += customButton19_Click;
             // 
             // membersGrid
             // 
@@ -588,20 +608,28 @@
             label1.TabIndex = 49;
             label1.Text = "SEARCH";
             // 
-            // button3
+            // customButton4
             // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(3, 1);
-            button3.Name = "button3";
-            button3.Size = new Size(264, 44);
-            button3.TabIndex = 6;
-            button3.Text = "ACTIVED ACCOUNT";
-            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = true;
+            customButton4.BackColor = Color.Black;
+            customButton4.BackgroundColor = Color.Black;
+            customButton4.BorderColor = Color.PaleVioletRed;
+            customButton4.BorderRadius = 28;
+            customButton4.BorderSize = 0;
+            customButton4.FlatAppearance.BorderSize = 0;
+            customButton4.FlatStyle = FlatStyle.Flat;
+            customButton4.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton4.ForeColor = Color.White;
+            customButton4.Image = (Image)resources.GetObject("customButton4.Image");
+            customButton4.ImageAlign = ContentAlignment.MiddleLeft;
+            customButton4.Location = new Point(1283, 153);
+            customButton4.Name = "customButton4";
+            customButton4.Padding = new Padding(12, 0, 0, 0);
+            customButton4.Size = new Size(79, 59);
+            customButton4.TabIndex = 61;
+            customButton4.TextColor = Color.White;
+            customButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
+            customButton4.UseVisualStyleBackColor = false;
+            customButton4.Click += customButton4_Click;
             // 
             // C_AccountManagement
             // 
@@ -609,6 +637,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(31, 31, 32);
             ClientSize = new Size(1382, 753);
+            Controls.Add(customButton4);
             Controls.Add(membersGrid);
             Controls.Add(customButton19);
             Controls.Add(typeAccountBox);
@@ -624,6 +653,7 @@
             Controls.Add(customButton1);
             Controls.Add(customButton2);
             Name = "C_AccountManagement";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "C_AccountManagement";
             Load += C_AccountManagement_Load;
             headerPanel.ResumeLayout(false);
@@ -665,5 +695,6 @@
         private DataGridView membersGrid;
         private Label label1;
         private Button button3;
+        private CustomComponent.CustomButton customButton4;
     }
 }
