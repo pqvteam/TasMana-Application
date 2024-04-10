@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Repositories.Entities;
 using Services;
 
 namespace UIs
@@ -24,11 +25,12 @@ namespace UIs
             string userID = box_username.Text;
             string password = box_password.Text;
             string result = service.checkLogin(userID, password);
+            NhanSuService nhanSuService = new NhanSuService();
             if (checkbox_Remember.Checked && service.savePassword(userID, password))
             {
                 MessageBox.Show("Đã lưu mật khẩu của bạn");
             }
-            else if(checkbox_Remember.Checked && service.savePassword(userID, password)==false)
+            else if (checkbox_Remember.Checked && service.savePassword(userID, password) == false)
             {
                 MessageBox.Show("Mật khẩu của bạn lưu thất bại");
             }
@@ -37,12 +39,15 @@ namespace UIs
             // Session lưu các thông tin quan trọng của tài khoản
             if (result == "Đăng nhập thành công")
             {
+                NhanSu member = nhanSuService.findMember(userID);
                 Session.Instance.UserName = box_username.Text;
+                Session.Instance.Name = member.HoVaTen;
+                Session.Instance.Avatar = member.AnhDaiDien;
                 if (service.getEmailAccount(userID) != "Không tìm thấy mail của nhân viên này! Kiểm tra lại mã đăng nhập!")
                 {
                     Session.Instance.Email = box_password.Text;
                 }
-                if(service.laCEO(userID))
+                if (service.laCEO(userID))
                 {
                     Session.Instance.laCEO = true;
                 }
@@ -58,6 +63,8 @@ namespace UIs
                 {
                     Session.Instance.daNghiViec = true;
                 }
+                C_AllTaskList tasks = new C_AllTaskList();
+                tasks.ShowDialog();
             }
         }
 
@@ -111,6 +118,11 @@ namespace UIs
         private void customButton5_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void G_Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

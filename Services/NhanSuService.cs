@@ -44,7 +44,20 @@ namespace Services
         {
             nhanSuRepository.insertAvatar(image, ID);
         }
+        public void insertType(string type, string ID)
+        {
+            nhanSuRepository.insertType(type, ID);
+        }
 
+        public bool createEmployee(string ID, string password, string name, string phone, string birthdate, string citizenID, string email, string maPB, string sex, string address, string datenow, string type, string passport)
+        {
+            return nhanSuRepository.createEmployee(ID, password, name, phone, birthdate, citizenID, email, maPB, sex, address, datenow, type, passport);
+        }
+
+        public string createIDEmployee(string maPB)
+        {
+            return nhanSuRepository.createIDEmployye(maPB);
+        }
         public byte[] convertImageToByte(Image<Rgba32> img)
         {
             return nhanSuRepository.convertImageToByte(img);
