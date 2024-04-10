@@ -653,6 +653,7 @@
             Controls.Add(customButton1);
             Controls.Add(customButton2);
             Name = "C_AccountManagement";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "C_AccountManagement";
             Load += C_AccountManagement_Load;
             headerPanel.ResumeLayout(false);

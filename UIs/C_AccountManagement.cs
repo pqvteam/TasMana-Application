@@ -31,10 +31,9 @@ namespace UIs
 
         private void C_AccountManagement_Load(object sender, EventArgs e)
         {
-            Session.Instance.UserName = "GD-101";
             if (!(Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi))
             {
-                customButton19.Enabled = false;
+                customButton19.Visible = false;
             }
             membersGrid.Columns.Add("ID", "ID");
             membersGrid.Columns.Add("Name", "Name");
