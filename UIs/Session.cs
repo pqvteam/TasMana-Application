@@ -12,6 +12,9 @@ public class Session
     public string Email { get; set; }
     public string UserName { get; set; }//maThanhVien
 
+    public string Name;
+
+    public byte[] Avatar;
     public bool laQuanLi { get; set; }
 
     public bool laTruongNhom { get; set; }
