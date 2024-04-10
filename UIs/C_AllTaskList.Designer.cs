@@ -191,15 +191,14 @@
             customButton22.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton22.ForeColor = Color.White;
             customButton22.Image = Properties.Resources.triangle_icon;
-            customButton22.ImageAlign = ContentAlignment.MiddleRight;
             customButton22.Location = new Point(67, 4);
             customButton22.Name = "customButton22";
-            customButton22.Size = new Size(39, 51);
+            customButton22.Size = new Size(51, 51);
             customButton22.TabIndex = 24;
-            customButton22.TextAlign = ContentAlignment.MiddleRight;
             customButton22.TextColor = Color.White;
             customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton22.UseVisualStyleBackColor = false;
+            customButton22.Click += customButton22_Click;
             // 
             // customButton6
             // 
@@ -943,7 +942,7 @@
             currentTime.BackColor = Color.FromArgb(42, 42, 42);
             currentTime.Font = new Font("Copperplate Gothic Light", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             currentTime.ForeColor = Color.White;
-            currentTime.Location = new Point(75, 19);
+            currentTime.Location = new Point(69, 19);
             currentTime.Name = "currentTime";
             currentTime.Size = new Size(86, 30);
             currentTime.TabIndex = 57;
