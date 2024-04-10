@@ -1,6 +1,4 @@
-﻿using Repositories.Utilities;
-using Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Repositories.Entities;
+using Repositories.Utilities;
+using Services;
 
 namespace UIs
 {
     public partial class M_AssignTask : Form
     {
+        GiaoViecService giaoViecService = new GiaoViecService();
+        NhanSuService nhanSuService = new NhanSuService();
         private string receiverID = "";
         private string venueID = "";
+        private string authorizedBy = "";
+
         public M_AssignTask()
         {
             InitializeComponent();
@@ -29,9 +34,24 @@ namespace UIs
             int diameter = radius * 2;
 
             Rectangle rectTopLeft = new Rectangle(0, 0, diameter, diameter);
-            Rectangle rectTopRight = new Rectangle(userPanel.Width - diameter, 0, diameter, diameter);
-            Rectangle rectBottomLeft = new Rectangle(0, userPanel.Height - diameter, diameter, diameter);
-            Rectangle rectBottomRight = new Rectangle(userPanel.Width - diameter, userPanel.Height - diameter, diameter, diameter);
+            Rectangle rectTopRight = new Rectangle(
+                userPanel.Width - diameter,
+                0,
+                diameter,
+                diameter
+            );
+            Rectangle rectBottomLeft = new Rectangle(
+                0,
+                userPanel.Height - diameter,
+                diameter,
+                diameter
+            );
+            Rectangle rectBottomRight = new Rectangle(
+                userPanel.Width - diameter,
+                userPanel.Height - diameter,
+                diameter,
+                diameter
+            );
 
             // Vẽ góc trên bên trái
             path.AddArc(rectTopLeft, 180, 90);
@@ -55,40 +75,19 @@ namespace UIs
             userPanel.Region = new Region(path);
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
+        private void label10_Click(object sender, EventArgs e) { }
 
-        }
+        private void label12_Click(object sender, EventArgs e) { }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e) { }
 
-        }
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
+        private void customButton1_Click(object sender, EventArgs e) { }
 
-        }
+        private void customButton2_Click(object sender, EventArgs e) { }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void customButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void customButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox14_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void pictureBox14_Click(object sender, EventArgs e) { }
 
         private void editReceiverButton_Click(object sender, EventArgs e)
         {
@@ -103,25 +102,45 @@ namespace UIs
             receiverID = memberId;
         }
 
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void label11_Click(object sender, EventArgs e) { }
 
         private void M_AssignTask_Load(object sender, EventArgs e)
         {
             taskStatus.SelectedIndex = 0;
             taskPriority.SelectedIndex = 0;
+            if (Session.Instance.laQuanLi)
+            {
+                membersGrid.Enabled = false;
+                membersGrid.Visible = false;
+            }
+            else if (!Session.Instance.laQuanLi && !Session.Instance.laCEO)
+            {
+                membersGrid.Enabled = true;
+                membersGrid.Columns.Add("ID", "ID");
+                membersGrid.Columns.Add("Name", "Name");
+                membersGrid.Columns.Add("Role", "Role");
+                List<NhanSu> members = nhanSuService.getAllMembers();
+                foreach (NhanSu member in members)
+                {
+                    if (member.LaQuanLi || member.MaThanhVien.Contains("GD"))
+                    {
+                        DataGridViewRow row = new DataGridViewRow();
+                        row.CreateCells(membersGrid);
+                        row.Cells[0].Value = member.MaThanhVien;
+                        row.Cells[1].Value = member.HoVaTen;
+                        row.Cells[2].Value = member.LaQuanLi ? "Manager" : "CEO";
+
+                        membersGrid.Rows.Add(row);
+                    }
+                }
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            GiaoViecService giaoViecService = new GiaoViecService();
-            NhanSuService nhanSuService = new NhanSuService();
             string tStaffName = nhanSuService.findMember(receiverID).HoVaTen;
-            string tManagerName = nhanSuService.findMember("AN-402").HoVaTen;
-            string tManagerID = "AN-402";
+            string tManagerName = nhanSuService.findMember(Session.Instance.UserName).HoVaTen;
+            string tManagerID = Session.Instance.UserName;
             string tID = GiaoViecUtilities.createAssignTaskID(tManagerID);
             string tName = taskName.Text;
             string tDescription = taskDescription.Text;
@@ -131,13 +150,28 @@ namespace UIs
             string tStatus = taskStatus.SelectedItem.ToString();
             string tPriority = taskPriority.SelectedItem.ToString();
             string tSubject = $"THÔNG BÁO GIAO VIỆC - {tName}";
-            string tGiaoViec = $"Kính gửi {tStaffName},\nChúng ta đã xác định một công việc mới cần hoàn thành, và tôi muốn giao nhiệm vụ này cho bạn. Dưới đây là thông tin chi tiết về công việc:\nTên công việc: {tName}\nMô tả: {tDescription}\nThời hạn: {tEnd}\nƯu tiên: {tPriority}\nNgười giao việc: {tManagerName}\nXin vui lòng kiểm tra thông tin trên và bắt đầu làm việc ngay khi bạn có thể. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\nQuản lý {tManagerName}";
+            string tGiaoViec =
+                $"Kính gửi {tStaffName},\nChúng ta đã xác định một công việc mới cần hoàn thành, và tôi muốn giao nhiệm vụ này cho bạn. Dưới đây là thông tin chi tiết về công việc:\nTên công việc: {tName}\nMô tả: {tDescription}\nThời hạn: {tEnd}\nƯu tiên: {tPriority}\nNgười giao việc: {tManagerName}\nXin vui lòng kiểm tra thông tin trên và bắt đầu làm việc ngay khi bạn có thể. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\nQuản lý {tManagerName}";
             string tTo = nhanSuService.findMember(receiverID).Email;
 
             int tMode = taskMode.Checked ? 1 : 0;
             int tIsCEO = 0;
 
-            bool isSuccess = giaoViecService.assignTask(tDescription, tStart, tEnd, tStatus, tFile, tID, tMode, tName, venueID, receiverID, tIsCEO, tManagerID);
+            bool isSuccess = giaoViecService.assignTask(
+                tDescription,
+                tStart,
+                tEnd,
+                tStatus,
+                tFile,
+                tID,
+                tMode,
+                tName,
+                venueID,
+                receiverID,
+                tIsCEO,
+                tManagerID,
+                authorizedBy
+            );
 
             if (isSuccess)
             {
@@ -157,20 +191,10 @@ namespace UIs
             }
             else
             {
-                MessageBox.Show(tID);
-                MessageBox.Show(tStart);
-                MessageBox.Show(tEnd);
-                MessageBox.Show(tName);
-                MessageBox.Show(tDescription);
-                MessageBox.Show(tFile);
-                MessageBox.Show(tStatus);
-                MessageBox.Show(tPriority);
-                MessageBox.Show(tMode.ToString());
-                MessageBox.Show(receiverID);
-                MessageBox.Show(venueID);
+                MessageBox.Show($"EXEC taoViec '{tDescription}', '{tStart}', '{tEnd}', '{tStatus}', '{tFile}', '{tID}', '{tMode}', '{tName}', '{venueID}', '{receiverID}', '{tIsCEO}', '{tManagerID}', '{authorizedBy}'");
             }
-
         }
+
         private void venueEditButton_Click(object sender, EventArgs e)
         {
             A_ShowVenue showVenueForm = new A_ShowVenue();
@@ -189,10 +213,7 @@ namespace UIs
             this.Close();
         }
 
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void label13_Click(object sender, EventArgs e) { }
 
         private void uploadButton_Click(object sender, EventArgs e)
         {
@@ -206,9 +227,15 @@ namespace UIs
             }
         }
 
-        private void customButton8_Click(object sender, EventArgs e)
-        {
+        private void customButton8_Click(object sender, EventArgs e) { }
 
+        private void membersGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) 
+            {
+                DataGridViewRow selectedRow = membersGrid.Rows[e.RowIndex];
+                authorizedBy = selectedRow.Cells["ID"].Value.ToString();
+            }
         }
     }
 }

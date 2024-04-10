@@ -62,25 +62,25 @@
             // 
             // box_username
             // 
-            box_username.Font = new Font("Times New Roman", 13.2000008F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            box_username.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             box_username.Location = new Point(79, 151);
             box_username.Name = "box_username";
-            box_username.Size = new Size(340, 33);
+            box_username.PlaceholderText = "  Username";
+            box_username.Size = new Size(340, 30);
             box_username.TabIndex = 0;
             box_username.TabStop = false;
-            box_username.Text = "User ID";
             box_username.Enter += box_username_Enter;
             box_username.Leave += box_username_Leave;
             // 
             // box_password
             // 
-            box_password.Font = new Font("Times New Roman", 13.2000008F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            box_password.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             box_password.Location = new Point(79, 204);
             box_password.Name = "box_password";
-            box_password.Size = new Size(340, 33);
+            box_password.PlaceholderText = "  Password";
+            box_password.Size = new Size(340, 30);
             box_password.TabIndex = 0;
             box_password.TabStop = false;
-            box_password.Text = "Password";
             box_password.Enter += box_password_Enter;
             box_password.KeyDown += box_password_KeyDown;
             box_password.Leave += box_password_Leave;
