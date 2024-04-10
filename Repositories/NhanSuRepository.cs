@@ -12,6 +12,8 @@ using SixLabors.ImageSharp.Processing;
 using SixLabors.ImageSharp.PixelFormats;
 using System.IO;
 using System.Drawing;
+using System.Net;
+using System.Numerics;
 
 namespace Repositories
 {
@@ -152,31 +154,49 @@ namespace Repositories
                 return Image.Load<Rgba32>(ms);
             }
         }
- 
-        public bool createEmployee(string password, string name, string phone, string birthdate, string citizenID, string email, string maPB, string sex, string address, string datenow, string type, string passport)
+        public string createIDEmployye(string maPB)
         {
-            bool success = false; // Initialize success flag
+            string ID = "";
+            SqlConnection conn = new SqlConnection(connectionString);
             try
             {
-                // Open connection
-                DatabaseConnection.Instance.OpenConnection();
-                SqlConnection conn = DatabaseConnection.Instance.GetConnection();
+
 
                 // Using the existing connection from DatabaseConnection
-
-                
-
+                conn.Open();
                 using (conn)
                 {
                     string queryID = "SELECT dbo.taoMaNhanVien ('" + maPB + "')";
-                    string ID = "";
+
                     using (SqlCommand command = new SqlCommand(queryID, conn))
                     {
                         ID = command.ExecuteScalar().ToString();
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exception (log, display message, etc.)
+                // Ghi log lỗi vào tệp tin
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return ID;
+        }
+        public bool createEmployee(string ID, string password, string name, string phone, string birthdate, string citizenID, string email, string maPB, string sex, string address, string datenow, string type, string passport)
+        {
+            bool success = false; // Initialize success flag
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+                conn.Open();
+                using (conn)
+                {
                     // Corrected query with parameter names matching
                     string queryEdit = $"EXEC taoNhanSu '{ID}', '{password}', N'{name}', '{phone}', '{birthdate}', '{citizenID}', '{email}', 0, '', 0, '{maPB}', N'Nhân Viên', N'{sex}', N'{address}', '{datenow}', '{type}', '{passport}' ";
-                    
+
                     using (SqlCommand command = new SqlCommand(queryEdit, conn))
                     {
                         // Set parameter values
@@ -215,7 +235,7 @@ namespace Repositories
             }
             finally
             {
-                DatabaseConnection.Instance.CloseConnection();
+                conn.Close();
             }
 
             return success; // Return whether the operation was successful
