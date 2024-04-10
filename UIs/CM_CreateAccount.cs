@@ -22,14 +22,12 @@ namespace UIs
 
         private void CM_CreateAccount_Load(object sender, EventArgs e)
         {
-            Session.Instance.UserName = "GD-101";
-            Session.Instance.laQuanLi=true;
             if (Session.Instance.UserName.Contains("GD"))
             {
                 loadAllDepartment();
                 deparmentsBox.SelectedIndex = -1;
             }
-            if(Session.Instance.laQuanLi && !Session.Instance.UserName.Contains("GD"))
+            if (Session.Instance.laQuanLi && !Session.Instance.UserName.Contains("GD"))
             {
                 loadAllDepartment();
                 if (Session.Instance.laQuanLi)
@@ -46,8 +44,8 @@ namespace UIs
                         }
                     }
                 }
-            }    
-            
+            }
+
         }
 
         private void departmentsBox_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -80,7 +78,7 @@ namespace UIs
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-           
+
             this.Close();
         }
 
@@ -91,6 +89,7 @@ namespace UIs
 
         private void customButton14_Click(object sender, EventArgs e)
         {
+            MailService sendMailSer = new MailService();
             string password = "123456";
             PhongBan phongBan = (PhongBan)deparmentsBox.SelectedItem;
             string type = typeBox.SelectedItem?.ToString();
@@ -105,14 +104,14 @@ namespace UIs
             string currentDate = DateTime.Now.ToString("yyyyMMdd");
             NhanSuService nhanSuSer = new NhanSuService();
 
-            if (typeBox.SelectedIndex==-1)
+            if (typeBox.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn loại nhân viên.");
                 typeBox.Focus();
                 return;
             }
 
-            if (deparmentsBox.SelectedIndex==-1)
+            if (deparmentsBox.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn phòng ban.");
                 deparmentsBox.Focus();
@@ -166,7 +165,7 @@ namespace UIs
             }
 
             // Kiểm tra ngày sinh
-            if (date.Length<=0)
+            if (date.Length <= 0)
             {
                 MessageBox.Show("Vui lòng chọn ngày sinh.");
                 birthdateBox.Focus();
@@ -180,12 +179,17 @@ namespace UIs
                 return;
             }
 
+            string ID = nhanSuSer.createIDEmployee(phongBan.MaPb);
+
             // Thực hiện tạo tài khoản
-            bool isSucc = nhanSuSer.createEmployee(passport, userName, mobile, date, citizenID, email, phongBan.MaPb, gender, address, currentDate, type, passport);
+            bool isSucc = nhanSuSer.createEmployee(ID, password, userName, mobile, date, citizenID, email, phongBan.MaPb, gender, address, currentDate, type, passport);
 
             if (isSucc)
             {
                 MessageBox.Show("Thêm Thành Công");
+                string content = $"Vui lòng không chia sẻ tài khoản nhân viên tới bất kì ai\nMã nhân viên: {ID}\nMật khẩu mặc định: 123456\nSau khi đăng nhập lần đầu, nhân viên vui lòng đổi mật khẩu mặc định.";
+                sendMailSer.sendMail("Thông tin tài khoản nhân viên", content, email);
+                MessageBox.Show("Thông tin nhân viên đã được gửi đến gmail");
                 // Xóa nội dung của các TextBox
                 citizenIDBox.Clear();
                 emailBox.Clear();
@@ -193,14 +197,15 @@ namespace UIs
                 userNameBox.Clear();
                 mobileBox.Clear();
                 addressBox.Clear();
-
+                genderBox.Clear();
                 // Xóa selectedIndex của ComboBox
                 deparmentsBox.SelectedIndex = -1;
                 typeBox.SelectedIndex = -1;
+
             }
             else
             {
-                MessageBox.Show("Thêm Thất Bại");
+                MessageBox.Show($"Thêm Thất Bại{ID}");
             }
         }
         private bool IsValidEmail(string email)
