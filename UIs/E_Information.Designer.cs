@@ -785,6 +785,7 @@
             Controls.Add(customPanel2);
             Controls.Add(customPanel1);
             Name = "E_Information";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "E_Information";
             Load += E_Information_Load;
             customPanel2.ResumeLayout(false);
