@@ -80,6 +80,7 @@
             Birth.BorderColor = Color.PaleVioletRed;
             Birth.BorderSize = 0;
             Birth.CalendarFont = new Font("Calibri", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Birth.Cursor = Cursors.Hand;
             Birth.CustomFormat = "";
             Birth.Font = new Font("Calibri", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Birth.Format = DateTimePickerFormat.Short;
@@ -95,6 +96,7 @@
             // 
             Number.BackColor = SystemColors.ScrollBar;
             Number.BorderStyle = BorderStyle.None;
+            Number.Cursor = Cursors.IBeam;
             Number.Font = new Font("Calibri", 13.8F);
             Number.ForeColor = SystemColors.InfoText;
             Number.Location = new Point(350, 448);
@@ -107,6 +109,7 @@
             // 
             Email.BackColor = SystemColors.ScrollBar;
             Email.BorderStyle = BorderStyle.None;
+            Email.Cursor = Cursors.IBeam;
             Email.Font = new Font("Calibri", 13.8F);
             Email.ForeColor = SystemColors.InfoText;
             Email.Location = new Point(350, 398);
@@ -119,6 +122,7 @@
             // 
             CID.BackColor = SystemColors.ScrollBar;
             CID.BorderStyle = BorderStyle.None;
+            CID.Cursor = Cursors.IBeam;
             CID.Font = new Font("Calibri", 13.8F);
             CID.ForeColor = SystemColors.InfoText;
             CID.Location = new Point(350, 348);
@@ -131,6 +135,7 @@
             // 
             Add.BackColor = SystemColors.ScrollBar;
             Add.BorderStyle = BorderStyle.None;
+            Add.Cursor = Cursors.IBeam;
             Add.Font = new Font("Calibri", 13.8F);
             Add.ForeColor = SystemColors.InfoText;
             Add.Location = new Point(350, 298);
@@ -143,6 +148,7 @@
             // 
             Gender.BackColor = SystemColors.ScrollBar;
             Gender.BorderStyle = BorderStyle.None;
+            Gender.Cursor = Cursors.IBeam;
             Gender.Font = new Font("Calibri", 13.8F);
             Gender.ForeColor = SystemColors.InfoText;
             Gender.Location = new Point(350, 198);
@@ -155,6 +161,7 @@
             // 
             UserName.BackColor = SystemColors.ScrollBar;
             UserName.BorderStyle = BorderStyle.None;
+            UserName.Cursor = Cursors.IBeam;
             UserName.Font = new Font("Calibri", 13.8F);
             UserName.ForeColor = SystemColors.InfoText;
             UserName.Location = new Point(350, 148);
@@ -334,6 +341,7 @@
             customButton18.BorderColor = Color.PaleVioletRed;
             customButton18.BorderRadius = 28;
             customButton18.BorderSize = 0;
+            customButton18.Cursor = Cursors.Hand;
             customButton18.FlatAppearance.BorderSize = 0;
             customButton18.FlatStyle = FlatStyle.Flat;
             customButton18.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -356,6 +364,7 @@
             customButton17.BorderColor = Color.PaleVioletRed;
             customButton17.BorderRadius = 28;
             customButton17.BorderSize = 0;
+            customButton17.Cursor = Cursors.Hand;
             customButton17.FlatAppearance.BorderSize = 0;
             customButton17.FlatStyle = FlatStyle.Flat;
             customButton17.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -400,6 +409,7 @@
             customButton11.BorderColor = Color.PaleVioletRed;
             customButton11.BorderRadius = 28;
             customButton11.BorderSize = 0;
+            customButton11.Cursor = Cursors.Hand;
             customButton11.FlatAppearance.BorderSize = 0;
             customButton11.FlatStyle = FlatStyle.Flat;
             customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -423,6 +433,7 @@
             customButton10.BorderColor = Color.PaleVioletRed;
             customButton10.BorderRadius = 28;
             customButton10.BorderSize = 0;
+            customButton10.Cursor = Cursors.Hand;
             customButton10.FlatAppearance.BorderSize = 0;
             customButton10.FlatStyle = FlatStyle.Flat;
             customButton10.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -446,6 +457,7 @@
             customButton9.BorderColor = Color.PaleVioletRed;
             customButton9.BorderRadius = 28;
             customButton9.BorderSize = 0;
+            customButton9.Cursor = Cursors.Hand;
             customButton9.FlatAppearance.BorderSize = 0;
             customButton9.FlatStyle = FlatStyle.Flat;
             customButton9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -469,6 +481,7 @@
             customButton8.BorderColor = Color.PaleVioletRed;
             customButton8.BorderRadius = 28;
             customButton8.BorderSize = 0;
+            customButton8.Cursor = Cursors.Hand;
             customButton8.FlatAppearance.BorderSize = 0;
             customButton8.FlatStyle = FlatStyle.Flat;
             customButton8.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -492,6 +505,7 @@
             customButton7.BorderColor = Color.PaleVioletRed;
             customButton7.BorderRadius = 28;
             customButton7.BorderSize = 0;
+            customButton7.Cursor = Cursors.Hand;
             customButton7.FlatAppearance.BorderSize = 0;
             customButton7.FlatStyle = FlatStyle.Flat;
             customButton7.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -515,6 +529,7 @@
             customButton6.BorderColor = Color.PaleVioletRed;
             customButton6.BorderRadius = 28;
             customButton6.BorderSize = 0;
+            customButton6.Cursor = Cursors.Hand;
             customButton6.FlatAppearance.BorderSize = 0;
             customButton6.FlatStyle = FlatStyle.Flat;
             customButton6.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -596,6 +611,7 @@
             changeAvatarButton.BorderColor = Color.PaleVioletRed;
             changeAvatarButton.BorderRadius = 20;
             changeAvatarButton.BorderSize = 0;
+            changeAvatarButton.Cursor = Cursors.Hand;
             changeAvatarButton.FlatAppearance.BorderSize = 0;
             changeAvatarButton.FlatStyle = FlatStyle.Flat;
             changeAvatarButton.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -617,6 +633,7 @@
             SUBMIT.BorderColor = Color.PaleVioletRed;
             SUBMIT.BorderRadius = 20;
             SUBMIT.BorderSize = 0;
+            SUBMIT.Cursor = Cursors.Hand;
             SUBMIT.FlatAppearance.BorderSize = 0;
             SUBMIT.FlatStyle = FlatStyle.Flat;
             SUBMIT.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
