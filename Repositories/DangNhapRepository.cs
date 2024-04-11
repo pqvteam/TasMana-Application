@@ -130,16 +130,15 @@ namespace Repositories
                 DatabaseConnection.Instance.OpenConnection();
                 SqlConnection conn = DatabaseConnection.Instance.GetConnection();
 
-                string sqlCommand =
-                    $"select count(*) as laCEO from NhanSu,CEO where NhanSu.maThanhVien=CEO.maThanhVien and NhanSu.maThanhVien='{username}'";
+                string sqlCommand = $"select * from CEO where maThanhVien='{username}'";
                 SqlCommand command = new SqlCommand(sqlCommand, conn);
                 SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    return $"{reader["laCEO"]}";
+                    return "1";
                 }
-                return "Lỗi kết nối dữ liệu!";
+                return "0";
             }
             catch (Exception ex)
             {
@@ -150,6 +149,7 @@ namespace Repositories
                 DatabaseConnection.Instance.CloseConnection();
             }
         }
+
 
         public string laQuanLi(string username)
         {
