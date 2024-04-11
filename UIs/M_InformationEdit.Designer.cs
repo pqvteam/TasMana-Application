@@ -345,9 +345,9 @@
             customButton14.ForeColor = Color.White;
             customButton14.Image = Properties.Resources.triangle_icon;
             customButton14.ImageAlign = ContentAlignment.MiddleRight;
-            customButton14.Location = new Point(67, 4);
+            customButton14.Location = new Point(60, 4);
             customButton14.Name = "customButton14";
-            customButton14.Size = new Size(39, 51);
+            customButton14.Size = new Size(54, 51);
             customButton14.TabIndex = 24;
             customButton14.TextAlign = ContentAlignment.MiddleRight;
             customButton14.TextColor = Color.White;
@@ -365,7 +365,7 @@
             customButton13.FlatStyle = FlatStyle.Flat;
             customButton13.ForeColor = Color.White;
             customButton13.Image = Properties.Resources.kimi_no_nawa;
-            customButton13.Location = new Point(14, 3);
+            customButton13.Location = new Point(4, 3);
             customButton13.Name = "customButton13";
             customButton13.Size = new Size(50, 50);
             customButton13.TabIndex = 37;
@@ -660,7 +660,6 @@
             // 
             // heading
             // 
-            heading.AutoSize = true;
             heading.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             heading.ForeColor = Color.FromArgb(250, 86, 87);
             heading.Location = new Point(126, 24);
@@ -668,6 +667,7 @@
             heading.Size = new Size(191, 34);
             heading.TabIndex = 3;
             heading.Text = "MANAGER";
+            heading.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // UserName1
             // 
