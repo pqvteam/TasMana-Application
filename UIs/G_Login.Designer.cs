@@ -148,6 +148,7 @@
             // 
             button2.BackColor = Color.Transparent;
             button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.Enabled = false;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Location = new Point(37, 204);
@@ -160,6 +161,7 @@
             // 
             button1.BackColor = Color.Transparent;
             button1.BackgroundImage = Properties.Resources.snapedit_1712151680966;
+            button1.Enabled = false;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(35, 145);

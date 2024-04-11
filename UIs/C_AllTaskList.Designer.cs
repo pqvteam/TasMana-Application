@@ -180,6 +180,7 @@
             currentAvatarSmall.SizeMode = PictureBoxSizeMode.StretchImage;
             currentAvatarSmall.TabIndex = 25;
             currentAvatarSmall.TabStop = false;
+            currentAvatarSmall.Click += currentAvatarSmall_Click;
             // 
             // customButton22
             // 
