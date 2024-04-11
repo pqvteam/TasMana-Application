@@ -89,6 +89,7 @@
             // 
             label_forgotPassword.AutoSize = true;
             label_forgotPassword.BackColor = Color.Transparent;
+            label_forgotPassword.Cursor = Cursors.Hand;
             label_forgotPassword.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_forgotPassword.ForeColor = Color.White;
             label_forgotPassword.Location = new Point(252, 263);
@@ -102,6 +103,7 @@
             // 
             checkbox_Remember.AutoSize = true;
             checkbox_Remember.BackColor = Color.Transparent;
+            checkbox_Remember.Cursor = Cursors.Hand;
             checkbox_Remember.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkbox_Remember.ForeColor = Color.White;
             checkbox_Remember.Location = new Point(38, 263);
@@ -114,6 +116,7 @@
             // button_Login
             // 
             button_Login.BackColor = Color.Red;
+            button_Login.Cursor = Cursors.Hand;
             button_Login.FlatAppearance.BorderSize = 0;
             button_Login.FlatStyle = FlatStyle.Flat;
             button_Login.Font = new Font("Copperplate Gothic Bold", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -148,6 +151,7 @@
             // 
             button2.BackColor = Color.Transparent;
             button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.Enabled = false;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Location = new Point(37, 204);
@@ -160,6 +164,7 @@
             // 
             button1.BackColor = Color.Transparent;
             button1.BackgroundImage = Properties.Resources.snapedit_1712151680966;
+            button1.Enabled = false;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(35, 145);
