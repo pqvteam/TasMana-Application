@@ -78,23 +78,40 @@ namespace UIs
             currentNameLabel.Text = $"Hello {currentUser}";
             currentUserName.Text = Session.Instance.Name;
             currentID.Text = Session.Instance.UserName;
-            if (currentUser != null && !currentUser.Contains("GD"))
+            if (currentUser != null && !Session.Instance.UserName.Contains("GD"))
             {
                 grandChart.Enabled = false;
                 grandChart.Visible = false;
             }
-            if (IsValidImageData(Session.Instance.Avatar))
-            {
-                currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
-                currentAvatarBig.Image = convertByteToImage(Session.Instance.Avatar);
-            }
-
             membersGrid.Columns.Add("MaGiaoViec", "ID");
             membersGrid.Columns.Add("TenCongViec", "Name");
             membersGrid.Columns.Add("MoTaCongViec", "Description");
             membersGrid.Columns.Add("NgayGiao", "Start Day");
             membersGrid.Columns.Add("HanHoanThanh", "End Day");
             membersGrid.Columns.Add("TinhTrangCongViec", "Status");
+            reload();
+            DataGridViewLinkColumn links = new DataGridViewLinkColumn();
+            links.UseColumnTextForLinkValue = true;
+            links.HeaderText = "Download";
+            links.DataPropertyName = "lnkColumn";
+            links.Name = "lnkColumn";
+            links.ActiveLinkColor = Color.White;
+            links.LinkBehavior = LinkBehavior.SystemDefault;
+            links.LinkColor = Color.Blue;
+            links.Text = "Click here";
+            links.TrackVisitedState = true;
+            links.VisitedLinkColor = Color.YellowGreen;
+            membersGrid.Columns.Add(links);
+        }
+
+        private void reload()
+        {
+            if (IsValidImageData(Session.Instance.Avatar))
+            {
+                currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
+                currentAvatarBig.Image = convertByteToImage(Session.Instance.Avatar);
+            }
+            membersGrid.Rows.Clear();
             List<GiaoViec> members = giaoViecService.getAll();
             int taskQuantity = 0;
             int completedTaskQuantity = 0;
@@ -123,19 +140,6 @@ namespace UIs
             taskQuantityLabel.Text = taskQuantity + "";
             compeletedQuantityLabel.Text = completedTaskQuantity + "";
             incompletedQuantityLabel.Text = incompletedTaskQuantity + "";
-
-            DataGridViewLinkColumn links = new DataGridViewLinkColumn();
-            links.UseColumnTextForLinkValue = true;
-            links.HeaderText = "Download";
-            links.DataPropertyName = "lnkColumn";
-            links.Name = "lnkColumn";
-            links.ActiveLinkColor = Color.White;
-            links.LinkBehavior = LinkBehavior.SystemDefault;
-            links.LinkColor = Color.Blue;
-            links.Text = "Click here";
-            links.TrackVisitedState = true;
-            links.VisitedLinkColor = Color.YellowGreen;
-            membersGrid.Columns.Add(links);
         }
 
         private void hrButton_Click(object sender, EventArgs e)
@@ -150,6 +154,8 @@ namespace UIs
                 row.Cells[1].Value = member.TenCongViec;
                 row.Cells[2].Value = member.MoTaCongViec;
                 row.Cells[3].Value = member.NgayGiao;
+                row.Cells[4].Value = member.HanHoanThanh;
+                row.Cells[5].Value = member.TinhTrangCongViec;
                 membersGrid.Rows.Add(row);
             }
         }
@@ -190,6 +196,8 @@ namespace UIs
                 row.Cells[1].Value = member.TenCongViec;
                 row.Cells[2].Value = member.MoTaCongViec;
                 row.Cells[3].Value = member.NgayGiao;
+                row.Cells[4].Value = member.HanHoanThanh;
+                row.Cells[5].Value = member.TinhTrangCongViec;
                 membersGrid.Rows.Add(row);
             }
         }
@@ -206,6 +214,8 @@ namespace UIs
                 row.Cells[1].Value = member.TenCongViec;
                 row.Cells[2].Value = member.MoTaCongViec;
                 row.Cells[3].Value = member.NgayGiao;
+                row.Cells[4].Value = member.HanHoanThanh;
+                row.Cells[5].Value = member.TinhTrangCongViec;
                 membersGrid.Rows.Add(row);
             }
         }
@@ -222,6 +232,8 @@ namespace UIs
                 row.Cells[1].Value = member.TenCongViec;
                 row.Cells[2].Value = member.MoTaCongViec;
                 row.Cells[3].Value = member.NgayGiao;
+                row.Cells[4].Value = member.HanHoanThanh;
+                row.Cells[5].Value = member.TinhTrangCongViec;
                 membersGrid.Rows.Add(row);
             }
         }
@@ -238,6 +250,8 @@ namespace UIs
                 row.Cells[1].Value = member.TenCongViec;
                 row.Cells[2].Value = member.MoTaCongViec;
                 row.Cells[3].Value = member.NgayGiao;
+                row.Cells[4].Value = member.HanHoanThanh;
+                row.Cells[5].Value = member.TinhTrangCongViec;
                 membersGrid.Rows.Add(row);
             }
         }
@@ -254,6 +268,8 @@ namespace UIs
                 row.Cells[1].Value = member.TenCongViec;
                 row.Cells[2].Value = member.MoTaCongViec;
                 row.Cells[3].Value = member.NgayGiao;
+                row.Cells[4].Value = member.HanHoanThanh;
+                row.Cells[5].Value = member.TinhTrangCongViec;
                 membersGrid.Rows.Add(row);
             }
         }
@@ -270,6 +286,8 @@ namespace UIs
                 row.Cells[1].Value = member.TenCongViec;
                 row.Cells[2].Value = member.MoTaCongViec;
                 row.Cells[3].Value = member.NgayGiao;
+                row.Cells[4].Value = member.HanHoanThanh;
+                row.Cells[5].Value = member.TinhTrangCongViec;
                 membersGrid.Rows.Add(row);
             }
         }
@@ -317,6 +335,25 @@ namespace UIs
         private void weatherTempurature_Click(object sender, EventArgs e) { }
 
         private void customButton22_Click(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        private void customButton15_Click(object sender, EventArgs e)
+        {
+            reload();
+        }
+
+        private void currentAvatarBig_Click(object sender, EventArgs e)
         {
             E_Information information = new E_Information();
             information.ShowDialog();

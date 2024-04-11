@@ -16,7 +16,7 @@ namespace UIs
     public partial class M_InformationEdit : Form
     {
         NhanSuService nhanSuService = new NhanSuService();
-        string managerID = "DV-101";
+        string managerID = Session.Instance.UserName;
         public M_InformationEdit()
         {
             InitializeComponent();
@@ -25,6 +25,10 @@ namespace UIs
         private void M_InformationEdit_Load(object sender, EventArgs e)
         {
             displayManagerData();
+            if (Session.Instance.UserName.Contains("GD"))
+            {
+                heading.Text = "CEO";
+            }
         }
 
         private void displayManagerData()

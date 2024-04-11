@@ -14,7 +14,7 @@ namespace UIs
 {
     public partial class M_Information : Form
     {
-        string managerID = "DV-101";
+        string managerID = Session.Instance.UserName;
         public M_Information()
         {
             InitializeComponent();
@@ -23,6 +23,10 @@ namespace UIs
         private void M_Information_Load(object sender, EventArgs e)
         {
             displayManagerData();
+            if (Session.Instance.UserName.Contains("GD"))
+            {
+                heading.Text = "CEO";
+            }
         }
 
         private void displayManagerData()

@@ -17,7 +17,7 @@ namespace UIs
     public partial class E_InformationEdit : Form
     {
         NhanSuService nhanSuService = new NhanSuService();
-        string managerID = "KT-502";
+        string managerID = Session.Instance.UserName;
 
         public E_InformationEdit()
         {
