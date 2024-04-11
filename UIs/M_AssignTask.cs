@@ -18,9 +18,11 @@ namespace UIs
     {
         GiaoViecService giaoViecService = new GiaoViecService();
         NhanSuService nhanSuService = new NhanSuService();
+        TagService tagService = new TagService();
         private string receiverID = "";
         private string venueID = "";
         private string authorizedBy = "";
+        private string tagName = "";
 
         public M_AssignTask()
         {
@@ -173,7 +175,9 @@ namespace UIs
                 authorizedBy
             );
 
-            if (isSuccess)
+            bool isTagAdded = tagService.addTag(tagName, tID, "");
+
+            if (isSuccess && isTagAdded)
             {
                 MailService mailService = new MailService();
                 mailService.sendMail(tSubject, tGiaoViec, tTo);
@@ -187,6 +191,7 @@ namespace UIs
                 taskMode.Checked = false;
                 receiverLabel.Text = "";
                 venueLabel.Text = "";
+                tagNameBox.Text = "";
                 MessageBox.Show("Assign task successfully!");
             }
             else
@@ -231,11 +236,24 @@ namespace UIs
 
         private void membersGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) 
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = membersGrid.Rows[e.RowIndex];
                 authorizedBy = selectedRow.Cells["ID"].Value.ToString();
             }
+        }
+
+        private void tagEditButton_Click(object sender, EventArgs e)
+        {
+            A_ShowTag showTagForm = new A_ShowTag();
+            showTagForm.TagSelected += ShowTagForm_TagSelected;
+            showTagForm.ShowDialog();
+        }
+
+        private void ShowTagForm_TagSelected(string tag)
+        {
+            tagNameBox.Text = tag;
+            tagName = tag;
         }
     }
 }

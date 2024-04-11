@@ -19,8 +19,10 @@ namespace UIs
 {
     public partial class C_AssignTask : Form
     {
+        TagService tagService = new TagService();
         private string receiverID = "";
         private string venueID = "";
+        private string tagName = "";
         SqlConnection sqlcon = new SqlConnection(@"Data Source=LAPTOP-SM9GFST3\SQLEXPRESS;Initial Catalog=TasMana;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
         SqlCommand sqlcmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
@@ -120,13 +122,17 @@ namespace UIs
         private void C_AssignTask_Load(object sender, EventArgs e)
         {
             taskName.Focus();
+            if (IsValidImageData(Session.Instance.Avatar))
+            {
+                currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
             GiaoViecService giaoViecService = new GiaoViecService();
             NhanSuService nhanSuService = new NhanSuService();
-            string tCEOID = "GD-001";
+            string tCEOID = Session.Instance.UserName;
             string tCEOName = nhanSuService.findMember(tCEOID).HoVaTen;
             string tReceiverName = nhanSuService.findMember(receiverID).HoVaTen;
             string tID = GiaoViecUtilities.createAssignTaskID(tCEOID);
@@ -145,8 +151,9 @@ namespace UIs
             int tIsCEO = 1;
 
             bool isSuccess = giaoViecService.assignTask(tDescription, tStart, tEnd, tStatus, tFile, tID, tMode, tName, venueID, receiverID, tIsCEO, tCEOID, "");
+            bool isTagAdded = tagService.addTag(tagName, tID, "");
 
-            if (isSuccess)
+            if (isSuccess && isTagAdded)
             {
                 MailService mailService = new MailService();
                 mailService.sendMail(tSubject, tGiaoViec, tTo);
@@ -160,6 +167,7 @@ namespace UIs
                 taskMode.Checked = false;
                 receiverLabel.Text = "";
                 venueLabel.Text = "";
+                tagNameBox.Text = "";
                 MessageBox.Show("Assign task successfully!");
             }
             else
@@ -200,34 +208,6 @@ namespace UIs
         {
 
         }
-
-        //void LoadGrid()
-        //{
-        //    dataGridView1.Columns.Clear();
-        //    sqlcon.Open();
-        //    sqlcmd = new SqlCommand("select maGiaoViec from GiaoViec where maGiaoViec='KT-501.002'", sqlcon);
-        //    da = new SqlDataAdapter(sqlcmd);
-        //    dt = new DataTable();
-        //    da.Fill(dt);
-        //    sqlcon.Close();
-        //    if (dt.Rows.Count > 0)
-        //    {
-        //        DataGridViewLinkColumn links = new DataGridViewLinkColumn();
-        //        links.UseColumnTextForLinkValue = true;
-        //        links.HeaderText = "Download";
-        //        links.DataPropertyName = "lnkColumn";
-        //        links.ActiveLinkColor = Color.White;
-        //        links.LinkBehavior = LinkBehavior.SystemDefault;
-        //        links.LinkColor = Color.Blue;
-        //        links.Text = "Click here";
-        //        links.TrackVisitedState = true;
-        //        links.VisitedLinkColor = Color.YellowGreen;
-        //        dataGridView1.Columns.Add(links);
-        //        dataGridView1.DataSource = dt;
-
-        //        dataGridView1.AutoResizeColumns();
-        //    }
-        //}
 
         private async void uploadButton_Click(object sender, EventArgs e)
         {
@@ -328,6 +308,67 @@ namespace UIs
                     Process.Start("explorer", filepath);
                 }
             }
+        }
+
+        public Image convertByteToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private bool IsValidImageData(byte[] imageData)
+        {
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    Image.FromStream(ms);
+                }
+                return true; // Image data is valid
+            }
+            catch (Exception)
+            {
+                return false; // Image data is not valid
+            }
+        }
+
+        private void currentAvatarSmall_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customButton22_Click(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        private void headerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tagEditButton_Click(object sender, EventArgs e)
+        {
+            A_ShowTag showTagForm = new A_ShowTag();
+            showTagForm.TagSelected += ShowTagForm_TagSelected;
+            showTagForm.ShowDialog();
+        }
+
+        private void ShowTagForm_TagSelected(string tag)
+        {
+            tagNameBox.Text = tag;
+            tagName = tag;
         }
     }
 }

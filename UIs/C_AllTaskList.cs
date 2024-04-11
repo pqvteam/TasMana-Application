@@ -19,6 +19,7 @@ namespace UIs
     public partial class C_AllTaskList : Form
     {
         GiaoViecService giaoViecService = new GiaoViecService();
+        TagService tagService = new TagService();
 
         public C_AllTaskList()
         {
@@ -89,6 +90,7 @@ namespace UIs
             membersGrid.Columns.Add("NgayGiao", "Start Day");
             membersGrid.Columns.Add("HanHoanThanh", "End Day");
             membersGrid.Columns.Add("TinhTrangCongViec", "Status");
+            membersGrid.Columns.Add("Tag", "Tag");
             reload();
             DataGridViewLinkColumn links = new DataGridViewLinkColumn();
             links.UseColumnTextForLinkValue = true;
@@ -118,6 +120,7 @@ namespace UIs
             int incompletedTaskQuantity = 0;
             foreach (GiaoViec member in members)
             {
+                List < (string name, string ID, string description) > tag = tagService.getTaskTagInfo(member.MaGiaoViec);
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(membersGrid);
                 row.Cells[0].Value = member.MaGiaoViec;
@@ -126,6 +129,7 @@ namespace UIs
                 row.Cells[3].Value = member.NgayGiao;
                 row.Cells[4].Value = member.HanHoanThanh;
                 row.Cells[5].Value = member.TinhTrangCongViec;
+                row.Cells[6].Value = tag.Count >0 ? tag[0].name : "NA";
                 membersGrid.Rows.Add(row);
                 taskQuantity++;
                 if (member.TinhTrangCongViec != null && member.TinhTrangCongViec == "Completed")
@@ -355,8 +359,21 @@ namespace UIs
 
         private void currentAvatarBig_Click(object sender, EventArgs e)
         {
-            E_Information information = new E_Information();
-            information.ShowDialog();
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        private void currentAvatarSmall_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
