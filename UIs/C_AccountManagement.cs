@@ -31,6 +31,11 @@ namespace UIs
 
         private void C_AccountManagement_Load(object sender, EventArgs e)
         {
+            if (IsValidImageData(Session.Instance.Avatar))
+            {
+                currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
+            }
+
             if (!(Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi))
             {
                 customButton19.Visible = false;
@@ -125,7 +130,7 @@ namespace UIs
                 membersGrid.Rows[rowIndex].Cells["Fired"].Value = member.NghiViec;
             }
 
-            
+
         }
 
         public void ReloadDataGrid()
@@ -717,6 +722,44 @@ namespace UIs
             searchBox.Clear();
             typeAccountBox.SelectedIndex = -1;
             departmentsBox.SelectedIndex = -1;
+        }
+
+        private void customButton22_Click(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        public Image convertByteToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private bool IsValidImageData(byte[] imageData)
+        {
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    Image.FromStream(ms);
+                }
+                return true; // Image data is valid
+            }
+            catch (Exception)
+            {
+                return false; // Image data is not valid
+            }
         }
     }
 }
