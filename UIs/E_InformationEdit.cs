@@ -27,6 +27,10 @@ namespace UIs
         private void E_InformationEdit_Load(object sender, EventArgs e)
         {
             displayEmployeeData();
+            if (IsValidImageData(Session.Instance.Avatar))
+            {
+                currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
+            }
         }
 
         private void displayEmployeeData()
@@ -150,6 +154,20 @@ namespace UIs
         private void UserName1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void customButton22_Click(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
         }
     }
 }
