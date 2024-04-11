@@ -707,6 +707,7 @@
             Controls.Add(customPanel1);
             Controls.Add(customPanel2);
             Name = "M_InformationEdit";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "M_InformationEdit";
             Load += M_InformationEdit_Load;
             headerPanel.ResumeLayout(false);
