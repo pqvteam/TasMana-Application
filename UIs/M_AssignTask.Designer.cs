@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M_AssignTask));
             mainPanel = new Panel();
             membersGrid = new DataGridView();
@@ -59,8 +59,7 @@
             label6 = new Label();
             pictureBox4 = new PictureBox();
             userPanel = new Panel();
-            customButton16 = new CustomComponent.CustomButton();
-            customButton15 = new CustomComponent.CustomButton();
+            tagEditButton = new Button();
             venueLabel = new Label();
             label23 = new Label();
             customPictureBox4 = new CustomComponent.CustomPictureBox();
@@ -116,6 +115,7 @@
             customButton1 = new CustomComponent.CustomButton();
             customButton2 = new CustomComponent.CustomButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            tagNameBox = new CustomComponent.CustomButton();
             mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)membersGrid).BeginInit();
             panel3.SuspendLayout();
@@ -184,23 +184,23 @@
             membersGrid.BackgroundColor = Color.FromArgb(24, 23, 23);
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle4;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(24, 23, 23);
             membersGrid.Location = new Point(341, 486);
@@ -521,8 +521,8 @@
             // userPanel
             // 
             userPanel.BackColor = Color.FromArgb(46, 48, 50);
-            userPanel.Controls.Add(customButton16);
-            userPanel.Controls.Add(customButton15);
+            userPanel.Controls.Add(tagNameBox);
+            userPanel.Controls.Add(tagEditButton);
             userPanel.Controls.Add(venueLabel);
             userPanel.Controls.Add(label23);
             userPanel.Controls.Add(customPictureBox4);
@@ -551,45 +551,20 @@
             userPanel.TabIndex = 99;
             userPanel.Paint += userPanel_Paint;
             // 
-            // customButton16
+            // tagEditButton
             // 
-            customButton16.BackColor = SystemColors.AppWorkspace;
-            customButton16.BackgroundColor = SystemColors.AppWorkspace;
-            customButton16.BorderColor = Color.PaleVioletRed;
-            customButton16.BorderRadius = 12;
-            customButton16.BorderSize = 0;
-            customButton16.FlatAppearance.BorderSize = 0;
-            customButton16.FlatStyle = FlatStyle.Flat;
-            customButton16.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton16.ForeColor = Color.Black;
-            customButton16.Location = new Point(121, 567);
-            customButton16.Name = "customButton16";
-            customButton16.Size = new Size(107, 33);
-            customButton16.TabIndex = 52;
-            customButton16.TabStop = false;
-            customButton16.Text = "Checking";
-            customButton16.TextColor = Color.Black;
-            customButton16.UseVisualStyleBackColor = false;
-            // 
-            // customButton15
-            // 
-            customButton15.BackColor = SystemColors.AppWorkspace;
-            customButton15.BackgroundColor = SystemColors.AppWorkspace;
-            customButton15.BorderColor = Color.PaleVioletRed;
-            customButton15.BorderRadius = 12;
-            customButton15.BorderSize = 0;
-            customButton15.FlatAppearance.BorderSize = 0;
-            customButton15.FlatStyle = FlatStyle.Flat;
-            customButton15.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton15.ForeColor = Color.Black;
-            customButton15.Location = new Point(8, 567);
-            customButton15.Name = "customButton15";
-            customButton15.Size = new Size(107, 33);
-            customButton15.TabIndex = 51;
-            customButton15.TabStop = false;
-            customButton15.Text = "Checking";
-            customButton15.TextColor = Color.Black;
-            customButton15.UseVisualStyleBackColor = false;
+            tagEditButton.Cursor = Cursors.Hand;
+            tagEditButton.FlatAppearance.BorderSize = 0;
+            tagEditButton.FlatStyle = FlatStyle.Flat;
+            tagEditButton.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tagEditButton.ForeColor = Color.FromArgb(4, 166, 225);
+            tagEditButton.Location = new Point(218, 523);
+            tagEditButton.Name = "tagEditButton";
+            tagEditButton.Size = new Size(71, 29);
+            tagEditButton.TabIndex = 48;
+            tagEditButton.Text = "<EDIT>";
+            tagEditButton.UseVisualStyleBackColor = true;
+            tagEditButton.Click += tagEditButton_Click;
             // 
             // venueLabel
             // 
@@ -772,7 +747,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.FromArgb(4, 166, 225);
-            button2.Location = new Point(197, 315);
+            button2.Location = new Point(218, 315);
             button2.Name = "button2";
             button2.Size = new Size(71, 29);
             button2.TabIndex = 9;
@@ -806,7 +781,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(4, 166, 225);
-            button1.Location = new Point(230, 206);
+            button1.Location = new Point(218, 206);
             button1.Name = "button1";
             button1.Size = new Size(71, 29);
             button1.TabIndex = 8;
@@ -819,7 +794,7 @@
             editReceiverButton.FlatStyle = FlatStyle.Flat;
             editReceiverButton.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             editReceiverButton.ForeColor = Color.FromArgb(4, 166, 225);
-            editReceiverButton.Location = new Point(187, 16);
+            editReceiverButton.Location = new Point(213, 19);
             editReceiverButton.Name = "editReceiverButton";
             editReceiverButton.Size = new Size(83, 29);
             editReceiverButton.TabIndex = 7;
@@ -1443,6 +1418,27 @@
             customButton2.UseVisualStyleBackColor = false;
             customButton2.Click += customButton2_Click;
             // 
+            // tagNameBox
+            // 
+            tagNameBox.BackColor = SystemColors.AppWorkspace;
+            tagNameBox.BackgroundColor = SystemColors.AppWorkspace;
+            tagNameBox.BorderColor = Color.PaleVioletRed;
+            tagNameBox.BorderRadius = 12;
+            tagNameBox.BorderSize = 0;
+            tagNameBox.Cursor = Cursors.Hand;
+            tagNameBox.FlatAppearance.BorderSize = 0;
+            tagNameBox.FlatStyle = FlatStyle.Flat;
+            tagNameBox.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tagNameBox.ForeColor = Color.Black;
+            tagNameBox.Location = new Point(12, 569);
+            tagNameBox.Name = "tagNameBox";
+            tagNameBox.Size = new Size(150, 33);
+            tagNameBox.TabIndex = 3;
+            tagNameBox.TabStop = false;
+            tagNameBox.Text = "Checking";
+            tagNameBox.TextColor = Color.Black;
+            tagNameBox.UseVisualStyleBackColor = false;
+            // 
             // M_AssignTask
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1556,8 +1552,6 @@
         private CustomComponent.CustomComboBox taskPriority;
         private CustomComponent.CustomComboBox taskStatus;
         private CustomComponent.CustomPictureBox customPictureBox1;
-        private CustomComponent.CustomButton customButton16;
-        private CustomComponent.CustomButton customButton15;
         private Label venueLabel;
         private Label label23;
         private CustomComponent.CustomPictureBox customPictureBox4;
@@ -1575,5 +1569,7 @@
         private Label label13;
         private PictureBox pictureBox11;
         private DataGridView membersGrid;
+        private Button tagEditButton;
+        private CustomComponent.CustomButton tagNameBox;
     }
 }
