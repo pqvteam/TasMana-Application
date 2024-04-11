@@ -37,6 +37,7 @@
             taskStatus = new CustomComponent.CustomComboBox();
             taskEnd = new CustomComponent.CustomDateTimePicker();
             taskStart = new CustomComponent.CustomDateTimePicker();
+            dataGridView1 = new DataGridView();
             label13 = new Label();
             pictureBox11 = new PictureBox();
             label12 = new Label();
@@ -86,8 +87,6 @@
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
             panel2 = new Panel();
-            customButton14 = new CustomComponent.CustomButton();
-            customButton13 = new CustomComponent.CustomButton();
             customButton12 = new CustomComponent.CustomButton();
             customButton11 = new CustomComponent.CustomButton();
             customButton10 = new CustomComponent.CustomButton();
@@ -116,9 +115,11 @@
             customButton1 = new CustomComponent.CustomButton();
             customButton2 = new CustomComponent.CustomButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            dataGridView1 = new DataGridView();
+            currentAvatarSmall = new CustomComponent.CustomPictureBox();
+            customButton22 = new CustomComponent.CustomButton();
             mainPanel.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
@@ -142,7 +143,7 @@
             customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).BeginInit();
             SuspendLayout();
             // 
             // mainPanel
@@ -292,6 +293,16 @@
             taskStart.SkinColor = Color.FromArgb(42, 42, 42);
             taskStart.TabIndex = 4;
             taskStart.TextColor = Color.White;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.FromArgb(42, 42, 42);
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(342, 485);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(722, 197);
+            dataGridView1.TabIndex = 0;
             // 
             // label13
             // 
@@ -928,56 +939,12 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(customButton14);
-            panel2.Controls.Add(customButton13);
+            panel2.Controls.Add(currentAvatarSmall);
+            panel2.Controls.Add(customButton22);
             panel2.Location = new Point(1261, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(117, 59);
             panel2.TabIndex = 0;
-            // 
-            // customButton14
-            // 
-            customButton14.BackColor = Color.Black;
-            customButton14.BackgroundColor = Color.Black;
-            customButton14.BorderColor = Color.PaleVioletRed;
-            customButton14.BorderRadius = 28;
-            customButton14.BorderSize = 0;
-            customButton14.Cursor = Cursors.Hand;
-            customButton14.FlatAppearance.BorderSize = 0;
-            customButton14.FlatStyle = FlatStyle.Flat;
-            customButton14.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton14.ForeColor = Color.White;
-            customButton14.Image = Properties.Resources.triangle_icon2;
-            customButton14.ImageAlign = ContentAlignment.MiddleRight;
-            customButton14.Location = new Point(67, 4);
-            customButton14.Name = "customButton14";
-            customButton14.Size = new Size(39, 51);
-            customButton14.TabIndex = 0;
-            customButton14.TabStop = false;
-            customButton14.TextAlign = ContentAlignment.MiddleRight;
-            customButton14.TextColor = Color.White;
-            customButton14.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton14.UseVisualStyleBackColor = false;
-            // 
-            // customButton13
-            // 
-            customButton13.BackColor = Color.MediumSlateBlue;
-            customButton13.BackgroundColor = Color.MediumSlateBlue;
-            customButton13.BorderColor = Color.Transparent;
-            customButton13.BorderRadius = 28;
-            customButton13.BorderSize = 0;
-            customButton13.Cursor = Cursors.Hand;
-            customButton13.FlatAppearance.BorderSize = 0;
-            customButton13.FlatStyle = FlatStyle.Flat;
-            customButton13.ForeColor = Color.White;
-            customButton13.Image = Properties.Resources.kimi_no_nawa1;
-            customButton13.Location = new Point(14, 3);
-            customButton13.Name = "customButton13";
-            customButton13.Size = new Size(50, 50);
-            customButton13.TabIndex = 0;
-            customButton13.TabStop = false;
-            customButton13.TextColor = Color.White;
-            customButton13.UseVisualStyleBackColor = false;
             // 
             // customButton12
             // 
@@ -1486,15 +1453,42 @@
             customButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton2.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // currentAvatarSmall
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(42, 42, 42);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(342, 485);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(722, 197);
-            dataGridView1.TabIndex = 0;
+            currentAvatarSmall.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            currentAvatarSmall.BorderColor = Color.RoyalBlue;
+            currentAvatarSmall.BorderColor2 = Color.HotPink;
+            currentAvatarSmall.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            currentAvatarSmall.BorderSize = 0;
+            currentAvatarSmall.GradientAngle = 50F;
+            currentAvatarSmall.Image = (Image)resources.GetObject("currentAvatarSmall.Image");
+            currentAvatarSmall.Location = new Point(5, 5);
+            currentAvatarSmall.Name = "currentAvatarSmall";
+            currentAvatarSmall.Size = new Size(49, 49);
+            currentAvatarSmall.SizeMode = PictureBoxSizeMode.StretchImage;
+            currentAvatarSmall.TabIndex = 27;
+            currentAvatarSmall.TabStop = false;
+            // 
+            // customButton22
+            // 
+            customButton22.BackColor = Color.Black;
+            customButton22.BackgroundColor = Color.Black;
+            customButton22.BorderColor = Color.PaleVioletRed;
+            customButton22.BorderRadius = 28;
+            customButton22.BorderSize = 0;
+            customButton22.Cursor = Cursors.Hand;
+            customButton22.FlatAppearance.BorderSize = 0;
+            customButton22.FlatStyle = FlatStyle.Flat;
+            customButton22.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton22.ForeColor = Color.White;
+            customButton22.Image = Properties.Resources.triangle_icon;
+            customButton22.Location = new Point(62, 4);
+            customButton22.Name = "customButton22";
+            customButton22.Size = new Size(51, 51);
+            customButton22.TabIndex = 26;
+            customButton22.TextColor = Color.White;
+            customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
+            customButton22.UseVisualStyleBackColor = false;
             // 
             // C_AssignTask
             // 
@@ -1512,6 +1506,7 @@
             mainPanel.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
@@ -1539,7 +1534,7 @@
             customPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).EndInit();
             ResumeLayout(false);
         }
 
@@ -1605,9 +1600,7 @@
         private CustomComponent.CustomButton customButton7;
         private CustomComponent.CustomButton customButton12;
         private CustomComponent.CustomButton customButton11;
-        private CustomComponent.CustomButton customButton14;
         private Panel panel2;
-        private CustomComponent.CustomButton customButton13;
         private CustomComponent.CustomDateTimePicker taskEnd;
         private CustomComponent.CustomDateTimePicker taskStart;
         private CustomComponent.CustomComboBox taskPriority;
@@ -1633,5 +1626,7 @@
         private CustomComponent.CustomButton uploadButton;
         private Panel panel4;
         private DataGridView dataGridView1;
+        private CustomComponent.CustomPictureBox currentAvatarSmall;
+        private CustomComponent.CustomButton customButton22;
     }
 }

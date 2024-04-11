@@ -563,7 +563,6 @@
             // 
             // heading
             // 
-            heading.AutoSize = true;
             heading.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             heading.ForeColor = Color.FromArgb(250, 86, 87);
             heading.Location = new Point(126, 24);
@@ -571,6 +570,7 @@
             heading.Size = new Size(191, 34);
             heading.TabIndex = 3;
             heading.Text = "MANAGER";
+            heading.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // UserName1
             // 
@@ -676,7 +676,6 @@
             headerPanel.ResumeLayout(false);
             panel2.ResumeLayout(false);
             customPanel2.ResumeLayout(false);
-            customPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)avatarBox).EndInit();
             customPanel1.ResumeLayout(false);
             customPanel1.PerformLayout();

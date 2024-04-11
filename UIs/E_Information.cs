@@ -62,17 +62,24 @@ namespace UIs
 
             NhanVien nv = employee.get(managerID);
 
-            PhongBanService currentDepartment = new PhongBanService();
-            PhongBan pb = currentDepartment.getDepartment(nv.MaPb);
-
-            Department.Text = pb.TenPb.ToString();
-
-            NhomService groupService = new NhomService();
-            Nhom? group = groupService.findGroup(nv.MaNhom);
-
-            if (group != null)
+            if (!Session.Instance.laQuanLi && !Session.Instance.laCEO)
             {
-                Group.Text = group?.TenNhom.ToString();
+                PhongBanService currentDepartment = new PhongBanService();
+                PhongBan pb = currentDepartment.getDepartment(nv.MaPb);
+
+                Department.Text = pb.TenPb.ToString();
+
+                NhomService groupService = new NhomService();
+                Nhom? group = groupService.findGroup(nv.MaNhom);
+
+
+                if (group != null)
+                {
+                    Group.Text = group?.TenNhom.ToString();
+                } else
+                {
+                    Group.Text = "";
+                }
             }
         }
 
