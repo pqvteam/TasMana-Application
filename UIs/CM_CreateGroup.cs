@@ -30,6 +30,10 @@ namespace UIs
 
         private void CM_CreateGroup_Load(object sender, EventArgs e)
         {
+            if (IsValidImageData(Session.Instance.Avatar))
+            {
+                currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
+            }
             membersGrid.Columns.Add("ID", "ID");
             membersGrid.Columns.Add("Name", "Name");
             membersGrid.Columns.Add("Birthday", "Birthday");
@@ -394,6 +398,44 @@ namespace UIs
             else
             {
                 MessageBox.Show("No IDs selected.");
+            }
+        }
+
+        private void customButton22_Click(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        public Image convertByteToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private bool IsValidImageData(byte[] imageData)
+        {
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    Image.FromStream(ms);
+                }
+                return true; // Image data is valid
+            }
+            catch (Exception)
+            {
+                return false; // Image data is not valid
             }
         }
     }

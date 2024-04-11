@@ -355,8 +355,21 @@ namespace UIs
 
         private void currentAvatarBig_Click(object sender, EventArgs e)
         {
-            E_Information information = new E_Information();
-            information.ShowDialog();
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        private void currentAvatarSmall_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

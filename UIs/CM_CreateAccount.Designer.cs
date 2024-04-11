@@ -114,6 +114,7 @@
             typeBox.BackColor = Color.FromArgb(42, 42, 42);
             typeBox.BorderColor = Color.FromArgb(42, 42, 42);
             typeBox.BorderSize = 1;
+            typeBox.Cursor = Cursors.Hand;
             typeBox.DropDownStyle = ComboBoxStyle.DropDown;
             typeBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             typeBox.ForeColor = Color.White;
@@ -164,6 +165,7 @@
             deparmentsBox.BackColor = Color.FromArgb(42, 42, 42);
             deparmentsBox.BorderColor = Color.FromArgb(42, 42, 42);
             deparmentsBox.BorderSize = 1;
+            deparmentsBox.Cursor = Cursors.Hand;
             deparmentsBox.DropDownStyle = ComboBoxStyle.DropDown;
             deparmentsBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             deparmentsBox.ForeColor = Color.White;
@@ -448,6 +450,7 @@
             cancelButton.BorderColor = Color.PaleVioletRed;
             cancelButton.BorderRadius = 12;
             cancelButton.BorderSize = 0;
+            cancelButton.Cursor = Cursors.Hand;
             cancelButton.FlatAppearance.BorderSize = 0;
             cancelButton.FlatStyle = FlatStyle.Flat;
             cancelButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -468,6 +471,7 @@
             customButton14.BorderColor = Color.PaleVioletRed;
             customButton14.BorderRadius = 12;
             customButton14.BorderSize = 0;
+            customButton14.Cursor = Cursors.Hand;
             customButton14.FlatAppearance.BorderSize = 0;
             customButton14.FlatStyle = FlatStyle.Flat;
             customButton14.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -493,6 +497,7 @@
             // citizenIDBox
             // 
             citizenIDBox.BackColor = Color.FromArgb(42, 42, 42);
+            citizenIDBox.Cursor = Cursors.IBeam;
             citizenIDBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             citizenIDBox.ForeColor = Color.White;
             citizenIDBox.Location = new Point(-2, -2);
@@ -512,6 +517,7 @@
             // emailBox
             // 
             emailBox.BackColor = Color.FromArgb(42, 42, 42);
+            emailBox.Cursor = Cursors.IBeam;
             emailBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             emailBox.ForeColor = Color.White;
             emailBox.Location = new Point(-2, -2);
@@ -531,6 +537,7 @@
             // passPortBox
             // 
             passPortBox.BackColor = Color.FromArgb(42, 42, 42);
+            passPortBox.Cursor = Cursors.IBeam;
             passPortBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             passPortBox.ForeColor = Color.White;
             passPortBox.Location = new Point(-2, -2);
@@ -550,6 +557,7 @@
             // userNameBox
             // 
             userNameBox.BackColor = Color.FromArgb(42, 42, 42);
+            userNameBox.Cursor = Cursors.IBeam;
             userNameBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             userNameBox.ForeColor = Color.White;
             userNameBox.Location = new Point(-2, -2);
@@ -570,6 +578,7 @@
             // genderBox
             // 
             genderBox.BackColor = Color.FromArgb(42, 42, 42);
+            genderBox.Cursor = Cursors.IBeam;
             genderBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             genderBox.ForeColor = Color.White;
             genderBox.Location = new Point(-2, -2);
@@ -589,6 +598,7 @@
             // mobileBox
             // 
             mobileBox.BackColor = Color.FromArgb(42, 42, 42);
+            mobileBox.Cursor = Cursors.IBeam;
             mobileBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mobileBox.ForeColor = Color.White;
             mobileBox.Location = new Point(-2, -2);
@@ -608,6 +618,7 @@
             // addressBox
             // 
             addressBox.BackColor = Color.FromArgb(42, 42, 42);
+            addressBox.Cursor = Cursors.IBeam;
             addressBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addressBox.ForeColor = Color.White;
             addressBox.Location = new Point(-2, -2);
@@ -619,6 +630,7 @@
             // 
             birthdateBox.BorderColor = Color.PaleVioletRed;
             birthdateBox.BorderSize = 0;
+            birthdateBox.Cursor = Cursors.Hand;
             birthdateBox.Font = new Font("Segoe UI", 9.5F);
             birthdateBox.Location = new Point(593, 374);
             birthdateBox.MinimumSize = new Size(0, 35);
