@@ -84,9 +84,11 @@
             panel4 = new Panel();
             taskDescription = new TextBox();
             headerPanel = new Panel();
+            panel2 = new Panel();
+            currentAvatarSmall = new CustomComponent.CustomPictureBox();
+            customButton22 = new CustomComponent.CustomButton();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
-            panel2 = new Panel();
             customButton12 = new CustomComponent.CustomButton();
             customButton11 = new CustomComponent.CustomButton();
             customButton10 = new CustomComponent.CustomButton();
@@ -115,8 +117,6 @@
             customButton1 = new CustomComponent.CustomButton();
             customButton2 = new CustomComponent.CustomButton();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            currentAvatarSmall = new CustomComponent.CustomPictureBox();
-            customButton22 = new CustomComponent.CustomButton();
             mainPanel.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -139,11 +139,11 @@
             panel4.SuspendLayout();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).BeginInit();
             sidePanel.SuspendLayout();
             customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).BeginInit();
             SuspendLayout();
             // 
             // mainPanel
@@ -214,7 +214,7 @@
             // 
             taskName.BackColor = Color.FromArgb(42, 42, 42);
             taskName.BorderStyle = BorderStyle.None;
-            taskName.Cursor = Cursors.Hand;
+            taskName.Cursor = Cursors.IBeam;
             taskName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskName.ForeColor = Color.White;
             taskName.Location = new Point(19, 10);
@@ -529,6 +529,7 @@
             customButton16.BorderColor = Color.PaleVioletRed;
             customButton16.BorderRadius = 12;
             customButton16.BorderSize = 0;
+            customButton16.Cursor = Cursors.Hand;
             customButton16.FlatAppearance.BorderSize = 0;
             customButton16.FlatStyle = FlatStyle.Flat;
             customButton16.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -549,6 +550,7 @@
             customButton15.BorderColor = Color.PaleVioletRed;
             customButton15.BorderRadius = 12;
             customButton15.BorderSize = 0;
+            customButton15.Cursor = Cursors.Hand;
             customButton15.FlatAppearance.BorderSize = 0;
             customButton15.FlatStyle = FlatStyle.Flat;
             customButton15.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -858,7 +860,7 @@
             // 
             taskDescription.BackColor = Color.FromArgb(42, 42, 42);
             taskDescription.BorderStyle = BorderStyle.None;
-            taskDescription.Cursor = Cursors.Hand;
+            taskDescription.Cursor = Cursors.IBeam;
             taskDescription.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskDescription.ForeColor = Color.White;
             taskDescription.Location = new Point(19, 10);
@@ -870,9 +872,9 @@
             // headerPanel
             // 
             headerPanel.BackColor = Color.FromArgb(13, 13, 13);
+            headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
-            headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton12);
             headerPanel.Controls.Add(customButton11);
             headerPanel.Controls.Add(customButton10);
@@ -886,6 +888,55 @@
             headerPanel.Name = "headerPanel";
             headerPanel.Size = new Size(1382, 59);
             headerPanel.TabIndex = 0;
+            headerPanel.Paint += headerPanel_Paint;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(currentAvatarSmall);
+            panel2.Controls.Add(customButton22);
+            panel2.Location = new Point(1261, -1);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(117, 59);
+            panel2.TabIndex = 50;
+            // 
+            // currentAvatarSmall
+            // 
+            currentAvatarSmall.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            currentAvatarSmall.BorderColor = Color.RoyalBlue;
+            currentAvatarSmall.BorderColor2 = Color.HotPink;
+            currentAvatarSmall.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            currentAvatarSmall.BorderSize = 0;
+            currentAvatarSmall.GradientAngle = 50F;
+            currentAvatarSmall.Image = (Image)resources.GetObject("currentAvatarSmall.Image");
+            currentAvatarSmall.Location = new Point(10, 5);
+            currentAvatarSmall.Name = "currentAvatarSmall";
+            currentAvatarSmall.Size = new Size(49, 49);
+            currentAvatarSmall.SizeMode = PictureBoxSizeMode.StretchImage;
+            currentAvatarSmall.TabIndex = 25;
+            currentAvatarSmall.TabStop = false;
+            currentAvatarSmall.Click += currentAvatarSmall_Click;
+            // 
+            // customButton22
+            // 
+            customButton22.BackColor = Color.Black;
+            customButton22.BackgroundColor = Color.Black;
+            customButton22.BorderColor = Color.PaleVioletRed;
+            customButton22.BorderRadius = 28;
+            customButton22.BorderSize = 0;
+            customButton22.Cursor = Cursors.Hand;
+            customButton22.FlatAppearance.BorderSize = 0;
+            customButton22.FlatStyle = FlatStyle.Flat;
+            customButton22.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton22.ForeColor = Color.White;
+            customButton22.Image = Properties.Resources.triangle_icon;
+            customButton22.Location = new Point(67, 4);
+            customButton22.Name = "customButton22";
+            customButton22.Size = new Size(51, 51);
+            customButton22.TabIndex = 24;
+            customButton22.TextColor = Color.White;
+            customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
+            customButton22.UseVisualStyleBackColor = false;
+            customButton22.Click += customButton22_Click;
             // 
             // customButton18
             // 
@@ -936,15 +987,6 @@
             customButton17.TextColor = Color.White;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(currentAvatarSmall);
-            panel2.Controls.Add(customButton22);
-            panel2.Location = new Point(1261, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(117, 59);
-            panel2.TabIndex = 0;
             // 
             // customButton12
             // 
@@ -1453,43 +1495,6 @@
             customButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton2.UseVisualStyleBackColor = false;
             // 
-            // currentAvatarSmall
-            // 
-            currentAvatarSmall.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            currentAvatarSmall.BorderColor = Color.RoyalBlue;
-            currentAvatarSmall.BorderColor2 = Color.HotPink;
-            currentAvatarSmall.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            currentAvatarSmall.BorderSize = 0;
-            currentAvatarSmall.GradientAngle = 50F;
-            currentAvatarSmall.Image = (Image)resources.GetObject("currentAvatarSmall.Image");
-            currentAvatarSmall.Location = new Point(5, 5);
-            currentAvatarSmall.Name = "currentAvatarSmall";
-            currentAvatarSmall.Size = new Size(49, 49);
-            currentAvatarSmall.SizeMode = PictureBoxSizeMode.StretchImage;
-            currentAvatarSmall.TabIndex = 27;
-            currentAvatarSmall.TabStop = false;
-            // 
-            // customButton22
-            // 
-            customButton22.BackColor = Color.Black;
-            customButton22.BackgroundColor = Color.Black;
-            customButton22.BorderColor = Color.PaleVioletRed;
-            customButton22.BorderRadius = 28;
-            customButton22.BorderSize = 0;
-            customButton22.Cursor = Cursors.Hand;
-            customButton22.FlatAppearance.BorderSize = 0;
-            customButton22.FlatStyle = FlatStyle.Flat;
-            customButton22.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton22.ForeColor = Color.White;
-            customButton22.Image = Properties.Resources.triangle_icon;
-            customButton22.Location = new Point(62, 4);
-            customButton22.Name = "customButton22";
-            customButton22.Size = new Size(51, 51);
-            customButton22.TabIndex = 26;
-            customButton22.TextColor = Color.White;
-            customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton22.UseVisualStyleBackColor = false;
-            // 
             // C_AssignTask
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1528,13 +1533,13 @@
             panel4.PerformLayout();
             headerPanel.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).EndInit();
             sidePanel.ResumeLayout(false);
             sidePanel.PerformLayout();
             customPanel1.ResumeLayout(false);
             customPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).EndInit();
             ResumeLayout(false);
         }
 
@@ -1600,7 +1605,6 @@
         private CustomComponent.CustomButton customButton7;
         private CustomComponent.CustomButton customButton12;
         private CustomComponent.CustomButton customButton11;
-        private Panel panel2;
         private CustomComponent.CustomDateTimePicker taskEnd;
         private CustomComponent.CustomDateTimePicker taskStart;
         private CustomComponent.CustomComboBox taskPriority;
@@ -1626,6 +1630,7 @@
         private CustomComponent.CustomButton uploadButton;
         private Panel panel4;
         private DataGridView dataGridView1;
+        private Panel panel2;
         private CustomComponent.CustomPictureBox currentAvatarSmall;
         private CustomComponent.CustomButton customButton22;
     }
