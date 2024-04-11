@@ -27,6 +27,10 @@ namespace UIs
         private void E_Information_Load(object sender, EventArgs e)
         {
             displayEmployeeData();
+            if (IsValidImageData(Session.Instance.Avatar))
+            {
+                currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
+            }
         }
 
         private void displayEmployeeData()
@@ -76,7 +80,8 @@ namespace UIs
                 if (group != null)
                 {
                     Group.Text = group?.TenNhom.ToString();
-                } else
+                }
+                else
                 {
                     Group.Text = "";
                 }
@@ -111,6 +116,20 @@ namespace UIs
             using (MemoryStream ms = new MemoryStream(data))
             {
                 return Image.FromStream(ms);
+            }
+        }
+
+        private void customButton22_Click(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
             }
         }
     }
