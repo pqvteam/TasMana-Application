@@ -116,6 +116,7 @@
             EDIT.BorderColor = Color.PaleVioletRed;
             EDIT.BorderRadius = 20;
             EDIT.BorderSize = 0;
+            EDIT.Cursor = Cursors.Hand;
             EDIT.FlatAppearance.BorderSize = 0;
             EDIT.FlatStyle = FlatStyle.Flat;
             EDIT.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -572,6 +573,7 @@
             customButton18.BorderColor = Color.PaleVioletRed;
             customButton18.BorderRadius = 28;
             customButton18.BorderSize = 0;
+            customButton18.Cursor = Cursors.Hand;
             customButton18.FlatAppearance.BorderSize = 0;
             customButton18.FlatStyle = FlatStyle.Flat;
             customButton18.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -594,6 +596,7 @@
             customButton17.BorderColor = Color.PaleVioletRed;
             customButton17.BorderRadius = 28;
             customButton17.BorderSize = 0;
+            customButton17.Cursor = Cursors.Hand;
             customButton17.FlatAppearance.BorderSize = 0;
             customButton17.FlatStyle = FlatStyle.Flat;
             customButton17.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -617,6 +620,7 @@
             customButton12.BorderColor = Color.PaleVioletRed;
             customButton12.BorderRadius = 28;
             customButton12.BorderSize = 0;
+            customButton12.Cursor = Cursors.Hand;
             customButton12.FlatAppearance.BorderSize = 0;
             customButton12.FlatStyle = FlatStyle.Flat;
             customButton12.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -638,6 +642,7 @@
             customButton11.BorderColor = Color.PaleVioletRed;
             customButton11.BorderRadius = 28;
             customButton11.BorderSize = 0;
+            customButton11.Cursor = Cursors.Hand;
             customButton11.FlatAppearance.BorderSize = 0;
             customButton11.FlatStyle = FlatStyle.Flat;
             customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -661,6 +666,7 @@
             customButton10.BorderColor = Color.PaleVioletRed;
             customButton10.BorderRadius = 28;
             customButton10.BorderSize = 0;
+            customButton10.Cursor = Cursors.Hand;
             customButton10.FlatAppearance.BorderSize = 0;
             customButton10.FlatStyle = FlatStyle.Flat;
             customButton10.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -684,6 +690,7 @@
             customButton9.BorderColor = Color.PaleVioletRed;
             customButton9.BorderRadius = 28;
             customButton9.BorderSize = 0;
+            customButton9.Cursor = Cursors.Hand;
             customButton9.FlatAppearance.BorderSize = 0;
             customButton9.FlatStyle = FlatStyle.Flat;
             customButton9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -707,6 +714,7 @@
             customButton8.BorderColor = Color.PaleVioletRed;
             customButton8.BorderRadius = 28;
             customButton8.BorderSize = 0;
+            customButton8.Cursor = Cursors.Hand;
             customButton8.FlatAppearance.BorderSize = 0;
             customButton8.FlatStyle = FlatStyle.Flat;
             customButton8.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -730,6 +738,7 @@
             customButton7.BorderColor = Color.PaleVioletRed;
             customButton7.BorderRadius = 28;
             customButton7.BorderSize = 0;
+            customButton7.Cursor = Cursors.Hand;
             customButton7.FlatAppearance.BorderSize = 0;
             customButton7.FlatStyle = FlatStyle.Flat;
             customButton7.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -753,6 +762,7 @@
             customButton6.BorderColor = Color.PaleVioletRed;
             customButton6.BorderRadius = 28;
             customButton6.BorderSize = 0;
+            customButton6.Cursor = Cursors.Hand;
             customButton6.FlatAppearance.BorderSize = 0;
             customButton6.FlatStyle = FlatStyle.Flat;
             customButton6.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);

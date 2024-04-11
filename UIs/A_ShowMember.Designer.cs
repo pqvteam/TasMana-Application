@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_ShowMember));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             elipseControl1 = new CustomComponent.ElipseControl();
             customButton10 = new CustomComponent.CustomButton();
             hrButton = new CustomComponent.CustomButton();
@@ -81,6 +81,7 @@
             hrButton.BorderColor = Color.FromArgb(0, 190, 255);
             hrButton.BorderRadius = 0;
             hrButton.BorderSize = 2;
+            hrButton.Cursor = Cursors.Hand;
             hrButton.FlatAppearance.BorderSize = 0;
             hrButton.FlatStyle = FlatStyle.Flat;
             hrButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -101,6 +102,7 @@
             saButton.BorderColor = Color.FromArgb(0, 190, 255);
             saButton.BorderRadius = 0;
             saButton.BorderSize = 2;
+            saButton.Cursor = Cursors.Hand;
             saButton.FlatAppearance.BorderSize = 0;
             saButton.FlatStyle = FlatStyle.Flat;
             saButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -121,6 +123,7 @@
             fiButton.BorderColor = Color.FromArgb(0, 190, 255);
             fiButton.BorderRadius = 0;
             fiButton.BorderSize = 2;
+            fiButton.Cursor = Cursors.Hand;
             fiButton.FlatAppearance.BorderSize = 0;
             fiButton.FlatStyle = FlatStyle.Flat;
             fiButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -141,6 +144,7 @@
             coButton.BorderColor = Color.FromArgb(0, 190, 255);
             coButton.BorderRadius = 0;
             coButton.BorderSize = 2;
+            coButton.Cursor = Cursors.Hand;
             coButton.FlatAppearance.BorderSize = 0;
             coButton.FlatStyle = FlatStyle.Flat;
             coButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -161,6 +165,7 @@
             maButton.BorderColor = Color.FromArgb(0, 190, 255);
             maButton.BorderRadius = 0;
             maButton.BorderSize = 2;
+            maButton.Cursor = Cursors.Hand;
             maButton.FlatAppearance.BorderSize = 0;
             maButton.FlatStyle = FlatStyle.Flat;
             maButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -181,6 +186,7 @@
             seButton.BorderColor = Color.FromArgb(0, 190, 255);
             seButton.BorderRadius = 0;
             seButton.BorderSize = 2;
+            seButton.Cursor = Cursors.Hand;
             seButton.FlatAppearance.BorderSize = 0;
             seButton.FlatStyle = FlatStyle.Flat;
             seButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -201,6 +207,7 @@
             cancelButton.BorderColor = Color.PaleVioletRed;
             cancelButton.BorderRadius = 12;
             cancelButton.BorderSize = 0;
+            cancelButton.Cursor = Cursors.Hand;
             cancelButton.FlatAppearance.BorderSize = 0;
             cancelButton.FlatStyle = FlatStyle.Flat;
             cancelButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -221,6 +228,7 @@
             customButton8.BorderColor = Color.PaleVioletRed;
             customButton8.BorderRadius = 12;
             customButton8.BorderSize = 0;
+            customButton8.Cursor = Cursors.Hand;
             customButton8.FlatAppearance.BorderSize = 0;
             customButton8.FlatStyle = FlatStyle.Flat;
             customButton8.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -240,23 +248,23 @@
             membersGrid.BackgroundColor = Color.FromArgb(24, 23, 23);
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(24, 23, 23);
             membersGrid.Location = new Point(12, 158);

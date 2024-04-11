@@ -80,6 +80,7 @@
             confirmButton.BorderColor = Color.PaleVioletRed;
             confirmButton.BorderRadius = 12;
             confirmButton.BorderSize = 0;
+            confirmButton.Cursor = Cursors.Hand;
             confirmButton.FlatAppearance.BorderSize = 0;
             confirmButton.FlatStyle = FlatStyle.Flat;
             confirmButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -100,6 +101,7 @@
             cancelButton.BorderColor = Color.PaleVioletRed;
             cancelButton.BorderRadius = 12;
             cancelButton.BorderSize = 0;
+            cancelButton.Cursor = Cursors.Hand;
             cancelButton.FlatAppearance.BorderSize = 0;
             cancelButton.FlatStyle = FlatStyle.Flat;
             cancelButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -120,6 +122,7 @@
             customButton1.BorderColor = Color.PaleVioletRed;
             customButton1.BorderRadius = 12;
             customButton1.BorderSize = 0;
+            customButton1.Cursor = Cursors.Hand;
             customButton1.FlatAppearance.BorderSize = 0;
             customButton1.FlatStyle = FlatStyle.Flat;
             customButton1.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);

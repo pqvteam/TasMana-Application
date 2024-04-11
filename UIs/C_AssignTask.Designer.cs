@@ -214,7 +214,7 @@
             // 
             taskName.BackColor = Color.FromArgb(42, 42, 42);
             taskName.BorderStyle = BorderStyle.None;
-            taskName.Cursor = Cursors.Hand;
+            taskName.Cursor = Cursors.IBeam;
             taskName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskName.ForeColor = Color.White;
             taskName.Location = new Point(19, 10);
@@ -529,6 +529,7 @@
             customButton16.BorderColor = Color.PaleVioletRed;
             customButton16.BorderRadius = 12;
             customButton16.BorderSize = 0;
+            customButton16.Cursor = Cursors.Hand;
             customButton16.FlatAppearance.BorderSize = 0;
             customButton16.FlatStyle = FlatStyle.Flat;
             customButton16.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -549,6 +550,7 @@
             customButton15.BorderColor = Color.PaleVioletRed;
             customButton15.BorderRadius = 12;
             customButton15.BorderSize = 0;
+            customButton15.Cursor = Cursors.Hand;
             customButton15.FlatAppearance.BorderSize = 0;
             customButton15.FlatStyle = FlatStyle.Flat;
             customButton15.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -858,7 +860,7 @@
             // 
             taskDescription.BackColor = Color.FromArgb(42, 42, 42);
             taskDescription.BorderStyle = BorderStyle.None;
-            taskDescription.Cursor = Cursors.Hand;
+            taskDescription.Cursor = Cursors.IBeam;
             taskDescription.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskDescription.ForeColor = Color.White;
             taskDescription.Location = new Point(19, 10);
