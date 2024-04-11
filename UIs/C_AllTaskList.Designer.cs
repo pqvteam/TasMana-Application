@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_AllTaskList));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             headerPanel = new Panel();
             panel2 = new Panel();
             currentAvatarSmall = new CustomComponent.CustomPictureBox();
@@ -180,6 +180,7 @@
             currentAvatarSmall.SizeMode = PictureBoxSizeMode.StretchImage;
             currentAvatarSmall.TabIndex = 25;
             currentAvatarSmall.TabStop = false;
+            currentAvatarSmall.Click += currentAvatarSmall_Click;
             // 
             // customButton22
             // 
@@ -211,6 +212,7 @@
             customButton6.BorderColor = Color.PaleVioletRed;
             customButton6.BorderRadius = 28;
             customButton6.BorderSize = 0;
+            customButton6.Cursor = Cursors.Hand;
             customButton6.FlatAppearance.BorderSize = 0;
             customButton6.FlatStyle = FlatStyle.Flat;
             customButton6.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -258,6 +260,7 @@
             customButton12.BorderColor = Color.PaleVioletRed;
             customButton12.BorderRadius = 28;
             customButton12.BorderSize = 0;
+            customButton12.Cursor = Cursors.Hand;
             customButton12.FlatAppearance.BorderSize = 0;
             customButton12.FlatStyle = FlatStyle.Flat;
             customButton12.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -279,6 +282,7 @@
             customButton11.BorderColor = Color.PaleVioletRed;
             customButton11.BorderRadius = 28;
             customButton11.BorderSize = 0;
+            customButton11.Cursor = Cursors.Hand;
             customButton11.FlatAppearance.BorderSize = 0;
             customButton11.FlatStyle = FlatStyle.Flat;
             customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -302,6 +306,7 @@
             customButton10.BorderColor = Color.PaleVioletRed;
             customButton10.BorderRadius = 28;
             customButton10.BorderSize = 0;
+            customButton10.Cursor = Cursors.Hand;
             customButton10.FlatAppearance.BorderSize = 0;
             customButton10.FlatStyle = FlatStyle.Flat;
             customButton10.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -325,6 +330,7 @@
             customButton9.BorderColor = Color.PaleVioletRed;
             customButton9.BorderRadius = 28;
             customButton9.BorderSize = 0;
+            customButton9.Cursor = Cursors.Hand;
             customButton9.FlatAppearance.BorderSize = 0;
             customButton9.FlatStyle = FlatStyle.Flat;
             customButton9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -348,6 +354,7 @@
             customButton8.BorderColor = Color.PaleVioletRed;
             customButton8.BorderRadius = 28;
             customButton8.BorderSize = 0;
+            customButton8.Cursor = Cursors.Hand;
             customButton8.FlatAppearance.BorderSize = 0;
             customButton8.FlatStyle = FlatStyle.Flat;
             customButton8.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -371,6 +378,7 @@
             customButton13.BorderColor = Color.PaleVioletRed;
             customButton13.BorderRadius = 28;
             customButton13.BorderSize = 0;
+            customButton13.Cursor = Cursors.Hand;
             customButton13.FlatAppearance.BorderSize = 0;
             customButton13.FlatStyle = FlatStyle.Flat;
             customButton13.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -394,6 +402,7 @@
             customButton14.BorderColor = Color.PaleVioletRed;
             customButton14.BorderRadius = 28;
             customButton14.BorderSize = 0;
+            customButton14.Cursor = Cursors.Hand;
             customButton14.FlatAppearance.BorderSize = 0;
             customButton14.FlatStyle = FlatStyle.Flat;
             customButton14.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -634,24 +643,24 @@
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             membersGrid.Cursor = Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle4;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(42, 42, 42);
             membersGrid.Location = new Point(363, 437);
@@ -1037,6 +1046,7 @@
             // 
             pictureBox6.BackColor = Color.FromArgb(42, 42, 42);
             pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
+            pictureBox6.Cursor = Cursors.Hand;
             pictureBox6.Location = new Point(1011, 36);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(30, 31);
@@ -1048,6 +1058,7 @@
             // 
             textBox2.BackColor = Color.FromArgb(42, 42, 42);
             textBox2.BorderStyle = BorderStyle.None;
+            textBox2.Cursor = Cursors.IBeam;
             textBox2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox2.ForeColor = Color.White;
             textBox2.Location = new Point(374, 42);
@@ -1103,6 +1114,7 @@
             grandChart.BorderColor = Color.PaleVioletRed;
             grandChart.BorderRadius = 28;
             grandChart.BorderSize = 0;
+            grandChart.Cursor = Cursors.Hand;
             grandChart.FlatAppearance.BorderSize = 0;
             grandChart.FlatStyle = FlatStyle.Flat;
             grandChart.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1126,6 +1138,7 @@
             customButton5.BorderColor = Color.PaleVioletRed;
             customButton5.BorderRadius = 28;
             customButton5.BorderSize = 0;
+            customButton5.Cursor = Cursors.Hand;
             customButton5.FlatAppearance.BorderSize = 0;
             customButton5.FlatStyle = FlatStyle.Flat;
             customButton5.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1150,6 +1163,7 @@
             customButton16.BorderColor = Color.PaleVioletRed;
             customButton16.BorderRadius = 28;
             customButton16.BorderSize = 0;
+            customButton16.Cursor = Cursors.Hand;
             customButton16.FlatAppearance.BorderSize = 0;
             customButton16.FlatStyle = FlatStyle.Flat;
             customButton16.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1173,6 +1187,7 @@
             customButton17.BorderColor = Color.FromArgb(42, 42, 42);
             customButton17.BorderRadius = 28;
             customButton17.BorderSize = 0;
+            customButton17.Cursor = Cursors.Hand;
             customButton17.FlatAppearance.BorderSize = 0;
             customButton17.FlatStyle = FlatStyle.Flat;
             customButton17.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);

@@ -87,6 +87,7 @@
             // 
             idBox.BackColor = Color.FromArgb(42, 42, 42);
             idBox.BorderStyle = BorderStyle.None;
+            idBox.Cursor = Cursors.IBeam;
             idBox.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             idBox.ForeColor = Color.White;
             idBox.Location = new Point(143, 108);
@@ -175,6 +176,7 @@
             rolesBox.BackColor = Color.FromArgb(42, 42, 42);
             rolesBox.BorderColor = Color.FromArgb(42, 42, 42);
             rolesBox.BorderSize = 1;
+            rolesBox.Cursor = Cursors.Hand;
             rolesBox.DropDownStyle = ComboBoxStyle.DropDown;
             rolesBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rolesBox.ForeColor = Color.White;
@@ -196,6 +198,7 @@
             groupsBox.BackColor = Color.FromArgb(42, 42, 42);
             groupsBox.BorderColor = Color.FromArgb(42, 42, 42);
             groupsBox.BorderSize = 1;
+            groupsBox.Cursor = Cursors.Hand;
             groupsBox.DropDownStyle = ComboBoxStyle.DropDown;
             groupsBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupsBox.ForeColor = Color.White;
@@ -218,6 +221,7 @@
             confirmButton.BorderColor = Color.PaleVioletRed;
             confirmButton.BorderRadius = 12;
             confirmButton.BorderSize = 0;
+            confirmButton.Cursor = Cursors.Hand;
             confirmButton.FlatAppearance.BorderSize = 0;
             confirmButton.FlatStyle = FlatStyle.Flat;
             confirmButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -238,6 +242,7 @@
             cancelButton.BorderColor = Color.PaleVioletRed;
             cancelButton.BorderRadius = 12;
             cancelButton.BorderSize = 0;
+            cancelButton.Cursor = Cursors.Hand;
             cancelButton.FlatAppearance.BorderSize = 0;
             cancelButton.FlatStyle = FlatStyle.Flat;
             cancelButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -266,6 +271,7 @@
             // 
             nameBox.BackColor = Color.FromArgb(42, 42, 42);
             nameBox.BorderStyle = BorderStyle.None;
+            nameBox.Cursor = Cursors.IBeam;
             nameBox.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nameBox.ForeColor = Color.White;
             nameBox.Location = new Point(142, 200);
@@ -298,6 +304,7 @@
             customButton5.BorderColor = Color.PaleVioletRed;
             customButton5.BorderRadius = 12;
             customButton5.BorderSize = 0;
+            customButton5.Cursor = Cursors.Hand;
             customButton5.FlatAppearance.BorderSize = 0;
             customButton5.FlatStyle = FlatStyle.Flat;
             customButton5.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -318,6 +325,7 @@
             createButton.BorderColor = Color.PaleVioletRed;
             createButton.BorderRadius = 12;
             createButton.BorderSize = 0;
+            createButton.Cursor = Cursors.Hand;
             createButton.FlatAppearance.BorderSize = 0;
             createButton.FlatStyle = FlatStyle.Flat;
             createButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);

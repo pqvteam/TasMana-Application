@@ -31,11 +31,11 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M_Information));
             headerPanel = new Panel();
+            panel2 = new Panel();
+            currentAvatarSmall = new CustomComponent.CustomPictureBox();
+            customButton22 = new CustomComponent.CustomButton();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
-            panel2 = new Panel();
-            customButton14 = new CustomComponent.CustomButton();
-            customButton13 = new CustomComponent.CustomButton();
             customButton12 = new CustomComponent.CustomButton();
             customButton11 = new CustomComponent.CustomButton();
             customButton10 = new CustomComponent.CustomButton();
@@ -69,6 +69,7 @@
             label7 = new Label();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).BeginInit();
             customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)avatarBox).BeginInit();
             customPanel1.SuspendLayout();
@@ -77,9 +78,9 @@
             // headerPanel
             // 
             headerPanel.BackColor = Color.FromArgb(13, 13, 13);
+            headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
-            headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton12);
             headerPanel.Controls.Add(customButton11);
             headerPanel.Controls.Add(customButton10);
@@ -94,6 +95,54 @@
             headerPanel.Size = new Size(1382, 59);
             headerPanel.TabIndex = 21;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(currentAvatarSmall);
+            panel2.Controls.Add(customButton22);
+            panel2.Location = new Point(1260, -1);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(117, 59);
+            panel2.TabIndex = 53;
+            // 
+            // currentAvatarSmall
+            // 
+            currentAvatarSmall.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            currentAvatarSmall.BorderColor = Color.RoyalBlue;
+            currentAvatarSmall.BorderColor2 = Color.HotPink;
+            currentAvatarSmall.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            currentAvatarSmall.BorderSize = 0;
+            currentAvatarSmall.GradientAngle = 50F;
+            currentAvatarSmall.Image = (Image)resources.GetObject("currentAvatarSmall.Image");
+            currentAvatarSmall.Location = new Point(10, 5);
+            currentAvatarSmall.Name = "currentAvatarSmall";
+            currentAvatarSmall.Size = new Size(49, 49);
+            currentAvatarSmall.SizeMode = PictureBoxSizeMode.StretchImage;
+            currentAvatarSmall.TabIndex = 25;
+            currentAvatarSmall.TabStop = false;
+            // 
+            // customButton22
+            // 
+            customButton22.BackColor = Color.Black;
+            customButton22.BackgroundColor = Color.Black;
+            customButton22.BorderColor = Color.PaleVioletRed;
+            customButton22.BorderRadius = 28;
+            customButton22.BorderSize = 0;
+            customButton22.Cursor = Cursors.Hand;
+            customButton22.Enabled = false;
+            customButton22.FlatAppearance.BorderSize = 0;
+            customButton22.FlatStyle = FlatStyle.Flat;
+            customButton22.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton22.ForeColor = Color.White;
+            customButton22.Image = Properties.Resources.triangle_icon;
+            customButton22.Location = new Point(67, 4);
+            customButton22.Name = "customButton22";
+            customButton22.Size = new Size(51, 51);
+            customButton22.TabIndex = 24;
+            customButton22.TextColor = Color.White;
+            customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
+            customButton22.UseVisualStyleBackColor = false;
+            customButton22.Click += customButton22_Click;
+            // 
             // customButton18
             // 
             customButton18.AutoEllipsis = true;
@@ -102,6 +151,7 @@
             customButton18.BorderColor = Color.PaleVioletRed;
             customButton18.BorderRadius = 28;
             customButton18.BorderSize = 0;
+            customButton18.Cursor = Cursors.Hand;
             customButton18.FlatAppearance.BorderSize = 0;
             customButton18.FlatStyle = FlatStyle.Flat;
             customButton18.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -124,6 +174,7 @@
             customButton17.BorderColor = Color.PaleVioletRed;
             customButton17.BorderRadius = 28;
             customButton17.BorderSize = 0;
+            customButton17.Cursor = Cursors.Hand;
             customButton17.FlatAppearance.BorderSize = 0;
             customButton17.FlatStyle = FlatStyle.Flat;
             customButton17.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -140,55 +191,6 @@
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(customButton14);
-            panel2.Controls.Add(customButton13);
-            panel2.Location = new Point(1261, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(117, 59);
-            panel2.TabIndex = 23;
-            // 
-            // customButton14
-            // 
-            customButton14.BackColor = Color.Black;
-            customButton14.BackgroundColor = Color.Black;
-            customButton14.BorderColor = Color.PaleVioletRed;
-            customButton14.BorderRadius = 28;
-            customButton14.BorderSize = 0;
-            customButton14.FlatAppearance.BorderSize = 0;
-            customButton14.FlatStyle = FlatStyle.Flat;
-            customButton14.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton14.ForeColor = Color.White;
-            customButton14.Image = Properties.Resources.triangle_icon;
-            customButton14.ImageAlign = ContentAlignment.MiddleRight;
-            customButton14.Location = new Point(67, 4);
-            customButton14.Name = "customButton14";
-            customButton14.Size = new Size(39, 51);
-            customButton14.TabIndex = 24;
-            customButton14.TextAlign = ContentAlignment.MiddleRight;
-            customButton14.TextColor = Color.White;
-            customButton14.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton14.UseVisualStyleBackColor = false;
-            // 
-            // customButton13
-            // 
-            customButton13.BackColor = Color.MediumSlateBlue;
-            customButton13.BackgroundColor = Color.MediumSlateBlue;
-            customButton13.BorderColor = Color.Transparent;
-            customButton13.BorderRadius = 28;
-            customButton13.BorderSize = 0;
-            customButton13.FlatAppearance.BorderSize = 0;
-            customButton13.FlatStyle = FlatStyle.Flat;
-            customButton13.ForeColor = Color.White;
-            customButton13.Image = Properties.Resources.kimi_no_nawa;
-            customButton13.Location = new Point(14, 3);
-            customButton13.Name = "customButton13";
-            customButton13.Size = new Size(50, 50);
-            customButton13.TabIndex = 37;
-            customButton13.TextColor = Color.White;
-            customButton13.UseVisualStyleBackColor = false;
-            // 
             // customButton12
             // 
             customButton12.BackColor = Color.Black;
@@ -196,6 +198,7 @@
             customButton12.BorderColor = Color.PaleVioletRed;
             customButton12.BorderRadius = 28;
             customButton12.BorderSize = 0;
+            customButton12.Cursor = Cursors.Hand;
             customButton12.FlatAppearance.BorderSize = 0;
             customButton12.FlatStyle = FlatStyle.Flat;
             customButton12.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -217,6 +220,7 @@
             customButton11.BorderColor = Color.PaleVioletRed;
             customButton11.BorderRadius = 28;
             customButton11.BorderSize = 0;
+            customButton11.Cursor = Cursors.Hand;
             customButton11.FlatAppearance.BorderSize = 0;
             customButton11.FlatStyle = FlatStyle.Flat;
             customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -240,6 +244,7 @@
             customButton10.BorderColor = Color.PaleVioletRed;
             customButton10.BorderRadius = 28;
             customButton10.BorderSize = 0;
+            customButton10.Cursor = Cursors.Hand;
             customButton10.FlatAppearance.BorderSize = 0;
             customButton10.FlatStyle = FlatStyle.Flat;
             customButton10.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -263,6 +268,7 @@
             customButton9.BorderColor = Color.PaleVioletRed;
             customButton9.BorderRadius = 28;
             customButton9.BorderSize = 0;
+            customButton9.Cursor = Cursors.Hand;
             customButton9.FlatAppearance.BorderSize = 0;
             customButton9.FlatStyle = FlatStyle.Flat;
             customButton9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -286,6 +292,7 @@
             customButton8.BorderColor = Color.PaleVioletRed;
             customButton8.BorderRadius = 28;
             customButton8.BorderSize = 0;
+            customButton8.Cursor = Cursors.Hand;
             customButton8.FlatAppearance.BorderSize = 0;
             customButton8.FlatStyle = FlatStyle.Flat;
             customButton8.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -309,6 +316,7 @@
             customButton7.BorderColor = Color.PaleVioletRed;
             customButton7.BorderRadius = 28;
             customButton7.BorderSize = 0;
+            customButton7.Cursor = Cursors.Hand;
             customButton7.FlatAppearance.BorderSize = 0;
             customButton7.FlatStyle = FlatStyle.Flat;
             customButton7.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -332,6 +340,7 @@
             customButton6.BorderColor = Color.PaleVioletRed;
             customButton6.BorderRadius = 28;
             customButton6.BorderSize = 0;
+            customButton6.Cursor = Cursors.Hand;
             customButton6.FlatAppearance.BorderSize = 0;
             customButton6.FlatStyle = FlatStyle.Flat;
             customButton6.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -519,6 +528,7 @@
             EDIT.BorderColor = Color.PaleVioletRed;
             EDIT.BorderRadius = 20;
             EDIT.BorderSize = 0;
+            EDIT.Cursor = Cursors.Hand;
             EDIT.FlatAppearance.BorderSize = 0;
             EDIT.FlatStyle = FlatStyle.Flat;
             EDIT.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -675,6 +685,7 @@
             Load += M_Information_Load;
             headerPanel.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).EndInit();
             customPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)avatarBox).EndInit();
             customPanel1.ResumeLayout(false);
@@ -687,9 +698,6 @@
         private Panel headerPanel;
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
-        private Panel panel2;
-        private CustomComponent.CustomButton customButton14;
-        private CustomComponent.CustomButton customButton13;
         private CustomComponent.CustomButton customButton12;
         private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton customButton10;
@@ -721,5 +729,8 @@
         private Label label9;
         private Label label8;
         private Label label7;
+        private Panel panel2;
+        private CustomComponent.CustomPictureBox currentAvatarSmall;
+        private CustomComponent.CustomButton customButton22;
     }
 }
