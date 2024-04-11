@@ -56,8 +56,8 @@
             label6 = new Label();
             pictureBox4 = new PictureBox();
             userPanel = new Panel();
-            customButton16 = new CustomComponent.CustomButton();
-            customButton15 = new CustomComponent.CustomButton();
+            tagEditButton = new Button();
+            tagNameBox = new CustomComponent.CustomButton();
             venueLabel = new Label();
             label23 = new Label();
             customPictureBox4 = new CustomComponent.CustomPictureBox();
@@ -492,8 +492,8 @@
             // userPanel
             // 
             userPanel.BackColor = Color.FromArgb(46, 48, 50);
-            userPanel.Controls.Add(customButton16);
-            userPanel.Controls.Add(customButton15);
+            userPanel.Controls.Add(tagEditButton);
+            userPanel.Controls.Add(tagNameBox);
             userPanel.Controls.Add(venueLabel);
             userPanel.Controls.Add(label23);
             userPanel.Controls.Add(customPictureBox4);
@@ -522,47 +522,41 @@
             userPanel.TabIndex = 7;
             userPanel.Paint += userPanel_Paint;
             // 
-            // customButton16
+            // tagEditButton
             // 
-            customButton16.BackColor = SystemColors.AppWorkspace;
-            customButton16.BackgroundColor = SystemColors.AppWorkspace;
-            customButton16.BorderColor = Color.PaleVioletRed;
-            customButton16.BorderRadius = 12;
-            customButton16.BorderSize = 0;
-            customButton16.Cursor = Cursors.Hand;
-            customButton16.FlatAppearance.BorderSize = 0;
-            customButton16.FlatStyle = FlatStyle.Flat;
-            customButton16.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton16.ForeColor = Color.Black;
-            customButton16.Location = new Point(121, 567);
-            customButton16.Name = "customButton16";
-            customButton16.Size = new Size(107, 33);
-            customButton16.TabIndex = 0;
-            customButton16.TabStop = false;
-            customButton16.Text = "Checking";
-            customButton16.TextColor = Color.Black;
-            customButton16.UseVisualStyleBackColor = false;
+            tagEditButton.Cursor = Cursors.Hand;
+            tagEditButton.FlatAppearance.BorderSize = 0;
+            tagEditButton.FlatStyle = FlatStyle.Flat;
+            tagEditButton.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tagEditButton.ForeColor = Color.FromArgb(4, 166, 225);
+            tagEditButton.Location = new Point(218, 523);
+            tagEditButton.Name = "tagEditButton";
+            tagEditButton.Size = new Size(71, 29);
+            tagEditButton.TabIndex = 47;
+            tagEditButton.Text = "<EDIT>";
+            tagEditButton.UseVisualStyleBackColor = true;
+            tagEditButton.Click += tagEditButton_Click;
             // 
-            // customButton15
+            // tagNameBox
             // 
-            customButton15.BackColor = SystemColors.AppWorkspace;
-            customButton15.BackgroundColor = SystemColors.AppWorkspace;
-            customButton15.BorderColor = Color.PaleVioletRed;
-            customButton15.BorderRadius = 12;
-            customButton15.BorderSize = 0;
-            customButton15.Cursor = Cursors.Hand;
-            customButton15.FlatAppearance.BorderSize = 0;
-            customButton15.FlatStyle = FlatStyle.Flat;
-            customButton15.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton15.ForeColor = Color.Black;
-            customButton15.Location = new Point(8, 567);
-            customButton15.Name = "customButton15";
-            customButton15.Size = new Size(107, 33);
-            customButton15.TabIndex = 0;
-            customButton15.TabStop = false;
-            customButton15.Text = "Checking";
-            customButton15.TextColor = Color.Black;
-            customButton15.UseVisualStyleBackColor = false;
+            tagNameBox.BackColor = SystemColors.AppWorkspace;
+            tagNameBox.BackgroundColor = SystemColors.AppWorkspace;
+            tagNameBox.BorderColor = Color.PaleVioletRed;
+            tagNameBox.BorderRadius = 12;
+            tagNameBox.BorderSize = 0;
+            tagNameBox.Cursor = Cursors.Hand;
+            tagNameBox.FlatAppearance.BorderSize = 0;
+            tagNameBox.FlatStyle = FlatStyle.Flat;
+            tagNameBox.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tagNameBox.ForeColor = Color.Black;
+            tagNameBox.Location = new Point(12, 565);
+            tagNameBox.Name = "tagNameBox";
+            tagNameBox.Size = new Size(150, 33);
+            tagNameBox.TabIndex = 0;
+            tagNameBox.TabStop = false;
+            tagNameBox.Text = "Checking";
+            tagNameBox.TextColor = Color.Black;
+            tagNameBox.UseVisualStyleBackColor = false;
             // 
             // venueLabel
             // 
@@ -746,7 +740,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.FromArgb(4, 166, 225);
-            button2.Location = new Point(197, 315);
+            button2.Location = new Point(218, 311);
             button2.Name = "button2";
             button2.Size = new Size(71, 29);
             button2.TabIndex = 12;
@@ -781,7 +775,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(4, 166, 225);
-            button1.Location = new Point(230, 206);
+            button1.Location = new Point(218, 208);
             button1.Name = "button1";
             button1.Size = new Size(71, 29);
             button1.TabIndex = 11;
@@ -795,7 +789,7 @@
             editReceiverButton.FlatStyle = FlatStyle.Flat;
             editReceiverButton.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             editReceiverButton.ForeColor = Color.FromArgb(4, 166, 225);
-            editReceiverButton.Location = new Point(187, 16);
+            editReceiverButton.Location = new Point(216, 12);
             editReceiverButton.Name = "editReceiverButton";
             editReceiverButton.Size = new Size(83, 29);
             editReceiverButton.TabIndex = 10;
@@ -1610,8 +1604,7 @@
         private CustomComponent.CustomComboBox taskPriority;
         private CustomComponent.CustomComboBox taskStatus;
         private CustomComponent.CustomPictureBox customPictureBox1;
-        private CustomComponent.CustomButton customButton16;
-        private CustomComponent.CustomButton customButton15;
+        private CustomComponent.CustomButton tagNameBox;
         private Label venueLabel;
         private Label label23;
         private CustomComponent.CustomPictureBox customPictureBox4;
@@ -1633,5 +1626,6 @@
         private Panel panel2;
         private CustomComponent.CustomPictureBox currentAvatarSmall;
         private CustomComponent.CustomButton customButton22;
+        private Button tagEditButton;
     }
 }
