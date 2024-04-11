@@ -39,6 +39,7 @@ namespace UIs
             // Session lưu các thông tin quan trọng của tài khoản
             if (result == "Đăng nhập thành công")
             {
+                
                 NhanSu member = nhanSuService.findMember(userID);
                 Session.Instance.UserName = box_username.Text;
                 Session.Instance.Name = member.HoVaTen;
@@ -63,9 +64,10 @@ namespace UIs
                 {
                     Session.Instance.daNghiViec = true;
                 }
-                C_AllTaskList tasks = new C_AllTaskList();
-                tasks.ShowDialog();
+                SplashScreeen splashScreen = new SplashScreeen();
+                splashScreen.ShowDialog();
             }
+            
         }
 
         private void box_username_Enter(object sender, EventArgs e)
