@@ -16,5 +16,36 @@ namespace UIs
         {
             InitializeComponent();
         }
+
+        private void CM_Resident_sDetail_Commercial_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customButton13_Click(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        private void customButton14_Click(object sender, EventArgs e)
+        {
+            if (tableLayoutPanel3.Visible == false)
+            {
+                tableLayoutPanel3.Visible = true;
+            }
+            else
+            {
+                tableLayoutPanel3.Visible = false;
+            }
+        }
     }
 }
