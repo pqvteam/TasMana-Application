@@ -74,5 +74,22 @@ namespace UIs
             newForm.ShowDialog();
             displayCEOData();
         }
+
+        private void customButton13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customButton22_Click(object sender, EventArgs e)
+        {
+            if (tableLayoutPanel1.Visible == false)
+            {
+                tableLayoutPanel1.Visible = true;
+            }
+            else
+            {
+                tableLayoutPanel1.Visible = false;
+            }
+        }
     }
 }
