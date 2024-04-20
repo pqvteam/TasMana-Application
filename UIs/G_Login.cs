@@ -72,7 +72,7 @@ namespace UIs
 
         private void box_username_Enter(object sender, EventArgs e)
         {
-            if (box_username.Text == "User ID")
+            if (box_username.Text == "Username")
             {
                 box_username.Text = "";
             }
@@ -82,7 +82,7 @@ namespace UIs
         {
             if (string.IsNullOrWhiteSpace(box_username.Text))
             {
-                box_username.Text = "User ID";
+                box_username.Text = "Username";
             }
         }
 
@@ -107,6 +107,7 @@ namespace UIs
             if (string.IsNullOrWhiteSpace(box_password.Text))
             {
                 box_password.Text = "Password";
+                box_password.PasswordChar = '\0';
             }
         }
 
