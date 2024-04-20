@@ -16,6 +16,11 @@ namespace Services
             return assignedTask;
         }
 
+        //public List<GiaoViec> getAllTasksOfStaff(string staffID)
+        //{
+        //    return repository.getAllTaskOfStaff(staffID);
+        //}
+
         public bool assignTask(string description, string day, string deadline, string status, string file, string id, int mode, string name, string vanue, string receiverID, int isCEO, string CEOID, string authorizedBy)
         {
             return repository.Create(description, day, deadline, status, file, id, mode, name, vanue, receiverID, isCEO, CEOID, authorizedBy);

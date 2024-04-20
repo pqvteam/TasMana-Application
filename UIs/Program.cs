@@ -20,5 +20,6 @@ static class Program
         // Application.Run(new M_AssignTask());
         // Application.Run(new A_ShowTag());
         // Application.Run(new C_AssignTask());
+        // Application.Run(new CM_Resident_sDetail());
     }  
 }

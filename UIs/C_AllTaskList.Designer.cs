@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_AllTaskList));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             headerPanel = new Panel();
             panel2 = new Panel();
             currentAvatarSmall = new CustomComponent.CustomPictureBox();
@@ -81,9 +81,10 @@
             customButton19 = new CustomComponent.CustomButton();
             rjTextBox4 = new CustomControls.RJControls.RJTextBox();
             pictureBox6 = new PictureBox();
-            textBox2 = new TextBox();
+            searchBox = new TextBox();
             rjTextBox5 = new CustomControls.RJControls.RJTextBox();
             panel6 = new Panel();
+            createGroupButton = new CustomComponent.CustomButton();
             grandChart = new CustomComponent.CustomButton();
             customButton5 = new CustomComponent.CustomButton();
             customButton16 = new CustomComponent.CustomButton();
@@ -114,7 +115,6 @@
             customPictureBox3 = new CustomComponent.CustomPictureBox();
             rjTextBox2 = new CustomControls.RJControls.RJTextBox();
             timer = new System.Windows.Forms.Timer(components);
-            createGroupButton = new CustomComponent.CustomButton();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).BeginInit();
@@ -471,7 +471,7 @@
             panel4.Controls.Add(pictureBox5);
             panel4.Controls.Add(panel5);
             panel4.Controls.Add(pictureBox6);
-            panel4.Controls.Add(textBox2);
+            panel4.Controls.Add(searchBox);
             panel4.Controls.Add(rjTextBox5);
             panel4.Controls.Add(panel6);
             panel4.Dock = DockStyle.Fill;
@@ -644,24 +644,24 @@
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             membersGrid.Cursor = Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(42, 42, 42);
             membersGrid.Location = new Point(363, 437);
@@ -1054,19 +1054,20 @@
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 44;
             pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
-            // textBox2
+            // searchBox
             // 
-            textBox2.BackColor = Color.FromArgb(42, 42, 42);
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Cursor = Cursors.IBeam;
-            textBox2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox2.ForeColor = Color.White;
-            textBox2.Location = new Point(374, 42);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Search";
-            textBox2.Size = new Size(631, 20);
-            textBox2.TabIndex = 43;
+            searchBox.BackColor = Color.FromArgb(42, 42, 42);
+            searchBox.BorderStyle = BorderStyle.None;
+            searchBox.Cursor = Cursors.IBeam;
+            searchBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            searchBox.ForeColor = Color.White;
+            searchBox.Location = new Point(374, 42);
+            searchBox.Name = "searchBox";
+            searchBox.PlaceholderText = "Search";
+            searchBox.Size = new Size(631, 20);
+            searchBox.TabIndex = 43;
             // 
             // rjTextBox5
             // 
@@ -1108,6 +1109,31 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(281, 660);
             panel6.TabIndex = 1;
+            // 
+            // createGroupButton
+            // 
+            createGroupButton.BackColor = Color.FromArgb(42, 42, 42);
+            createGroupButton.BackgroundColor = Color.FromArgb(42, 42, 42);
+            createGroupButton.BorderColor = Color.PaleVioletRed;
+            createGroupButton.BorderRadius = 28;
+            createGroupButton.BorderSize = 0;
+            createGroupButton.Cursor = Cursors.Hand;
+            createGroupButton.FlatAppearance.BorderSize = 0;
+            createGroupButton.FlatStyle = FlatStyle.Flat;
+            createGroupButton.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            createGroupButton.ForeColor = Color.White;
+            createGroupButton.Image = (Image)resources.GetObject("createGroupButton.Image");
+            createGroupButton.ImageAlign = ContentAlignment.MiddleLeft;
+            createGroupButton.Location = new Point(14, 388);
+            createGroupButton.Name = "createGroupButton";
+            createGroupButton.Padding = new Padding(12, 0, 0, 0);
+            createGroupButton.Size = new Size(253, 59);
+            createGroupButton.TabIndex = 63;
+            createGroupButton.Text = "CREATE GROUP";
+            createGroupButton.TextAlign = ContentAlignment.MiddleRight;
+            createGroupButton.TextColor = Color.White;
+            createGroupButton.UseVisualStyleBackColor = false;
+            createGroupButton.Click += createGroupButton_Click;
             // 
             // grandChart
             // 
@@ -1612,31 +1638,6 @@
             timer.Interval = 1000;
             timer.Tick += timer_Tick;
             // 
-            // createGroupButton
-            // 
-            createGroupButton.BackColor = Color.FromArgb(42, 42, 42);
-            createGroupButton.BackgroundColor = Color.FromArgb(42, 42, 42);
-            createGroupButton.BorderColor = Color.PaleVioletRed;
-            createGroupButton.BorderRadius = 28;
-            createGroupButton.BorderSize = 0;
-            createGroupButton.Cursor = Cursors.Hand;
-            createGroupButton.FlatAppearance.BorderSize = 0;
-            createGroupButton.FlatStyle = FlatStyle.Flat;
-            createGroupButton.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            createGroupButton.ForeColor = Color.White;
-            createGroupButton.Image = (Image)resources.GetObject("createGroupButton.Image");
-            createGroupButton.ImageAlign = ContentAlignment.MiddleLeft;
-            createGroupButton.Location = new Point(14, 388);
-            createGroupButton.Name = "createGroupButton";
-            createGroupButton.Padding = new Padding(12, 0, 0, 0);
-            createGroupButton.Size = new Size(253, 59);
-            createGroupButton.TabIndex = 63;
-            createGroupButton.Text = "CREATE GROUP";
-            createGroupButton.TextAlign = ContentAlignment.MiddleRight;
-            createGroupButton.TextColor = Color.White;
-            createGroupButton.UseVisualStyleBackColor = false;
-            createGroupButton.Click += createGroupButton_Click;
-            // 
             // C_AllTaskList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1710,7 +1711,7 @@
         private Panel panel5;
         private CustomControls.RJControls.RJTextBox rjTextBox4;
         private PictureBox pictureBox6;
-        private TextBox textBox2;
+        private TextBox searchBox;
         private CustomControls.RJControls.RJTextBox rjTextBox5;
         private Panel panel6;
         private CustomComponent.CustomButton customButton16;
