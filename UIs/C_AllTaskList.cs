@@ -375,5 +375,9 @@ namespace UIs
         {
 
         }
+        private void C_AllTaskList_Shown(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
