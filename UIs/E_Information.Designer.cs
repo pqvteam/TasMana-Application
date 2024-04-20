@@ -769,7 +769,7 @@
             customButton6.ForeColor = Color.White;
             customButton6.Image = (Image)resources.GetObject("customButton6.Image");
             customButton6.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton6.Location = new Point(12, 0);
+            customButton6.Location = new Point(12, -4);
             customButton6.Name = "customButton6";
             customButton6.Size = new Size(60, 60);
             customButton6.TabIndex = 16;

@@ -75,6 +75,8 @@ namespace UIs
             else
             {
                 currentPosition.Text = "STAFF";
+                createGroupButton.Visible = false;
+                createGroupButton.Enabled = false;
             }
             currentNameLabel.Text = $"Hello {currentUser}";
             currentUserName.Text = Session.Instance.Name;
@@ -120,7 +122,7 @@ namespace UIs
             int incompletedTaskQuantity = 0;
             foreach (GiaoViec member in members)
             {
-                List < (string name, string ID, string description) > tag = tagService.getTaskTagInfo(member.MaGiaoViec);
+                List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(member.MaGiaoViec);
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(membersGrid);
                 row.Cells[0].Value = member.MaGiaoViec;
@@ -129,7 +131,7 @@ namespace UIs
                 row.Cells[3].Value = member.NgayGiao;
                 row.Cells[4].Value = member.HanHoanThanh;
                 row.Cells[5].Value = member.TinhTrangCongViec;
-                row.Cells[6].Value = tag.Count >0 ? tag[0].name : "NA";
+                row.Cells[6].Value = tag.Count > 0 ? tag[0].name : "NA";
                 membersGrid.Rows.Add(row);
                 taskQuantity++;
                 if (member.TinhTrangCongViec != null && member.TinhTrangCongViec == "Completed")
@@ -377,7 +379,13 @@ namespace UIs
         }
         private void C_AllTaskList_Shown(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void createGroupButton_Click(object sender, EventArgs e)
+        {
+            CM_CreateGroup createGroup = new CM_CreateGroup();
+            createGroup.ShowDialog();
         }
     }
 }

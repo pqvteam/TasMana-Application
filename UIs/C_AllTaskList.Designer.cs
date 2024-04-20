@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_AllTaskList));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             headerPanel = new Panel();
             panel2 = new Panel();
             currentAvatarSmall = new CustomComponent.CustomPictureBox();
@@ -114,6 +114,7 @@
             customPictureBox3 = new CustomComponent.CustomPictureBox();
             rjTextBox2 = new CustomControls.RJControls.RJTextBox();
             timer = new System.Windows.Forms.Timer(components);
+            createGroupButton = new CustomComponent.CustomButton();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).BeginInit();
@@ -643,24 +644,24 @@
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             membersGrid.Cursor = Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle4;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(42, 42, 42);
             membersGrid.Location = new Point(363, 437);
@@ -1093,6 +1094,7 @@
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(31, 31, 32);
+            panel6.Controls.Add(createGroupButton);
             panel6.Controls.Add(grandChart);
             panel6.Controls.Add(customButton5);
             panel6.Controls.Add(customButton16);
@@ -1121,7 +1123,7 @@
             grandChart.ForeColor = Color.White;
             grandChart.Image = (Image)resources.GetObject("grandChart.Image");
             grandChart.ImageAlign = ContentAlignment.MiddleLeft;
-            grandChart.Location = new Point(14, 389);
+            grandChart.Location = new Point(14, 473);
             grandChart.Name = "grandChart";
             grandChart.Padding = new Padding(12, 0, 0, 0);
             grandChart.Size = new Size(253, 59);
@@ -1610,6 +1612,31 @@
             timer.Interval = 1000;
             timer.Tick += timer_Tick;
             // 
+            // createGroupButton
+            // 
+            createGroupButton.BackColor = Color.FromArgb(42, 42, 42);
+            createGroupButton.BackgroundColor = Color.FromArgb(42, 42, 42);
+            createGroupButton.BorderColor = Color.PaleVioletRed;
+            createGroupButton.BorderRadius = 28;
+            createGroupButton.BorderSize = 0;
+            createGroupButton.Cursor = Cursors.Hand;
+            createGroupButton.FlatAppearance.BorderSize = 0;
+            createGroupButton.FlatStyle = FlatStyle.Flat;
+            createGroupButton.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            createGroupButton.ForeColor = Color.White;
+            createGroupButton.Image = (Image)resources.GetObject("createGroupButton.Image");
+            createGroupButton.ImageAlign = ContentAlignment.MiddleLeft;
+            createGroupButton.Location = new Point(14, 388);
+            createGroupButton.Name = "createGroupButton";
+            createGroupButton.Padding = new Padding(12, 0, 0, 0);
+            createGroupButton.Size = new Size(253, 59);
+            createGroupButton.TabIndex = 63;
+            createGroupButton.Text = "CREATE GROUP";
+            createGroupButton.TextAlign = ContentAlignment.MiddleRight;
+            createGroupButton.TextColor = Color.White;
+            createGroupButton.UseVisualStyleBackColor = false;
+            createGroupButton.Click += createGroupButton_Click;
+            // 
             // C_AllTaskList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1735,5 +1762,6 @@
         private CustomControls.RJControls.RJTextBox rjTextBox9;
         private CustomControls.RJControls.RJTextBox rjTextBox8;
         private CustomComponent.CustomButton customButton15;
+        private CustomComponent.CustomButton createGroupButton;
     }
 }
