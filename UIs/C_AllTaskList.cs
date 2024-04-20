@@ -120,7 +120,7 @@ namespace UIs
             int incompletedTaskQuantity = 0;
             foreach (GiaoViec member in members)
             {
-                List < (string name, string ID, string description) > tag = tagService.getTaskTagInfo(member.MaGiaoViec);
+                List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(member.MaGiaoViec);
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(membersGrid);
                 row.Cells[0].Value = member.MaGiaoViec;
@@ -129,7 +129,7 @@ namespace UIs
                 row.Cells[3].Value = member.NgayGiao;
                 row.Cells[4].Value = member.HanHoanThanh;
                 row.Cells[5].Value = member.TinhTrangCongViec;
-                row.Cells[6].Value = tag.Count >0 ? tag[0].name : "NA";
+                row.Cells[6].Value = tag.Count > 0 ? tag[0].name : "NA";
                 membersGrid.Rows.Add(row);
                 taskQuantity++;
                 if (member.TinhTrangCongViec != null && member.TinhTrangCongViec == "Completed")
@@ -375,5 +375,6 @@ namespace UIs
         {
 
         }
+
     }
 }

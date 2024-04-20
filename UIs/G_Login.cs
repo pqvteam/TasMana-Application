@@ -4,11 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.IdentityModel.Tokens;
 using Repositories.Entities;
 using Services;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace UIs
 {
@@ -26,14 +29,17 @@ namespace UIs
             string password = box_password.Text;
             string result = service.checkLogin(userID, password);
             NhanSuService nhanSuService = new NhanSuService();
-            if (checkbox_Remember.Checked && service.savePassword(userID, password))
+            //
+            ////luu mat khau
+            if (checkbox_Remember.Checked)
             {
+                // Lưu mật khẩu vào Properties.Settings
+                Properties.Settings.Default.Username = userID;
+                Properties.Settings.Default.Password = password;
+                Properties.Settings.Default.Save();
                 MessageBox.Show("Đã lưu mật khẩu của bạn");
             }
-            else if (checkbox_Remember.Checked && service.savePassword(userID, password) == false)
-            {
-                MessageBox.Show("Mật khẩu của bạn lưu thất bại");
-            }
+            //
             MessageBox.Show(result);
 
             // Session lưu các thông tin quan trọng của tài khoản
@@ -65,6 +71,7 @@ namespace UIs
                 }
                 C_AllTaskList tasks = new C_AllTaskList();
                 tasks.ShowDialog();
+
             }
         }
 
@@ -123,7 +130,14 @@ namespace UIs
 
         private void G_Login_Load(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.Username) &&
+                !string.IsNullOrEmpty(Properties.Settings.Default.Password))
+            {
+                box_username.Text = Properties.Settings.Default.Username;
+                box_password.Text = Properties.Settings.Default.Password;
+                //button_Login_Click(sender, e);
+            }
         }
+
     }
 }
