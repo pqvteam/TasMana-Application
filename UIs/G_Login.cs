@@ -17,6 +17,7 @@ namespace UIs
         public G_Login()
         {
             InitializeComponent();
+            this.AcceptButton = button_Login;
         }
 
         private void button_Login_Click(object sender, EventArgs e)
