@@ -27,6 +27,11 @@ namespace Repositories
             return db.GiaoViecs.Where(x => x.MaGiaoViec.Contains(departmentID)).ToList();
         }
 
+        //public List<GiaoViec> getAllTaskOfStaff(string staffID)
+        //{
+        //    return db.GiaoViecs.Where(x => x.MaGiaoViec.Contains(staffID)).ToList();
+        //}
+
         public List<GiaoViec> GetAll() { 
             return db.GiaoViecs.ToList();
         }

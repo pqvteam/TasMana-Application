@@ -19,7 +19,7 @@ namespace Repositories
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT tenTag, maGiaoViec, moTa FROM Tag " +
+                string query = "SELECT tenTag, maGiaoViec, moTa FROM Tag WHERE moTa != ''" +
                                "GROUP BY tenTag, maGiaoViec, moTa";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
