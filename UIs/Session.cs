@@ -23,10 +23,8 @@ public class Session
 
     public bool daNghiViec { get; set; }
 
-    // Hàm khởi tạo private để ngăn chặn việc tạo đối tượng từ bên ngoài lớp
     private Session() { }
 
-    // Phương thức static để truy xuất đến đối tượng Session
     public static Session Instance
     {
         get

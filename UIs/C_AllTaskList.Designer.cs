@@ -85,9 +85,10 @@
             customButton19 = new CustomComponent.CustomButton();
             rjTextBox4 = new CustomControls.RJControls.RJTextBox();
             pictureBox6 = new PictureBox();
-            textBox2 = new TextBox();
+            searchBox = new TextBox();
             rjTextBox5 = new CustomControls.RJControls.RJTextBox();
             panel6 = new Panel();
+            createGroupButton = new CustomComponent.CustomButton();
             grandChart = new CustomComponent.CustomButton();
             customButton5 = new CustomComponent.CustomButton();
             customButton16 = new CustomComponent.CustomButton();
@@ -476,7 +477,7 @@
             panel4.Controls.Add(pictureBox5);
             panel4.Controls.Add(panel5);
             panel4.Controls.Add(pictureBox6);
-            panel4.Controls.Add(textBox2);
+            panel4.Controls.Add(searchBox);
             panel4.Controls.Add(rjTextBox5);
             panel4.Controls.Add(panel6);
             panel4.Dock = DockStyle.Fill;
@@ -1120,19 +1121,20 @@
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 44;
             pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
-            // textBox2
+            // searchBox
             // 
-            textBox2.BackColor = Color.FromArgb(42, 42, 42);
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Cursor = Cursors.IBeam;
-            textBox2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox2.ForeColor = Color.White;
-            textBox2.Location = new Point(374, 42);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Search";
-            textBox2.Size = new Size(631, 20);
-            textBox2.TabIndex = 43;
+            searchBox.BackColor = Color.FromArgb(42, 42, 42);
+            searchBox.BorderStyle = BorderStyle.None;
+            searchBox.Cursor = Cursors.IBeam;
+            searchBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            searchBox.ForeColor = Color.White;
+            searchBox.Location = new Point(374, 42);
+            searchBox.Name = "searchBox";
+            searchBox.PlaceholderText = "Search";
+            searchBox.Size = new Size(631, 20);
+            searchBox.TabIndex = 43;
             // 
             // rjTextBox5
             // 
@@ -1160,6 +1162,7 @@
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(31, 31, 32);
+            panel6.Controls.Add(createGroupButton);
             panel6.Controls.Add(grandChart);
             panel6.Controls.Add(customButton5);
             panel6.Controls.Add(customButton16);
@@ -1173,6 +1176,31 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(281, 660);
             panel6.TabIndex = 1;
+            // 
+            // createGroupButton
+            // 
+            createGroupButton.BackColor = Color.FromArgb(42, 42, 42);
+            createGroupButton.BackgroundColor = Color.FromArgb(42, 42, 42);
+            createGroupButton.BorderColor = Color.PaleVioletRed;
+            createGroupButton.BorderRadius = 28;
+            createGroupButton.BorderSize = 0;
+            createGroupButton.Cursor = Cursors.Hand;
+            createGroupButton.FlatAppearance.BorderSize = 0;
+            createGroupButton.FlatStyle = FlatStyle.Flat;
+            createGroupButton.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            createGroupButton.ForeColor = Color.White;
+            createGroupButton.Image = (Image)resources.GetObject("createGroupButton.Image");
+            createGroupButton.ImageAlign = ContentAlignment.MiddleLeft;
+            createGroupButton.Location = new Point(14, 388);
+            createGroupButton.Name = "createGroupButton";
+            createGroupButton.Padding = new Padding(12, 0, 0, 0);
+            createGroupButton.Size = new Size(253, 59);
+            createGroupButton.TabIndex = 63;
+            createGroupButton.Text = "CREATE GROUP";
+            createGroupButton.TextAlign = ContentAlignment.MiddleRight;
+            createGroupButton.TextColor = Color.White;
+            createGroupButton.UseVisualStyleBackColor = false;
+            createGroupButton.Click += createGroupButton_Click;
             // 
             // grandChart
             // 
@@ -1188,7 +1216,7 @@
             grandChart.ForeColor = Color.White;
             grandChart.Image = (Image)resources.GetObject("grandChart.Image");
             grandChart.ImageAlign = ContentAlignment.MiddleLeft;
-            grandChart.Location = new Point(14, 389);
+            grandChart.Location = new Point(14, 473);
             grandChart.Name = "grandChart";
             grandChart.Padding = new Padding(12, 0, 0, 0);
             grandChart.Size = new Size(253, 59);
@@ -1246,6 +1274,7 @@
             customButton16.TextAlign = ContentAlignment.MiddleRight;
             customButton16.TextColor = Color.White;
             customButton16.UseVisualStyleBackColor = false;
+            customButton16.Click += customButton16_Click;
             // 
             // customButton17
             // 
@@ -1751,7 +1780,7 @@
         private Panel panel5;
         private CustomControls.RJControls.RJTextBox rjTextBox4;
         private PictureBox pictureBox6;
-        private TextBox textBox2;
+        private TextBox searchBox;
         private CustomControls.RJControls.RJTextBox rjTextBox5;
         private Panel panel6;
         private CustomComponent.CustomButton customButton16;
@@ -1803,6 +1832,7 @@
         private CustomControls.RJControls.RJTextBox rjTextBox9;
         private CustomControls.RJControls.RJTextBox rjTextBox8;
         private CustomComponent.CustomButton customButton15;
+        private CustomComponent.CustomButton createGroupButton;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label8;
         private Label label9;
