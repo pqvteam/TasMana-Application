@@ -1,24 +1,23 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using Repositories.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Data.SqlClient;
-using Repositories.Entities;
-using Repositories.Utilities;
 
 namespace Repositories
 {
-    public class NhanViecRepository
+    public class KhuVucLamViecRepository
     {
-        public string getImplementor(string ID)
+        public string getVenue(string ID)
         {
             try
             {
                 DatabaseConnection.Instance.OpenConnection();
                 SqlConnection conn = DatabaseConnection.Instance.GetConnection();
 
-                string sqlCommand = "SELECT maThanhVien FROM NhanViec WHERE maGiaoViec = @ID";
+                string sqlCommand = "SELECT maCH FROM KhuVucLamViec WHERE maGiaoViec = @ID";
                 SqlCommand command = new SqlCommand(sqlCommand, conn);
                 command.Parameters.AddWithValue("@ID", ID);
 
@@ -26,9 +25,9 @@ namespace Repositories
 
                 if (reader.Read())
                 {
-                    return $"{reader["maThanhVien"]}";
+                    return $"{reader["maCH"]}";
                 }
-                return "Nhân viên này không tồn tại";
+                return "Khu vực này không tồn tại";
             }
             catch (Exception ex)
             {

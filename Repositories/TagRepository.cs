@@ -131,5 +131,35 @@ namespace Repositories
                 }
             }
         }
+        public bool Update(string name, string ID, string description = "")
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("capNhatTag", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@tenTag", name);
+                    cmd.Parameters.AddWithValue("@maGiaoViec", ID);
+                    cmd.Parameters.AddWithValue("@moTa", description);
+
+                    SqlParameter returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Int);
+                    returnParameter.Direction = ParameterDirection.ReturnValue;
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    int returnValue = (int)returnParameter.Value;
+                    if (returnValue == -1)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
     }
 }

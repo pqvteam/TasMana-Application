@@ -1207,6 +1207,7 @@
             customButton16.TextAlign = ContentAlignment.MiddleRight;
             customButton16.TextColor = Color.White;
             customButton16.UseVisualStyleBackColor = false;
+            customButton16.Click += customButton16_Click;
             // 
             // customButton17
             // 

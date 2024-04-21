@@ -21,6 +21,8 @@ public partial class GiaoViec
 
     public string? TenCongViec { get; set; }
 
+    public string? UyQuyenBoi { get; set; }
+
     public virtual ICollection<CanHo> MaChes { get; set; } = new List<CanHo>();
 
     public virtual ICollection<NhanVien> MaThanhViens { get; set; } = new List<NhanVien>();
