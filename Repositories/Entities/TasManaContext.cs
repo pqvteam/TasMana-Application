@@ -51,7 +51,6 @@ public partial class TasManaContext : DbContext
             entity.HasKey(e => e.MaCh).HasName("PK__CanHo__7A3E0CEE89CE2FD5");
 
             entity.ToTable("CanHo");
-
             entity.Property(e => e.MaCh)
                 .HasMaxLength(10)
                 .IsUnicode(false)
