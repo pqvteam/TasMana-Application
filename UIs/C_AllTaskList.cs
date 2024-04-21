@@ -280,7 +280,8 @@ namespace UIs
                 {
                     DatabaseConnection.Instance.CloseConnection();
                 }
-            } else
+            }
+            else
             {
                 reload();
             }
@@ -511,6 +512,12 @@ namespace UIs
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             PerformSearch();
+        }
+
+        private void customButton16_Click(object sender, EventArgs e)
+        {
+            A_MyTaskList editTask = new A_MyTaskList();
+            editTask.ShowDialog();
         }
     }
 }
