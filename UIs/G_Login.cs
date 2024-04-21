@@ -26,6 +26,8 @@ namespace UIs
         private void button_Login_Click(object sender, EventArgs e)
         {
             DanhNhapService service = new DanhNhapService();
+            CeoService ceoService = new CeoService();
+            QuanLyService quanLyService = new QuanLyService();
             string userID = box_username.Text;
             string password = box_password.Text;
             string result = service.checkLogin(userID, password);
@@ -55,11 +57,11 @@ namespace UIs
                 {
                     Session.Instance.Email = box_password.Text;
                 }
-                if (service.laCEO(userID))
+                if (ceoService.getCeo(userID) != null)
                 {
                     Session.Instance.laCEO = true;
                 }
-                else if (service.laQuanLi(userID))
+                else if (quanLyService.findManager(userID) != null)
                 {
                     Session.Instance.laQuanLi = true;
                 }
@@ -74,7 +76,6 @@ namespace UIs
                 SplashScreeen splashScreen = new SplashScreeen();
                 splashScreen.ShowDialog();
             }
-            
         }
 
         private void box_username_Enter(object sender, EventArgs e)

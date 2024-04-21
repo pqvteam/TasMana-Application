@@ -912,6 +912,7 @@
             Controls.Add(customButton16);
             FormBorderStyle = FormBorderStyle.None;
             Name = "CM_CreateGroup";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CM_CreateGroup";
             Load += CM_CreateGroup_Load;
             ((System.ComponentModel.ISupportInitialize)membersGrid).EndInit();
