@@ -96,10 +96,11 @@ namespace UIs
                 {
                     memberType = member.LoaiNhanSu;
                 }
+
                 string departmentID = member.MaThanhVien.Split("-")[0];
                 DateOnly dateOnly = member.NgayBatDau.Value;
                 string start = dateOnly.ToString("dd/MM/yyyy");
-
+                bool fired = member.NghiViec;
                 int rowIndex = membersGrid.Rows.Add(
                     member.MaThanhVien,
                     member.HoVaTen,
@@ -108,6 +109,7 @@ namespace UIs
                     departmentID,
                     role,
                     start
+
                 );
 
                 if (role == "Manager")
@@ -127,7 +129,10 @@ namespace UIs
                     membersGrid.Rows[rowIndex].Cells["btnLeader"].Value = true;
                 }
 
-                membersGrid.Rows[rowIndex].Cells["Fired"].Value = member.NghiViec;
+                if (fired)
+                {
+                    membersGrid.Rows[rowIndex].Cells["Fired"].Value = true;
+                }
             }
 
 
@@ -144,9 +149,14 @@ namespace UIs
         private void membersGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string? memberId = membersGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+
             bool isManager =
                 membersGrid.Rows[e.RowIndex].Cells["btnAppoint"].Value != null
                     ? (bool)membersGrid.Rows[e.RowIndex].Cells["btnAppoint"].Value
+                    : false;
+            bool isFired =
+                membersGrid.Rows[e.RowIndex].Cells["Fired"].Value != null
+                    ? (bool)membersGrid.Rows[e.RowIndex].Cells["Fired"].Value
                     : false;
             string CEOID = "GD-001";
             if (e.ColumnIndex == membersGrid.Columns["btnAppoint"].Index && e.RowIndex >= 0)
@@ -159,16 +169,23 @@ namespace UIs
                         A_Confirm confirmForm = new A_Confirm(confirmMessage, "danger");
                         confirmForm.ConfirmClicked += (confirmSender, confirmArgs) =>
                         {
-                            bool isSuccess = ceoService.deposeManager(memberId, CEOID);
-                            if (isSuccess)
+                            if(Session.Instance.UserName.Contains("GD"))
                             {
-                                MessageBox.Show("Depose manager successfully");
-                                PerformSearch();
-                            }
+                                bool isSuccess = ceoService.deposeManager(memberId, CEOID);
+                                if (isSuccess)
+                                {
+                                    MessageBox.Show("Depose manager successfully");
+                                    PerformSearch();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Depose manager failure");
+                                }
+                            }    
                             else
                             {
-                                MessageBox.Show("Depose manager failure");
-                            }
+                                MessageBox.Show("You don't have right to depose");
+                            }    
                         };
                         confirmForm.ShowDialog();
                     }
@@ -178,16 +195,24 @@ namespace UIs
                         A_Confirm confirmForm = new A_Confirm(confirmMessage, "confirm");
                         confirmForm.ConfirmClicked += (confirmSender, confirmArgs) =>
                         {
-                            bool isSuccess = ceoService.appointManager(memberId, CEOID);
-                            if (isSuccess)
+                            if(Session.Instance.UserName.Contains("GD"))
                             {
-                                MessageBox.Show("Appoint manager successfully");
-                                PerformSearch();
+                                bool isSuccess = ceoService.appointManager(memberId, CEOID);
+                                if (isSuccess)
+                                {
+                                    MessageBox.Show("Appoint manager successfully");
+                                    PerformSearch();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Appoint manager failure");
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Appoint manager failure");
-                            }
+                                MessageBox.Show("You don't have right to appoint");
+                            }    
+                            
                         };
                         confirmForm.ShowDialog();
                     }
@@ -195,10 +220,54 @@ namespace UIs
             }
             else if (e.ColumnIndex == membersGrid.Columns["btnLeader"].Index && e.RowIndex >= 0)
             {
-                A_Appoint appointForm = new A_Appoint(memberId, CEOID);
-                appointForm.ShowDialog();
+                if(Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+                {
+                    A_Appoint appointForm = new A_Appoint(memberId, CEOID);
+                    appointForm.ShowDialog();
+                }    
+                else
+                {
+                    MessageBox.Show("You don't have right to appoint");
+                }    
+                
                 PerformSearch();
             }
+            else if (e.ColumnIndex == membersGrid.Columns["Fired"].Index && e.RowIndex >=0)
+            {
+                if (memberId != null)
+                {
+                    if (!isFired)
+                    {
+                        string confirmMessage = "ARE YOU SURE TO DEACTIVE THIS ACCOUNT?";
+                        A_Confirm confirmForm = new A_Confirm(confirmMessage, "danger");
+                        confirmForm.ConfirmClicked += (confirmSender, confirmArgs) =>
+                        {
+                            if (Session.Instance.UserName.Contains("GD"))
+                            {
+                                bool isSuccess = ceoService.firedStaff(memberId, CEOID);
+                                if (isSuccess)
+                                {
+                                    MessageBox.Show("Depose this account successfully");
+                                    PerformSearch();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Depose this account failure");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("You don't have right to depose");
+                            }
+                        };
+                        confirmForm.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("This account has been deactive");
+                    }
+                }
+            }    
             reload();
         }
 
@@ -290,6 +359,7 @@ namespace UIs
                                         membersGrid.Rows[rowIndex].Cells["btnAppoint"].ReadOnly =
                                             true;
                                     }
+
                                 }
                                 else if (
                                     (selectedDepartment == "" || selectedDepartment == "All")
@@ -661,7 +731,7 @@ namespace UIs
                                         start
                                     );
 
-                                    membersGrid.Rows[rowIndex].Cells["Fired"].Value = fired;
+                                    
 
                                     if (role == "Manager")
                                     {
@@ -678,6 +748,10 @@ namespace UIs
                                     {
                                         membersGrid.Rows[rowIndex].Cells["btnLeader"].Value = true;
                                     }
+                                    if(fired)
+                                    {
+                                        membersGrid.Rows[rowIndex].Cells["Fired"].Value = true;
+                                    }    
                                 }
                             }
                         }
