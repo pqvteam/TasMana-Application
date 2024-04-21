@@ -62,20 +62,15 @@
             customButton19 = new CustomComponent.CustomButton();
             customButton1 = new CustomComponent.CustomButton();
             tableLayoutPanel2 = new TableLayoutPanel();
+            label6 = new Label();
             label28 = new Label();
-            label27 = new Label();
             label26 = new Label();
-            label25 = new Label();
             label24 = new Label();
-            label23 = new Label();
+            label27 = new Label();
             label22 = new Label();
-            label21 = new Label();
             label20 = new Label();
-            label19 = new Label();
             label18 = new Label();
-            label17 = new Label();
             label16 = new Label();
-            label15 = new Label();
             label14 = new Label();
             label13 = new Label();
             label12 = new Label();
@@ -84,13 +79,23 @@
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            label6 = new Label();
+            label25 = new Label();
+            label23 = new Label();
+            label21 = new Label();
+            label19 = new Label();
+            label17 = new Label();
+            label15 = new Label();
             label29 = new Label();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            label30 = new Label();
+            label31 = new Label();
+            label32 = new Label();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             customPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -109,6 +114,7 @@
             customButton13.BorderColor = Color.Transparent;
             customButton13.BorderRadius = 28;
             customButton13.BorderSize = 0;
+            customButton13.Cursor = Cursors.Hand;
             customButton13.FlatAppearance.BorderSize = 0;
             customButton13.FlatStyle = FlatStyle.Flat;
             customButton13.ForeColor = Color.White;
@@ -119,6 +125,7 @@
             customButton13.TabIndex = 38;
             customButton13.TextColor = Color.White;
             customButton13.UseVisualStyleBackColor = false;
+            customButton13.Click += customButton13_Click;
             // 
             // customButton14
             // 
@@ -141,6 +148,7 @@
             customButton14.TextColor = Color.White;
             customButton14.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton14.UseVisualStyleBackColor = false;
+            customButton14.Click += customButton14_Click;
             // 
             // panel1
             // 
@@ -229,7 +237,6 @@
             // 
             // customButton18
             // 
-            customButton18.AutoEllipsis = true;
             customButton18.BackColor = Color.Black;
             customButton18.BackgroundColor = Color.Black;
             customButton18.BorderColor = Color.PaleVioletRed;
@@ -379,12 +386,12 @@
             tableLayoutPanel1.Controls.Add(customButton3, 2, 0);
             tableLayoutPanel1.Controls.Add(customButton5, 4, 0);
             tableLayoutPanel1.Font = new Font("Copperplate Gothic Bold", 10.2F);
-            tableLayoutPanel1.Location = new Point(0, 60);
+            tableLayoutPanel1.Location = new Point(0, 62);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(1379, 51);
+            tableLayoutPanel1.Size = new Size(1379, 49);
             tableLayoutPanel1.TabIndex = 32;
             // 
             // customButton_ApartmentList
@@ -759,6 +766,18 @@
             tableLayoutPanel2.Size = new Size(960, 542);
             tableLayoutPanel2.TabIndex = 34;
             // 
+            // label6
+            // 
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(4, 181);
+            label6.Name = "label6";
+            label6.Size = new Size(472, 44);
+            label6.TabIndex = 75;
+            label6.Text = "THONG TIN QUAN LY/NHAN VIEN PHU TRACH CUA DON VI/CA NHAN DANG THUE KHU THUONG MAI";
+            label6.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // label28
             // 
             label28.BackColor = Color.Transparent;
@@ -770,18 +789,6 @@
             label28.TabIndex = 74;
             label28.Text = "<CSDL>";
             label28.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // label27
-            // 
-            label27.BackColor = Color.Transparent;
-            label27.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label27.ForeColor = Color.White;
-            label27.Location = new Point(4, 496);
-            label27.Name = "label27";
-            label27.Size = new Size(472, 36);
-            label27.TabIndex = 73;
-            label27.Text = "DU LIEU NUOI THU CUNG";
-            label27.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label26
             // 
@@ -795,18 +802,6 @@
             label26.Text = "<CSDL>";
             label26.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label25
-            // 
-            label25.BackColor = Color.Transparent;
-            label25.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label25.ForeColor = Color.White;
-            label25.Location = new Point(4, 451);
-            label25.Name = "label25";
-            label25.Size = new Size(472, 36);
-            label25.TabIndex = 71;
-            label25.Text = "TINH TRANG CONG NO";
-            label25.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // label24
             // 
             label24.BackColor = Color.Transparent;
@@ -819,17 +814,17 @@
             label24.Text = "<NUM>";
             label24.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label23
+            // label27
             // 
-            label23.BackColor = Color.Transparent;
-            label23.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label23.ForeColor = Color.White;
-            label23.Location = new Point(4, 406);
-            label23.Name = "label23";
-            label23.Size = new Size(472, 36);
-            label23.TabIndex = 69;
-            label23.Text = "SO DIEN THOAI NGUOI THAN";
-            label23.TextAlign = ContentAlignment.MiddleLeft;
+            label27.BackColor = Color.Transparent;
+            label27.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label27.ForeColor = Color.White;
+            label27.Location = new Point(4, 496);
+            label27.Name = "label27";
+            label27.Size = new Size(472, 36);
+            label27.TabIndex = 73;
+            label27.Text = "DU LIEU NUOI THU CUNG";
+            label27.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label22
             // 
@@ -843,18 +838,6 @@
             label22.Text = "<CSDL>";
             label22.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label21
-            // 
-            label21.BackColor = Color.Transparent;
-            label21.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label21.ForeColor = Color.White;
-            label21.Location = new Point(4, 361);
-            label21.Name = "label21";
-            label21.Size = new Size(472, 44);
-            label21.TabIndex = 67;
-            label21.Text = "DU LIEU PHUONG TIEN DANG KY DO XE TAI NHA";
-            label21.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // label20
             // 
             label20.BackColor = Color.Transparent;
@@ -866,18 +849,6 @@
             label20.TabIndex = 66;
             label20.Text = "<NUM>";
             label20.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // label19
-            // 
-            label19.BackColor = Color.Transparent;
-            label19.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label19.ForeColor = Color.White;
-            label19.Location = new Point(4, 316);
-            label19.Name = "label19";
-            label19.Size = new Size(472, 36);
-            label19.TabIndex = 65;
-            label19.Text = "PHI DICH VU KHAC";
-            label19.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label18
             // 
@@ -891,18 +862,6 @@
             label18.Text = "<NUM>";
             label18.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label17
-            // 
-            label17.BackColor = Color.Transparent;
-            label17.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.ForeColor = Color.White;
-            label17.Location = new Point(4, 271);
-            label17.Name = "label17";
-            label17.Size = new Size(472, 36);
-            label17.TabIndex = 63;
-            label17.Text = "PHI DICH VU QUAN LY HANG THANG";
-            label17.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // label16
             // 
             label16.BackColor = Color.Transparent;
@@ -914,18 +873,6 @@
             label16.TabIndex = 62;
             label16.Text = "<CSDL>";
             label16.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // label15
-            // 
-            label15.BackColor = Color.Transparent;
-            label15.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.ForeColor = Color.White;
-            label15.Location = new Point(4, 226);
-            label15.Name = "label15";
-            label15.Size = new Size(472, 36);
-            label15.TabIndex = 61;
-            label15.Text = "SO LIEU DIEN NUOC PHAT SINH HANG THANG";
-            label15.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label14
             // 
@@ -1023,17 +970,77 @@
             label7.Text = "TEMPORARY RESIDENT CARD NUMBER";
             label7.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // label25
             // 
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(4, 181);
-            label6.Name = "label6";
-            label6.Size = new Size(472, 44);
-            label6.TabIndex = 75;
-            label6.Text = "THONG TIN QUAN LY/NHAN VIEN PHU TRACH CUA DON VI/CA NHAN DANG THUE KHU THUONG MAI";
-            label6.TextAlign = ContentAlignment.MiddleLeft;
+            label25.BackColor = Color.Transparent;
+            label25.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label25.ForeColor = Color.White;
+            label25.Location = new Point(4, 451);
+            label25.Name = "label25";
+            label25.Size = new Size(472, 36);
+            label25.TabIndex = 71;
+            label25.Text = "TINH TRANG CONG NO";
+            label25.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label23
+            // 
+            label23.BackColor = Color.Transparent;
+            label23.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label23.ForeColor = Color.White;
+            label23.Location = new Point(4, 406);
+            label23.Name = "label23";
+            label23.Size = new Size(472, 36);
+            label23.TabIndex = 69;
+            label23.Text = "SO DIEN THOAI NGUOI THAN";
+            label23.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label21
+            // 
+            label21.BackColor = Color.Transparent;
+            label21.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label21.ForeColor = Color.White;
+            label21.Location = new Point(4, 361);
+            label21.Name = "label21";
+            label21.Size = new Size(472, 44);
+            label21.TabIndex = 67;
+            label21.Text = "DU LIEU PHUONG TIEN DANG KY DO XE TAI NHA";
+            label21.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label19
+            // 
+            label19.BackColor = Color.Transparent;
+            label19.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.White;
+            label19.Location = new Point(4, 316);
+            label19.Name = "label19";
+            label19.Size = new Size(472, 36);
+            label19.TabIndex = 65;
+            label19.Text = "PHI DICH VU KHAC";
+            label19.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label17
+            // 
+            label17.BackColor = Color.Transparent;
+            label17.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.ForeColor = Color.White;
+            label17.Location = new Point(4, 271);
+            label17.Name = "label17";
+            label17.Size = new Size(472, 36);
+            label17.TabIndex = 63;
+            label17.Text = "PHI DICH VU QUAN LY HANG THANG";
+            label17.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label15
+            // 
+            label15.BackColor = Color.Transparent;
+            label15.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.White;
+            label15.Location = new Point(4, 226);
+            label15.Name = "label15";
+            label15.Size = new Size(472, 36);
+            label15.TabIndex = 61;
+            label15.Text = "SO LIEU DIEN NUOC PHAT SINH HANG THANG";
+            label15.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label29
             // 
@@ -1046,12 +1053,74 @@
             label29.TabIndex = 35;
             label29.Text = "RESIDENT'S DETAILS";
             // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset;
+            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.Controls.Add(label30, 0, 2);
+            tableLayoutPanel3.Controls.Add(label31, 0, 1);
+            tableLayoutPanel3.Controls.Add(label32, 0, 0);
+            tableLayoutPanel3.Location = new Point(1079, 65);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 3;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.Size = new Size(305, 125);
+            tableLayoutPanel3.TabIndex = 115;
+            tableLayoutPanel3.Visible = false;
+            // 
+            // label30
+            // 
+            label30.Cursor = Cursors.Hand;
+            label30.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label30.ForeColor = Color.White;
+            label30.Image = (Image)resources.GetObject("label30.Image");
+            label30.ImageAlign = ContentAlignment.MiddleRight;
+            label30.Location = new Point(5, 82);
+            label30.Name = "label30";
+            label30.Size = new Size(295, 38);
+            label30.TabIndex = 65;
+            label30.Text = "SIGN OUT";
+            label30.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label31
+            // 
+            label31.Cursor = Cursors.Hand;
+            label31.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label31.ForeColor = Color.White;
+            label31.Image = (Image)resources.GetObject("label31.Image");
+            label31.ImageAlign = ContentAlignment.MiddleRight;
+            label31.Location = new Point(5, 42);
+            label31.Name = "label31";
+            label31.Size = new Size(295, 38);
+            label31.TabIndex = 64;
+            label31.Text = "CHANGE PASSWORD";
+            label31.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            label32.Cursor = Cursors.Hand;
+            label32.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label32.ForeColor = Color.White;
+            label32.Image = (Image)resources.GetObject("label32.Image");
+            label32.ImageAlign = ContentAlignment.MiddleRight;
+            label32.Location = new Point(5, 2);
+            label32.Name = "label32";
+            label32.Size = new Size(295, 38);
+            label32.TabIndex = 63;
+            label32.Text = "INFORMATION";
+            label32.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // CM_Resident_sDetail_Commercial
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(31, 31, 31);
             ClientSize = new Size(1382, 753);
+            Controls.Add(tableLayoutPanel3);
             Controls.Add(label29);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(customPanel1);
@@ -1059,11 +1128,13 @@
             Controls.Add(panel1);
             Name = "CM_Resident_sDetail_Commercial";
             Text = "CM_Resident_sDetail_Commercial";
+            Load += CM_Resident_sDetail_Commercial_Load;
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             customPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1127,5 +1198,9 @@
         private Label label7;
         private Label label6;
         private Label label29;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Label label30;
+        private Label label31;
+        private Label label32;
     }
 }
