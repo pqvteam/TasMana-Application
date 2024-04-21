@@ -463,15 +463,13 @@ namespace UIs
 
         private void customButton22_Click(object sender, EventArgs e)
         {
-            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            if (tableLayoutPanel1.Visible == false)
             {
-                M_Information information = new M_Information();
-                information.ShowDialog();
+                tableLayoutPanel1.Visible = true;
             }
             else
             {
-                E_Information information = new E_Information();
-                information.ShowDialog();
+                tableLayoutPanel1.Visible = false;
             }
         }
 
@@ -507,6 +505,16 @@ namespace UIs
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             PerformSearch();
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -519,5 +527,6 @@ namespace UIs
             A_MyTaskList editTask = new A_MyTaskList();
             editTask.ShowDialog();
         }
+
     }
 }

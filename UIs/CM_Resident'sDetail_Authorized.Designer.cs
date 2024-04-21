@@ -85,11 +85,16 @@
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            label29 = new Label();
+            label30 = new Label();
+            label31 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             customPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -178,7 +183,6 @@
             // 
             // customButton18
             // 
-            customButton18.AutoEllipsis = true;
             customButton18.BackColor = Color.Black;
             customButton18.BackgroundColor = Color.Black;
             customButton18.BorderColor = Color.PaleVioletRed;
@@ -329,6 +333,7 @@
             customButton13.BorderColor = Color.Transparent;
             customButton13.BorderRadius = 28;
             customButton13.BorderSize = 0;
+            customButton13.Cursor = Cursors.Hand;
             customButton13.FlatAppearance.BorderSize = 0;
             customButton13.FlatStyle = FlatStyle.Flat;
             customButton13.ForeColor = Color.White;
@@ -339,6 +344,7 @@
             customButton13.TabIndex = 38;
             customButton13.TextColor = Color.White;
             customButton13.UseVisualStyleBackColor = false;
+            customButton13.Click += customButton13_Click;
             // 
             // customButton14
             // 
@@ -361,6 +367,7 @@
             customButton14.TextColor = Color.White;
             customButton14.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton14.UseVisualStyleBackColor = false;
+            customButton14.Click += customButton14_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -1028,12 +1035,74 @@
             label7.Text = "TEMPORARY RESIDENT CARD NUMBER";
             label7.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset;
+            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.Controls.Add(label29, 0, 2);
+            tableLayoutPanel3.Controls.Add(label30, 0, 1);
+            tableLayoutPanel3.Controls.Add(label31, 0, 0);
+            tableLayoutPanel3.Location = new Point(1075, 61);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 3;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.Size = new Size(305, 125);
+            tableLayoutPanel3.TabIndex = 114;
+            tableLayoutPanel3.Visible = false;
+            // 
+            // label29
+            // 
+            label29.Cursor = Cursors.Hand;
+            label29.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label29.ForeColor = Color.White;
+            label29.Image = (Image)resources.GetObject("label29.Image");
+            label29.ImageAlign = ContentAlignment.MiddleRight;
+            label29.Location = new Point(5, 82);
+            label29.Name = "label29";
+            label29.Size = new Size(295, 38);
+            label29.TabIndex = 65;
+            label29.Text = "SIGN OUT";
+            label29.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            label30.Cursor = Cursors.Hand;
+            label30.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label30.ForeColor = Color.White;
+            label30.Image = (Image)resources.GetObject("label30.Image");
+            label30.ImageAlign = ContentAlignment.MiddleRight;
+            label30.Location = new Point(5, 42);
+            label30.Name = "label30";
+            label30.Size = new Size(295, 38);
+            label30.TabIndex = 64;
+            label30.Text = "CHANGE PASSWORD";
+            label30.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label31
+            // 
+            label31.Cursor = Cursors.Hand;
+            label31.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label31.ForeColor = Color.White;
+            label31.Image = (Image)resources.GetObject("label31.Image");
+            label31.ImageAlign = ContentAlignment.MiddleRight;
+            label31.Location = new Point(5, 2);
+            label31.Name = "label31";
+            label31.Size = new Size(295, 38);
+            label31.TabIndex = 63;
+            label31.Text = "INFORMATION";
+            label31.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // CM_Resident_sDetail_Authorized
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(31, 31, 31);
             ClientSize = new Size(1382, 753);
+            Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(label6);
             Controls.Add(customPanel1);
@@ -1047,6 +1116,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             customPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1109,5 +1179,9 @@
         private Label label11;
         private Label label10;
         private Label label9;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Label label29;
+        private Label label30;
+        private Label label31;
     }
 }
