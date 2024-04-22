@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIs", "UIs\UIs.csproj", "{07C90E1E-84D9-4DEF-B9B9-3BA9DEE3EECD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cronjob", "Cronjob\Cronjob.csproj", "{F96B43D5-26B3-4336-A21C-9160ECE26700}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{07C90E1E-84D9-4DEF-B9B9-3BA9DEE3EECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07C90E1E-84D9-4DEF-B9B9-3BA9DEE3EECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07C90E1E-84D9-4DEF-B9B9-3BA9DEE3EECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F96B43D5-26B3-4336-A21C-9160ECE26700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F96B43D5-26B3-4336-A21C-9160ECE26700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F96B43D5-26B3-4336-A21C-9160ECE26700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F96B43D5-26B3-4336-A21C-9160ECE26700}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

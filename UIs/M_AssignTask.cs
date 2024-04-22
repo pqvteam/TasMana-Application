@@ -108,6 +108,7 @@ namespace UIs
 
         private void M_AssignTask_Load(object sender, EventArgs e)
         {
+            assignerLabel.Text = Session.Instance.UserName;
             taskStatus.SelectedIndex = 0;
             taskPriority.SelectedIndex = 0;
             if (Session.Instance.laQuanLi)
