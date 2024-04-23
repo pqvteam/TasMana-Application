@@ -126,6 +126,7 @@ namespace UIs
         private void customButton5_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
 
         private void G_Login_Load(object sender, EventArgs e)
