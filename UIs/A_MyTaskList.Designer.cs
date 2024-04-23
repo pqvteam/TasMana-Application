@@ -69,7 +69,7 @@
             statusBox = new CustomComponent.CustomComboBox();
             label1 = new Label();
             customButton4 = new CustomComponent.CustomButton();
-            typeBox = new CustomComponent.CustomComboBox();
+            tagBox = new CustomComponent.CustomComboBox();
             label3 = new Label();
             customButton10 = new CustomComponent.CustomButton();
             saveButton = new CustomComponent.CustomButton();
@@ -636,6 +636,7 @@
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 96;
             pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
             // searchBox
             // 
@@ -649,6 +650,7 @@
             searchBox.PlaceholderText = "Search";
             searchBox.Size = new Size(693, 20);
             searchBox.TabIndex = 94;
+            searchBox.TextChanged += searchBox_TextChanged;
             // 
             // rjTextBox5
             // 
@@ -716,6 +718,7 @@
             editMode.TabIndex = 111;
             editMode.TabStop = false;
             editMode.UseVisualStyleBackColor = true;
+            editMode.CheckedChanged += editMode_CheckedChanged;
             // 
             // label19
             // 
@@ -747,6 +750,7 @@
             departmentsBox.Size = new Size(282, 36);
             departmentsBox.TabIndex = 113;
             departmentsBox.Texts = "";
+            departmentsBox.OnSelectedIndexChanged += departmentsBox_OnSelectedIndexChanged;
             // 
             // label2
             // 
@@ -789,7 +793,7 @@
             statusBox.Font = new Font("Segoe UI", 10F);
             statusBox.ForeColor = Color.DimGray;
             statusBox.IconColor = Color.White;
-            statusBox.Items.AddRange(new object[] { "Pending", "Completed", "Postponded", "Canceled" });
+            statusBox.Items.AddRange(new object[] { "Pending", "Completed", "Postponded", "Canceled", "All" });
             statusBox.ListBackColor = Color.FromArgb(230, 228, 245);
             statusBox.ListTextColor = Color.DimGray;
             statusBox.Location = new Point(662, 173);
@@ -799,6 +803,7 @@
             statusBox.Size = new Size(282, 36);
             statusBox.TabIndex = 116;
             statusBox.Texts = "";
+            statusBox.OnSelectedIndexChanged += statusBox_OnSelectedIndexChanged;
             // 
             // label1
             // 
@@ -829,27 +834,28 @@
             customButton4.TextColor = Color.White;
             customButton4.UseVisualStyleBackColor = false;
             // 
-            // typeBox
+            // tagBox
             // 
-            typeBox.AutoCompleteCustomSource.AddRange(new string[] { "You are the sender", "Your are the receiver" });
-            typeBox.BackColor = Color.FromArgb(42, 42, 42);
-            typeBox.BorderColor = Color.FromArgb(42, 42, 42);
-            typeBox.BorderSize = 1;
-            typeBox.Cursor = Cursors.Hand;
-            typeBox.DropDownStyle = ComboBoxStyle.DropDown;
-            typeBox.Font = new Font("Segoe UI", 10F);
-            typeBox.ForeColor = Color.DimGray;
-            typeBox.IconColor = Color.White;
-            typeBox.Items.AddRange(new object[] { "You are the sender", "Your are the receiver" });
-            typeBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            typeBox.ListTextColor = Color.DimGray;
-            typeBox.Location = new Point(345, 173);
-            typeBox.MinimumSize = new Size(200, 30);
-            typeBox.Name = "typeBox";
-            typeBox.Padding = new Padding(1);
-            typeBox.Size = new Size(282, 36);
-            typeBox.TabIndex = 119;
-            typeBox.Texts = "";
+            tagBox.AutoCompleteCustomSource.AddRange(new string[] { "You are the sender", "Your are the receiver" });
+            tagBox.BackColor = Color.FromArgb(42, 42, 42);
+            tagBox.BorderColor = Color.FromArgb(42, 42, 42);
+            tagBox.BorderSize = 1;
+            tagBox.Cursor = Cursors.Hand;
+            tagBox.DropDownStyle = ComboBoxStyle.DropDown;
+            tagBox.Font = new Font("Segoe UI", 10F);
+            tagBox.ForeColor = Color.DimGray;
+            tagBox.IconColor = Color.White;
+            tagBox.Items.AddRange(new object[] { "You are the sender", "Your are the receiver" });
+            tagBox.ListBackColor = Color.FromArgb(230, 228, 245);
+            tagBox.ListTextColor = Color.DimGray;
+            tagBox.Location = new Point(345, 173);
+            tagBox.MinimumSize = new Size(200, 30);
+            tagBox.Name = "tagBox";
+            tagBox.Padding = new Padding(1);
+            tagBox.Size = new Size(282, 36);
+            tagBox.TabIndex = 119;
+            tagBox.Texts = "";
+            tagBox.OnSelectedIndexChanged += typeBox_OnSelectedIndexChanged;
             // 
             // label3
             // 
@@ -858,9 +864,9 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(334, 144);
             label3.Name = "label3";
-            label3.Size = new Size(58, 19);
+            label3.Size = new Size(49, 19);
             label3.TabIndex = 118;
-            label3.Text = "TYPE";
+            label3.Text = "TAG";
             // 
             // customButton10
             // 
@@ -899,6 +905,7 @@
             saveButton.Text = "EDIT";
             saveButton.TextColor = Color.White;
             saveButton.UseVisualStyleBackColor = false;
+            saveButton.Visible = false;
             saveButton.Click += saveButton_Click;
             // 
             // cancelButton
@@ -920,6 +927,7 @@
             cancelButton.Text = "CANCEL";
             cancelButton.TextColor = Color.White;
             cancelButton.UseVisualStyleBackColor = false;
+            cancelButton.Visible = false;
             cancelButton.Click += cancelButton_Click;
             // 
             // A_MyTaskList
@@ -930,7 +938,7 @@
             ClientSize = new Size(1400, 800);
             Controls.Add(saveButton);
             Controls.Add(cancelButton);
-            Controls.Add(typeBox);
+            Controls.Add(tagBox);
             Controls.Add(label3);
             Controls.Add(customButton10);
             Controls.Add(statusBox);
@@ -1010,7 +1018,7 @@
         private CustomComponent.CustomComboBox departmentsBox;
         private Label label2;
         private CustomComponent.CustomButton customButton3;
-        private CustomComponent.CustomComboBox typeBox;
+        private CustomComponent.CustomComboBox tagBox;
         private Label label3;
         private CustomComponent.CustomButton customButton10;
         private CustomComponent.CustomComboBox statusBox;
