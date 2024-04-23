@@ -1,6 +1,4 @@
-﻿using Repositories.Entities;
-using Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
+using Repositories.Entities;
+using Repositories.Utilities;
+using Services;
 
 namespace UIs
 {
@@ -16,31 +18,48 @@ namespace UIs
     {
         GiaoViecService giaoViecService = new GiaoViecService();
         NhanViecService nhanViecService = new NhanViecService();
+        PhongBanService phongBanService = new PhongBanService();
         KhuVucLamViecService khuVucLamViecService = new KhuVucLamViecService();
         TagService tagService = new TagService();
         private string selectedTaskID = "";
+
         public A_MyTaskList()
         {
             InitializeComponent();
         }
 
-        private void currentUserName_Click(object sender, EventArgs e)
-        {
+        private void currentUserName_Click(object sender, EventArgs e) { }
 
-        }
-
-        private void customButton3_Click(object sender, EventArgs e)
-        {
-        }
+        private void customButton3_Click(object sender, EventArgs e) { }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
         private void A_EditTask_Load(object sender, EventArgs e)
         {
+            if (editMode.Checked)
+            {
+                cancelButton.Visible = true;
+                saveButton.Visible = true;
+            }
+            departmentsBox.Items.Clear();
+            List<PhongBan> departments = phongBanService.getAllDepartment();
+            foreach (PhongBan department in departments)
+            {
+                departmentsBox.Items.Add(department.MaPb);
+            }
+            departmentsBox.Items.Add("All");
+
+            tagBox.Items.Clear();
+            List<(string name, string ID, string description)> tags = tagService.getAllTag();
+            foreach ((string name, string ID, string description) tag in tags)
+            {
+                tagBox.Items.Add(tag.name);
+            }
+            tagBox.Items.Add("All");
+
             string currentUser = Session.Instance.Name;
             if (Session.Instance.laCEO)
             {
@@ -182,7 +201,22 @@ namespace UIs
             );
             if (task != null)
             {
-                A_EditTask editTask = new A_EditTask(task.MoTaCongViec, task.NgayGiao, task.HanHoanThanh, task.TinhTrangCongViec, isValidFile, task.MaGiaoViec, task.CheDo == true ? 1 : 0, task.TenCongViec, venue, implementor, Session.Instance.laCEO == true ? 1 : 0, Session.Instance.UserName, task.UyQuyenBoi, tag.Count != 0 ? tag[0].name : "N/A");
+                A_EditTask editTask = new A_EditTask(
+                    task.MoTaCongViec,
+                    task.NgayGiao,
+                    task.HanHoanThanh,
+                    task.TinhTrangCongViec,
+                    isValidFile,
+                    task.MaGiaoViec,
+                    task.CheDo == true ? 1 : 0,
+                    task.TenCongViec,
+                    venue,
+                    implementor,
+                    Session.Instance.laCEO == true ? 1 : 0,
+                    Session.Instance.UserName,
+                    task.UyQuyenBoi,
+                    tag.Count != 0 ? tag[0].name : "N/A"
+                );
                 editTask.ShowDialog();
             }
         }
@@ -195,6 +229,148 @@ namespace UIs
         private void customButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void typeBox_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            performSearch();
+        }
+
+        private void statusBox_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            performSearch();
+        }
+
+        private void performSearch()
+        {
+            string keySearch = searchBox.Text;
+            string selectedDepartment =
+                departmentsBox.SelectedItem != null ? departmentsBox.SelectedItem.ToString() : "";
+            string selectedTag = tagBox.SelectedItem != null ? tagBox.SelectedItem.ToString() : "";
+            string selectedStatus =
+                statusBox.SelectedItem != null ? statusBox.SelectedItem.ToString() : "";
+
+            try
+            {
+                DatabaseConnection.Instance.OpenConnection();
+
+                SqlConnection conn = DatabaseConnection.Instance.GetConnection();
+
+                membersGrid.Rows.Clear();
+                using (
+                    SqlCommand command = new SqlCommand(
+                        "SELECT * FROM dbo.timKiemCongViec(@noidung)",
+                        conn
+                    )
+                )
+                {
+                    command.Parameters.AddWithValue("@noidung", keySearch);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                string ID = reader.GetString(reader.GetOrdinal("maGiaoViec"));
+                                string assignerID = ID.Split('.')[0];
+                                string departmentID = assignerID.Split('-')[0];
+                                string name = reader.GetString(reader.GetOrdinal("tenCongViec"));
+                                string description = reader.GetString(
+                                    reader.GetOrdinal("moTaCongViec")
+                                );
+                                string start = reader
+                                    .GetDateTime("ngayGiao")
+                                    .ToString("dd/MM/yyyy");
+                                string end = reader
+                                    .GetDateTime("hanHoanThanh")
+                                    .ToString("dd/MM/yyyy");
+                                string status = reader.GetString(
+                                    reader.GetOrdinal("tinhTrangCongViec")
+                                );
+
+                                bool isValidDepartment =
+                                    string.IsNullOrEmpty(selectedDepartment)
+                                    || selectedDepartment == "All"
+                                    || departmentID == selectedDepartment;
+
+                                bool isValidStatus =
+                                    string.IsNullOrEmpty(selectedStatus)
+                                    || selectedStatus == "All"
+                                    || status == selectedStatus;
+
+                                List<(string name, string ID, string description)> tags =
+                                    tagService.getTaskTagInfo(ID);
+                                string tag = tags.Count > 0 ? tags[0].name : "N/A";
+
+                                bool isValidTag =
+                                    string.IsNullOrEmpty(selectedTag)
+                                    || selectedTag == "All"
+                                    || tag == selectedTag;
+
+                                if (isValidDepartment && isValidStatus && isValidTag)
+                                {
+                                    int rowIndex = membersGrid.Rows.Add(
+                                        ID,
+                                        name,
+                                        description,
+                                        start,
+                                        end,
+                                        status,
+                                        tag
+                                    );
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy kết quả nào.");
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                string logFilePath = "error.log"; // Đường dẫn tới tệp tin log, bạn có thể thay đổi đường dẫn này
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"Error occurred at {DateTime.Now}: {e.Message}");
+                    writer.WriteLine($"Stack trace: {e.StackTrace}");
+                    writer.WriteLine("----------------------------------------------");
+                }
+            }
+            finally
+            {
+                DatabaseConnection.Instance.CloseConnection();
+            }
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void departmentsBox_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            performSearch();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            performSearch();
+        }
+
+        private void editMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (editMode.Checked)
+            {
+                cancelButton.Visible = true;
+                saveButton.Visible = true;
+            } else
+            {
+                cancelButton.Visible = false;
+                saveButton.Visible = false;
+            }
         }
     }
 }
