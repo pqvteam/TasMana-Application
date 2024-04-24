@@ -172,7 +172,7 @@
             customButton2.ForeColor = Color.FromArgb(0, 192, 0);
             customButton2.Location = new Point(63, 194);
             customButton2.Name = "customButton2";
-            customButton2.Size = new Size(854, 50);
+            customButton2.Size = new Size(416, 50);
             customButton2.TabIndex = 85;
             customButton2.Text = "COMPLETED";
             customButton2.TextAlign = ContentAlignment.MiddleLeft;
@@ -193,7 +193,7 @@
             customButton3.ForeColor = Color.White;
             customButton3.Location = new Point(63, 250);
             customButton3.Name = "customButton3";
-            customButton3.Size = new Size(854, 50);
+            customButton3.Size = new Size(416, 50);
             customButton3.TabIndex = 86;
             customButton3.Text = "UNEXECUTED/NOT YET STARTED";
             customButton3.TextAlign = ContentAlignment.MiddleLeft;
@@ -214,7 +214,7 @@
             customButton5.ForeColor = Color.Gold;
             customButton5.Location = new Point(63, 306);
             customButton5.Name = "customButton5";
-            customButton5.Size = new Size(854, 50);
+            customButton5.Size = new Size(416, 50);
             customButton5.TabIndex = 87;
             customButton5.Text = "PROCESSING";
             customButton5.TextAlign = ContentAlignment.MiddleLeft;
@@ -235,7 +235,7 @@
             customButton6.ForeColor = Color.Cyan;
             customButton6.Location = new Point(63, 362);
             customButton6.Name = "customButton6";
-            customButton6.Size = new Size(854, 50);
+            customButton6.Size = new Size(416, 50);
             customButton6.TabIndex = 88;
             customButton6.Text = "CUSTOMER RESCHEDULE";
             customButton6.TextAlign = ContentAlignment.MiddleLeft;
@@ -256,7 +256,7 @@
             customButton7.ForeColor = Color.Tomato;
             customButton7.Location = new Point(63, 418);
             customButton7.Name = "customButton7";
-            customButton7.Size = new Size(854, 50);
+            customButton7.Size = new Size(416, 50);
             customButton7.TabIndex = 89;
             customButton7.Text = "UNCOMPLETED";
             customButton7.TextAlign = ContentAlignment.MiddleLeft;
