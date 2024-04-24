@@ -495,7 +495,18 @@ namespace UIs
             }
         }
 
-        private void currentAvatarSmall_Click(object sender, EventArgs e) { }
+        private void currentAvatarSmall_Click(object sender, EventArgs e) {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
 
         private void C_AllTaskList_Shown(object sender, EventArgs e) { }
 
@@ -756,6 +767,11 @@ namespace UIs
             customButton16.Font = fontLarge;
             createGroupButton.Font = fontLarge;
             grandChart.Font = fontLarge;
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
 
         }
     }
