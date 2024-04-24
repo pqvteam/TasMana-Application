@@ -373,9 +373,8 @@
             label21.ForeColor = Color.White;
             label21.Location = new Point(59, 253);
             label21.Name = "label21";
-            label21.Size = new Size(142, 19);
+            label21.Size = new Size(0, 19);
             label21.TabIndex = 43;
-            label21.Text = "DESCRIPTION";
             // 
             // customPictureBox2
             // 
@@ -411,9 +410,8 @@
             venueLabel.ForeColor = Color.White;
             venueLabel.Location = new Point(16, 466);
             venueLabel.Name = "venueLabel";
-            venueLabel.Size = new Size(142, 19);
+            venueLabel.Size = new Size(0, 19);
             venueLabel.TabIndex = 50;
-            venueLabel.Text = "DESCRIPTION";
             // 
             // assignerLabel
             // 
@@ -422,9 +420,8 @@
             assignerLabel.ForeColor = Color.White;
             assignerLabel.Location = new Point(59, 152);
             assignerLabel.Name = "assignerLabel";
-            assignerLabel.Size = new Size(142, 19);
+            assignerLabel.Size = new Size(0, 19);
             assignerLabel.TabIndex = 45;
-            assignerLabel.Text = "DESCRIPTION";
             // 
             // customPictureBox3
             // 
@@ -459,9 +456,8 @@
             receiverLabel.ForeColor = Color.White;
             receiverLabel.Location = new Point(59, 61);
             receiverLabel.Name = "receiverLabel";
-            receiverLabel.Size = new Size(142, 19);
+            receiverLabel.Size = new Size(0, 19);
             receiverLabel.TabIndex = 41;
-            receiverLabel.Text = "DESCRIPTION";
             // 
             // pictureBox9
             // 
@@ -480,14 +476,18 @@
             label23.ForeColor = Color.White;
             label23.Location = new Point(59, 364);
             label23.Name = "label23";
-            label23.Size = new Size(142, 19);
+            label23.Size = new Size(0, 19);
             label23.TabIndex = 47;
-            label23.Text = "DESCRIPTION";
             // 
             // taskStart
             // 
             taskStart.BorderColor = Color.PaleVioletRed;
             taskStart.BorderSize = 0;
+            taskStart.CalendarForeColor = Color.White;
+            taskStart.CalendarMonthBackground = Color.Black;
+            taskStart.CalendarTitleBackColor = Color.Black;
+            taskStart.CalendarTitleForeColor = Color.White;
+            taskStart.CalendarTrailingForeColor = Color.White;
             taskStart.Font = new Font("Copperplate Gothic Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskStart.Format = DateTimePickerFormat.Short;
             taskStart.Location = new Point(349, 410);
@@ -543,6 +543,11 @@
             // 
             taskEnd.BorderColor = Color.PaleVioletRed;
             taskEnd.BorderSize = 0;
+            taskEnd.CalendarForeColor = Color.White;
+            taskEnd.CalendarMonthBackground = Color.Black;
+            taskEnd.CalendarTitleBackColor = Color.Black;
+            taskEnd.CalendarTitleForeColor = Color.White;
+            taskEnd.CalendarTrailingForeColor = Color.White;
             taskEnd.Font = new Font("Copperplate Gothic Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskEnd.Format = DateTimePickerFormat.Short;
             taskEnd.Location = new Point(719, 410);
@@ -1129,7 +1134,7 @@
             // 
             taskFile.BackColor = Color.FromArgb(42, 42, 42);
             taskFile.BorderStyle = BorderStyle.None;
-            taskFile.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            taskFile.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskFile.ForeColor = Color.White;
             taskFile.Location = new Point(345, 308);
             taskFile.Multiline = true;
@@ -1182,7 +1187,7 @@
             // 
             taskDescription.BackColor = Color.FromArgb(42, 42, 42);
             taskDescription.BorderStyle = BorderStyle.None;
-            taskDescription.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            taskDescription.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskDescription.ForeColor = Color.White;
             taskDescription.Location = new Point(344, 200);
             taskDescription.Multiline = true;

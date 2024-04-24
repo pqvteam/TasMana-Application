@@ -190,6 +190,15 @@ namespace UIs
             }
         }
 
+        private void membersGrid_CellContentDownloadClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == membersGrid.Columns["lnkColumn"].Index && e.RowIndex >= 0)
+            {
+                string id = membersGrid.Rows[e.RowIndex].Cells["MaGiaoViec"].Value.ToString();
+                giaoViecService.downloadAttachedFile(id);
+            }
+        }
+
         private void saveButton_Click(object sender, EventArgs e)
         {
             GiaoViec? task = giaoViecService.findAssignedTask(selectedTaskID);

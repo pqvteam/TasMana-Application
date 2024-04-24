@@ -485,7 +485,7 @@
             typeAccountBox.BorderSize = 1;
             typeAccountBox.Cursor = Cursors.Hand;
             typeAccountBox.DropDownStyle = ComboBoxStyle.DropDown;
-            typeAccountBox.Font = new Font("Segoe UI", 10F);
+            typeAccountBox.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             typeAccountBox.ForeColor = Color.White;
             typeAccountBox.IconColor = Color.White;
             typeAccountBox.Items.AddRange(new object[] { "CEO", "Manager", "Staff", "All" });

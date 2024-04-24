@@ -600,7 +600,7 @@
             membersGrid.Size = new Size(989, 442);
             membersGrid.TabIndex = 107;
             membersGrid.CellClick += membersGrid_CellContentClick;
-            membersGrid.CellContentClick += membersGrid_CellContentClick;
+            membersGrid.CellContentClick += membersGrid_CellContentDownloadClick;
             // 
             // rjTextBox7
             // 
@@ -738,11 +738,11 @@
             departmentsBox.BorderSize = 1;
             departmentsBox.Cursor = Cursors.Hand;
             departmentsBox.DropDownStyle = ComboBoxStyle.DropDown;
-            departmentsBox.Font = new Font("Segoe UI", 10F);
-            departmentsBox.ForeColor = Color.DimGray;
+            departmentsBox.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            departmentsBox.ForeColor = Color.White;
             departmentsBox.IconColor = Color.White;
-            departmentsBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            departmentsBox.ListTextColor = Color.DimGray;
+            departmentsBox.ListBackColor = Color.Black;
+            departmentsBox.ListTextColor = Color.White;
             departmentsBox.Location = new Point(977, 173);
             departmentsBox.MinimumSize = new Size(200, 30);
             departmentsBox.Name = "departmentsBox";
@@ -790,12 +790,12 @@
             statusBox.BorderSize = 1;
             statusBox.Cursor = Cursors.Hand;
             statusBox.DropDownStyle = ComboBoxStyle.DropDown;
-            statusBox.Font = new Font("Segoe UI", 10F);
-            statusBox.ForeColor = Color.DimGray;
+            statusBox.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            statusBox.ForeColor = Color.White;
             statusBox.IconColor = Color.White;
             statusBox.Items.AddRange(new object[] { "Pending", "Completed", "Postponded", "Canceled", "All" });
-            statusBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            statusBox.ListTextColor = Color.DimGray;
+            statusBox.ListBackColor = Color.Black;
+            statusBox.ListTextColor = Color.White;
             statusBox.Location = new Point(662, 173);
             statusBox.MinimumSize = new Size(200, 30);
             statusBox.Name = "statusBox";
@@ -842,12 +842,12 @@
             tagBox.BorderSize = 1;
             tagBox.Cursor = Cursors.Hand;
             tagBox.DropDownStyle = ComboBoxStyle.DropDown;
-            tagBox.Font = new Font("Segoe UI", 10F);
-            tagBox.ForeColor = Color.DimGray;
+            tagBox.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tagBox.ForeColor = Color.White;
             tagBox.IconColor = Color.White;
             tagBox.Items.AddRange(new object[] { "You are the sender", "Your are the receiver" });
-            tagBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            tagBox.ListTextColor = Color.DimGray;
+            tagBox.ListBackColor = Color.Black;
+            tagBox.ListTextColor = Color.White;
             tagBox.Location = new Point(345, 173);
             tagBox.MinimumSize = new Size(200, 30);
             tagBox.Name = "tagBox";
