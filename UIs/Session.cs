@@ -9,6 +9,7 @@ public class Session
     private static Session instance;
 
     // Các thuộc tính của phiên
+    public string Language { get; set; }
     public string Email { get; set; }
     public string UserName { get; set; }//maThanhVien
 
