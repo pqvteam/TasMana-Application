@@ -29,5 +29,10 @@ namespace Services
         {
             return repository.Add(name, ID, description);
         }
+
+        public bool updateTag(string name, string ID, string description)
+        {
+            return repository.Update(name, ID, description);
+        }
     }
 }

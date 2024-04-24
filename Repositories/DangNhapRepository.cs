@@ -16,7 +16,7 @@ namespace Repositories
         static TasManaContext tasManaContext = new TasManaContext();
         TasManaContext db = new TasManaContext();
         private static string connectionString = tasManaContext.GetConnectionString();
-
+        string maXacNhan = "";
         //Login Function
 
         public string check(string username, string password)
@@ -36,7 +36,7 @@ namespace Repositories
                     string result = $"{reader["Response"]}";
                     return $"{reader["Response"]}";
                 }
-                return "Lỗi kết nối!!";
+                return "Lỗi kết nối!";
             }
             catch (Exception ex)
             {
@@ -55,7 +55,8 @@ namespace Repositories
                 DatabaseConnection.Instance.OpenConnection();
                 SqlConnection conn = DatabaseConnection.Instance.GetConnection();
 
-                string sqlCommand = $"select * from LuuMatKhau where userID='{username}'";
+                //string sqlCommand = $"select * from LuuMatKhau where userID='{username}'";
+                string sqlCommand = $"select * from NhanSu where maThanhVien='{username}'";
                 SqlCommand command = new SqlCommand(sqlCommand, conn);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -63,7 +64,8 @@ namespace Repositories
                 {
                     reader.Close();
                     string sqlCommand1 =
-                        $"update LuuMatKhau set matkhau = '{password}' where userID='{username}'";
+                        //$"update LuuMatKhau set matkhau = '{password}' where userID='{username}'";
+                    $"update NhanSu set matKhau = '{password}' where maThanhVien='{username}'";
                     SqlCommand command1 = new SqlCommand(sqlCommand1, conn);
                     int reader1 = command1.ExecuteNonQuery();
                     if (reader1 > 0)
@@ -75,7 +77,8 @@ namespace Repositories
                 {
                     reader.Close();
                     string sqlCommand1 =
-                        $"insert into LuuMatKhau(userID,matkhau) values('{username}','{password}')";
+                        //$"insert into LuuMatKhau(userID,matkhau) values('{username}','{password}')";
+                    $"insert into NhanSu(maThanhVien,matKhau) values('{username}','{password}')";
                     SqlCommand command1 = new SqlCommand(sqlCommand1, conn);
                     int reader1 = command1.ExecuteNonQuery();
                     if (reader1 > 0)
@@ -234,63 +237,18 @@ namespace Repositories
         }
 
         //ForgotPassword function
-        public bool saveCode(string username, string code)
+        public void saveCode(string username, string code)
         {
-            try
-            {
-                DatabaseConnection.Instance.OpenConnection();
-                SqlConnection conn = DatabaseConnection.Instance.GetConnection();
-
-                string sqlCommand =
-                    $"update LuuMatKhau set maxacnhan='{code}' where userID='{username}'";
-                SqlCommand command = new SqlCommand(sqlCommand, conn);
-                int reader = command.ExecuteNonQuery();
-
-                if (reader > 0)
-                {
-                    return true;
-                }
-                return false;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-            finally
-            {
-                DatabaseConnection.Instance.CloseConnection();
-            }
+            maXacNhan = code;
         }
-
+        ///
         public bool confirmCode(string username, string code)
         {
-            try
+            if (code.Equals(maXacNhan))
             {
-                DatabaseConnection.Instance.OpenConnection();
-                SqlConnection conn = DatabaseConnection.Instance.GetConnection();
-
-                string sqlCommand = $"select maxacnhan from LuuMatKhau where userID='{username}'";
-                SqlCommand command = new SqlCommand(sqlCommand, conn);
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    string maXacNhan = $"{reader["maXacNhan"]}";
-                    if (code.Equals(maXacNhan))
-                    {
-                        return true;
-                    }
-                }
-                return false;
+                  return true;
             }
-            catch (Exception ex)
-            {
-                return false;
-            }
-            finally
-            {
-                DatabaseConnection.Instance.CloseConnection();
-            }
+            return false;
         }
 
         public string getPassword(string username)
@@ -300,7 +258,7 @@ namespace Repositories
                 DatabaseConnection.Instance.OpenConnection();
                 SqlConnection conn = DatabaseConnection.Instance.GetConnection();
 
-                string sqlCommand = $"select matkhau from LuuMatKhau where userID='{username}'";
+                string sqlCommand = $"select matKhau from NhanSu where maThanhVien='{username}'";
                 SqlCommand command = new SqlCommand(sqlCommand, conn);
                 SqlDataReader reader = command.ExecuteReader();
 

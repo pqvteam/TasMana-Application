@@ -336,11 +336,6 @@ namespace UIs
 
         private void currentAvatarSmall_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void customButton22_Click(object sender, EventArgs e)
-        {
             if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
             {
                 M_Information information = new M_Information();
@@ -350,6 +345,18 @@ namespace UIs
             {
                 E_Information information = new E_Information();
                 information.ShowDialog();
+            }
+        }
+
+        private void customButton22_Click(object sender, EventArgs e)
+        {
+            if (tableLayoutPanel3.Visible == false)
+            {
+                tableLayoutPanel3.Visible = true;
+            }
+            else
+            {
+                tableLayoutPanel3.Visible = false;
             }
         }
 
@@ -369,6 +376,16 @@ namespace UIs
         {
             tagNameBox.Text = tag;
             tagName = tag;
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

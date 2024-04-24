@@ -149,7 +149,7 @@ namespace UIs
         private void membersGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string? memberId = membersGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
-
+            string? department = membersGrid.Rows[e.RowIndex].Cells["Department"].Value.ToString();
             bool isManager =
                 membersGrid.Rows[e.RowIndex].Cells["btnAppoint"].Value != null
                     ? (bool)membersGrid.Rows[e.RowIndex].Cells["btnAppoint"].Value
@@ -248,6 +248,7 @@ namespace UIs
                                 if (isSuccess)
                                 {
                                     MessageBox.Show("Depose this account successfully");
+                                    reload();
                                     PerformSearch();
                                 }
                                 else
@@ -255,6 +256,20 @@ namespace UIs
                                     MessageBox.Show("Depose this account failure");
                                 }
                             }
+                            else if(Session.Instance.UserName.Contains(department) && isManager==false && Session.Instance.laQuanLi==true)
+                            {
+                                bool isSuccess = quanLyService.firedStaff(memberId, Session.Instance.UserName);
+                                if (isSuccess)
+                                {
+                                    MessageBox.Show("Depose this account successfully");
+                                    reload();
+                                    PerformSearch();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Depose this account failure");
+                                }
+                            }    
                             else
                             {
                                 MessageBox.Show("You don't have right to depose");
@@ -269,6 +284,7 @@ namespace UIs
                 }
             }    
             reload();
+            PerformSearch();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -800,16 +816,15 @@ namespace UIs
 
         private void customButton22_Click(object sender, EventArgs e)
         {
-            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            if (tableLayoutPanel1.Visible == false)
             {
-                M_Information information = new M_Information();
-                information.ShowDialog();
+                tableLayoutPanel1.Visible = true;
             }
             else
             {
-                E_Information information = new E_Information();
-                information.ShowDialog();
+                tableLayoutPanel1.Visible = false;
             }
+
         }
 
         public Image convertByteToImage(byte[] data)
@@ -834,6 +849,50 @@ namespace UIs
             {
                 return false; // Image data is not valid
             }
+        }
+
+        private void currentAvatarSmall_Click(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        private void headerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void customButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void info_button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

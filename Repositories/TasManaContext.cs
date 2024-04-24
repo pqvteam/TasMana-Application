@@ -52,7 +52,6 @@ public partial class TasManaContext : DbContext
     {
         IConfiguration configuration = new ConfigurationBuilder()
             .SetBasePath("C:\\Users\\ASUS\\source\\repos\\TasMana-Application\\UIs")
-
             .AddJsonFile("appsettings.json", true, true)
             .Build();
         return configuration["ConnectionStrings:DBDefault"];
