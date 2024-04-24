@@ -2,6 +2,7 @@
 using Repositories.Entities;
 using Repositories.Utilities;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace Services
 {
@@ -34,6 +35,11 @@ namespace Services
         public void downloadAttachedFile(string id)
         {
             repository.DownLoadFile(id);
+        }
+
+        public void UpdateProcess(string id, string status)
+        {
+            repository.UpdateProcess(id, status);
         }
 
         public bool checkValidPdf(string id)

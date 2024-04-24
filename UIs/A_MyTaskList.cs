@@ -11,6 +11,7 @@ using Microsoft.Data.SqlClient;
 using Repositories.Entities;
 using Repositories.Utilities;
 using Services;
+using UIs.CustomComponent;
 
 namespace UIs
 {
@@ -22,6 +23,7 @@ namespace UIs
         KhuVucLamViecService khuVucLamViecService = new KhuVucLamViecService();
         TagService tagService = new TagService();
         private string selectedTaskID = "";
+        private string selectedTaskStatus = "";
 
         public A_MyTaskList()
         {
@@ -37,8 +39,83 @@ namespace UIs
             this.Close();
         }
 
+        private void changeLanguage()
+        {
+            if (Session.Instance.Language == "vi")
+            {
+                languageSelect.SelectedItem = "VIETNAMESE";
+            }
+            else
+            {
+                languageSelect.SelectedItem = "ENGLISH";
+            }
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            Font fontLarge = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            if (Session.Instance.Language == "vi")
+            {
+                customButton8.Text = "THỐNG KÊ";
+                customButton9.Text = "BÁO CÁO";
+                customButton7.Text = "CÔNG VIỆC";
+                customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
+                customButton1.Text = "DỊCH VỤ CƯ DÂN";
+                customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
+                customButton2.Text = "TẤT CẢ CÔNG VIỆC";
+                customButton16.Text = "CÔNG VIỆC CỦA TÔI";
+                customButton5.Text = "CÔNG VIỆC ĐƯỢC CHIA SẺ";
+                createGroupButton.Text = "TẠO NHÓM";
+                grandChart.Text = "VẼ BIỂU ĐỒ";
+                label1.Text = "TRẠNG THÁI";
+                label2.Text = "PHÒNG BAN";
+                label3.Text = "NHÃN";
+                label19.Text = "CHỈNH SỬA";
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            }
+            else
+            {
+                fontLarge = new Font("Copperplate Gothic Bold", 12);
+                font = new Font("Copperplate Gothic Bold", 10);
+                customButton8.Text = "STATISTIC";
+                customButton9.Text = "REPORT";
+                customButton7.Text = "WORK";
+                customButton18.Text = "APARTMENT RESIDENT";
+                customButton1.Text = "RESIDENT SERVICE";
+                customButton17.Text = "ACCOUNT MANAGEMENT";
+                customButton2.Text = "ALL TASK LIST";
+                customButton16.Text = "MY TASK LIST";
+                customButton5.Text = "OBSERVED TASK";
+                createGroupButton.Text = "CREATE GROUP";
+                grandChart.Text = "GRAND CHART";
+                label1.Text = "STATUS";
+                label2.Text = "DEPARTMENT";
+                label3.Text = "TAG";
+                label19.Text = "EDIT MODE";
+            }
+            customButton8.Font = font;
+            customButton7.Font = font;
+            customButton18.Font = font;
+            customButton1.Font = font;
+            customButton17.Font = font;
+            customButton2.Font = font;
+            customButton16.Font = font;
+            customButton5.Font = font;
+            createGroupButton.Font = font;
+            grandChart.Font = font;
+            label1.Font = font;
+            label2.Font = font;
+            label3.Font = font;
+            label19.Font = font;
+            // Special element
+            customButton2.Font = fontLarge;
+            customButton16.Font = fontLarge;
+            customButton5.Font = fontLarge;
+            createGroupButton.Font = fontLarge;
+            grandChart.Font = fontLarge;
+        }
+
+
         private void A_EditTask_Load(object sender, EventArgs e)
         {
+            changeLanguage();
             if (editMode.Checked)
             {
                 cancelButton.Visible = true;
@@ -187,6 +264,7 @@ namespace UIs
             if (e.RowIndex >= 0)
             {
                 selectedTaskID = membersGrid.Rows[e.RowIndex].Cells["MaGiaoViec"].Value.ToString();
+                selectedTaskStatus = membersGrid.Rows[e.RowIndex].Cells["TinhTrangCongViec"].Value.ToString();
             }
         }
 
@@ -232,6 +310,7 @@ namespace UIs
 
         private void resetButton_Click(object sender, EventArgs e)
         {
+            reload();
             reload();
         }
 
@@ -375,11 +454,93 @@ namespace UIs
             {
                 cancelButton.Visible = true;
                 saveButton.Visible = true;
-            } else
+            }
+            else
             {
                 cancelButton.Visible = false;
                 saveButton.Visible = false;
             }
+        }
+
+        private void customButton13_Click(object sender, EventArgs e)
+        {
+            A_UpdateProcess a_UpdateProcess = new A_UpdateProcess(selectedTaskID, selectedTaskStatus);
+            a_UpdateProcess.ShowDialog();
+        }
+        
+        private void languageSelect_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            Font fontLarge = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            if (languageSelect.SelectedItem.ToString() == "VIETNAMESE")
+            {
+                Session.Instance.Language = "vi";
+                customButton8.Text = "THỐNG KÊ";
+                customButton9.Text = "BÁO CÁO";
+                customButton7.Text = "CÔNG VIỆC";
+                customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
+                customButton1.Text = "DỊCH VỤ CƯ DÂN";
+                customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
+                customButton2.Text = "TẤT CẢ CÔNG VIỆC";
+                customButton16.Text = "CÔNG VIỆC CỦA TÔI";
+                customButton5.Text = "CÔNG VIỆC ĐƯỢC CHIA SẺ";
+                createGroupButton.Text = "TẠO NHÓM";
+                cancelButton.Text = "THOÁT";
+                saveButton.Text = "LƯU";
+                grandChart.Text = "VẼ BIỂU ĐỒ";
+                label1.Text = "TRẠNG THÁI";
+                label2.Text = "PHÒNG BAN";
+                label3.Text = "NHÃN";
+                label19.Text = "CHỈNH SỬA";
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            }
+            else
+            {
+                Session.Instance.Language = "en";
+                fontLarge = new Font("Copperplate Gothic Bold", 12);
+                font = new Font("Copperplate Gothic Bold", 10);
+                customButton8.Text = "STATISTIC";
+                customButton9.Text = "REPORT";
+                customButton7.Text = "WORK";
+                customButton18.Text = "APARTMENT RESIDENT";
+                customButton1.Text = "RESIDENT SERVICE";
+                customButton17.Text = "ACCOUNT MANAGEMENT";
+                customButton2.Text = "ALL TASK LIST";
+                customButton16.Text = "MY TASK LIST";
+                customButton5.Text = "OBSERVED TASK";
+                cancelButton.Text = "CANCEL";
+                saveButton.Text = "SAVE";
+                createGroupButton.Text = "CREATE GROUP";
+                grandChart.Text = "GRAND CHART";
+                label1.Text = "STATUS";
+                label2.Text = "DEPARTMENT";
+                label3.Text = "TAG";
+                label19.Text = "EDIT MODE";
+            }
+            customButton8.Font = font;
+            customButton7.Font = font;
+            customButton18.Font = font;
+            customButton1.Font = font;
+            customButton17.Font = font;
+            customButton2.Font = font;
+            customButton16.Font = font;
+            customButton5.Font = font;
+            createGroupButton.Font = font;
+            grandChart.Font = font;
+            label1.Font = font;
+            label2.Font = font;
+            label3.Font = font;
+            label19.Font = font;
+            customButton2.Font = fontLarge;
+            customButton16.Font = fontLarge;
+            customButton5.Font = fontLarge;
+            createGroupButton.Font = fontLarge;
+            grandChart.Font = fontLarge;
+        }
+
+        private void headerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
