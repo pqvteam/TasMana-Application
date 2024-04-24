@@ -405,6 +405,7 @@
             customButton18.TextAlign = ContentAlignment.MiddleRight;
             customButton18.TextColor = Color.White;
             customButton18.UseVisualStyleBackColor = false;
+            customButton18.Click += customButton18_Click;
             // 
             // customButton17
             // 
@@ -429,6 +430,7 @@
             customButton17.TextColor = Color.White;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
+            customButton17.Click += customButton17_Click;
             // 
             // customButton12
             // 
@@ -571,6 +573,7 @@
             customButton7.TextColor = Color.White;
             customButton7.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton7.UseVisualStyleBackColor = false;
+            customButton7.Click += customButton7_Click;
             // 
             // customButton6
             // 
@@ -850,6 +853,7 @@
             label8.TabIndex = 65;
             label8.Text = "SIGN OUT";
             label8.TextAlign = ContentAlignment.MiddleCenter;
+            label8.Click += label8_Click;
             // 
             // label9
             // 
@@ -864,6 +868,7 @@
             label9.TabIndex = 64;
             label9.Text = "CHANGE PASSWORD";
             label9.TextAlign = ContentAlignment.MiddleCenter;
+            label9.Click += label9_Click;
             // 
             // label10
             // 
@@ -878,6 +883,7 @@
             label10.TabIndex = 63;
             label10.Text = "INFORMATION";
             label10.TextAlign = ContentAlignment.MiddleCenter;
+            label10.Click += label10_Click;
             // 
             // CM_CreateGroup
             // 
