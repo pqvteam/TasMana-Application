@@ -78,7 +78,8 @@
             tagsGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             tagsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tagsGrid.Size = new Size(776, 282);
-            tagsGrid.TabIndex = 59;
+            tagsGrid.TabIndex = 0;
+            tagsGrid.TabStop = false;
             tagsGrid.CellClick += membersGrid_RowContentClick;
             tagsGrid.CellContentClick += membersGrid_RowContentClick;
             // 
