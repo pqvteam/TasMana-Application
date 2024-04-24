@@ -22,6 +22,7 @@ namespace UIs
         KhuVucLamViecService khuVucLamViecService = new KhuVucLamViecService();
         TagService tagService = new TagService();
         private string selectedTaskID = "";
+        private string selectedTaskStatus = "";
 
         public A_MyTaskList()
         {
@@ -187,6 +188,7 @@ namespace UIs
             if (e.RowIndex >= 0)
             {
                 selectedTaskID = membersGrid.Rows[e.RowIndex].Cells["MaGiaoViec"].Value.ToString();
+                selectedTaskStatus = membersGrid.Rows[e.RowIndex].Cells["TinhTrangCongViec"].Value.ToString();
             }
         }
 
@@ -223,6 +225,7 @@ namespace UIs
 
         private void resetButton_Click(object sender, EventArgs e)
         {
+            reload();
             reload();
         }
 
@@ -366,11 +369,18 @@ namespace UIs
             {
                 cancelButton.Visible = true;
                 saveButton.Visible = true;
-            } else
+            }
+            else
             {
                 cancelButton.Visible = false;
                 saveButton.Visible = false;
             }
+        }
+
+        private void customButton13_Click(object sender, EventArgs e)
+        {
+            A_UpdateProcess a_UpdateProcess = new A_UpdateProcess(selectedTaskID, selectedTaskStatus);
+            a_UpdateProcess.ShowDialog();
         }
     }
 }

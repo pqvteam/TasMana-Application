@@ -1525,6 +1525,7 @@
             customButton2.TextColor = Color.White;
             customButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton2.UseVisualStyleBackColor = false;
+            customButton2.Click += customButton2_Click_1;
             // 
             // tableLayoutPanel1
             // 
