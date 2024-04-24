@@ -254,11 +254,11 @@
             // 
             taskName.BackColor = Color.FromArgb(42, 42, 42);
             taskName.BorderStyle = BorderStyle.None;
-            taskName.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            taskName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskName.ForeColor = Color.White;
-            taskName.Location = new Point(7, 16);
+            taskName.Location = new Point(7, 13);
             taskName.Name = "taskName";
-            taskName.Size = new Size(541, 19);
+            taskName.Size = new Size(541, 23);
             taskName.TabIndex = 0;
             // 
             // taskPriority
@@ -271,8 +271,8 @@
             taskPriority.ForeColor = Color.White;
             taskPriority.IconColor = Color.White;
             taskPriority.Items.AddRange(new object[] { "Normal", "High" });
-            taskPriority.ListBackColor = Color.FromArgb(230, 228, 245);
-            taskPriority.ListTextColor = Color.DimGray;
+            taskPriority.ListBackColor = Color.Black;
+            taskPriority.ListTextColor = Color.White;
             taskPriority.Location = new Point(713, 399);
             taskPriority.MinimumSize = new Size(200, 30);
             taskPriority.Name = "taskPriority";
@@ -291,8 +291,8 @@
             taskStatus.ForeColor = Color.White;
             taskStatus.IconColor = Color.White;
             taskStatus.Items.AddRange(new object[] { "Processing", "Completed", "Postponed" });
-            taskStatus.ListBackColor = Color.FromArgb(230, 228, 245);
-            taskStatus.ListTextColor = Color.DimGray;
+            taskStatus.ListBackColor = Color.Black;
+            taskStatus.ListTextColor = Color.White;
             taskStatus.Location = new Point(343, 400);
             taskStatus.MinimumSize = new Size(200, 30);
             taskStatus.Name = "taskStatus";
@@ -305,6 +305,12 @@
             // 
             taskEnd.BorderColor = Color.PaleVioletRed;
             taskEnd.BorderSize = 0;
+            taskEnd.CalendarForeColor = Color.White;
+            taskEnd.CalendarMonthBackground = Color.Black;
+            taskEnd.CalendarTitleBackColor = Color.Black;
+            taskEnd.CalendarTitleForeColor = Color.White;
+            taskEnd.CalendarTrailingForeColor = Color.White;
+            taskEnd.Cursor = Cursors.Hand;
             taskEnd.Font = new Font("Copperplate Gothic Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskEnd.Format = DateTimePickerFormat.Short;
             taskEnd.Location = new Point(713, 318);
@@ -319,6 +325,12 @@
             // 
             taskStart.BorderColor = Color.PaleVioletRed;
             taskStart.BorderSize = 0;
+            taskStart.CalendarForeColor = Color.White;
+            taskStart.CalendarMonthBackground = Color.Black;
+            taskStart.CalendarTitleBackColor = Color.Black;
+            taskStart.CalendarTitleForeColor = Color.White;
+            taskStart.CalendarTrailingForeColor = Color.White;
+            taskStart.Cursor = Cursors.Hand;
             taskStart.Font = new Font("Copperplate Gothic Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskStart.Format = DateTimePickerFormat.Short;
             taskStart.Location = new Point(343, 318);
@@ -442,7 +454,7 @@
             // 
             taskFile.BackColor = Color.FromArgb(42, 42, 42);
             taskFile.BorderStyle = BorderStyle.None;
-            taskFile.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            taskFile.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskFile.ForeColor = Color.White;
             taskFile.Location = new Point(339, 216);
             taskFile.Multiline = true;
@@ -476,7 +488,7 @@
             // 
             taskDescription.BackColor = Color.FromArgb(42, 42, 42);
             taskDescription.BorderStyle = BorderStyle.None;
-            taskDescription.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            taskDescription.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskDescription.ForeColor = Color.White;
             taskDescription.Location = new Point(338, 108);
             taskDescription.Multiline = true;
