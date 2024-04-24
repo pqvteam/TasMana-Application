@@ -64,13 +64,13 @@
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
             panel2 = new Panel();
+            customButton22 = new CustomComponent.CustomButton();
             panel1 = new Panel();
             headerPanel = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            customButton22 = new CustomComponent.CustomButton();
             customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)avatarBox).BeginInit();
             customPanel1.SuspendLayout();
@@ -519,6 +519,7 @@
             customButton7.TextColor = Color.White;
             customButton7.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton7.UseVisualStyleBackColor = false;
+            customButton7.Click += customButton7_Click;
             // 
             // customButton6
             // 
@@ -582,6 +583,7 @@
             customButton18.TextAlign = ContentAlignment.MiddleRight;
             customButton18.TextColor = Color.White;
             customButton18.UseVisualStyleBackColor = false;
+            customButton18.Click += customButton18_Click;
             // 
             // customButton17
             // 
@@ -605,6 +607,7 @@
             customButton17.TextColor = Color.White;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
+            customButton17.Click += customButton17_Click;
             // 
             // panel2
             // 
@@ -614,6 +617,28 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(117, 59);
             panel2.TabIndex = 23;
+            // 
+            // customButton22
+            // 
+            customButton22.BackColor = Color.Black;
+            customButton22.BackgroundColor = Color.Black;
+            customButton22.BorderColor = Color.PaleVioletRed;
+            customButton22.BorderRadius = 28;
+            customButton22.BorderSize = 0;
+            customButton22.Cursor = Cursors.Hand;
+            customButton22.FlatAppearance.BorderSize = 0;
+            customButton22.FlatStyle = FlatStyle.Flat;
+            customButton22.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton22.ForeColor = Color.White;
+            customButton22.Image = Properties.Resources.triangle_icon;
+            customButton22.Location = new Point(66, 5);
+            customButton22.Name = "customButton22";
+            customButton22.Size = new Size(51, 51);
+            customButton22.TabIndex = 38;
+            customButton22.TextColor = Color.White;
+            customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
+            customButton22.UseVisualStyleBackColor = false;
+            customButton22.Click += customButton22_Click;
             // 
             // panel1
             // 
@@ -674,6 +699,7 @@
             label1.TabIndex = 65;
             label1.Text = "SIGN OUT";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -688,6 +714,7 @@
             label2.TabIndex = 64;
             label2.Text = "CHANGE PASSWORD";
             label2.TextAlign = ContentAlignment.MiddleCenter;
+            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -702,28 +729,6 @@
             label3.TabIndex = 63;
             label3.Text = "INFORMATION";
             label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // customButton22
-            // 
-            customButton22.BackColor = Color.Black;
-            customButton22.BackgroundColor = Color.Black;
-            customButton22.BorderColor = Color.PaleVioletRed;
-            customButton22.BorderRadius = 28;
-            customButton22.BorderSize = 0;
-            customButton22.Cursor = Cursors.Hand;
-            customButton22.FlatAppearance.BorderSize = 0;
-            customButton22.FlatStyle = FlatStyle.Flat;
-            customButton22.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton22.ForeColor = Color.White;
-            customButton22.Image = Properties.Resources.triangle_icon;
-            customButton22.Location = new Point(66, 5);
-            customButton22.Name = "customButton22";
-            customButton22.Size = new Size(51, 51);
-            customButton22.TabIndex = 38;
-            customButton22.TextColor = Color.White;
-            customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton22.UseVisualStyleBackColor = false;
-            customButton22.Click += customButton22_Click;
             // 
             // C_Information
             // 

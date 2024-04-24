@@ -202,6 +202,7 @@
             customButton18.TextAlign = ContentAlignment.MiddleRight;
             customButton18.TextColor = Color.White;
             customButton18.UseVisualStyleBackColor = false;
+            customButton18.Click += customButton18_Click;
             // 
             // customButton17
             // 
@@ -225,6 +226,7 @@
             customButton17.TextColor = Color.White;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
+            customButton17.Click += customButton17_Click;
             // 
             // customButton9
             // 
@@ -294,6 +296,7 @@
             customButton7.TextColor = Color.White;
             customButton7.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton7.UseVisualStyleBackColor = false;
+            customButton7.Click += customButton7_Click;
             // 
             // customButton6
             // 
@@ -429,6 +432,7 @@
             customButton2.Text = "HOLDHOUSE";
             customButton2.TextColor = Color.White;
             customButton2.UseVisualStyleBackColor = false;
+            customButton2.Click += customButton2_Click;
             // 
             // customButton4
             // 
@@ -449,6 +453,7 @@
             customButton4.Text = "TENANT/STAFF OF HOLDHOUSE";
             customButton4.TextColor = Color.White;
             customButton4.UseVisualStyleBackColor = false;
+            customButton4.Click += customButton4_Click;
             // 
             // customButton3
             // 
@@ -489,6 +494,7 @@
             customButton5.Text = "COMMERCIAL";
             customButton5.TextColor = Color.White;
             customButton5.UseVisualStyleBackColor = false;
+            customButton5.Click += customButton5_Click;
             // 
             // customPanel1
             // 
@@ -1067,6 +1073,7 @@
             label29.TabIndex = 65;
             label29.Text = "SIGN OUT";
             label29.TextAlign = ContentAlignment.MiddleCenter;
+            label29.Click += label29_Click;
             // 
             // label30
             // 
@@ -1081,6 +1088,7 @@
             label30.TabIndex = 64;
             label30.Text = "CHANGE PASSWORD";
             label30.TextAlign = ContentAlignment.MiddleCenter;
+            label30.Click += label30_Click;
             // 
             // label31
             // 
@@ -1095,6 +1103,7 @@
             label31.TabIndex = 63;
             label31.Text = "INFORMATION";
             label31.TextAlign = ContentAlignment.MiddleCenter;
+            label31.Click += label31_Click;
             // 
             // CM_Resident_sDetail_Authorized
             // 
