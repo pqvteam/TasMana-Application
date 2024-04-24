@@ -36,6 +36,9 @@ namespace UIs
 
         private void C_AllTaskList_Load(object sender, EventArgs e)
         {
+            changeLanguage();
+            languageSelect.SelectedItem = "English";
+
             GetWeather getWeather = new GetWeather();
             string[] currentWeather = getWeather.getWeatherData("Ho Chi Minh City");
             weatherType.Text = currentWeather[1];
@@ -75,6 +78,8 @@ namespace UIs
             else
             {
                 currentPosition.Text = "STAFF";
+                createGroupButton.Visible = false;
+                createGroupButton.Enabled = false;
             }
             currentNameLabel.Text = $"Hello {currentUser}";
             currentUserName.Text = Session.Instance.Name;
@@ -114,13 +119,30 @@ namespace UIs
                 currentAvatarBig.Image = convertByteToImage(Session.Instance.Avatar);
             }
             membersGrid.Rows.Clear();
-            List<GiaoViec> members = giaoViecService.getAll();
+            // Authentication
+            List<GiaoViec> members = [];
+            if (Session.Instance.laCEO)
+            {
+                members = giaoViecService.getAll();
+            }
+            else if (Session.Instance.laQuanLi)
+            {
+                string departmentID = Session.Instance.UserName.Split('-')[0];
+                members = giaoViecService.getTaskOfDeparment(departmentID);
+            }
+            else
+            {
+                string departmentID = Session.Instance.UserName.Split('-')[0];
+                members = giaoViecService.getTaskOfDeparment(departmentID);
+            }
             int taskQuantity = 0;
             int completedTaskQuantity = 0;
             int incompletedTaskQuantity = 0;
             foreach (GiaoViec member in members)
             {
-                List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(member.MaGiaoViec);
+                List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(
+                    member.MaGiaoViec
+                );
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(membersGrid);
                 row.Cells[0].Value = member.MaGiaoViec;
@@ -129,7 +151,7 @@ namespace UIs
                 row.Cells[3].Value = member.NgayGiao;
                 row.Cells[4].Value = member.HanHoanThanh;
                 row.Cells[5].Value = member.TinhTrangCongViec;
-                row.Cells[6].Value = tag.Count > 0 ? tag[0].name : "NA";
+                row.Cells[6].Value = tag.Count > 0 ? tag[0].name : "N/A";
                 membersGrid.Rows.Add(row);
                 taskQuantity++;
                 if (member.TinhTrangCongViec != null && member.TinhTrangCongViec == "Completed")
@@ -161,6 +183,110 @@ namespace UIs
                 row.Cells[4].Value = member.HanHoanThanh;
                 row.Cells[5].Value = member.TinhTrangCongViec;
                 membersGrid.Rows.Add(row);
+            }
+        }
+
+        private void PerformSearch()
+        {
+            string keySearch = searchBox.Text;
+
+            if (!keySearch.Equals(""))
+            {
+                try
+                {
+                    DatabaseConnection.Instance.OpenConnection();
+
+                    SqlConnection conn = DatabaseConnection.Instance.GetConnection();
+
+                    membersGrid.Rows.Clear();
+                    using (
+                        SqlCommand command = new SqlCommand(
+                            "SELECT * FROM dbo.timKiemCongViec(@noidung)",
+                            conn
+                        )
+                    )
+                    {
+                        command.Parameters.AddWithValue("@noidung", keySearch);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    string ID = reader.GetString(reader.GetOrdinal("maGiaoViec"));
+                                    string name = reader.GetString(
+                                        reader.GetOrdinal("tenCongViec")
+                                    );
+                                    string description = reader.GetString(
+                                        reader.GetOrdinal("moTaCongViec")
+                                    );
+                                    string memberType = "";
+                                    string start = reader
+                                        .GetDateTime("ngayGiao")
+                                        .ToString("dd/MM/yyyy");
+                                    string end = reader
+                                        .GetDateTime("hanHoanThanh")
+                                        .ToString("dd/MM/yyyy");
+                                    string status = reader.GetString(
+                                        reader.GetOrdinal("tinhTrangCongViec")
+                                    );
+                                    List<(string name, string ID, string description)> tags =
+                                        tagService.getTaskTagInfo(ID);
+                                    string tag = tags.Count > 0 ? tags[0].name : "N/A";
+                                    if (Session.Instance.laCEO)
+                                    {
+                                        int rowIndex = membersGrid.Rows.Add(
+                                            ID,
+                                            name,
+                                            description,
+                                            start,
+                                            end,
+                                            status,
+                                            start,
+                                            tag
+                                        );
+                                    }
+                                    else
+                                    {
+                                        if (ID.Contains(Session.Instance.UserName.Split('-')[0]))
+                                        {
+                                            int rowIndex = membersGrid.Rows.Add(
+                                                ID,
+                                                name,
+                                                description,
+                                                start,
+                                                end,
+                                                status,
+                                                start,
+                                                tag
+                                            );
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    string logFilePath = "error.log"; // Đường dẫn tới tệp tin log, bạn có thể thay đổi đường dẫn này
+                    using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                    {
+                        writer.WriteLine($"Error occurred at {DateTime.Now}: {e.Message}");
+                        writer.WriteLine($"Stack trace: {e.StackTrace}");
+                        writer.WriteLine("----------------------------------------------");
+                    }
+                    MessageBox.Show(e.Message);
+                }
+                finally
+                {
+                    DatabaseConnection.Instance.CloseConnection();
+                }
+            }
+            else
+            {
+                reload();
             }
         }
 
@@ -340,15 +466,13 @@ namespace UIs
 
         private void customButton22_Click(object sender, EventArgs e)
         {
-            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            if (tableLayoutPanel1.Visible == false)
             {
-                M_Information information = new M_Information();
-                information.ShowDialog();
+                tableLayoutPanel1.Visible = true;
             }
             else
             {
-                E_Information information = new E_Information();
-                information.ShowDialog();
+                tableLayoutPanel1.Visible = false;
             }
         }
 
@@ -371,10 +495,255 @@ namespace UIs
             }
         }
 
-        private void currentAvatarSmall_Click(object sender, EventArgs e)
-        {
+        private void currentAvatarSmall_Click(object sender, EventArgs e) { }
 
+        private void C_AllTaskList_Shown(object sender, EventArgs e) { }
+
+        private void createGroupButton_Click(object sender, EventArgs e)
+        {
+            CM_CreateGroup createGroup = new CM_CreateGroup();
+            createGroup.ShowDialog();
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            PerformSearch();
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            PerformSearch();
+        }
+
+        private void customButton16_Click(object sender, EventArgs e)
+        {
+            A_MyTaskList editTask = new A_MyTaskList();
+            editTask.ShowDialog();
+        }
+
+        private void changeLanguage()
+        {
+            Font font = new Font("Microsoft Sans Serif", customButton13.Font.Size, FontStyle.Bold);
+            if (Session.Instance.Language == "vi")
+            {
+                customButton13.Text = "CÔNG VIỆC";
+                customButton8.Text = "THỐNG KÊ";
+                customButton9.Text = "BÁO CÁO";
+                customButton7.Text = "QUẢN LÝ TÀI KHOẢN";
+                customButton6.Text = "CƯ DÂN VÀ CĂN HỘ";
+                customButton10.Text = "DỊCH VỤ CƯ DÂN";
+                customButton5.Text = "CÔNG VIỆC ĐANG THEO DÕI";
+                customButton17.Text = "TẤT CẢ CÔNG VIỆC";
+                customButton16.Text = "CÔNG VIỆC CỦA TÔI";
+                createGroupButton.Text = "TẠO NHÓM";
+                grandChart.Text = "BIỂU ĐỒ";
+                label7.Text = "TỔNG QUAN NHIỆM VỤ";
+                label6.Text = "TẤT CẢ CÔNG VIỆC";
+                label10.Text = "ĐÃ HOÀN THÀNH";
+                label12.Text = "CHƯA HOÀN THÀNH";
+                customButton19.Text = "THÊM VIỆC";
+                customButton18.Text = "CẢ CÔNG TY";
+                hrButton.Text = "NHÂN SỰ";
+                coButton.Text = "XÂY DỰNG";
+                seButton.Text = "AN NINH";
+                maButton.Text = "BẢO TRÌ";
+                saButton.Text = "VỆ SINH";
+                fiButton.Text = "TÀI CHÍNH KẾ TOÁN";
+                font = new Font("Microsoft Sans Serif", customButton13.Font.Size, FontStyle.Bold);
+                customButton13.Font = font;
+                customButton8.Font = font;
+                customButton9.Font = font;
+                customButton7.Font = font;
+                customButton6.Font = font;
+                customButton10.Font = font;
+                customButton5.Font = font;
+                customButton17.Font = font;
+                customButton16.Font = font;
+                createGroupButton.Font = font;
+                grandChart.Font = font;
+                label7.Font = font;
+                label6.Font = font;
+                label10.Font = font;
+                label12.Font = font;
+                customButton19.Font = font;
+                customButton18.Font = font;
+                hrButton.Font = font;
+                coButton.Font = font;
+                seButton.Font = font;
+                maButton.Font = font;
+                saButton.Font = font;
+                fiButton.Font = font;
+            }
+            else
+            {
+                customButton13.Text = "WORK";
+                customButton8.Text = "STATISTIC";
+                customButton9.Text = "REPORT";
+                customButton7.Text = "ACCOUNT MANAGEMENT";
+                customButton6.Text = "DEPARTMENT RESIDENT";
+                customButton10.Text = "RESIDENT SERVICE";
+                customButton5.Text = "OBSERVED TASK";
+                customButton17.Text = "ALL TASK LIST";
+                customButton16.Text = "MY TASK LIST";
+                createGroupButton.Text = "CREATE GROUP";
+                grandChart.Text = "GRAND CHART";
+                label7.Text = "DashBoard Overview";
+                label6.Text = "TOTAL TASKS";
+                label10.Text = "COMPLETED";
+                label12.Text = "NOT COMPLETED";
+                customButton19.Text = "ADD TASK";
+                customButton18.Text = "ALL COMPANY";
+                hrButton.Text = "HR & RS";
+                coButton.Text = "CONSTRUCTION";
+                seButton.Text = "SECURITY";
+                maButton.Text = "MAINTAINANCE";
+                saButton.Text = "SANTINATION";
+                fiButton.Text = "FINANCIAL ACCOUNTING";
+                font = new Font("Copperplate Gothic Bold", 12, FontStyle.Bold);
+            }
+            customButton13.Font = font;
+            customButton8.Font = font;
+            customButton9.Font = font;
+            customButton7.Font = font;
+            customButton6.Font = font;
+            customButton10.Font = font;
+            customButton5.Font = font;
+            customButton17.Font = font;
+            customButton16.Font = font;
+            createGroupButton.Font = font;
+            grandChart.Font = font;
+            label7.Font = font;
+            label6.Font = font;
+            label10.Font = font;
+            label12.Font = font;
+            customButton19.Font = font;
+            customButton18.Font = font;
+            hrButton.Font = font;
+            coButton.Font = font;
+            seButton.Font = font;
+            maButton.Font = font;
+            saButton.Font = font;
+            fiButton.Font = font;
+        }
+
+        private void languageSelect_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            if (languageSelect.SelectedItem.ToString() == "Vietnamese")
+            {
+                Session.Instance.Language = "vi";
+                customButton13.Text = "CÔNG VIỆC";
+                customButton8.Text = "THỐNG KÊ";
+                customButton9.Text = "BÁO CÁO";
+                customButton7.Text = "QUẢN LÝ TÀI KHOẢN";
+                customButton6.Text = "CƯ DÂN VÀ CĂN HỘ";
+                customButton10.Text = "DỊCH VỤ CƯ DÂN";
+                customButton5.Text = "CÔNG VIỆC ĐANG THEO DÕI";
+                customButton17.Text = "TẤT CẢ CÔNG VIỆC";
+                customButton16.Text = "CÔNG VIỆC CỦA TÔI";
+                createGroupButton.Text = "TẠO NHÓM";
+                grandChart.Text = "BIỂU ĐỒ";
+                label7.Text = "TỔNG QUAN NHIỆM VỤ";
+                label6.Text = "TẤT CẢ CÔNG VIỆC";
+                label10.Text = "ĐÃ HOÀN THÀNH";
+                label12.Text = "CHƯA HOÀN THÀNH";
+                customButton19.Text = "THÊM VIỆC";
+                customButton18.Text = "CẢ CÔNG TY";
+                hrButton.Text = "NHÂN SỰ";
+                coButton.Text = "XÂY DỰNG";
+                seButton.Text = "AN NINH";
+                maButton.Text = "BẢO TRÌ";
+                saButton.Text = "VỆ SINH";
+                fiButton.Text = "TÀI CHÍNH KẾ TOÁN";
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+                customButton13.Font = font;
+                customButton8.Font = font;
+                customButton9.Font = font;
+                customButton7.Font = font;
+                customButton6.Font = font;
+                customButton10.Font = font;
+                customButton5.Font = font;
+                customButton17.Font = font;
+                customButton16.Font = font;
+                createGroupButton.Font = font;
+                grandChart.Font = font;
+                label7.Font = font;
+                label6.Font = font;
+                label10.Font = font;
+                label12.Font = font;
+                customButton19.Font = font;
+                customButton18.Font = font;
+                hrButton.Font = font;
+                coButton.Font = font;
+                seButton.Font = font;
+                maButton.Font = font;
+                saButton.Font = font;
+                fiButton.Font = font;
+                MessageBox.Show(Session.Instance.Language);
+            }
+            else
+            {
+                Session.Instance.Language = "en";
+                customButton13.Text = "WORK";
+                customButton8.Text = "STATISTIC";
+                customButton9.Text = "REPORT";
+                customButton7.Text = "ACCOUNT MANAGEMENT";
+                customButton6.Text = "DEPARTMENT RESIDENT";
+                customButton10.Text = "RESIDENT SERVICE";
+                customButton5.Text = "OBSERVED TASK";
+                customButton17.Text = "ALL TASK LIST";
+                customButton16.Text = "MY TASK LIST";
+                createGroupButton.Text = "CREATE GROUP";
+                grandChart.Text = "GRAND CHART";
+                label7.Text = "DashBoard Overview";
+                label6.Text = "TOTAL TASKS";
+                label10.Text = "COMPLETED";
+                label12.Text = "NOT COMPLETED";
+                customButton19.Text = "ADD TASK";
+                customButton18.Text = "ALL COMPANY";
+                hrButton.Text = "HR & RS";
+                coButton.Text = "CONSTRUCTION";
+                seButton.Text = "SECURITY";
+                maButton.Text = "MAINTAINANCE";
+                saButton.Text = "SANTINATION";
+                fiButton.Text = "FINANCIAL ACCOUNTING";
+                font = new Font("Copperplate Gothic Bold", 10);
+            }
+            customButton13.Font = font;
+            customButton8.Font = font;
+            customButton9.Font = font;
+            customButton7.Font = font;
+            customButton6.Font = font;
+            customButton10.Font = font;
+            customButton5.Font = font;
+            customButton17.Font = font;
+            customButton16.Font = font;
+            createGroupButton.Font = font;
+            grandChart.Font = font;
+            label7.Font = font;
+            label6.Font = font;
+            label10.Font = font;
+            label12.Font = font;
+            customButton19.Font = font;
+            customButton18.Font = font;
+            hrButton.Font = font;
+            coButton.Font = font;
+            seButton.Font = font;
+            maButton.Font = font;
+            saButton.Font = font;
+            fiButton.Font = font;
+            MessageBox.Show(Session.Instance.Language);
+
+        }
     }
 }

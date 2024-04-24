@@ -20,11 +20,14 @@ namespace UIs
         public G_Login()
         {
             InitializeComponent();
+            this.AcceptButton = button_Login;
         }
 
         private void button_Login_Click(object sender, EventArgs e)
         {
             DanhNhapService service = new DanhNhapService();
+            CeoService ceoService = new CeoService();
+            QuanLyService quanLyService = new QuanLyService();
             string userID = box_username.Text;
             string password = box_password.Text;
             string result = service.checkLogin(userID, password);
@@ -45,6 +48,7 @@ namespace UIs
             // Session lưu các thông tin quan trọng của tài khoản
             if (result == "Đăng nhập thành công")
             {
+                
                 NhanSu member = nhanSuService.findMember(userID);
                 Session.Instance.UserName = box_username.Text;
                 Session.Instance.Name = member.HoVaTen;
@@ -53,11 +57,11 @@ namespace UIs
                 {
                     Session.Instance.Email = box_password.Text;
                 }
-                if (service.laCEO(userID))
+                if (ceoService.getCeo(userID) != null)
                 {
                     Session.Instance.laCEO = true;
                 }
-                else if (service.laQuanLi(userID))
+                else if (quanLyService.findManager(userID) != null)
                 {
                     Session.Instance.laQuanLi = true;
                 }
@@ -69,9 +73,8 @@ namespace UIs
                 {
                     Session.Instance.daNghiViec = true;
                 }
-                C_AllTaskList tasks = new C_AllTaskList();
-                tasks.ShowDialog();
-
+                SplashScreeen splashScreen = new SplashScreeen();
+                splashScreen.ShowDialog();
             }
         }
 
