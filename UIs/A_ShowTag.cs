@@ -63,7 +63,7 @@ namespace UIs
             }
             else
             {
-                MessageBox.Show("Please select a member first.");
+                MessageBox.Show("Please select a tag first.");
             }
         }
 

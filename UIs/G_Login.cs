@@ -4,11 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.IdentityModel.Tokens;
 using Repositories.Entities;
 using Services;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace UIs
 {
@@ -17,23 +20,29 @@ namespace UIs
         public G_Login()
         {
             InitializeComponent();
+            this.AcceptButton = button_Login;
         }
 
         private void button_Login_Click(object sender, EventArgs e)
         {
             DanhNhapService service = new DanhNhapService();
+            CeoService ceoService = new CeoService();
+            QuanLyService quanLyService = new QuanLyService();
             string userID = box_username.Text;
             string password = box_password.Text;
             string result = service.checkLogin(userID, password);
             NhanSuService nhanSuService = new NhanSuService();
-            if (checkbox_Remember.Checked && service.savePassword(userID, password))
+            //
+            ////luu mat khau
+            if (checkbox_Remember.Checked)
             {
+                // Lưu mật khẩu vào Properties.Settings
+                Properties.Settings.Default.Username = userID;
+                Properties.Settings.Default.Password = password;
+                Properties.Settings.Default.Save();
                 MessageBox.Show("Đã lưu mật khẩu của bạn");
             }
-            else if (checkbox_Remember.Checked && service.savePassword(userID, password) == false)
-            {
-                MessageBox.Show("Mật khẩu của bạn lưu thất bại");
-            }
+            //
             MessageBox.Show(result);
 
             // Session lưu các thông tin quan trọng của tài khoản
@@ -48,11 +57,11 @@ namespace UIs
                 {
                     Session.Instance.Email = box_password.Text;
                 }
-                if (service.laCEO(userID))
+                if (ceoService.getCeo(userID) != null)
                 {
                     Session.Instance.laCEO = true;
                 }
-                else if (service.laQuanLi(userID))
+                else if (quanLyService.findManager(userID) != null)
                 {
                     Session.Instance.laQuanLi = true;
                 }
@@ -67,12 +76,11 @@ namespace UIs
                 SplashScreeen splashScreen = new SplashScreeen();
                 splashScreen.ShowDialog();
             }
-            
         }
 
         private void box_username_Enter(object sender, EventArgs e)
         {
-            if (box_username.Text == "User ID")
+            if (box_username.Text == "Username")
             {
                 box_username.Text = "";
             }
@@ -82,7 +90,7 @@ namespace UIs
         {
             if (string.IsNullOrWhiteSpace(box_username.Text))
             {
-                box_username.Text = "User ID";
+                box_username.Text = "Username";
             }
         }
 
@@ -107,6 +115,7 @@ namespace UIs
             if (string.IsNullOrWhiteSpace(box_password.Text))
             {
                 box_password.Text = "Password";
+                box_password.PasswordChar = '\0';
             }
         }
 
@@ -124,7 +133,14 @@ namespace UIs
 
         private void G_Login_Load(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.Username) &&
+                !string.IsNullOrEmpty(Properties.Settings.Default.Password))
+            {
+                box_username.Text = Properties.Settings.Default.Username;
+                box_password.Text = Properties.Settings.Default.Password;
+                //button_Login_Click(sender, e);
+            }
         }
+
     }
 }
