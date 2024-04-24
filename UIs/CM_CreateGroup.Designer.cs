@@ -50,7 +50,6 @@
             customButton22 = new CustomComponent.CustomButton();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
-            customButton12 = new CustomComponent.CustomButton();
             customButton11 = new CustomComponent.CustomButton();
             customButton1 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
@@ -192,7 +191,7 @@
             membersGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             membersGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             membersGrid.Size = new Size(1264, 382);
-            membersGrid.TabIndex = 87;
+            membersGrid.TabIndex = 108;
             membersGrid.CellContentClick += membersGrid_CellContentClick;
             // 
             // label1
@@ -263,7 +262,7 @@
             departmentsBox.Name = "departmentsBox";
             departmentsBox.Padding = new Padding(1);
             departmentsBox.Size = new Size(613, 36);
-            departmentsBox.TabIndex = 98;
+            departmentsBox.TabIndex = 105;
             departmentsBox.Texts = "";
             departmentsBox.OnSelectedIndexChanged += departmentsBox_OnSelectedIndexChanged;
             // 
@@ -313,7 +312,7 @@
             searchBox.Name = "searchBox";
             searchBox.PlaceholderText = "Enter an account name...";
             searchBox.Size = new Size(545, 20);
-            searchBox.TabIndex = 93;
+            searchBox.TabIndex = 106;
             // 
             // headerPanel
             // 
@@ -321,7 +320,6 @@
             headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
-            headerPanel.Controls.Add(customButton12);
             headerPanel.Controls.Add(customButton11);
             headerPanel.Controls.Add(customButton1);
             headerPanel.Controls.Add(customButton9);
@@ -341,7 +339,7 @@
             panel2.Location = new Point(1261, -1);
             panel2.Name = "panel2";
             panel2.Size = new Size(117, 59);
-            panel2.TabIndex = 51;
+            panel2.TabIndex = 27;
             // 
             // currentAvatarSmall
             // 
@@ -377,7 +375,7 @@
             customButton22.Location = new Point(67, 4);
             customButton22.Name = "customButton22";
             customButton22.Size = new Size(51, 51);
-            customButton22.TabIndex = 24;
+            customButton22.TabIndex = 28;
             customButton22.TextColor = Color.White;
             customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton22.UseVisualStyleBackColor = false;
@@ -400,7 +398,7 @@
             customButton18.Location = new Point(717, 4);
             customButton18.Name = "customButton18";
             customButton18.Size = new Size(188, 48);
-            customButton18.TabIndex = 25;
+            customButton18.TabIndex = 21;
             customButton18.Text = "APARTMENT & RESIDENT";
             customButton18.TextAlign = ContentAlignment.MiddleRight;
             customButton18.TextColor = Color.White;
@@ -423,34 +421,12 @@
             customButton17.Location = new Point(509, 5);
             customButton17.Name = "customButton17";
             customButton17.Size = new Size(202, 48);
-            customButton17.TabIndex = 24;
+            customButton17.TabIndex = 20;
             customButton17.Text = "ACCOUNTING MANAGEMENT";
             customButton17.TextAlign = ContentAlignment.MiddleRight;
             customButton17.TextColor = Color.White;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
-            // 
-            // customButton12
-            // 
-            customButton12.BackColor = Color.Black;
-            customButton12.BackgroundColor = Color.Black;
-            customButton12.BorderColor = Color.PaleVioletRed;
-            customButton12.BorderRadius = 28;
-            customButton12.BorderSize = 0;
-            customButton12.Cursor = Cursors.Hand;
-            customButton12.FlatAppearance.BorderSize = 0;
-            customButton12.FlatStyle = FlatStyle.Flat;
-            customButton12.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton12.ForeColor = Color.White;
-            customButton12.Image = Properties.Resources.bell_icon;
-            customButton12.Location = new Point(1208, 8);
-            customButton12.Name = "customButton12";
-            customButton12.Size = new Size(51, 40);
-            customButton12.TabIndex = 22;
-            customButton12.TextAlign = ContentAlignment.MiddleRight;
-            customButton12.TextColor = Color.White;
-            customButton12.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton12.UseVisualStyleBackColor = false;
             // 
             // customButton11
             // 
@@ -466,10 +442,10 @@
             customButton11.ForeColor = Color.White;
             customButton11.Image = Properties.Resources.triangle_icon;
             customButton11.ImageAlign = ContentAlignment.MiddleRight;
-            customButton11.Location = new Point(1077, 0);
+            customButton11.Location = new Point(1077, 3);
             customButton11.Name = "customButton11";
             customButton11.Size = new Size(120, 51);
-            customButton11.TabIndex = 21;
+            customButton11.TabIndex = 26;
             customButton11.Text = "English";
             customButton11.TextAlign = ContentAlignment.MiddleRight;
             customButton11.TextColor = Color.White;
@@ -493,7 +469,7 @@
             customButton1.Location = new Point(908, 2);
             customButton1.Name = "customButton1";
             customButton1.Size = new Size(156, 51);
-            customButton1.TabIndex = 20;
+            customButton1.TabIndex = 25;
             customButton1.Text = "RESIDENT SERVICE";
             customButton1.TextAlign = ContentAlignment.MiddleRight;
             customButton1.TextColor = Color.White;
@@ -659,7 +635,7 @@
             chosenMembersBox.Name = "chosenMembersBox";
             chosenMembersBox.Padding = new Padding(1);
             chosenMembersBox.Size = new Size(613, 36);
-            chosenMembersBox.TabIndex = 109;
+            chosenMembersBox.TabIndex = 107;
             chosenMembersBox.Texts = "";
             // 
             // label2
@@ -945,7 +921,6 @@
         private Panel headerPanel;
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
-        private CustomComponent.CustomButton customButton12;
         private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton customButton1;
         private CustomComponent.CustomButton customButton9;

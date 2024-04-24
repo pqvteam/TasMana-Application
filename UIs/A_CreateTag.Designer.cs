@@ -143,7 +143,7 @@
             saveButton.Location = new Point(654, 390);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(122, 48);
-            saveButton.TabIndex = 115;
+            saveButton.TabIndex = 122;
             saveButton.Text = "SAVE";
             saveButton.TextColor = Color.White;
             saveButton.UseVisualStyleBackColor = false;
@@ -164,7 +164,7 @@
             cancelButton.Location = new Point(526, 390);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(122, 48);
-            cancelButton.TabIndex = 116;
+            cancelButton.TabIndex = 121;
             cancelButton.Text = "CANCEL";
             cancelButton.TextColor = Color.White;
             cancelButton.UseVisualStyleBackColor = false;
@@ -204,7 +204,7 @@
             tagsGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             tagsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tagsGrid.Size = new Size(288, 276);
-            tagsGrid.TabIndex = 117;
+            tagsGrid.TabIndex = 0;
             tagsGrid.CellContentClick += tagsGrid_CellContentClick;
             // 
             // label3
