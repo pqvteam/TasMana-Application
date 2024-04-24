@@ -182,8 +182,8 @@
             rolesBox.ForeColor = Color.White;
             rolesBox.IconColor = Color.White;
             rolesBox.Items.AddRange(new object[] { "Manager", "Leader" });
-            rolesBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            rolesBox.ListTextColor = Color.DimGray;
+            rolesBox.ListBackColor = Color.Black;
+            rolesBox.ListTextColor = Color.White;
             rolesBox.Location = new Point(132, 287);
             rolesBox.MinimumSize = new Size(200, 30);
             rolesBox.Name = "rolesBox";
@@ -203,8 +203,8 @@
             groupsBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupsBox.ForeColor = Color.White;
             groupsBox.IconColor = Color.White;
-            groupsBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            groupsBox.ListTextColor = Color.DimGray;
+            groupsBox.ListBackColor = Color.Black;
+            groupsBox.ListTextColor = Color.White;
             groupsBox.Location = new Point(131, 388);
             groupsBox.MinimumSize = new Size(200, 30);
             groupsBox.Name = "groupsBox";

@@ -231,10 +231,10 @@ namespace UIs
             string tSubject = $"THÔNG BÁO GIAO VIỆC - {tName}";
             string tSubjectNew = $"THÔNG BÁO THAY ĐỔI CÔNG VIỆC - {tName}";
             string tGiaoViec =
-                $"Kính gửi {tStaffName},\nChúng ta đã xác định một công việc mới cần hoàn thành, và tôi muốn giao nhiệm vụ này cho bạn. Dưới đây là thông tin chi tiết về công việc:\nTên công việc: {tName}\nMô tả: {tDescription}\nThời hạn: {tEnd}\nƯu tiên: {tPriority}\nNgười giao việc: {tManagerName}\nXin vui lòng kiểm tra thông tin trên và bắt đầu làm việc ngay khi bạn có thể. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\nQuản lý {tManagerName}";
+                $"Kính gửi {tStaffName},\nChúng ta đã xác định một công việc mới cần hoàn thành, và tôi muốn giao nhiệm vụ này cho bạn. Dưới đây là thông tin chi tiết về công việc:\nTên công việc: {tName}\nMô tả: {tDescription}\nThời hạn: {tEnd}\nƯu tiên: {tPriority}\nNgười giao việc: {tManagerName}\nXin vui lòng kiểm tra thông tin trên và bắt đầu làm việc ngay khi bạn có thể. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\n" + $"{tManagerName}";
             string tTo = nhanSuService.findMember(receiverID).Email;
             string tToNew = nhanSuService.findMember(oldImplementor).Email;
-            string tThayDoi = $"Kính gửi {tOldStaffName},\nChúng ta đã xác định thay đổi về chi tiết công việc {tName}\n. Xin vui lòng kiểm tra thông tin mới nhất trên hệ thống. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\nQuản lý {tManagerName}";
+            string tThayDoi = $"Kính gửi {tOldStaffName},\nChúng ta đã xác định thay đổi về chi tiết công việc {tName}\n. Xin vui lòng kiểm tra thông tin mới nhất trên hệ thống. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\n {tManagerName}";
             int tMode = taskMode.Checked ? 1 : 0;
             int tIsCEO = Session.Instance.laCEO ? 1 : 0;
 
@@ -263,7 +263,7 @@ namespace UIs
                 {
                     mailService.sendMail(tSubjectNew, tThayDoi, tToNew);
                 }
-                mailService.sendMail(tSubject, tGiaoViec, tTo);
+                mailService.sendMail(tSubjectNew, tGiaoViec, tTo);
                 taskName.Text = "";
                 taskDescription.Text = "";
                 taskStart.Value = DateTime.Now;

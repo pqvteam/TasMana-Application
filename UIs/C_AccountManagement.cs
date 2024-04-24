@@ -11,6 +11,7 @@ using Microsoft.Data.SqlClient;
 using Repositories.Entities;
 using Repositories.Utilities;
 using Services;
+using UIs.CustomComponent;
 
 namespace UIs
 {
@@ -27,10 +28,14 @@ namespace UIs
             InitializeComponent();
         }
 
+
+
         private void textBox2_TextChanged(object sender, EventArgs e) { }
 
         private void C_AccountManagement_Load(object sender, EventArgs e)
         {
+            changeLanguage();
+            languageSelect.SelectedItem = Session.Instance.Language == "en" ? "ENGLISH" : "VIETNAMESE";
             if (IsValidImageData(Session.Instance.Avatar))
             {
                 currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
@@ -158,7 +163,7 @@ namespace UIs
                 membersGrid.Rows[e.RowIndex].Cells["Fired"].Value != null
                     ? (bool)membersGrid.Rows[e.RowIndex].Cells["Fired"].Value
                     : false;
-            string CEOID = "GD-001";
+            string CEOID = Session.Instance.UserName;
             if (e.ColumnIndex == membersGrid.Columns["btnAppoint"].Index && e.RowIndex >= 0)
             {
                 if (memberId != null)
@@ -893,6 +898,105 @@ namespace UIs
         private void info_button_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void changeLanguage()
+        {
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            if (Session.Instance.Language == "vi")
+            {
+                customButton8.Text = "THỐNG KÊ";
+                customButton9.Text = "BÁO CÁO";
+                customButton7.Text = "CÔNG VIỆC";
+                customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
+                customButton10.Text = "DỊCH VỤ CƯ DÂN";
+                customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
+                label1.Text = "TỪ KHÓA";
+                label2.Text = "PHÒNG BAN";
+                label3.Text = "LOẠI TÀI KHOẢN";
+                button3.Text = "TÀI KHOẢN ĐANG HOẠT ĐỘNG";
+                customButton19.Text = "TẠO MỚI";
+                button2.Text = "TÀI KHOẢN NGƯNG HOẠT ĐỘNG";
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            }
+            else
+            {
+                font = new Font("Copperplate Gothic Bold", 10, FontStyle.Bold);
+                customButton8.Text = "STATISTIC";
+                customButton9.Text = "REPORT";
+                customButton7.Text = "WORK";
+                customButton18.Text = "APARTMENT RESIDENT";
+                customButton10.Text = "RESIDENT SERVICE";
+                customButton17.Text = "ACCOUNT MANAGEMENT";
+                label1.Text = "SEARCH";
+                label2.Text = "DEPARTMENT";
+                label3.Text = "ACCOUNT TYPE";
+                button3.Text = "ACTIVE ACCOUNT";
+                customButton19.Text = "CREATE";
+                button2.Text = "INACTIVE ACCOUNT";
+            }
+            customButton8.Font = font;
+            customButton9.Font = font;
+            customButton7.Font = font;
+            customButton18.Font = font;
+            customButton10.Font = font;
+            customButton17.Font = font;
+            customButton3.Font = font;
+            customButton19.Font = font;
+            customButton2.Font = font;
+            label1.Font = font;
+            label2.Font = font;
+            label3.Font = font;
+        }
+
+        private void languageSelect_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            if (languageSelect.SelectedItem.ToString() == "Vietnamese" || languageSelect.SelectedItem.ToString() == "VIETNAMESE")
+            {
+                Session.Instance.Language = "vi";
+                customButton8.Text = "THỐNG KÊ";
+                customButton9.Text = "BÁO CÁO";
+                customButton7.Text = "CÔNG VIỆC";
+                customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
+                customButton10.Text = "DỊCH VỤ CƯ DÂN";
+                customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
+                label1.Text = "TỪ KHÓA";
+                label2.Text = "PHÒNG BAN";
+                label3.Text = "LOẠI TÀI KHOẢN";
+                button3.Text = "TÀI KHOẢN ĐANG HOẠT ĐỘNG";
+                customButton19.Text = "TẠO MỚI";
+                button2.Text = "TÀI KHOẢN NGƯNG HOẠT ĐỘNG";
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            } else
+            {
+                Session.Instance.Language = "en";
+                font = new Font("Copperplate Gothic Bold", 10, FontStyle.Bold);
+                customButton8.Text = "STATISTIC";
+                customButton9.Text = "REPORT";
+                customButton7.Text = "WORK";
+                customButton18.Text = "APARTMENT RESIDENT";
+                customButton10.Text = "RESIDENT SERVICE";
+                customButton17.Text = "ACCOUNT MANAGEMENT";
+                label1.Text = "SEARCH";
+                label2.Text = "DEPARTMENT";
+                label3.Text = "ACCOUNT TYPE";
+                customButton3.Text = "ACTIVE ACCOUNT";
+                customButton19.Text = "CREATE";
+                customButton2.Text = "INACTIVE ACCOUNT";
+            }
+            customButton8.Font = font;
+            customButton9.Font = font;
+            customButton7.Font = font;
+            customButton18.Font = font;
+            customButton10.Font = font;
+            customButton17.Font = font;
+            button3.Font = font;
+            customButton19.Font = font;
+            button2.Font = font;
+            label1.Font = font;
+            label2.Font = font;
+            label3.Font = font;
         }
     }
 }

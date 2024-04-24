@@ -122,6 +122,7 @@ namespace UIs
         private void C_AssignTask_Load(object sender, EventArgs e)
         {
             taskName.Focus();
+            assignerLabel.Text = Session.Instance.UserName;
             if (IsValidImageData(Session.Instance.Avatar))
             {
                 currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);

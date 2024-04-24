@@ -36,6 +36,9 @@ namespace UIs
 
         private void C_AllTaskList_Load(object sender, EventArgs e)
         {
+            changeLanguage();
+            languageSelect.SelectedItem = "ENGLISH";
+
             GetWeather getWeather = new GetWeather();
             string[] currentWeather = getWeather.getWeatherData("Ho Chi Minh City");
             weatherType.Text = currentWeather[1];
@@ -528,5 +531,232 @@ namespace UIs
             editTask.ShowDialog();
         }
 
+        private void changeLanguage()
+        {
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            Font fontLarge = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            if (Session.Instance.Language == "vi")
+            {
+                customButton13.Text = "CÔNG VIỆC";
+                customButton8.Text = "THỐNG KÊ";
+                customButton9.Text = "BÁO CÁO";
+                customButton7.Text = "QUẢN LÝ TÀI KHOẢN";
+                customButton6.Text = "CƯ DÂN VÀ CĂN HỘ";
+                customButton10.Text = "DỊCH VỤ CƯ DÂN";
+                customButton5.Text = "CÔNG VIỆC ĐANG THEO DÕI";
+                customButton17.Text = "TẤT CẢ CÔNG VIỆC";
+                customButton16.Text = "CÔNG VIỆC CỦA TÔI";
+                createGroupButton.Text = "TẠO NHÓM";
+                grandChart.Text = "BIỂU ĐỒ";
+                label7.Text = "TỔNG QUAN NHIỆM VỤ";
+                label6.Text = "TẤT CẢ CÔNG VIỆC";
+                label10.Text = "ĐÃ HOÀN THÀNH";
+                label12.Text = "CHƯA HOÀN THÀNH";
+                customButton19.Text = "THÊM VIỆC";
+                customButton18.Text = "CẢ CÔNG TY";
+                hrButton.Text = "NHÂN SỰ";
+                coButton.Text = "XÂY DỰNG";
+                seButton.Text = "AN NINH";
+                maButton.Text = "BẢO TRÌ";
+                saButton.Text = "VỆ SINH";
+                fiButton.Text = "TÀI CHÍNH KẾ TOÁN";
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+                customButton13.Font = font;
+                customButton8.Font = font;
+                customButton9.Font = font;
+                customButton7.Font = font;
+                customButton6.Font = font;
+                customButton10.Font = font;
+                customButton5.Font = font;
+                customButton17.Font = font;
+                customButton16.Font = font;
+                createGroupButton.Font = font;
+                grandChart.Font = font;
+                label7.Font = font;
+                label6.Font = font;
+                label10.Font = font;
+                label12.Font = font;
+                customButton19.Font = font;
+                customButton18.Font = font;
+                hrButton.Font = font;
+                coButton.Font = font;
+                seButton.Font = font;
+                maButton.Font = font;
+                saButton.Font = font;
+                fiButton.Font = font;
+            }
+            else
+            {
+                customButton13.Text = "WORK";
+                customButton8.Text = "STATISTIC";
+                customButton9.Text = "REPORT";
+                customButton7.Text = "ACCOUNT MANAGEMENT";
+                customButton6.Text = "DEPARTMENT RESIDENT";
+                customButton10.Text = "RESIDENT SERVICE";
+                customButton5.Text = "OBSERVED TASK";
+                customButton17.Text = "ALL TASK LIST";
+                customButton16.Text = "MY TASK LIST";
+                createGroupButton.Text = "CREATE GROUP";
+                grandChart.Text = "GRAND CHART";
+                label7.Text = "DashBoard Overview";
+                label6.Text = "TOTAL TASKS";
+                label10.Text = "COMPLETED";
+                label12.Text = "NOT COMPLETED";
+                customButton19.Text = "ADD TASK";
+                customButton18.Text = "ALL COMPANY";
+                hrButton.Text = "HR & RS";
+                coButton.Text = "CONSTRUCTION";
+                seButton.Text = "SECURITY";
+                maButton.Text = "MAINTAINANCE";
+                saButton.Text = "SANTINATION";
+                fiButton.Text = "FINANCIAL ACCOUNTING";
+                font = new Font("Copperplate Gothic Bold", 12);
+            }
+            customButton13.Font = font;
+            customButton8.Font = font;
+            customButton9.Font = font;
+            customButton7.Font = font;
+            customButton6.Font = font;
+            customButton10.Font = font;
+            customButton5.Font = font;
+            customButton17.Font = font;
+            customButton16.Font = font;
+            createGroupButton.Font = font;
+            grandChart.Font = font;
+            label7.Font = font;
+            label6.Font = font;
+            label10.Font = font;
+            label12.Font = font;
+            customButton19.Font = font;
+            customButton18.Font = font;
+            hrButton.Font = font;
+            coButton.Font = font;
+            seButton.Font = font;
+            maButton.Font = font;
+            saButton.Font = font;
+            fiButton.Font = font;
+            // Special button
+            customButton5.Font = fontLarge;
+            customButton17.Font = fontLarge;
+            customButton16.Font = fontLarge;
+            createGroupButton.Font = fontLarge;
+            grandChart.Font = fontLarge;
+        }
+
+        private void languageSelect_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            Font fontLarge = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+            if (languageSelect.SelectedItem.ToString() == "Vietnamese" || languageSelect.SelectedItem.ToString() == "VIETNAMESE")
+            {
+                Session.Instance.Language = "vi";
+                customButton13.Text = "CÔNG VIỆC";
+                customButton8.Text = "THỐNG KÊ";
+                customButton9.Text = "BÁO CÁO";
+                customButton7.Text = "QUẢN LÝ TÀI KHOẢN";
+                customButton6.Text = "CƯ DÂN VÀ CĂN HỘ";
+                customButton10.Text = "DỊCH VỤ CƯ DÂN";
+                customButton5.Text = "CÔNG VIỆC ĐANG THEO DÕI";
+                customButton17.Text = "TẤT CẢ CÔNG VIỆC";
+                customButton16.Text = "CÔNG VIỆC CỦA TÔI";
+                createGroupButton.Text = "TẠO NHÓM";
+                grandChart.Text = "BIỂU ĐỒ";
+                label7.Text = "TỔNG QUAN NHIỆM VỤ";
+                label6.Text = "TẤT CẢ CÔNG VIỆC";
+                label10.Text = "ĐÃ HOÀN THÀNH";
+                label12.Text = "CHƯA HOÀN THÀNH";
+                customButton19.Text = "THÊM VIỆC";
+                customButton18.Text = "CẢ CÔNG TY";
+                hrButton.Text = "NHÂN SỰ";
+                coButton.Text = "XÂY DỰNG";
+                seButton.Text = "AN NINH";
+                maButton.Text = "BẢO TRÌ";
+                saButton.Text = "VỆ SINH";
+                fiButton.Text = "TÀI CHÍNH KẾ TOÁN";
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+                customButton13.Font = font;
+                customButton8.Font = font;
+                customButton9.Font = font;
+                customButton7.Font = font;
+                customButton6.Font = font;
+                customButton10.Font = font;
+                customButton5.Font = font;
+                customButton17.Font = font;
+                customButton16.Font = font;
+                createGroupButton.Font = font;
+                grandChart.Font = font;
+                label7.Font = font;
+                label6.Font = font;
+                label10.Font = font;
+                label12.Font = font;
+                customButton19.Font = font;
+                customButton18.Font = font;
+                hrButton.Font = font;
+                coButton.Font = font;
+                seButton.Font = font;
+                maButton.Font = font;
+                saButton.Font = font;
+                fiButton.Font = font;
+            }
+            else
+            {
+                Session.Instance.Language = "en";
+                customButton13.Text = "WORK";
+                customButton8.Text = "STATISTIC";
+                customButton9.Text = "REPORT";
+                customButton7.Text = "ACCOUNT MANAGEMENT";
+                customButton6.Text = "DEPARTMENT RESIDENT";
+                customButton10.Text = "RESIDENT SERVICE";
+                customButton5.Text = "OBSERVED TASK";
+                customButton17.Text = "ALL TASK LIST";
+                customButton16.Text = "MY TASK LIST";
+                createGroupButton.Text = "CREATE GROUP";
+                grandChart.Text = "GRAND CHART";
+                label7.Text = "DashBoard Overview";
+                label6.Text = "TOTAL TASKS";
+                label10.Text = "COMPLETED";
+                label12.Text = "NOT COMPLETED";
+                customButton19.Text = "ADD TASK";
+                customButton18.Text = "ALL COMPANY";
+                hrButton.Text = "HR & RS";
+                coButton.Text = "CONSTRUCTION";
+                seButton.Text = "SECURITY";
+                maButton.Text = "MAINTAINANCE";
+                saButton.Text = "SANTINATION";
+                fiButton.Text = "FINANCIAL ACCOUNTING";
+                font = new Font("Copperplate Gothic Bold", 10);
+                fontLarge = new Font("Copperplate Gothic Bold", 12);
+            }
+            customButton13.Font = font;
+            customButton8.Font = font;
+            customButton9.Font = font;
+            customButton7.Font = font;
+            customButton6.Font = font;
+            customButton10.Font = font;
+            customButton5.Font = font;
+            customButton17.Font = font;
+            customButton16.Font = font;
+            createGroupButton.Font = font;
+            grandChart.Font = font;
+            label7.Font = font;
+            label6.Font = font;
+            label10.Font = font;
+            label12.Font = font;
+            customButton19.Font = font;
+            customButton18.Font = font;
+            hrButton.Font = font;
+            coButton.Font = font;
+            seButton.Font = font;
+            maButton.Font = font;
+            saButton.Font = font;
+            fiButton.Font = font;
+            // Special button
+            customButton5.Font = fontLarge;
+            customButton17.Font = fontLarge;
+            customButton16.Font = fontLarge;
+            createGroupButton.Font = fontLarge;
+            grandChart.Font = fontLarge;
+
+        }
     }
 }
