@@ -99,7 +99,7 @@
             languageSelect.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             languageSelect.ForeColor = Color.White;
             languageSelect.IconColor = Color.White;
-            languageSelect.Items.AddRange(new object[] { "English", "Vietnamese" });
+            languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
             languageSelect.ListBackColor = Color.Black;
             languageSelect.ListTextColor = Color.White;
             languageSelect.Location = new Point(1117, 10);
@@ -346,15 +346,17 @@
             // 
             // button3
             // 
+            button3.AllowDrop = true;
+            button3.AutoEllipsis = true;
             button3.Cursor = Cursors.Hand;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.White;
             button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(3, 1);
+            button3.Location = new Point(3, -1);
             button3.Name = "button3";
-            button3.Size = new Size(264, 44);
+            button3.Size = new Size(264, 47);
             button3.TabIndex = 6;
             button3.Text = "ACTIVED ACCOUNT";
             button3.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -362,13 +364,15 @@
             // 
             // button2
             // 
+            button2.AllowDrop = true;
+            button2.AutoEllipsis = true;
             button2.Cursor = Cursors.Hand;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(270, 1);
+            button2.Location = new Point(272, 0);
             button2.Name = "button2";
             button2.Size = new Size(258, 44);
             button2.TabIndex = 5;
@@ -442,11 +446,11 @@
             departmentsBox.BorderSize = 1;
             departmentsBox.Cursor = Cursors.Hand;
             departmentsBox.DropDownStyle = ComboBoxStyle.DropDown;
-            departmentsBox.Font = new Font("Segoe UI", 10F);
-            departmentsBox.ForeColor = Color.DimGray;
+            departmentsBox.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            departmentsBox.ForeColor = Color.White;
             departmentsBox.IconColor = Color.White;
-            departmentsBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            departmentsBox.ListTextColor = Color.DimGray;
+            departmentsBox.ListBackColor = Color.Black;
+            departmentsBox.ListTextColor = Color.White;
             departmentsBox.Location = new Point(493, 163);
             departmentsBox.MinimumSize = new Size(200, 30);
             departmentsBox.Name = "departmentsBox";
@@ -482,11 +486,11 @@
             typeAccountBox.Cursor = Cursors.Hand;
             typeAccountBox.DropDownStyle = ComboBoxStyle.DropDown;
             typeAccountBox.Font = new Font("Segoe UI", 10F);
-            typeAccountBox.ForeColor = Color.DimGray;
+            typeAccountBox.ForeColor = Color.White;
             typeAccountBox.IconColor = Color.White;
             typeAccountBox.Items.AddRange(new object[] { "CEO", "Manager", "Staff", "All" });
-            typeAccountBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            typeAccountBox.ListTextColor = Color.DimGray;
+            typeAccountBox.ListBackColor = Color.Black;
+            typeAccountBox.ListTextColor = Color.White;
             typeAccountBox.Location = new Point(812, 163);
             typeAccountBox.MinimumSize = new Size(200, 30);
             typeAccountBox.Name = "typeAccountBox";
