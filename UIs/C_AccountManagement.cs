@@ -35,7 +35,7 @@ namespace UIs
         private void C_AccountManagement_Load(object sender, EventArgs e)
         {
             changeLanguage();
-            languageSelect.SelectedItem = Session.Instance.Language == "en" ? "English" : "Vietnamese";
+            languageSelect.SelectedItem = Session.Instance.Language == "en" ? "ENGLISH" : "VIETNAMESE";
             if (IsValidImageData(Session.Instance.Avatar))
             {
                 currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
@@ -813,7 +813,6 @@ namespace UIs
         private void changeLanguage()
         {
             Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
-            MessageBox.Show($"Language in Account Management: {Session.Instance.Language}");
             if (Session.Instance.Language == "vi")
             {
                 customButton8.Text = "THỐNG KÊ";
@@ -825,9 +824,9 @@ namespace UIs
                 label1.Text = "TỪ KHÓA";
                 label2.Text = "PHÒNG BAN";
                 label3.Text = "LOẠI TÀI KHOẢN";
-                customButton3.Text = "TÀI KHOẢN ĐANG HOẠT ĐỘNG";
+                button3.Text = "TÀI KHOẢN ĐANG HOẠT ĐỘNG";
                 customButton19.Text = "TẠO MỚI";
-                customButton2.Text = "TÀI KHOẢN NGƯNG HOẠT ĐỘNG";
+                button2.Text = "TÀI KHOẢN NGƯNG HOẠT ĐỘNG";
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
             }
             else
@@ -842,9 +841,9 @@ namespace UIs
                 label1.Text = "SEARCH";
                 label2.Text = "DEPARTMENT";
                 label3.Text = "ACCOUNT TYPE";
-                customButton3.Text = "ACTIVE ACCOUNT";
+                button3.Text = "ACTIVE ACCOUNT";
                 customButton19.Text = "CREATE";
-                customButton2.Text = "INACTIVE ACCOUNT";
+                button2.Text = "INACTIVE ACCOUNT";
             }
             customButton8.Font = font;
             customButton9.Font = font;
@@ -863,7 +862,7 @@ namespace UIs
         private void languageSelect_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
-            if (languageSelect.SelectedItem.ToString() == "Vietnamese")
+            if (languageSelect.SelectedItem.ToString() == "Vietnamese" || languageSelect.SelectedItem.ToString() == "VIETNAMESE")
             {
                 Session.Instance.Language = "vi";
                 customButton8.Text = "THỐNG KÊ";
@@ -875,9 +874,9 @@ namespace UIs
                 label1.Text = "TỪ KHÓA";
                 label2.Text = "PHÒNG BAN";
                 label3.Text = "LOẠI TÀI KHOẢN";
-                customButton3.Text = "TÀI KHOẢN ĐANG HOẠT ĐỘNG";
+                button3.Text = "TÀI KHOẢN ĐANG HOẠT ĐỘNG";
                 customButton19.Text = "TẠO MỚI";
-                customButton2.Text = "TÀI KHOẢN NGƯNG HOẠT ĐỘNG";
+                button2.Text = "TÀI KHOẢN NGƯNG HOẠT ĐỘNG";
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
             } else
             {
@@ -902,9 +901,9 @@ namespace UIs
             customButton18.Font = font;
             customButton10.Font = font;
             customButton17.Font = font;
-            customButton3.Font = font;
+            button3.Font = font;
             customButton19.Font = font;
-            customButton2.Font = font;
+            button2.Font = font;
             label1.Font = font;
             label2.Font = font;
             label3.Font = font;

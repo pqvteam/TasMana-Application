@@ -37,7 +37,7 @@ namespace UIs
         private void C_AllTaskList_Load(object sender, EventArgs e)
         {
             changeLanguage();
-            languageSelect.SelectedItem = "English";
+            languageSelect.SelectedItem = "ENGLISH";
 
             GetWeather getWeather = new GetWeather();
             string[] currentWeather = getWeather.getWeatherData("Ho Chi Minh City");
@@ -533,7 +533,8 @@ namespace UIs
 
         private void changeLanguage()
         {
-            Font font = new Font("Microsoft Sans Serif", customButton13.Font.Size, FontStyle.Bold);
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            Font fontLarge = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
             if (Session.Instance.Language == "vi")
             {
                 customButton13.Text = "CÔNG VIỆC";
@@ -559,7 +560,7 @@ namespace UIs
                 maButton.Text = "BẢO TRÌ";
                 saButton.Text = "VỆ SINH";
                 fiButton.Text = "TÀI CHÍNH KẾ TOÁN";
-                font = new Font("Microsoft Sans Serif", customButton13.Font.Size, FontStyle.Bold);
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
                 customButton13.Font = font;
                 customButton8.Font = font;
                 customButton9.Font = font;
@@ -609,7 +610,7 @@ namespace UIs
                 maButton.Text = "MAINTAINANCE";
                 saButton.Text = "SANTINATION";
                 fiButton.Text = "FINANCIAL ACCOUNTING";
-                font = new Font("Copperplate Gothic Bold", 12, FontStyle.Bold);
+                font = new Font("Copperplate Gothic Bold", 12);
             }
             customButton13.Font = font;
             customButton8.Font = font;
@@ -634,12 +635,19 @@ namespace UIs
             maButton.Font = font;
             saButton.Font = font;
             fiButton.Font = font;
+            // Special button
+            customButton5.Font = fontLarge;
+            customButton17.Font = fontLarge;
+            customButton16.Font = fontLarge;
+            createGroupButton.Font = fontLarge;
+            grandChart.Font = fontLarge;
         }
 
         private void languageSelect_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
-            if (languageSelect.SelectedItem.ToString() == "Vietnamese")
+            Font fontLarge = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+            if (languageSelect.SelectedItem.ToString() == "Vietnamese" || languageSelect.SelectedItem.ToString() == "VIETNAMESE")
             {
                 Session.Instance.Language = "vi";
                 customButton13.Text = "CÔNG VIỆC";
@@ -689,7 +697,6 @@ namespace UIs
                 maButton.Font = font;
                 saButton.Font = font;
                 fiButton.Font = font;
-                MessageBox.Show(Session.Instance.Language);
             }
             else
             {
@@ -718,6 +725,7 @@ namespace UIs
                 saButton.Text = "SANTINATION";
                 fiButton.Text = "FINANCIAL ACCOUNTING";
                 font = new Font("Copperplate Gothic Bold", 10);
+                fontLarge = new Font("Copperplate Gothic Bold", 12);
             }
             customButton13.Font = font;
             customButton8.Font = font;
@@ -742,7 +750,12 @@ namespace UIs
             maButton.Font = font;
             saButton.Font = font;
             fiButton.Font = font;
-            MessageBox.Show(Session.Instance.Language);
+            // Special button
+            customButton5.Font = fontLarge;
+            customButton17.Font = fontLarge;
+            customButton16.Font = fontLarge;
+            createGroupButton.Font = fontLarge;
+            grandChart.Font = fontLarge;
 
         }
     }
