@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_AllTaskList));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             headerPanel = new Panel();
             languageSelect = new CustomComponent.CustomComboBox();
             panel2 = new Panel();
@@ -169,7 +169,7 @@
             languageSelect.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             languageSelect.ForeColor = Color.White;
             languageSelect.IconColor = Color.White;
-            languageSelect.Items.AddRange(new object[] { "English", "Vietnamese" });
+            languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
             languageSelect.ListBackColor = Color.Black;
             languageSelect.ListTextColor = Color.White;
             languageSelect.Location = new Point(1105, 5);
@@ -527,7 +527,7 @@
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(888, 190);
+            label12.Location = new Point(864, 190);
             label12.Name = "label12";
             label12.Size = new Size(153, 20);
             label12.TabIndex = 73;
@@ -562,7 +562,7 @@
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(729, 191);
+            label10.Location = new Point(715, 191);
             label10.Name = "label10";
             label10.Size = new Size(109, 20);
             label10.TabIndex = 71;
@@ -626,7 +626,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(537, 190);
+            label6.Location = new Point(500, 190);
             label6.Name = "label6";
             label6.Size = new Size(133, 20);
             label6.TabIndex = 69;
@@ -669,7 +669,7 @@
             customButton18.ForeColor = Color.White;
             customButton18.Location = new Point(336, 352);
             customButton18.Name = "customButton18";
-            customButton18.Size = new Size(133, 50);
+            customButton18.Size = new Size(125, 50);
             customButton18.TabIndex = 67;
             customButton18.Text = "ALL COMPANY";
             customButton18.TextColor = Color.White;
@@ -687,24 +687,24 @@
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             membersGrid.Cursor = Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(42, 42, 42);
             membersGrid.Location = new Point(363, 437);
@@ -751,9 +751,9 @@
             maButton.FlatStyle = FlatStyle.Flat;
             maButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             maButton.ForeColor = Color.White;
-            maButton.Location = new Point(583, 352);
+            maButton.Location = new Point(573, 352);
             maButton.Name = "maButton";
-            maButton.Size = new Size(164, 50);
+            maButton.Size = new Size(174, 50);
             maButton.TabIndex = 64;
             maButton.Text = "MAINTAINANCE";
             maButton.TextColor = Color.White;
@@ -835,7 +835,7 @@
             hrButton.FlatStyle = FlatStyle.Flat;
             hrButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             hrButton.ForeColor = Color.White;
-            hrButton.Location = new Point(467, 352);
+            hrButton.Location = new Point(460, 352);
             hrButton.Name = "hrButton";
             hrButton.Size = new Size(116, 50);
             hrButton.TabIndex = 60;
@@ -1249,6 +1249,7 @@
             customButton16.Text = "MY TASK LIST";
             customButton16.TextAlign = ContentAlignment.MiddleRight;
             customButton16.TextColor = Color.White;
+            customButton16.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton16.UseVisualStyleBackColor = false;
             customButton16.Click += customButton16_Click;
             // 
@@ -1274,6 +1275,7 @@
             customButton17.Text = "ALL TASK LIST";
             customButton17.TextAlign = ContentAlignment.MiddleRight;
             customButton17.TextColor = Color.Black;
+            customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
             // 
             // currentID

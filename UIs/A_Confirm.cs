@@ -64,7 +64,7 @@ namespace UIs
             }
             else if (this.type == "confirm")
             {
-                messageText.ForeColor = Color.Green;
+                messageText.ForeColor = Color.GreenYellow;
                 confirmButton.BackColor = Color.Green;
                 confirmButton.Text = "Ok";
             }
