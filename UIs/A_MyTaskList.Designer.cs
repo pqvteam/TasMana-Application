@@ -33,8 +33,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
-            customButton12 = new CustomComponent.CustomButton();
-            customButton11 = new CustomComponent.CustomButton();
             customButton1 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
             customButton8 = new CustomComponent.CustomButton();
@@ -43,6 +41,7 @@
             currentAvatarSmall = new CustomComponent.CustomPictureBox();
             customButton22 = new CustomComponent.CustomButton();
             headerPanel = new Panel();
+            languageSelect = new CustomComponent.CustomComboBox();
             panel2 = new Panel();
             createGroupButton = new CustomComponent.CustomButton();
             grandChart = new CustomComponent.CustomButton();
@@ -98,9 +97,9 @@
             customButton18.ForeColor = Color.White;
             customButton18.Image = (Image)resources.GetObject("customButton18.Image");
             customButton18.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton18.Location = new Point(717, 6);
+            customButton18.Location = new Point(733, 6);
             customButton18.Name = "customButton18";
-            customButton18.Size = new Size(188, 48);
+            customButton18.Size = new Size(194, 48);
             customButton18.TabIndex = 25;
             customButton18.Text = "APARTMENT & RESIDENT";
             customButton18.TextAlign = ContentAlignment.MiddleRight;
@@ -121,7 +120,7 @@
             customButton17.ForeColor = Color.White;
             customButton17.Image = (Image)resources.GetObject("customButton17.Image");
             customButton17.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton17.Location = new Point(509, 7);
+            customButton17.Location = new Point(524, 7);
             customButton17.Name = "customButton17";
             customButton17.Size = new Size(202, 48);
             customButton17.TabIndex = 24;
@@ -130,52 +129,6 @@
             customButton17.TextColor = Color.White;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
-            // 
-            // customButton12
-            // 
-            customButton12.BackColor = Color.Black;
-            customButton12.BackgroundColor = Color.Black;
-            customButton12.BorderColor = Color.PaleVioletRed;
-            customButton12.BorderRadius = 28;
-            customButton12.BorderSize = 0;
-            customButton12.Cursor = Cursors.Hand;
-            customButton12.FlatAppearance.BorderSize = 0;
-            customButton12.FlatStyle = FlatStyle.Flat;
-            customButton12.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton12.ForeColor = Color.White;
-            customButton12.Image = Properties.Resources.bell_icon;
-            customButton12.Location = new Point(1207, 9);
-            customButton12.Name = "customButton12";
-            customButton12.Size = new Size(51, 40);
-            customButton12.TabIndex = 22;
-            customButton12.TextAlign = ContentAlignment.MiddleRight;
-            customButton12.TextColor = Color.White;
-            customButton12.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton12.UseVisualStyleBackColor = false;
-            // 
-            // customButton11
-            // 
-            customButton11.BackColor = Color.Black;
-            customButton11.BackgroundColor = Color.Black;
-            customButton11.BorderColor = Color.PaleVioletRed;
-            customButton11.BorderRadius = 28;
-            customButton11.BorderSize = 0;
-            customButton11.Cursor = Cursors.Hand;
-            customButton11.FlatAppearance.BorderSize = 0;
-            customButton11.FlatStyle = FlatStyle.Flat;
-            customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton11.ForeColor = Color.White;
-            customButton11.Image = Properties.Resources.triangle_icon;
-            customButton11.ImageAlign = ContentAlignment.MiddleRight;
-            customButton11.Location = new Point(1077, 5);
-            customButton11.Name = "customButton11";
-            customButton11.Size = new Size(120, 51);
-            customButton11.TabIndex = 21;
-            customButton11.Text = "English";
-            customButton11.TextAlign = ContentAlignment.MiddleRight;
-            customButton11.TextColor = Color.White;
-            customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton11.UseVisualStyleBackColor = false;
             // 
             // customButton1
             // 
@@ -191,9 +144,9 @@
             customButton1.ForeColor = Color.White;
             customButton1.Image = (Image)resources.GetObject("customButton1.Image");
             customButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton1.Location = new Point(908, 4);
+            customButton1.Location = new Point(935, 4);
             customButton1.Name = "customButton1";
-            customButton1.Size = new Size(156, 51);
+            customButton1.Size = new Size(170, 51);
             customButton1.TabIndex = 20;
             customButton1.Text = "RESIDENT SERVICE";
             customButton1.TextAlign = ContentAlignment.MiddleRight;
@@ -215,9 +168,9 @@
             customButton9.ForeColor = Color.White;
             customButton9.Image = (Image)resources.GetObject("customButton9.Image");
             customButton9.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton9.Location = new Point(367, 8);
+            customButton9.Location = new Point(365, 7);
             customButton9.Name = "customButton9";
-            customButton9.Size = new Size(137, 48);
+            customButton9.Size = new Size(152, 48);
             customButton9.TabIndex = 19;
             customButton9.Text = "REPORT";
             customButton9.TextAlign = ContentAlignment.MiddleRight;
@@ -239,7 +192,7 @@
             customButton8.ForeColor = Color.White;
             customButton8.Image = (Image)resources.GetObject("customButton8.Image");
             customButton8.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton8.Location = new Point(202, 10);
+            customButton8.Location = new Point(199, 7);
             customButton8.Name = "customButton8";
             customButton8.Size = new Size(158, 48);
             customButton8.TabIndex = 18;
@@ -263,7 +216,7 @@
             customButton7.ForeColor = Color.Yellow;
             customButton7.Image = (Image)resources.GetObject("customButton7.Image");
             customButton7.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton7.Location = new Point(75, 10);
+            customButton7.Location = new Point(71, 7);
             customButton7.Name = "customButton7";
             customButton7.Size = new Size(117, 48);
             customButton7.TabIndex = 17;
@@ -287,7 +240,7 @@
             customButton6.ForeColor = Color.White;
             customButton6.Image = (Image)resources.GetObject("customButton6.Image");
             customButton6.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton6.Location = new Point(12, 5);
+            customButton6.Location = new Point(4, 5);
             customButton6.Name = "customButton6";
             customButton6.Size = new Size(57, 56);
             customButton6.TabIndex = 16;
@@ -336,11 +289,10 @@
             // headerPanel
             // 
             headerPanel.BackColor = Color.FromArgb(13, 13, 13);
+            headerPanel.Controls.Add(languageSelect);
             headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
-            headerPanel.Controls.Add(customButton12);
-            headerPanel.Controls.Add(customButton11);
             headerPanel.Controls.Add(customButton1);
             headerPanel.Controls.Add(customButton9);
             headerPanel.Controls.Add(customButton8);
@@ -351,6 +303,27 @@
             headerPanel.Name = "headerPanel";
             headerPanel.Size = new Size(1400, 62);
             headerPanel.TabIndex = 92;
+            headerPanel.Paint += headerPanel_Paint;
+            // 
+            // languageSelect
+            // 
+            languageSelect.BackColor = Color.Black;
+            languageSelect.BorderColor = Color.MediumSlateBlue;
+            languageSelect.BorderSize = 0;
+            languageSelect.DropDownStyle = ComboBoxStyle.DropDown;
+            languageSelect.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            languageSelect.ForeColor = Color.White;
+            languageSelect.IconColor = Color.White;
+            languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
+            languageSelect.ListBackColor = Color.Black;
+            languageSelect.ListTextColor = Color.White;
+            languageSelect.Location = new Point(1111, 5);
+            languageSelect.MinimumSize = new Size(30, 30);
+            languageSelect.Name = "languageSelect";
+            languageSelect.Size = new Size(158, 52);
+            languageSelect.TabIndex = 123;
+            languageSelect.Texts = "";
+            languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
             // 
             // panel2
             // 
@@ -601,7 +574,7 @@
             membersGrid.Size = new Size(989, 442);
             membersGrid.TabIndex = 107;
             membersGrid.CellClick += membersGrid_CellContentClick;
-            membersGrid.CellContentClick += membersGrid_CellContentClick;
+            membersGrid.CellContentClick += membersGrid_CellContentDownloadClick;
             // 
             // rjTextBox7
             // 
@@ -739,11 +712,11 @@
             departmentsBox.BorderSize = 1;
             departmentsBox.Cursor = Cursors.Hand;
             departmentsBox.DropDownStyle = ComboBoxStyle.DropDown;
-            departmentsBox.Font = new Font("Segoe UI", 10F);
-            departmentsBox.ForeColor = Color.DimGray;
+            departmentsBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            departmentsBox.ForeColor = Color.White;
             departmentsBox.IconColor = Color.White;
-            departmentsBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            departmentsBox.ListTextColor = Color.DimGray;
+            departmentsBox.ListBackColor = Color.Black;
+            departmentsBox.ListTextColor = Color.White;
             departmentsBox.Location = new Point(977, 173);
             departmentsBox.MinimumSize = new Size(200, 30);
             departmentsBox.Name = "departmentsBox";
@@ -791,12 +764,12 @@
             statusBox.BorderSize = 1;
             statusBox.Cursor = Cursors.Hand;
             statusBox.DropDownStyle = ComboBoxStyle.DropDown;
-            statusBox.Font = new Font("Segoe UI", 10F);
-            statusBox.ForeColor = Color.DimGray;
+            statusBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            statusBox.ForeColor = Color.White;
             statusBox.IconColor = Color.White;
             statusBox.Items.AddRange(new object[] { "Pending", "Completed", "Postponded", "Canceled", "All" });
-            statusBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            statusBox.ListTextColor = Color.DimGray;
+            statusBox.ListBackColor = Color.Black;
+            statusBox.ListTextColor = Color.White;
             statusBox.Location = new Point(662, 173);
             statusBox.MinimumSize = new Size(200, 30);
             statusBox.Name = "statusBox";
@@ -843,12 +816,12 @@
             tagBox.BorderSize = 1;
             tagBox.Cursor = Cursors.Hand;
             tagBox.DropDownStyle = ComboBoxStyle.DropDown;
-            tagBox.Font = new Font("Segoe UI", 10F);
-            tagBox.ForeColor = Color.DimGray;
+            tagBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tagBox.ForeColor = Color.White;
             tagBox.IconColor = Color.White;
             tagBox.Items.AddRange(new object[] { "You are the sender", "Your are the receiver" });
-            tagBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            tagBox.ListTextColor = Color.DimGray;
+            tagBox.ListBackColor = Color.Black;
+            tagBox.ListTextColor = Color.White;
             tagBox.Location = new Point(345, 173);
             tagBox.MinimumSize = new Size(200, 30);
             tagBox.Name = "tagBox";
@@ -1008,8 +981,6 @@
 
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
-        private CustomComponent.CustomButton customButton12;
-        private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton customButton1;
         private CustomComponent.CustomButton customButton9;
         private CustomComponent.CustomButton customButton8;
@@ -1050,5 +1021,6 @@
         private CustomComponent.CustomButton saveButton;
         private CustomComponent.CustomButton cancelButton;
         private CustomComponent.CustomButton customButton13;
+        private CustomComponent.CustomComboBox languageSelect;
     }
 }

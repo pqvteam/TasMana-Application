@@ -23,5 +23,9 @@ namespace Services
             List<QuanLi>? foundManager = repository.getAllManager(departmentID);
             return foundManager;
         }
+        public bool firedStaff(string staffID, string Manager)
+        {
+            return repository.DeactiveStaff(staffID, Manager);
+        }
     }
 }

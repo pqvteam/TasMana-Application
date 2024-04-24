@@ -25,5 +25,9 @@ namespace Services
         {
             return repository.DeposeManager(staffID, CEOID);
         }
+        public bool firedStaff(string staffID, string CEOID)
+        {
+            return repository.DeactiveStaff(staffID, CEOID);
+        }
     }
 }
