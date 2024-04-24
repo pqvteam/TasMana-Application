@@ -584,7 +584,7 @@
             membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(24, 23, 23);
-            membersGrid.Location = new Point(10, 224);
+            membersGrid.Location = new Point(3, 218);
             membersGrid.Name = "membersGrid";
             membersGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             membersGrid.RowHeadersVisible = false;
