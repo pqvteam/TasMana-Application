@@ -519,6 +519,7 @@
             label11.TabIndex = 63;
             label11.Text = "INFORMATION";
             label11.TextAlign = ContentAlignment.MiddleCenter;
+            label11.Click += label11_Click;
             // 
             // label12
             // 

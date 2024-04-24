@@ -73,6 +73,7 @@
             customButton10 = new CustomComponent.CustomButton();
             saveButton = new CustomComponent.CustomButton();
             cancelButton = new CustomComponent.CustomButton();
+            customButton13 = new CustomComponent.CustomButton();
             ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).BeginInit();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -871,7 +872,7 @@
             saveButton.FlatStyle = FlatStyle.Flat;
             saveButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             saveButton.ForeColor = Color.White;
-            saveButton.Location = new Point(1243, 740);
+            saveButton.Location = new Point(1115, 750);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(122, 48);
             saveButton.TabIndex = 122;
@@ -893,7 +894,7 @@
             cancelButton.FlatStyle = FlatStyle.Flat;
             cancelButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cancelButton.ForeColor = Color.White;
-            cancelButton.Location = new Point(1115, 740);
+            cancelButton.Location = new Point(987, 750);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(122, 48);
             cancelButton.TabIndex = 121;
@@ -903,12 +904,34 @@
             cancelButton.Visible = false;
             cancelButton.Click += cancelButton_Click;
             // 
+            // customButton13
+            // 
+            customButton13.BackColor = Color.Yellow;
+            customButton13.BackgroundColor = Color.Yellow;
+            customButton13.BorderColor = Color.PaleVioletRed;
+            customButton13.BorderRadius = 12;
+            customButton13.BorderSize = 0;
+            customButton13.Cursor = Cursors.Hand;
+            customButton13.FlatAppearance.BorderSize = 0;
+            customButton13.FlatStyle = FlatStyle.Flat;
+            customButton13.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton13.ForeColor = Color.Black;
+            customButton13.Location = new Point(1243, 750);
+            customButton13.Name = "customButton13";
+            customButton13.Size = new Size(122, 48);
+            customButton13.TabIndex = 123;
+            customButton13.Text = "UPDATE PROCESS";
+            customButton13.TextColor = Color.Black;
+            customButton13.UseVisualStyleBackColor = false;
+            customButton13.Click += customButton13_Click;
+            // 
             // A_MyTaskList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 23, 23);
             ClientSize = new Size(1400, 800);
+            Controls.Add(customButton13);
             Controls.Add(saveButton);
             Controls.Add(cancelButton);
             Controls.Add(tagBox);
@@ -997,6 +1020,7 @@
         private CustomComponent.CustomButton customButton4;
         private CustomComponent.CustomButton saveButton;
         private CustomComponent.CustomButton cancelButton;
+        private CustomComponent.CustomButton customButton13;
         private CustomComponent.CustomComboBox languageSelect;
     }
 }
