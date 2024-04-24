@@ -133,9 +133,6 @@
   <data name="triangle_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\triangle_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bell_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bell_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="kimi-no-nawa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kimi-no-nawa2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,14 +166,14 @@
   <data name="triangle_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\triangle_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="apartment_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apartment_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo_team" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_team.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="apartment_id" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\apartment_id1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="password_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\password_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background_input_userid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background_input_userid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,6 +193,9 @@
   <data name="group_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\group_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="my_list_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\my_list_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="deadline_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deadline_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,11 +214,14 @@
   <data name="authorized_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\authorized_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="my_list_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\my_list_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="password_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\password_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="customer_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customer_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="email_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\email_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="schedule_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\schedule_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,13 +232,13 @@
   <data name="cloudy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cloudy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="apartment_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\apartment_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bell_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bell_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="triangle_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\triangle_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="email_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\email_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="completed_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\completed_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
