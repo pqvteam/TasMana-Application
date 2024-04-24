@@ -54,6 +54,7 @@
             label9 = new Label();
             label7 = new Label();
             customButton11 = new CustomComponent.CustomButton();
+            customButton12 = new CustomComponent.CustomButton();
             customButton10 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
             customButton8 = new CustomComponent.CustomButton();
@@ -405,6 +406,26 @@
             customButton11.TextColor = Color.White;
             customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton11.UseVisualStyleBackColor = false;
+            // customButton12
+            // 
+            customButton12.BackColor = Color.Black;
+            customButton12.BackgroundColor = Color.Black;
+            customButton12.BorderColor = Color.PaleVioletRed;
+            customButton12.BorderRadius = 28;
+            customButton12.BorderSize = 0;
+            customButton12.FlatAppearance.BorderSize = 0;
+            customButton12.FlatStyle = FlatStyle.Flat;
+            customButton12.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton12.ForeColor = Color.White;
+            customButton12.Image = Properties.Resources.bell_icon;
+            customButton12.Location = new Point(1208, 8);
+            customButton12.Name = "customButton12";
+            customButton12.Size = new Size(51, 40);
+            customButton12.TabIndex = 22;
+            customButton12.TextAlign = ContentAlignment.MiddleRight;
+            customButton12.TextColor = Color.White;
+            customButton12.TextImageRelation = TextImageRelation.ImageBeforeText;
+            customButton12.UseVisualStyleBackColor = false;
             // 
             // customButton10
             // 
@@ -615,6 +636,28 @@
             customButton22.UseVisualStyleBackColor = false;
             customButton22.Click += customButton22_Click;
             // 
+            // customButton22
+            // 
+            customButton22.BackColor = Color.Black;
+            customButton22.BackgroundColor = Color.Black;
+            customButton22.BorderColor = Color.PaleVioletRed;
+            customButton22.BorderRadius = 28;
+            customButton22.BorderSize = 0;
+            customButton22.Cursor = Cursors.Hand;
+            customButton22.FlatAppearance.BorderSize = 0;
+            customButton22.FlatStyle = FlatStyle.Flat;
+            customButton22.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton22.ForeColor = Color.White;
+            customButton22.Image = Properties.Resources.triangle_icon;
+            customButton22.Location = new Point(66, 5);
+            customButton22.Name = "customButton22";
+            customButton22.Size = new Size(51, 51);
+            customButton22.TabIndex = 38;
+            customButton22.TextColor = Color.White;
+            customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
+            customButton22.UseVisualStyleBackColor = false;
+            customButton22.Click += customButton22_Click;
+            // 
             // panel1
             // 
             panel1.Location = new Point(694, 59);
@@ -629,6 +672,8 @@
             headerPanel.Controls.Add(customButton17);
             headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton11);
+
+            headerPanel.Controls.Add(customButton12);
             headerPanel.Controls.Add(customButton10);
             headerPanel.Controls.Add(customButton9);
             headerPanel.Controls.Add(customButton8);
@@ -752,6 +797,8 @@
         private Label label9;
         private Label label7;
         private CustomComponent.CustomButton customButton11;
+
+        private CustomComponent.CustomButton customButton12;
         private CustomComponent.CustomButton customButton10;
         private CustomComponent.CustomButton customButton9;
         private CustomComponent.CustomButton customButton8;
