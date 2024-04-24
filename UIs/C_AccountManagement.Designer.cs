@@ -180,6 +180,7 @@
             customButton18.Text = "APARTMENT & RESIDENT";
             customButton18.TextAlign = ContentAlignment.MiddleRight;
             customButton18.TextColor = Color.White;
+            customButton18.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton18.UseVisualStyleBackColor = false;
             // 
             // customButton17
