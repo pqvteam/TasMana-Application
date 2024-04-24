@@ -119,17 +119,15 @@ namespace UIs
             }
         }
 
-        private void customButton22_Click(object sender, EventArgs e)
+        private void customButton22_Click_1(object sender, EventArgs e)
         {
-            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            if (tableLayoutPanel1.Visible == false)
             {
-                M_Information information = new M_Information();
-                information.ShowDialog();
+                tableLayoutPanel1.Visible = true;
             }
             else
             {
-                E_Information information = new E_Information();
-                information.ShowDialog();
+                tableLayoutPanel1.Visible = false;
             }
         }
     }
