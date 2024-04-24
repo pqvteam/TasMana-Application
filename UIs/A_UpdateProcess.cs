@@ -47,6 +47,11 @@ namespace UIs
         private void customButton3_Click(object sender, EventArgs e)
         {
             taskStatus = "UNEXECUTED/NOT YET STARTED";
+            customButton2.BackColor = Color.FromArgb(24, 23, 23);
+            customButton3.BackColor = Color.FromArgb(42, 42, 42);
+            customButton5.BackColor = Color.FromArgb(24, 23, 23);
+            customButton6.BackColor = Color.FromArgb(24, 23, 23);
+            customButton7.BackColor = Color.FromArgb(24, 23, 23);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -57,21 +62,42 @@ namespace UIs
         private void customButton2_Click(object sender, EventArgs e)
         {
             taskStatus = "COMPLETED";
+            customButton2.BackColor = Color.FromArgb(42, 42, 42);
+            customButton3.BackColor = Color.FromArgb(24, 23, 23);
+            customButton5.BackColor = Color.FromArgb(24, 23, 23);
+            customButton6.BackColor = Color.FromArgb(24, 23, 23);
+            customButton7.BackColor = Color.FromArgb(24, 23, 23);
         }
 
         private void customButton5_Click(object sender, EventArgs e)
         {
             taskStatus = "PROCESSING";
+            customButton2.BackColor = Color.FromArgb(24, 23, 23);
+            customButton3.BackColor = Color.FromArgb(24, 23, 23);
+            customButton5.BackColor = Color.FromArgb(42, 42, 42);
+            customButton6.BackColor = Color.FromArgb(24, 23, 23);
+            customButton7.BackColor = Color.FromArgb(24, 23, 23);
+
         }
 
         private void customButton6_Click(object sender, EventArgs e)
         {
             taskStatus = "CUSTOMER RESCHEDULE";
+            customButton2.BackColor = Color.FromArgb(24, 23, 23);
+            customButton3.BackColor = Color.FromArgb(24, 23, 23);
+            customButton5.BackColor = Color.FromArgb(24, 23, 23);
+            customButton6.BackColor = Color.FromArgb(42, 42, 42);
+            customButton7.BackColor = Color.FromArgb(24, 23, 23);
         }
 
         private void customButton7_Click(object sender, EventArgs e)
         {
             taskStatus = "UNCOMPLETED";
+            customButton2.BackColor = Color.FromArgb(24, 23, 23);
+            customButton3.BackColor = Color.FromArgb(24, 23, 23);
+            customButton5.BackColor = Color.FromArgb(24, 23, 23);
+            customButton6.BackColor = Color.FromArgb(24, 23, 23);
+            customButton7.BackColor = Color.FromArgb(42, 42, 42);
         }
 
         private void confirmButton_Click(object sender, EventArgs e)
