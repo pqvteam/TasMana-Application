@@ -127,14 +127,14 @@
   <data name="sunny" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sunny.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="forgotpassword_icon5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forgotpassword_icon5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="kimi-no-nawa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kimi-no-nawa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="triangle_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\triangle_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bell_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bell_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="kimi-no-nawa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kimi-no-nawa2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,11 +163,17 @@
   <data name="snapedit_1712151680966" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\snapedit_1712151680966.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="forgotpassword_icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forgotpassword_icon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="phone_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phone_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="triangle_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\triangle_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="apartment_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apartment_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo_team" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_team.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,6 +184,9 @@
   <data name="password_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\password_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="background_total_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background_total_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="background_input_userid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background_input_userid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,14 +196,20 @@
   <data name="Picture1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Picture1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tenant_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tenant_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="forgotpassword_icon6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forgotpassword_icon6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="calendarWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendarLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kimi-no-nawa4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kimi-no-nawa4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="group_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\group_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="my_list_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\my_list_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="deadline_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deadline_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,17 +223,20 @@
   <data name="password_icon_change" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\password_icon_change.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tenant_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tenant_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="forgotpassword_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forgotpassword_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="authorized_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\authorized_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="my_list_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\my_list_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="password_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\password_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="customer_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customer_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="email_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\email_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="schedule_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\schedule_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,16 +244,31 @@
   <data name="rainy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rainy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="schedule_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schedule_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kimi-no-nawa4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kimi-no-nawa4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cloudy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cloudy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="apartment_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\apartment_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bell_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bell_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="triangle_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\triangle_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="email_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\email_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	<data name="forgotpassword_icon31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\forgotpassword_icon31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+  <data name="completed_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\completed_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
