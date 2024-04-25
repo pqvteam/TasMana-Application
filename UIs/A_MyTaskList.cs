@@ -57,6 +57,7 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton7.Text = "CÔNG VIỆC";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
+                customButton13.Text = "CẬP NHẬT TIẾN ĐỘ";
                 customButton1.Text = "DỊCH VỤ CƯ DÂN";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton2.Text = "TẤT CẢ CÔNG VIỆC";
@@ -76,6 +77,7 @@ namespace UIs
                 font = new Font("Copperplate Gothic Bold", 10);
                 customButton8.Text = "STATISTIC";
                 customButton9.Text = "REPORT";
+                customButton13.Text = "UPDATE PROCESS";
                 customButton7.Text = "WORK";
                 customButton18.Text = "APARTMENT RESIDENT";
                 customButton1.Text = "RESIDENT SERVICE";
@@ -98,12 +100,16 @@ namespace UIs
             customButton2.Font = font;
             customButton16.Font = font;
             customButton5.Font = font;
+            customButton13.Font = font;
+            saveButton.Font = font;
             createGroupButton.Font = font;
             grandChart.Font = font;
             label1.Font = font;
             label2.Font = font;
             label3.Font = font;
             label19.Font = font;
+            saveButton.Font = font;
+            customButton13.Font = font;
             // Special element
             customButton2.Font = fontLarge;
             customButton16.Font = fontLarge;
@@ -476,6 +482,7 @@ namespace UIs
             {
                 Session.Instance.Language = "vi";
                 customButton8.Text = "THỐNG KÊ";
+                customButton13.Text = "CẬP NHẬT TIẾN ĐỘ";
                 customButton9.Text = "BÁO CÁO";
                 customButton7.Text = "CÔNG VIỆC";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
@@ -502,6 +509,7 @@ namespace UIs
                 customButton8.Text = "STATISTIC";
                 customButton9.Text = "REPORT";
                 customButton7.Text = "WORK";
+                customButton13.Text = "UPDATE PROCESS";
                 customButton18.Text = "APARTMENT RESIDENT";
                 customButton1.Text = "RESIDENT SERVICE";
                 customButton17.Text = "ACCOUNT MANAGEMENT";
@@ -524,6 +532,8 @@ namespace UIs
             customButton17.Font = font;
             customButton2.Font = font;
             customButton16.Font = font;
+            customButton13.Font = font;
+            saveButton.Font = font;
             customButton5.Font = font;
             createGroupButton.Font = font;
             grandChart.Font = font;

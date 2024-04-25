@@ -117,13 +117,12 @@
             customButton2 = new CustomComponent.CustomButton();
             heading = new Label();
             headerPanel = new Panel();
+            languageSelect = new CustomComponent.CustomComboBox();
             panel1 = new Panel();
             currentAvatarSmall = new CustomComponent.CustomPictureBox();
             customButton22 = new CustomComponent.CustomButton();
             customButton15 = new CustomComponent.CustomButton();
             customButton16 = new CustomComponent.CustomButton();
-            customButton19 = new CustomComponent.CustomButton();
-            customButton20 = new CustomComponent.CustomButton();
             customButton21 = new CustomComponent.CustomButton();
             customButton23 = new CustomComponent.CustomButton();
             customButton24 = new CustomComponent.CustomButton();
@@ -1450,11 +1449,10 @@
             // headerPanel
             // 
             headerPanel.BackColor = Color.FromArgb(13, 13, 13);
+            headerPanel.Controls.Add(languageSelect);
             headerPanel.Controls.Add(panel1);
             headerPanel.Controls.Add(customButton15);
             headerPanel.Controls.Add(customButton16);
-            headerPanel.Controls.Add(customButton19);
-            headerPanel.Controls.Add(customButton20);
             headerPanel.Controls.Add(customButton21);
             headerPanel.Controls.Add(customButton23);
             headerPanel.Controls.Add(customButton24);
@@ -1466,6 +1464,26 @@
             headerPanel.Name = "headerPanel";
             headerPanel.Size = new Size(1400, 59);
             headerPanel.TabIndex = 140;
+            // 
+            // languageSelect
+            // 
+            languageSelect.BackColor = Color.Black;
+            languageSelect.BorderColor = Color.MediumSlateBlue;
+            languageSelect.BorderSize = 0;
+            languageSelect.DropDownStyle = ComboBoxStyle.DropDown;
+            languageSelect.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            languageSelect.ForeColor = Color.White;
+            languageSelect.IconColor = Color.White;
+            languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
+            languageSelect.ListBackColor = Color.Black;
+            languageSelect.ListTextColor = Color.White;
+            languageSelect.Location = new Point(1116, 3);
+            languageSelect.MinimumSize = new Size(30, 30);
+            languageSelect.Name = "languageSelect";
+            languageSelect.Size = new Size(158, 52);
+            languageSelect.TabIndex = 51;
+            languageSelect.Texts = "";
+            languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
             // 
             // panel1
             // 
@@ -1562,53 +1580,6 @@
             customButton16.TextColor = Color.White;
             customButton16.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton16.UseVisualStyleBackColor = false;
-            // 
-            // customButton19
-            // 
-            customButton19.BackColor = Color.Black;
-            customButton19.BackgroundColor = Color.Black;
-            customButton19.BorderColor = Color.PaleVioletRed;
-            customButton19.BorderRadius = 28;
-            customButton19.BorderSize = 0;
-            customButton19.Cursor = Cursors.Hand;
-            customButton19.FlatAppearance.BorderSize = 0;
-            customButton19.FlatStyle = FlatStyle.Flat;
-            customButton19.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton19.ForeColor = Color.White;
-            customButton19.Image = Properties.Resources.triangle_icon1;
-            customButton19.Location = new Point(1208, 8);
-            customButton19.Name = "customButton19";
-            customButton19.Size = new Size(51, 40);
-            customButton19.TabIndex = 0;
-            customButton19.TabStop = false;
-            customButton19.TextAlign = ContentAlignment.MiddleRight;
-            customButton19.TextColor = Color.White;
-            customButton19.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton19.UseVisualStyleBackColor = false;
-            // 
-            // customButton20
-            // 
-            customButton20.BackColor = Color.Black;
-            customButton20.BackgroundColor = Color.Black;
-            customButton20.BorderColor = Color.PaleVioletRed;
-            customButton20.BorderRadius = 28;
-            customButton20.BorderSize = 0;
-            customButton20.Cursor = Cursors.Hand;
-            customButton20.FlatAppearance.BorderSize = 0;
-            customButton20.FlatStyle = FlatStyle.Flat;
-            customButton20.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton20.ForeColor = Color.White;
-            customButton20.ImageAlign = ContentAlignment.MiddleRight;
-            customButton20.Location = new Point(1077, 5);
-            customButton20.Name = "customButton20";
-            customButton20.Size = new Size(120, 51);
-            customButton20.TabIndex = 0;
-            customButton20.TabStop = false;
-            customButton20.Text = "English";
-            customButton20.TextAlign = ContentAlignment.MiddleRight;
-            customButton20.TextColor = Color.White;
-            customButton20.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton20.UseVisualStyleBackColor = false;
             // 
             // customButton21
             // 
@@ -1930,8 +1901,6 @@
         private CustomComponent.CustomButton customButton22;
         private CustomComponent.CustomButton customButton15;
         private CustomComponent.CustomButton customButton16;
-        private CustomComponent.CustomButton customButton19;
-        private CustomComponent.CustomButton customButton20;
         private CustomComponent.CustomButton customButton21;
         private CustomComponent.CustomButton customButton23;
         private CustomComponent.CustomButton customButton24;
@@ -1940,5 +1909,6 @@
         private Panel panel4;
         private TextBox nameBox;
         private LinkLabel currentFile;
+        private CustomComponent.CustomComboBox languageSelect;
     }
 }
