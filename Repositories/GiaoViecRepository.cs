@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Formats.Tar;
 using System.Reflection.PortableExecutable;
@@ -171,6 +172,31 @@ namespace Repositories
             sqlcmd.ExecuteNonQuery();
             DatabaseConnection.Instance.CloseConnection();
             return isSuccess;
+        }
+
+        public void UpdateProcess(string id, string status)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+
+                conn.Open();
+
+                using (SqlCommand command = new SqlCommand("UPDATE GiaoViec SET tinhTrangCongViec = @status WHERE maGiaoViec = @id", conn))
+                {
+                    command.Parameters.AddWithValue("@status", status);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         public bool Update(
