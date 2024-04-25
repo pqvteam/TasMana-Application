@@ -189,7 +189,7 @@
             rolesBox.Name = "rolesBox";
             rolesBox.Padding = new Padding(1);
             rolesBox.Size = new Size(431, 38);
-            rolesBox.TabIndex = 61;
+            rolesBox.TabIndex = 52;
             rolesBox.Texts = "";
             rolesBox.OnSelectedIndexChanged += departmentsBox_OnSelectedIndexChanged;
             // 
@@ -210,7 +210,7 @@
             groupsBox.Name = "groupsBox";
             groupsBox.Padding = new Padding(1);
             groupsBox.Size = new Size(431, 40);
-            groupsBox.TabIndex = 62;
+            groupsBox.TabIndex = 53;
             groupsBox.Texts = "";
             groupsBox.OnSelectedIndexChanged += groupsBox_OnSelectedIndexChanged;
             // 
@@ -229,7 +229,7 @@
             confirmButton.Location = new Point(454, 470);
             confirmButton.Name = "confirmButton";
             confirmButton.Size = new Size(122, 48);
-            confirmButton.TabIndex = 64;
+            confirmButton.TabIndex = 56;
             confirmButton.Text = "CONTINUE";
             confirmButton.TextColor = Color.White;
             confirmButton.UseVisualStyleBackColor = false;
@@ -250,7 +250,7 @@
             cancelButton.Location = new Point(326, 470);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(122, 48);
-            cancelButton.TabIndex = 63;
+            cancelButton.TabIndex = 55;
             cancelButton.Text = "CANCEL";
             cancelButton.TextColor = Color.White;
             cancelButton.UseVisualStyleBackColor = false;
@@ -277,7 +277,7 @@
             nameBox.Location = new Point(142, 200);
             nameBox.Name = "nameBox";
             nameBox.Size = new Size(375, 27);
-            nameBox.TabIndex = 65;
+            nameBox.TabIndex = 51;
             // 
             // customButton4
             // 
@@ -333,7 +333,7 @@
             createButton.Location = new Point(198, 470);
             createButton.Name = "createButton";
             createButton.Size = new Size(122, 48);
-            createButton.TabIndex = 69;
+            createButton.TabIndex = 54;
             createButton.Text = "CREATE NEW GROUP";
             createButton.TextColor = Color.Black;
             createButton.UseVisualStyleBackColor = false;

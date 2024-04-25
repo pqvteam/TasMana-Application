@@ -143,7 +143,7 @@
             venuesGrid.RowHeadersWidth = 51;
             venuesGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             venuesGrid.Size = new Size(776, 301);
-            venuesGrid.TabIndex = 55;
+            venuesGrid.TabIndex = 50;
             venuesGrid.CellClick += venuesGrid_CellContentClick;
             venuesGrid.CellContentClick += venuesGrid_CellContentClick;
             // 

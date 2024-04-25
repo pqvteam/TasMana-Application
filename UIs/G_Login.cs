@@ -48,7 +48,7 @@ namespace UIs
             // Session lưu các thông tin quan trọng của tài khoản
             if (result == "Đăng nhập thành công")
             {
-                
+
                 NhanSu member = nhanSuService.findMember(userID);
                 Session.Instance.UserName = box_username.Text;
                 Session.Instance.Name = member.HoVaTen;
@@ -139,9 +139,14 @@ namespace UIs
             {
                 box_username.Text = Properties.Settings.Default.Username;
                 box_password.Text = Properties.Settings.Default.Password;
+                box_password.PasswordChar = '*';
                 //button_Login_Click(sender, e);
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -110,7 +110,7 @@
             saButton.Location = new Point(658, 87);
             saButton.Name = "saButton";
             saButton.Size = new Size(130, 50);
-            saButton.TabIndex = 48;
+            saButton.TabIndex = 52;
             saButton.Text = "SANTINATION";
             saButton.TextColor = Color.White;
             saButton.UseVisualStyleBackColor = false;
@@ -131,7 +131,7 @@
             fiButton.Location = new Point(528, 87);
             fiButton.Name = "fiButton";
             fiButton.Size = new Size(130, 50);
-            fiButton.TabIndex = 49;
+            fiButton.TabIndex = 51;
             fiButton.Text = "FINANCIAL ACOUNTING";
             fiButton.TextColor = Color.White;
             fiButton.UseVisualStyleBackColor = false;
@@ -173,7 +173,7 @@
             maButton.Location = new Point(268, 87);
             maButton.Name = "maButton";
             maButton.Size = new Size(130, 50);
-            maButton.TabIndex = 51;
+            maButton.TabIndex = 49;
             maButton.Text = "MAINTAINANCE";
             maButton.TextColor = Color.White;
             maButton.UseVisualStyleBackColor = false;
@@ -194,7 +194,7 @@
             seButton.Location = new Point(138, 87);
             seButton.Name = "seButton";
             seButton.Size = new Size(130, 50);
-            seButton.TabIndex = 52;
+            seButton.TabIndex = 48;
             seButton.Text = "SECURITY";
             seButton.TextColor = Color.White;
             seButton.UseVisualStyleBackColor = false;
