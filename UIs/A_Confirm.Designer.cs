@@ -53,7 +53,7 @@
             customPanel1.GradientAngle = 0F;
             customPanel1.GradientEndColor = Color.White;
             customPanel1.GradientStartColor = Color.White;
-            customPanel1.Location = new Point(25, 63);
+            customPanel1.Location = new Point(25, 57);
             customPanel1.Name = "customPanel1";
             customPanel1.Size = new Size(1015, 109);
             customPanel1.TabIndex = 0;
@@ -62,9 +62,10 @@
             // messageText
             // 
             messageText.AllowDrop = true;
+            messageText.BackColor = Color.FromArgb(37, 37, 37);
             messageText.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             messageText.ForeColor = Color.Red;
-            messageText.Location = new Point(25, 9);
+            messageText.Location = new Point(26, 9);
             messageText.Name = "messageText";
             messageText.Size = new Size(964, 91);
             messageText.TabIndex = 0;

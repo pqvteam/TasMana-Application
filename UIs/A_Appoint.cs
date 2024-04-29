@@ -51,6 +51,8 @@ namespace UIs
 
         private void A_Appoint_Load(object sender, EventArgs e)
         {
+            changelanguage();
+
             rolesBox.SelectedItem = "Leader";
             NhanSu member = nhanSuService.findMember(staffID);
             NhanVien? staff = nhanVienService.get(staffID);
@@ -137,6 +139,49 @@ namespace UIs
         {
             CM_CreateGroup createGroupForm = new CM_CreateGroup();
             createGroupForm.ShowDialog();
+        }
+
+        private void changelanguage()
+        {
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            Font fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            if (Session.Instance.Language == "vi")
+            {
+                customButton10.Text = "BỔ NHIỆM";
+                customButton10.Font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+
+                label3.Text = "TÊN";
+                label1.Text = "CHỨC VỤ";
+                groupLabel.Text = "NHÓM";
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+
+                createButton.Text = "TẠO NHÓM MỚI";
+                cancelButton.Text = "HỦY";
+                confirmButton.Text = "TIẾP TỤC";
+                fontSmaller = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            else
+            {
+                customButton10.Text = "APPOINT";
+                customButton10.Font = new Font("Copperplate Gothic Bold", 14);
+
+                label3.Text = "NAME";
+                label1.Text = "ROLE";
+                groupLabel.Text = "GROUP";
+                font = new Font("Copperplate Gothic Bold", 10);
+
+                createButton.Text = "CREATE NEW GROUP";
+                cancelButton.Text = "CANCEL";
+                confirmButton.Text = "CONTINUE";
+                fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            }
+            label3.Font = font;
+            label1.Font = font;
+            groupLabel.Font = font;
+
+            createButton.Font = fontSmaller;
+            cancelButton.Font = fontSmaller;
+            confirmButton.Font = fontSmaller;
         }
     }
 }

@@ -43,6 +43,7 @@ namespace UIs
 
         private void A_ShowVenue_Load(object sender, EventArgs e)
         {
+            changelanguage();
             CanHoService canHoService = new CanHoService();
             List<CanHo> apartments = canHoService.getAllApartments();
 
@@ -74,6 +75,33 @@ namespace UIs
                     MessageBox.Show("Please select a member first.");
                 }
             }
+        }
+
+        private void changelanguage()
+        {
+            Font font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+            Font fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            if (Session.Instance.Language == "vi")
+            {
+                customButton10.Text = "KHU VỰC LÀM VIỆC";
+                customButton10.Font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+
+                cancelButton.Text = "HỦY";
+                saveButton.Text = "LƯU";
+                fontSmaller = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            else
+            {
+                customButton10.Text = "WORKPLACE";
+                customButton10.Font = new Font("Copperplate Gothic Bold", 14);
+
+                cancelButton.Text = "CANCEL";
+                saveButton.Text = "SAVE";
+                fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            }
+
+            cancelButton.Font = fontSmaller;
+            saveButton.Font = fontSmaller;
         }
     }
 }
