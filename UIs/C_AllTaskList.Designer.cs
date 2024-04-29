@@ -176,7 +176,7 @@
             languageSelect.MinimumSize = new Size(30, 30);
             languageSelect.Name = "languageSelect";
             languageSelect.Size = new Size(158, 52);
-            languageSelect.TabIndex = 50;
+            languageSelect.TabIndex = 49;
             languageSelect.Texts = "";
             languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
             // 
@@ -187,7 +187,7 @@
             panel2.Location = new Point(1261, -1);
             panel2.Name = "panel2";
             panel2.Size = new Size(117, 59);
-            panel2.TabIndex = 49;
+            panel2.TabIndex = 50;
             // 
             // currentAvatarSmall
             // 
@@ -246,7 +246,7 @@
             customButton6.Location = new Point(724, 4);
             customButton6.Name = "customButton6";
             customButton6.Size = new Size(206, 48);
-            customButton6.TabIndex = 47;
+            customButton6.TabIndex = 43;
             customButton6.Text = "APARTMENT & RESIDENT";
             customButton6.TextAlign = ContentAlignment.MiddleRight;
             customButton6.TextColor = Color.White;
@@ -270,7 +270,7 @@
             customButton7.Location = new Point(516, 5);
             customButton7.Name = "customButton7";
             customButton7.Size = new Size(202, 48);
-            customButton7.TabIndex = 45;
+            customButton7.TabIndex = 42;
             customButton7.Text = "ACCOUNTING MANAGEMENT";
             customButton7.TextAlign = ContentAlignment.MiddleRight;
             customButton7.TextColor = Color.White;
@@ -295,7 +295,7 @@
             customButton10.Location = new Point(940, 2);
             customButton10.Name = "customButton10";
             customButton10.Size = new Size(156, 51);
-            customButton10.TabIndex = 42;
+            customButton10.TabIndex = 44;
             customButton10.Text = "RESIDENT SERVICE";
             customButton10.TextAlign = ContentAlignment.MiddleRight;
             customButton10.TextColor = Color.White;
@@ -491,6 +491,7 @@
             label8.TabIndex = 65;
             label8.Text = "SIGN OUT";
             label8.TextAlign = ContentAlignment.MiddleCenter;
+            label8.Click += label8_Click;
             // 
             // label9
             // 
@@ -519,6 +520,7 @@
             label11.TabIndex = 63;
             label11.Text = "INFORMATION";
             label11.TextAlign = ContentAlignment.MiddleCenter;
+            label11.Click += label11_Click;
             // 
             // label12
             // 
@@ -588,6 +590,7 @@
             rjTextBox9.PlaceholderText = "";
             rjTextBox9.Size = new Size(342, 133);
             rjTextBox9.TabIndex = 78;
+            rjTextBox9.TabStop = false;
             rjTextBox9.Texts = "";
             rjTextBox9.UnderlinedStyle = false;
             // 
@@ -652,6 +655,7 @@
             rjTextBox8.PlaceholderText = "";
             rjTextBox8.Size = new Size(342, 133);
             rjTextBox8.TabIndex = 77;
+            rjTextBox8.TabStop = false;
             rjTextBox8.Texts = "";
             rjTextBox8.UnderlinedStyle = false;
             // 
@@ -670,7 +674,7 @@
             customButton18.Location = new Point(336, 352);
             customButton18.Name = "customButton18";
             customButton18.Size = new Size(125, 50);
-            customButton18.TabIndex = 67;
+            customButton18.TabIndex = 63;
             customButton18.Text = "ALL COMPANY";
             customButton18.TextColor = Color.White;
             customButton18.UseVisualStyleBackColor = false;
@@ -715,7 +719,7 @@
             membersGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             membersGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             membersGrid.Size = new Size(989, 216);
-            membersGrid.TabIndex = 66;
+            membersGrid.TabIndex = 70;
             membersGrid.CellContentClick += membersGrid_CellContentClick;
             // 
             // seButton
@@ -733,7 +737,7 @@
             seButton.Location = new Point(917, 352);
             seButton.Name = "seButton";
             seButton.Size = new Size(133, 50);
-            seButton.TabIndex = 65;
+            seButton.TabIndex = 67;
             seButton.Text = "SECURITY";
             seButton.TextColor = Color.White;
             seButton.UseVisualStyleBackColor = false;
@@ -754,7 +758,7 @@
             maButton.Location = new Point(573, 352);
             maButton.Name = "maButton";
             maButton.Size = new Size(174, 50);
-            maButton.TabIndex = 64;
+            maButton.TabIndex = 65;
             maButton.Text = "MAINTAINANCE";
             maButton.TextColor = Color.White;
             maButton.UseVisualStyleBackColor = false;
@@ -775,7 +779,7 @@
             coButton.Location = new Point(745, 352);
             coButton.Name = "coButton";
             coButton.Size = new Size(173, 50);
-            coButton.TabIndex = 63;
+            coButton.TabIndex = 66;
             coButton.Text = "CONSTRUCTION";
             coButton.TextColor = Color.White;
             coButton.UseVisualStyleBackColor = false;
@@ -796,7 +800,7 @@
             fiButton.Location = new Point(1049, 352);
             fiButton.Name = "fiButton";
             fiButton.Size = new Size(162, 50);
-            fiButton.TabIndex = 62;
+            fiButton.TabIndex = 68;
             fiButton.Text = "FINANCIAL ACCOUNTING";
             fiButton.TextColor = Color.White;
             fiButton.UseVisualStyleBackColor = false;
@@ -817,7 +821,7 @@
             saButton.Location = new Point(1210, 352);
             saButton.Name = "saButton";
             saButton.Size = new Size(150, 50);
-            saButton.TabIndex = 61;
+            saButton.TabIndex = 69;
             saButton.Text = "SANTINATION";
             saButton.TextColor = Color.White;
             saButton.UseVisualStyleBackColor = false;
@@ -838,7 +842,7 @@
             hrButton.Location = new Point(460, 352);
             hrButton.Name = "hrButton";
             hrButton.Size = new Size(116, 50);
-            hrButton.TabIndex = 60;
+            hrButton.TabIndex = 64;
             hrButton.Text = "HR & RS";
             hrButton.TextColor = Color.White;
             hrButton.UseVisualStyleBackColor = false;
@@ -1171,7 +1175,7 @@
             createGroupButton.Name = "createGroupButton";
             createGroupButton.Padding = new Padding(12, 0, 0, 0);
             createGroupButton.Size = new Size(253, 59);
-            createGroupButton.TabIndex = 63;
+            createGroupButton.TabIndex = 54;
             createGroupButton.Text = "CREATE GROUP";
             createGroupButton.TextAlign = ContentAlignment.MiddleRight;
             createGroupButton.TextColor = Color.White;
@@ -1196,7 +1200,7 @@
             grandChart.Name = "grandChart";
             grandChart.Padding = new Padding(12, 0, 0, 0);
             grandChart.Size = new Size(253, 59);
-            grandChart.TabIndex = 62;
+            grandChart.TabIndex = 55;
             grandChart.Text = "GRAND CHART";
             grandChart.TextAlign = ContentAlignment.MiddleRight;
             grandChart.TextColor = Color.White;
@@ -1220,7 +1224,7 @@
             customButton5.Name = "customButton5";
             customButton5.Padding = new Padding(12, 0, 0, 0);
             customButton5.Size = new Size(253, 59);
-            customButton5.TabIndex = 60;
+            customButton5.TabIndex = 53;
             customButton5.Text = "OBSERVED TASK";
             customButton5.TextAlign = ContentAlignment.MiddleRight;
             customButton5.TextColor = Color.White;
@@ -1245,7 +1249,7 @@
             customButton16.Name = "customButton16";
             customButton16.Padding = new Padding(12, 0, 0, 0);
             customButton16.Size = new Size(253, 59);
-            customButton16.TabIndex = 58;
+            customButton16.TabIndex = 52;
             customButton16.Text = "MY TASK LIST";
             customButton16.TextAlign = ContentAlignment.MiddleRight;
             customButton16.TextColor = Color.White;
@@ -1271,7 +1275,7 @@
             customButton17.Name = "customButton17";
             customButton17.Padding = new Padding(12, 0, 0, 0);
             customButton17.Size = new Size(253, 59);
-            customButton17.TabIndex = 57;
+            customButton17.TabIndex = 51;
             customButton17.Text = "ALL TASK LIST";
             customButton17.TextAlign = ContentAlignment.MiddleRight;
             customButton17.TextColor = Color.Black;

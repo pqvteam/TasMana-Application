@@ -101,6 +101,7 @@ namespace UIs
                 }
             }
         }
+
         private void changelanguage()
         {
             Font font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
@@ -257,6 +258,24 @@ namespace UIs
 
             SUBMIT.Font = fontLarger;
             label7.Font = fontLarger;
+        }
+
+        private void customButton7_Click(object sender, EventArgs e)
+        {
+            C_AllTaskList c_AllTaskList = new C_AllTaskList();
+            c_AllTaskList.ShowDialog();
+        }
+
+        private void customButton17_Click(object sender, EventArgs e)
+        {
+            C_AccountManagement c_AccountManagement = new C_AccountManagement();
+            c_AccountManagement.ShowDialog();
+        }
+
+        private void customButton18_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail cM = new CM_Resident_sDetail();
+            cM.ShowDialog();
         }
     }
 }

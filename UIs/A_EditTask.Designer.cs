@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_EditTask));
             elipseControl1 = new CustomComponent.ElipseControl();
             taskName = new TextBox();
@@ -100,7 +100,6 @@
             cancelButton = new CustomComponent.CustomButton();
             taskDescription = new TextBox();
             customButton5 = new CustomComponent.CustomButton();
-            customButton4 = new CustomComponent.CustomButton();
             label8 = new Label();
             pictureBox6 = new PictureBox();
             customButton1 = new CustomComponent.CustomButton();
@@ -130,6 +129,9 @@
             customButton26 = new CustomComponent.CustomButton();
             panel4 = new Panel();
             currentFile = new LinkLabel();
+            departmentMode = new CustomComponent.CustomToggleButton();
+            label22 = new Label();
+            selectDepartment = new Label();
             ((System.ComponentModel.ISupportInitialize)membersGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)authorizeIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customPictureBox4).BeginInit();
@@ -201,23 +203,23 @@
             membersGrid.BackgroundColor = Color.FromArgb(24, 23, 23);
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle10.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle10.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle10.SelectionForeColor = Color.White;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle10;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(24, 23, 23);
             membersGrid.Location = new Point(347, 578);
@@ -368,9 +370,8 @@
             label21.ForeColor = Color.White;
             label21.Location = new Point(59, 253);
             label21.Name = "label21";
-            label21.Size = new Size(142, 19);
+            label21.Size = new Size(0, 19);
             label21.TabIndex = 43;
-            label21.Text = "DESCRIPTION";
             // 
             // customPictureBox2
             // 
@@ -406,9 +407,8 @@
             venueLabel.ForeColor = Color.White;
             venueLabel.Location = new Point(16, 466);
             venueLabel.Name = "venueLabel";
-            venueLabel.Size = new Size(142, 19);
+            venueLabel.Size = new Size(0, 19);
             venueLabel.TabIndex = 50;
-            venueLabel.Text = "DESCRIPTION";
             // 
             // assignerLabel
             // 
@@ -417,9 +417,8 @@
             assignerLabel.ForeColor = Color.White;
             assignerLabel.Location = new Point(59, 152);
             assignerLabel.Name = "assignerLabel";
-            assignerLabel.Size = new Size(142, 19);
+            assignerLabel.Size = new Size(0, 19);
             assignerLabel.TabIndex = 45;
-            assignerLabel.Text = "DESCRIPTION";
             // 
             // customPictureBox3
             // 
@@ -454,9 +453,8 @@
             receiverLabel.ForeColor = Color.White;
             receiverLabel.Location = new Point(59, 61);
             receiverLabel.Name = "receiverLabel";
-            receiverLabel.Size = new Size(142, 19);
+            receiverLabel.Size = new Size(0, 19);
             receiverLabel.TabIndex = 41;
-            receiverLabel.Text = "DESCRIPTION";
             // 
             // pictureBox9
             // 
@@ -475,14 +473,18 @@
             label23.ForeColor = Color.White;
             label23.Location = new Point(59, 364);
             label23.Name = "label23";
-            label23.Size = new Size(142, 19);
+            label23.Size = new Size(0, 19);
             label23.TabIndex = 47;
-            label23.Text = "DESCRIPTION";
             // 
             // taskStart
             // 
             taskStart.BorderColor = Color.PaleVioletRed;
             taskStart.BorderSize = 0;
+            taskStart.CalendarForeColor = Color.White;
+            taskStart.CalendarMonthBackground = Color.Black;
+            taskStart.CalendarTitleBackColor = Color.Black;
+            taskStart.CalendarTitleForeColor = Color.White;
+            taskStart.CalendarTrailingForeColor = Color.White;
             taskStart.Font = new Font("Copperplate Gothic Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskStart.Format = DateTimePickerFormat.Short;
             taskStart.Location = new Point(349, 410);
@@ -538,6 +540,11 @@
             // 
             taskEnd.BorderColor = Color.PaleVioletRed;
             taskEnd.BorderSize = 0;
+            taskEnd.CalendarForeColor = Color.White;
+            taskEnd.CalendarMonthBackground = Color.Black;
+            taskEnd.CalendarTitleBackColor = Color.Black;
+            taskEnd.CalendarTitleForeColor = Color.White;
+            taskEnd.CalendarTrailingForeColor = Color.White;
             taskEnd.Font = new Font("Copperplate Gothic Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskEnd.Format = DateTimePickerFormat.Short;
             taskEnd.Location = new Point(719, 410);
@@ -1041,7 +1048,7 @@
             // taskMode
             // 
             taskMode.AutoSize = true;
-            taskMode.Location = new Point(192, 132);
+            taskMode.Location = new Point(192, 116);
             taskMode.MinimumSize = new Size(60, 30);
             taskMode.Name = "taskMode";
             taskMode.OffBackColor = Color.Gray;
@@ -1080,7 +1087,7 @@
             label18.AutoSize = true;
             label18.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label18.ForeColor = Color.FromArgb(197, 224, 180);
-            label18.Location = new Point(22, 127);
+            label18.Location = new Point(15, 127);
             label18.Name = "label18";
             label18.Size = new Size(108, 19);
             label18.TabIndex = 38;
@@ -1124,7 +1131,7 @@
             // 
             taskFile.BackColor = Color.FromArgb(42, 42, 42);
             taskFile.BorderStyle = BorderStyle.None;
-            taskFile.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            taskFile.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskFile.ForeColor = Color.White;
             taskFile.Location = new Point(345, 308);
             taskFile.Multiline = true;
@@ -1177,7 +1184,7 @@
             // 
             taskDescription.BackColor = Color.FromArgb(42, 42, 42);
             taskDescription.BorderStyle = BorderStyle.None;
-            taskDescription.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            taskDescription.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             taskDescription.ForeColor = Color.White;
             taskDescription.Location = new Point(344, 200);
             taskDescription.Multiline = true;
@@ -1198,7 +1205,7 @@
             customButton5.ForeColor = Color.White;
             customButton5.Image = (Image)resources.GetObject("customButton5.Image");
             customButton5.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton5.Location = new Point(7, 439);
+            customButton5.Location = new Point(7, 503);
             customButton5.Name = "customButton5";
             customButton5.Padding = new Padding(12, 0, 0, 0);
             customButton5.Size = new Size(281, 60);
@@ -1207,31 +1214,6 @@
             customButton5.Text = "ATTACHMENT";
             customButton5.TextColor = Color.White;
             customButton5.UseVisualStyleBackColor = false;
-            // 
-            // customButton4
-            // 
-            customButton4.BackColor = Color.Black;
-            customButton4.BackgroundColor = Color.Black;
-            customButton4.BorderColor = Color.PaleVioletRed;
-            customButton4.BorderRadius = 28;
-            customButton4.BorderSize = 0;
-            customButton4.FlatAppearance.BorderSize = 0;
-            customButton4.FlatStyle = FlatStyle.Flat;
-            customButton4.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton4.ForeColor = Color.White;
-            customButton4.Image = (Image)resources.GetObject("customButton4.Image");
-            customButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton4.Location = new Point(6, 505);
-            customButton4.Name = "customButton4";
-            customButton4.Padding = new Padding(12, 0, 0, 0);
-            customButton4.Size = new Size(281, 60);
-            customButton4.TabIndex = 2;
-            customButton4.TabStop = false;
-            customButton4.Text = "DECENTRALIZATION";
-            customButton4.TextAlign = ContentAlignment.MiddleRight;
-            customButton4.TextColor = Color.White;
-            customButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton4.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -1267,7 +1249,7 @@
             customButton1.ForeColor = Color.White;
             customButton1.Image = (Image)resources.GetObject("customButton1.Image");
             customButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton1.Location = new Point(6, 373);
+            customButton1.Location = new Point(6, 436);
             customButton1.Name = "customButton1";
             customButton1.Padding = new Padding(12, 0, 0, 0);
             customButton1.Size = new Size(281, 60);
@@ -1323,7 +1305,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.FromArgb(250, 86, 87);
-            label14.Location = new Point(7, 267);
+            label14.Location = new Point(7, 332);
             label14.Name = "label14";
             label14.Size = new Size(140, 23);
             label14.TabIndex = 13;
@@ -1339,7 +1321,6 @@
             sidePanel.Controls.Add(label14);
             sidePanel.Controls.Add(customButton5);
             sidePanel.Controls.Add(customButton3);
-            sidePanel.Controls.Add(customButton4);
             sidePanel.Controls.Add(customButton1);
             sidePanel.Controls.Add(customButton2);
             sidePanel.Location = new Point(1092, 82);
@@ -1354,6 +1335,9 @@
             customPanel1.BorderColor = Color.Black;
             customPanel1.BorderRadius = 28;
             customPanel1.BorderWidth = 1;
+            customPanel1.Controls.Add(label22);
+            customPanel1.Controls.Add(selectDepartment);
+            customPanel1.Controls.Add(departmentMode);
             customPanel1.Controls.Add(customToggleButton2);
             customPanel1.Controls.Add(taskMode);
             customPanel1.Controls.Add(pictureBox13);
@@ -1367,7 +1351,7 @@
             customPanel1.GradientStartColor = Color.White;
             customPanel1.Location = new Point(7, 46);
             customPanel1.Name = "customPanel1";
-            customPanel1.Size = new Size(279, 208);
+            customPanel1.Size = new Size(279, 266);
             customPanel1.TabIndex = 99;
             // 
             // pictureBox12
@@ -1385,7 +1369,7 @@
             label17.AutoSize = true;
             label17.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label17.ForeColor = Color.FromArgb(197, 224, 180);
-            label17.Location = new Point(22, 159);
+            label17.Location = new Point(15, 159);
             label17.Name = "label17";
             label17.Size = new Size(143, 19);
             label17.TabIndex = 38;
@@ -1415,7 +1399,7 @@
             customButton2.ForeColor = Color.White;
             customButton2.Image = (Image)resources.GetObject("customButton2.Image");
             customButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton2.Location = new Point(5, 306);
+            customButton2.Location = new Point(5, 369);
             customButton2.Name = "customButton2";
             customButton2.Padding = new Padding(12, 0, 0, 0);
             customButton2.Size = new Size(281, 60);
@@ -1715,6 +1699,43 @@
             currentFile.Text = "CURRENT FILE";
             currentFile.LinkClicked += currentFile_LinkClicked;
             // 
+            // departmentMode
+            // 
+            departmentMode.AutoSize = true;
+            departmentMode.Location = new Point(192, 154);
+            departmentMode.MinimumSize = new Size(60, 30);
+            departmentMode.Name = "departmentMode";
+            departmentMode.OffBackColor = Color.Gray;
+            departmentMode.OffToggleColor = Color.Gainsboro;
+            departmentMode.OnBackColor = Color.FromArgb(35, 211, 35);
+            departmentMode.OnToggleColor = Color.WhiteSmoke;
+            departmentMode.Size = new Size(60, 30);
+            departmentMode.TabIndex = 41;
+            departmentMode.UseVisualStyleBackColor = true;
+            departmentMode.CheckedChanged += departmentMode_CheckedChanged;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.ForeColor = Color.FromArgb(197, 224, 180);
+            label22.Location = new Point(17, 197);
+            label22.Name = "label22";
+            label22.Size = new Size(249, 19);
+            label22.TabIndex = 101;
+            label22.Text = "SELECTED DEPARTMENT";
+            // 
+            // selectDepartment
+            // 
+            selectDepartment.AutoSize = true;
+            selectDepartment.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            selectDepartment.ForeColor = Color.White;
+            selectDepartment.Location = new Point(77, 229);
+            selectDepartment.Name = "selectDepartment";
+            selectDepartment.Size = new Size(142, 19);
+            selectDepartment.TabIndex = 100;
+            selectDepartment.Text = "DESCRIPTION";
+            // 
             // A_EditTask
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1882,7 +1903,6 @@
         private Label label14;
         private CustomComponent.CustomButton customButton5;
         private CustomComponent.CustomButton customButton3;
-        private CustomComponent.CustomButton customButton4;
         private CustomComponent.CustomButton customButton1;
         private CustomComponent.CustomButton customButton2;
         private Label heading;
@@ -1901,5 +1921,8 @@
         private TextBox nameBox;
         private LinkLabel currentFile;
         private CustomComponent.CustomComboBox languageSelect;
+        private CustomComponent.CustomToggleButton departmentMode;
+        private Label label22;
+        private Label selectDepartment;
     }
 }

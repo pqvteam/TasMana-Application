@@ -29,6 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(E_InformationEdit));
+            headerPanel = new Panel();
+            panel2 = new Panel();
+            customButton22 = new CustomComponent.CustomButton();
+            currentAvatarSmall = new CustomComponent.CustomPictureBox();
+            customButton18 = new CustomComponent.CustomButton();
+            customButton17 = new CustomComponent.CustomButton();
+            customButton12 = new CustomComponent.CustomButton();
+            customButton11 = new CustomComponent.CustomButton();
+            customButton10 = new CustomComponent.CustomButton();
+            customButton9 = new CustomComponent.CustomButton();
+            customButton8 = new CustomComponent.CustomButton();
+            customButton7 = new CustomComponent.CustomButton();
+            customButton6 = new CustomComponent.CustomButton();
+            panel1 = new Panel();
             customPanel2 = new CustomComponent.CustomPanel();
             changeAvatarButton = new CustomComponent.CustomButton();
             SUBMIT = new CustomComponent.CustomButton();
@@ -78,6 +92,9 @@
             currentAvatarSmall = new CustomComponent.CustomPictureBox();
             headerPanel = new Panel();
             languageSelect = new CustomComponent.CustomComboBox();
+            headerPanel.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).BeginInit();
             customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)avatarBox).BeginInit();
             customPanel1.SuspendLayout();
@@ -86,6 +103,296 @@
             ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).BeginInit();
             headerPanel.SuspendLayout();
             SuspendLayout();
+            // 
+            // headerPanel
+            // 
+            headerPanel.BackColor = Color.FromArgb(13, 13, 13);
+            headerPanel.Controls.Add(panel2);
+            headerPanel.Controls.Add(customButton18);
+            headerPanel.Controls.Add(customButton17);
+            headerPanel.Controls.Add(customButton12);
+            headerPanel.Controls.Add(customButton11);
+            headerPanel.Controls.Add(customButton10);
+            headerPanel.Controls.Add(customButton9);
+            headerPanel.Controls.Add(customButton8);
+            headerPanel.Controls.Add(customButton7);
+            headerPanel.Controls.Add(customButton6);
+            headerPanel.Controls.Add(panel1);
+            headerPanel.Dock = DockStyle.Top;
+            headerPanel.Location = new Point(0, 0);
+            headerPanel.Name = "headerPanel";
+            headerPanel.Size = new Size(1382, 59);
+            headerPanel.TabIndex = 19;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(customButton22);
+            panel2.Controls.Add(currentAvatarSmall);
+            panel2.Location = new Point(1260, -1);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(117, 59);
+            panel2.TabIndex = 53;
+            // 
+            // customButton22
+            // 
+            customButton22.BackColor = Color.Black;
+            customButton22.BackgroundColor = Color.Black;
+            customButton22.BorderColor = Color.PaleVioletRed;
+            customButton22.BorderRadius = 28;
+            customButton22.BorderSize = 0;
+            customButton22.Cursor = Cursors.Hand;
+            customButton22.FlatAppearance.BorderSize = 0;
+            customButton22.FlatStyle = FlatStyle.Flat;
+            customButton22.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton22.ForeColor = Color.White;
+            customButton22.Image = Properties.Resources.triangle_icon;
+            customButton22.Location = new Point(67, 4);
+            customButton22.Name = "customButton22";
+            customButton22.Size = new Size(51, 51);
+            customButton22.TabIndex = 26;
+            customButton22.TextColor = Color.White;
+            customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
+            customButton22.UseVisualStyleBackColor = false;
+            customButton22.Click += customButton22_Click_1;
+            // 
+            // currentAvatarSmall
+            // 
+            currentAvatarSmall.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            currentAvatarSmall.BorderColor = Color.RoyalBlue;
+            currentAvatarSmall.BorderColor2 = Color.HotPink;
+            currentAvatarSmall.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            currentAvatarSmall.BorderSize = 0;
+            currentAvatarSmall.GradientAngle = 50F;
+            currentAvatarSmall.Image = (Image)resources.GetObject("currentAvatarSmall.Image");
+            currentAvatarSmall.Location = new Point(10, 5);
+            currentAvatarSmall.Name = "currentAvatarSmall";
+            currentAvatarSmall.Size = new Size(49, 49);
+            currentAvatarSmall.SizeMode = PictureBoxSizeMode.StretchImage;
+            currentAvatarSmall.TabIndex = 25;
+            currentAvatarSmall.TabStop = false;
+            // 
+            // customButton18
+            // 
+            customButton18.AutoEllipsis = true;
+            customButton18.BackColor = Color.Black;
+            customButton18.BackgroundColor = Color.Black;
+            customButton18.BorderColor = Color.PaleVioletRed;
+            customButton18.BorderRadius = 28;
+            customButton18.BorderSize = 0;
+            customButton18.Cursor = Cursors.Hand;
+            customButton18.FlatAppearance.BorderSize = 0;
+            customButton18.FlatStyle = FlatStyle.Flat;
+            customButton18.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton18.ForeColor = Color.White;
+            customButton18.Image = (Image)resources.GetObject("customButton18.Image");
+            customButton18.ImageAlign = ContentAlignment.MiddleLeft;
+            customButton18.Location = new Point(717, 4);
+            customButton18.Name = "customButton18";
+            customButton18.Size = new Size(188, 48);
+            customButton18.TabIndex = 25;
+            customButton18.Text = "APARTMENT & RESIDENT";
+            customButton18.TextAlign = ContentAlignment.MiddleRight;
+            customButton18.TextColor = Color.White;
+            customButton18.UseVisualStyleBackColor = false;
+            customButton18.Click += customButton18_Click;
+            // 
+            // customButton17
+            // 
+            customButton17.BackColor = Color.Black;
+            customButton17.BackgroundColor = Color.Black;
+            customButton17.BorderColor = Color.PaleVioletRed;
+            customButton17.BorderRadius = 28;
+            customButton17.BorderSize = 0;
+            customButton17.Cursor = Cursors.Hand;
+            customButton17.FlatAppearance.BorderSize = 0;
+            customButton17.FlatStyle = FlatStyle.Flat;
+            customButton17.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton17.ForeColor = Color.White;
+            customButton17.Image = (Image)resources.GetObject("customButton17.Image");
+            customButton17.ImageAlign = ContentAlignment.MiddleLeft;
+            customButton17.Location = new Point(509, 5);
+            customButton17.Name = "customButton17";
+            customButton17.Size = new Size(202, 48);
+            customButton17.TabIndex = 24;
+            customButton17.Text = "ACCOUNTING MANAGEMENT";
+            customButton17.TextAlign = ContentAlignment.MiddleRight;
+            customButton17.TextColor = Color.White;
+            customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
+            customButton17.UseVisualStyleBackColor = false;
+            customButton17.Click += customButton17_Click;
+            // 
+            // customButton12
+            // 
+            customButton12.BackColor = Color.Black;
+            customButton12.BackgroundColor = Color.Black;
+            customButton12.BorderColor = Color.PaleVioletRed;
+            customButton12.BorderRadius = 28;
+            customButton12.BorderSize = 0;
+            customButton12.Cursor = Cursors.Hand;
+            customButton12.FlatAppearance.BorderSize = 0;
+            customButton12.FlatStyle = FlatStyle.Flat;
+            customButton12.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton12.ForeColor = Color.White;
+            customButton12.Image = Properties.Resources.bell_icon;
+            customButton12.Location = new Point(1208, 8);
+            customButton12.Name = "customButton12";
+            customButton12.Size = new Size(51, 40);
+            customButton12.TabIndex = 22;
+            customButton12.TextAlign = ContentAlignment.MiddleRight;
+            customButton12.TextColor = Color.White;
+            customButton12.TextImageRelation = TextImageRelation.ImageBeforeText;
+            customButton12.UseVisualStyleBackColor = false;
+            // 
+            // customButton11
+            // 
+            customButton11.BackColor = Color.Black;
+            customButton11.BackgroundColor = Color.Black;
+            customButton11.BorderColor = Color.PaleVioletRed;
+            customButton11.BorderRadius = 28;
+            customButton11.BorderSize = 0;
+            customButton11.Cursor = Cursors.Hand;
+            customButton11.FlatAppearance.BorderSize = 0;
+            customButton11.FlatStyle = FlatStyle.Flat;
+            customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton11.ForeColor = Color.White;
+            customButton11.Image = Properties.Resources.triangle_icon;
+            customButton11.ImageAlign = ContentAlignment.MiddleRight;
+            customButton11.Location = new Point(1077, 0);
+            customButton11.Name = "customButton11";
+            customButton11.Size = new Size(120, 51);
+            customButton11.TabIndex = 21;
+            customButton11.Text = "English";
+            customButton11.TextAlign = ContentAlignment.MiddleRight;
+            customButton11.TextColor = Color.White;
+            customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
+            customButton11.UseVisualStyleBackColor = false;
+            // 
+            // customButton10
+            // 
+            customButton10.BackColor = Color.Black;
+            customButton10.BackgroundColor = Color.Black;
+            customButton10.BorderColor = Color.PaleVioletRed;
+            customButton10.BorderRadius = 28;
+            customButton10.BorderSize = 0;
+            customButton10.Cursor = Cursors.Hand;
+            customButton10.FlatAppearance.BorderSize = 0;
+            customButton10.FlatStyle = FlatStyle.Flat;
+            customButton10.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton10.ForeColor = Color.White;
+            customButton10.Image = (Image)resources.GetObject("customButton10.Image");
+            customButton10.ImageAlign = ContentAlignment.MiddleLeft;
+            customButton10.Location = new Point(908, 2);
+            customButton10.Name = "customButton10";
+            customButton10.Size = new Size(156, 51);
+            customButton10.TabIndex = 20;
+            customButton10.Text = "RESIDENT SERVICE";
+            customButton10.TextAlign = ContentAlignment.MiddleRight;
+            customButton10.TextColor = Color.White;
+            customButton10.TextImageRelation = TextImageRelation.ImageBeforeText;
+            customButton10.UseVisualStyleBackColor = false;
+            // 
+            // customButton9
+            // 
+            customButton9.BackColor = Color.Black;
+            customButton9.BackgroundColor = Color.Black;
+            customButton9.BorderColor = Color.PaleVioletRed;
+            customButton9.BorderRadius = 28;
+            customButton9.BorderSize = 0;
+            customButton9.Cursor = Cursors.Hand;
+            customButton9.FlatAppearance.BorderSize = 0;
+            customButton9.FlatStyle = FlatStyle.Flat;
+            customButton9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton9.ForeColor = Color.White;
+            customButton9.Image = (Image)resources.GetObject("customButton9.Image");
+            customButton9.ImageAlign = ContentAlignment.MiddleLeft;
+            customButton9.Location = new Point(367, 6);
+            customButton9.Name = "customButton9";
+            customButton9.Size = new Size(137, 48);
+            customButton9.TabIndex = 19;
+            customButton9.Text = "REPORT";
+            customButton9.TextAlign = ContentAlignment.MiddleRight;
+            customButton9.TextColor = Color.White;
+            customButton9.TextImageRelation = TextImageRelation.ImageBeforeText;
+            customButton9.UseVisualStyleBackColor = false;
+            // 
+            // customButton8
+            // 
+            customButton8.BackColor = Color.Black;
+            customButton8.BackgroundColor = Color.Black;
+            customButton8.BorderColor = Color.PaleVioletRed;
+            customButton8.BorderRadius = 28;
+            customButton8.BorderSize = 0;
+            customButton8.Cursor = Cursors.Hand;
+            customButton8.FlatAppearance.BorderSize = 0;
+            customButton8.FlatStyle = FlatStyle.Flat;
+            customButton8.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton8.ForeColor = Color.White;
+            customButton8.Image = (Image)resources.GetObject("customButton8.Image");
+            customButton8.ImageAlign = ContentAlignment.MiddleLeft;
+            customButton8.Location = new Point(202, 8);
+            customButton8.Name = "customButton8";
+            customButton8.Size = new Size(158, 48);
+            customButton8.TabIndex = 18;
+            customButton8.Text = "STATISTIC";
+            customButton8.TextAlign = ContentAlignment.MiddleRight;
+            customButton8.TextColor = Color.White;
+            customButton8.TextImageRelation = TextImageRelation.ImageBeforeText;
+            customButton8.UseVisualStyleBackColor = false;
+            // 
+            // customButton7
+            // 
+            customButton7.BackColor = Color.Black;
+            customButton7.BackgroundColor = Color.Black;
+            customButton7.BorderColor = Color.PaleVioletRed;
+            customButton7.BorderRadius = 28;
+            customButton7.BorderSize = 0;
+            customButton7.Cursor = Cursors.Hand;
+            customButton7.FlatAppearance.BorderSize = 0;
+            customButton7.FlatStyle = FlatStyle.Flat;
+            customButton7.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton7.ForeColor = Color.White;
+            customButton7.Image = (Image)resources.GetObject("customButton7.Image");
+            customButton7.ImageAlign = ContentAlignment.MiddleLeft;
+            customButton7.Location = new Point(75, 8);
+            customButton7.Name = "customButton7";
+            customButton7.Size = new Size(117, 48);
+            customButton7.TabIndex = 17;
+            customButton7.Text = "WORK";
+            customButton7.TextAlign = ContentAlignment.MiddleRight;
+            customButton7.TextColor = Color.White;
+            customButton7.TextImageRelation = TextImageRelation.ImageBeforeText;
+            customButton7.UseVisualStyleBackColor = false;
+            customButton7.Click += customButton7_Click;
+            // 
+            // customButton6
+            // 
+            customButton6.BackColor = Color.Black;
+            customButton6.BackgroundColor = Color.Black;
+            customButton6.BorderColor = Color.PaleVioletRed;
+            customButton6.BorderRadius = 28;
+            customButton6.BorderSize = 0;
+            customButton6.Cursor = Cursors.Hand;
+            customButton6.FlatAppearance.BorderSize = 0;
+            customButton6.FlatStyle = FlatStyle.Flat;
+            customButton6.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton6.ForeColor = Color.White;
+            customButton6.Image = (Image)resources.GetObject("customButton6.Image");
+            customButton6.ImageAlign = ContentAlignment.MiddleLeft;
+            customButton6.Location = new Point(12, 4);
+            customButton6.Name = "customButton6";
+            customButton6.Size = new Size(57, 54);
+            customButton6.TabIndex = 16;
+            customButton6.TextAlign = ContentAlignment.MiddleRight;
+            customButton6.TextColor = Color.White;
+            customButton6.TextImageRelation = TextImageRelation.ImageBeforeText;
+            customButton6.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(694, 59);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(250, 125);
+            panel1.TabIndex = 2;
             // 
             // customPanel2
             // 
@@ -764,6 +1071,18 @@
             customButton17.TextColor = Color.White;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
+            label1.Cursor = Cursors.Hand;
+            label1.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Image = (Image)resources.GetObject("label1.Image");
+            label1.ImageAlign = ContentAlignment.MiddleRight;
+            label1.Location = new Point(5, 82);
+            label1.Name = "label1";
+            label1.Size = new Size(295, 38);
+            label1.TabIndex = 65;
+            label1.Text = "SIGN OUT";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // customButton18
             // 
@@ -788,6 +1107,18 @@
             customButton18.TextAlign = ContentAlignment.MiddleRight;
             customButton18.TextColor = Color.White;
             customButton18.UseVisualStyleBackColor = false;
+            label2.Cursor = Cursors.Hand;
+            label2.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Image = (Image)resources.GetObject("label2.Image");
+            label2.ImageAlign = ContentAlignment.MiddleRight;
+            label2.Location = new Point(5, 42);
+            label2.Name = "label2";
+            label2.Size = new Size(295, 38);
+            label2.TabIndex = 64;
+            label2.Text = "CHANGE PASSWORD";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            label2.Click += label2_Click;
             // 
             // panel2
             // 
@@ -819,6 +1150,18 @@
             customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton22.UseVisualStyleBackColor = false;
             customButton22.Click += customButton22_Click_1;
+            label15.Cursor = Cursors.Hand;
+            label15.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.White;
+            label15.Image = (Image)resources.GetObject("label15.Image");
+            label15.ImageAlign = ContentAlignment.MiddleRight;
+            label15.Location = new Point(5, 2);
+            label15.Name = "label15";
+            label15.Size = new Size(295, 38);
+            label15.TabIndex = 63;
+            label15.Text = "INFORMATION";
+            label15.TextAlign = ContentAlignment.MiddleCenter;
+            label15.Click += label15_Click;
             // 
             // currentAvatarSmall
             // 

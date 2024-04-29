@@ -43,6 +43,7 @@ namespace UIs
             }
         }
 
+<<<<<<< HEAD
         private void CM_Resident_sDetail_Tenant_StaffOf_Load(object sender, EventArgs e)
         {
             Session.Instance.Language = "vi";
@@ -279,6 +280,83 @@ namespace UIs
             label23.Font = fontLarger;
             label25.Font = fontLarger;
             label27.Font = fontLarger;
+=======
+        private void customButton7_Click(object sender, EventArgs e)
+        {
+            C_AllTaskList c_AllTaskList = new C_AllTaskList();
+            c_AllTaskList.ShowDialog();
+        }
+
+        private void customButton17_Click(object sender, EventArgs e)
+        {
+            C_AccountManagement c_AccountManagement = new C_AccountManagement();
+            c_AccountManagement.ShowDialog();
+        }
+
+        private void customButton18_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail cM_Resident_SDetail = new CM_Resident_sDetail();
+            cM_Resident_SDetail.ShowDialog();
+        }
+
+        private void label39_Click(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        private void label38_Click(object sender, EventArgs e)
+        {
+            G_ForgotPassword g_ForgotPassword = new G_ForgotPassword();
+            g_ForgotPassword.ShowDialog();
+        }
+
+        private void label37_Click(object sender, EventArgs e)
+        {
+            List<Form> formsToClose = new List<Form>();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form != this)
+                {
+                    formsToClose.Add(form);
+                }
+            }
+
+            foreach (Form form in formsToClose)
+            {
+                form.Close();
+            }
+
+            G_Login g_Login = new G_Login();
+            g_Login.ShowDialog();
+        }
+
+        private void customButton5_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail_Commercial cM = new CM_Resident_sDetail_Commercial();
+            cM.ShowDialog();
+        }
+
+        private void customButton3_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail_Authorized cM = new CM_Resident_sDetail_Authorized();
+            cM.ShowDialog();
+        }
+
+        private void customButton2_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail cM_Resident_SDetail = new CM_Resident_sDetail();
+            cM_Resident_SDetail.ShowDialog();
+>>>>>>> fa274daeb82a1a0e0f013863fbd5e1cb4684ba3f
         }
     }
 }
