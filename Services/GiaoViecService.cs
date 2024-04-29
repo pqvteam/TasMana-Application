@@ -37,9 +37,9 @@ namespace Services
             repository.DownLoadFile(id);
         }
 
-        public void UpdateProcess(string id, string status)
+        public void UpdateProcess(string id, string status, DateTime selectedDate)
         {
-            repository.UpdateProcess(id, status);
+            repository.UpdateProcess(id, status, selectedDate);
         }
 
         public bool checkValidPdf(string id)
