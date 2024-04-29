@@ -800,9 +800,35 @@ namespace UIs
 
         }
 
+        private void customButton13_Click(object sender, EventArgs e)
+        {
+            reload();
+        }
+
+        private void customButton6_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail cM = new CM_Resident_sDetail();
+            cM.ShowDialog();
+        }
+
         private void label11_Click(object sender, EventArgs e)
         {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
 
+        private void label9_Click(object sender, EventArgs e)
+        {
+            G_ForgotPassword g_ForgotPassword = new G_ForgotPassword();
+            g_ForgotPassword.ShowDialog();
         }
 
         private void label8_Click(object sender, EventArgs e)
