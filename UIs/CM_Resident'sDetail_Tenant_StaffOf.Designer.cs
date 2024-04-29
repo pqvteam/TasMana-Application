@@ -34,7 +34,6 @@
             customButton13 = new CustomComponent.CustomButton();
             customButton14 = new CustomComponent.CustomButton();
             customButton12 = new CustomComponent.CustomButton();
-            customButton11 = new CustomComponent.CustomButton();
             customButton10 = new CustomComponent.CustomButton();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
@@ -89,6 +88,7 @@
             label37 = new Label();
             label38 = new Label();
             label39 = new Label();
+            languageSelect = new CustomComponent.CustomComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -100,9 +100,9 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(13, 13, 13);
+            panel1.Controls.Add(languageSelect);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(customButton12);
-            panel1.Controls.Add(customButton11);
             panel1.Controls.Add(customButton10);
             panel1.Controls.Add(customButton18);
             panel1.Controls.Add(customButton17);
@@ -186,29 +186,6 @@
             customButton12.TextColor = Color.White;
             customButton12.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton12.UseVisualStyleBackColor = false;
-            // 
-            // customButton11
-            // 
-            customButton11.BackColor = Color.Black;
-            customButton11.BackgroundColor = Color.Black;
-            customButton11.BorderColor = Color.PaleVioletRed;
-            customButton11.BorderRadius = 28;
-            customButton11.BorderSize = 0;
-            customButton11.FlatAppearance.BorderSize = 0;
-            customButton11.FlatStyle = FlatStyle.Flat;
-            customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton11.ForeColor = Color.White;
-            customButton11.Image = Properties.Resources.triangle_icon;
-            customButton11.ImageAlign = ContentAlignment.MiddleRight;
-            customButton11.Location = new Point(1079, 3);
-            customButton11.Name = "customButton11";
-            customButton11.Size = new Size(120, 51);
-            customButton11.TabIndex = 25;
-            customButton11.Text = "English";
-            customButton11.TextAlign = ContentAlignment.MiddleRight;
-            customButton11.TextColor = Color.White;
-            customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton11.UseVisualStyleBackColor = false;
             // 
             // customButton10
             // 
@@ -1098,6 +1075,26 @@
             label39.Text = "INFORMATION";
             label39.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // languageSelect
+            // 
+            languageSelect.BackColor = Color.Black;
+            languageSelect.BorderColor = Color.MediumSlateBlue;
+            languageSelect.BorderSize = 0;
+            languageSelect.DropDownStyle = ComboBoxStyle.DropDown;
+            languageSelect.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            languageSelect.ForeColor = Color.White;
+            languageSelect.IconColor = Color.White;
+            languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
+            languageSelect.ListBackColor = Color.Black;
+            languageSelect.ListTextColor = Color.White;
+            languageSelect.Location = new Point(1079, 3);
+            languageSelect.MinimumSize = new Size(30, 30);
+            languageSelect.Name = "languageSelect";
+            languageSelect.Size = new Size(120, 52);
+            languageSelect.TabIndex = 52;
+            languageSelect.Texts = "";
+            languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
+            // 
             // CM_Resident_sDetail_Tenant_StaffOf
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1112,6 +1109,7 @@
             Controls.Add(panel1);
             Name = "CM_Resident_sDetail_Tenant_StaffOf";
             Text = "CM_Resident_sDetail_Tenant_StaffOf";
+            Load += CM_Resident_sDetail_Tenant_StaffOf_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
@@ -1126,7 +1124,6 @@
 
         private Panel panel1;
         private CustomComponent.CustomButton customButton12;
-        private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton customButton10;
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
@@ -1184,5 +1181,6 @@
         private Label label37;
         private Label label38;
         private Label label39;
+        private CustomComponent.CustomComboBox languageSelect;
     }
 }

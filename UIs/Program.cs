@@ -14,9 +14,13 @@ static class Program
         // Application.Run(new M_AssignTask());
         // Application.Run(new A_ShowMember());
         // Application.Run(new A_ShowVenue());
-        //Application.Run(new G_Login());
+        Application.Run(new G_Login());
         //Application.Run(new A_EditTask());
         //Application.Run(new A_Appoint());
-        Application.Run(new A_ShowMember());
+        //Application.Run(new A_ShowMember());
+        //Application.Run(new CM_Resident_sDetail_Authorized());
+        //Application.Run(new CM_Resident_sDetail_Commercial());
+        //Application.Run(new CM_Resident_sDetail());
+        //Application.Run(new CM_Resident_sDetail_Tenant_StaffOf());
     }  
 }

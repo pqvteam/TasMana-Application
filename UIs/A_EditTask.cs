@@ -353,11 +353,6 @@ namespace UIs
             giaoViecService.downloadAttachedFile(this.ID);
         }
 
-        private void membersGrid_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void changeLanguage()
         {
             Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);

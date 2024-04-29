@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CM_Resident_sDetail));
             customButton6 = new CustomComponent.CustomButton();
             panel1 = new Panel();
+            languageSelect = new CustomComponent.CustomComboBox();
             customButton12 = new CustomComponent.CustomButton();
-            customButton11 = new CustomComponent.CustomButton();
             panel2 = new Panel();
             customButton13 = new CustomComponent.CustomButton();
             customButton14 = new CustomComponent.CustomButton();
@@ -130,8 +130,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(13, 13, 13);
+            panel1.Controls.Add(languageSelect);
             panel1.Controls.Add(customButton12);
-            panel1.Controls.Add(customButton11);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(customButton10);
             panel1.Controls.Add(customButton18);
@@ -144,6 +144,26 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1382, 59);
             panel1.TabIndex = 18;
+            // 
+            // languageSelect
+            // 
+            languageSelect.BackColor = Color.Black;
+            languageSelect.BorderColor = Color.MediumSlateBlue;
+            languageSelect.BorderSize = 0;
+            languageSelect.DropDownStyle = ComboBoxStyle.DropDown;
+            languageSelect.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            languageSelect.ForeColor = Color.White;
+            languageSelect.IconColor = Color.White;
+            languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
+            languageSelect.ListBackColor = Color.Black;
+            languageSelect.ListTextColor = Color.White;
+            languageSelect.Location = new Point(1082, 1);
+            languageSelect.MinimumSize = new Size(30, 30);
+            languageSelect.Name = "languageSelect";
+            languageSelect.Size = new Size(117, 52);
+            languageSelect.TabIndex = 52;
+            languageSelect.Texts = "";
+            languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
             // 
             // customButton12
             // 
@@ -165,29 +185,6 @@
             customButton12.TextColor = Color.White;
             customButton12.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton12.UseVisualStyleBackColor = false;
-            // 
-            // customButton11
-            // 
-            customButton11.BackColor = Color.Black;
-            customButton11.BackgroundColor = Color.Black;
-            customButton11.BorderColor = Color.PaleVioletRed;
-            customButton11.BorderRadius = 28;
-            customButton11.BorderSize = 0;
-            customButton11.FlatAppearance.BorderSize = 0;
-            customButton11.FlatStyle = FlatStyle.Flat;
-            customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton11.ForeColor = Color.White;
-            customButton11.Image = Properties.Resources.triangle_icon;
-            customButton11.ImageAlign = ContentAlignment.MiddleRight;
-            customButton11.Location = new Point(1079, 3);
-            customButton11.Name = "customButton11";
-            customButton11.Size = new Size(120, 51);
-            customButton11.TabIndex = 25;
-            customButton11.Text = "English";
-            customButton11.TextAlign = ContentAlignment.MiddleRight;
-            customButton11.TextColor = Color.White;
-            customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton11.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -804,7 +801,7 @@
             label36.Name = "label36";
             label36.Size = new Size(472, 31);
             label36.TabIndex = 82;
-            label36.Text = "DU LIEU NUOI THU CUNG";
+            label36.Text = "PET KEEPING DATA";
             label36.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label35
@@ -840,7 +837,7 @@
             label33.Name = "label33";
             label33.Size = new Size(472, 38);
             label33.TabIndex = 79;
-            label33.Text = "TINH TRANG CONG NO";
+            label33.Text = "DEBT STATUS";
             label33.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label32
@@ -864,7 +861,7 @@
             label31.Name = "label31";
             label31.Size = new Size(472, 38);
             label31.TabIndex = 77;
-            label31.Text = "THONG TIN CHU HO MOI";
+            label31.Text = "NEW HOUSEHOLDERS INFORMATION";
             label31.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label30
@@ -888,7 +885,7 @@
             label29.Name = "label29";
             label29.Size = new Size(472, 36);
             label29.TabIndex = 75;
-            label29.Text = "NGAY CHUYEN NHUONG CHO CHU MOI";
+            label29.Text = "TRANSFER DATE TO NEW OWNER";
             label29.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label28
@@ -912,7 +909,7 @@
             label27.Name = "label27";
             label27.Size = new Size(472, 36);
             label27.TabIndex = 73;
-            label27.Text = "SO DIEN THOAI NGUOI THAN";
+            label27.Text = "TELEPHONE NUMBERS OF RELATIVES";
             label27.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label26
@@ -936,7 +933,7 @@
             label25.Name = "label25";
             label25.Size = new Size(472, 36);
             label25.TabIndex = 71;
-            label25.Text = "DU LIEU PHUONG TIEN DANG KY DO XE TAI NHA";
+            label25.Text = "VEHICLE DATA FOR PARKING REGISTRATION AT HOME";
             label25.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label24
@@ -960,7 +957,7 @@
             label23.Name = "label23";
             label23.Size = new Size(472, 36);
             label23.TabIndex = 69;
-            label23.Text = "PHI DICH VU KHAC";
+            label23.Text = "OTHER SERVICE FEES";
             label23.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label22
@@ -984,7 +981,7 @@
             label21.Name = "label21";
             label21.Size = new Size(472, 36);
             label21.TabIndex = 67;
-            label21.Text = "PHI DICH VU QUAN LY HANG THANG";
+            label21.Text = "MONTHLY MANAGEMENT SERVICE FEE";
             label21.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label20
@@ -1008,7 +1005,7 @@
             label19.Name = "label19";
             label19.Size = new Size(472, 36);
             label19.TabIndex = 65;
-            label19.Text = "SO LIEU DIEN NUOC PHAT SINH HANG THANG";
+            label19.Text = "ELECTRICITY AND WATER DATA ARISING MONTHLY";
             label19.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label18
@@ -1032,7 +1029,7 @@
             label17.Name = "label17";
             label17.Size = new Size(472, 36);
             label17.TabIndex = 63;
-            label17.Text = "SO LIEU DIEN NUOC VAO NGAY BAN GIAO CAN HO";
+            label17.Text = "ELECTRICITY AND WATER DATA ON THE HANDOVER DATE OF THE APARTMENT";
             label17.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label16
@@ -1230,6 +1227,7 @@
             Controls.Add(panel1);
             Name = "CM_Resident_sDetail";
             Text = "CM_ResidentsDetail_HoldHouse";
+            Load += CM_Resident_sDetail_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
@@ -1251,7 +1249,6 @@
         private CustomComponent.CustomButton customButton17;
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton10;
-        private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton customButton12;
         private CustomComponent.CustomButton customButton13;
         private CustomComponent.CustomButton customButton14;
@@ -1310,5 +1307,6 @@
         private Label label37;
         private Label label38;
         private Label label39;
+        private CustomComponent.CustomComboBox languageSelect;
     }
 }
