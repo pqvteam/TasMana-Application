@@ -229,10 +229,6 @@
             membersGrid.Size = new Size(722, 196);
             membersGrid.TabIndex = 138;
             membersGrid.CellClick += membersGrid_CellContentClick;
-            membersGrid.CellContentClick += membersGrid_CellContentClick_1;
-            // 
-            // uploadButton
-            // 
             uploadButton.BackColor = Color.Yellow;
             uploadButton.BackgroundColor = Color.Yellow;
             uploadButton.BorderColor = Color.PaleVioletRed;

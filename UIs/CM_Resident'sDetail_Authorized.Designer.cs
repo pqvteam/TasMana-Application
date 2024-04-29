@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CM_Resident_sDetail_Authorized));
             panel1 = new Panel();
+            languageSelect = new CustomComponent.CustomComboBox();
             customButton12 = new CustomComponent.CustomButton();
-            customButton11 = new CustomComponent.CustomButton();
             customButton10 = new CustomComponent.CustomButton();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
@@ -100,8 +100,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(13, 13, 13);
+            panel1.Controls.Add(languageSelect);
             panel1.Controls.Add(customButton12);
-            panel1.Controls.Add(customButton11);
             panel1.Controls.Add(customButton10);
             panel1.Controls.Add(customButton18);
             panel1.Controls.Add(customButton17);
@@ -113,6 +113,26 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1382, 59);
             panel1.TabIndex = 19;
+            // 
+            // languageSelect
+            // 
+            languageSelect.BackColor = Color.Black;
+            languageSelect.BorderColor = Color.MediumSlateBlue;
+            languageSelect.BorderSize = 0;
+            languageSelect.DropDownStyle = ComboBoxStyle.DropDown;
+            languageSelect.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            languageSelect.ForeColor = Color.White;
+            languageSelect.IconColor = Color.White;
+            languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
+            languageSelect.ListBackColor = Color.Black;
+            languageSelect.ListTextColor = Color.White;
+            languageSelect.Location = new Point(1066, 2);
+            languageSelect.MinimumSize = new Size(30, 30);
+            languageSelect.Name = "languageSelect";
+            languageSelect.Size = new Size(133, 52);
+            languageSelect.TabIndex = 51;
+            languageSelect.Texts = "";
+            languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
             // 
             // customButton12
             // 
@@ -134,29 +154,6 @@
             customButton12.TextColor = Color.White;
             customButton12.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton12.UseVisualStyleBackColor = false;
-            // 
-            // customButton11
-            // 
-            customButton11.BackColor = Color.Black;
-            customButton11.BackgroundColor = Color.Black;
-            customButton11.BorderColor = Color.PaleVioletRed;
-            customButton11.BorderRadius = 28;
-            customButton11.BorderSize = 0;
-            customButton11.FlatAppearance.BorderSize = 0;
-            customButton11.FlatStyle = FlatStyle.Flat;
-            customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton11.ForeColor = Color.White;
-            customButton11.Image = Properties.Resources.triangle_icon;
-            customButton11.ImageAlign = ContentAlignment.MiddleRight;
-            customButton11.Location = new Point(1079, 3);
-            customButton11.Name = "customButton11";
-            customButton11.Size = new Size(120, 51);
-            customButton11.TabIndex = 25;
-            customButton11.Text = "English";
-            customButton11.TextAlign = ContentAlignment.MiddleRight;
-            customButton11.TextColor = Color.White;
-            customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton11.UseVisualStyleBackColor = false;
             // 
             // customButton10
             // 
@@ -792,7 +789,7 @@
             label27.Name = "label27";
             label27.Size = new Size(472, 36);
             label27.TabIndex = 73;
-            label27.Text = "DU LIEU NUOI THU CUNG";
+            label27.Text = "PET KEEPING DATA";
             label27.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label26
@@ -816,7 +813,7 @@
             label25.Name = "label25";
             label25.Size = new Size(472, 36);
             label25.TabIndex = 71;
-            label25.Text = "TINH TRANG CONG NO";
+            label25.Text = "DEBT STATUS";
             label25.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label24
@@ -840,7 +837,7 @@
             label23.Name = "label23";
             label23.Size = new Size(472, 36);
             label23.TabIndex = 69;
-            label23.Text = "SO DIEN THOAI NGUOI THAN";
+            label23.Text = "TELEPHONE NUMBERS OF RELATIVES";
             label23.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label22
@@ -864,7 +861,7 @@
             label21.Name = "label21";
             label21.Size = new Size(472, 36);
             label21.TabIndex = 67;
-            label21.Text = "DU LIEU PHUONG TIEN DANG KY DO XE TAI NHA";
+            label21.Text = "VEHICLE DATA FOR PARKING REGISTRATION AT HOME";
             label21.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label20
@@ -888,7 +885,7 @@
             label19.Name = "label19";
             label19.Size = new Size(472, 36);
             label19.TabIndex = 65;
-            label19.Text = "PHI DICH VU KHAC";
+            label19.Text = "OTHER SERVICE FEES";
             label19.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label18
@@ -912,7 +909,7 @@
             label17.Name = "label17";
             label17.Size = new Size(472, 36);
             label17.TabIndex = 63;
-            label17.Text = "PHI DICH VU QUAN LY HANG THANG";
+            label17.Text = "MONTHLY MANAGEMENT SERVICE FEE";
             label17.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label16
@@ -936,7 +933,7 @@
             label15.Name = "label15";
             label15.Size = new Size(472, 36);
             label15.TabIndex = 61;
-            label15.Text = "SO LIEU DIEN NUOC PHAT SINH HANG THANG";
+            label15.Text = "ELECTRICITY AND WATER DATA ARISING MONTHLY";
             label15.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label14
@@ -1111,6 +1108,7 @@
             Controls.Add(panel1);
             Name = "CM_Resident_sDetail_Authorized";
             Text = "CM_Resident_sDetail_Authorized";
+            Load += CM_Resident_sDetail_Authorized_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
@@ -1125,7 +1123,6 @@
 
         private Panel panel1;
         private CustomComponent.CustomButton customButton12;
-        private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton customButton10;
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
@@ -1183,5 +1180,6 @@
         private Label label29;
         private Label label30;
         private Label label31;
+        private CustomComponent.CustomComboBox languageSelect;
     }
 }
