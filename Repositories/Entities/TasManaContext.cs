@@ -42,7 +42,7 @@ public partial class TasManaContext : DbContext
     public virtual DbSet<QuanLi> QuanLis { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("C:\\Users\\phuoc\\source\\repos\\pqvteam\\TasMana-Application\\UIs");
+        => optionsBuilder.UseSqlServer("C:\\Users\\ADMIN\\source\\repos\\pqvteam\\TasMana-Application\\UIs");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -51,7 +51,6 @@ public partial class TasManaContext : DbContext
             entity.HasKey(e => e.MaCh).HasName("PK__CanHo__7A3E0CEE89CE2FD5");
 
             entity.ToTable("CanHo");
-
             entity.Property(e => e.MaCh)
                 .HasMaxLength(10)
                 .IsUnicode(false)

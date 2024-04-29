@@ -37,6 +37,8 @@ namespace UIs
         private int isCEO;
         private string assignerID;
         private string oldImplementor;
+        private int intime;
+        private string sharedDepartment = "";
 
         public A_EditTask()
         {
@@ -57,7 +59,9 @@ namespace UIs
             int tIsCEO,
             string tManagerID,
             string authorizedBy,
-            string tTag
+            string tTag,
+            int tInTime,
+            string tSharedDepartment
         )
         {
             InitializeComponent();
@@ -76,6 +80,8 @@ namespace UIs
             this.authorizedBy = authorizedBy;
             this.tagName = tTag;
             this.oldImplementor = receiverID;
+            this.intime = tInTime;
+            this.sharedDepartment = tSharedDepartment;
         }
 
         private void userPanel_Paint(object sender, PaintEventArgs e)
@@ -159,6 +165,8 @@ namespace UIs
         {
             changeLanguage();
             languageSelect.SelectedItem = Session.Instance.Language == "en" ? "ENGLISH" : "VIETNAMESE";
+            selectDepartment.Text = sharedDepartment;
+            
             ////
             taskStatus.SelectedItem = this.status;
             taskPriority.SelectedIndex = 0;
@@ -243,6 +251,8 @@ namespace UIs
             string tThayDoi = $"Kính gửi {tOldStaffName},\nChúng ta đã xác định thay đổi về chi tiết công việc {tName}\n. Xin vui lòng kiểm tra thông tin mới nhất trên hệ thống. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\n {tManagerName}";
             int tMode = taskMode.Checked ? 1 : 0;
             int tIsCEO = Session.Instance.laCEO ? 1 : 0;
+            int intime = 1;
+            string sharedDepartment = "";
 
             bool isSuccess = giaoViecService.updateTask(
                 tDescription,
@@ -257,12 +267,14 @@ namespace UIs
                 receiverID,
                 tIsCEO,
                 tManagerID,
-                authorizedBy
+                authorizedBy,
+                intime,
+                sharedDepartment
             );
 
             bool isTagAdded = tagService.updateTag(tagNameBox.Text, this.ID, "");
 
-            if (isSuccess && isTagAdded)
+            if ((isSuccess && isTagAdded) || isSuccess)
             {
                 MailService mailService = new MailService();
                 if (tOldStaffName != tStaffName)
@@ -281,8 +293,10 @@ namespace UIs
                 receiverLabel.Text = "";
                 venueLabel.Text = "";
                 tagNameBox.Text = "";
+                departmentMode.Checked = false;
+                selectDepartment.Text = "";
                 MessageBox.Show("Updated task successfully!");
-            }
+            } 
             else
             {
                 MessageBox.Show(
@@ -552,7 +566,7 @@ namespace UIs
             Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
             Font fontLarger = new Font("Copperplate Gothic Bold", 12);
             Font fontSmaller = new Font("Copperplate Gothic Bold", 9);
-            if (languageSelect.SelectedItem.ToString()=="VIETNAMESE")//
+            if (languageSelect.SelectedItem.ToString() == "VIETNAMESE")//
             {
                 Session.Instance.Language = "vi";
                 customButton25.Text = "CÔNG VIỆC";
@@ -735,6 +749,21 @@ namespace UIs
                 //smaller
                 cancelButton.Font = fontSmaller;
                 saveButton.Font = fontSmaller;
+            }
+        }
+
+        private void ShowDepartmentForm_DepartmentSelected(string department)
+        {
+            selectDepartment.Text = department;
+        }
+
+        private void departmentMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (departmentMode.Checked)
+            {
+                A_ShowDepartment showDepartmentForm = new A_ShowDepartment();
+                showDepartmentForm.DepartmentSelected += ShowDepartmentForm_DepartmentSelected;
+                showDepartmentForm.ShowDialog();
             }
         }
     }

@@ -2,6 +2,7 @@
 using Repositories.Entities;
 using Repositories.Utilities;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace Services
 {
@@ -21,19 +22,24 @@ namespace Services
         //    return repository.getAllTaskOfStaff(staffID);
         //}
 
-        public bool assignTask(string description, string day, string deadline, string status, string file, string id, int mode, string name, string vanue, string receiverID, int isCEO, string CEOID, string authorizedBy)
+        public bool assignTask(string description, string day, string deadline, string status, string file, string id, int mode, string name, string vanue, string receiverID, int isCEO, string CEOID, string authorizedBy, int intime, string sharedDepartment)
         {
-            return repository.Create(description, day, deadline, status, file, id, mode, name, vanue, receiverID, isCEO, CEOID, authorizedBy);
+            return repository.Create(description, day, deadline, status, file, id, mode, name, vanue, receiverID, isCEO, CEOID, authorizedBy, intime, sharedDepartment);
         }
 
-        public bool updateTask(string description, string day, string deadline, string status, string file, string id, int mode, string name, string vanue, string receiverID, int isCEO, string CEOID, string authorizedBy)
+        public bool updateTask(string description, string day, string deadline, string status, string file, string id, int mode, string name, string vanue, string receiverID, int isCEO, string CEOID, string authorizedBy, int intime, string sharedDepartment)
         {
-            return repository.Update(description, day, deadline, status, file, id, mode, name, vanue, receiverID, isCEO, CEOID, authorizedBy);
+            return repository.Update(description, day, deadline, status, file, id, mode, name, vanue, receiverID, isCEO, CEOID, authorizedBy, intime, sharedDepartment);
         }
 
         public void downloadAttachedFile(string id)
         {
             repository.DownLoadFile(id);
+        }
+
+        public void UpdateProcess(string id, string status)
+        {
+            repository.UpdateProcess(id, status);
         }
 
         public bool checkValidPdf(string id)

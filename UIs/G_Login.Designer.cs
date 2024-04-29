@@ -67,8 +67,7 @@
             box_username.Name = "box_username";
             box_username.PlaceholderText = "  Username";
             box_username.Size = new Size(340, 30);
-            box_username.TabIndex = 0;
-            box_username.TabStop = false;
+            box_username.TabIndex = 1;
             box_username.Enter += box_username_Enter;
             box_username.Leave += box_username_Leave;
             // 
@@ -79,8 +78,7 @@
             box_password.Name = "box_password";
             box_password.PlaceholderText = "  Password";
             box_password.Size = new Size(340, 30);
-            box_password.TabIndex = 0;
-            box_password.TabStop = false;
+            box_password.TabIndex = 2;
             box_password.Enter += box_password_Enter;
             box_password.KeyDown += box_password_KeyDown;
             box_password.Leave += box_password_Leave;
@@ -199,6 +197,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // elipseControl2
             // 
