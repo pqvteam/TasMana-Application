@@ -74,12 +74,17 @@
             saveButton = new CustomComponent.CustomButton();
             cancelButton = new CustomComponent.CustomButton();
             customButton13 = new CustomComponent.CustomButton();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            label8 = new Label();
+            label9 = new Label();
+            label11 = new Label();
             ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).BeginInit();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)currentAvatarBig).BeginInit();
             ((System.ComponentModel.ISupportInitialize)membersGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // customButton18
@@ -105,6 +110,7 @@
             customButton18.TextAlign = ContentAlignment.MiddleRight;
             customButton18.TextColor = Color.White;
             customButton18.UseVisualStyleBackColor = false;
+            customButton18.Click += customButton18_Click;
             // 
             // customButton17
             // 
@@ -129,6 +135,7 @@
             customButton17.TextColor = Color.White;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
+            customButton17.Click += customButton17_Click;
             // 
             // customButton1
             // 
@@ -285,6 +292,7 @@
             customButton22.TextColor = Color.White;
             customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton22.UseVisualStyleBackColor = false;
+            customButton22.Click += customButton22_Click;
             // 
             // headerPanel
             // 
@@ -925,12 +933,77 @@
             customButton13.UseVisualStyleBackColor = false;
             customButton13.Click += customButton13_Click;
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Controls.Add(label8, 0, 2);
+            tableLayoutPanel1.Controls.Add(label9, 0, 1);
+            tableLayoutPanel1.Controls.Add(label11, 0, 0);
+            tableLayoutPanel1.Location = new Point(1087, 66);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.Size = new Size(305, 125);
+            tableLayoutPanel1.TabIndex = 124;
+            tableLayoutPanel1.Visible = false;
+            // 
+            // label8
+            // 
+            label8.Cursor = Cursors.Hand;
+            label8.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.White;
+            label8.Image = (Image)resources.GetObject("label8.Image");
+            label8.ImageAlign = ContentAlignment.MiddleRight;
+            label8.Location = new Point(5, 82);
+            label8.Name = "label8";
+            label8.Size = new Size(295, 38);
+            label8.TabIndex = 65;
+            label8.Text = "SIGN OUT";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            label8.Click += label8_Click;
+            // 
+            // label9
+            // 
+            label9.Cursor = Cursors.Hand;
+            label9.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.Image = (Image)resources.GetObject("label9.Image");
+            label9.ImageAlign = ContentAlignment.MiddleRight;
+            label9.Location = new Point(5, 42);
+            label9.Name = "label9";
+            label9.Size = new Size(295, 38);
+            label9.TabIndex = 64;
+            label9.Text = "CHANGE PASSWORD";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            label9.Click += label9_Click;
+            // 
+            // label11
+            // 
+            label11.Cursor = Cursors.Hand;
+            label11.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.White;
+            label11.Image = (Image)resources.GetObject("label11.Image");
+            label11.ImageAlign = ContentAlignment.MiddleRight;
+            label11.Location = new Point(5, 2);
+            label11.Name = "label11";
+            label11.Size = new Size(295, 38);
+            label11.TabIndex = 63;
+            label11.Text = "INFORMATION";
+            label11.TextAlign = ContentAlignment.MiddleCenter;
+            label11.Click += label11_Click;
+            // 
             // A_MyTaskList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 23, 23);
             ClientSize = new Size(1400, 800);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(customButton13);
             Controls.Add(saveButton);
             Controls.Add(cancelButton);
@@ -973,6 +1046,7 @@
             ((System.ComponentModel.ISupportInitialize)currentAvatarBig).EndInit();
             ((System.ComponentModel.ISupportInitialize)membersGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1022,5 +1096,9 @@
         private CustomComponent.CustomButton cancelButton;
         private CustomComponent.CustomButton customButton13;
         private CustomComponent.CustomComboBox languageSelect;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label label8;
+        private Label label9;
+        private Label label11;
     }
 }

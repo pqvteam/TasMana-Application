@@ -176,19 +176,32 @@ namespace Repositories
             return isSuccess;
         }
 
-        public void UpdateProcess(string id, string status)
+        public void UpdateProcess(string id, string status, DateTime selectedDate)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             try
             {
-
                 conn.Open();
 
-                using (SqlCommand command = new SqlCommand("UPDATE GiaoViec SET tinhTrangCongViec = @status WHERE maGiaoViec = @id", conn))
+                DateTime hanHoanThanh;
+                using (SqlCommand command = new SqlCommand("SELECT hanHoanThanh FROM GiaoViec WHERE maGiaoViec = @id", conn))
                 {
-                    command.Parameters.AddWithValue("@status", status);
                     command.Parameters.AddWithValue("@id", id);
-                    command.ExecuteNonQuery();
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        hanHoanThanh = Convert.ToDateTime(result);
+
+                        bool dungHan = (selectedDate < hanHoanThanh);
+
+                        using (SqlCommand updateCommand = new SqlCommand("UPDATE GiaoViec SET tinhTrangCongViec = @status, dungHan = @dungHan WHERE maGiaoViec = @id", conn))
+                        {
+                            updateCommand.Parameters.AddWithValue("@status", status);
+                            updateCommand.Parameters.AddWithValue("@dungHan", dungHan ? 1 : 0); 
+                            updateCommand.Parameters.AddWithValue("@id", id);
+                            updateCommand.ExecuteNonQuery();
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -200,6 +213,7 @@ namespace Repositories
                 conn.Close();
             }
         }
+
 
         public bool Update(
             string description,

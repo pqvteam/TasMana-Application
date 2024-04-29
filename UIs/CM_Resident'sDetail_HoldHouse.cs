@@ -107,5 +107,17 @@ namespace UIs
             CM_Resident_sDetail_Commercial cM = new CM_Resident_sDetail_Commercial();
             cM.ShowDialog();
         }
+
+        private void customButton3_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail_Authorized cM = new CM_Resident_sDetail_Authorized();
+            cM.ShowDialog();
+        }
+
+        private void customButton4_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail_Tenant_StaffOf cM = new CM_Resident_sDetail_Tenant_StaffOf();
+            cM.ShowDialog();
+        }
     }
 }
