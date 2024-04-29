@@ -14,7 +14,7 @@ namespace Repositories
         static TasManaContext tasManaContext = new TasManaContext();
         TasManaContext db = new TasManaContext();
         private static string connectionString = tasManaContext.GetConnectionString();
-        public Ceo? Find(string ID)
+        public Ceo Find(string ID)
         {
             return db.Ceos.FirstOrDefault(x => x.MaThanhVien == ID);
         }

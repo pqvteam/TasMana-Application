@@ -87,12 +87,12 @@ namespace UIs
             {
                 string memberType = "";
                 string role = "Staff";
-                if (ceoService.getCeo(member.MaThanhVien) != null)
+                if (Session.Instance.laCEO)
                 {
                     role = "CEO";
                     memberType = "CEO";
                 }
-                else if (quanLyService.findManager(member.MaThanhVien) != null)
+                else if (Session.Instance.laQuanLi)
                 {
                     role = "Manager";
                     memberType = "Manager";
@@ -139,7 +139,6 @@ namespace UIs
                     membersGrid.Rows[rowIndex].Cells["Fired"].Value = true;
                 }
             }
-
 
         }
 

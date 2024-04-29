@@ -118,7 +118,6 @@ namespace UIs
             grandChart.Font = fontLarge;
         }
 
-
         private void A_EditTask_Load(object sender, EventArgs e)
         {
             changeLanguage();
@@ -173,22 +172,11 @@ namespace UIs
             membersGrid.Columns.Add("TinhTrangCongViec", "Status");
             membersGrid.Columns.Add("Tag", "Tag");
             reload();
-            DataGridViewLinkColumn links = new DataGridViewLinkColumn();
-            links.UseColumnTextForLinkValue = true;
-            links.HeaderText = "Download";
-            links.DataPropertyName = "lnkColumn";
-            links.Name = "lnkColumn";
-            links.ActiveLinkColor = Color.White;
-            links.LinkBehavior = LinkBehavior.SystemDefault;
-            links.LinkColor = Color.Blue;
-            links.Text = "Click here";
-            links.TrackVisitedState = true;
-            links.VisitedLinkColor = Color.YellowGreen;
-            membersGrid.Columns.Add(links);
         }
 
         private void reload()
         {
+            DatabaseConnection.Instance.CloseConnection();
             if (IsValidImageData(Session.Instance.Avatar))
             {
                 currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
@@ -239,6 +227,19 @@ namespace UIs
                     incompletedTaskQuantity++;
                 }
             }
+            DataGridViewLinkColumn links = new DataGridViewLinkColumn();
+            links.UseColumnTextForLinkValue = true;
+            links.HeaderText = "Download";
+            links.DataPropertyName = "lnkColumn";
+            links.Name = "lnkColumn";
+            links.ActiveLinkColor = Color.White;
+            links.LinkBehavior = LinkBehavior.SystemDefault;
+            links.LinkColor = Color.Blue;
+            links.Text = "Click here";
+            links.TrackVisitedState = true;
+            links.VisitedLinkColor = Color.YellowGreen;
+            membersGrid.Columns.Add(links);
+            DatabaseConnection.Instance.CloseConnection();
         }
 
         public Image convertByteToImage(byte[] data)
@@ -270,11 +271,17 @@ namespace UIs
             if (e.RowIndex >= 0)
             {
                 selectedTaskID = membersGrid.Rows[e.RowIndex].Cells["MaGiaoViec"].Value.ToString();
-                selectedTaskStatus = membersGrid.Rows[e.RowIndex].Cells["TinhTrangCongViec"].Value.ToString();
+                selectedTaskStatus = membersGrid
+                    .Rows[e.RowIndex]
+                    .Cells["TinhTrangCongViec"]
+                    .Value.ToString();
             }
         }
 
-        private void membersGrid_CellContentDownloadClick(object sender, DataGridViewCellEventArgs e)
+        private void membersGrid_CellContentDownloadClick(
+            object sender,
+            DataGridViewCellEventArgs e
+        )
         {
             if (e.ColumnIndex == membersGrid.Columns["lnkColumn"].Index && e.RowIndex >= 0)
             {
@@ -308,7 +315,9 @@ namespace UIs
                     Session.Instance.laCEO == true ? 1 : 0,
                     Session.Instance.UserName,
                     task.UyQuyenBoi,
-                    tag.Count != 0 ? tag[0].name : "N/A"
+                    tag.Count != 0 ? tag[0].name : "N/A",
+                    task.DungHan == true ? 1 : 0,
+                    task.PhongBanChoPhep
                 );
                 editTask.ShowDialog();
             }
@@ -317,7 +326,7 @@ namespace UIs
         private void resetButton_Click(object sender, EventArgs e)
         {
             reload();
-            reload();
+            performSearch();
         }
 
         private void customButton2_Click(object sender, EventArgs e)
@@ -439,10 +448,7 @@ namespace UIs
             }
         }
 
-        private void searchBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void searchBox_TextChanged(object sender, EventArgs e) { }
 
         private void departmentsBox_OnSelectedIndexChanged(object sender, EventArgs e)
         {
@@ -470,10 +476,13 @@ namespace UIs
 
         private void customButton13_Click(object sender, EventArgs e)
         {
-            A_UpdateProcess a_UpdateProcess = new A_UpdateProcess(selectedTaskID, selectedTaskStatus);
+            A_UpdateProcess a_UpdateProcess = new A_UpdateProcess(
+                selectedTaskID,
+                selectedTaskStatus
+            );
             a_UpdateProcess.ShowDialog();
         }
-        
+
         private void languageSelect_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
@@ -493,7 +502,7 @@ namespace UIs
                 customButton5.Text = "CÔNG VIỆC ĐƯỢC CHIA SẺ";
                 createGroupButton.Text = "TẠO NHÓM";
                 cancelButton.Text = "THOÁT";
-                saveButton.Text = "LƯU";
+                saveButton.Text = "CHỈNH SỬA";
                 grandChart.Text = "VẼ BIỂU ĐỒ";
                 label1.Text = "TRẠNG THÁI";
                 label2.Text = "PHÒNG BAN";
@@ -517,7 +526,7 @@ namespace UIs
                 customButton16.Text = "MY TASK LIST";
                 customButton5.Text = "OBSERVED TASK";
                 cancelButton.Text = "CANCEL";
-                saveButton.Text = "SAVE";
+                saveButton.Text = "EDIT";
                 createGroupButton.Text = "CREATE GROUP";
                 grandChart.Text = "GRAND CHART";
                 label1.Text = "STATUS";
@@ -548,9 +557,6 @@ namespace UIs
             grandChart.Font = fontLarge;
         }
 
-        private void headerPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        private void headerPanel_Paint(object sender, PaintEventArgs e) { }
     }
 }
