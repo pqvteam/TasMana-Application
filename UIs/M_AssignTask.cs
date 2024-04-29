@@ -109,6 +109,9 @@ namespace UIs
 
         private void M_AssignTask_Load(object sender, EventArgs e)
         {
+            changelanguage();
+            languageSelect.SelectedItem = Session.Instance.Language == "en" ? "ENGLISH" : "VIETNAMESE";
+
             assignerLabel.Text = Session.Instance.UserName;
             taskStatus.SelectedIndex = 0;
             taskPriority.SelectedIndex = 0;
@@ -294,6 +297,323 @@ namespace UIs
             }
         }
 
+        private void changelanguage()
+        {
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            Font fontLarger = new Font("Copperplate Gothic Bold", 12);
+            Font fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            if (Session.Instance.Language == "vi")
+            {
+                customButton7.Text = "CÔNG VIỆC";
+                customButton8.Text = "THỐNG KÊ";
+                customButton9.Text = "BÁO CÁO";
+                customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
+                customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
+                customButton10.Text = "DỊCH VỤ CƯ DÂN";
+                label29.Text = "THÔNG TIN";
+                label28.Text = "ĐỔI MẬT KHẨU";
+                label27.Text = "ĐĂNG XUẤT";
+                label6.Text = "TÊN CÔNG VIỆC";
+                label7.Text = "MÔ TẢ";
+                label8.Text = "TỆP ĐÍNH KÈM";
+                label9.Text = "NGÀY BẮT ĐẦU";
+                label10.Text = "HẠN CHÓT";
+                label11.Text = "TIẾN ĐỘ";
+                label12.Text = "ĐỘ ƯU TIÊN";
+                label19.Text = "LÀM NỔI BẬC";
+                label16.Text = "TRUY CẬP CÔNG KHAI";
+                label18.Text = "CÔNG TY";
+                label17.Text = "BỘ PHẬN";
+                editReceiverButton.Text = "SỬA";
+                button1.Text = "SỬA";
+                button2.Text = "SỬA";
+                venueEditButton.Text = "SỬA";
+                tagEditButton.Text = "SỬA";
+                label13.Text = "ỦY QUYỀN BỞI";
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+
+
+                customButton2.Text = "CẬP NHẬT TIẾN ĐỘ";
+                customButton1.Text = "HẠN CHÓT";
+                customButton5.Text = "ĐÍNH KÈM";
+                customButton3.Text = "XÓA CÔNG VIỆC";
+                label15.Text = "TRẠNG THÁI";
+                label14.Text = "SỬA ĐỔI";
+                name.Text = "NGƯỜI THỰC HIỆN";
+                label1.Text = "ĐƯỢC GIAO BỞI";
+                label2.Text = "CHIA SẺ TIẾN ĐỘ";
+                label3.Text = "KHÁCH HÀNG";
+                label4.Text = "NƠI LÀM VIỆC";
+                label5.Text = "THẺ";
+                tagNameBox.Text = "KIỂM TRA";
+                fontLarger = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+
+                uploadButton.Text = "ĐĂNG";
+                cancelButton.Text = "HỦY";
+                saveButton.Text = "LƯU";
+                fontSmaller = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+
+                heading.Text = "CHI TIẾT CÔNG VIỆC";
+                heading.Font = new Font("Microsoft Sans Serif", 18, FontStyle.Bold);
+            }
+            else
+            {
+                customButton7.Text = "WORK";
+                customButton8.Text = "STATISTIC";
+                customButton9.Text = "REPORT";
+                customButton17.Text = "ACCOUNTING MANAGEMENT";
+                customButton18.Text = "APARTMENT RESIDENT";
+                customButton10.Text = "RESIDENT SERVICE";
+                label29.Text = "INFORMATION";
+                label28.Text = "CHANGE PASSWORD";
+                label27.Text = "SIGN OUT";
+                label6.Text = "TASK NAME";
+                label7.Text = "DISCRIPTION";
+                label8.Text = "ATTACHED FILES";
+                label9.Text = "START";
+                label10.Text = "DEADLINE";
+                label11.Text = "PROCESS";
+                label12.Text = "PRIORITY";
+                label19.Text = "HIGHLIGHT";
+                label16.Text = "PUBLIC ACCESS";
+                label18.Text = "COMPANY";
+                label17.Text = "DEPARTMENT";
+                editReceiverButton.Text = "EDIT";
+                button1.Text = "EDIT";
+                button2.Text = "EDIT";
+                venueEditButton.Text = "EDIT";
+                tagEditButton.Text = "EDIT";
+                label13.Text = "AUTHORIZE BY";
+                font = new Font("Copperplate Gothic Bold", 10);
+
+                customButton2.Text = "UPDATE PROCESS";
+                customButton1.Text = "DEADLINE";
+                customButton5.Text = "ATTACHMENT";
+                customButton3.Text = "DELETE TASK";
+                label15.Text = "STATUS";
+                label14.Text = "MODIFYING";
+                name.Text = "IMPLEMENTOR";
+                label1.Text = "ASSIGNED BY";
+                label2.Text = "SHARED PROCESS";
+                label3.Text = "CUSTOMER";
+                label4.Text = "WORKPLACE";
+                label5.Text = "TAGS";
+                tagNameBox.Text = "CHECKING";
+                fontLarger = new Font("Copperplate Gothic Bold", 12);
+
+                uploadButton.Text = "BROWSE";
+                cancelButton.Text = "CANCEL";
+                saveButton.Text = "SAVE";
+                fontSmaller = new Font("Copperplate Gothic Bold", 9);
+
+                heading.Text = "TASK DETAILS";
+                heading.Font = new Font("Copperplate Gothic Bold", 18);
+            }
+            customButton7.Font = font;
+            customButton8.Font = font;
+            customButton9.Font = font;
+            customButton17.Font = font;
+            customButton18.Font = font;
+            customButton10.Font = font;
+            label29.Font = font;
+            label28.Font = font;
+            label27.Font = font;
+            label6.Font = font;
+            label7.Font = font;
+            label8.Font = font;
+            label9.Font = font;
+            label10.Font = font;
+            label11.Font = font;
+            label12.Font = font;
+            label19.Font = font;
+            label16.Font = font;
+            label18.Font = font;
+            label17.Font = font;
+            editReceiverButton.Font = font;
+            button1.Font = font;
+            button2.Font = font;
+            venueEditButton.Font = font;
+            tagEditButton.Font = font;
+            label13.Font = font;
+
+            customButton2.Font = fontLarger;
+            customButton1.Font = fontLarger;
+            customButton5.Font = fontLarger;
+            customButton3.Font = fontLarger;
+            label15.Font = fontLarger;
+            label14.Font = fontLarger;
+            name.Font = fontLarger;
+            label1.Font = fontLarger;
+            label2.Font = fontLarger;
+            label3.Font = fontLarger;
+            label4.Font = fontLarger;
+            label5.Font = fontLarger;
+            tagNameBox.Font = fontLarger;
+
+            uploadButton.Font = fontSmaller;
+            cancelButton.Font = fontSmaller;
+            saveButton.Font = fontSmaller;
+        }
+
+        private void languageSelect_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            Font fontLarger = new Font("Copperplate Gothic Bold", 12);
+            Font fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            if (languageSelect.SelectedItem.ToString() == "VIETNAMESE")
+            {
+                Session.Instance.Language = "vi";
+                customButton7.Text = "CÔNG VIỆC";
+                customButton8.Text = "THỐNG KÊ";
+                customButton9.Text = "BÁO CÁO";
+                customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
+                customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
+                customButton10.Text = "DỊCH VỤ CƯ DÂN";
+                label29.Text = "THÔNG TIN";
+                label28.Text = "ĐỔI MẬT KHẨU";
+                label27.Text = "ĐĂNG XUẤT";
+                label6.Text = "TÊN CÔNG VIỆC";
+                label7.Text = "MÔ TẢ";
+                label8.Text = "TỆP ĐÍNH KÈM";
+                label9.Text = "NGÀY BẮT ĐẦU";
+                label10.Text = "HẠN CHÓT";
+                label11.Text = "TIẾN ĐỘ";
+                label12.Text = "ĐỘ ƯU TIÊN";
+                label19.Text = "LÀM NỔI BẬC";
+                label16.Text = "TRUY CẬP CÔNG KHAI";
+                label18.Text = "CÔNG TY";
+                label17.Text = "BỘ PHẬN";
+                editReceiverButton.Text = "SỬA";
+                button1.Text = "SỬA";
+                button2.Text = "SỬA";
+                venueEditButton.Text = "SỬA";
+                tagEditButton.Text = "SỬA";
+                label13.Text = "ỦY QUYỀN BỞI";
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+
+
+                customButton2.Text = "CẬP NHẬT TIẾN ĐỘ";
+                customButton1.Text = "HẠN CHÓT";
+                customButton5.Text = "ĐÍNH KÈM";
+                customButton3.Text = "XÓA CÔNG VIỆC";
+                label15.Text = "TRẠNG THÁI";
+                label14.Text = "SỬA ĐỔI";
+                name.Text = "NGƯỜI THỰC HIỆN";
+                label1.Text = "ĐƯỢC GIAO BỞI";
+                label2.Text = "CHIA SẺ TIẾN ĐỘ";
+                label3.Text = "KHÁCH HÀNG";
+                label4.Text = "NƠI LÀM VIỆC";
+                label5.Text = "THẺ";
+                tagNameBox.Text = "KIỂM TRA";
+                fontLarger = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+
+                uploadButton.Text = "ĐĂNG";
+                cancelButton.Text = "HỦY";
+                saveButton.Text = "LƯU";
+                fontSmaller = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+
+                heading.Text = "CHI TIẾT CÔNG VIỆC";
+                heading.Font = new Font("Microsoft Sans Serif", 18, FontStyle.Bold);
+            }
+            else
+            {
+                Session.Instance.Language = "en";
+                customButton7.Text = "WORK";
+                customButton8.Text = "STATISTIC";
+                customButton9.Text = "REPORT";
+                customButton17.Text = "ACCOUNTING MANAGEMENT";
+                customButton18.Text = "APARTMENT RESIDENT";
+                customButton10.Text = "RESIDENT SERVICE";
+                label29.Text = "INFORMATION";
+                label28.Text = "CHANGE PASSWORD";
+                label27.Text = "SIGN OUT";
+                label6.Text = "TASK NAME";
+                label7.Text = "DISCRIPTION";
+                label8.Text = "ATTACHED FILES";
+                label9.Text = "START";
+                label10.Text = "DEADLINE";
+                label11.Text = "PROCESS";
+                label12.Text = "PRIORITY";
+                label19.Text = "HIGHLIGHT";
+                label16.Text = "PUBLIC ACCESS";
+                label18.Text = "COMPANY";
+                label17.Text = "DEPARTMENT";
+                editReceiverButton.Text = "EDIT";
+                button1.Text = "EDIT";
+                button2.Text = "EDIT";
+                venueEditButton.Text = "EDIT";
+                tagEditButton.Text = "EDIT";
+                label13.Text = "AUTHORIZE BY";
+                font = new Font("Copperplate Gothic Bold", 10);
+
+                customButton2.Text = "UPDATE PROCESS";
+                customButton1.Text = "DEADLINE";
+                customButton5.Text = "ATTACHMENT";
+                customButton3.Text = "DELETE TASK";
+                label15.Text = "STATUS";
+                label14.Text = "MODIFYING";
+                name.Text = "IMPLEMENTOR";
+                label1.Text = "ASSIGNED BY";
+                label2.Text = "SHARED PROCESS";
+                label3.Text = "CUSTOMER";
+                label4.Text = "WORKPLACE";
+                label5.Text = "TAGS";
+                tagNameBox.Text = "CHECKING";
+                fontLarger = new Font("Copperplate Gothic Bold", 12);
+
+                uploadButton.Text = "BROWSE";
+                cancelButton.Text = "CANCEL";
+                saveButton.Text = "SAVE";
+                fontSmaller = new Font("Copperplate Gothic Bold", 9);
+
+                heading.Text = "TASK DETAILS";
+                heading.Font = new Font("Copperplate Gothic Bold", 18);
+            }
+            customButton7.Font = font;
+            customButton8.Font = font;
+            customButton9.Font = font;
+            customButton17.Font = font;
+            customButton18.Font = font;
+            customButton10.Font = font;
+            label29.Font = font;
+            label28.Font = font;
+            label27.Font = font;
+            label6.Font = font;
+            label7.Font = font;
+            label8.Font = font;
+            label9.Font = font;
+            label10.Font = font;
+            label11.Font = font;
+            label12.Font = font;
+            label19.Font = font;
+            label16.Font = font;
+            label18.Font = font;
+            label17.Font = font;
+            editReceiverButton.Font = font;
+            button1.Font = font;
+            button2.Font = font;
+            venueEditButton.Font = font;
+            tagEditButton.Font = font;
+            label13.Font = font;
+
+            customButton2.Font = fontLarger;
+            customButton1.Font = fontLarger;
+            customButton5.Font = fontLarger;
+            customButton3.Font = fontLarger;
+            label15.Font = fontLarger;
+            label14.Font = fontLarger;
+            name.Font = fontLarger;
+            label1.Font = fontLarger;
+            label2.Font = fontLarger;
+            label3.Font = fontLarger;
+            label4.Font = fontLarger;
+            label5.Font = fontLarger;
+            tagNameBox.Font = fontLarger;
+
+            uploadButton.Font = fontSmaller;
+            cancelButton.Font = fontSmaller;
+            saveButton.Font = fontSmaller;
+        }
         private void departmentMode_CheckedChanged(object sender, EventArgs e)
         {
             if (departmentMode.Checked)

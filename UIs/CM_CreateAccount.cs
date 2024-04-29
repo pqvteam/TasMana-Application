@@ -22,6 +22,8 @@ namespace UIs
 
         private void CM_CreateAccount_Load(object sender, EventArgs e)
         {
+            changelanguage();
+
             if (Session.Instance.UserName.Contains("GD"))
             {
                 loadAllDepartment();
@@ -45,7 +47,6 @@ namespace UIs
                     }
                 }
             }
-
         }
 
         private void departmentsBox_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -234,6 +235,66 @@ namespace UIs
             // Định dạng CMND có thể được kiểm tra bằng biểu thức chính quy
             // Ở đây, chúng ta sẽ chỉ kiểm tra xem CMND có chứa đúng 9 hoặc 12 chữ số hay không
             return citizenID.Length == 9 || citizenID.Length == 12;
+        }
+
+        private void changelanguage()
+        {
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            Font fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            if (Session.Instance.Language == "vi")
+            {
+                customButton10.Text = "TẠO TÀI KHOẢN";
+                customButton10.Font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+
+                label2.Text = "LOẠI TÀI KHOẢN";
+                label1.Text = "PHÒNG BAN";
+                label3.Text = "CCCD";
+                label5.Text = "HỘ CHIẾU";
+                label6.Text = "TÊN NGƯỜI DÙNG";
+                label7.Text = "GIỚI TÍNH";
+                label8.Text = "SỐ ĐIỆN THOẠI";
+                label9.Text = "NGÀY SINH";
+                label10.Text = "ĐỊA CHỈ";
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+
+                cancelButton.Text = "HỦY";
+                customButton14.Text = "TẠO";
+                fontSmaller = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            else
+            {
+                customButton10.Text = "CREATE ACCOUNT";
+                customButton10.Font = new Font("Copperplate Gothic Bold", 14);
+
+                label2.Text = "TYPE ACCOUNT";
+                label1.Text = "DEPARTMENT";
+                label3.Text = "CITIZEN ID";
+                label5.Text = "PASSPORT";
+                label6.Text = "USERNAME";
+                label7.Text = "GENDER";
+                label8.Text = "MOBILE";
+                label9.Text = "BIRTH DATE";
+                label10.Text = "ADDRESS";
+                font = new Font("Copperplate Gothic Bold", 10);
+
+                cancelButton.Text = "CANCEL";
+                customButton14.Text = "CREATE";
+                fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            }
+
+            label2.Font = font;
+            label1.Font = font;
+            label3.Font = font;
+            label5.Font = font;
+            label6.Font = font;
+            label7.Font = font;
+            label8.Font = font;
+            label9.Font = font;
+            label10.Font = font;
+
+            cancelButton.Font = fontSmaller;
+            customButton14.Font = fontSmaller;
+
         }
 
     }
