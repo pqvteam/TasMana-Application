@@ -23,6 +23,10 @@ public partial class GiaoViec
 
     public string? UyQuyenBoi { get; set; }
 
+    public bool? DungHan { get; set; }
+
+    public string? PhongBanChoPhep { get; set; }
+
     public virtual ICollection<CanHo> MaChes { get; set; } = new List<CanHo>();
 
     public virtual ICollection<NhanVien> MaThanhViens { get; set; } = new List<NhanVien>();
