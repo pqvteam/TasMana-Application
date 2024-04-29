@@ -53,6 +53,8 @@ namespace UIs
 
         private void A_ShowMember_Load(object sender, EventArgs e)
         {
+            changelanguage();
+
             membersGrid.Columns.Add("Avatar", "Avatar");
             membersGrid.Columns.Add("ID", "ID");
             membersGrid.Columns.Add("Name", "Full Name");
@@ -175,6 +177,51 @@ namespace UIs
                 row.Cells[3].Value = member.LaQuanLi == true ? "Yes" : "No";
                 membersGrid.Rows.Add(row);
             }
+        }
+
+        private void changelanguage()
+        {
+            Font font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+            Font fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            if (Session.Instance.Language == "vi")
+            {
+                customButton10.Text = "NGƯỜI THỰC HIỆN";
+                customButton10.Font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+
+                hrButton.Text = "DỊCH VỤ";
+                seButton.Text = "AN NINH";
+                maButton.Text = "BẢO TRÌ";
+                coButton.Text = "XÂY DỰNG";
+                fiButton.Text = "TÀI CHÍNH";
+                saButton.Text = "VỆ SINH";
+                cancelButton.Text = "HỦY";
+                customButton8.Text = "LƯU";
+                fontSmaller = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            else
+            {
+                customButton10.Text = "IMPLEMENTOR";
+                customButton10.Font = new Font("Copperplate Gothic Bold", 14);
+
+                hrButton.Text = "HR_RS";
+                seButton.Text = "SECURITY";
+                maButton.Text = "MAINTAINANCE";
+                coButton.Text = "CONSTRUCTION";
+                fiButton.Text = "FINANCIAL ACOUNTING";
+                saButton.Text = "SANTINATION";
+                cancelButton.Text = "CANCEL";
+                customButton8.Text = "SAVE";
+                fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            }
+
+            hrButton.Font = fontSmaller;
+            seButton.Font = fontSmaller;
+            maButton.Font = fontSmaller;
+            coButton.Font = fontSmaller;
+            fiButton.Font = fontSmaller;
+            saButton.Font = fontSmaller;
+            cancelButton.Font = fontSmaller;
+            customButton8.Font = fontSmaller;
         }
     }
 }
