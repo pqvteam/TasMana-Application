@@ -15,6 +15,7 @@ static class Program
         // Application.Run(new A_ShowMember());
         // Application.Run(new A_ShowVenue());
         Application.Run(new G_Login());
+<<<<<<< HEAD
         //Application.Run(new A_EditTask());
         //Application.Run(new A_Appoint());
         //Application.Run(new A_ShowMember());
@@ -24,3 +25,9 @@ static class Program
         //Application.Run(new CM_Resident_sDetail_Tenant_StaffOf());
     }  
 }
+=======
+        // Application.Run(new A_EditTask());
+        // Application.Run(new A_ShowDepartment());
+    }
+}
+>>>>>>> fa274daeb82a1a0e0f013863fbd5e1cb4684ba3f

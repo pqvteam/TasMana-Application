@@ -87,12 +87,12 @@ namespace UIs
             {
                 string memberType = "";
                 string role = "Staff";
-                if (ceoService.getCeo(member.MaThanhVien) != null)
+                if (Session.Instance.laCEO)
                 {
                     role = "CEO";
                     memberType = "CEO";
                 }
-                else if (quanLyService.findManager(member.MaThanhVien) != null)
+                else if (Session.Instance.laQuanLi)
                 {
                     role = "Manager";
                     memberType = "Manager";
@@ -101,10 +101,11 @@ namespace UIs
                 {
                     memberType = member.LoaiNhanSu;
                 }
+
                 string departmentID = member.MaThanhVien.Split("-")[0];
                 DateOnly dateOnly = member.NgayBatDau.Value;
                 string start = dateOnly.ToString("dd/MM/yyyy");
-
+                bool fired = member.NghiViec;
                 int rowIndex = membersGrid.Rows.Add(
                     member.MaThanhVien,
                     member.HoVaTen,
@@ -113,6 +114,7 @@ namespace UIs
                     departmentID,
                     role,
                     start
+
                 );
 
                 if (role == "Manager")
@@ -132,9 +134,11 @@ namespace UIs
                     membersGrid.Rows[rowIndex].Cells["btnLeader"].Value = true;
                 }
 
-                membersGrid.Rows[rowIndex].Cells["Fired"].Value = member.NghiViec;
+                if (fired)
+                {
+                    membersGrid.Rows[rowIndex].Cells["Fired"].Value = true;
+                }
             }
-
 
         }
 
@@ -149,9 +153,14 @@ namespace UIs
         private void membersGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string? memberId = membersGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+            string? department = membersGrid.Rows[e.RowIndex].Cells["Department"].Value.ToString();
             bool isManager =
                 membersGrid.Rows[e.RowIndex].Cells["btnAppoint"].Value != null
                     ? (bool)membersGrid.Rows[e.RowIndex].Cells["btnAppoint"].Value
+                    : false;
+            bool isFired =
+                membersGrid.Rows[e.RowIndex].Cells["Fired"].Value != null
+                    ? (bool)membersGrid.Rows[e.RowIndex].Cells["Fired"].Value
                     : false;
             string CEOID = Session.Instance.UserName;
             if (e.ColumnIndex == membersGrid.Columns["btnAppoint"].Index && e.RowIndex >= 0)
@@ -164,15 +173,22 @@ namespace UIs
                         A_Confirm confirmForm = new A_Confirm(confirmMessage, "danger");
                         confirmForm.ConfirmClicked += (confirmSender, confirmArgs) =>
                         {
-                            bool isSuccess = ceoService.deposeManager(memberId, CEOID);
-                            if (isSuccess)
+                            if (Session.Instance.UserName.Contains("GD"))
                             {
-                                MessageBox.Show("Depose manager successfully");
-                                PerformSearch();
+                                bool isSuccess = ceoService.deposeManager(memberId, CEOID);
+                                if (isSuccess)
+                                {
+                                    MessageBox.Show("Depose manager successfully");
+                                    PerformSearch();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Depose manager failure");
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Depose manager failure");
+                                MessageBox.Show("You don't have right to depose");
                             }
                         };
                         confirmForm.ShowDialog();
@@ -183,16 +199,24 @@ namespace UIs
                         A_Confirm confirmForm = new A_Confirm(confirmMessage, "confirm");
                         confirmForm.ConfirmClicked += (confirmSender, confirmArgs) =>
                         {
-                            bool isSuccess = ceoService.appointManager(memberId, CEOID);
-                            if (isSuccess)
+                            if (Session.Instance.UserName.Contains("GD"))
                             {
-                                MessageBox.Show("Appoint manager successfully");
-                                PerformSearch();
+                                bool isSuccess = ceoService.appointManager(memberId, CEOID);
+                                if (isSuccess)
+                                {
+                                    MessageBox.Show("Appoint manager successfully");
+                                    PerformSearch();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Appoint manager failure");
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Appoint manager failure");
+                                MessageBox.Show("You don't have right to appoint");
                             }
+
                         };
                         confirmForm.ShowDialog();
                     }
@@ -200,11 +224,71 @@ namespace UIs
             }
             else if (e.ColumnIndex == membersGrid.Columns["btnLeader"].Index && e.RowIndex >= 0)
             {
-                A_Appoint appointForm = new A_Appoint(memberId, CEOID);
-                appointForm.ShowDialog();
+                if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+                {
+                    A_Appoint appointForm = new A_Appoint(memberId, CEOID);
+                    appointForm.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("You don't have right to appoint");
+                }
+
                 PerformSearch();
             }
+            else if (e.ColumnIndex == membersGrid.Columns["Fired"].Index && e.RowIndex >= 0)
+            {
+                if (memberId != null)
+                {
+                    if (!isFired)
+                    {
+                        string confirmMessage = "ARE YOU SURE TO DEACTIVE THIS ACCOUNT?";
+                        A_Confirm confirmForm = new A_Confirm(confirmMessage, "danger");
+                        confirmForm.ConfirmClicked += (confirmSender, confirmArgs) =>
+                        {
+                            if (Session.Instance.UserName.Contains("GD"))
+                            {
+                                bool isSuccess = ceoService.firedStaff(memberId, CEOID);
+                                if (isSuccess)
+                                {
+                                    MessageBox.Show("Depose this account successfully");
+                                    reload();
+                                    PerformSearch();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Depose this account failure");
+                                }
+                            }
+                            else if (Session.Instance.UserName.Contains(department) && isManager == false && Session.Instance.laQuanLi == true)
+                            {
+                                bool isSuccess = quanLyService.firedStaff(memberId, Session.Instance.UserName);
+                                if (isSuccess)
+                                {
+                                    MessageBox.Show("Depose this account successfully");
+                                    reload();
+                                    PerformSearch();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Depose this account failure");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("You don't have right to depose");
+                            }
+                        };
+                        confirmForm.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("This account has been deactive");
+                    }
+                }
+            }
             reload();
+            PerformSearch();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -295,6 +379,7 @@ namespace UIs
                                         membersGrid.Rows[rowIndex].Cells["btnAppoint"].ReadOnly =
                                             true;
                                     }
+
                                 }
                                 else if (
                                     (selectedDepartment == "" || selectedDepartment == "All")
@@ -666,7 +751,7 @@ namespace UIs
                                         start
                                     );
 
-                                    membersGrid.Rows[rowIndex].Cells["Fired"].Value = fired;
+
 
                                     if (role == "Manager")
                                     {
@@ -682,6 +767,10 @@ namespace UIs
                                     if (nhanVienService.checkLeader(ID))
                                     {
                                         membersGrid.Rows[rowIndex].Cells["btnLeader"].Value = true;
+                                    }
+                                    if (fired)
+                                    {
+                                        membersGrid.Rows[rowIndex].Cells["Fired"].Value = true;
                                     }
                                 }
                             }
@@ -878,7 +967,8 @@ namespace UIs
                 customButton19.Text = "TẠO MỚI";
                 button2.Text = "TÀI KHOẢN NGƯNG HOẠT ĐỘNG";
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
-            } else
+            }
+            else
             {
                 Session.Instance.Language = "en";
                 font = new Font("Copperplate Gothic Bold", 10, FontStyle.Bold);
@@ -907,6 +997,64 @@ namespace UIs
             label1.Font = font;
             label2.Font = font;
             label3.Font = font;
+        }
+
+        private void customButton7_Click(object sender, EventArgs e)
+        {
+            C_AllTaskList c_AllTaskList = new C_AllTaskList();
+            c_AllTaskList.ShowDialog();
+        }
+
+        private void customButton18_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail cM_Resident_SDetail = new CM_Resident_sDetail();
+            cM_Resident_SDetail.ShowDialog();
+        }
+
+        private void label4_Click_1(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+            G_ForgotPassword g_ForgotPassword = new G_ForgotPassword();
+            g_ForgotPassword.ShowDialog();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            List<Form> formsToClose = new List<Form>();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form != this) // Assuming "this" refers to the main form
+                {
+                    formsToClose.Add(form);
+                }
+            }
+
+            foreach (Form form in formsToClose)
+            {
+                form.Close();
+            }
+
+            G_Login g_Login = new G_Login();
+            g_Login.ShowDialog();
+        }
+
+        private void customButton17_Click(object sender, EventArgs e)
+        {
+            reload();
         }
     }
 }

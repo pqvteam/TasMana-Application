@@ -23,6 +23,7 @@ namespace UIs
         private string venueID = "";
         private string authorizedBy = "";
         private string tagName = "";
+        private string sharedDepartment = "";
 
         public M_AssignTask()
         {
@@ -162,6 +163,8 @@ namespace UIs
 
             int tMode = taskMode.Checked ? 1 : 0;
             int tIsCEO = 0;
+            int intime = 1;
+            string sharedDepartment = selectDepartment.Text;
 
             bool isSuccess = giaoViecService.assignTask(
                 tDescription,
@@ -176,7 +179,9 @@ namespace UIs
                 receiverID,
                 tIsCEO,
                 tManagerID,
-                authorizedBy
+                authorizedBy,
+                intime,
+                sharedDepartment
             );
 
             bool isTagAdded = tagService.addTag(tagName, tID, "");
@@ -220,6 +225,12 @@ namespace UIs
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ShowDepartmentForm_DepartmentSelected(string department)
+        {
+            selectDepartment.Text = department;
+            sharedDepartment = department;
         }
 
         private void label13_Click(object sender, EventArgs e) { }
@@ -608,6 +619,66 @@ namespace UIs
             uploadButton.Font = fontSmaller;
             cancelButton.Font = fontSmaller;
             saveButton.Font = fontSmaller;
+        }
+        private void departmentMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (departmentMode.Checked)
+            {
+                A_ShowDepartment showDepartmentForm = new A_ShowDepartment();
+                showDepartmentForm.DepartmentSelected += ShowDepartmentForm_DepartmentSelected;
+                showDepartmentForm.ShowDialog();
+            }
+        }
+        private void customButton17_Click(object sender, EventArgs e)
+        {
+            C_AccountManagement c_AccountManagement = new C_AccountManagement();
+            c_AccountManagement.ShowDialog();
+        }
+
+        private void customButton18_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail cM = new CM_Resident_sDetail();
+            cM.ShowDialog();
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+            G_ForgotPassword g_ForgotPassword = new G_ForgotPassword();
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+            List<Form> formsToClose = new List<Form>();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form != this)
+                {
+                    formsToClose.Add(form);
+                }
+            }
+
+            foreach (Form form in formsToClose)
+            {
+                form.Close();
+            }
+
+            G_Login g_Login = new G_Login();
+            g_Login.ShowDialog();
         }
     }
 }

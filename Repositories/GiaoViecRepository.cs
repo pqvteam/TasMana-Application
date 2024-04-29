@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Formats.Tar;
 using System.Reflection.PortableExecutable;
@@ -26,7 +27,7 @@ namespace Repositories
 
         public List<GiaoViec> getAllTaskOfDepartment(string departmentID)
         {
-            return db.GiaoViecs.Where(x => x.MaGiaoViec.Contains(departmentID)).ToList();
+            return db.GiaoViecs.Where(x => x.MaGiaoViec.Contains(departmentID) && x.CheDo != false).ToList();
         }
 
         //public List<GiaoViec> getAllTaskOfStaff(string staffID)
@@ -105,7 +106,9 @@ namespace Repositories
             string receiverID,
             int isCEO,
             string CEOID,
-            string authorizedBy
+            string authorizedBy,
+            int intime,
+            string sharedDepartment
         )
         {
             DatabaseConnection.Instance.OpenConnection();
@@ -154,7 +157,7 @@ namespace Repositories
 
             // Assign Task
             string departmentQuery =
-                $"EXEC taoViec N'{description}', '{day}', '{deadline}', N'{status}', '{FileBytes}', '{id}', '{receiverID}', {mode}, N'{name}', {isCEO}, '{CEOID}', '{venue}', '{authorizedBy}'";
+                $"EXEC taoViec N'{description}', '{day}', '{deadline}', N'{status}', '{FileBytes}', '{id}', '{receiverID}', {mode}, N'{name}', {isCEO}, '{CEOID}', '{venue}', '{authorizedBy}', {intime}, '{sharedDepartment}'";
             using (SqlCommand cmd = new SqlCommand(departmentQuery, conn))
             {
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -173,6 +176,31 @@ namespace Repositories
             return isSuccess;
         }
 
+        public void UpdateProcess(string id, string status)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+
+                conn.Open();
+
+                using (SqlCommand command = new SqlCommand("UPDATE GiaoViec SET tinhTrangCongViec = @status WHERE maGiaoViec = @id", conn))
+                {
+                    command.Parameters.AddWithValue("@status", status);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public bool Update(
             string description,
             string day,
@@ -186,7 +214,9 @@ namespace Repositories
             string receiverID,
             int isCEO,
             string CEOID,
-            string authorizedBy
+            string authorizedBy,
+            int intime,
+            string sharedDepartment
         )
         {
             DatabaseConnection.Instance.OpenConnection();
@@ -198,12 +228,12 @@ namespace Repositories
             if (file != "")
             {
                 departmentQuery =
-                    $"EXEC capNhatViec N'{description}', '{day}', '{deadline}', N'{status}', '{FileBytes}', '{id}', '{receiverID}', {mode}, N'{name}', {isCEO}, '{CEOID}', '{venue}', '{authorizedBy}'";
+                    $"EXEC capNhatViec N'{description}', '{day}', '{deadline}', N'{status}', '{FileBytes}', '{id}', '{receiverID}', {mode}, N'{name}', {isCEO}, '{CEOID}', '{venue}', '{authorizedBy}', {intime}, '{sharedDepartment}'";
             }
             else
             {
                 departmentQuery =
-                    $"EXEC capNhatViecKhongFile N'{description}', '{day}', '{deadline}', N'{status}', '{FileBytes}', '{id}', '{receiverID}', {mode}, N'{name}', {isCEO}, '{CEOID}', '{venue}', '{authorizedBy}'";
+                    $"EXEC capNhatViecKhongFile N'{description}', '{day}', '{deadline}', N'{status}', '{FileBytes}', '{id}', '{receiverID}', {mode}, N'{name}', {isCEO}, '{CEOID}', '{venue}', '{authorizedBy}', {intime}, '{sharedDepartment}'";
             }
             using (SqlCommand cmd = new SqlCommand(departmentQuery, conn))
             {
