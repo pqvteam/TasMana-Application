@@ -851,31 +851,5 @@ namespace UIs
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
         }
-        
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-            List<Form> formsToClose = new List<Form>();
-
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form != this) 
-                {
-                    formsToClose.Add(form);
-                }
-            }
-
-            foreach (Form form in formsToClose)
-            {
-                form.Close();
-            }
-
-            G_Login g_Login = new G_Login();
-            g_Login.ShowDialog();
-        }
     }
 }

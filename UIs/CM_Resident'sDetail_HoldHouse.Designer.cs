@@ -441,6 +441,7 @@
             customButton4.Text = "TENANT/STAFF OF HOLDHOUSE";
             customButton4.TextColor = Color.White;
             customButton4.UseVisualStyleBackColor = false;
+            customButton4.Click += customButton4_Click;
             // 
             // customButton2
             // 
@@ -481,6 +482,7 @@
             customButton3.Text = "AUTHORIZED";
             customButton3.TextColor = Color.White;
             customButton3.UseVisualStyleBackColor = false;
+            customButton3.Click += customButton3_Click;
             // 
             // tableLayoutPanel1
             // 

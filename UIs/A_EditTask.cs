@@ -166,7 +166,7 @@ namespace UIs
             changeLanguage();
             languageSelect.SelectedItem = Session.Instance.Language == "en" ? "ENGLISH" : "VIETNAMESE";
             selectDepartment.Text = sharedDepartment;
-            
+
             ////
             taskStatus.SelectedItem = this.status;
             taskPriority.SelectedIndex = 0;
@@ -296,7 +296,7 @@ namespace UIs
                 departmentMode.Checked = false;
                 selectDepartment.Text = "";
                 MessageBox.Show("Updated task successfully!");
-            } 
+            }
             else
             {
                 MessageBox.Show(
@@ -765,6 +765,82 @@ namespace UIs
                 showDepartmentForm.DepartmentSelected += ShowDepartmentForm_DepartmentSelected;
                 showDepartmentForm.ShowDialog();
             }
+        }
+
+        private void customButton22_Click(object sender, EventArgs e)
+        {
+            if (tableLayoutPanel1.Visible == false)
+            {
+                tableLayoutPanel1.Visible = true;
+            }
+            else
+            {
+                tableLayoutPanel1.Visible = false;
+            }
+        }
+
+        private void customButton16_Click(object sender, EventArgs e)
+        {
+            C_AccountManagement managements = new C_AccountManagement();
+            managements.ShowDialog();
+        }
+
+        private void customButton15_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail cM = new CM_Resident_sDetail();
+            cM.ShowDialog();
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+            G_ForgotPassword g_ForgotPassword = new G_ForgotPassword();
+            g_ForgotPassword.ShowDialog();
+        }
+
+        private void label13_Click_1(object sender, EventArgs e)
+        {
+            List<Form> formsToClose = new List<Form>();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form != this)
+                {
+                    formsToClose.Add(form);
+                }
+            }
+
+            foreach (Form form in formsToClose)
+            {
+                form.Close();
+            }
+
+            G_Login g_Login = new G_Login();
+            g_Login.ShowDialog();
+        }
+
+        private void customButton25_Click(object sender, EventArgs e)
+        {
+            C_AllTaskList c_AllTaskList = new C_AllTaskList();
+            c_AllTaskList.ShowDialog();
+        }
+
+        private void customButton2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
