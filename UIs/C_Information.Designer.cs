@@ -67,6 +67,7 @@
             customButton22 = new CustomComponent.CustomButton();
             panel1 = new Panel();
             headerPanel = new Panel();
+            languageSelect = new CustomComponent.CustomComboBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             label2 = new Label();
@@ -661,6 +662,28 @@
             customButton22.UseVisualStyleBackColor = false;
             customButton22.Click += customButton22_Click;
             // 
+            // customButton22
+            // 
+            customButton22.BackColor = Color.Black;
+            customButton22.BackgroundColor = Color.Black;
+            customButton22.BorderColor = Color.PaleVioletRed;
+            customButton22.BorderRadius = 28;
+            customButton22.BorderSize = 0;
+            customButton22.Cursor = Cursors.Hand;
+            customButton22.FlatAppearance.BorderSize = 0;
+            customButton22.FlatStyle = FlatStyle.Flat;
+            customButton22.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton22.ForeColor = Color.White;
+            customButton22.Image = Properties.Resources.triangle_icon;
+            customButton22.Location = new Point(66, 5);
+            customButton22.Name = "customButton22";
+            customButton22.Size = new Size(51, 51);
+            customButton22.TabIndex = 38;
+            customButton22.TextColor = Color.White;
+            customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
+            customButton22.UseVisualStyleBackColor = false;
+            customButton22.Click += customButton22_Click;
+            // 
             // panel1
             // 
             panel1.Location = new Point(694, 59);
@@ -671,11 +694,11 @@
             // headerPanel
             // 
             headerPanel.BackColor = Color.FromArgb(13, 13, 13);
+            headerPanel.Controls.Add(languageSelect);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
             headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton11);
-
             headerPanel.Controls.Add(customButton12);
             headerPanel.Controls.Add(customButton10);
             headerPanel.Controls.Add(customButton9);
@@ -688,6 +711,26 @@
             headerPanel.Name = "headerPanel";
             headerPanel.Size = new Size(1382, 59);
             headerPanel.TabIndex = 24;
+            // 
+            // languageSelect
+            // 
+            languageSelect.BackColor = Color.Black;
+            languageSelect.BorderColor = Color.MediumSlateBlue;
+            languageSelect.BorderSize = 0;
+            languageSelect.DropDownStyle = ComboBoxStyle.DropDown;
+            languageSelect.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            languageSelect.ForeColor = Color.White;
+            languageSelect.IconColor = Color.White;
+            languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
+            languageSelect.ListBackColor = Color.Black;
+            languageSelect.ListTextColor = Color.White;
+            languageSelect.Location = new Point(1070, 3);
+            languageSelect.MinimumSize = new Size(30, 30);
+            languageSelect.Name = "languageSelect";
+            languageSelect.Size = new Size(132, 52);
+            languageSelect.TabIndex = 52;
+            languageSelect.Texts = "";
+            languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
             // 
             // tableLayoutPanel1
             // 
@@ -802,7 +845,6 @@
         private Label label9;
         private Label label7;
         private CustomComponent.CustomButton customButton11;
-
         private CustomComponent.CustomButton customButton12;
         private CustomComponent.CustomButton customButton10;
         private CustomComponent.CustomButton customButton9;
@@ -820,5 +862,6 @@
         private Label label2;
         private Label label3;
         private CustomComponent.CustomButton customButton22;
+        private CustomComponent.CustomComboBox languageSelect;
     }
 }

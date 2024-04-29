@@ -41,9 +41,9 @@ namespace UIs
 
             GetWeather getWeather = new GetWeather();
             string[] currentWeather = getWeather.getWeatherData("Ho Chi Minh City");
-            weatherType.Text = currentWeather[1];
-            weatherTempurature.Text = currentWeather[2];
-            weatherWindSpeed.Text = currentWeather[3];
+            //weatherType.Text = currentWeather[1];
+            //weatherTempurature.Text = currentWeather[2];
+            //weatherWindSpeed.Text = currentWeather[3];
             weatherLocation.Text = "Ho Chi Minh City";
             //MessageBox.Show($"0: {currentWeather[0]}");
             //MessageBox.Show($"1: {currentWeather[1]}");
@@ -507,6 +507,7 @@ namespace UIs
         private void customButton15_Click(object sender, EventArgs e)
         {
             reload();
+            PerformSearch();
         }
 
         private void currentAvatarBig_Click(object sender, EventArgs e)
@@ -523,7 +524,8 @@ namespace UIs
             }
         }
 
-        private void currentAvatarSmall_Click(object sender, EventArgs e) {
+        private void currentAvatarSmall_Click(object sender, EventArgs e)
+        {
             if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
             {
                 M_Information information = new M_Information();
@@ -853,6 +855,27 @@ namespace UIs
         private void label11_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            List<Form> formsToClose = new List<Form>();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form != this) 
+                {
+                    formsToClose.Add(form);
+                }
+            }
+
+            foreach (Form form in formsToClose)
+            {
+                form.Close();
+            }
+
+            G_Login g_Login = new G_Login();
+            g_Login.ShowDialog();
         }
     }
 }
