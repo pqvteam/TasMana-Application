@@ -120,8 +120,8 @@
             typeBox.ForeColor = Color.White;
             typeBox.IconColor = Color.White;
             typeBox.Items.AddRange(new object[] { "Intern", "Fulltime", "Partime" });
-            typeBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            typeBox.ListTextColor = Color.DimGray;
+            typeBox.ListBackColor = Color.Black;
+            typeBox.ListTextColor = Color.White;
             typeBox.Location = new Point(57, 139);
             typeBox.MinimumSize = new Size(200, 30);
             typeBox.Name = "typeBox";
@@ -170,8 +170,8 @@
             deparmentsBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             deparmentsBox.ForeColor = Color.White;
             deparmentsBox.IconColor = Color.White;
-            deparmentsBox.ListBackColor = Color.FromArgb(230, 228, 245);
-            deparmentsBox.ListTextColor = Color.DimGray;
+            deparmentsBox.ListBackColor = Color.Black;
+            deparmentsBox.ListTextColor = Color.White;
             deparmentsBox.Location = new Point(57, 216);
             deparmentsBox.MinimumSize = new Size(200, 30);
             deparmentsBox.Name = "deparmentsBox";

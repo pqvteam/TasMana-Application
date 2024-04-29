@@ -41,9 +41,9 @@ namespace UIs
 
             GetWeather getWeather = new GetWeather();
             string[] currentWeather = getWeather.getWeatherData("Ho Chi Minh City");
-            weatherType.Text = currentWeather[1];
-            weatherTempurature.Text = currentWeather[2];
-            weatherWindSpeed.Text = currentWeather[3];
+            //weatherType.Text = currentWeather[1];
+            //weatherTempurature.Text = currentWeather[2];
+            //weatherWindSpeed.Text = currentWeather[3];
             weatherLocation.Text = "Ho Chi Minh City";
             //MessageBox.Show($"0: {currentWeather[0]}");
             //MessageBox.Show($"1: {currentWeather[1]}");
@@ -174,6 +174,9 @@ namespace UIs
             List<GiaoViec> members = giaoViecService.getTaskOfDeparment("DV");
             foreach (GiaoViec member in members)
             {
+                List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(
+                    member.MaGiaoViec
+                );
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(membersGrid);
                 row.Cells[0].Value = member.MaGiaoViec;
@@ -182,6 +185,7 @@ namespace UIs
                 row.Cells[3].Value = member.NgayGiao;
                 row.Cells[4].Value = member.HanHoanThanh;
                 row.Cells[5].Value = member.TinhTrangCongViec;
+                row.Cells[6].Value = tag.Count > 0 ? tag[0].name : "N/A";
                 membersGrid.Rows.Add(row);
             }
         }
@@ -320,6 +324,9 @@ namespace UIs
             List<GiaoViec> members = giaoViecService.getTaskOfDeparment("AN");
             foreach (GiaoViec member in members)
             {
+                List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(
+                    member.MaGiaoViec
+                );
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(membersGrid);
                 row.Cells[0].Value = member.MaGiaoViec;
@@ -328,6 +335,7 @@ namespace UIs
                 row.Cells[3].Value = member.NgayGiao;
                 row.Cells[4].Value = member.HanHoanThanh;
                 row.Cells[5].Value = member.TinhTrangCongViec;
+                row.Cells[6].Value = tag.Count > 0 ? tag[0].name : "N/A";
                 membersGrid.Rows.Add(row);
             }
         }
@@ -338,6 +346,9 @@ namespace UIs
             List<GiaoViec> members = giaoViecService.getAll();
             foreach (GiaoViec member in members)
             {
+                List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(
+                    member.MaGiaoViec
+                );
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(membersGrid);
                 row.Cells[0].Value = member.MaGiaoViec;
@@ -346,6 +357,7 @@ namespace UIs
                 row.Cells[3].Value = member.NgayGiao;
                 row.Cells[4].Value = member.HanHoanThanh;
                 row.Cells[5].Value = member.TinhTrangCongViec;
+                row.Cells[6].Value = tag.Count > 0 ? tag[0].name : "N/A";
                 membersGrid.Rows.Add(row);
             }
         }
@@ -356,6 +368,9 @@ namespace UIs
             List<GiaoViec> members = giaoViecService.getTaskOfDeparment("KT");
             foreach (GiaoViec member in members)
             {
+                List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(
+                    member.MaGiaoViec
+                );
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(membersGrid);
                 row.Cells[0].Value = member.MaGiaoViec;
@@ -364,6 +379,7 @@ namespace UIs
                 row.Cells[3].Value = member.NgayGiao;
                 row.Cells[4].Value = member.HanHoanThanh;
                 row.Cells[5].Value = member.TinhTrangCongViec;
+                row.Cells[6].Value = tag.Count > 0 ? tag[0].name : "N/A";
                 membersGrid.Rows.Add(row);
             }
         }
@@ -374,6 +390,9 @@ namespace UIs
             List<GiaoViec> members = giaoViecService.getTaskOfDeparment("XD");
             foreach (GiaoViec member in members)
             {
+                List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(
+                    member.MaGiaoViec
+                );
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(membersGrid);
                 row.Cells[0].Value = member.MaGiaoViec;
@@ -382,6 +401,7 @@ namespace UIs
                 row.Cells[3].Value = member.NgayGiao;
                 row.Cells[4].Value = member.HanHoanThanh;
                 row.Cells[5].Value = member.TinhTrangCongViec;
+                row.Cells[6].Value = tag.Count > 0 ? tag[0].name : "N/A";
                 membersGrid.Rows.Add(row);
             }
         }
@@ -392,6 +412,9 @@ namespace UIs
             List<GiaoViec> members = giaoViecService.getTaskOfDeparment("TC");
             foreach (GiaoViec member in members)
             {
+                List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(
+                    member.MaGiaoViec
+                );
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(membersGrid);
                 row.Cells[0].Value = member.MaGiaoViec;
@@ -400,6 +423,7 @@ namespace UIs
                 row.Cells[3].Value = member.NgayGiao;
                 row.Cells[4].Value = member.HanHoanThanh;
                 row.Cells[5].Value = member.TinhTrangCongViec;
+                row.Cells[6].Value = tag.Count > 0 ? tag[0].name : "N/A";
                 membersGrid.Rows.Add(row);
             }
         }
@@ -410,6 +434,9 @@ namespace UIs
             List<GiaoViec> members = giaoViecService.getTaskOfDeparment("VS");
             foreach (GiaoViec member in members)
             {
+                List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(
+                    member.MaGiaoViec
+                );
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(membersGrid);
                 row.Cells[0].Value = member.MaGiaoViec;
@@ -418,6 +445,7 @@ namespace UIs
                 row.Cells[3].Value = member.NgayGiao;
                 row.Cells[4].Value = member.HanHoanThanh;
                 row.Cells[5].Value = member.TinhTrangCongViec;
+                row.Cells[6].Value = tag.Count > 0 ? tag[0].name : "N/A";
                 membersGrid.Rows.Add(row);
             }
         }
@@ -479,6 +507,7 @@ namespace UIs
         private void customButton15_Click(object sender, EventArgs e)
         {
             reload();
+            PerformSearch();
         }
 
         private void currentAvatarBig_Click(object sender, EventArgs e)
@@ -495,7 +524,19 @@ namespace UIs
             }
         }
 
-        private void currentAvatarSmall_Click(object sender, EventArgs e) { }
+        private void currentAvatarSmall_Click(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
 
         private void C_AllTaskList_Shown(object sender, EventArgs e) { }
 
@@ -757,6 +798,32 @@ namespace UIs
             createGroupButton.Font = fontLarge;
             grandChart.Font = fontLarge;
 
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            List<Form> formsToClose = new List<Form>();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form != this) 
+                {
+                    formsToClose.Add(form);
+                }
+            }
+
+            foreach (Form form in formsToClose)
+            {
+                form.Close();
+            }
+
+            G_Login g_Login = new G_Login();
+            g_Login.ShowDialog();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Repositories
         static TasManaContext tasManaContext = new TasManaContext();
         TasManaContext db = new TasManaContext();
         private static string connectionString = tasManaContext.GetConnectionString();
-        public Ceo? Find(string ID)
+        public Ceo Find(string ID)
         {
             return db.Ceos.FirstOrDefault(x => x.MaThanhVien == ID);
         }
@@ -64,6 +64,36 @@ namespace Repositories
 
                         command.Parameters.AddWithValue("@maThanhVien", staffID);
                         command.Parameters.AddWithValue("@maCEO", CEOID);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            success = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            return success;
+        }
+        public bool DeactiveStaff(string staffID, string CEOID)
+        {
+            bool success = false;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand("voHieuTaiKhoan", conn))
+                    {
+                        command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@maNguoiThucHien", CEOID);
+                        command.Parameters.AddWithValue("@maNhanVien", staffID);
 
                         int rowsAffected = command.ExecuteNonQuery();
 

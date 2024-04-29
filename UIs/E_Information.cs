@@ -312,5 +312,55 @@ namespace UIs
             label7.Font = fontLarger;
             heading.Font = fontLarger;
         }
+
+        private void customButton7_Click(object sender, EventArgs e)
+        {
+            C_AllTaskList c_AllTaskList = new C_AllTaskList();
+            c_AllTaskList.ShowDialog();
+        }
+
+        private void customButton17_Click(object sender, EventArgs e)
+        {
+            C_AccountManagement c_AccountManagement = new C_AccountManagement();
+            c_AccountManagement.ShowDialog();
+        }
+
+        private void customButton18_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail cM = new CM_Resident_sDetail();
+            cM.ShowDialog();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            G_ForgotPassword g_ForgotPassword = new G_ForgotPassword();
+            g_ForgotPassword.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            List<Form> formsToClose = new List<Form>();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form != this) 
+                {
+                    formsToClose.Add(form);
+                }
+            }
+
+            foreach (Form form in formsToClose)
+            {
+                form.Close();
+            }
+
+            G_Login g_Login = new G_Login();
+            g_Login.ShowDialog();
+        }
     }
 }

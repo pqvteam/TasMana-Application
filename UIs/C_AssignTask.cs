@@ -153,9 +153,11 @@ namespace UIs
             string tTo = nhanSuService.findMember(receiverID).Email;
 
             int tMode = taskMode.Checked ? 1 : 0;
+            // Create new form here
+            string tSharedDepartment = selectDepartment.Text;
             int tIsCEO = 1;
 
-            bool isSuccess = giaoViecService.assignTask(tDescription, tStart, tEnd, tStatus, tFile, tID, tMode, tName, venueID, receiverID, tIsCEO, tCEOID, "");
+            bool isSuccess = giaoViecService.assignTask(tDescription, tStart, tEnd, tStatus, tFile, tID, tMode, tName, venueID, receiverID, tIsCEO, tCEOID, "", 0, tSharedDepartment);
             bool isTagAdded = tagService.addTag(tagName, tID, "");
 
             if (isSuccess && isTagAdded)
@@ -375,6 +377,10 @@ namespace UIs
             A_ShowTag showTagForm = new A_ShowTag();
             showTagForm.TagSelected += ShowTagForm_TagSelected;
             showTagForm.ShowDialog();
+        }
+        private void ShowDepartmentForm_DepartmentSelected(string department)
+        {
+            selectDepartment.Text = department;
         }
 
         private void ShowTagForm_TagSelected(string tag)
@@ -709,6 +715,20 @@ namespace UIs
             uploadButton.Font = fontSmaller;
             cancelButton.Font = fontSmaller;
             saveButton.Font = fontSmaller;
+        }
+        private void customButton2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void departmentMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (departmentMode.Checked)
+            {
+                A_ShowDepartment showDepartmentForm = new A_ShowDepartment();
+                showDepartmentForm.DepartmentSelected += ShowDepartmentForm_DepartmentSelected;
+                showDepartmentForm.ShowDialog();
+            }
         }
     }
 }
