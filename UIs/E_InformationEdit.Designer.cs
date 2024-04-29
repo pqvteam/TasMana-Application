@@ -848,6 +848,7 @@
             label1.TabIndex = 65;
             label1.Text = "SIGN OUT";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -862,6 +863,7 @@
             label2.TabIndex = 64;
             label2.Text = "CHANGE PASSWORD";
             label2.TextAlign = ContentAlignment.MiddleCenter;
+            label2.Click += label2_Click;
             // 
             // label15
             // 
@@ -1195,6 +1197,7 @@
             languageSelect.TabIndex = 55;
             languageSelect.Texts = "";
             languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
+            label15.Click += label15_Click;
             // 
             // E_InformationEdit
             // 
