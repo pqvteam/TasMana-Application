@@ -33,7 +33,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
-            customButton11 = new CustomComponent.CustomButton();
             customButton1 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
             customButton8 = new CustomComponent.CustomButton();
@@ -100,9 +99,6 @@
             customButton18.ImageAlign = ContentAlignment.MiddleLeft;
             customButton18.Location = new Point(733, 6);
             customButton18.Name = "customButton18";
-            customButton18.Size = new Size(188, 48);
-            customButton18.TabIndex = 21;
-
             customButton18.Size = new Size(194, 48);
             customButton18.TabIndex = 25;
             customButton18.Text = "APARTMENT & RESIDENT";
@@ -134,30 +130,6 @@
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
             // 
-            // customButton11
-            // 
-            customButton11.BackColor = Color.Black;
-            customButton11.BackgroundColor = Color.Black;
-            customButton11.BorderColor = Color.PaleVioletRed;
-            customButton11.BorderRadius = 28;
-            customButton11.BorderSize = 0;
-            customButton11.Cursor = Cursors.Hand;
-            customButton11.FlatAppearance.BorderSize = 0;
-            customButton11.FlatStyle = FlatStyle.Flat;
-            customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton11.ForeColor = Color.White;
-            customButton11.Image = Properties.Resources.triangle_icon;
-            customButton11.ImageAlign = ContentAlignment.MiddleRight;
-            customButton11.Location = new Point(1077, 5);
-            customButton11.Name = "customButton11";
-            customButton11.Size = new Size(120, 51);
-            customButton11.TabIndex = 23;
-            customButton11.Text = "English";
-            customButton11.TextAlign = ContentAlignment.MiddleRight;
-            customButton11.TextColor = Color.White;
-            customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton11.UseVisualStyleBackColor = false;
-            // 
             // customButton1
             // 
             customButton1.BackColor = Color.Black;
@@ -174,8 +146,6 @@
             customButton1.ImageAlign = ContentAlignment.MiddleLeft;
             customButton1.Location = new Point(935, 4);
             customButton1.Name = "customButton1";
-            customButton1.Size = new Size(156, 51);
-            customButton1.TabIndex = 22;
             customButton1.Size = new Size(170, 51);
             customButton1.TabIndex = 20;
             customButton1.Text = "RESIDENT SERVICE";
@@ -323,7 +293,6 @@
             headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
-            headerPanel.Controls.Add(customButton11);
             headerPanel.Controls.Add(customButton1);
             headerPanel.Controls.Add(customButton9);
             headerPanel.Controls.Add(customButton8);
@@ -1012,7 +981,6 @@
 
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
-        private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton customButton1;
         private CustomComponent.CustomButton customButton9;
         private CustomComponent.CustomButton customButton8;

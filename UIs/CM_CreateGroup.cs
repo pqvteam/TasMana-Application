@@ -30,6 +30,8 @@ namespace UIs
 
         private void CM_CreateGroup_Load(object sender, EventArgs e)
         {
+            changelanguage();
+            languageSelect.SelectedItem = Session.Instance.Language == "en" ? "ENGLISH" : "VIETNAMESE";
             if (IsValidImageData(Session.Instance.Avatar))
             {
                 currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
@@ -449,6 +451,172 @@ namespace UIs
                 E_Information information = new E_Information();
                 information.ShowDialog();
             }
+        }
+
+        private void changelanguage()
+        {
+            Font font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+            Font fontLarger = new Font("Copperplate Gothic Bold", 14);
+            Font fontSmaller = new Font("Copperplate Gothic Bold", 10);
+            if (Session.Instance.Language == "vi")
+            {
+                customButton7.Text = "CÔNG VIỆC";
+                customButton8.Text = "THỐNG KÊ";
+                customButton9.Text = "BÁO CÁO";
+                customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
+                customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
+                customButton1.Text = "DỊCH VỤ CƯ DÂN";
+                label10.Text = "THÔNG TIN";
+                label9.Text = "ĐỔI MẬT KHẨU";
+                label8.Text = "ĐĂNG XUẤT";
+                label3.Text = "TÊN NHÓM";
+                label5.Text = "BỘ PHẬN";
+                label6.Text = "TÌM KIẾM";
+                label2.Text = "NHÓM TRƯỞNG";
+                groupNameBox.Text = "Nhập tên nhóm";
+                searchBox.Text = "Nhập tên tài khoản";
+                cancelButton.Text = "HỦY";
+                confirmButton.Text = "HOÀN THÀNH";
+                fontSmaller = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+
+                titleBox.Text = "TẠO NHÓM MỚI";
+                fontLarger = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+
+                label1.Text = "CHỌN THÀNH VIÊN";
+                font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+            }
+            else
+            {
+                customButton7.Text = "WORK";
+                customButton8.Text = "STATISTIC";
+                customButton9.Text = "REPORT";
+                customButton17.Text = "ACCOUNTING MANAGEMENT";
+                customButton18.Text = "APARTMENT RESIDENT";
+                customButton1.Text = "RESIDENT SERVICE";
+                label10.Text = "INFORMATION";
+                label9.Text = "CHANGE PASSWORD";
+                label8.Text = "SIGN OUT";
+                label3.Text = "GROUP NAME";
+                label5.Text = "DEPARTMENT";
+                label6.Text = "SEARCH";
+                label2.Text = "LEADER";
+                groupNameBox.Text = "Enter a group name";
+                searchBox.Text = "Enter an account name";
+                cancelButton.Text = "CANCEL";
+                confirmButton.Text = "DONE";
+                fontSmaller = new Font("Copperplate Gothic Bold", 10);
+
+                titleBox.Text = "CREATE NEW GROUP";
+                fontLarger = new Font("Copperplate Gothic Bold", 14);
+
+                label1.Text = "CHOOSE MEMBER";
+                font = new Font("Copperplate Gothic Bold", 12);
+            }
+            customButton7.Font = fontSmaller;
+            customButton8.Font = fontSmaller;
+            customButton9.Font = fontSmaller;
+            customButton17.Font = fontSmaller;
+            customButton18.Font = fontSmaller;
+            customButton1.Font = fontSmaller;
+            label10.Font = fontSmaller;
+            label9.Font = fontSmaller;
+            label8.Font = fontSmaller;
+            label3.Font = fontSmaller;
+            label5.Font = fontSmaller;
+            label6.Font = fontSmaller;
+            label2.Font = fontSmaller;
+            groupNameBox.Font = fontSmaller;
+            searchBox.Font = fontSmaller;
+            cancelButton.Font = fontSmaller;
+            confirmButton.Font = fontSmaller;
+
+            titleBox.Font = fontLarger;
+
+            label1.Font = font;
+        }
+
+        private void languageSelect_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            Font fontLarger = new Font("Copperplate Gothic Bold", 12);
+            Font fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            if (languageSelect.SelectedItem.ToString() == "VIETNAMESE")
+            {
+                Session.Instance.Language = "vi";
+                customButton7.Text = "CÔNG VIỆC";
+                customButton8.Text = "THỐNG KÊ";
+                customButton9.Text = "BÁO CÁO";
+                customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
+                customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
+                customButton1.Text = "DỊCH VỤ CƯ DÂN";
+                label10.Text = "THÔNG TIN";
+                label9.Text = "ĐỔI MẬT KHẨU";
+                label8.Text = "ĐĂNG XUẤT";
+                label3.Text = "TÊN NHÓM";
+                label5.Text = "BỘ PHẬN";
+                label6.Text = "TÌM KIẾM";
+                label2.Text = "NHÓM TRƯỞNG";
+                groupNameBox.Text = "Nhập tên nhóm";
+                searchBox.Text = "Nhập tên tài khoản";
+                cancelButton.Text = "HỦY";
+                confirmButton.Text = "HOÀN THÀNH";
+                fontSmaller = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+
+                titleBox.Text = "TẠO NHÓM MỚI";
+                fontLarger = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+
+                label1.Text = "CHỌN THÀNH VIÊN";
+                font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+            }
+            else
+            {
+                Session.Instance.Language = "en";
+                customButton7.Text = "WORK";
+                customButton8.Text = "STATISTIC";
+                customButton9.Text = "REPORT";
+                customButton17.Text = "ACCOUNTING MANAGEMENT";
+                customButton18.Text = "APARTMENT RESIDENT";
+                customButton1.Text = "RESIDENT SERVICE";
+                label10.Text = "INFORMATION";
+                label9.Text = "CHANGE PASSWORD";
+                label8.Text = "SIGN OUT";
+                label3.Text = "GROUP NAME";
+                label5.Text = "DEPARTMENT";
+                label6.Text = "SEARCH";
+                label2.Text = "LEADER";
+                groupNameBox.Text = "Enter a group name";
+                searchBox.Text = "Enter an account name";
+                cancelButton.Text = "CANCEL";
+                confirmButton.Text = "DONE";
+                fontSmaller = new Font("Copperplate Gothic Bold", 10);
+
+                titleBox.Text = "CREATE NEW GROUP";
+                fontLarger = new Font("Copperplate Gothic Bold", 14);
+
+                label1.Text = "CHOOSE MEMBER";
+                font = new Font("Copperplate Gothic Bold", 12);
+            }
+            customButton7.Font = fontSmaller;
+            customButton8.Font = fontSmaller;
+            customButton9.Font = fontSmaller;
+            customButton17.Font = fontSmaller;
+            customButton18.Font = fontSmaller;
+            customButton1.Font = fontSmaller;
+            label10.Font = fontSmaller;
+            label9.Font = fontSmaller;
+            label8.Font = fontSmaller;
+            label3.Font = fontSmaller;
+            label5.Font = fontSmaller;
+            label6.Font = fontSmaller;
+            label2.Font = fontSmaller;
+            groupNameBox.Font = fontSmaller;
+            searchBox.Font = fontSmaller;
+            cancelButton.Font = fontSmaller;
+            confirmButton.Font = fontSmaller;
+
+            titleBox.Font = fontLarger;
+
+            label1.Font = font;
         }
 
         private void customButton7_Click(object sender, EventArgs e)

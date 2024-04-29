@@ -35,6 +35,7 @@ namespace UIs
 
         private void A_ShowTag_Load(object sender, EventArgs e)
         {
+            changelanguage();
             tagsGrid.Columns.Add("Tag", "Tag");
             tagsGrid.Columns.Add("Description", "Description");
             reload();
@@ -73,6 +74,36 @@ namespace UIs
             {
                 tagName = tagsGrid.Rows[e.RowIndex].Cells["Tag"].Value.ToString();
             }
+        }
+
+        private void changelanguage()
+        {
+            Font font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+            Font fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            if (Session.Instance.Language == "vi")
+            {
+                customButton10.Text = "MÃ CÔNG VIỆC";
+                customButton10.Font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+
+                newButton.Text = "TẠO MỚI";
+                cancelButton.Text = "HỦY";
+                saveButton.Text = "LƯU";
+                fontSmaller = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            else
+            {
+                customButton10.Text = "TAG";
+                customButton10.Font = new Font("Copperplate Gothic Bold", 14);
+
+                newButton.Text = "NEW";
+                cancelButton.Text = "CANCEL";
+                saveButton.Text = "SAVE";
+                fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            }
+
+            newButton.Font = fontSmaller;
+            cancelButton.Font = fontSmaller;
+            saveButton.Font = fontSmaller;
         }
     }
 }
