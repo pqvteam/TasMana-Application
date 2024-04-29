@@ -437,5 +437,10 @@ namespace UIs
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
         }
+        
+        private void customButton2_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
