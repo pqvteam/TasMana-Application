@@ -16,5 +16,10 @@ namespace UIs
         {
             InitializeComponent();
         }
+
+        private void A_Statistic_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
