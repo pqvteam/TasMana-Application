@@ -972,6 +972,7 @@
             customButton18.TextAlign = ContentAlignment.MiddleRight;
             customButton18.TextColor = Color.White;
             customButton18.UseVisualStyleBackColor = false;
+            customButton18.Click += customButton18_Click;
             // 
             // customButton17
             // 
@@ -997,6 +998,7 @@
             customButton17.TextColor = Color.White;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
+            customButton17.Click += customButton17_Click;
             // 
             // customButton12
             // 
@@ -1150,6 +1152,71 @@
             sidePanel.Name = "sidePanel";
             sidePanel.Size = new Size(300, 695);
             sidePanel.TabIndex = 1;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset;
+            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.Controls.Add(label27, 0, 2);
+            tableLayoutPanel3.Controls.Add(label28, 0, 1);
+            tableLayoutPanel3.Controls.Add(label29, 0, 0);
+            tableLayoutPanel3.Location = new Point(0, 3);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 3;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.Size = new Size(305, 125);
+            tableLayoutPanel3.TabIndex = 64;
+            tableLayoutPanel3.Visible = false;
+            tableLayoutPanel3.Paint += tableLayoutPanel3_Paint;
+            // 
+            // label27
+            // 
+            label27.Cursor = Cursors.Hand;
+            label27.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label27.ForeColor = Color.White;
+            label27.Image = (Image)resources.GetObject("label27.Image");
+            label27.ImageAlign = ContentAlignment.MiddleRight;
+            label27.Location = new Point(5, 82);
+            label27.Name = "label27";
+            label27.Size = new Size(295, 38);
+            label27.TabIndex = 65;
+            label27.Text = "SIGN OUT";
+            label27.TextAlign = ContentAlignment.MiddleCenter;
+            label27.Click += label27_Click;
+            // 
+            // label28
+            // 
+            label28.Cursor = Cursors.Hand;
+            label28.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label28.ForeColor = Color.White;
+            label28.Image = (Image)resources.GetObject("label28.Image");
+            label28.ImageAlign = ContentAlignment.MiddleRight;
+            label28.Location = new Point(5, 42);
+            label28.Name = "label28";
+            label28.Size = new Size(295, 38);
+            label28.TabIndex = 64;
+            label28.Text = "CHANGE PASSWORD";
+            label28.TextAlign = ContentAlignment.MiddleCenter;
+            label28.Click += label28_Click;
+            // 
+            // label29
+            // 
+            label29.Cursor = Cursors.Hand;
+            label29.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label29.ForeColor = Color.White;
+            label29.Image = (Image)resources.GetObject("label29.Image");
+            label29.ImageAlign = ContentAlignment.MiddleRight;
+            label29.Location = new Point(5, 2);
+            label29.Name = "label29";
+            label29.Size = new Size(295, 38);
+            label29.TabIndex = 63;
+            label29.Text = "INFORMATION";
+            label29.TextAlign = ContentAlignment.MiddleCenter;
+            label29.Click += label29_Click;
             // 
             // saveButton
             // 
