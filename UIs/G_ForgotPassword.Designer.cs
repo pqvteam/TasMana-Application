@@ -37,14 +37,14 @@
             panel_forgotPassword = new Panel();
             label_back = new Label();
             button1 = new Button();
+            pictureBox_logo = new PictureBox();
+            label_login = new Label();
             panel_verify = new Panel();
             label_Please1 = new Label();
             label_resendCode = new Label();
             label_please2 = new Label();
             pictureBox_mail = new PictureBox();
             pictureBox1 = new PictureBox();
-            pictureBox_logo = new PictureBox();
-            label_login = new Label();
             panel_resetPassword = new Panel();
             button_save = new Button();
             pictureBox4 = new PictureBox();
@@ -57,10 +57,10 @@
             pictureBox5 = new PictureBox();
             customButton5 = new CustomComponent.CustomButton();
             panel_forgotPassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_logo).BeginInit();
             panel_verify.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_mail).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_logo).BeginInit();
             panel_resetPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -78,7 +78,7 @@
             button_back2.Location = new Point(12, 19);
             button_back2.Name = "button_back2";
             button_back2.Size = new Size(108, 76);
-            button_back2.TabIndex = 13;
+            button_back2.TabIndex = 14;
             button_back2.UseVisualStyleBackColor = false;
             button_back2.Click += button_back2_Click;
             // 
@@ -90,7 +90,7 @@
             button_VerifyCode.Location = new Point(172, 374);
             button_VerifyCode.Name = "button_VerifyCode";
             button_VerifyCode.Size = new Size(165, 57);
-            button_VerifyCode.TabIndex = 12;
+            button_VerifyCode.TabIndex = 13;
             button_VerifyCode.Text = "VERIFY";
             button_VerifyCode.UseVisualStyleBackColor = false;
             button_VerifyCode.Click += button_VerifyCode_Click;
@@ -114,8 +114,7 @@
             box_NumericCode.Location = new Point(102, 247);
             box_NumericCode.Name = "box_NumericCode";
             box_NumericCode.Size = new Size(340, 33);
-            box_NumericCode.TabIndex = 0;
-            box_NumericCode.TabStop = false;
+            box_NumericCode.TabIndex = 1;
             box_NumericCode.Text = "Verification code";
             box_NumericCode.Enter += box_NumericCode_Enter;
             box_NumericCode.Leave += box_NumericCode_Leave;
@@ -174,6 +173,29 @@
             button1.TabIndex = 9;
             button1.UseVisualStyleBackColor = false;
             // 
+            // pictureBox_logo
+            // 
+            pictureBox_logo.BackColor = Color.Transparent;
+            pictureBox_logo.Image = Properties.Resources.Picture1;
+            pictureBox_logo.Location = new Point(182, 13);
+            pictureBox_logo.Name = "pictureBox_logo";
+            pictureBox_logo.Size = new Size(138, 90);
+            pictureBox_logo.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox_logo.TabIndex = 8;
+            pictureBox_logo.TabStop = false;
+            // 
+            // label_login
+            // 
+            label_login.AutoSize = true;
+            label_login.BackColor = Color.Transparent;
+            label_login.Font = new Font("Copperplate Gothic Bold", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_login.ForeColor = Color.White;
+            label_login.Location = new Point(45, 122);
+            label_login.Name = "label_login";
+            label_login.Size = new Size(413, 38);
+            label_login.TabIndex = 0;
+            label_login.Text = "FORGOT PASSWORD";
+            // 
             // panel_verify
             // 
             panel_verify.BackgroundImage = Properties.Resources.background_input_userid;
@@ -213,7 +235,7 @@
             label_resendCode.Location = new Point(181, 310);
             label_resendCode.Name = "label_resendCode";
             label_resendCode.Size = new Size(156, 33);
-            label_resendCode.TabIndex = 13;
+            label_resendCode.TabIndex = 12;
             label_resendCode.Text = "Resend code";
             label_resendCode.Click += label_resendCode_Click;
             // 
@@ -250,29 +272,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
-            // 
-            // pictureBox_logo
-            // 
-            pictureBox_logo.BackColor = Color.Transparent;
-            pictureBox_logo.Image = Properties.Resources.Picture1;
-            pictureBox_logo.Location = new Point(182, 13);
-            pictureBox_logo.Name = "pictureBox_logo";
-            pictureBox_logo.Size = new Size(138, 90);
-            pictureBox_logo.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox_logo.TabIndex = 8;
-            pictureBox_logo.TabStop = false;
-            // 
-            // label_login
-            // 
-            label_login.AutoSize = true;
-            label_login.BackColor = Color.Transparent;
-            label_login.Font = new Font("Copperplate Gothic Bold", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label_login.ForeColor = Color.White;
-            label_login.Location = new Point(45, 122);
-            label_login.Name = "label_login";
-            label_login.Size = new Size(413, 38);
-            label_login.TabIndex = 0;
-            label_login.Text = "FORGOT PASSWORD";
             // 
             // panel_resetPassword
             // 
@@ -440,11 +439,11 @@
             Text = "G_ForgotPassword";
             panel_forgotPassword.ResumeLayout(false);
             panel_forgotPassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_logo).EndInit();
             panel_verify.ResumeLayout(false);
             panel_verify.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_mail).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox_logo).EndInit();
             panel_resetPassword.ResumeLayout(false);
             panel_resetPassword.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

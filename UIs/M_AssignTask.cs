@@ -23,6 +23,7 @@ namespace UIs
         private string venueID = "";
         private string authorizedBy = "";
         private string tagName = "";
+        private string sharedDepartment = "";
 
         public M_AssignTask()
         {
@@ -159,6 +160,8 @@ namespace UIs
 
             int tMode = taskMode.Checked ? 1 : 0;
             int tIsCEO = 0;
+            int intime = 1;
+            string sharedDepartment = selectDepartment.Text;
 
             bool isSuccess = giaoViecService.assignTask(
                 tDescription,
@@ -173,7 +176,9 @@ namespace UIs
                 receiverID,
                 tIsCEO,
                 tManagerID,
-                authorizedBy
+                authorizedBy,
+                intime,
+                sharedDepartment
             );
 
             bool isTagAdded = tagService.addTag(tagName, tID, "");
@@ -217,6 +222,12 @@ namespace UIs
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ShowDepartmentForm_DepartmentSelected(string department)
+        {
+            selectDepartment.Text = department;
+            sharedDepartment = department;
         }
 
         private void label13_Click(object sender, EventArgs e) { }
@@ -283,6 +294,17 @@ namespace UIs
             }
         }
 
+<<<<<<< HEAD
+        private void departmentMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (departmentMode.Checked)
+            {
+                A_ShowDepartment showDepartmentForm = new A_ShowDepartment();
+                showDepartmentForm.DepartmentSelected += ShowDepartmentForm_DepartmentSelected;
+                showDepartmentForm.ShowDialog();
+            }
+        }
+=======
         private void customButton17_Click(object sender, EventArgs e)
         {
             C_AccountManagement c_AccountManagement = new C_AccountManagement();
@@ -334,5 +356,6 @@ namespace UIs
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
         }
+>>>>>>> f3f8f59c861b70670f26a885a3f5d45b3b532f58
     }
 }

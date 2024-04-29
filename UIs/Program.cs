@@ -15,5 +15,7 @@ static class Program
         // Application.Run(new A_ShowMember());
         // Application.Run(new A_ShowVenue());
         Application.Run(new G_Login());
-    }  
+        // Application.Run(new A_EditTask());
+        // Application.Run(new A_ShowDepartment());
+    }
 }
