@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_MyTaskList));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
-            customButton1 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
             customButton8 = new CustomComponent.CustomButton();
             customButton7 = new CustomComponent.CustomButton();
@@ -102,7 +101,7 @@
             customButton18.ForeColor = Color.White;
             customButton18.Image = (Image)resources.GetObject("customButton18.Image");
             customButton18.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton18.Location = new Point(733, 6);
+            customButton18.Location = new Point(884, 5);
             customButton18.Name = "customButton18";
             customButton18.Size = new Size(194, 48);
             customButton18.TabIndex = 25;
@@ -126,7 +125,7 @@
             customButton17.ForeColor = Color.White;
             customButton17.Image = (Image)resources.GetObject("customButton17.Image");
             customButton17.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton17.Location = new Point(524, 7);
+            customButton17.Location = new Point(639, 8);
             customButton17.Name = "customButton17";
             customButton17.Size = new Size(202, 48);
             customButton17.TabIndex = 20;
@@ -136,30 +135,6 @@
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
             customButton17.Click += customButton17_Click;
-            // 
-            // customButton1
-            // 
-            customButton1.BackColor = Color.Black;
-            customButton1.BackgroundColor = Color.Black;
-            customButton1.BorderColor = Color.PaleVioletRed;
-            customButton1.BorderRadius = 28;
-            customButton1.BorderSize = 0;
-            customButton1.Cursor = Cursors.Hand;
-            customButton1.FlatAppearance.BorderSize = 0;
-            customButton1.FlatStyle = FlatStyle.Flat;
-            customButton1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton1.ForeColor = Color.White;
-            customButton1.Image = (Image)resources.GetObject("customButton1.Image");
-            customButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton1.Location = new Point(935, 4);
-            customButton1.Name = "customButton1";
-            customButton1.Size = new Size(170, 51);
-            customButton1.TabIndex = 20;
-            customButton1.Text = "RESIDENT SERVICE";
-            customButton1.TextAlign = ContentAlignment.MiddleRight;
-            customButton1.TextColor = Color.White;
-            customButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton1.UseVisualStyleBackColor = false;
             // 
             // customButton9
             // 
@@ -175,7 +150,7 @@
             customButton9.ForeColor = Color.White;
             customButton9.Image = (Image)resources.GetObject("customButton9.Image");
             customButton9.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton9.Location = new Point(365, 7);
+            customButton9.Location = new Point(452, 8);
             customButton9.Name = "customButton9";
             customButton9.Size = new Size(152, 48);
             customButton9.TabIndex = 19;
@@ -199,7 +174,7 @@
             customButton8.ForeColor = Color.White;
             customButton8.Image = (Image)resources.GetObject("customButton8.Image");
             customButton8.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton8.Location = new Point(199, 7);
+            customButton8.Location = new Point(252, 8);
             customButton8.Name = "customButton8";
             customButton8.Size = new Size(158, 48);
             customButton8.TabIndex = 18;
@@ -223,7 +198,7 @@
             customButton7.ForeColor = Color.Yellow;
             customButton7.Image = (Image)resources.GetObject("customButton7.Image");
             customButton7.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton7.Location = new Point(71, 7);
+            customButton7.Location = new Point(100, 8);
             customButton7.Name = "customButton7";
             customButton7.Size = new Size(117, 48);
             customButton7.TabIndex = 17;
@@ -301,7 +276,6 @@
             headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
-            headerPanel.Controls.Add(customButton1);
             headerPanel.Controls.Add(customButton9);
             headerPanel.Controls.Add(customButton8);
             headerPanel.Controls.Add(customButton7);
@@ -552,24 +526,24 @@
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             membersGrid.Cursor = Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle4;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(42, 42, 42);
             membersGrid.Location = new Point(355, 258);
@@ -1055,7 +1029,6 @@
 
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
-        private CustomComponent.CustomButton customButton1;
         private CustomComponent.CustomButton customButton9;
         private CustomComponent.CustomButton customButton8;
         private CustomComponent.CustomButton customButton7;
