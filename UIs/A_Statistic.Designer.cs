@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_Statistic));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             languageSelect = new CustomComponent.CustomComboBox();
             apartmentHeader = new CustomComponent.CustomButton();
             accountManagementHeader = new CustomComponent.CustomButton();
@@ -45,7 +45,7 @@
             panel1 = new Panel();
             membersGrid = new DataGridView();
             elipseControl1 = new CustomComponent.ElipseControl();
-            groupBox1 = new GroupBox();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)customPictureBox1).BeginInit();
             headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)membersGrid).BeginInit();
@@ -311,24 +311,24 @@
             membersGrid.BackgroundColor = Color.FromArgb(24, 23, 23);
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.Yellow;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.Yellow;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             membersGrid.ColumnHeadersHeight = 50;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle4;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(24, 23, 23);
             membersGrid.Location = new Point(28, 271);
@@ -346,22 +346,12 @@
             elipseControl1.CornerRadius = 30;
             elipseControl1.TargetControl = this;
             // 
-            // groupBox1
-            // 
-            groupBox1.Location = new Point(16, 71);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(565, 180);
-            groupBox1.TabIndex = 63;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
-            // 
             // A_Statistic
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(1400, 800);
-            Controls.Add(groupBox1);
             Controls.Add(membersGrid);
             Controls.Add(headerPanel);
             ForeColor = Color.White;
@@ -392,6 +382,6 @@
         private Panel panel1;
         private DataGridView membersGrid;
         private CustomComponent.ElipseControl elipseControl1;
-        private GroupBox groupBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

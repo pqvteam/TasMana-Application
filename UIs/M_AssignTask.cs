@@ -294,7 +294,6 @@ namespace UIs
             }
         }
 
-<<<<<<< HEAD
         private void departmentMode_CheckedChanged(object sender, EventArgs e)
         {
             if (departmentMode.Checked)
@@ -304,7 +303,7 @@ namespace UIs
                 showDepartmentForm.ShowDialog();
             }
         }
-=======
+
         private void customButton17_Click(object sender, EventArgs e)
         {
             C_AccountManagement c_AccountManagement = new C_AccountManagement();
@@ -356,6 +355,5 @@ namespace UIs
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
         }
->>>>>>> f3f8f59c861b70670f26a885a3f5d45b3b532f58
     }
 }
