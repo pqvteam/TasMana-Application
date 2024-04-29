@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_EditTask));
             elipseControl1 = new CustomComponent.ElipseControl();
             taskName = new TextBox();
@@ -110,6 +110,9 @@
             label14 = new Label();
             sidePanel = new Panel();
             customPanel1 = new CustomComponent.CustomPanel();
+            label22 = new Label();
+            selectDepartment = new Label();
+            departmentMode = new CustomComponent.CustomToggleButton();
             pictureBox12 = new PictureBox();
             label17 = new Label();
             label16 = new Label();
@@ -129,9 +132,10 @@
             customButton26 = new CustomComponent.CustomButton();
             panel4 = new Panel();
             currentFile = new LinkLabel();
-            departmentMode = new CustomComponent.CustomToggleButton();
-            label22 = new Label();
-            selectDepartment = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            label13 = new Label();
+            label20 = new Label();
+            label24 = new Label();
             ((System.ComponentModel.ISupportInitialize)membersGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)authorizeIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customPictureBox4).BeginInit();
@@ -158,6 +162,7 @@
             headerPanel.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // elipseControl1
@@ -203,23 +208,23 @@
             membersGrid.BackgroundColor = Color.FromArgb(24, 23, 23);
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle10.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle10.ForeColor = Color.CornflowerBlue;
-            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle10.SelectionForeColor = Color.White;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(24, 23, 23);
             membersGrid.Location = new Point(347, 578);
@@ -1358,6 +1363,43 @@
             customPanel1.Size = new Size(279, 266);
             customPanel1.TabIndex = 99;
             // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.ForeColor = Color.FromArgb(197, 224, 180);
+            label22.Location = new Point(17, 197);
+            label22.Name = "label22";
+            label22.Size = new Size(249, 19);
+            label22.TabIndex = 101;
+            label22.Text = "SELECTED DEPARTMENT";
+            // 
+            // selectDepartment
+            // 
+            selectDepartment.AutoSize = true;
+            selectDepartment.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            selectDepartment.ForeColor = Color.White;
+            selectDepartment.Location = new Point(77, 229);
+            selectDepartment.Name = "selectDepartment";
+            selectDepartment.Size = new Size(142, 19);
+            selectDepartment.TabIndex = 100;
+            selectDepartment.Text = "DESCRIPTION";
+            // 
+            // departmentMode
+            // 
+            departmentMode.AutoSize = true;
+            departmentMode.Location = new Point(192, 154);
+            departmentMode.MinimumSize = new Size(60, 30);
+            departmentMode.Name = "departmentMode";
+            departmentMode.OffBackColor = Color.Gray;
+            departmentMode.OffToggleColor = Color.Gainsboro;
+            departmentMode.OnBackColor = Color.FromArgb(35, 211, 35);
+            departmentMode.OnToggleColor = Color.WhiteSmoke;
+            departmentMode.Size = new Size(60, 30);
+            departmentMode.TabIndex = 41;
+            departmentMode.UseVisualStyleBackColor = true;
+            departmentMode.CheckedChanged += departmentMode_CheckedChanged;
+            // 
             // pictureBox12
             // 
             pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
@@ -1413,6 +1455,7 @@
             customButton2.TextAlign = ContentAlignment.MiddleRight;
             customButton2.TextColor = Color.White;
             customButton2.UseVisualStyleBackColor = false;
+            customButton2.Click += customButton2_Click_1;
             // 
             // heading
             // 
@@ -1509,6 +1552,7 @@
             customButton22.TextColor = Color.White;
             customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton22.UseVisualStyleBackColor = false;
+            customButton22.Click += customButton22_Click;
             // 
             // customButton15
             // 
@@ -1534,6 +1578,7 @@
             customButton15.TextAlign = ContentAlignment.MiddleRight;
             customButton15.TextColor = Color.White;
             customButton15.UseVisualStyleBackColor = false;
+            customButton15.Click += customButton15_Click;
             // 
             // customButton16
             // 
@@ -1559,6 +1604,7 @@
             customButton16.TextColor = Color.White;
             customButton16.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton16.UseVisualStyleBackColor = false;
+            customButton16.Click += customButton16_Click;
             // 
             // customButton21
             // 
@@ -1659,6 +1705,7 @@
             customButton25.TextColor = Color.White;
             customButton25.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton25.UseVisualStyleBackColor = false;
+            customButton25.Click += customButton25_Click;
             // 
             // customButton26
             // 
@@ -1703,42 +1750,69 @@
             currentFile.Text = "CURRENT FILE";
             currentFile.LinkClicked += currentFile_LinkClicked;
             // 
-            // departmentMode
+            // tableLayoutPanel1
             // 
-            departmentMode.AutoSize = true;
-            departmentMode.Location = new Point(192, 154);
-            departmentMode.MinimumSize = new Size(60, 30);
-            departmentMode.Name = "departmentMode";
-            departmentMode.OffBackColor = Color.Gray;
-            departmentMode.OffToggleColor = Color.Gainsboro;
-            departmentMode.OnBackColor = Color.FromArgb(35, 211, 35);
-            departmentMode.OnToggleColor = Color.WhiteSmoke;
-            departmentMode.Size = new Size(60, 30);
-            departmentMode.TabIndex = 41;
-            departmentMode.UseVisualStyleBackColor = true;
-            departmentMode.CheckedChanged += departmentMode_CheckedChanged;
+            tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Controls.Add(label13, 0, 2);
+            tableLayoutPanel1.Controls.Add(label20, 0, 1);
+            tableLayoutPanel1.Controls.Add(label24, 0, 0);
+            tableLayoutPanel1.Location = new Point(1090, 64);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.Size = new Size(305, 125);
+            tableLayoutPanel1.TabIndex = 142;
+            tableLayoutPanel1.Visible = false;
             // 
-            // label22
+            // label13
             // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label22.ForeColor = Color.FromArgb(197, 224, 180);
-            label22.Location = new Point(17, 197);
-            label22.Name = "label22";
-            label22.Size = new Size(249, 19);
-            label22.TabIndex = 101;
-            label22.Text = "SELECTED DEPARTMENT";
+            label13.Cursor = Cursors.Hand;
+            label13.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.White;
+            label13.Image = (Image)resources.GetObject("label13.Image");
+            label13.ImageAlign = ContentAlignment.MiddleRight;
+            label13.Location = new Point(5, 82);
+            label13.Name = "label13";
+            label13.Size = new Size(295, 38);
+            label13.TabIndex = 65;
+            label13.Text = "SIGN OUT";
+            label13.TextAlign = ContentAlignment.MiddleCenter;
+            label13.Click += label13_Click_1;
             // 
-            // selectDepartment
+            // label20
             // 
-            selectDepartment.AutoSize = true;
-            selectDepartment.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            selectDepartment.ForeColor = Color.White;
-            selectDepartment.Location = new Point(77, 229);
-            selectDepartment.Name = "selectDepartment";
-            selectDepartment.Size = new Size(142, 19);
-            selectDepartment.TabIndex = 100;
-            selectDepartment.Text = "DESCRIPTION";
+            label20.Cursor = Cursors.Hand;
+            label20.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label20.ForeColor = Color.White;
+            label20.Image = (Image)resources.GetObject("label20.Image");
+            label20.ImageAlign = ContentAlignment.MiddleRight;
+            label20.Location = new Point(5, 42);
+            label20.Name = "label20";
+            label20.Size = new Size(295, 38);
+            label20.TabIndex = 64;
+            label20.Text = "CHANGE PASSWORD";
+            label20.TextAlign = ContentAlignment.MiddleCenter;
+            label20.Click += label20_Click;
+            // 
+            // label24
+            // 
+            label24.Cursor = Cursors.Hand;
+            label24.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label24.ForeColor = Color.White;
+            label24.Image = (Image)resources.GetObject("label24.Image");
+            label24.ImageAlign = ContentAlignment.MiddleRight;
+            label24.Location = new Point(5, 2);
+            label24.Name = "label24";
+            label24.Size = new Size(295, 38);
+            label24.TabIndex = 63;
+            label24.Text = "INFORMATION";
+            label24.TextAlign = ContentAlignment.MiddleCenter;
+            label24.Click += label24_Click;
             // 
             // A_EditTask
             // 
@@ -1746,6 +1820,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 23, 23);
             ClientSize = new Size(1400, 800);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(currentFile);
             Controls.Add(headerPanel);
             Controls.Add(membersGrid);
@@ -1821,6 +1896,7 @@
             headerPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1928,5 +2004,9 @@
         private CustomComponent.CustomToggleButton departmentMode;
         private Label label22;
         private Label selectDepartment;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label label13;
+        private Label label20;
+        private Label label24;
     }
 }
