@@ -54,7 +54,6 @@
             label9 = new Label();
             label7 = new Label();
             customButton12 = new CustomComponent.CustomButton();
-            customButton11 = new CustomComponent.CustomButton();
             customButton10 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
             customButton8 = new CustomComponent.CustomButton();
@@ -64,13 +63,14 @@
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
             panel2 = new Panel();
+            customButton22 = new CustomComponent.CustomButton();
             panel1 = new Panel();
             headerPanel = new Panel();
+            languageSelect = new CustomComponent.CustomComboBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            customButton22 = new CustomComponent.CustomButton();
             customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)avatarBox).BeginInit();
             customPanel1.SuspendLayout();
@@ -405,29 +405,6 @@
             customButton12.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton12.UseVisualStyleBackColor = false;
             // 
-            // customButton11
-            // 
-            customButton11.BackColor = Color.Black;
-            customButton11.BackgroundColor = Color.Black;
-            customButton11.BorderColor = Color.PaleVioletRed;
-            customButton11.BorderRadius = 28;
-            customButton11.BorderSize = 0;
-            customButton11.FlatAppearance.BorderSize = 0;
-            customButton11.FlatStyle = FlatStyle.Flat;
-            customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton11.ForeColor = Color.White;
-            customButton11.Image = Properties.Resources.triangle_icon;
-            customButton11.ImageAlign = ContentAlignment.MiddleRight;
-            customButton11.Location = new Point(1077, 0);
-            customButton11.Name = "customButton11";
-            customButton11.Size = new Size(120, 51);
-            customButton11.TabIndex = 21;
-            customButton11.Text = "English";
-            customButton11.TextAlign = ContentAlignment.MiddleRight;
-            customButton11.TextColor = Color.White;
-            customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton11.UseVisualStyleBackColor = false;
-            // 
             // customButton10
             // 
             customButton10.BackColor = Color.Black;
@@ -615,6 +592,28 @@
             panel2.Size = new Size(117, 59);
             panel2.TabIndex = 23;
             // 
+            // customButton22
+            // 
+            customButton22.BackColor = Color.Black;
+            customButton22.BackgroundColor = Color.Black;
+            customButton22.BorderColor = Color.PaleVioletRed;
+            customButton22.BorderRadius = 28;
+            customButton22.BorderSize = 0;
+            customButton22.Cursor = Cursors.Hand;
+            customButton22.FlatAppearance.BorderSize = 0;
+            customButton22.FlatStyle = FlatStyle.Flat;
+            customButton22.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton22.ForeColor = Color.White;
+            customButton22.Image = Properties.Resources.triangle_icon;
+            customButton22.Location = new Point(66, 5);
+            customButton22.Name = "customButton22";
+            customButton22.Size = new Size(51, 51);
+            customButton22.TabIndex = 38;
+            customButton22.TextColor = Color.White;
+            customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
+            customButton22.UseVisualStyleBackColor = false;
+            customButton22.Click += customButton22_Click;
+            // 
             // panel1
             // 
             panel1.Location = new Point(694, 59);
@@ -625,11 +624,11 @@
             // headerPanel
             // 
             headerPanel.BackColor = Color.FromArgb(13, 13, 13);
+            headerPanel.Controls.Add(languageSelect);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
             headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton12);
-            headerPanel.Controls.Add(customButton11);
             headerPanel.Controls.Add(customButton10);
             headerPanel.Controls.Add(customButton9);
             headerPanel.Controls.Add(customButton8);
@@ -641,6 +640,26 @@
             headerPanel.Name = "headerPanel";
             headerPanel.Size = new Size(1382, 59);
             headerPanel.TabIndex = 24;
+            // 
+            // languageSelect
+            // 
+            languageSelect.BackColor = Color.Black;
+            languageSelect.BorderColor = Color.MediumSlateBlue;
+            languageSelect.BorderSize = 0;
+            languageSelect.DropDownStyle = ComboBoxStyle.DropDown;
+            languageSelect.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            languageSelect.ForeColor = Color.White;
+            languageSelect.IconColor = Color.White;
+            languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
+            languageSelect.ListBackColor = Color.Black;
+            languageSelect.ListTextColor = Color.White;
+            languageSelect.Location = new Point(1070, 3);
+            languageSelect.MinimumSize = new Size(30, 30);
+            languageSelect.Name = "languageSelect";
+            languageSelect.Size = new Size(132, 52);
+            languageSelect.TabIndex = 52;
+            languageSelect.Texts = "";
+            languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
             // 
             // tableLayoutPanel1
             // 
@@ -703,28 +722,6 @@
             label3.Text = "INFORMATION";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // customButton22
-            // 
-            customButton22.BackColor = Color.Black;
-            customButton22.BackgroundColor = Color.Black;
-            customButton22.BorderColor = Color.PaleVioletRed;
-            customButton22.BorderRadius = 28;
-            customButton22.BorderSize = 0;
-            customButton22.Cursor = Cursors.Hand;
-            customButton22.FlatAppearance.BorderSize = 0;
-            customButton22.FlatStyle = FlatStyle.Flat;
-            customButton22.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton22.ForeColor = Color.White;
-            customButton22.Image = Properties.Resources.triangle_icon;
-            customButton22.Location = new Point(66, 5);
-            customButton22.Name = "customButton22";
-            customButton22.Size = new Size(51, 51);
-            customButton22.TabIndex = 38;
-            customButton22.TextColor = Color.White;
-            customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton22.UseVisualStyleBackColor = false;
-            customButton22.Click += customButton22_Click;
-            // 
             // C_Information
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -775,7 +772,6 @@
         private Label label9;
         private Label label7;
         private CustomComponent.CustomButton customButton12;
-        private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton customButton10;
         private CustomComponent.CustomButton customButton9;
         private CustomComponent.CustomButton customButton8;
@@ -792,5 +788,6 @@
         private Label label2;
         private Label label3;
         private CustomComponent.CustomButton customButton22;
+        private CustomComponent.CustomComboBox languageSelect;
     }
 }

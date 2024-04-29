@@ -382,8 +382,8 @@ namespace UIs
                 uploadButton.Text = "DUYỆT";
                 label19.Text = "NỔI BẬC";
                 label16.Text = "TRUY CẬP CÔNG KHAI";
-                label18.Text = "BỘ PHẬN";
-                label17.Text = "CÔNG TY";
+                label18.Text = "CÔNG TY";
+                label17.Text = "BỘ PHẬN";
                 editReceiverButton.Text = "SỬA";
                 button1.Text = "SỬA";
                 button2.Text = "SỬA";

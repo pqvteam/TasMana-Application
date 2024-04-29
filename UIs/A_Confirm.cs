@@ -68,6 +68,7 @@ namespace UIs
                 confirmButton.BackColor = Color.Green;
                 confirmButton.Text = "Ok";
             }
+            changelanguage();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -79,6 +80,32 @@ namespace UIs
         {
 
 
+        }
+
+        private void changelanguage()
+        {
+            Font font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+            Font fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            if (Session.Instance.Language == "vi")
+            {
+                messageText.Text = "BẠN CÓ CHẮC CHẮN XÓA TÀI KHOẢN NÀY?";
+                font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+                cancelButton.Text = "HỦY";
+                confirmButton.Text = "TIẾP TỤC";
+                fontSmaller = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+
+            }
+            else
+            {
+                messageText.Text = "ARE YOU SURE TO DELETE THIS ACCOUNT?";
+                font = new Font("Copperplate Gothic Bold", 14);
+                cancelButton.Text = "CANCEL";
+                confirmButton.Text = "CONTINUE";
+                fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            }
+            messageText.Font = font;
+            cancelButton.Font = fontSmaller;
+            confirmButton.Font = fontSmaller;
         }
     }
 }

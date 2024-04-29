@@ -140,6 +140,7 @@ namespace UIs
                 box_username.Text = Properties.Settings.Default.Username;
                 box_password.Text = Properties.Settings.Default.Password;
                 //button_Login_Click(sender, e);
+                box_password.PasswordChar = '*';
             }
         }
 
