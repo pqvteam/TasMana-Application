@@ -491,7 +491,6 @@
             label8.TabIndex = 65;
             label8.Text = "SIGN OUT";
             label8.TextAlign = ContentAlignment.MiddleCenter;
-            label8.Click += label8_Click;
             // 
             // label9
             // 
