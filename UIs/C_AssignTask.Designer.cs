@@ -102,6 +102,8 @@
             saveButton = new CustomComponent.CustomButton();
             cancelButton = new CustomComponent.CustomButton();
             customPanel1 = new CustomComponent.CustomPanel();
+            label22 = new Label();
+            selectDepartment = new Label();
             departmentMode = new CustomComponent.CustomToggleButton();
             taskHighlight = new CustomComponent.CustomToggleButton();
             taskMode = new CustomComponent.CustomToggleButton();
@@ -124,8 +126,6 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             label25 = new Label();
             label26 = new Label();
-            selectDepartment = new Label();
-            label22 = new Label();
             mainPanel.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
@@ -941,7 +941,6 @@
             customButton18.TextAlign = ContentAlignment.MiddleRight;
             customButton18.TextColor = Color.White;
             customButton18.UseVisualStyleBackColor = false;
-            customButton18.Click += customButton18_Click;
             // 
             // customButton17
             // 
@@ -967,7 +966,6 @@
             customButton17.TextColor = Color.White;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
-            customButton17.Click += customButton17_Click;
             // 
             // customButton12
             // 
@@ -1005,7 +1003,7 @@
             customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton11.ForeColor = Color.White;
             customButton11.ImageAlign = ContentAlignment.MiddleRight;
-            customButton11.Location = new Point(1077, 0);
+            customButton11.Location = new Point(1080, 4);
             customButton11.Name = "customButton11";
             customButton11.Size = new Size(120, 51);
             customButton11.TabIndex = 0;
@@ -1199,7 +1197,6 @@
             label27.TabIndex = 65;
             label27.Text = "SIGN OUT";
             label27.TextAlign = ContentAlignment.MiddleCenter;
-            label27.Click += label27_Click;
             // 
             // label28
             // 
@@ -1214,7 +1211,6 @@
             label28.TabIndex = 64;
             label28.Text = "CHANGE PASSWORD";
             label28.TextAlign = ContentAlignment.MiddleCenter;
-            label28.Click += label28_Click;
             // 
             // label29
             // 
@@ -1298,6 +1294,28 @@
             customPanel1.Name = "customPanel1";
             customPanel1.Size = new Size(279, 259);
             customPanel1.TabIndex = 8;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.ForeColor = Color.FromArgb(197, 224, 180);
+            label22.Location = new Point(23, 195);
+            label22.Name = "label22";
+            label22.Size = new Size(249, 19);
+            label22.TabIndex = 49;
+            label22.Text = "SELECTED DEPARTMENT";
+            // 
+            // selectDepartment
+            // 
+            selectDepartment.AutoSize = true;
+            selectDepartment.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            selectDepartment.ForeColor = Color.White;
+            selectDepartment.Location = new Point(83, 227);
+            selectDepartment.Name = "selectDepartment";
+            selectDepartment.Size = new Size(142, 19);
+            selectDepartment.TabIndex = 48;
+            selectDepartment.Text = "DESCRIPTION";
             // 
             // departmentMode
             // 
@@ -1620,28 +1638,6 @@
             label26.TabIndex = 64;
             label26.Text = "CHANGE PASSWORD";
             label26.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // selectDepartment
-            // 
-            selectDepartment.AutoSize = true;
-            selectDepartment.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            selectDepartment.ForeColor = Color.White;
-            selectDepartment.Location = new Point(83, 227);
-            selectDepartment.Name = "selectDepartment";
-            selectDepartment.Size = new Size(142, 19);
-            selectDepartment.TabIndex = 48;
-            selectDepartment.Text = "DESCRIPTION";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label22.ForeColor = Color.FromArgb(197, 224, 180);
-            label22.Location = new Point(23, 195);
-            label22.Name = "label22";
-            label22.Size = new Size(249, 19);
-            label22.TabIndex = 49;
-            label22.Text = "SELECTED DEPARTMENT";
             // 
             // C_AssignTask
             // 

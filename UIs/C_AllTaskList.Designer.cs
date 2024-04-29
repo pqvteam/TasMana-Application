@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_AllTaskList));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             headerPanel = new Panel();
             languageSelect = new CustomComponent.CustomComboBox();
             panel2 = new Panel();
@@ -252,7 +252,6 @@
             customButton6.TextColor = Color.White;
             customButton6.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton6.UseVisualStyleBackColor = false;
-            customButton6.Click += customButton6_Click;
             // 
             // customButton7
             // 
@@ -374,7 +373,6 @@
             customButton13.TextColor = Color.Yellow;
             customButton13.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton13.UseVisualStyleBackColor = false;
-            customButton13.Click += customButton13_Click;
             // 
             // customButton14
             // 
@@ -508,7 +506,6 @@
             label9.TabIndex = 64;
             label9.Text = "CHANGE PASSWORD";
             label9.TextAlign = ContentAlignment.MiddleCenter;
-            label9.Click += label9_Click;
             // 
             // label11
             // 
@@ -694,24 +691,24 @@
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             membersGrid.Cursor = Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(42, 42, 42);
             membersGrid.Location = new Point(363, 437);
