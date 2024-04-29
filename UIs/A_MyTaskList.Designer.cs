@@ -33,6 +33,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
+            customButton11 = new CustomComponent.CustomButton();
             customButton1 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
             customButton8 = new CustomComponent.CustomButton();
@@ -99,6 +100,9 @@
             customButton18.ImageAlign = ContentAlignment.MiddleLeft;
             customButton18.Location = new Point(733, 6);
             customButton18.Name = "customButton18";
+            customButton18.Size = new Size(188, 48);
+            customButton18.TabIndex = 21;
+
             customButton18.Size = new Size(194, 48);
             customButton18.TabIndex = 25;
             customButton18.Text = "APARTMENT & RESIDENT";
@@ -123,12 +127,36 @@
             customButton17.Location = new Point(524, 7);
             customButton17.Name = "customButton17";
             customButton17.Size = new Size(202, 48);
-            customButton17.TabIndex = 24;
+            customButton17.TabIndex = 20;
             customButton17.Text = "ACCOUNTING MANAGEMENT";
             customButton17.TextAlign = ContentAlignment.MiddleRight;
             customButton17.TextColor = Color.White;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
+            // 
+            // customButton11
+            // 
+            customButton11.BackColor = Color.Black;
+            customButton11.BackgroundColor = Color.Black;
+            customButton11.BorderColor = Color.PaleVioletRed;
+            customButton11.BorderRadius = 28;
+            customButton11.BorderSize = 0;
+            customButton11.Cursor = Cursors.Hand;
+            customButton11.FlatAppearance.BorderSize = 0;
+            customButton11.FlatStyle = FlatStyle.Flat;
+            customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton11.ForeColor = Color.White;
+            customButton11.Image = Properties.Resources.triangle_icon;
+            customButton11.ImageAlign = ContentAlignment.MiddleRight;
+            customButton11.Location = new Point(1077, 5);
+            customButton11.Name = "customButton11";
+            customButton11.Size = new Size(120, 51);
+            customButton11.TabIndex = 23;
+            customButton11.Text = "English";
+            customButton11.TextAlign = ContentAlignment.MiddleRight;
+            customButton11.TextColor = Color.White;
+            customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
+            customButton11.UseVisualStyleBackColor = false;
             // 
             // customButton1
             // 
@@ -146,6 +174,8 @@
             customButton1.ImageAlign = ContentAlignment.MiddleLeft;
             customButton1.Location = new Point(935, 4);
             customButton1.Name = "customButton1";
+            customButton1.Size = new Size(156, 51);
+            customButton1.TabIndex = 22;
             customButton1.Size = new Size(170, 51);
             customButton1.TabIndex = 20;
             customButton1.Text = "RESIDENT SERVICE";
@@ -281,7 +311,7 @@
             customButton22.Location = new Point(71, 6);
             customButton22.Name = "customButton22";
             customButton22.Size = new Size(51, 51);
-            customButton22.TabIndex = 24;
+            customButton22.TabIndex = 25;
             customButton22.TextColor = Color.White;
             customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton22.UseVisualStyleBackColor = false;
@@ -293,6 +323,7 @@
             headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
+            headerPanel.Controls.Add(customButton11);
             headerPanel.Controls.Add(customButton1);
             headerPanel.Controls.Add(customButton9);
             headerPanel.Controls.Add(customButton8);
@@ -332,7 +363,7 @@
             panel2.Location = new Point(1265, 1);
             panel2.Name = "panel2";
             panel2.Size = new Size(127, 59);
-            panel2.TabIndex = 51;
+            panel2.TabIndex = 24;
             // 
             // createGroupButton
             // 
@@ -352,7 +383,7 @@
             createGroupButton.Name = "createGroupButton";
             createGroupButton.Padding = new Padding(12, 0, 0, 0);
             createGroupButton.Size = new Size(253, 59);
-            createGroupButton.TabIndex = 106;
+            createGroupButton.TabIndex = 30;
             createGroupButton.Text = "CREATE GROUP";
             createGroupButton.TextAlign = ContentAlignment.MiddleRight;
             createGroupButton.TextColor = Color.White;
@@ -376,7 +407,7 @@
             grandChart.Name = "grandChart";
             grandChart.Padding = new Padding(12, 0, 0, 0);
             grandChart.Size = new Size(253, 59);
-            grandChart.TabIndex = 105;
+            grandChart.TabIndex = 31;
             grandChart.Text = "GRAND CHART";
             grandChart.TextAlign = ContentAlignment.MiddleRight;
             grandChart.TextColor = Color.White;
@@ -400,7 +431,7 @@
             customButton5.Name = "customButton5";
             customButton5.Padding = new Padding(12, 0, 0, 0);
             customButton5.Size = new Size(253, 59);
-            customButton5.TabIndex = 104;
+            customButton5.TabIndex = 29;
             customButton5.Text = "OBSERVED TASK";
             customButton5.TextAlign = ContentAlignment.MiddleRight;
             customButton5.TextColor = Color.White;
@@ -425,7 +456,7 @@
             customButton16.Name = "customButton16";
             customButton16.Padding = new Padding(12, 0, 0, 0);
             customButton16.Size = new Size(253, 59);
-            customButton16.TabIndex = 102;
+            customButton16.TabIndex = 28;
             customButton16.Text = "MY TASK LIST";
             customButton16.TextAlign = ContentAlignment.MiddleRight;
             customButton16.TextColor = SystemColors.ControlText;
@@ -449,7 +480,7 @@
             customButton2.Name = "customButton2";
             customButton2.Padding = new Padding(12, 0, 0, 0);
             customButton2.Size = new Size(253, 59);
-            customButton2.TabIndex = 101;
+            customButton2.TabIndex = 27;
             customButton2.Text = "ALL TASK LIST";
             customButton2.TextAlign = ContentAlignment.MiddleRight;
             customButton2.TextColor = Color.White;
@@ -529,7 +560,7 @@
             rjTextBox6.PlaceholderColor = Color.DarkGray;
             rjTextBox6.PlaceholderText = "";
             rjTextBox6.Size = new Size(285, 714);
-            rjTextBox6.TabIndex = 98;
+            rjTextBox6.TabIndex = 26;
             rjTextBox6.Texts = "";
             rjTextBox6.UnderlinedStyle = false;
             // 
@@ -572,7 +603,7 @@
             membersGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             membersGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             membersGrid.Size = new Size(989, 442);
-            membersGrid.TabIndex = 107;
+            membersGrid.TabIndex = 38;
             membersGrid.CellClick += membersGrid_CellContentClick;
             membersGrid.CellContentClick += membersGrid_CellContentDownloadClick;
             // 
@@ -623,7 +654,7 @@
             searchBox.Name = "searchBox";
             searchBox.PlaceholderText = "Search";
             searchBox.Size = new Size(693, 20);
-            searchBox.TabIndex = 94;
+            searchBox.TabIndex = 33;
             searchBox.TextChanged += searchBox_TextChanged;
             // 
             // rjTextBox5
@@ -645,7 +676,7 @@
             rjTextBox5.PlaceholderColor = Color.DarkGray;
             rjTextBox5.PlaceholderText = "";
             rjTextBox5.Size = new Size(797, 58);
-            rjTextBox5.TabIndex = 93;
+            rjTextBox5.TabIndex = 32;
             rjTextBox5.Texts = "";
             rjTextBox5.UnderlinedStyle = false;
             // 
@@ -672,7 +703,7 @@
             resetButton.Name = "resetButton";
             resetButton.Padding = new Padding(12, 0, 0, 0);
             resetButton.Size = new Size(79, 59);
-            resetButton.TabIndex = 109;
+            resetButton.TabIndex = 37;
             resetButton.TextColor = Color.White;
             resetButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             resetButton.UseVisualStyleBackColor = false;
@@ -689,7 +720,7 @@
             editMode.OnBackColor = Color.FromArgb(35, 211, 35);
             editMode.OnToggleColor = Color.WhiteSmoke;
             editMode.Size = new Size(90, 40);
-            editMode.TabIndex = 111;
+            editMode.TabIndex = 34;
             editMode.TabStop = false;
             editMode.UseVisualStyleBackColor = true;
             editMode.CheckedChanged += editMode_CheckedChanged;
@@ -722,7 +753,7 @@
             departmentsBox.Name = "departmentsBox";
             departmentsBox.Padding = new Padding(1);
             departmentsBox.Size = new Size(282, 36);
-            departmentsBox.TabIndex = 113;
+            departmentsBox.TabIndex = 36;
             departmentsBox.Texts = "";
             departmentsBox.OnSelectedIndexChanged += departmentsBox_OnSelectedIndexChanged;
             // 
@@ -775,7 +806,7 @@
             statusBox.Name = "statusBox";
             statusBox.Padding = new Padding(1);
             statusBox.Size = new Size(282, 36);
-            statusBox.TabIndex = 116;
+            statusBox.TabIndex = 35;
             statusBox.Texts = "";
             statusBox.OnSelectedIndexChanged += statusBox_OnSelectedIndexChanged;
             // 
@@ -827,7 +858,7 @@
             tagBox.Name = "tagBox";
             tagBox.Padding = new Padding(1);
             tagBox.Size = new Size(282, 36);
-            tagBox.TabIndex = 119;
+            tagBox.TabIndex = 34;
             tagBox.Texts = "";
             tagBox.OnSelectedIndexChanged += typeBox_OnSelectedIndexChanged;
             // 
@@ -981,6 +1012,7 @@
 
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
+        private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton customButton1;
         private CustomComponent.CustomButton customButton9;
         private CustomComponent.CustomButton customButton8;

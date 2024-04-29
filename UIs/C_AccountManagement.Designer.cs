@@ -106,7 +106,7 @@
             languageSelect.MinimumSize = new Size(30, 30);
             languageSelect.Name = "languageSelect";
             languageSelect.Size = new Size(141, 43);
-            languageSelect.TabIndex = 63;
+            languageSelect.TabIndex = 24;
             languageSelect.Texts = "";
             languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
             // 
@@ -153,7 +153,7 @@
             customButton22.Location = new Point(67, 4);
             customButton22.Name = "customButton22";
             customButton22.Size = new Size(51, 51);
-            customButton22.TabIndex = 24;
+            customButton22.TabIndex = 23;
             customButton22.TextColor = Color.White;
             customButton22.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton22.UseVisualStyleBackColor = false;
@@ -176,7 +176,7 @@
             customButton18.Location = new Point(732, 4);
             customButton18.Name = "customButton18";
             customButton18.Size = new Size(199, 48);
-            customButton18.TabIndex = 25;
+            customButton18.TabIndex = 21;
             customButton18.Text = "APARTMENT & RESIDENT";
             customButton18.TextAlign = ContentAlignment.MiddleRight;
             customButton18.TextColor = Color.White;
@@ -201,7 +201,7 @@
             customButton17.Location = new Point(513, 5);
             customButton17.Name = "customButton17";
             customButton17.Size = new Size(210, 48);
-            customButton17.TabIndex = 24;
+            customButton17.TabIndex = 20;
             customButton17.Text = "ACCOUNTING MANAGEMENT";
             customButton17.TextAlign = ContentAlignment.MiddleRight;
             customButton17.TextColor = Color.Yellow;
@@ -226,7 +226,7 @@
             customButton10.Location = new Point(937, 2);
             customButton10.Name = "customButton10";
             customButton10.Size = new Size(172, 51);
-            customButton10.TabIndex = 20;
+            customButton10.TabIndex = 22;
             customButton10.Text = "RESIDENT SERVICE";
             customButton10.TextAlign = ContentAlignment.MiddleRight;
             customButton10.TextColor = Color.White;
@@ -344,7 +344,7 @@
             customPanel1.Location = new Point(0, 64);
             customPanel1.Name = "customPanel1";
             customPanel1.Size = new Size(1382, 46);
-            customPanel1.TabIndex = 3;
+            customPanel1.TabIndex = 4;
             customPanel1.Paint += customPanel1_Paint;
             // 
             // button3
@@ -595,7 +595,7 @@
             membersGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             membersGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             membersGrid.Size = new Size(1357, 517);
-            membersGrid.TabIndex = 60;
+            membersGrid.TabIndex = 61;
             membersGrid.CellContentClick += membersGrid_CellContentClick;
             // 
             // label1
@@ -627,7 +627,7 @@
             customButton4.Name = "customButton4";
             customButton4.Padding = new Padding(12, 0, 0, 0);
             customButton4.Size = new Size(79, 59);
-            customButton4.TabIndex = 61;
+            customButton4.TabIndex = 60;
             customButton4.TextColor = Color.White;
             customButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton4.UseVisualStyleBackColor = false;
@@ -649,7 +649,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.Size = new Size(305, 125);
-            tableLayoutPanel1.TabIndex = 62;
+            tableLayoutPanel1.TabIndex = 3;
             tableLayoutPanel1.Visible = false;
             // 
             // label6
@@ -662,7 +662,7 @@
             label6.Location = new Point(5, 82);
             label6.Name = "label6";
             label6.Size = new Size(295, 38);
-            label6.TabIndex = 65;
+            label6.TabIndex = 3;
             label6.Text = "SIGN OUT";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             label6.Click += label6_Click;
@@ -677,7 +677,7 @@
             label5.Location = new Point(5, 42);
             label5.Name = "label5";
             label5.Size = new Size(295, 38);
-            label5.TabIndex = 64;
+            label5.TabIndex = 2;
             label5.Text = "CHANGE PASSWORD";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             label5.Click += label5_Click_1;
@@ -692,7 +692,7 @@
             label4.Location = new Point(5, 2);
             label4.Name = "label4";
             label4.Size = new Size(295, 38);
-            label4.TabIndex = 63;
+            label4.TabIndex = 1;
             label4.Text = "INFORMATION";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             label4.Click += label4_Click_1;
