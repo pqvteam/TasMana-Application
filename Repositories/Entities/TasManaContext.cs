@@ -42,7 +42,7 @@ public partial class TasManaContext : DbContext
     public virtual DbSet<QuanLi> QuanLis { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("C:\\Users\\phuoc\\source\\repos\\pqvteam\\TasMana-Application\\UIs");
+        => optionsBuilder.UseSqlServer("C:\\Users\\ADMIN\\source\\repos\\pqvteam\\TasMana-Application\\UIs");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
