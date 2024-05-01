@@ -464,7 +464,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton1.Text = "DỊCH VỤ CƯ DÂN";
                 label10.Text = "THÔNG TIN";
                 label9.Text = "ĐỔI MẬT KHẨU";
                 label8.Text = "ĐĂNG XUẤT";
@@ -491,7 +490,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton17.Text = "ACCOUNTING MANAGEMENT";
                 customButton18.Text = "APARTMENT RESIDENT";
-                customButton1.Text = "RESIDENT SERVICE";
                 label10.Text = "INFORMATION";
                 label9.Text = "CHANGE PASSWORD";
                 label8.Text = "SIGN OUT";
@@ -516,7 +514,6 @@ namespace UIs
             customButton9.Font = fontSmaller;
             customButton17.Font = fontSmaller;
             customButton18.Font = fontSmaller;
-            customButton1.Font = fontSmaller;
             label10.Font = fontSmaller;
             label9.Font = fontSmaller;
             label8.Font = fontSmaller;
@@ -547,7 +544,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton1.Text = "DỊCH VỤ CƯ DÂN";
                 label10.Text = "THÔNG TIN";
                 label9.Text = "ĐỔI MẬT KHẨU";
                 label8.Text = "ĐĂNG XUẤT";
@@ -575,7 +571,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton17.Text = "ACCOUNTING MANAGEMENT";
                 customButton18.Text = "APARTMENT RESIDENT";
-                customButton1.Text = "RESIDENT SERVICE";
                 label10.Text = "INFORMATION";
                 label9.Text = "CHANGE PASSWORD";
                 label8.Text = "SIGN OUT";
@@ -600,7 +595,6 @@ namespace UIs
             customButton9.Font = fontSmaller;
             customButton17.Font = fontSmaller;
             customButton18.Font = fontSmaller;
-            customButton1.Font = fontSmaller;
             label10.Font = fontSmaller;
             label9.Font = fontSmaller;
             label8.Font = fontSmaller;
