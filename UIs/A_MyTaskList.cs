@@ -58,7 +58,6 @@ namespace UIs
                 customButton7.Text = "CÔNG VIỆC";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
                 customButton13.Text = "CẬP NHẬT TIẾN ĐỘ";
-                customButton1.Text = "DỊCH VỤ CƯ DÂN";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton2.Text = "TẤT CẢ CÔNG VIỆC";
                 customButton16.Text = "CÔNG VIỆC CỦA TÔI";
@@ -80,7 +79,6 @@ namespace UIs
                 customButton13.Text = "UPDATE PROCESS";
                 customButton7.Text = "WORK";
                 customButton18.Text = "APARTMENT RESIDENT";
-                customButton1.Text = "RESIDENT SERVICE";
                 customButton17.Text = "ACCOUNT MANAGEMENT";
                 customButton2.Text = "ALL TASK LIST";
                 customButton16.Text = "MY TASK LIST";
@@ -95,7 +93,6 @@ namespace UIs
             customButton8.Font = font;
             customButton7.Font = font;
             customButton18.Font = font;
-            customButton1.Font = font;
             customButton17.Font = font;
             customButton2.Font = font;
             customButton16.Font = font;
@@ -494,7 +491,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton7.Text = "CÔNG VIỆC";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton1.Text = "DỊCH VỤ CƯ DÂN";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton2.Text = "TẤT CẢ CÔNG VIỆC";
                 customButton16.Text = "CÔNG VIỆC CỦA TÔI";
@@ -519,7 +515,6 @@ namespace UIs
                 customButton7.Text = "WORK";
                 customButton13.Text = "UPDATE PROCESS";
                 customButton18.Text = "APARTMENT RESIDENT";
-                customButton1.Text = "RESIDENT SERVICE";
                 customButton17.Text = "ACCOUNT MANAGEMENT";
                 customButton2.Text = "ALL TASK LIST";
                 customButton16.Text = "MY TASK LIST";
@@ -536,7 +531,6 @@ namespace UIs
             customButton8.Font = font;
             customButton7.Font = font;
             customButton18.Font = font;
-            customButton1.Font = font;
             customButton17.Font = font;
             customButton2.Font = font;
             customButton16.Font = font;
