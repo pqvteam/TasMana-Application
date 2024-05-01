@@ -382,6 +382,13 @@ namespace UIs
         private void ShowDepartmentForm_DepartmentSelected(string department)
         {
             selectDepartment.Text = department;
+            sharedProcess.Text = department;
+            CanHoService canHoService = new CanHoService();
+            string? customerID = canHoService.findApartment(venueID).MaCuDan;
+            if (customerID != null)
+            {
+                customerLabel.Text = customerID;
+            }
         }
 
         private void ShowTagForm_TagSelected(string tag)
@@ -442,13 +449,8 @@ namespace UIs
                 tagEditButton.Text = "SỬA";
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
 
-
-                customButton2.Text = "CẬP NHẬT TIẾN ĐỘ";
-                customButton1.Text = "HẠN CHÓT";
-                customButton5.Text = "ĐÍNH KÈM";
-                customButton3.Text = "XÓA CÔNG VIỆC";
                 label15.Text = "TRẠNG THÁI";
-                label14.Text = "SỬA ĐỔI";
+                sharedProcess.Text = "SỬA ĐỔI";
                 name.Text = "NGƯỜI THỰC HIỆN";
                 label1.Text = "ĐƯỢC GIAO BỞI";
                 label2.Text = "CHIA SẺ TIẾN ĐỘ";
@@ -494,12 +496,8 @@ namespace UIs
                 tagEditButton.Text = "EDIT";
                 font = new Font("Copperplate Gothic Bold", 10);
 
-                customButton2.Text = "UPDATE PROCESS";
-                customButton1.Text = "DEADLINE";
-                customButton5.Text = "ATTACHMENT";
-                customButton3.Text = "DELETE TASK";
                 label15.Text = "STATUS";
-                label14.Text = "MODIFYING";
+                sharedProcess.Text = "MODIFYING";
                 name.Text = "IMPLEMENTOR";
                 label1.Text = "ASSIGNED BY";
                 label2.Text = "SHARED PROCESS";
@@ -542,12 +540,8 @@ namespace UIs
             venueEditButton.Font = font;
             tagEditButton.Font = font;
 
-            customButton2.Font = fontLarger;
-            customButton1.Font = fontLarger;
-            customButton5.Font = fontLarger;
-            customButton3.Font = fontLarger;
             label15.Font = fontLarger;
-            label14.Font = fontLarger;
+            sharedProcess.Font = fontLarger;
             name.Font = fontLarger;
             label1.Font = fontLarger;
             label2.Font = fontLarger;
@@ -595,13 +589,8 @@ namespace UIs
                 tagEditButton.Text = "SỬA";
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
 
-
-                customButton2.Text = "CẬP NHẬT TIẾN ĐỘ";
-                customButton1.Text = "HẠN CHÓT";
-                customButton5.Text = "ĐÍNH KÈM";
-                customButton3.Text = "XÓA CÔNG VIỆC";
                 label15.Text = "TRẠNG THÁI";
-                label14.Text = "SỬA ĐỔI";
+                sharedProcess.Text = "SỬA ĐỔI";
                 name.Text = "NGƯỜI THỰC HIỆN";
                 label1.Text = "ĐƯỢC GIAO BỞI";
                 label2.Text = "CHIA SẺ TIẾN ĐỘ";
@@ -648,12 +637,8 @@ namespace UIs
                 tagEditButton.Text = "EDIT";
                 font = new Font("Copperplate Gothic Bold", 10);
 
-                customButton2.Text = "UPDATE PROCESS";
-                customButton1.Text = "DEADLINE";
-                customButton5.Text = "ATTACHMENT";
-                customButton3.Text = "DELETE TASK";
                 label15.Text = "STATUS";
-                label14.Text = "MODIFYING";
+                sharedProcess.Text = "MODIFYING";
                 name.Text = "IMPLEMENTOR";
                 label1.Text = "ASSIGNED BY";
                 label2.Text = "SHARED PROCESS";
@@ -696,12 +681,8 @@ namespace UIs
             venueEditButton.Font = font;
             tagEditButton.Font = font;
 
-            customButton2.Font = fontLarger;
-            customButton1.Font = fontLarger;
-            customButton5.Font = fontLarger;
-            customButton3.Font = fontLarger;
             label15.Font = fontLarger;
-            label14.Font = fontLarger;
+            sharedProcess.Font = fontLarger;
             name.Font = fontLarger;
             label1.Font = fontLarger;
             label2.Font = fontLarger;

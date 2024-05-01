@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_MyTaskList));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
@@ -44,7 +44,6 @@
             panel2 = new Panel();
             createGroupButton = new CustomComponent.CustomButton();
             grandChart = new CustomComponent.CustomButton();
-            customButton5 = new CustomComponent.CustomButton();
             customButton16 = new CustomComponent.CustomButton();
             customButton2 = new CustomComponent.CustomButton();
             currentID = new Label();
@@ -330,7 +329,7 @@
             createGroupButton.ForeColor = Color.White;
             createGroupButton.Image = (Image)resources.GetObject("createGroupButton.Image");
             createGroupButton.ImageAlign = ContentAlignment.MiddleLeft;
-            createGroupButton.Location = new Point(30, 487);
+            createGroupButton.Location = new Point(30, 404);
             createGroupButton.Name = "createGroupButton";
             createGroupButton.Padding = new Padding(12, 0, 0, 0);
             createGroupButton.Size = new Size(253, 59);
@@ -339,6 +338,7 @@
             createGroupButton.TextAlign = ContentAlignment.MiddleRight;
             createGroupButton.TextColor = Color.White;
             createGroupButton.UseVisualStyleBackColor = false;
+            createGroupButton.Click += createGroupButton_Click;
             // 
             // grandChart
             // 
@@ -354,7 +354,7 @@
             grandChart.ForeColor = Color.White;
             grandChart.Image = (Image)resources.GetObject("grandChart.Image");
             grandChart.ImageAlign = ContentAlignment.MiddleLeft;
-            grandChart.Location = new Point(30, 572);
+            grandChart.Location = new Point(30, 489);
             grandChart.Name = "grandChart";
             grandChart.Padding = new Padding(12, 0, 0, 0);
             grandChart.Size = new Size(253, 59);
@@ -363,31 +363,7 @@
             grandChart.TextAlign = ContentAlignment.MiddleRight;
             grandChart.TextColor = Color.White;
             grandChart.UseVisualStyleBackColor = false;
-            // 
-            // customButton5
-            // 
-            customButton5.BackColor = Color.FromArgb(42, 42, 42);
-            customButton5.BackgroundColor = Color.FromArgb(42, 42, 42);
-            customButton5.BorderColor = Color.PaleVioletRed;
-            customButton5.BorderRadius = 28;
-            customButton5.BorderSize = 0;
-            customButton5.Cursor = Cursors.Hand;
-            customButton5.FlatAppearance.BorderSize = 0;
-            customButton5.FlatStyle = FlatStyle.Flat;
-            customButton5.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton5.ForeColor = Color.White;
-            customButton5.Image = (Image)resources.GetObject("customButton5.Image");
-            customButton5.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton5.Location = new Point(30, 404);
-            customButton5.Name = "customButton5";
-            customButton5.Padding = new Padding(12, 0, 0, 0);
-            customButton5.Size = new Size(253, 59);
-            customButton5.TabIndex = 29;
-            customButton5.Text = "OBSERVED TASK";
-            customButton5.TextAlign = ContentAlignment.MiddleRight;
-            customButton5.TextColor = Color.White;
-            customButton5.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton5.UseVisualStyleBackColor = false;
+            grandChart.Click += grandChart_Click;
             // 
             // customButton16
             // 
@@ -526,24 +502,24 @@
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             membersGrid.Cursor = Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(42, 42, 42);
             membersGrid.Location = new Point(355, 258);
@@ -995,7 +971,6 @@
             Controls.Add(resetButton);
             Controls.Add(createGroupButton);
             Controls.Add(grandChart);
-            Controls.Add(customButton5);
             Controls.Add(customButton16);
             Controls.Add(customButton2);
             Controls.Add(currentID);
@@ -1039,7 +1014,6 @@
         private Panel panel2;
         private CustomComponent.CustomButton createGroupButton;
         private CustomComponent.CustomButton grandChart;
-        private CustomComponent.CustomButton customButton5;
         private CustomComponent.CustomButton customButton16;
         private CustomComponent.CustomButton customButton2;
         private Label currentID;
