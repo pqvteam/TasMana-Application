@@ -21,6 +21,7 @@ namespace UIs
     {
         GiaoViecService giaoViecService = new GiaoViecService();
         NhanSuService nhanSuService = new NhanSuService();
+        CanHoService canHoService = new CanHoService();
         TagService tagService = new TagService();
         private string receiverID = "";
         private string venueID = "";
@@ -38,7 +39,7 @@ namespace UIs
         private string assignerID;
         private string oldImplementor;
         private int intime;
-        private string sharedDepartment = "";
+        private string sharedDepartment;
 
         public A_EditTask()
         {
@@ -166,6 +167,12 @@ namespace UIs
             changeLanguage();
             languageSelect.SelectedItem = Session.Instance.Language == "en" ? "ENGLISH" : "VIETNAMESE";
             selectDepartment.Text = sharedDepartment;
+            sharedProcess.Text = sharedDepartment;
+            string? customerID = canHoService.findApartment(venueID).MaCuDan;
+            if (customerID != null)
+            {
+                customerLabel.Text = customerID;
+            }
 
             ////
             taskStatus.SelectedItem = this.status;
@@ -184,7 +191,7 @@ namespace UIs
                 Convert.ToInt32(this.end.ToString().Split('/')[1])
             );
             receiverLabel.Text = this.receiverID;
-            assignerLabel.Text = this.assignerID;
+            assignerLabel.Text = this.assignerID;   
             if (this.isCEO == 1)
             {
                 authorizeLabel.Visible = false;
@@ -252,7 +259,6 @@ namespace UIs
             int tMode = taskMode.Checked ? 1 : 0;
             int tIsCEO = Session.Instance.laCEO ? 1 : 0;
             int intime = 1;
-            string sharedDepartment = "";
 
             bool isSuccess = giaoViecService.updateTask(
                 tDescription,
@@ -274,7 +280,7 @@ namespace UIs
 
             bool isTagAdded = tagService.updateTag(tagNameBox.Text, this.ID, "");
 
-            if ((isSuccess && isTagAdded) || isSuccess)
+            if (isSuccess && isTagAdded)
             {
                 MailService mailService = new MailService();
                 if (tOldStaffName != tStaffName)
@@ -283,6 +289,9 @@ namespace UIs
                 }
                 mailService.sendMail(tSubjectNew, tGiaoViec, tTo);
                 taskName.Text = "";
+                nameBox.Text = "";
+                sharedProcess.Text = "";
+                customerLabel.Text = "";
                 taskDescription.Text = "";
                 taskStart.Value = DateTime.Now;
                 taskEnd.Value = DateTime.Now;
@@ -415,11 +424,6 @@ namespace UIs
                 label4.Text = "kHU VỰC LÀM VIỆC";
                 label5.Text = "THẺ";
                 label15.Text = "TRẠNG THÁI";
-                label14.Text = "SỬA ĐỔI";
-                customButton2.Text = "CẬP NHẬT TIẾN TRÌNH";
-                customButton1.Text = "HẠN CHÓT";
-                customButton5.Text = "ĐÍNH KÈM";
-                customButton3.Text = "XÓA CÔNG VIỆC";
                 fontLarger = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
 
                 cancelButton.Text = "HỦY";
@@ -460,11 +464,6 @@ namespace UIs
                 label4.Font = fontLarger;
                 label5.Font = fontLarger;
                 label15.Font = fontLarger;
-                label14.Font = fontLarger;
-                customButton2.Font = fontLarger;
-                customButton1.Font = fontLarger;
-                customButton5.Font = fontLarger;
-                customButton3.Font = fontLarger;
                 //smaller
                 cancelButton.Font = fontSmaller;
                 saveButton.Font = fontSmaller;
@@ -506,11 +505,6 @@ namespace UIs
                 label4.Text = "WORKPLACE";
                 label5.Text = "TAGS";
                 label15.Text = "STATUS";
-                label14.Text = "MODIFYING";
-                customButton2.Text = "UPDATE PROCESS";
-                customButton1.Text = "DEADLINE";
-                customButton5.Text = "ATTACHMENT";
-                customButton3.Text = "DELETE TASK";
                 fontLarger = new Font("Copperplate Gothic Bold", 12);
 
                 cancelButton.Text = "CANCEL";
@@ -550,11 +544,6 @@ namespace UIs
                 label4.Font = fontLarger;
                 label5.Font = fontLarger;
                 label15.Font = fontLarger;
-                label14.Font = fontLarger;
-                customButton2.Font = fontLarger;
-                customButton1.Font = fontLarger;
-                customButton5.Font = fontLarger;
-                customButton3.Font = fontLarger;
                 //smaller
                 cancelButton.Font = fontSmaller;
                 saveButton.Font = fontSmaller;
@@ -605,11 +594,6 @@ namespace UIs
                 label4.Text = "kHU VỰC LÀM VIỆC";
                 label5.Text = "THẺ";
                 label15.Text = "TRẠNG THÁI";
-                label14.Text = "SỬA ĐỔI";
-                customButton2.Text = "CẬP NHẬT TIẾN TRÌNH";
-                customButton1.Text = "HẠN CHÓT";
-                customButton5.Text = "ĐÍNH KÈM";
-                customButton3.Text = "XÓA CÔNG VIỆC";
                 fontLarger = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
 
                 cancelButton.Text = "HỦY";
@@ -650,11 +634,6 @@ namespace UIs
                 label4.Font = fontLarger;
                 label5.Font = fontLarger;
                 label15.Font = fontLarger;
-                label14.Font = fontLarger;
-                customButton2.Font = fontLarger;
-                customButton1.Font = fontLarger;
-                customButton5.Font = fontLarger;
-                customButton3.Font = fontLarger;
                 //smaller
                 cancelButton.Font = fontSmaller;
                 saveButton.Font = fontSmaller;
@@ -697,11 +676,6 @@ namespace UIs
                 label4.Text = "WORKPLACE";
                 label5.Text = "TAGS";
                 label15.Text = "STATUS";
-                label14.Text = "MODIFYING";
-                customButton2.Text = "UPDATE PROCESS";
-                customButton1.Text = "DEADLINE";
-                customButton5.Text = "ATTACHMENT";
-                customButton3.Text = "DELETE TASK";
                 fontLarger = new Font("Copperplate Gothic Bold", 12);
 
                 cancelButton.Text = "CANCEL";
@@ -741,11 +715,6 @@ namespace UIs
                 label4.Font = fontLarger;
                 label5.Font = fontLarger;
                 label15.Font = fontLarger;
-                label14.Font = fontLarger;
-                customButton2.Font = fontLarger;
-                customButton1.Font = fontLarger;
-                customButton5.Font = fontLarger;
-                customButton3.Font = fontLarger;
                 //smaller
                 cancelButton.Font = fontSmaller;
                 saveButton.Font = fontSmaller;
@@ -754,7 +723,15 @@ namespace UIs
 
         private void ShowDepartmentForm_DepartmentSelected(string department)
         {
+            sharedDepartment = department;
             selectDepartment.Text = department;
+            sharedProcess.Text = department;
+            CanHoService canHoService = new CanHoService();
+            string? customerID = canHoService.findApartment(venueID).MaCuDan;
+            if (customerID != null)
+            {
+                customerLabel.Text = customerID;
+            }
         }
 
         private void departmentMode_CheckedChanged(object sender, EventArgs e)

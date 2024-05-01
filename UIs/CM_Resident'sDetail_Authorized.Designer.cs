@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CM_Resident_sDetail_Authorized));
             panel1 = new Panel();
-            customButton12 = new CustomComponent.CustomButton();
             customButton11 = new CustomComponent.CustomButton();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
@@ -99,7 +98,6 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(13, 13, 13);
-            panel1.Controls.Add(customButton12);
             panel1.Controls.Add(customButton11);
             panel1.Controls.Add(customButton18);
             panel1.Controls.Add(customButton17);
@@ -111,27 +109,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1382, 59);
             panel1.TabIndex = 19;
-            // 
-            // customButton12
-            // 
-            customButton12.BackColor = Color.Black;
-            customButton12.BackgroundColor = Color.Black;
-            customButton12.BorderColor = Color.PaleVioletRed;
-            customButton12.BorderRadius = 28;
-            customButton12.BorderSize = 0;
-            customButton12.FlatAppearance.BorderSize = 0;
-            customButton12.FlatStyle = FlatStyle.Flat;
-            customButton12.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton12.ForeColor = Color.White;
-            customButton12.Image = Properties.Resources.bell_icon;
-            customButton12.Location = new Point(1205, 11);
-            customButton12.Name = "customButton12";
-            customButton12.Size = new Size(51, 40);
-            customButton12.TabIndex = 28;
-            customButton12.TextAlign = ContentAlignment.MiddleRight;
-            customButton12.TextColor = Color.White;
-            customButton12.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton12.UseVisualStyleBackColor = false;
             // 
             // customButton11
             // 
@@ -146,7 +123,7 @@
             customButton11.ForeColor = Color.White;
             customButton11.Image = Properties.Resources.triangle_icon;
             customButton11.ImageAlign = ContentAlignment.MiddleRight;
-            customButton11.Location = new Point(1079, 3);
+            customButton11.Location = new Point(1136, 5);
             customButton11.Name = "customButton11";
             customButton11.Size = new Size(120, 51);
             customButton11.TabIndex = 25;
@@ -1108,7 +1085,6 @@
         #endregion
 
         private Panel panel1;
-        private CustomComponent.CustomButton customButton12;
         private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;

@@ -583,7 +583,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton7.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton6.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton5.Text = "CÔNG VIỆC ĐANG THEO DÕI";
                 customButton17.Text = "TẤT CẢ CÔNG VIỆC";
                 customButton16.Text = "CÔNG VIỆC CỦA TÔI";
                 createGroupButton.Text = "TẠO NHÓM";
@@ -606,7 +605,6 @@ namespace UIs
                 customButton9.Font = font;
                 customButton7.Font = font;
                 customButton6.Font = font;
-                customButton5.Font = font;
                 customButton17.Font = font;
                 customButton16.Font = font;
                 createGroupButton.Font = font;
@@ -631,7 +629,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton7.Text = "ACCOUNT MANAGEMENT";
                 customButton6.Text = "DEPARTMENT RESIDENT";
-                customButton5.Text = "OBSERVED TASK";
                 customButton17.Text = "ALL TASK LIST";
                 customButton16.Text = "MY TASK LIST";
                 createGroupButton.Text = "CREATE GROUP";
@@ -655,7 +652,6 @@ namespace UIs
             customButton9.Font = font;
             customButton7.Font = font;
             customButton6.Font = font;
-            customButton5.Font = font;
             customButton17.Font = font;
             customButton16.Font = font;
             createGroupButton.Font = font;
@@ -673,7 +669,6 @@ namespace UIs
             saButton.Font = font;
             fiButton.Font = font;
             // Special button
-            customButton5.Font = fontLarge;
             customButton17.Font = fontLarge;
             customButton16.Font = fontLarge;
             createGroupButton.Font = fontLarge;
@@ -692,7 +687,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton7.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton6.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton5.Text = "CÔNG VIỆC ĐANG THEO DÕI";
                 customButton17.Text = "TẤT CẢ CÔNG VIỆC";
                 customButton16.Text = "CÔNG VIỆC CỦA TÔI";
                 createGroupButton.Text = "TẠO NHÓM";
@@ -715,7 +709,6 @@ namespace UIs
                 customButton9.Font = font;
                 customButton7.Font = font;
                 customButton6.Font = font;
-                customButton5.Font = font;
                 customButton17.Font = font;
                 customButton16.Font = font;
                 createGroupButton.Font = font;
@@ -741,7 +734,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton7.Text = "ACCOUNT MANAGEMENT";
                 customButton6.Text = "DEPARTMENT RESIDENT";
-                customButton5.Text = "OBSERVED TASK";
                 customButton17.Text = "ALL TASK LIST";
                 customButton16.Text = "MY TASK LIST";
                 createGroupButton.Text = "CREATE GROUP";
@@ -766,7 +758,6 @@ namespace UIs
             customButton9.Font = font;
             customButton7.Font = font;
             customButton6.Font = font;
-            customButton5.Font = font;
             customButton17.Font = font;
             customButton16.Font = font;
             createGroupButton.Font = font;
@@ -784,7 +775,6 @@ namespace UIs
             saButton.Font = font;
             fiButton.Font = font;
             // Special button
-            customButton5.Font = fontLarge;
             customButton17.Font = fontLarge;
             customButton16.Font = fontLarge;
             createGroupButton.Font = fontLarge;
@@ -829,7 +819,7 @@ namespace UIs
 
             foreach (Form form in Application.OpenForms)
             {
-                if (form != this) 
+                if (form != this)
                 {
                     formsToClose.Add(form);
                 }
@@ -842,6 +832,12 @@ namespace UIs
 
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
+        }
+
+        private void grandChart_Click(object sender, EventArgs e)
+        {
+            A_Statistic a_Statistic = new A_Statistic();
+            a_Statistic.ShowDialog();
         }
     }
 }
