@@ -85,12 +85,12 @@ namespace UIs
                 bool isSuccess = ceoService.appointManager(staffID, appointerID);
                 if (isSuccess)
                 {
-                    MessageBox.Show("Appoint manager successfully");
+                    showToast("SUCCESS", "Appoint manager successfully");
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Something wrong!");
+                    showToast("ERROR", "Something wrong!");
                 }
             }
             else if (selectedRole == "Leader")
@@ -116,16 +116,16 @@ namespace UIs
                             bool isSuccess = nhomService.appointLeader(staffID, appointerID);
                             if (isSuccess)
                             {
-                                MessageBox.Show("Appoint leader successfully");
+                                showToast("SUCCESS", "Appoint leader successfully");
                             }
                             else
                             {
-                                MessageBox.Show("Appoint leader failure");
+                                showToast("ERROR", "Appoint leader failure");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Depose leader failure");
+                            showToast("ERROR", "Depose leader failure");
                         }
                     };
                     confirmForm.ShowDialog();
@@ -182,6 +182,11 @@ namespace UIs
             createButton.Font = fontSmaller;
             cancelButton.Font = fontSmaller;
             confirmButton.Font = fontSmaller;
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
     }
 }

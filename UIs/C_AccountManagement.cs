@@ -177,17 +177,19 @@ namespace UIs
                                 bool isSuccess = ceoService.deposeManager(memberId, CEOID);
                                 if (isSuccess)
                                 {
-                                    MessageBox.Show("Depose manager successfully");
+                                    showToast("SUCCESS", "Depose manager successfully");
                                     PerformSearch();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Depose manager failure");
+                                    showToast("ERROR", "Depose manager failure");
+
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("You don't have right to depose");
+                                showToast("ERROR", "You don't have right to depose");
+
                             }
                         };
                         confirmForm.ShowDialog();
@@ -203,17 +205,17 @@ namespace UIs
                                 bool isSuccess = ceoService.appointManager(memberId, CEOID);
                                 if (isSuccess)
                                 {
-                                    MessageBox.Show("Appoint manager successfully");
+                                    showToast("SUCCESS", "Appoint manager successfully");
                                     PerformSearch();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Appoint manager failure");
+                                    showToast("ERROR", "Appoint manager failure");
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("You don't have right to appoint");
+                                showToast("ERROR", "You don't have right to appoint");
                             }
 
                         };
@@ -230,7 +232,7 @@ namespace UIs
                 }
                 else
                 {
-                    MessageBox.Show("You don't have right to appoint");
+                    showToast("ERROR", "You don't have right to appoint");
                 }
 
                 PerformSearch();
@@ -250,13 +252,14 @@ namespace UIs
                                 bool isSuccess = ceoService.firedStaff(memberId, CEOID);
                                 if (isSuccess)
                                 {
-                                    MessageBox.Show("Depose this account successfully");
+                                    showToast("SUCCESS", "You don't have right to deactive");
                                     reload();
                                     PerformSearch();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Depose this account failure");
+                                    showToast("ERROR", "Deactive account failure");
+
                                 }
                             }
                             else if (Session.Instance.UserName.Contains(department) && isManager == false && Session.Instance.laQuanLi == true)
@@ -264,25 +267,27 @@ namespace UIs
                                 bool isSuccess = quanLyService.firedStaff(memberId, Session.Instance.UserName);
                                 if (isSuccess)
                                 {
-                                    MessageBox.Show("Depose this account successfully");
+                                    showToast("SUCCESS", "Deactive this account successfully");
                                     reload();
                                     PerformSearch();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Depose this account failure");
+                                    showToast("ERROR", "Deactive this account failure");
+
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("You don't have right to depose");
+                                showToast("ERROR", "Deactive account failure");
                             }
                         };
                         confirmForm.ShowDialog();
                     }
                     else
                     {
-                        MessageBox.Show("This account has been deactive");
+                        showToast("ERROR", "This account has been deactive");
+
                     }
                 }
             }
@@ -640,14 +645,16 @@ namespace UIs
                         }
                         else
                         {
-                            MessageBox.Show("Không tìm thấy kết quả nào.");
+                            showToast("ERROR", "No result is found");
+
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                showToast("ERROR", "An Error Occur");
+
             }
             finally
             {
@@ -776,7 +783,8 @@ namespace UIs
                         }
                         else
                         {
-                            MessageBox.Show("Không tìm thấy kết quả nào.");
+                            showToast("ERROR", "No result is found");
+
                         }
                     }
                 }
@@ -790,7 +798,8 @@ namespace UIs
                     writer.WriteLine($"Stack trace: {e.StackTrace}");
                     writer.WriteLine("----------------------------------------------");
                 }
-                MessageBox.Show(e.Message);
+                showToast("ERROR", "An Error Occur");
+
             }
             finally
             {
@@ -1048,6 +1057,11 @@ namespace UIs
         private void customButton17_Click(object sender, EventArgs e)
         {
             reload();
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
     }
 }

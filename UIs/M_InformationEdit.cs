@@ -71,7 +71,7 @@ namespace UIs
             bool isSuccess = nhanSuService.updateInformation(managerID, UserName.Text, Number.Text, Birth.Value.ToString("yyyyMMdd"), CID.Text, Email.Text, Add.Text, Gender.Text);
             if (isSuccess)
             {
-                MessageBox.Show("Successfully");
+                showToast("SUCCESS", "Successfully");
                 this.Close();
             }
         }
@@ -327,5 +327,11 @@ namespace UIs
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
         }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
+        }
     }
+   
 }

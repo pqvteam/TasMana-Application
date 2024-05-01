@@ -474,6 +474,30 @@
             customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton11.UseVisualStyleBackColor = false;
             // 
+            // customButton1
+            // 
+            customButton1.BackColor = Color.Black;
+            customButton1.BackgroundColor = Color.Black;
+            customButton1.BorderColor = Color.PaleVioletRed;
+            customButton1.BorderRadius = 28;
+            customButton1.BorderSize = 0;
+            customButton1.Cursor = Cursors.Hand;
+            customButton1.FlatAppearance.BorderSize = 0;
+            customButton1.FlatStyle = FlatStyle.Flat;
+            customButton1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton1.ForeColor = Color.White;
+            customButton1.Image = (Image)resources.GetObject("customButton1.Image");
+            customButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            customButton1.Location = new Point(908, 2);
+            customButton1.Name = "customButton1";
+            customButton1.Size = new Size(156, 51);
+            customButton1.TabIndex = 25;
+            customButton1.Text = "RESIDENT SERVICE";
+            customButton1.TextAlign = ContentAlignment.MiddleRight;
+            customButton1.TextColor = Color.White;
+            customButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            customButton1.UseVisualStyleBackColor = false;
+            // 
             // customButton9
             // 
             customButton9.BackColor = Color.Black;
