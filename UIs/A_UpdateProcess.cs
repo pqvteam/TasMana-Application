@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Repositories.Entities;
 using Services;
+using UIs.CustomComponent;
 
 namespace UIs
 {
@@ -32,6 +33,8 @@ namespace UIs
         private void A_UpdateProcess_Load(object sender, EventArgs e)
         {
             statusBox.Text = taskStatus;
+            changelanguage();
+
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -112,6 +115,55 @@ namespace UIs
         {
             ToastForm show = new ToastForm(type, message);
             show.Show();
+        }
+
+        private void changelanguage()
+        {
+            Font font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+            Font fontSmaller = new Font("Copperplate Gothic Bold", 10);
+            if (Session.Instance.Language == "vi")
+            {
+                label1.Text = "CẬP NHẬT TIẾN ĐỘ";
+                label1.Font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
+
+                idLabel.Text = "TRẠNG THÁI";
+                label3.Text = "NGÀY";
+                cancelButton.Text = "HỦY";
+                confirmButton.Text = "LƯU";
+                fontSmaller = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+
+                customButton2.Text = "ĐÃ HOÀN THÀNH";
+                customButton3.Text = "CHƯA THỰC HIỆN/CHƯA BẮT ĐẦU";
+                customButton5.Text = "ĐANG TIẾN HÀNH";
+                customButton6.Text = "ĐỔI LỊCH KHÁCH HÀNG";
+                font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+            }
+            else
+            {
+                label1.Text = "UPDATE PROCESS";
+                label1.Font = new Font("Copperplate Gothic Bold", 14);
+
+                idLabel.Text = "STATUS";
+                label3.Text = "DATE";
+                cancelButton.Text = "CANCEL";
+                confirmButton.Text = "SAVE";
+                fontSmaller = new Font("Copperplate Gothic Bold", 10);
+
+                customButton2.Text = "COMPLETED";
+                customButton3.Text = "UNEXECUTED/NOT YET STARTED";
+                customButton5.Text = "PROCESSING";
+                customButton6.Text = "CUSTOMER RESCHEDULE";
+                font = new Font("Copperplate Gothic Bold", 12);
+            }
+            idLabel.Font = fontSmaller;
+            label3.Font = fontSmaller;
+            cancelButton.Font = fontSmaller;
+            confirmButton.Font = fontSmaller;
+
+            customButton2.Font = font;
+            customButton3.Font = font;
+            customButton5.Font = font;
+            customButton6.Font = font;
         }
     }
 

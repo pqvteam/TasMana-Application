@@ -45,8 +45,8 @@ namespace UIs
 
         private void CM_Resident_sDetail_Tenant_StaffOf_Load(object sender, EventArgs e)
         {
-            Session.Instance.Language = "vi";
             changelanguage();
+            languageSelect.SelectedItem = Session.Instance.Language == "en" ? "ENGLISH" : "VIETNAMESE";
         }
 
         private void changelanguage()
