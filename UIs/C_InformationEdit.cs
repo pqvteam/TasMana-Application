@@ -80,7 +80,7 @@ namespace UIs
             bool isSuccess = nhanSuService.updateInformation(managerID, UserName.Text, Number.Text, Birth.Value.ToString("yyyyMMdd"), CID.Text, Email.Text, Add.Text, Gender.Text);
             if (isSuccess)
             {
-                MessageBox.Show("Successfully");
+                showToast("SUCCESS", "Successfully");
                 this.Close();
             }
         }
@@ -276,6 +276,11 @@ namespace UIs
         {
             CM_Resident_sDetail cM = new CM_Resident_sDetail();
             cM.ShowDialog();
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
     }
 }

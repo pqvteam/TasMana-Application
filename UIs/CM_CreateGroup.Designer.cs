@@ -51,7 +51,6 @@
             customButton22 = new CustomComponent.CustomButton();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
-            customButton12 = new CustomComponent.CustomButton();
             customButton11 = new CustomComponent.CustomButton();
             customButton1 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
@@ -323,7 +322,6 @@
             headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
-            headerPanel.Controls.Add(customButton12);
             headerPanel.Controls.Add(customButton11);
             headerPanel.Controls.Add(customButton1);
             headerPanel.Controls.Add(customButton9);
@@ -453,6 +451,9 @@
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
             customButton17.Click += customButton17_Click;
+            // 
+            // customButton11
+            // 
             customButton11.BackColor = Color.Black;
             customButton11.BackgroundColor = Color.Black;
             customButton11.BorderColor = Color.PaleVioletRed;
@@ -474,6 +475,9 @@
             customButton11.TextColor = Color.White;
             customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton11.UseVisualStyleBackColor = false;
+            // 
+            // customButton1
+            // 
             customButton1.BackColor = Color.Black;
             customButton1.BackgroundColor = Color.Black;
             customButton1.BorderColor = Color.PaleVioletRed;
@@ -945,7 +949,6 @@
         private Panel headerPanel;
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
-        private CustomComponent.CustomButton customButton12;
         private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton customButton1;
         private CustomComponent.CustomButton customButton9;
