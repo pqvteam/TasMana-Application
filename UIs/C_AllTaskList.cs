@@ -583,7 +583,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton7.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton6.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
                 customButton5.Text = "CÔNG VIỆC ĐANG THEO DÕI";
                 customButton17.Text = "TẤT CẢ CÔNG VIỆC";
                 customButton16.Text = "CÔNG VIỆC CỦA TÔI";
@@ -607,7 +606,6 @@ namespace UIs
                 customButton9.Font = font;
                 customButton7.Font = font;
                 customButton6.Font = font;
-                customButton10.Font = font;
                 customButton5.Font = font;
                 customButton17.Font = font;
                 customButton16.Font = font;
@@ -633,7 +631,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton7.Text = "ACCOUNT MANAGEMENT";
                 customButton6.Text = "DEPARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 customButton5.Text = "OBSERVED TASK";
                 customButton17.Text = "ALL TASK LIST";
                 customButton16.Text = "MY TASK LIST";
@@ -658,7 +655,6 @@ namespace UIs
             customButton9.Font = font;
             customButton7.Font = font;
             customButton6.Font = font;
-            customButton10.Font = font;
             customButton5.Font = font;
             customButton17.Font = font;
             customButton16.Font = font;
@@ -696,7 +692,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton7.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton6.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
                 customButton5.Text = "CÔNG VIỆC ĐANG THEO DÕI";
                 customButton17.Text = "TẤT CẢ CÔNG VIỆC";
                 customButton16.Text = "CÔNG VIỆC CỦA TÔI";
@@ -720,7 +715,6 @@ namespace UIs
                 customButton9.Font = font;
                 customButton7.Font = font;
                 customButton6.Font = font;
-                customButton10.Font = font;
                 customButton5.Font = font;
                 customButton17.Font = font;
                 customButton16.Font = font;
@@ -747,7 +741,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton7.Text = "ACCOUNT MANAGEMENT";
                 customButton6.Text = "DEPARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 customButton5.Text = "OBSERVED TASK";
                 customButton17.Text = "ALL TASK LIST";
                 customButton16.Text = "MY TASK LIST";
@@ -773,7 +766,6 @@ namespace UIs
             customButton9.Font = font;
             customButton7.Font = font;
             customButton6.Font = font;
-            customButton10.Font = font;
             customButton5.Font = font;
             customButton17.Font = font;
             customButton16.Font = font;

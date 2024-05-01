@@ -421,7 +421,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
                 label34.Text = "THÔNG TIN";
                 label33.Text = "ĐỔI MẬT KHẨU";
                 label32.Text = "ĐĂNG XUẤT";
@@ -474,7 +473,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton17.Text = "ACCOUNTING MANAGEMENT";
                 customButton18.Text = "APARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 label34.Text = "INFORMATION";
                 label33.Text = "CHANGE PASSWORD";
                 label32.Text = "SIGN OUT";
@@ -524,7 +522,6 @@ namespace UIs
             customButton9.Font = font;
             customButton17.Font = font;
             customButton18.Font = font;
-            customButton10.Font = font;
             label34.Font = font;
             label33.Font = font;
             label32.Font = font;
@@ -577,7 +574,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
                 label34.Text = "THÔNG TIN";
                 label33.Text = "ĐỔI MẬT KHẨU";
                 label32.Text = "ĐĂNG XUẤT";
@@ -631,7 +627,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton17.Text = "ACCOUNTING MANAGEMENT";
                 customButton18.Text = "APARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 label34.Text = "INFORMATION";
                 label33.Text = "CHANGE PASSWORD";
                 label32.Text = "SIGN OUT";
@@ -681,7 +676,6 @@ namespace UIs
             customButton9.Font = font;
             customButton17.Font = font;
             customButton18.Font = font;
-            customButton10.Font = font;
             label34.Font = font;
             label33.Font = font;
             label32.Font = font;
