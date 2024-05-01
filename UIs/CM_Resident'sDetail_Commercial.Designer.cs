@@ -1088,6 +1088,7 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(panel1);
             Name = "CM_Resident_sDetail_Commercial";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CM_Resident_sDetail_Commercial";
             Load += CM_Resident_sDetail_Commercial_Load;
             panel2.ResumeLayout(false);

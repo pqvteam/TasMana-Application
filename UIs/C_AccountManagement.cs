@@ -79,7 +79,6 @@ namespace UIs
 
         private void reload()
         {
-            DatabaseConnection.Instance.OpenConnection();
             List<NhanSu> members = nhanSuService.getAllMembers();
             membersGrid.Rows.Clear();
 
@@ -87,12 +86,12 @@ namespace UIs
             {
                 string memberType = "";
                 string role = "Staff";
-                if (Session.Instance.laCEO)
+                if (member.MaThanhVien.StartsWith("GD"))
                 {
                     role = "CEO";
                     memberType = "CEO";
                 }
-                else if (Session.Instance.laQuanLi)
+                else if (member.LaQuanLi)
                 {
                     role = "Manager";
                     memberType = "Manager";

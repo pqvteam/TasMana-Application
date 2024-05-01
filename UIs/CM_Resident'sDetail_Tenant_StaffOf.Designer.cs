@@ -1072,6 +1072,7 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(panel1);
             Name = "CM_Resident_sDetail_Tenant_StaffOf";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CM_Resident_sDetail_Tenant_StaffOf";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
