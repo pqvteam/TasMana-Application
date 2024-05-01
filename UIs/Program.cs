@@ -28,6 +28,7 @@ static class Program
 =======
         // Application.Run(new A_EditTask());
         // Application.Run(new A_ShowDepartment());
+        // Application.Run(new A_Statistic());
     }
 }
 >>>>>>> fa274daeb82a1a0e0f013863fbd5e1cb4684ba3f

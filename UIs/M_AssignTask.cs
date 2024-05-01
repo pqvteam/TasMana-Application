@@ -231,6 +231,12 @@ namespace UIs
         {
             selectDepartment.Text = department;
             sharedDepartment = department;
+            CanHoService canHoService = new CanHoService();
+            string? customerID = canHoService.findApartment(venueID).MaCuDan;
+            if (customerID != null)
+            {
+                customerLabel.Text = customerID;
+            }
         }
 
         private void label13_Click(object sender, EventArgs e) { }
@@ -309,7 +315,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
                 label29.Text = "THÔNG TIN";
                 label28.Text = "ĐỔI MẬT KHẨU";
                 label27.Text = "ĐĂNG XUẤT";
@@ -333,13 +338,7 @@ namespace UIs
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
 
 
-                customButton2.Text = "CẬP NHẬT TIẾN ĐỘ";
-                customButton1.Text = "HẠN CHÓT";
-                customButton5.Text = "ĐÍNH KÈM";
-                customButton4.Text = "PHÂN QUYỀN";
-                customButton3.Text = "XÓA CÔNG VIỆC";
                 label15.Text = "TRẠNG THÁI";
-                label14.Text = "SỬA ĐỔI";
                 name.Text = "NGƯỜI THỰC HIỆN";
                 label1.Text = "ĐƯỢC GIAO BỞI";
                 label2.Text = "CHIA SẺ TIẾN ĐỘ";
@@ -364,7 +363,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton17.Text = "ACCOUNTING MANAGEMENT";
                 customButton18.Text = "APARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 label29.Text = "INFORMATION";
                 label28.Text = "CHANGE PASSWORD";
                 label27.Text = "SIGN OUT";
@@ -387,13 +385,7 @@ namespace UIs
                 label13.Text = "AUTHORIZE BY";
                 font = new Font("Copperplate Gothic Bold", 10);
 
-                customButton2.Text = "UPDATE PROCESS";
-                customButton1.Text = "DEADLINE";
-                customButton5.Text = "ATTACHMENT";
-                customButton4.Text = "DECENTRALIZATION";
-                customButton3.Text = "DELETE TASK";
                 label15.Text = "STATUS";
-                label14.Text = "MODIFYING";
                 name.Text = "IMPLEMENTOR";
                 label1.Text = "ASSIGNED BY";
                 label2.Text = "SHARED PROCESS";
@@ -416,7 +408,6 @@ namespace UIs
             customButton9.Font = font;
             customButton17.Font = font;
             customButton18.Font = font;
-            customButton10.Font = font;
             label29.Font = font;
             label28.Font = font;
             label27.Font = font;
@@ -438,13 +429,7 @@ namespace UIs
             tagEditButton.Font = font;
             label13.Font = font;
 
-            customButton2.Font = fontLarger;
-            customButton1.Font = fontLarger;
-            customButton5.Font = fontLarger;
-            customButton4.Font = fontLarger;
-            customButton3.Font = fontLarger;
             label15.Font = fontLarger;
-            label14.Font = fontLarger;
             name.Font = fontLarger;
             label1.Font = fontLarger;
             label2.Font = fontLarger;
@@ -471,7 +456,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
                 label29.Text = "THÔNG TIN";
                 label28.Text = "ĐỔI MẬT KHẨU";
                 label27.Text = "ĐĂNG XUẤT";
@@ -494,14 +478,7 @@ namespace UIs
                 label13.Text = "ỦY QUYỀN BỞI";
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
 
-
-                customButton2.Text = "CẬP NHẬT TIẾN ĐỘ";
-                customButton1.Text = "HẠN CHÓT";
-                customButton5.Text = "ĐÍNH KÈM";
-                customButton4.Text = "PHÂN QUYỀN";
-                customButton3.Text = "XÓA CÔNG VIỆC";
                 label15.Text = "TRẠNG THÁI";
-                label14.Text = "SỬA ĐỔI";
                 name.Text = "NGƯỜI THỰC HIỆN";
                 label1.Text = "ĐƯỢC GIAO BỞI";
                 label2.Text = "CHIA SẺ TIẾN ĐỘ";
@@ -527,7 +504,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton17.Text = "ACCOUNTING MANAGEMENT";
                 customButton18.Text = "APARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 label29.Text = "INFORMATION";
                 label28.Text = "CHANGE PASSWORD";
                 label27.Text = "SIGN OUT";
@@ -550,13 +526,7 @@ namespace UIs
                 label13.Text = "AUTHORIZE BY";
                 font = new Font("Copperplate Gothic Bold", 10);
 
-                customButton2.Text = "UPDATE PROCESS";
-                customButton1.Text = "DEADLINE";
-                customButton5.Text = "ATTACHMENT";
-                customButton4.Text = "DECENTRALIZATION";
-                customButton3.Text = "DELETE TASK";
                 label15.Text = "STATUS";
-                label14.Text = "MODIFYING";
                 name.Text = "IMPLEMENTOR";
                 label1.Text = "ASSIGNED BY";
                 label2.Text = "SHARED PROCESS";
@@ -579,7 +549,6 @@ namespace UIs
             customButton9.Font = font;
             customButton17.Font = font;
             customButton18.Font = font;
-            customButton10.Font = font;
             label29.Font = font;
             label28.Font = font;
             label27.Font = font;
@@ -601,13 +570,7 @@ namespace UIs
             tagEditButton.Font = font;
             label13.Font = font;
 
-            customButton2.Font = fontLarger;
-            customButton1.Font = fontLarger;
-            customButton5.Font = fontLarger;
-            customButton4.Font = fontLarger;
-            customButton3.Font = fontLarger;
             label15.Font = fontLarger;
-            label14.Font = fontLarger;
             name.Font = fontLarger;
             label1.Font = fontLarger;
             label2.Font = fontLarger;
@@ -629,6 +592,7 @@ namespace UIs
                 showDepartmentForm.ShowDialog();
             }
         }
+
         private void customButton17_Click(object sender, EventArgs e)
         {
             C_AccountManagement c_AccountManagement = new C_AccountManagement();

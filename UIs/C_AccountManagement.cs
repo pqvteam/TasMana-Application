@@ -79,7 +79,6 @@ namespace UIs
 
         private void reload()
         {
-            DatabaseConnection.Instance.OpenConnection();
             List<NhanSu> members = nhanSuService.getAllMembers();
             membersGrid.Rows.Clear();
 
@@ -87,12 +86,12 @@ namespace UIs
             {
                 string memberType = "";
                 string role = "Staff";
-                if (Session.Instance.laCEO)
+                if (member.MaThanhVien.StartsWith("GD"))
                 {
                     role = "CEO";
                     memberType = "CEO";
                 }
-                else if (Session.Instance.laQuanLi)
+                else if (member.LaQuanLi)
                 {
                     role = "Manager";
                     memberType = "Manager";
@@ -908,7 +907,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton7.Text = "CÔNG VIỆC";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 label1.Text = "TỪ KHÓA";
                 label2.Text = "PHÒNG BAN";
@@ -925,7 +923,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton7.Text = "WORK";
                 customButton18.Text = "APARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 customButton17.Text = "ACCOUNT MANAGEMENT";
                 label1.Text = "SEARCH";
                 label2.Text = "DEPARTMENT";
@@ -938,7 +935,6 @@ namespace UIs
             customButton9.Font = font;
             customButton7.Font = font;
             customButton18.Font = font;
-            customButton10.Font = font;
             customButton17.Font = font;
             customButton3.Font = font;
             customButton19.Font = font;
@@ -958,7 +954,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton7.Text = "CÔNG VIỆC";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 label1.Text = "TỪ KHÓA";
                 label2.Text = "PHÒNG BAN";
@@ -976,7 +971,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton7.Text = "WORK";
                 customButton18.Text = "APARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 customButton17.Text = "ACCOUNT MANAGEMENT";
                 label1.Text = "SEARCH";
                 label2.Text = "DEPARTMENT";
@@ -989,7 +983,6 @@ namespace UIs
             customButton9.Font = font;
             customButton7.Font = font;
             customButton18.Font = font;
-            customButton10.Font = font;
             customButton17.Font = font;
             button3.Font = font;
             customButton19.Font = font;

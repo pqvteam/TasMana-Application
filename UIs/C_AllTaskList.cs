@@ -583,8 +583,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton7.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton6.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
-                customButton5.Text = "CÔNG VIỆC ĐANG THEO DÕI";
                 customButton17.Text = "TẤT CẢ CÔNG VIỆC";
                 customButton16.Text = "CÔNG VIỆC CỦA TÔI";
                 createGroupButton.Text = "TẠO NHÓM";
@@ -607,8 +605,6 @@ namespace UIs
                 customButton9.Font = font;
                 customButton7.Font = font;
                 customButton6.Font = font;
-                customButton10.Font = font;
-                customButton5.Font = font;
                 customButton17.Font = font;
                 customButton16.Font = font;
                 createGroupButton.Font = font;
@@ -633,8 +629,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton7.Text = "ACCOUNT MANAGEMENT";
                 customButton6.Text = "DEPARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
-                customButton5.Text = "OBSERVED TASK";
                 customButton17.Text = "ALL TASK LIST";
                 customButton16.Text = "MY TASK LIST";
                 createGroupButton.Text = "CREATE GROUP";
@@ -658,8 +652,6 @@ namespace UIs
             customButton9.Font = font;
             customButton7.Font = font;
             customButton6.Font = font;
-            customButton10.Font = font;
-            customButton5.Font = font;
             customButton17.Font = font;
             customButton16.Font = font;
             createGroupButton.Font = font;
@@ -677,7 +669,6 @@ namespace UIs
             saButton.Font = font;
             fiButton.Font = font;
             // Special button
-            customButton5.Font = fontLarge;
             customButton17.Font = fontLarge;
             customButton16.Font = fontLarge;
             createGroupButton.Font = fontLarge;
@@ -696,8 +687,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton7.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton6.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
-                customButton5.Text = "CÔNG VIỆC ĐANG THEO DÕI";
                 customButton17.Text = "TẤT CẢ CÔNG VIỆC";
                 customButton16.Text = "CÔNG VIỆC CỦA TÔI";
                 createGroupButton.Text = "TẠO NHÓM";
@@ -720,8 +709,6 @@ namespace UIs
                 customButton9.Font = font;
                 customButton7.Font = font;
                 customButton6.Font = font;
-                customButton10.Font = font;
-                customButton5.Font = font;
                 customButton17.Font = font;
                 customButton16.Font = font;
                 createGroupButton.Font = font;
@@ -747,8 +734,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton7.Text = "ACCOUNT MANAGEMENT";
                 customButton6.Text = "DEPARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
-                customButton5.Text = "OBSERVED TASK";
                 customButton17.Text = "ALL TASK LIST";
                 customButton16.Text = "MY TASK LIST";
                 createGroupButton.Text = "CREATE GROUP";
@@ -773,8 +758,6 @@ namespace UIs
             customButton9.Font = font;
             customButton7.Font = font;
             customButton6.Font = font;
-            customButton10.Font = font;
-            customButton5.Font = font;
             customButton17.Font = font;
             customButton16.Font = font;
             createGroupButton.Font = font;
@@ -792,7 +775,6 @@ namespace UIs
             saButton.Font = font;
             fiButton.Font = font;
             // Special button
-            customButton5.Font = fontLarge;
             customButton17.Font = fontLarge;
             customButton16.Font = fontLarge;
             createGroupButton.Font = fontLarge;
@@ -800,9 +782,35 @@ namespace UIs
 
         }
 
+        private void customButton13_Click(object sender, EventArgs e)
+        {
+            reload();
+        }
+
+        private void customButton6_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail cM = new CM_Resident_sDetail();
+            cM.ShowDialog();
+        }
+
         private void label11_Click(object sender, EventArgs e)
         {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
 
+        private void label9_Click(object sender, EventArgs e)
+        {
+            G_ForgotPassword g_ForgotPassword = new G_ForgotPassword();
+            g_ForgotPassword.ShowDialog();
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -811,7 +819,7 @@ namespace UIs
 
             foreach (Form form in Application.OpenForms)
             {
-                if (form != this) 
+                if (form != this)
                 {
                     formsToClose.Add(form);
                 }
@@ -824,6 +832,22 @@ namespace UIs
 
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
+        }
+
+        private void grandChart_Click(object sender, EventArgs e)
+        {
+            A_Statistic a_Statistic = new A_Statistic();
+            a_Statistic.ShowDialog();
+        }
+
+        private void membersGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != membersGrid.Columns["lnkColumn"].Index && e.RowIndex >= 0)
+            {
+                string id = membersGrid.Rows[e.RowIndex].Cells["MaGiaoViec"].Value.ToString();
+                A_TaskDetail a_TaskDetail = new A_TaskDetail(id);
+                a_TaskDetail.ShowDialog();
+            }
         }
     }
 }

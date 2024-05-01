@@ -21,6 +21,7 @@ namespace UIs
     {
         GiaoViecService giaoViecService = new GiaoViecService();
         NhanSuService nhanSuService = new NhanSuService();
+        CanHoService canHoService = new CanHoService();
         TagService tagService = new TagService();
         private string receiverID = "";
         private string venueID = "";
@@ -38,7 +39,7 @@ namespace UIs
         private string assignerID;
         private string oldImplementor;
         private int intime;
-        private string sharedDepartment = "";
+        private string sharedDepartment;
 
         public A_EditTask()
         {
@@ -166,7 +167,13 @@ namespace UIs
             changeLanguage();
             languageSelect.SelectedItem = Session.Instance.Language == "en" ? "ENGLISH" : "VIETNAMESE";
             selectDepartment.Text = sharedDepartment;
-            
+            sharedProcess.Text = sharedDepartment;
+            string? customerID = canHoService.findApartment(venueID).MaCuDan;
+            if (customerID != null)
+            {
+                customerLabel.Text = customerID;
+            }
+
             ////
             taskStatus.SelectedItem = this.status;
             taskPriority.SelectedIndex = 0;
@@ -184,7 +191,7 @@ namespace UIs
                 Convert.ToInt32(this.end.ToString().Split('/')[1])
             );
             receiverLabel.Text = this.receiverID;
-            assignerLabel.Text = this.assignerID;
+            assignerLabel.Text = this.assignerID;   
             if (this.isCEO == 1)
             {
                 authorizeLabel.Visible = false;
@@ -252,7 +259,6 @@ namespace UIs
             int tMode = taskMode.Checked ? 1 : 0;
             int tIsCEO = Session.Instance.laCEO ? 1 : 0;
             int intime = 1;
-            string sharedDepartment = "";
 
             bool isSuccess = giaoViecService.updateTask(
                 tDescription,
@@ -274,7 +280,7 @@ namespace UIs
 
             bool isTagAdded = tagService.updateTag(tagNameBox.Text, this.ID, "");
 
-            if ((isSuccess && isTagAdded) || isSuccess)
+            if (isSuccess && isTagAdded)
             {
                 MailService mailService = new MailService();
                 if (tOldStaffName != tStaffName)
@@ -283,6 +289,9 @@ namespace UIs
                 }
                 mailService.sendMail(tSubjectNew, tGiaoViec, tTo);
                 taskName.Text = "";
+                nameBox.Text = "";
+                sharedProcess.Text = "";
+                customerLabel.Text = "";
                 taskDescription.Text = "";
                 taskStart.Value = DateTime.Now;
                 taskEnd.Value = DateTime.Now;
@@ -296,7 +305,7 @@ namespace UIs
                 departmentMode.Checked = false;
                 selectDepartment.Text = "";
                 MessageBox.Show("Updated task successfully!");
-            } 
+            }
             else
             {
                 MessageBox.Show(
@@ -410,11 +419,6 @@ namespace UIs
                 label4.Text = "kHU VỰC LÀM VIỆC";
                 label5.Text = "THẺ";
                 label15.Text = "TRẠNG THÁI";
-                label14.Text = "SỬA ĐỔI";
-                customButton2.Text = "CẬP NHẬT TIẾN TRÌNH";
-                customButton1.Text = "HẠN CHÓT";
-                customButton5.Text = "ĐÍNH KÈM";
-                customButton3.Text = "XÓA CÔNG VIỆC";
                 fontLarger = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
 
                 cancelButton.Text = "HỦY";
@@ -455,11 +459,6 @@ namespace UIs
                 label4.Font = fontLarger;
                 label5.Font = fontLarger;
                 label15.Font = fontLarger;
-                label14.Font = fontLarger;
-                customButton2.Font = fontLarger;
-                customButton1.Font = fontLarger;
-                customButton5.Font = fontLarger;
-                customButton3.Font = fontLarger;
                 //smaller
                 cancelButton.Font = fontSmaller;
                 saveButton.Font = fontSmaller;
@@ -501,11 +500,6 @@ namespace UIs
                 label4.Text = "WORKPLACE";
                 label5.Text = "TAGS";
                 label15.Text = "STATUS";
-                label14.Text = "MODIFYING";
-                customButton2.Text = "UPDATE PROCESS";
-                customButton1.Text = "DEADLINE";
-                customButton5.Text = "ATTACHMENT";
-                customButton3.Text = "DELETE TASK";
                 fontLarger = new Font("Copperplate Gothic Bold", 12);
 
                 cancelButton.Text = "CANCEL";
@@ -545,11 +539,6 @@ namespace UIs
                 label4.Font = fontLarger;
                 label5.Font = fontLarger;
                 label15.Font = fontLarger;
-                label14.Font = fontLarger;
-                customButton2.Font = fontLarger;
-                customButton1.Font = fontLarger;
-                customButton5.Font = fontLarger;
-                customButton3.Font = fontLarger;
                 //smaller
                 cancelButton.Font = fontSmaller;
                 saveButton.Font = fontSmaller;
@@ -600,11 +589,6 @@ namespace UIs
                 label4.Text = "kHU VỰC LÀM VIỆC";
                 label5.Text = "THẺ";
                 label15.Text = "TRẠNG THÁI";
-                label14.Text = "SỬA ĐỔI";
-                customButton2.Text = "CẬP NHẬT TIẾN TRÌNH";
-                customButton1.Text = "HẠN CHÓT";
-                customButton5.Text = "ĐÍNH KÈM";
-                customButton3.Text = "XÓA CÔNG VIỆC";
                 fontLarger = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
 
                 cancelButton.Text = "HỦY";
@@ -645,11 +629,6 @@ namespace UIs
                 label4.Font = fontLarger;
                 label5.Font = fontLarger;
                 label15.Font = fontLarger;
-                label14.Font = fontLarger;
-                customButton2.Font = fontLarger;
-                customButton1.Font = fontLarger;
-                customButton5.Font = fontLarger;
-                customButton3.Font = fontLarger;
                 //smaller
                 cancelButton.Font = fontSmaller;
                 saveButton.Font = fontSmaller;
@@ -692,11 +671,6 @@ namespace UIs
                 label4.Text = "WORKPLACE";
                 label5.Text = "TAGS";
                 label15.Text = "STATUS";
-                label14.Text = "MODIFYING";
-                customButton2.Text = "UPDATE PROCESS";
-                customButton1.Text = "DEADLINE";
-                customButton5.Text = "ATTACHMENT";
-                customButton3.Text = "DELETE TASK";
                 fontLarger = new Font("Copperplate Gothic Bold", 12);
 
                 cancelButton.Text = "CANCEL";
@@ -736,11 +710,6 @@ namespace UIs
                 label4.Font = fontLarger;
                 label5.Font = fontLarger;
                 label15.Font = fontLarger;
-                label14.Font = fontLarger;
-                customButton2.Font = fontLarger;
-                customButton1.Font = fontLarger;
-                customButton5.Font = fontLarger;
-                customButton3.Font = fontLarger;
                 //smaller
                 cancelButton.Font = fontSmaller;
                 saveButton.Font = fontSmaller;
@@ -749,7 +718,15 @@ namespace UIs
 
         private void ShowDepartmentForm_DepartmentSelected(string department)
         {
+            sharedDepartment = department;
             selectDepartment.Text = department;
+            sharedProcess.Text = department;
+            CanHoService canHoService = new CanHoService();
+            string? customerID = canHoService.findApartment(venueID).MaCuDan;
+            if (customerID != null)
+            {
+                customerLabel.Text = customerID;
+            }
         }
 
         private void departmentMode_CheckedChanged(object sender, EventArgs e)
@@ -760,6 +737,82 @@ namespace UIs
                 showDepartmentForm.DepartmentSelected += ShowDepartmentForm_DepartmentSelected;
                 showDepartmentForm.ShowDialog();
             }
+        }
+
+        private void customButton22_Click(object sender, EventArgs e)
+        {
+            if (tableLayoutPanel1.Visible == false)
+            {
+                tableLayoutPanel1.Visible = true;
+            }
+            else
+            {
+                tableLayoutPanel1.Visible = false;
+            }
+        }
+
+        private void customButton16_Click(object sender, EventArgs e)
+        {
+            C_AccountManagement managements = new C_AccountManagement();
+            managements.ShowDialog();
+        }
+
+        private void customButton15_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail cM = new CM_Resident_sDetail();
+            cM.ShowDialog();
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+            G_ForgotPassword g_ForgotPassword = new G_ForgotPassword();
+            g_ForgotPassword.ShowDialog();
+        }
+
+        private void label13_Click_1(object sender, EventArgs e)
+        {
+            List<Form> formsToClose = new List<Form>();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form != this)
+                {
+                    formsToClose.Add(form);
+                }
+            }
+
+            foreach (Form form in formsToClose)
+            {
+                form.Close();
+            }
+
+            G_Login g_Login = new G_Login();
+            g_Login.ShowDialog();
+        }
+
+        private void customButton25_Click(object sender, EventArgs e)
+        {
+            C_AllTaskList c_AllTaskList = new C_AllTaskList();
+            c_AllTaskList.ShowDialog();
+        }
+
+        private void customButton2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
