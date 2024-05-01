@@ -620,5 +620,15 @@ namespace UIs
             A_Statistic a_Statistic = new A_Statistic();
             a_Statistic.ShowDialog();
         }
+
+        private void membersGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != membersGrid.Columns["lnkColumn"].Index && e.RowIndex >= 0)
+            {
+                string id = membersGrid.Rows[e.RowIndex].Cells["MaGiaoViec"].Value.ToString();
+                A_TaskDetail a_TaskDetail = new A_TaskDetail(id);
+                a_TaskDetail.ShowDialog();
+            }
+        }
     }
 }
