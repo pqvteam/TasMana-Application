@@ -61,7 +61,6 @@ namespace UIs
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton2.Text = "TẤT CẢ CÔNG VIỆC";
                 customButton16.Text = "CÔNG VIỆC CỦA TÔI";
-                customButton5.Text = "CÔNG VIỆC ĐƯỢC CHIA SẺ";
                 createGroupButton.Text = "TẠO NHÓM";
                 grandChart.Text = "VẼ BIỂU ĐỒ";
                 label1.Text = "TRẠNG THÁI";
@@ -82,7 +81,6 @@ namespace UIs
                 customButton17.Text = "ACCOUNT MANAGEMENT";
                 customButton2.Text = "ALL TASK LIST";
                 customButton16.Text = "MY TASK LIST";
-                customButton5.Text = "OBSERVED TASK";
                 createGroupButton.Text = "CREATE GROUP";
                 grandChart.Text = "GRAND CHART";
                 label1.Text = "STATUS";
@@ -96,7 +94,6 @@ namespace UIs
             customButton17.Font = font;
             customButton2.Font = font;
             customButton16.Font = font;
-            customButton5.Font = font;
             customButton13.Font = font;
             saveButton.Font = font;
             createGroupButton.Font = font;
@@ -110,7 +107,6 @@ namespace UIs
             // Special element
             customButton2.Font = fontLarge;
             customButton16.Font = fontLarge;
-            customButton5.Font = fontLarge;
             createGroupButton.Font = fontLarge;
             grandChart.Font = fontLarge;
         }
@@ -494,7 +490,6 @@ namespace UIs
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton2.Text = "TẤT CẢ CÔNG VIỆC";
                 customButton16.Text = "CÔNG VIỆC CỦA TÔI";
-                customButton5.Text = "CÔNG VIỆC ĐƯỢC CHIA SẺ";
                 createGroupButton.Text = "TẠO NHÓM";
                 cancelButton.Text = "THOÁT";
                 saveButton.Text = "CHỈNH SỬA";
@@ -518,7 +513,6 @@ namespace UIs
                 customButton17.Text = "ACCOUNT MANAGEMENT";
                 customButton2.Text = "ALL TASK LIST";
                 customButton16.Text = "MY TASK LIST";
-                customButton5.Text = "OBSERVED TASK";
                 cancelButton.Text = "CANCEL";
                 saveButton.Text = "EDIT";
                 createGroupButton.Text = "CREATE GROUP";
@@ -536,7 +530,6 @@ namespace UIs
             customButton16.Font = font;
             customButton13.Font = font;
             saveButton.Font = font;
-            customButton5.Font = font;
             createGroupButton.Font = font;
             grandChart.Font = font;
             label1.Font = font;
@@ -545,7 +538,6 @@ namespace UIs
             label19.Font = font;
             customButton2.Font = fontLarge;
             customButton16.Font = fontLarge;
-            customButton5.Font = fontLarge;
             createGroupButton.Font = fontLarge;
             grandChart.Font = fontLarge;
         }
@@ -615,6 +607,18 @@ namespace UIs
 
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
+        }
+
+        private void createGroupButton_Click(object sender, EventArgs e)
+        {
+            CM_CreateGroup cM_CreateGroup = new CM_CreateGroup();
+            cM_CreateGroup.ShowDialog();
+        }
+
+        private void grandChart_Click(object sender, EventArgs e)
+        {
+            A_Statistic a_Statistic = new A_Statistic();
+            a_Statistic.ShowDialog();
         }
     }
 }

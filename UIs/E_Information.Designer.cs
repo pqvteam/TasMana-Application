@@ -68,7 +68,6 @@
             currentAvatarSmall = new CustomComponent.CustomPictureBox();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
-            customButton12 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
             customButton8 = new CustomComponent.CustomButton();
             customButton7 = new CustomComponent.CustomButton();
@@ -508,7 +507,6 @@
             headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
-            headerPanel.Controls.Add(customButton12);
             headerPanel.Controls.Add(customButton9);
             headerPanel.Controls.Add(customButton8);
             headerPanel.Controls.Add(customButton7);
@@ -532,7 +530,7 @@
             languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
             languageSelect.ListBackColor = Color.Black;
             languageSelect.ListTextColor = Color.White;
-            languageSelect.Location = new Point(1073, 1);
+            languageSelect.Location = new Point(1122, 4);
             languageSelect.MinimumSize = new Size(30, 30);
             languageSelect.Name = "languageSelect";
             languageSelect.Size = new Size(132, 52);
@@ -636,28 +634,6 @@
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
             customButton17.Click += customButton17_Click;
-            // 
-            // customButton12
-            // 
-            customButton12.BackColor = Color.Black;
-            customButton12.BackgroundColor = Color.Black;
-            customButton12.BorderColor = Color.PaleVioletRed;
-            customButton12.BorderRadius = 28;
-            customButton12.BorderSize = 0;
-            customButton12.Cursor = Cursors.Hand;
-            customButton12.FlatAppearance.BorderSize = 0;
-            customButton12.FlatStyle = FlatStyle.Flat;
-            customButton12.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton12.ForeColor = Color.White;
-            customButton12.Image = Properties.Resources.bell_icon;
-            customButton12.Location = new Point(1208, 8);
-            customButton12.Name = "customButton12";
-            customButton12.Size = new Size(51, 40);
-            customButton12.TabIndex = 22;
-            customButton12.TextAlign = ContentAlignment.MiddleRight;
-            customButton12.TextColor = Color.White;
-            customButton12.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton12.UseVisualStyleBackColor = false;
             // 
             // customButton9
             // 
@@ -886,7 +862,6 @@
         private Panel headerPanel;
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
-        private CustomComponent.CustomButton customButton12;
         private CustomComponent.CustomButton customButton9;
         private CustomComponent.CustomButton customButton8;
         private CustomComponent.CustomButton customButton7;
