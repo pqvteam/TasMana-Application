@@ -53,7 +53,6 @@
             customButton17 = new CustomComponent.CustomButton();
             customButton12 = new CustomComponent.CustomButton();
             customButton11 = new CustomComponent.CustomButton();
-            customButton1 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
             customButton8 = new CustomComponent.CustomButton();
             customButton7 = new CustomComponent.CustomButton();
@@ -325,7 +324,6 @@
             headerPanel.Controls.Add(customButton17);
             headerPanel.Controls.Add(customButton12);
             headerPanel.Controls.Add(customButton11);
-            headerPanel.Controls.Add(customButton1);
             headerPanel.Controls.Add(customButton9);
             headerPanel.Controls.Add(customButton8);
             headerPanel.Controls.Add(customButton7);
@@ -453,6 +451,25 @@
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
             customButton17.Click += customButton17_Click;
+            // 
+            // customButton12
+            // 
+            customButton12.BackColor = Color.MediumSlateBlue;
+            customButton12.BackgroundColor = Color.MediumSlateBlue;
+            customButton12.BorderColor = Color.PaleVioletRed;
+            customButton12.BorderRadius = 20;
+            customButton12.BorderSize = 0;
+            customButton12.FlatStyle = FlatStyle.Flat;
+            customButton12.ForeColor = Color.White;
+            customButton12.Location = new Point(0, 0);
+            customButton12.Name = "customButton12";
+            customButton12.Size = new Size(150, 40);
+            customButton12.TabIndex = 54;
+            customButton12.TextColor = Color.White;
+            customButton12.UseVisualStyleBackColor = false;
+            // 
+            // customButton11
+            // 
             customButton11.BackColor = Color.Black;
             customButton11.BackgroundColor = Color.Black;
             customButton11.BorderColor = Color.PaleVioletRed;
@@ -474,27 +491,6 @@
             customButton11.TextColor = Color.White;
             customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton11.UseVisualStyleBackColor = false;
-            customButton1.BackColor = Color.Black;
-            customButton1.BackgroundColor = Color.Black;
-            customButton1.BorderColor = Color.PaleVioletRed;
-            customButton1.BorderRadius = 28;
-            customButton1.BorderSize = 0;
-            customButton1.Cursor = Cursors.Hand;
-            customButton1.FlatAppearance.BorderSize = 0;
-            customButton1.FlatStyle = FlatStyle.Flat;
-            customButton1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton1.ForeColor = Color.White;
-            customButton1.Image = (Image)resources.GetObject("customButton1.Image");
-            customButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton1.Location = new Point(908, 2);
-            customButton1.Name = "customButton1";
-            customButton1.Size = new Size(156, 51);
-            customButton1.TabIndex = 25;
-            customButton1.Text = "RESIDENT SERVICE";
-            customButton1.TextAlign = ContentAlignment.MiddleRight;
-            customButton1.TextColor = Color.White;
-            customButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton1.UseVisualStyleBackColor = false;
             // 
             // customButton9
             // 
@@ -947,7 +943,6 @@
         private CustomComponent.CustomButton customButton17;
         private CustomComponent.CustomButton customButton12;
         private CustomComponent.CustomButton customButton11;
-        private CustomComponent.CustomButton customButton1;
         private CustomComponent.CustomButton customButton9;
         private CustomComponent.CustomButton customButton8;
         private CustomComponent.CustomButton customButton7;
