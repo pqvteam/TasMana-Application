@@ -51,7 +51,6 @@
             customButton22 = new CustomComponent.CustomButton();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
-            customButton12 = new CustomComponent.CustomButton();
             customButton11 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
             customButton8 = new CustomComponent.CustomButton();
@@ -322,7 +321,6 @@
             headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
-            headerPanel.Controls.Add(customButton12);
             headerPanel.Controls.Add(customButton11);
             headerPanel.Controls.Add(customButton9);
             headerPanel.Controls.Add(customButton8);
@@ -346,10 +344,10 @@
             languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
             languageSelect.ListBackColor = Color.Black;
             languageSelect.ListTextColor = Color.White;
-            languageSelect.Location = new Point(1070, 5);
+            languageSelect.Location = new Point(1088, 5);
             languageSelect.MinimumSize = new Size(30, 30);
             languageSelect.Name = "languageSelect";
-            languageSelect.Size = new Size(132, 52);
+            languageSelect.Size = new Size(170, 52);
             languageSelect.TabIndex = 53;
             languageSelect.Texts = "";
             languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
@@ -451,22 +449,6 @@
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
             customButton17.Click += customButton17_Click;
-            // 
-            // customButton12
-            // 
-            customButton12.BackColor = Color.MediumSlateBlue;
-            customButton12.BackgroundColor = Color.MediumSlateBlue;
-            customButton12.BorderColor = Color.PaleVioletRed;
-            customButton12.BorderRadius = 20;
-            customButton12.BorderSize = 0;
-            customButton12.FlatStyle = FlatStyle.Flat;
-            customButton12.ForeColor = Color.White;
-            customButton12.Location = new Point(0, 0);
-            customButton12.Name = "customButton12";
-            customButton12.Size = new Size(150, 40);
-            customButton12.TabIndex = 54;
-            customButton12.TextColor = Color.White;
-            customButton12.UseVisualStyleBackColor = false;
             // 
             // customButton11
             // 
@@ -941,7 +923,6 @@
         private Panel headerPanel;
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
-        private CustomComponent.CustomButton customButton12;
         private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton customButton9;
         private CustomComponent.CustomButton customButton8;

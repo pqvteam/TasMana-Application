@@ -1071,6 +1071,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "CM_Resident_sDetail_Authorized";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CM_Resident_sDetail_Authorized";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
