@@ -319,7 +319,7 @@ namespace UIs
 
                 SUBMIT.Text = "EDIT";
                 label7.Text = "PROFILE DETAILS";
-                heading.Text = "MANAGER";
+                heading.Text = "EMPLOYEE";
                 fontLarger = new Font("Copperplate Gothic Bold", 18);
             }
             customButton7.Font = fontSmaller;

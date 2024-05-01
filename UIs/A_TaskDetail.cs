@@ -29,17 +29,17 @@ namespace UIs
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+            
+        }
+
+        private void A_TaskDetail_Load(object sender, EventArgs e)
+        {
             List<GiaoViec> tasks = giaoViecService.getAll();
             foreach (GiaoViec task in tasks)
             {
                 taskIDBox.Items.Add(task.MaGiaoViec);
             }
             taskIDBox.SelectedItem = currentID;
-        }
-
-        private void A_TaskDetail_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void taskIDBox_OnSelectedIndexChanged(object sender, EventArgs e)

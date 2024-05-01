@@ -855,5 +855,11 @@ namespace UIs
                 a_TaskDetail.ShowDialog();
             }
         }
+
+        private void customButton8_Click(object sender, EventArgs e)
+        {
+            A_Statistic a_Statistic = new A_Statistic();
+            a_Statistic.ShowDialog();
+        }
     }
 }

@@ -920,9 +920,7 @@ namespace UIs
                 label1.Text = "TỪ KHÓA";
                 label2.Text = "PHÒNG BAN";
                 label3.Text = "LOẠI TÀI KHOẢN";
-                button3.Text = "TÀI KHOẢN ĐANG HOẠT ĐỘNG";
                 customButton19.Text = "TẠO MỚI";
-                button2.Text = "TÀI KHOẢN NGƯNG HOẠT ĐỘNG";
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
             }
             else
@@ -936,9 +934,7 @@ namespace UIs
                 label1.Text = "SEARCH";
                 label2.Text = "DEPARTMENT";
                 label3.Text = "ACCOUNT TYPE";
-                button3.Text = "ACTIVE ACCOUNT";
                 customButton19.Text = "CREATE";
-                button2.Text = "INACTIVE ACCOUNT";
             }
             customButton8.Font = font;
             customButton9.Font = font;
@@ -967,9 +963,7 @@ namespace UIs
                 label1.Text = "TỪ KHÓA";
                 label2.Text = "PHÒNG BAN";
                 label3.Text = "LOẠI TÀI KHOẢN";
-                button3.Text = "TÀI KHOẢN ĐANG HOẠT ĐỘNG";
                 customButton19.Text = "TẠO MỚI";
-                button2.Text = "TÀI KHOẢN NGƯNG HOẠT ĐỘNG";
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
             }
             else
@@ -993,9 +987,7 @@ namespace UIs
             customButton7.Font = font;
             customButton18.Font = font;
             customButton17.Font = font;
-            button3.Font = font;
             customButton19.Font = font;
-            button2.Font = font;
             label1.Font = font;
             label2.Font = font;
             label3.Font = font;

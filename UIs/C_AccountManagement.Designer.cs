@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_AccountManagement));
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             headerPanel = new Panel();
             languageSelect = new CustomComponent.CustomComboBox();
             panel2 = new Panel();
@@ -42,9 +42,6 @@
             customButton8 = new CustomComponent.CustomButton();
             customButton7 = new CustomComponent.CustomButton();
             customButton6 = new CustomComponent.CustomButton();
-            customPanel1 = new CustomComponent.CustomPanel();
-            button3 = new Button();
-            button2 = new Button();
             pictureBox6 = new PictureBox();
             searchBox = new TextBox();
             customButton1 = new CustomComponent.CustomButton();
@@ -65,7 +62,6 @@
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).BeginInit();
-            customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)membersGrid).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -303,60 +299,6 @@
             customButton6.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton6.UseVisualStyleBackColor = false;
             // 
-            // customPanel1
-            // 
-            customPanel1.BackColor = Color.FromArgb(59, 56, 56);
-            customPanel1.BackgroundColor = Color.Transparent;
-            customPanel1.BorderColor = Color.Black;
-            customPanel1.BorderRadius = 0;
-            customPanel1.BorderWidth = 1;
-            customPanel1.Controls.Add(button3);
-            customPanel1.Controls.Add(button2);
-            customPanel1.GradientAngle = 0F;
-            customPanel1.GradientEndColor = Color.White;
-            customPanel1.GradientStartColor = Color.White;
-            customPanel1.Location = new Point(0, 64);
-            customPanel1.Name = "customPanel1";
-            customPanel1.Size = new Size(1382, 46);
-            customPanel1.TabIndex = 4;
-            customPanel1.Paint += customPanel1_Paint;
-            // 
-            // button3
-            // 
-            button3.AllowDrop = true;
-            button3.AutoEllipsis = true;
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(3, -1);
-            button3.Name = "button3";
-            button3.Size = new Size(264, 47);
-            button3.TabIndex = 6;
-            button3.Text = "ACTIVED ACCOUNT";
-            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.AllowDrop = true;
-            button2.AutoEllipsis = true;
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(272, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(258, 44);
-            button2.TabIndex = 5;
-            button2.Text = "INACTIVED ACCOUNT";
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = true;
-            // 
             // pictureBox6
             // 
             pictureBox6.BackColor = Color.FromArgb(42, 42, 42);
@@ -541,24 +483,24 @@
             membersGrid.BackgroundColor = Color.FromArgb(24, 23, 23);
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle9.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle9.ForeColor = Color.Yellow;
-            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Yellow;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             membersGrid.ColumnHeadersHeight = 50;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle10.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle10.ForeColor = Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle10.SelectionForeColor = Color.White;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(24, 23, 23);
             membersGrid.Location = new Point(3, 218);
@@ -692,7 +634,6 @@
             Controls.Add(customButton2);
             Controls.Add(customButton19);
             Controls.Add(customButton4);
-            Controls.Add(customPanel1);
             Name = "C_AccountManagement";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "C_AccountManagement";
@@ -700,7 +641,6 @@
             headerPanel.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).EndInit();
-            customPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)membersGrid).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
@@ -717,8 +657,6 @@
         private CustomComponent.CustomButton customButton8;
         private CustomComponent.CustomButton customButton7;
         private CustomComponent.CustomButton customButton6;
-        private CustomComponent.CustomPanel customPanel1;
-        private Button button2;
         private PictureBox pictureBox6;
         private TextBox searchBox;
         private CustomComponent.CustomButton customButton1;
@@ -731,7 +669,6 @@
         private CustomComponent.CustomButton customButton19;
         private DataGridView membersGrid;
         private Label label1;
-        private Button button3;
         private CustomComponent.CustomButton customButton4;
         private Panel panel2;
         private CustomComponent.CustomPictureBox currentAvatarSmall;
