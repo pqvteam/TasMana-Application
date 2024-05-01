@@ -72,6 +72,7 @@
             membersGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             membersGrid.Size = new Size(776, 312);
             membersGrid.TabIndex = 59;
+            membersGrid.CellClick += membersGrid_RowContentClick;
             membersGrid.CellContentClick += membersGrid_RowContentClick;
             // 
             // customButton8

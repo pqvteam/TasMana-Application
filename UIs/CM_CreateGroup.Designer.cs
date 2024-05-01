@@ -52,7 +52,6 @@
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
             customButton11 = new CustomComponent.CustomButton();
-            customButton1 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
             customButton8 = new CustomComponent.CustomButton();
             customButton7 = new CustomComponent.CustomButton();
@@ -323,7 +322,6 @@
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
             headerPanel.Controls.Add(customButton11);
-            headerPanel.Controls.Add(customButton1);
             headerPanel.Controls.Add(customButton9);
             headerPanel.Controls.Add(customButton8);
             headerPanel.Controls.Add(customButton7);
@@ -346,10 +344,10 @@
             languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
             languageSelect.ListBackColor = Color.Black;
             languageSelect.ListTextColor = Color.White;
-            languageSelect.Location = new Point(1070, 5);
+            languageSelect.Location = new Point(1088, 5);
             languageSelect.MinimumSize = new Size(30, 30);
             languageSelect.Name = "languageSelect";
-            languageSelect.Size = new Size(132, 52);
+            languageSelect.Size = new Size(170, 52);
             languageSelect.TabIndex = 53;
             languageSelect.Texts = "";
             languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
@@ -950,7 +948,6 @@
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
         private CustomComponent.CustomButton customButton11;
-        private CustomComponent.CustomButton customButton1;
         private CustomComponent.CustomButton customButton9;
         private CustomComponent.CustomButton customButton8;
         private CustomComponent.CustomButton customButton7;

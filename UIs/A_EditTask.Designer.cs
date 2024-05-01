@@ -89,25 +89,23 @@
             customButton8 = new CustomComponent.CustomButton();
             customButton7 = new CustomComponent.CustomButton();
             userPanel = new Panel();
+            customerLabel = new Label();
+            sharedProcess = new Label();
             label1 = new Label();
             taskMode = new CustomComponent.CustomToggleButton();
             customButton6 = new CustomComponent.CustomButton();
             label18 = new Label();
             pictureBox7 = new PictureBox();
-            customButton3 = new CustomComponent.CustomButton();
             taskFile = new TextBox();
             saveButton = new CustomComponent.CustomButton();
             cancelButton = new CustomComponent.CustomButton();
             taskDescription = new TextBox();
-            customButton5 = new CustomComponent.CustomButton();
             label8 = new Label();
             pictureBox6 = new PictureBox();
-            customButton1 = new CustomComponent.CustomButton();
             label7 = new Label();
             pictureBox5 = new PictureBox();
             label6 = new Label();
             pictureBox4 = new PictureBox();
-            label14 = new Label();
             sidePanel = new Panel();
             customPanel1 = new CustomComponent.CustomPanel();
             label22 = new Label();
@@ -116,7 +114,6 @@
             pictureBox12 = new PictureBox();
             label17 = new Label();
             label16 = new Label();
-            customButton2 = new CustomComponent.CustomButton();
             heading = new Label();
             headerPanel = new Panel();
             languageSelect = new CustomComponent.CustomComboBox();
@@ -236,10 +233,6 @@
             membersGrid.Size = new Size(722, 196);
             membersGrid.TabIndex = 138;
             membersGrid.CellClick += membersGrid_CellContentClick;
-            membersGrid.CellContentClick += membersGrid_CellContentClick_1;
-            // 
-            // uploadButton
-            // 
             uploadButton.BackColor = Color.Yellow;
             uploadButton.BackgroundColor = Color.Yellow;
             uploadButton.BorderColor = Color.PaleVioletRed;
@@ -1014,6 +1007,8 @@
             // userPanel
             // 
             userPanel.BackColor = Color.FromArgb(46, 48, 50);
+            userPanel.Controls.Add(customerLabel);
+            userPanel.Controls.Add(sharedProcess);
             userPanel.Controls.Add(tagNameBox);
             userPanel.Controls.Add(tagEditButton);
             userPanel.Controls.Add(venueLabel);
@@ -1042,6 +1037,26 @@
             userPanel.Name = "userPanel";
             userPanel.Size = new Size(302, 642);
             userPanel.TabIndex = 137;
+            // 
+            // customerLabel
+            // 
+            customerLabel.AutoSize = true;
+            customerLabel.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customerLabel.ForeColor = Color.White;
+            customerLabel.Location = new Point(61, 364);
+            customerLabel.Name = "customerLabel";
+            customerLabel.Size = new Size(0, 19);
+            customerLabel.TabIndex = 144;
+            // 
+            // sharedProcess
+            // 
+            sharedProcess.AutoSize = true;
+            sharedProcess.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            sharedProcess.ForeColor = Color.White;
+            sharedProcess.Location = new Point(59, 252);
+            sharedProcess.Name = "sharedProcess";
+            sharedProcess.Size = new Size(0, 19);
+            sharedProcess.TabIndex = 143;
             // 
             // label1
             // 
@@ -1112,30 +1127,6 @@
             pictureBox7.TabIndex = 118;
             pictureBox7.TabStop = false;
             // 
-            // customButton3
-            // 
-            customButton3.BackColor = Color.Black;
-            customButton3.BackgroundColor = Color.Black;
-            customButton3.BorderColor = Color.PaleVioletRed;
-            customButton3.BorderRadius = 28;
-            customButton3.BorderSize = 0;
-            customButton3.FlatAppearance.BorderSize = 0;
-            customButton3.FlatStyle = FlatStyle.Flat;
-            customButton3.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton3.ForeColor = Color.White;
-            customButton3.Image = (Image)resources.GetObject("customButton3.Image");
-            customButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton3.Location = new Point(7, 572);
-            customButton3.Name = "customButton3";
-            customButton3.Padding = new Padding(12, 0, 0, 0);
-            customButton3.Size = new Size(281, 60);
-            customButton3.TabIndex = 3;
-            customButton3.TabStop = false;
-            customButton3.Text = "DELETE TASK";
-            customButton3.TextColor = Color.White;
-            customButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton3.UseVisualStyleBackColor = false;
-            // 
             // taskFile
             // 
             taskFile.BackColor = Color.FromArgb(42, 42, 42);
@@ -1201,29 +1192,6 @@
             taskDescription.Size = new Size(726, 52);
             taskDescription.TabIndex = 103;
             // 
-            // customButton5
-            // 
-            customButton5.BackColor = Color.Black;
-            customButton5.BackgroundColor = Color.Black;
-            customButton5.BorderColor = Color.PaleVioletRed;
-            customButton5.BorderRadius = 28;
-            customButton5.BorderSize = 0;
-            customButton5.FlatAppearance.BorderSize = 0;
-            customButton5.FlatStyle = FlatStyle.Flat;
-            customButton5.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton5.ForeColor = Color.White;
-            customButton5.Image = (Image)resources.GetObject("customButton5.Image");
-            customButton5.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton5.Location = new Point(7, 503);
-            customButton5.Name = "customButton5";
-            customButton5.Padding = new Padding(12, 0, 0, 0);
-            customButton5.Size = new Size(281, 60);
-            customButton5.TabIndex = 4;
-            customButton5.TabStop = false;
-            customButton5.Text = "ATTACHMENT";
-            customButton5.TextColor = Color.White;
-            customButton5.UseVisualStyleBackColor = false;
-            // 
             // label8
             // 
             label8.AutoSize = true;
@@ -1244,29 +1212,6 @@
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 114;
             pictureBox6.TabStop = false;
-            // 
-            // customButton1
-            // 
-            customButton1.BackColor = Color.Black;
-            customButton1.BackgroundColor = Color.Black;
-            customButton1.BorderColor = Color.PaleVioletRed;
-            customButton1.BorderRadius = 28;
-            customButton1.BorderSize = 0;
-            customButton1.FlatAppearance.BorderSize = 0;
-            customButton1.FlatStyle = FlatStyle.Flat;
-            customButton1.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton1.ForeColor = Color.White;
-            customButton1.Image = (Image)resources.GetObject("customButton1.Image");
-            customButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton1.Location = new Point(6, 436);
-            customButton1.Name = "customButton1";
-            customButton1.Padding = new Padding(12, 0, 0, 0);
-            customButton1.Size = new Size(281, 60);
-            customButton1.TabIndex = 1;
-            customButton1.TabStop = false;
-            customButton1.Text = "DEADLINE";
-            customButton1.TextColor = Color.White;
-            customButton1.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
@@ -1309,17 +1254,6 @@
             pictureBox4.TabIndex = 110;
             pictureBox4.TabStop = false;
             // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.FromArgb(250, 86, 87);
-            label14.Location = new Point(7, 332);
-            label14.Name = "label14";
-            label14.Size = new Size(140, 23);
-            label14.TabIndex = 13;
-            label14.Text = "MODIFYING";
-            // 
             // sidePanel
             // 
             sidePanel.BackColor = Color.FromArgb(31, 31, 32);
@@ -1327,11 +1261,6 @@
             sidePanel.Controls.Add(cancelButton);
             sidePanel.Controls.Add(customPanel1);
             sidePanel.Controls.Add(label15);
-            sidePanel.Controls.Add(label14);
-            sidePanel.Controls.Add(customButton5);
-            sidePanel.Controls.Add(customButton3);
-            sidePanel.Controls.Add(customButton1);
-            sidePanel.Controls.Add(customButton2);
             sidePanel.Location = new Point(1092, 82);
             sidePanel.Name = "sidePanel";
             sidePanel.Size = new Size(296, 696);
@@ -1381,9 +1310,9 @@
             selectDepartment.ForeColor = Color.White;
             selectDepartment.Location = new Point(77, 229);
             selectDepartment.Name = "selectDepartment";
-            selectDepartment.Size = new Size(142, 19);
+            selectDepartment.Size = new Size(0, 19);
             selectDepartment.TabIndex = 100;
-            selectDepartment.Text = "DESCRIPTION";
+            selectDepartment.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // departmentMode
             // 
@@ -1431,31 +1360,6 @@
             label16.Size = new Size(165, 19);
             label16.TabIndex = 37;
             label16.Text = "PUBLIC ACCESS";
-            // 
-            // customButton2
-            // 
-            customButton2.BackColor = Color.Black;
-            customButton2.BackgroundColor = Color.Black;
-            customButton2.BorderColor = Color.PaleVioletRed;
-            customButton2.BorderRadius = 28;
-            customButton2.BorderSize = 0;
-            customButton2.FlatAppearance.BorderSize = 0;
-            customButton2.FlatStyle = FlatStyle.Flat;
-            customButton2.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton2.ForeColor = Color.White;
-            customButton2.Image = (Image)resources.GetObject("customButton2.Image");
-            customButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton2.Location = new Point(5, 369);
-            customButton2.Name = "customButton2";
-            customButton2.Padding = new Padding(12, 0, 0, 0);
-            customButton2.Size = new Size(281, 60);
-            customButton2.TabIndex = 0;
-            customButton2.TabStop = false;
-            customButton2.Text = "UPDATE PROCESS";
-            customButton2.TextAlign = ContentAlignment.MiddleRight;
-            customButton2.TextColor = Color.White;
-            customButton2.UseVisualStyleBackColor = false;
-            customButton2.Click += customButton2_Click_1;
             // 
             // heading
             // 
@@ -1980,11 +1884,6 @@
         private Label label17;
         private Label label16;
         private Label label15;
-        private Label label14;
-        private CustomComponent.CustomButton customButton5;
-        private CustomComponent.CustomButton customButton3;
-        private CustomComponent.CustomButton customButton1;
-        private CustomComponent.CustomButton customButton2;
         private Label heading;
         private Panel headerPanel;
         private Panel panel1;
@@ -2008,5 +1907,7 @@
         private Label label13;
         private Label label20;
         private Label label24;
+        private Label customerLabel;
+        private Label sharedProcess;
     }
 }
