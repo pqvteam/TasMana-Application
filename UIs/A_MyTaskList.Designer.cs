@@ -533,6 +533,7 @@
             membersGrid.TabIndex = 38;
             membersGrid.CellClick += membersGrid_CellContentClick;
             membersGrid.CellContentClick += membersGrid_CellContentDownloadClick;
+            membersGrid.CellDoubleClick += membersGrid_CellDoubleClick;
             // 
             // rjTextBox7
             // 

@@ -1190,6 +1190,7 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(panel1);
             Name = "CM_Resident_sDetail";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CM_ResidentsDetail_HoldHouse";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
