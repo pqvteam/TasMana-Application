@@ -39,7 +39,7 @@ namespace UIs
             }
             else
             {
-                MessageBox.Show("Please select a member first.");
+                showToast("WARNING", "Please select a member first.");
             }
         }
 
@@ -63,6 +63,11 @@ namespace UIs
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
     }
 }

@@ -419,7 +419,8 @@ namespace UIs
                         }
                         else
                         {
-                            MessageBox.Show("Không tìm thấy kết quả nào.");
+                            showToast("ERROR", "No result is found");
+
                         }
                     }
                 }
@@ -607,6 +608,12 @@ namespace UIs
 
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
+        }
+        
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
 
         private void createGroupButton_Click(object sender, EventArgs e)

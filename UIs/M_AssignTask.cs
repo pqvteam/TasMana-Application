@@ -201,11 +201,11 @@ namespace UIs
                 receiverLabel.Text = "";
                 venueLabel.Text = "";
                 tagNameBox.Text = "";
-                MessageBox.Show("Assign task successfully!");
+                showToast("SUCCESS", "Assign task successfully!");
             }
             else
             {
-                MessageBox.Show($"EXEC taoViec '{tDescription}', '{tStart}', '{tEnd}', '{tStatus}', '{tFile}', '{tID}', '{tMode}', '{tName}', '{venueID}', '{receiverID}', '{tIsCEO}', '{tManagerID}', '{authorizedBy}'");
+                showToast("ERROR", "An error occurred");
             }
         }
 
@@ -643,6 +643,11 @@ namespace UIs
 
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
     }
 }

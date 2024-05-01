@@ -27,7 +27,8 @@ namespace UIs
             bool isSuccess = tagService.createNewTab(name, description);
             if (isSuccess)
             {
-                MessageBox.Show("Create tag successfully");
+                showToast("SUCCESS", "Create tag successfully");
+
                 nameBox.Clear();
                 descriptionBox.Clear();
                 nameBox.Focus();
@@ -35,9 +36,8 @@ namespace UIs
             }
             else
             {
-                MessageBox.Show("Something wrong when create tag");
-                MessageBox.Show(nameBox.Text);
-                MessageBox.Show(descriptionBox.Text);
+                showToast("ERROR", "An Error Occur");
+
             }
         }
 
@@ -118,6 +118,11 @@ namespace UIs
 
             cancelButton.Font = fontSmaller;
             saveButton.Font = fontSmaller;
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
     }
 }

@@ -64,7 +64,8 @@ namespace UIs
             }
             else
             {
-                MessageBox.Show("Please select a tag first.");
+                showToast("WARNING", "Please select a tag first.");
+
             }
         }
 
@@ -104,6 +105,11 @@ namespace UIs
             newButton.Font = fontSmaller;
             cancelButton.Font = fontSmaller;
             saveButton.Font = fontSmaller;
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
     }
 }

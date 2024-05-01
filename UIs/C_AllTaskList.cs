@@ -281,7 +281,7 @@ namespace UIs
                         writer.WriteLine($"Stack trace: {e.StackTrace}");
                         writer.WriteLine("----------------------------------------------");
                     }
-                    MessageBox.Show(e.Message);
+                    showToast("ERROR", "An Error Occur");
                 }
                 finally
                 {
@@ -832,6 +832,12 @@ namespace UIs
 
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
+        }
+
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
 
         private void grandChart_Click(object sender, EventArgs e)

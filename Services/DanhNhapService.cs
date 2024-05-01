@@ -32,14 +32,14 @@ namespace Services
             string mailAddress = repository.getEmail(username);
             repository.saveCode(username, randomNumber.ToString());
             string content = "Mã xác nhận tài khoản đăng nhập của bạn là: " + randomNumber.ToString();
-            if (mailAddress != "Lỗi kết nối dữ liệu" && mailAddress != "Nhân viên này không tồn tại")
+            if (mailAddress != "Connection Failed!" && mailAddress != "This employee does not exist")
             {
                 mailService.sendMail("Gửi mã xã nhận khôi phục mật khẩu", content, mailAddress);
-                return "Mã xác nhận đã được gửi đến email của bạn";
+                return "The confirmation code has been sent to your email";
             }
             else
             {
-                return "Không tìm thấy mail của nhân viên này! Kiểm tra lại mã đăng nhập!";
+                return "Could not find this employee's email! Check your login code again!";
             }
         }
         public string confirmCode(string username, string code) 
@@ -48,18 +48,18 @@ namespace Services
             {
                 return repository.getPassword(username);
             }
-            return "Mã xác nhận sai!";
+            return "Incorect OTP!";
         }
         public string getEmailAccount(string username)
         {
             string mailAddress = repository.getEmail(username);
-            if (mailAddress != "Lỗi kết nối dữ liệu" && mailAddress != "Nhân viên này không tồn tại")
+            if (mailAddress != "Connection Failed" && mailAddress != "This employee does not exist")
             {
                 return mailAddress;
             }
             else
             {
-                return "Không tìm thấy mail của nhân viên này! Kiểm tra lại mã đăng nhập!";
+                return "Could not find this employee's email! Check your login code again!";
             }
         }
         public bool laQuanLi(string username)
