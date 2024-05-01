@@ -175,21 +175,13 @@ namespace UIs
                 receiverLabel.Text = "";
                 venueLabel.Text = "";
                 tagNameBox.Text = "";
-                MessageBox.Show("Assign task successfully!");
+                showToast("SUCCESS", "Asign Successfully");
+
             }
             else
             {
-                MessageBox.Show(tID);
-                MessageBox.Show(tStart);
-                MessageBox.Show(tEnd);
-                MessageBox.Show(tName);
-                MessageBox.Show(tDescription);
-                MessageBox.Show(tFile);
-                MessageBox.Show(tStatus);
-                MessageBox.Show(tPriority);
-                MessageBox.Show(tMode.ToString());
-                MessageBox.Show(receiverID);
-                MessageBox.Show(venueID);
+                showToast("ERROR", "Asign Failed");
+
             }
 
         }
@@ -238,7 +230,7 @@ namespace UIs
 
             if (filetype.ToUpper() != "PDF")
             {
-                MessageBox.Show("Upload Only PDF Files");
+                showToast("WARNING", "Upload Only PDF File");
                 return;
             }
 
@@ -767,6 +759,11 @@ namespace UIs
                 showDepartmentForm.DepartmentSelected += ShowDepartmentForm_DepartmentSelected;
                 showDepartmentForm.ShowDialog();
             }
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
     }
 }

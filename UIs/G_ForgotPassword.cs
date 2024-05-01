@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,7 +25,14 @@ namespace UIs
         {
             string username = box_username.Text;
             string result = service.sendConfirmCode(username);
-            MessageBox.Show(result);
+            if(result== "The confirmation code has been sent to your email")
+            {
+                showToast("SUCCESS", result);
+            }    
+            else
+            {
+                showToast("ERROR", result);
+            }    
             panel_forgotPassword.Visible = false;
             panel_verify.Visible = true;
         }
@@ -122,16 +130,16 @@ namespace UIs
                 bool result = service.savePassword(box_username.Text, box_newPassword.Text);
                 if (result)
                 {
-                    MessageBox.Show("Thay đổi mật khẩu thành công!");
+                    showToast("SUCCESS", "Change password successfully");
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi");
+                    showToast("ERROR", "An error occurred");
                 }
             }
             else
             {
-                MessageBox.Show("Mật khẩu và xác nhận không trùng khớp");
+                showToast("SUCCESS", "Password and confirmation do not match");
             }
 
         }
@@ -140,7 +148,14 @@ namespace UIs
         {
             string username = box_username.Text;
             string result = service.sendConfirmCode(username);
-            MessageBox.Show(result);
+            if(result== "The confirmation code has been sent to your email")
+            {
+                showToast("SUCCESS", result);
+            }    
+            else
+            {
+                showToast("ERROR", result);
+            }    
         }
 
         private void box_newPassword_KeyDown(object sender, KeyEventArgs e)
@@ -174,6 +189,11 @@ namespace UIs
         {
             panel_resetPassword.Visible = false;
             panel_verify.Visible = true;
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
     }
 }

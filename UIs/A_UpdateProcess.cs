@@ -104,8 +104,15 @@ namespace UIs
         {
             GiaoViecService gv = new GiaoViecService();
             gv.UpdateProcess(taskID, taskStatus, customDateTimePicker1.Value);
-            MessageBox.Show("Update successfully");
+            showToast("SUCCESS", "Update successfully");
+
             this.Close();
         }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
+        }
     }
+
 }

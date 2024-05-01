@@ -72,7 +72,8 @@ namespace UIs
                 }
                 else
                 {
-                    MessageBox.Show("Please select a member first.");
+                    showToast("WARNING", "Please select a member first.");
+
                 }
             }
         }
@@ -102,6 +103,11 @@ namespace UIs
 
             cancelButton.Font = fontSmaller;
             saveButton.Font = fontSmaller;
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
     }
 }

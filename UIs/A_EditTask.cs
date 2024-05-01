@@ -295,13 +295,13 @@ namespace UIs
                 tagNameBox.Text = "";
                 departmentMode.Checked = false;
                 selectDepartment.Text = "";
-                MessageBox.Show("Updated task successfully!");
+                showToast("SUCCESS", "Updated task successfully!");
+
             }
             else
             {
-                MessageBox.Show(
-                    $"EXEC taoViec '{tDescription}', '{tStart}', '{tEnd}', '{tStatus}', '{tFile}', '{this.ID}', '{tMode}', '{tName}', '{venueID}', '{receiverID}', '{tIsCEO}', '{tManagerID}', '{authorizedBy}'"
-                );
+                showToast("ERROR", "An Error Occur");
+
             }
         }
 
@@ -841,6 +841,11 @@ namespace UIs
         private void customButton2_Click_1(object sender, EventArgs e)
         {
 
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
     }
 }

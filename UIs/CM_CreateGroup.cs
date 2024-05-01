@@ -170,14 +170,14 @@ namespace UIs
                         }
                         else
                         {
-                            MessageBox.Show("Không tìm thấy kết quả nào.");
+                            showToast("INFO", "No result is found");
                         }
                     }
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                showToast("ERROR", "An error occurred");
             }
             finally
             {
@@ -311,14 +311,15 @@ namespace UIs
                         }
                         else
                         {
-                            MessageBox.Show("Không tìm thấy kết quả nào.");
+                            showToast("INFO", "No result is found");
+
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                showToast("ERROR", "An error occurred");
             }
             finally
             {
@@ -351,7 +352,6 @@ namespace UIs
                         ? chosenMembersBox.SelectedItem.ToString()
                         : "";
 
-                MessageBox.Show(leaderID);
                 foreach (string memberID in selectedIDs)
                 {
                     if (!departmentsList.Contains(memberID.Split('-')[0]))
@@ -360,7 +360,6 @@ namespace UIs
                     }
                 }
                 string IDs = string.Join(",", IDsList);
-                MessageBox.Show(IDs);
                 if (departmentsList.Count > 1)
                 {
                     string confirmMessage =
@@ -371,7 +370,7 @@ namespace UIs
                         bool isSuccess = nhomService.createGroup(groupName, IDs, leaderID);
                         if (isSuccess)
                         {
-                            MessageBox.Show("Create group successfully");
+                            showToast("SUCCESS", "Create group successfully");
                             groupNameBox.Text = "";
                             groupNameBox.Focus();
                             chosenMembersBox.Items.Clear();
@@ -379,7 +378,7 @@ namespace UIs
                         }
                         else
                         {
-                            MessageBox.Show("Create group failed");
+                            showToast("ERROR", "Create group failed");
                         }
                     };
                     confirmForm.ShowDialog();
@@ -389,17 +388,17 @@ namespace UIs
                     bool isSuccess = nhomService.createGroup(groupName, IDs, leaderID);
                     if (isSuccess)
                     {
-                        MessageBox.Show("Create group successfully");
+                        showToast("SUCCESS", "Create group successfully");
                     }
                     else
                     {
-                        MessageBox.Show("Create group failed");
+                        showToast("ERROR", "Create group failed");
                     }
                 }
             }
             else
             {
-                MessageBox.Show("No IDs selected.");
+                showToast("ERROR", "No IDs selected");
             }
         }
 
@@ -676,6 +675,11 @@ namespace UIs
 
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
     }
 }

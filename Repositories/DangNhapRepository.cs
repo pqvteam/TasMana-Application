@@ -36,11 +36,11 @@ namespace Repositories
                     string result = $"{reader["Response"]}";
                     return $"{reader["Response"]}";
                 }
-                return "Lỗi kết nối!";
+                return "Connection Failed!";
             }
             catch (Exception ex)
             {
-                return "Lỗi kết nối!!";
+                return "Connection Failed!";
             }
             finally
             {
@@ -113,11 +113,11 @@ namespace Repositories
                 {
                     return $"{reader["email"]}";
                 }
-                return "Nhân viên này không tồn tại";
+                return "This employee does not exist";
             }
             catch (Exception ex)
             {
-                return "Lỗi kết nối dữ liệu";
+                return "Connection Failed!";
             }
             finally
             {
@@ -145,7 +145,7 @@ namespace Repositories
             }
             catch (Exception ex)
             {
-                return "Lỗi kết nối dữ liệu!";
+                return "Connection Failed!";
             }
             finally
             {
@@ -169,11 +169,11 @@ namespace Repositories
                 {
                     return $"{reader["laQuanLi"]}";
                 }
-                return "Lỗi kết nối dữ liệu!";
+                return "Connection Failed!";
             }
             catch (Exception ex)
             {
-                return "Lỗi kết nối dữ liệu!";
+                return "Connection Failed!";
             }
             finally
             {
@@ -197,11 +197,11 @@ namespace Repositories
                 {
                     return $"{reader["laTruongNhom"]}";
                 }
-                return "Lỗi kết nối dữ liệu!";
+                return "Connection Failed!";
             }
             catch (Exception ex)
             {
-                return "Lỗi kết nối dữ liệu!";
+                return "Connection Failed!";
             }
             finally
             {
@@ -224,11 +224,11 @@ namespace Repositories
                 {
                     return $"{reader["nghiViec"]}";
                 }
-                return "Lỗi kết nối dữ liệu!";
+                return "Connection Failed!";
             }
             catch (Exception ex)
             {
-                return "Lỗi kết nối dữ liệu!";
+                return "Connection Failed!";
             }
             finally
             {
@@ -266,11 +266,11 @@ namespace Repositories
                 {
                     return $"{reader["matkhau"]}";
                 }
-                return "Lỗi kết nối dữ liệu!";
+                return "Connection Failed!";
             }
             catch (Exception ex)
             {
-                return "Lỗi kết nối dữ liệu!!";
+                return "Connection Failed!";
             }
             finally
             {

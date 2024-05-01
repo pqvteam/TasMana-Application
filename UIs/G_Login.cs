@@ -40,20 +40,20 @@ namespace UIs
                 Properties.Settings.Default.Username = userID;
                 Properties.Settings.Default.Password = password;
                 Properties.Settings.Default.Save();
-                MessageBox.Show("Đã lưu mật khẩu của bạn");
+                showToast("SUCCESS", "Save password successfully");
             }
             //
-            MessageBox.Show(result);
 
             // Session lưu các thông tin quan trọng của tài khoản
             if (result == "Đăng nhập thành công")
             {
 
+                showToast("SUCCESS", "Login successfuly");
                 NhanSu member = nhanSuService.findMember(userID);
                 Session.Instance.UserName = box_username.Text;
                 Session.Instance.Name = member.HoVaTen;
                 Session.Instance.Avatar = member.AnhDaiDien;
-                if (service.getEmailAccount(userID) != "Không tìm thấy mail của nhân viên này! Kiểm tra lại mã đăng nhập!")
+                if (service.getEmailAccount(userID) != "Could not find this employee's email! Check your login code again!")
                 {
                     Session.Instance.Email = box_password.Text;
                 }
@@ -76,6 +76,10 @@ namespace UIs
                 SplashScreeen splashScreen = new SplashScreeen();
                 splashScreen.ShowDialog();
             }
+            else
+            {
+                showToast("ERROR", "Login Failed!");
+            }    
         }
 
         private void box_username_Enter(object sender, EventArgs e)
@@ -148,6 +152,11 @@ namespace UIs
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.ShowDialog();
         }
     }
 }

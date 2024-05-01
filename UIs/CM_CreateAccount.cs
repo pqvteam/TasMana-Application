@@ -107,14 +107,14 @@ namespace UIs
 
             if (typeBox.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng chọn loại nhân viên.");
+                showToast("WARNING", "Please select employee type");
                 typeBox.Focus();
                 return;
             }
 
             if (deparmentsBox.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng chọn phòng ban.");
+                showToast("WARNING", "Please select department");
                 deparmentsBox.Focus();
                 return;
             }
@@ -122,7 +122,7 @@ namespace UIs
             // Kiểm tra CMND
             if (!IsValidCitizenID(citizenID))
             {
-                MessageBox.Show("Vui lòng nhập đúng định dạng CMND.");
+                showToast("WARNING", "Please enter the correct ID card format.");
                 citizenIDBox.Focus();
                 return;
             }
@@ -130,21 +130,21 @@ namespace UIs
             // Kiểm tra định dạng email
             if (!IsValidEmail(email))
             {
-                MessageBox.Show("Vui lòng nhập đúng định dạng email.");
+                showToast("WARNING", "Please enter the correct email format.");
                 emailBox.Focus();
                 return;
             }
 
             if (passport.Length <= 0)
             {
-                MessageBox.Show("Vui lòng nhập quốc tịch.");
+                showToast("WARNING", "Please enter your nationality");
                 passPortBox.Focus();
                 return;
             }
 
             if (userName.Length <= 0)
             {
-                MessageBox.Show("Vui lòng nhập họ và tên.");
+                showToast("WARNING", "Please enter the user name");
                 userNameBox.Focus();
                 return;
             }
@@ -152,7 +152,7 @@ namespace UIs
             // Kiểm tra giới tính
             if (gender.Length <= 0)
             {
-                MessageBox.Show("Vui lòng chọn giới tính.");
+                showToast("WARNING", "Please enter the gender");
                 genderBox.Focus();
                 return;
             }
@@ -160,7 +160,7 @@ namespace UIs
             // Kiểm tra số điện thoại
             if (!IsValidPhoneNumber(mobile))
             {
-                MessageBox.Show("Vui lòng nhập đúng định dạng số điện thoại.");
+                showToast("WARNING", "Please enter the correct phone number format.");
                 mobileBox.Focus();
                 return;
             }
@@ -168,14 +168,35 @@ namespace UIs
             // Kiểm tra ngày sinh
             if (date.Length <= 0)
             {
-                MessageBox.Show("Vui lòng chọn ngày sinh.");
+                showToast("WARNING", "Please enter the correct date format.");
                 birthdateBox.Focus();
                 return;
             }
 
+            // Chuyển đổi ngày nhập vào thành kiểu DateTime
+            if (!DateTime.TryParse(date, out DateTime inputDate))
+            {
+                showToast("WARNING", "Please enter the correct date");
+                birthdateBox.Focus();
+                return;
+            }
+
+            DateTime currentDate2 = DateTime.Now;
+
+
+            // So sánh ngày nhập vào với ngày hiện tại
+            if (inputDate <= currentDate2)
+            {
+                // Ngày nhập vào không lớn hơn ngày hiện tại
+                showToast("WARNING", "Please enter a date later than the current date");
+                birthdateBox.Focus();
+                return;
+            }
+
+
             if (address.Length <= 0)
             {
-                MessageBox.Show("Vui lòng nhập địa chỉ.");
+                showToast("WARNING", "Please enter the address");
                 addressBox.Focus();
                 return;
             }
@@ -187,10 +208,10 @@ namespace UIs
 
             if (isSucc)
             {
-                MessageBox.Show("Thêm Thành Công");
+                showToast("SUCCESS", "Create account successfully");
                 string content = $"Vui lòng không chia sẻ tài khoản nhân viên tới bất kì ai\nMã nhân viên: {ID}\nMật khẩu mặc định: 123456\nSau khi đăng nhập lần đầu, nhân viên vui lòng đổi mật khẩu mặc định.";
                 sendMailSer.sendMail("Thông tin tài khoản nhân viên", content, email);
-                MessageBox.Show("Thông tin nhân viên đã được gửi đến gmail");
+                showToast("INFO", "Employee information has been sent to gmail");
                 // Xóa nội dung của các TextBox
                 citizenIDBox.Clear();
                 emailBox.Clear();
@@ -206,7 +227,7 @@ namespace UIs
             }
             else
             {
-                MessageBox.Show($"Thêm Thất Bại{ID}");
+                showToast("ERROR", "Create failed");
             }
         }
         private bool IsValidEmail(string email)
@@ -295,6 +316,11 @@ namespace UIs
             cancelButton.Font = fontSmaller;
             customButton14.Font = fontSmaller;
 
+        }
+        public void showToast(string type, string message)
+        {
+            ToastForm show = new ToastForm(type, message);
+            show.Show();
         }
 
     }
