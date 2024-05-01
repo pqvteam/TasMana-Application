@@ -169,11 +169,23 @@ namespace UIs
             membersGrid.Columns.Add("TinhTrangCongViec", "Status");
             membersGrid.Columns.Add("Tag", "Tag");
             reload();
+            DataGridViewLinkColumn links = new DataGridViewLinkColumn();
+            links.UseColumnTextForLinkValue = true;
+            links.HeaderText = "Download";
+            links.DataPropertyName = "lnkColumn";
+            links.Name = "lnkColumn";
+            links.ActiveLinkColor = Color.White;
+            links.LinkBehavior = LinkBehavior.SystemDefault;
+            links.LinkColor = Color.Blue;
+            links.Text = "Click here";
+            links.TrackVisitedState = true;
+            links.VisitedLinkColor = Color.YellowGreen;
+            membersGrid.Columns.Add(links);
+            DatabaseConnection.Instance.CloseConnection();
         }
 
         private void reload()
         {
-            DatabaseConnection.Instance.CloseConnection();
             if (IsValidImageData(Session.Instance.Avatar))
             {
                 currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
@@ -224,19 +236,6 @@ namespace UIs
                     incompletedTaskQuantity++;
                 }
             }
-            DataGridViewLinkColumn links = new DataGridViewLinkColumn();
-            links.UseColumnTextForLinkValue = true;
-            links.HeaderText = "Download";
-            links.DataPropertyName = "lnkColumn";
-            links.Name = "lnkColumn";
-            links.ActiveLinkColor = Color.White;
-            links.LinkBehavior = LinkBehavior.SystemDefault;
-            links.LinkColor = Color.Blue;
-            links.Text = "Click here";
-            links.TrackVisitedState = true;
-            links.VisitedLinkColor = Color.YellowGreen;
-            membersGrid.Columns.Add(links);
-            DatabaseConnection.Instance.CloseConnection();
         }
 
         public Image convertByteToImage(byte[] data)
