@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CM_Resident_sDetail_Authorized));
             panel1 = new Panel();
             languageSelect = new CustomComponent.CustomComboBox();
-            customButton12 = new CustomComponent.CustomButton();
-            customButton10 = new CustomComponent.CustomButton();
-            customButton11 = new CustomComponent.CustomButton();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
@@ -102,9 +99,6 @@
             // 
             panel1.BackColor = Color.FromArgb(13, 13, 13);
             panel1.Controls.Add(languageSelect);
-            panel1.Controls.Add(customButton12);
-            panel1.Controls.Add(customButton10);
-            panel1.Controls.Add(customButton11);
             panel1.Controls.Add(customButton18);
             panel1.Controls.Add(customButton17);
             panel1.Controls.Add(customButton9);
@@ -128,79 +122,13 @@
             languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
             languageSelect.ListBackColor = Color.Black;
             languageSelect.ListTextColor = Color.White;
-            languageSelect.Location = new Point(1066, 2);
+            languageSelect.Location = new Point(1085, 2);
             languageSelect.MinimumSize = new Size(30, 30);
             languageSelect.Name = "languageSelect";
             languageSelect.Size = new Size(133, 52);
             languageSelect.TabIndex = 51;
             languageSelect.Texts = "";
             languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
-            // 
-            // customButton12
-            // 
-            customButton12.BackColor = Color.Black;
-            customButton12.BackgroundColor = Color.Black;
-            customButton12.BorderColor = Color.PaleVioletRed;
-            customButton12.BorderRadius = 28;
-            customButton12.BorderSize = 0;
-            customButton12.FlatAppearance.BorderSize = 0;
-            customButton12.FlatStyle = FlatStyle.Flat;
-            customButton12.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton12.ForeColor = Color.White;
-            customButton12.Image = Properties.Resources.bell_icon;
-            customButton12.Location = new Point(1205, 11);
-            customButton12.Name = "customButton12";
-            customButton12.Size = new Size(51, 40);
-            customButton12.TabIndex = 28;
-            customButton12.TextAlign = ContentAlignment.MiddleRight;
-            customButton12.TextColor = Color.White;
-            customButton12.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton12.UseVisualStyleBackColor = false;
-            // 
-            // customButton10
-            // 
-            customButton10.BackColor = Color.Black;
-            customButton10.BackgroundColor = Color.Black;
-            customButton10.BorderColor = Color.PaleVioletRed;
-            customButton10.BorderRadius = 28;
-            customButton10.BorderSize = 0;
-            customButton10.FlatAppearance.BorderSize = 0;
-            customButton10.FlatStyle = FlatStyle.Flat;
-            customButton10.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton10.ForeColor = Color.White;
-            customButton10.Image = (Image)resources.GetObject("customButton10.Image");
-            customButton10.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton10.Location = new Point(917, 3);
-            customButton10.Name = "customButton10";
-            customButton10.Size = new Size(156, 51);
-            customButton10.TabIndex = 25;
-            customButton10.Text = "RESIDENT SERVICE";
-            customButton10.TextAlign = ContentAlignment.MiddleRight;
-            customButton10.TextColor = Color.White;
-            customButton10.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton10.UseVisualStyleBackColor = false;
-            // customButton11
-            // 
-            customButton11.BackColor = Color.Black;
-            customButton11.BackgroundColor = Color.Black;
-            customButton11.BorderColor = Color.PaleVioletRed;
-            customButton11.BorderRadius = 28;
-            customButton11.BorderSize = 0;
-            customButton11.FlatAppearance.BorderSize = 0;
-            customButton11.FlatStyle = FlatStyle.Flat;
-            customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton11.ForeColor = Color.White;
-            customButton11.Image = Properties.Resources.triangle_icon;
-            customButton11.ImageAlign = ContentAlignment.MiddleRight;
-            customButton11.Location = new Point(1136, 5);
-            customButton11.Name = "customButton11";
-            customButton11.Size = new Size(120, 51);
-            customButton11.TabIndex = 25;
-            customButton11.Text = "English";
-            customButton11.TextAlign = ContentAlignment.MiddleRight;
-            customButton11.TextColor = Color.White;
-            customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton11.UseVisualStyleBackColor = false;
             // 
             // customButton18
             // 
@@ -215,7 +143,7 @@
             customButton18.ForeColor = Color.White;
             customButton18.Image = (Image)resources.GetObject("customButton18.Image");
             customButton18.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton18.Location = new Point(884, 5);
+            customButton18.Location = new Point(878, 5);
             customButton18.Name = "customButton18";
             customButton18.Size = new Size(188, 48);
             customButton18.TabIndex = 27;
@@ -223,7 +151,6 @@
             customButton18.TextAlign = ContentAlignment.MiddleRight;
             customButton18.TextColor = Color.White;
             customButton18.UseVisualStyleBackColor = false;
-            customButton18.Click += customButton18_Click;
             // 
             // customButton17
             // 
@@ -247,7 +174,6 @@
             customButton17.TextColor = Color.White;
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
-            customButton17.Click += customButton17_Click;
             // 
             // customButton9
             // 
@@ -317,7 +243,6 @@
             customButton7.TextColor = Color.White;
             customButton7.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton7.UseVisualStyleBackColor = false;
-            customButton7.Click += customButton7_Click;
             // 
             // customButton6
             // 
@@ -453,7 +378,6 @@
             customButton2.Text = "HOLDHOUSE";
             customButton2.TextColor = Color.White;
             customButton2.UseVisualStyleBackColor = false;
-            customButton2.Click += customButton2_Click;
             // 
             // customButton4
             // 
@@ -474,7 +398,6 @@
             customButton4.Text = "TENANT/STAFF OF HOLDHOUSE";
             customButton4.TextColor = Color.White;
             customButton4.UseVisualStyleBackColor = false;
-            customButton4.Click += customButton4_Click;
             // 
             // customButton3
             // 
@@ -515,7 +438,6 @@
             customButton5.Text = "COMMERCIAL";
             customButton5.TextColor = Color.White;
             customButton5.UseVisualStyleBackColor = false;
-            customButton5.Click += customButton5_Click;
             // 
             // customPanel1
             // 
@@ -1094,7 +1016,6 @@
             label29.TabIndex = 65;
             label29.Text = "SIGN OUT";
             label29.TextAlign = ContentAlignment.MiddleCenter;
-            label29.Click += label29_Click;
             // 
             // label30
             // 
@@ -1109,7 +1030,6 @@
             label30.TabIndex = 64;
             label30.Text = "CHANGE PASSWORD";
             label30.TextAlign = ContentAlignment.MiddleCenter;
-            label30.Click += label30_Click;
             // 
             // label31
             // 
@@ -1124,7 +1044,6 @@
             label31.TabIndex = 63;
             label31.Text = "INFORMATION";
             label31.TextAlign = ContentAlignment.MiddleCenter;
-            label31.Click += label31_Click;
             // 
             // CM_Resident_sDetail_Authorized
             // 
@@ -1156,9 +1075,6 @@
         #endregion
 
         private Panel panel1;
-        private CustomComponent.CustomButton customButton12;
-        private CustomComponent.CustomButton customButton10;
-        private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
         private CustomComponent.CustomButton customButton9;

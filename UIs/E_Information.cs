@@ -194,7 +194,7 @@ namespace UIs
 
                 EDIT.Text = "EDIT";
                 label7.Text = "PROFILE DETAILS";
-                heading.Text = "MANAGER";
+                heading.Text = "EMPLOYEE";
                 fontLarger = new Font("Copperplate Gothic Bold", 18);
 
             }
@@ -283,7 +283,7 @@ namespace UIs
 
                 EDIT.Text = "EDIT";
                 label7.Text = "PROFILE DETAILS";
-                heading.Text = "MANAGER";
+                heading.Text = "EMPLOYEE";
                 fontLarger = new Font("Copperplate Gothic Bold", 18);
             }
             customButton7.Font = fontSmaller;
@@ -350,11 +350,15 @@ namespace UIs
 
             foreach (Form form in formsToClose)
             {
-                form.Close();
+                form.Hide();
             }
 
             G_Login g_Login = new G_Login();
-            g_Login.ShowDialog();
+            g_Login.Show();
+            foreach (Form form in formsToClose)
+            {
+                form.Close();
+            }
         }
         public void showToast(string type, string message)
         {

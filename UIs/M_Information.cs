@@ -129,7 +129,7 @@ namespace UIs
 
                 EDIT.Text = "CHỈNH SỬA";
                 label7.Text = "CHI TIẾT THÔNG TIN CÁ NHÂN";
-                heading.Text = "QUẢN LÝ";
+                heading.Text = Session.Instance.laCEO ? "GIÁM ĐỐC" : "QUẢN LÝ";
                 fontLarger = new Font("Microsoft Sans Serif", 18, FontStyle.Bold);
 
             }
@@ -155,7 +155,8 @@ namespace UIs
 
                 EDIT.Text = "EDIT";
                 label7.Text = "PROFILE DETAILS";
-                heading.Text = "MANAGER";
+                
+                heading.Text =Session.Instance.laCEO ? "CEO":"MANAGER";
                 fontLarger = new Font("Copperplate Gothic Bold", 18);
 
             }
@@ -208,7 +209,7 @@ namespace UIs
 
                 EDIT.Text = "CHỈNH SỬA";
                 label7.Text = "CHI TIẾT THÔNG TIN CÁ NHÂN";
-                heading.Text = "QUẢN LÝ";
+                heading.Text = Session.Instance.laCEO ? "GIÁM ĐỐC" : "QUẢN LÝ";
                 fontLarger = new Font("Microsoft Sans Serif", 18, FontStyle.Bold);
 
             }
@@ -235,7 +236,7 @@ namespace UIs
 
                 EDIT.Text = "EDIT";
                 label7.Text = "PROFILE DETAILS";
-                heading.Text = "MANAGER";
+                heading.Text = Session.Instance.laCEO ? "CEO" : "MANAGER";
                 fontLarger = new Font("Copperplate Gothic Bold", 18);
             }
             customButton7.Font = fontSmaller;

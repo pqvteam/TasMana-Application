@@ -454,7 +454,6 @@
             taskIDBox.Font = new Font("Segoe UI", 10F);
             taskIDBox.ForeColor = Color.White;
             taskIDBox.IconColor = Color.White;
-            taskIDBox.Items.AddRange(new object[] { "STAFF", "DEPARTMENT" });
             taskIDBox.ListBackColor = Color.Black;
             taskIDBox.ListTextColor = Color.White;
             taskIDBox.Location = new Point(34, 82);

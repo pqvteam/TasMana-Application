@@ -43,7 +43,6 @@ namespace UIs
             }
         }
 
-<<<<<<< HEAD
         private void CM_Resident_sDetail_Load(object sender, EventArgs e)
         {
             changelanguage();
@@ -60,7 +59,7 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
+                
                 label39.Text = "THÔNG TIN";
                 label38.Text = "ĐỔI MẬT KHẨU";
                 label37.Text = "ĐĂNG XUẤT";
@@ -103,7 +102,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton17.Text = "ACCOUNT MANAGEMENT";
                 customButton18.Text = "DEPARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 label39.Text = "INFORMATION";
                 label38.Text = "CHANGE PASSWORD";
                 label37.Text = "SIGN OUT";
@@ -145,7 +143,6 @@ namespace UIs
             customButton9.Font = font;
             customButton17.Font = font;
             customButton18.Font = font;
-            customButton10.Font = font;
             label39.Font = font;
             label38.Font = font;
             label37.Font = font;
@@ -189,7 +186,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
                 label39.Text = "THÔNG TIN";
                 label38.Text = "ĐỔI MẬT KHẨU";
                 label37.Text = "ĐĂNG XUẤT";
@@ -233,7 +229,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton17.Text = "ACCOUNT MANAGEMENT";
                 customButton18.Text = "DEPARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 label39.Text = "INFORMATION";
                 label38.Text = "CHANGE PASSWORD";
                 label37.Text = "SIGN OUT";
@@ -305,7 +300,7 @@ namespace UIs
             label31.Font = fontLarger;
             label33.Font = fontLarger;
             label36.Font = fontLarger;
-=======
+        }
         private void customButton7_Click(object sender, EventArgs e)
         {
             C_AllTaskList c_AllTaskList = new C_AllTaskList();
@@ -369,7 +364,6 @@ namespace UIs
         {
             CM_Resident_sDetail_Commercial cM = new CM_Resident_sDetail_Commercial();
             cM.ShowDialog();
->>>>>>> fa274daeb82a1a0e0f013863fbd5e1cb4684ba3f
         }
 
         private void customButton3_Click(object sender, EventArgs e)

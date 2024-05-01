@@ -48,7 +48,6 @@ namespace UIs
             }
         }
 
-<<<<<<< HEAD
         private void changelanguage()
         {
             Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
@@ -60,7 +59,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
                 label32.Text = "THÔNG TIN";
                 label31.Text = "ĐỔI MẬT KHẨU";
                 label30.Text = "ĐĂNG XUẤT";
@@ -100,7 +98,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton17.Text = "ACCOUNT MANAGEMENT";
                 customButton18.Text = "DEPARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 label32.Text = "INFORMATION";
                 label31.Text = "CHANGE PASSWORD";
                 label30.Text = "SIGN OUT";
@@ -138,7 +135,6 @@ namespace UIs
             customButton9.Font = font;
             customButton17.Font = font;
             customButton18.Font = font;
-            customButton10.Font = font;
             label32.Font = font;
             label31.Font = font;
             label30.Font = font;
@@ -179,7 +175,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
                 label32.Text = "THÔNG TIN";
                 label31.Text = "ĐỔI MẬT KHẨU";
                 label30.Text = "ĐĂNG XUẤT";
@@ -220,7 +215,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton17.Text = "ACCOUNT MANAGEMENT";
                 customButton18.Text = "DEPARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 label32.Text = "INFORMATION";
                 label31.Text = "CHANGE PASSWORD";
                 label30.Text = "SIGN OUT";
@@ -258,7 +252,6 @@ namespace UIs
             customButton9.Font = font;
             customButton17.Font = font;
             customButton18.Font = font;
-            customButton10.Font = font;
             label32.Font = font;
             label31.Font = font;
             label30.Font = font;
@@ -285,7 +278,7 @@ namespace UIs
             label23.Font = fontLarger;
             label25.Font = fontLarger;
             label27.Font = fontLarger;
-=======
+        }
         private void customButton2_Click(object sender, EventArgs e)
         {
             CM_Resident_sDetail cM = new CM_Resident_sDetail();
@@ -361,7 +354,6 @@ namespace UIs
 
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
->>>>>>> fa274daeb82a1a0e0f013863fbd5e1cb4684ba3f
         }
     }
 }
