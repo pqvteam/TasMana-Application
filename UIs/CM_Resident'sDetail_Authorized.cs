@@ -47,6 +47,7 @@ namespace UIs
         private void CM_Resident_sDetail_Authorized_Load(object sender, EventArgs e)
         {
             changelanguage();
+            languageSelect.SelectedItem = Session.Instance.Language == "en" ? "ENGLISH" : "VIETNAMESE";
         }
 
         private void changelanguage()

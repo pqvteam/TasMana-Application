@@ -12,6 +12,7 @@ using Microsoft.Data.SqlClient;
 using Repositories.Entities;
 using Repositories.Utilities;
 using Services;
+using UIs.CustomComponent;
 
 namespace UIs
 {
@@ -28,6 +29,9 @@ namespace UIs
 
         private void A_Statistic_Load(object sender, EventArgs e)
         {
+            changelanguage();
+            languageSelect.SelectedItem = Session.Instance.Language == "en" ? "ENGLISH" : "VIETNAMESE";
+
             membersGrid.Columns.Add("ID", "ID");
             membersGrid.Columns.Add("Name", "Name");
             membersGrid.Columns.Add("Task quantity", "Task quantity");
@@ -299,6 +303,231 @@ namespace UIs
         private void yearButton_CheckedChanged(object sender, EventArgs e)
         {
             renderSearchBox();
+        }
+
+        private void changelanguage()
+        {
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            Font fontLarger = new Font("Copperplate Gothic Bold", 12);
+            Font fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            if (Session.Instance.Language == "vi")
+            {
+                customButton15.Text = "CÔNG VIỆC";
+                customButton14.Text = "THỐNG KÊ";
+                customButton13.Text = "BÁO CÁO";
+                customButton11.Text = "QUẢN LÝ TÀI KHOẢN";
+                customButton10.Text = "CƯ DÂN VÀ CĂN HỘ";
+                typeLabel.Text = "LOẠI";
+                taskCompleteRate.Text = "TÌNH TRẠNG HOÀN THÀNH CÔNG VIỆC";
+                label9.Text = "MỐC THỜI GIAN";
+                billLabel.Text = "HÓA ĐƠN ĐIỆN, NƯỚC";
+                label5.Text = "HÓA ĐƠN ĐIỆN";
+                label11.Text = "HÓA ĐƠN NƯỚC";
+                label2.Text = "CÔNG NỢ";
+                managementLabel.Text = "PHÍ QUẢN LÝ";
+                label3.Text = "CÁC PHÍ KHÁC";
+                apartmentStatusLabel.Text = "TÌNH TRẠNG CĂN HỘ";
+                label4.Text = "QUỐC TỊCH";
+                label7.Text = "NHÂN VIÊN";
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+
+                filterLabel.Text = "NHÂN VIÊN VÀ BỘ PHẬN";
+                label6.Text = "kẾT QUẢ";
+                dayButton.Text = "NGÀY";
+                monthButton.Text = "THÁNG";
+                quarterButton.Text = "QUÝ";
+                yearButton.Text = "NĂM";
+                label1.Text = "CƯ DÂN VÀ CĂN HỘ";
+                label12.Text = "CHI TIẾT";
+                fontLarger = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+
+                label10.Text = "(NHẬP SỐ SAU KHI KIỂM TRA, ĐỊNH DẠNG: dd, MM, qq, yyyy)";
+                customButton4.Text = "XUẤT KHẨU SANG EXCEL";
+                cancelButton.Text = "HỦY";
+                fontSmaller = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            else
+            {
+                customButton15.Text = "WORK";
+                customButton14.Text = "STATISTIC";
+                customButton13.Text = "REPORT";
+                customButton11.Text = "ACCOUNTING MANAGEMENT";
+                customButton10.Text = "APARTMENT RESIDENT";
+                typeLabel.Text = "TYPE";
+                taskCompleteRate.Text = "TASK COMPLETED STATUS";
+                label9.Text = "TIMELINE";
+                billLabel.Text = "ELECTRICITY AND WATER BILL";
+                label5.Text = "ELECTRICITY BILL";
+                label11.Text = "WATER BILL";
+                label2.Text = "DEBT";
+                managementLabel.Text = "MANAGEMENT BILL";
+                label3.Text = "OTHER FEES";
+                apartmentStatusLabel.Text = "APARTMENT STATUS";
+                label4.Text = "NATIONALITY";
+                label7.Text = "STAFF";
+                font = new Font("Copperplate Gothic Bold", 10);
+
+                filterLabel.Text = "STAFF AND DEPARTMENT";
+                label6.Text = "RESULT";
+                dayButton.Text = "DAY";
+                monthButton.Text = "MONTH";
+                quarterButton.Text = "QUARTER";
+                yearButton.Text = "YEAR";
+                label1.Text = "RESIDENT AND APARTMENT";
+                label12.Text = "DETAIL";
+                fontLarger = new Font("Copperplate Gothic Bold", 12);
+
+                label10.Text = "(ENTER NUMBER AFTER CHECK, FORMAT: dd, MM, qq, yyyy)";
+                customButton4.Text = "EXPORT TO EXCEL";
+                cancelButton.Text = "CANCEL";
+                fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            }
+            customButton15.Font = font;
+            customButton14.Font = font;
+            customButton13.Font = font;
+            customButton11.Font = font;
+            customButton10.Font = font;
+            typeLabel.Font = font;
+            taskCompleteRate.Font = font;
+            label9.Font = font;
+            billLabel.Font = font;
+            label5.Font = font;
+            label11.Font = font;
+            label2.Font = font;
+            managementLabel.Font = font;
+            label3.Font = font;
+            apartmentStatusLabel.Font = font;
+            label4.Font = font;
+            label7.Font = font;
+
+
+            filterLabel.Font = fontLarger;
+            label6.Font = fontLarger;
+            dayButton.Font = fontLarger;
+            monthButton.Font = fontLarger;
+            quarterButton.Font = fontLarger;
+            yearButton.Font = fontLarger;
+            label1.Font = fontLarger;
+            label12.Font = fontLarger;
+
+
+            label10.Font = fontSmaller;
+            customButton4.Font = fontSmaller;
+            cancelButton.Font = fontSmaller;
+
+        }
+
+        private void customComboBox2_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Font font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            Font fontLarger = new Font("Copperplate Gothic Bold", 12);
+            Font fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            if (customComboBox2.SelectedItem.ToString() == "VIETNAMESE")
+            {
+                Session.Instance.Language = "vi";
+                customButton15.Text = "CÔNG VIỆC";
+                customButton14.Text = "THỐNG KÊ";
+                customButton13.Text = "BÁO CÁO";
+                customButton11.Text = "QUẢN LÝ TÀI KHOẢN";
+                customButton10.Text = "CƯ DÂN VÀ CĂN HỘ";
+                typeLabel.Text = "LOẠI";
+                taskCompleteRate.Text = "TÌNH TRẠNG HOÀN THÀNH CÔNG VIỆC";
+                label9.Text = "MỐC THỜI GIAN";
+                billLabel.Text = "HÓA ĐƠN ĐIỆN, NƯỚC";
+                label5.Text = "HÓA ĐƠN ĐIỆN";
+                label11.Text = "HÓA ĐƠN NƯỚC";
+                label2.Text = "CÔNG NỢ";
+                managementLabel.Text = "PHÍ QUẢN LÝ";
+                label3.Text = "CÁC PHÍ KHÁC";
+                apartmentStatusLabel.Text = "TÌNH TRẠNG CĂN HỘ";
+                label4.Text = "QUỐC TỊCH";
+                label7.Text = "NHÂN VIÊN";
+                font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+
+                filterLabel.Text = "NHÂN VIÊN VÀ BỘ PHẬN";
+                label6.Text = "kẾT QUẢ";
+                dayButton.Text = "NGÀY";
+                monthButton.Text = "THÁNG";
+                quarterButton.Text = "QUÝ";
+                yearButton.Text = "NĂM";
+                label1.Text = "CƯ DÂN VÀ CĂN HỘ";
+                label12.Text = "CHI TIẾT";
+                fontLarger = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+
+                label10.Text = "(NHẬP SỐ SAU KHI KIỂM TRA, ĐỊNH DẠNG: dd, MM, qq, yyyy)";
+                customButton4.Text = "XUẤT KHẨU SANG EXCEL";
+                cancelButton.Text = "HỦY";
+                fontSmaller = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            else
+            {
+                Session.Instance.Language = "en";
+                customButton15.Text = "WORK";
+                customButton14.Text = "STATISTIC";
+                customButton13.Text = "REPORT";
+                customButton11.Text = "ACCOUNTING MANAGEMENT";
+                customButton10.Text = "APARTMENT RESIDENT";
+                typeLabel.Text = "TYPE";
+                taskCompleteRate.Text = "TASK COMPLETED STATUS";
+                label9.Text = "TIMELINE";
+                billLabel.Text = "ELECTRICITY AND WATER BILL";
+                label5.Text = "ELECTRICITY BILL";
+                label11.Text = "WATER BILL";
+                label2.Text = "DEBT";
+                managementLabel.Text = "MANAGEMENT BILL";
+                label3.Text = "OTHER FEES";
+                apartmentStatusLabel.Text = "APARTMENT STATUS";
+                label4.Text = "NATIONALITY";
+                label7.Text = "STAFF";
+                font = new Font("Copperplate Gothic Bold", 10);
+
+                filterLabel.Text = "STAFF AND DEPARTMENT";
+                label6.Text = "RESULT";
+                dayButton.Text = "DAY";
+                monthButton.Text = "MONTH";
+                quarterButton.Text = "QUARTER";
+                yearButton.Text = "YEAR";
+                label1.Text = "RESIDENT AND APARTMENT";
+                label12.Text = "DETAIL";
+                fontLarger = new Font("Copperplate Gothic Bold", 12);
+
+                label10.Text = "(ENTER NUMBER AFTER CHECK, FORMAT: dd, MM, qq, yyyy)";
+                customButton4.Text = "EXPORT TO EXCEL";
+                cancelButton.Text = "CANCEL";
+                fontSmaller = new Font("Copperplate Gothic Bold", 9);
+            }
+            customButton15.Font = font;
+            customButton14.Font = font;
+            customButton13.Font = font;
+            customButton11.Font = font;
+            customButton10.Font = font;
+            typeLabel.Font = font;
+            taskCompleteRate.Font = font;
+            label9.Font = font;
+            billLabel.Font = font;
+            label5.Font = font;
+            label11.Font = font;
+            label2.Font = font;
+            managementLabel.Font = font;
+            label3.Font = font;
+            apartmentStatusLabel.Font = font;
+            label4.Font = font;
+            label7.Font = font;
+
+
+            filterLabel.Font = fontLarger;
+            label6.Font = fontLarger;
+            dayButton.Font = fontLarger;
+            monthButton.Font = fontLarger;
+            quarterButton.Font = fontLarger;
+            yearButton.Font = fontLarger;
+            label1.Font = fontLarger;
+            label12.Font = fontLarger;
+
+
+            label10.Font = fontSmaller;
+            customButton4.Font = fontSmaller;
+            cancelButton.Font = fontSmaller;
         }
     }
 }

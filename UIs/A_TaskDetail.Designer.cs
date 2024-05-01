@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_TaskDetail));
             elipseControl1 = new CustomComponent.ElipseControl();
-            customButton11 = new CustomComponent.CustomButton();
             apartmentResidentButton = new CustomComponent.CustomButton();
             accountManagementButton = new CustomComponent.CustomButton();
             reportButton = new CustomComponent.CustomButton();
@@ -38,6 +37,7 @@
             workButton = new CustomComponent.CustomButton();
             homeButton = new CustomComponent.CustomButton();
             panel1 = new Panel();
+            customComboBox2 = new CustomComponent.CustomComboBox();
             avatar = new CustomComponent.CustomButton();
             customButton14 = new CustomComponent.CustomButton();
             startContent = new Label();
@@ -75,29 +75,6 @@
             // 
             elipseControl1.CornerRadius = 20;
             elipseControl1.TargetControl = this;
-            // 
-            // customButton11
-            // 
-            customButton11.BackColor = Color.Black;
-            customButton11.BackgroundColor = Color.Black;
-            customButton11.BorderColor = Color.PaleVioletRed;
-            customButton11.BorderRadius = 28;
-            customButton11.BorderSize = 0;
-            customButton11.FlatAppearance.BorderSize = 0;
-            customButton11.FlatStyle = FlatStyle.Flat;
-            customButton11.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton11.ForeColor = Color.White;
-            customButton11.Image = Properties.Resources.triangle_icon;
-            customButton11.ImageAlign = ContentAlignment.MiddleRight;
-            customButton11.Location = new Point(1124, 5);
-            customButton11.Name = "customButton11";
-            customButton11.Size = new Size(129, 51);
-            customButton11.TabIndex = 25;
-            customButton11.Text = "English";
-            customButton11.TextAlign = ContentAlignment.MiddleRight;
-            customButton11.TextColor = Color.White;
-            customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
-            customButton11.UseVisualStyleBackColor = false;
             // 
             // apartmentResidentButton
             // 
@@ -238,8 +215,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(13, 13, 13);
+            panel1.Controls.Add(customComboBox2);
             panel1.Controls.Add(avatar);
-            panel1.Controls.Add(customButton11);
             panel1.Controls.Add(apartmentResidentButton);
             panel1.Controls.Add(accountManagementButton);
             panel1.Controls.Add(customButton14);
@@ -252,6 +229,26 @@
             panel1.Size = new Size(1382, 59);
             panel1.TabIndex = 26;
             panel1.Paint += panel1_Paint;
+            // 
+            // customComboBox2
+            // 
+            customComboBox2.BackColor = Color.Black;
+            customComboBox2.BorderColor = Color.MediumSlateBlue;
+            customComboBox2.BorderSize = 0;
+            customComboBox2.DropDownStyle = ComboBoxStyle.DropDown;
+            customComboBox2.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customComboBox2.ForeColor = Color.White;
+            customComboBox2.IconColor = Color.White;
+            customComboBox2.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
+            customComboBox2.ListBackColor = Color.Black;
+            customComboBox2.ListTextColor = Color.White;
+            customComboBox2.Location = new Point(1114, 0);
+            customComboBox2.MinimumSize = new Size(30, 30);
+            customComboBox2.Name = "customComboBox2";
+            customComboBox2.Size = new Size(141, 55);
+            customComboBox2.TabIndex = 126;
+            customComboBox2.Texts = "";
+            customComboBox2.OnSelectedIndexChanged += customComboBox2_OnSelectedIndexChanged;
             // 
             // avatar
             // 
@@ -764,7 +761,6 @@
 
         private CustomComponent.ElipseControl elipseControl1;
         private Panel panel1;
-        private CustomComponent.CustomButton customButton11;
         private CustomComponent.CustomButton apartmentResidentButton;
         private CustomComponent.CustomButton accountManagementButton;
         private CustomComponent.CustomButton reportButton;
@@ -799,5 +795,6 @@
         private Label intimeContent;
         private CustomComponent.CustomButton intimeLabel;
         private CustomComponent.CustomButton cancelButton;
+        private CustomComponent.CustomComboBox customComboBox2;
     }
 }

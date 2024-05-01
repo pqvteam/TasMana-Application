@@ -22,5 +22,6 @@ static class Program
         //Application.Run(new CM_Resident_sDetail_Commercial());
         //Application.Run(new CM_Resident_sDetail());
         //Application.Run(new CM_Resident_sDetail_Tenant_StaffOf());
+        //Application.Run(new A_TaskDetail());
     }  
 }
