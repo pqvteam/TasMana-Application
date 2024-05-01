@@ -213,7 +213,8 @@ namespace UIs
 
         private void customButton7_Click(object sender, EventArgs e)
         {
-
+            C_AllTaskList c_AllTaskList = new C_AllTaskList();
+            c_AllTaskList.ShowDialog();
         }
 
         private async void uploadButton_Click(object sender, EventArgs e)
@@ -381,6 +382,13 @@ namespace UIs
         private void ShowDepartmentForm_DepartmentSelected(string department)
         {
             selectDepartment.Text = department;
+            sharedProcess.Text = department;
+            CanHoService canHoService = new CanHoService();
+            string? customerID = canHoService.findApartment(venueID).MaCuDan;
+            if (customerID != null)
+            {
+                customerLabel.Text = customerID;
+            }
         }
 
         private void ShowTagForm_TagSelected(string tag)
@@ -391,7 +399,16 @@ namespace UIs
 
         private void label29_Click(object sender, EventArgs e)
         {
-
+            if (Session.Instance.UserName.Contains("GD") || Session.Instance.laQuanLi)
+            {
+                M_Information information = new M_Information();
+                information.ShowDialog();
+            }
+            else
+            {
+                E_Information information = new E_Information();
+                information.ShowDialog();
+            }
         }
 
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
@@ -411,7 +428,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
                 label34.Text = "THÔNG TIN";
                 label33.Text = "ĐỔI MẬT KHẨU";
                 label32.Text = "ĐĂNG XUẤT";
@@ -433,14 +449,8 @@ namespace UIs
                 tagEditButton.Text = "SỬA";
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
 
-
-                customButton2.Text = "CẬP NHẬT TIẾN ĐỘ";
-                customButton1.Text = "HẠN CHÓT";
-                customButton5.Text = "ĐÍNH KÈM";
-                customButton4.Text = "PHÂN QUYỀN";
-                customButton3.Text = "XÓA CÔNG VIỆC";
                 label15.Text = "TRẠNG THÁI";
-                label14.Text = "SỬA ĐỔI";
+                sharedProcess.Text = "SỬA ĐỔI";
                 name.Text = "NGƯỜI THỰC HIỆN";
                 label1.Text = "ĐƯỢC GIAO BỞI";
                 label2.Text = "CHIA SẺ TIẾN ĐỘ";
@@ -465,7 +475,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton17.Text = "ACCOUNTING MANAGEMENT";
                 customButton18.Text = "APARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 label34.Text = "INFORMATION";
                 label33.Text = "CHANGE PASSWORD";
                 label32.Text = "SIGN OUT";
@@ -487,13 +496,8 @@ namespace UIs
                 tagEditButton.Text = "EDIT";
                 font = new Font("Copperplate Gothic Bold", 10);
 
-                customButton2.Text = "UPDATE PROCESS";
-                customButton1.Text = "DEADLINE";
-                customButton5.Text = "ATTACHMENT";
-                customButton4.Text = "DECENTRALIZATION";
-                customButton3.Text = "DELETE TASK";
                 label15.Text = "STATUS";
-                label14.Text = "MODIFYING";
+                sharedProcess.Text = "MODIFYING";
                 name.Text = "IMPLEMENTOR";
                 label1.Text = "ASSIGNED BY";
                 label2.Text = "SHARED PROCESS";
@@ -516,7 +520,6 @@ namespace UIs
             customButton9.Font = font;
             customButton17.Font = font;
             customButton18.Font = font;
-            customButton10.Font = font;
             label34.Font = font;
             label33.Font = font;
             label32.Font = font;
@@ -537,13 +540,8 @@ namespace UIs
             venueEditButton.Font = font;
             tagEditButton.Font = font;
 
-            customButton2.Font = fontLarger;
-            customButton1.Font = fontLarger;
-            customButton5.Font = fontLarger;
-            customButton4.Font = fontLarger;
-            customButton3.Font = fontLarger;
             label15.Font = fontLarger;
-            label14.Font = fontLarger;
+            sharedProcess.Font = fontLarger;
             name.Font = fontLarger;
             label1.Font = fontLarger;
             label2.Font = fontLarger;
@@ -570,7 +568,6 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                customButton10.Text = "DỊCH VỤ CƯ DÂN";
                 label34.Text = "THÔNG TIN";
                 label33.Text = "ĐỔI MẬT KHẨU";
                 label32.Text = "ĐĂNG XUẤT";
@@ -592,14 +589,8 @@ namespace UIs
                 tagEditButton.Text = "SỬA";
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
 
-
-                customButton2.Text = "CẬP NHẬT TIẾN ĐỘ";
-                customButton1.Text = "HẠN CHÓT";
-                customButton5.Text = "ĐÍNH KÈM";
-                customButton4.Text = "PHÂN QUYỀN";
-                customButton3.Text = "XÓA CÔNG VIỆC";
                 label15.Text = "TRẠNG THÁI";
-                label14.Text = "SỬA ĐỔI";
+                sharedProcess.Text = "SỬA ĐỔI";
                 name.Text = "NGƯỜI THỰC HIỆN";
                 label1.Text = "ĐƯỢC GIAO BỞI";
                 label2.Text = "CHIA SẺ TIẾN ĐỘ";
@@ -625,7 +616,6 @@ namespace UIs
                 customButton9.Text = "REPORT";
                 customButton17.Text = "ACCOUNTING MANAGEMENT";
                 customButton18.Text = "APARTMENT RESIDENT";
-                customButton10.Text = "RESIDENT SERVICE";
                 label34.Text = "INFORMATION";
                 label33.Text = "CHANGE PASSWORD";
                 label32.Text = "SIGN OUT";
@@ -647,13 +637,8 @@ namespace UIs
                 tagEditButton.Text = "EDIT";
                 font = new Font("Copperplate Gothic Bold", 10);
 
-                customButton2.Text = "UPDATE PROCESS";
-                customButton1.Text = "DEADLINE";
-                customButton5.Text = "ATTACHMENT";
-                customButton4.Text = "DECENTRALIZATION";
-                customButton3.Text = "DELETE TASK";
                 label15.Text = "STATUS";
-                label14.Text = "MODIFYING";
+                sharedProcess.Text = "MODIFYING";
                 name.Text = "IMPLEMENTOR";
                 label1.Text = "ASSIGNED BY";
                 label2.Text = "SHARED PROCESS";
@@ -676,7 +661,6 @@ namespace UIs
             customButton9.Font = font;
             customButton17.Font = font;
             customButton18.Font = font;
-            customButton10.Font = font;
             label34.Font = font;
             label33.Font = font;
             label32.Font = font;
@@ -697,13 +681,8 @@ namespace UIs
             venueEditButton.Font = font;
             tagEditButton.Font = font;
 
-            customButton2.Font = fontLarger;
-            customButton1.Font = fontLarger;
-            customButton5.Font = fontLarger;
-            customButton4.Font = fontLarger;
-            customButton3.Font = fontLarger;
             label15.Font = fontLarger;
-            label14.Font = fontLarger;
+            sharedProcess.Font = fontLarger;
             name.Font = fontLarger;
             label1.Font = fontLarger;
             label2.Font = fontLarger;
@@ -716,6 +695,46 @@ namespace UIs
             cancelButton.Font = fontSmaller;
             saveButton.Font = fontSmaller;
         }
+        
+        private void customButton17_Click(object sender, EventArgs e)
+        {
+            C_AccountManagement c_AccountManagement = new C_AccountManagement();
+            c_AccountManagement.ShowDialog();
+        }
+
+        private void customButton18_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail cM = new CM_Resident_sDetail();
+            cM.ShowDialog();
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+            G_ForgotPassword g_ForgotPassword = new G_ForgotPassword();
+            g_ForgotPassword.ShowDialog();
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+            List<Form> formsToClose = new List<Form>();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form != this)
+                {
+                    formsToClose.Add(form);
+                }
+            }
+
+            foreach (Form form in formsToClose)
+            {
+                form.Close();
+            }
+
+            G_Login g_Login = new G_Login();
+            g_Login.ShowDialog();
+        }
+        
         private void customButton2_Click_1(object sender, EventArgs e)
         {
 

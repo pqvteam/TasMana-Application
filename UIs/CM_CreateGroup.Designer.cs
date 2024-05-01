@@ -51,9 +51,7 @@
             customButton22 = new CustomComponent.CustomButton();
             customButton18 = new CustomComponent.CustomButton();
             customButton17 = new CustomComponent.CustomButton();
-            customButton12 = new CustomComponent.CustomButton();
             customButton11 = new CustomComponent.CustomButton();
-            customButton1 = new CustomComponent.CustomButton();
             customButton9 = new CustomComponent.CustomButton();
             customButton8 = new CustomComponent.CustomButton();
             customButton7 = new CustomComponent.CustomButton();
@@ -323,9 +321,7 @@
             headerPanel.Controls.Add(panel2);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
-            headerPanel.Controls.Add(customButton12);
             headerPanel.Controls.Add(customButton11);
-            headerPanel.Controls.Add(customButton1);
             headerPanel.Controls.Add(customButton9);
             headerPanel.Controls.Add(customButton8);
             headerPanel.Controls.Add(customButton7);
@@ -348,10 +344,10 @@
             languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
             languageSelect.ListBackColor = Color.Black;
             languageSelect.ListTextColor = Color.White;
-            languageSelect.Location = new Point(1070, 5);
+            languageSelect.Location = new Point(1088, 5);
             languageSelect.MinimumSize = new Size(30, 30);
             languageSelect.Name = "languageSelect";
-            languageSelect.Size = new Size(132, 52);
+            languageSelect.Size = new Size(170, 52);
             languageSelect.TabIndex = 53;
             languageSelect.Texts = "";
             languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
@@ -453,6 +449,9 @@
             customButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton17.UseVisualStyleBackColor = false;
             customButton17.Click += customButton17_Click;
+            // 
+            // customButton11
+            // 
             customButton11.BackColor = Color.Black;
             customButton11.BackgroundColor = Color.Black;
             customButton11.BorderColor = Color.PaleVioletRed;
@@ -474,27 +473,6 @@
             customButton11.TextColor = Color.White;
             customButton11.TextImageRelation = TextImageRelation.TextBeforeImage;
             customButton11.UseVisualStyleBackColor = false;
-            customButton1.BackColor = Color.Black;
-            customButton1.BackgroundColor = Color.Black;
-            customButton1.BorderColor = Color.PaleVioletRed;
-            customButton1.BorderRadius = 28;
-            customButton1.BorderSize = 0;
-            customButton1.Cursor = Cursors.Hand;
-            customButton1.FlatAppearance.BorderSize = 0;
-            customButton1.FlatStyle = FlatStyle.Flat;
-            customButton1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton1.ForeColor = Color.White;
-            customButton1.Image = (Image)resources.GetObject("customButton1.Image");
-            customButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton1.Location = new Point(908, 2);
-            customButton1.Name = "customButton1";
-            customButton1.Size = new Size(156, 51);
-            customButton1.TabIndex = 25;
-            customButton1.Text = "RESIDENT SERVICE";
-            customButton1.TextAlign = ContentAlignment.MiddleRight;
-            customButton1.TextColor = Color.White;
-            customButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            customButton1.UseVisualStyleBackColor = false;
             // 
             // customButton9
             // 
@@ -945,9 +923,7 @@
         private Panel headerPanel;
         private CustomComponent.CustomButton customButton18;
         private CustomComponent.CustomButton customButton17;
-        private CustomComponent.CustomButton customButton12;
         private CustomComponent.CustomButton customButton11;
-        private CustomComponent.CustomButton customButton1;
         private CustomComponent.CustomButton customButton9;
         private CustomComponent.CustomButton customButton8;
         private CustomComponent.CustomButton customButton7;

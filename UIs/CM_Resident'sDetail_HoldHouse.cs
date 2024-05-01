@@ -371,5 +371,17 @@ namespace UIs
             cM.ShowDialog();
 >>>>>>> fa274daeb82a1a0e0f013863fbd5e1cb4684ba3f
         }
+
+        private void customButton3_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail_Authorized cM = new CM_Resident_sDetail_Authorized();
+            cM.ShowDialog();
+        }
+
+        private void customButton4_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail_Tenant_StaffOf cM = new CM_Resident_sDetail_Tenant_StaffOf();
+            cM.ShowDialog();
+        }
     }
 }

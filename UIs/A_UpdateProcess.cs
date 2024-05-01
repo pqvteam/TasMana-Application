@@ -46,7 +46,7 @@ namespace UIs
 
         private void customButton3_Click(object sender, EventArgs e)
         {
-            taskStatus = "UNEXECUTED/NOT YET STARTED";
+            taskStatus = "Unexecuted?Not yet started";
             customButton2.BackColor = Color.FromArgb(24, 23, 23);
             customButton3.BackColor = Color.FromArgb(42, 42, 42);
             customButton5.BackColor = Color.FromArgb(24, 23, 23);
@@ -61,7 +61,7 @@ namespace UIs
 
         private void customButton2_Click(object sender, EventArgs e)
         {
-            taskStatus = "COMPLETED";
+            taskStatus = "Completed";
             customButton2.BackColor = Color.FromArgb(42, 42, 42);
             customButton3.BackColor = Color.FromArgb(24, 23, 23);
             customButton5.BackColor = Color.FromArgb(24, 23, 23);
@@ -71,7 +71,7 @@ namespace UIs
 
         private void customButton5_Click(object sender, EventArgs e)
         {
-            taskStatus = "PROCESSING";
+            taskStatus = "Processing";
             customButton2.BackColor = Color.FromArgb(24, 23, 23);
             customButton3.BackColor = Color.FromArgb(24, 23, 23);
             customButton5.BackColor = Color.FromArgb(42, 42, 42);
@@ -82,7 +82,7 @@ namespace UIs
 
         private void customButton6_Click(object sender, EventArgs e)
         {
-            taskStatus = "CUSTOMER RESCHEDULE";
+            taskStatus = "Customer Reschedule";
             customButton2.BackColor = Color.FromArgb(24, 23, 23);
             customButton3.BackColor = Color.FromArgb(24, 23, 23);
             customButton5.BackColor = Color.FromArgb(24, 23, 23);
@@ -92,7 +92,7 @@ namespace UIs
 
         private void customButton7_Click(object sender, EventArgs e)
         {
-            taskStatus = "UNCOMPLETED";
+            taskStatus = "Uncompleted";
             customButton2.BackColor = Color.FromArgb(24, 23, 23);
             customButton3.BackColor = Color.FromArgb(24, 23, 23);
             customButton5.BackColor = Color.FromArgb(24, 23, 23);
@@ -103,7 +103,7 @@ namespace UIs
         private void confirmButton_Click(object sender, EventArgs e)
         {
             GiaoViecService gv = new GiaoViecService();
-            gv.UpdateProcess(taskID, taskStatus);
+            gv.UpdateProcess(taskID, taskStatus, customDateTimePicker1.Value);
             MessageBox.Show("Update successfully");
             this.Close();
         }
