@@ -50,7 +50,6 @@
             label2 = new Label();
             label3 = new Label();
             label5 = new Label();
-            UserName1 = new Label();
             label4 = new Label();
             customButton21 = new CustomComponent.CustomButton();
             customButton16 = new CustomComponent.CustomButton();
@@ -59,6 +58,7 @@
             customButton20 = new CustomComponent.CustomButton();
             customButton19 = new CustomComponent.CustomButton();
             customButton1 = new CustomComponent.CustomButton();
+            IDBox = new CustomComponent.CustomComboBox();
             label6 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             label36 = new Label();
@@ -464,7 +464,6 @@
             customPanel1.Controls.Add(label2);
             customPanel1.Controls.Add(label3);
             customPanel1.Controls.Add(label5);
-            customPanel1.Controls.Add(UserName1);
             customPanel1.Controls.Add(label4);
             customPanel1.Controls.Add(customButton21);
             customPanel1.Controls.Add(customButton16);
@@ -517,18 +516,6 @@
             label5.TabIndex = 37;
             label5.Text = "-";
             label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // UserName1
-            // 
-            UserName1.BackColor = Color.FromArgb(64, 64, 64);
-            UserName1.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
-            UserName1.ForeColor = Color.White;
-            UserName1.Location = new Point(35, 51);
-            UserName1.Name = "UserName1";
-            UserName1.Size = new Size(328, 54);
-            UserName1.TabIndex = 27;
-            UserName1.Text = "-";
-            UserName1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -673,6 +660,28 @@
             customButton1.Text = "APARTMENT ID";
             customButton1.TextColor = Color.Yellow;
             customButton1.UseVisualStyleBackColor = false;
+            // 
+            // IDBox
+            // 
+            IDBox.BackColor = Color.FromArgb(64, 64, 64);
+            IDBox.BorderColor = Color.FromArgb(42, 42, 42);
+            IDBox.BorderSize = 1;
+            IDBox.Cursor = Cursors.Hand;
+            IDBox.DropDownStyle = ComboBoxStyle.DropDown;
+            IDBox.Font = new Font("Segoe UI", 10F);
+            IDBox.ForeColor = Color.White;
+            IDBox.IconColor = Color.White;
+            IDBox.Items.AddRange(new object[] { "STAFF", "DEPARTMENT" });
+            IDBox.ListBackColor = Color.Black;
+            IDBox.ListTextColor = Color.White;
+            IDBox.Location = new Point(40, 161);
+            IDBox.MinimumSize = new Size(200, 30);
+            IDBox.Name = "IDBox";
+            IDBox.Padding = new Padding(1);
+            IDBox.Size = new Size(328, 54);
+            IDBox.TabIndex = 126;
+            IDBox.Texts = "";
+            IDBox.OnSelectedIndexChanged += IDBox_OnSelectedIndexChanged;
             // 
             // label6
             // 
@@ -1180,6 +1189,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(31, 31, 32);
             ClientSize = new Size(1382, 753);
+            Controls.Add(IDBox);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(label6);
@@ -1226,7 +1236,6 @@
         private CustomComponent.CustomButton customButton1;
         private CustomComponent.CustomButton customButton21;
         private CustomComponent.CustomButton customButton20;
-        private Label UserName1;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -1269,5 +1278,6 @@
         private Label label38;
         private Label label39;
         private CustomComponent.CustomComboBox languageSelect;
+        private CustomComponent.CustomComboBox IDBox;
     }
 }
