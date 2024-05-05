@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,6 +48,13 @@ namespace UIs
         {
             changelanguage();
             languageSelect.SelectedItem = Session.Instance.Language == "en" ? "ENGLISH" : "VIETNAMESE";
+
+            CuDanService service = new CuDanService();
+            List<string> list = service.getCuDanTenantIDs();
+            foreach (string id in list)
+            {
+                IDBox.Items.Add(id);
+            }
         }
 
         private void changelanguage()
@@ -349,6 +357,31 @@ namespace UIs
         {
             CM_Resident_sDetail cM_Resident_SDetail = new CM_Resident_sDetail();
             cM_Resident_SDetail.ShowDialog();
+        }
+
+        private void IDBox_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            CuDanService service = new CuDanService();
+            List<string> list = service.getCuDanTenantInFo(IDBox.SelectedItem.ToString());
+            if (list.Count() > 0)
+            {
+                label1.Text = list[0];
+                label4.Text = list[1];
+                label5.Text = list[2];
+                label3.Text = list[3];
+                label2.Text = list[4];
+
+                label8.Text = list[5];
+                label10.Text = list[6];
+                label12.Text = list[7];
+                label14.Text = list[8];
+                label18.Text = list[9];
+                label20.Text = list[10];
+                label22.Text = list[11];
+                label24.Text = list[12];
+                label26.Text = list[13];
+                label28.Text = list[14];
+            }
         }
     }
 }
