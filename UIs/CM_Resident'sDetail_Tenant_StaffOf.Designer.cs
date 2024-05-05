@@ -50,7 +50,6 @@
             label2 = new Label();
             label3 = new Label();
             label5 = new Label();
-            UserName1 = new Label();
             label4 = new Label();
             customButton21 = new CustomComponent.CustomButton();
             customButton16 = new CustomComponent.CustomButton();
@@ -87,6 +86,7 @@
             label37 = new Label();
             label38 = new Label();
             label39 = new Label();
+            IDBox = new CustomComponent.CustomComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -453,10 +453,10 @@
             customPanel1.BorderColor = Color.Black;
             customPanel1.BorderRadius = 0;
             customPanel1.BorderWidth = 1;
+            customPanel1.Controls.Add(IDBox);
             customPanel1.Controls.Add(label2);
             customPanel1.Controls.Add(label3);
             customPanel1.Controls.Add(label5);
-            customPanel1.Controls.Add(UserName1);
             customPanel1.Controls.Add(label4);
             customPanel1.Controls.Add(customButton21);
             customPanel1.Controls.Add(customButton16);
@@ -509,18 +509,6 @@
             label5.TabIndex = 37;
             label5.Text = "-";
             label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // UserName1
-            // 
-            UserName1.BackColor = Color.FromArgb(64, 64, 64);
-            UserName1.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
-            UserName1.ForeColor = Color.White;
-            UserName1.Location = new Point(35, 51);
-            UserName1.Name = "UserName1";
-            UserName1.Size = new Size(328, 54);
-            UserName1.TabIndex = 27;
-            UserName1.Text = "-";
-            UserName1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -782,7 +770,7 @@
             label15.Name = "label15";
             label15.Size = new Size(472, 36);
             label15.TabIndex = 61;
-            label15.Text = "SO LIEU DIEN NUOC PHAT SINH HANG THANG";
+            label15.Text = "ELECTRICITY AND WATER DATA ARISING MONTHLY";
             label15.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label16
@@ -806,7 +794,7 @@
             label17.Name = "label17";
             label17.Size = new Size(472, 36);
             label17.TabIndex = 63;
-            label17.Text = "PHI DICH VU QUAN LY HANG THANG";
+            label17.Text = "MONTHLY MANAGEMENT SERVICE FEE";
             label17.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label18
@@ -830,7 +818,7 @@
             label19.Name = "label19";
             label19.Size = new Size(472, 36);
             label19.TabIndex = 65;
-            label19.Text = "PHI DICH VU KHAC";
+            label19.Text = "OTHER SERVICE FEES";
             label19.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label20
@@ -854,7 +842,7 @@
             label21.Name = "label21";
             label21.Size = new Size(472, 36);
             label21.TabIndex = 67;
-            label21.Text = "DU LIEU PHUONG TIEN DANG KY DO XE TAI NHA";
+            label21.Text = "VEHICLE DATA FOR PARKING REGISTRATION AT HOME";
             label21.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label22
@@ -878,7 +866,7 @@
             label23.Name = "label23";
             label23.Size = new Size(472, 36);
             label23.TabIndex = 69;
-            label23.Text = "SO DIEN THOAI NGUOI THAN";
+            label23.Text = "TELEPHONE NUMBERS OF RELATIVES";
             label23.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label24
@@ -902,7 +890,7 @@
             label25.Name = "label25";
             label25.Size = new Size(472, 36);
             label25.TabIndex = 71;
-            label25.Text = "TINH TRANG CONG NO";
+            label25.Text = "DEBT STATUS";
             label25.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label26
@@ -926,7 +914,7 @@
             label27.Name = "label27";
             label27.Size = new Size(472, 36);
             label27.TabIndex = 73;
-            label27.Text = "DU LIEU NUOI THU CUNG";
+            label27.Text = "PET KEEPING DATA";
             label27.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label28
@@ -1056,6 +1044,28 @@
             label39.TextAlign = ContentAlignment.MiddleCenter;
             label39.Click += label39_Click;
             // 
+            // IDBox
+            // 
+            IDBox.BackColor = Color.FromArgb(64, 64, 64);
+            IDBox.BorderColor = Color.FromArgb(42, 42, 42);
+            IDBox.BorderSize = 1;
+            IDBox.Cursor = Cursors.Hand;
+            IDBox.DropDownStyle = ComboBoxStyle.DropDown;
+            IDBox.Font = new Font("Segoe UI", 10F);
+            IDBox.ForeColor = Color.White;
+            IDBox.IconColor = Color.White;
+            IDBox.Items.AddRange(new object[] { "STAFF", "DEPARTMENT" });
+            IDBox.ListBackColor = Color.Black;
+            IDBox.ListTextColor = Color.White;
+            IDBox.Location = new Point(35, 48);
+            IDBox.MinimumSize = new Size(200, 30);
+            IDBox.Name = "IDBox";
+            IDBox.Padding = new Padding(1);
+            IDBox.Size = new Size(328, 54);
+            IDBox.TabIndex = 128;
+            IDBox.Texts = "";
+            IDBox.OnSelectedIndexChanged += IDBox_OnSelectedIndexChanged;
+            // 
             // CM_Resident_sDetail_Tenant_StaffOf
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1101,7 +1111,6 @@
         private Label label2;
         private Label label3;
         private Label label5;
-        private Label UserName1;
         private Label label4;
         private CustomComponent.CustomButton customButton21;
         private CustomComponent.CustomButton customButton16;
@@ -1142,5 +1151,6 @@
         private Label label38;
         private Label label39;
         private CustomComponent.CustomComboBox languageSelect;
+        private CustomComponent.CustomComboBox IDBox;
     }
 }
