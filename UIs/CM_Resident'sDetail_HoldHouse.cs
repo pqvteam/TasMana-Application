@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Repositories.Entities;
+using Services;
 
 namespace UIs
 {
@@ -47,6 +49,14 @@ namespace UIs
         {
             changelanguage();
             languageSelect.SelectedItem = Session.Instance.Language == "en" ? "ENGLISH" : "VIETNAMESE";
+
+
+            CuDanService service = new CuDanService();
+            List<string> list = service.getCuDanHoldHouseIDs();
+            foreach (string id in list)
+            {
+                IDBox.Items.Add(id);
+            }
         }
 
         private void changelanguage()
@@ -60,7 +70,7 @@ namespace UIs
                 customButton9.Text = "BÁO CÁO";
                 customButton17.Text = "QUẢN LÝ TÀI KHOẢN";
                 customButton18.Text = "CƯ DÂN VÀ CĂN HỘ";
-                
+
                 label39.Text = "THÔNG TIN";
                 label38.Text = "ĐỔI MẬT KHẨU";
                 label37.Text = "ĐĂNG XUẤT";
@@ -77,7 +87,7 @@ namespace UIs
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
 
                 label7.Text = "SỐ THẺ TẠM TRÚ";
-                label9.Text = "NGÀY CHUYỂN CĂN HỘ";
+                label9.Text = "NGÀY BÀN GIAO";
                 label11.Text = "NGÀY CHUYỂN VÀO";
                 label13.Text = "NGÀY CHUYỂN ĐI";
                 label15.Text = "THÔNG TIN LƯU TRÚ";
@@ -271,7 +281,6 @@ namespace UIs
             customButton9.Font = font;
             customButton17.Font = font;
             customButton18.Font = font;
-            customButton10.Font = font;
             label39.Font = font;
             label38.Font = font;
             label37.Font = font;
@@ -377,6 +386,35 @@ namespace UIs
         {
             CM_Resident_sDetail_Tenant_StaffOf cM = new CM_Resident_sDetail_Tenant_StaffOf();
             cM.ShowDialog();
+        }
+
+        private void IDBox_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            CuDanService service = new CuDanService();
+            List<string> list = service.getCuDanHoldHouseInFo(IDBox.SelectedItem.ToString());
+            if (list.Count() > 0)
+            {
+                label1.Text = list[0];
+                label4.Text = list[1];
+                label5.Text = list[2];
+                label3.Text = list[3];
+                label2.Text = list[4];
+
+                label8.Text = list[5];
+                label10.Text = list[6];
+                label12.Text = list[7];
+                label14.Text = list[8];
+                label16.Text = list[9];
+                label18.Text = list[10];
+                label22.Text = list[11];
+                label24.Text = list[12];
+                label26.Text = list[13];
+                label28.Text = list[14];
+                label30.Text = list[15];
+                label32.Text = list[16];
+                label34.Text = list[17];
+                label35.Text = list[18];
+            }
         }
     }
 }

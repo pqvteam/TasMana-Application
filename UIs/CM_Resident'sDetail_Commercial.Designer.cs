@@ -50,7 +50,6 @@
             label2 = new Label();
             label3 = new Label();
             label5 = new Label();
-            UserName1 = new Label();
             label4 = new Label();
             customButton21 = new CustomComponent.CustomButton();
             customButton16 = new CustomComponent.CustomButton();
@@ -89,6 +88,7 @@
             label30 = new Label();
             label31 = new Label();
             label32 = new Label();
+            IDBox = new CustomComponent.CustomComboBox();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -456,10 +456,10 @@
             customPanel1.BorderColor = Color.Black;
             customPanel1.BorderRadius = 0;
             customPanel1.BorderWidth = 1;
+            customPanel1.Controls.Add(IDBox);
             customPanel1.Controls.Add(label2);
             customPanel1.Controls.Add(label3);
             customPanel1.Controls.Add(label5);
-            customPanel1.Controls.Add(UserName1);
             customPanel1.Controls.Add(label4);
             customPanel1.Controls.Add(customButton21);
             customPanel1.Controls.Add(customButton16);
@@ -512,18 +512,6 @@
             label5.TabIndex = 37;
             label5.Text = "-";
             label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // UserName1
-            // 
-            UserName1.BackColor = Color.FromArgb(64, 64, 64);
-            UserName1.Font = new Font("Calibri", 13.8F, FontStyle.Bold);
-            UserName1.ForeColor = Color.White;
-            UserName1.Location = new Point(35, 51);
-            UserName1.Name = "UserName1";
-            UserName1.Size = new Size(328, 54);
-            UserName1.TabIndex = 27;
-            UserName1.Text = "-";
-            UserName1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -1086,6 +1074,28 @@
             label32.TextAlign = ContentAlignment.MiddleCenter;
             label32.Click += label32_Click;
             // 
+            // IDBox
+            // 
+            IDBox.BackColor = Color.FromArgb(64, 64, 64);
+            IDBox.BorderColor = Color.FromArgb(42, 42, 42);
+            IDBox.BorderSize = 1;
+            IDBox.Cursor = Cursors.Hand;
+            IDBox.DropDownStyle = ComboBoxStyle.DropDown;
+            IDBox.Font = new Font("Segoe UI", 10F);
+            IDBox.ForeColor = Color.White;
+            IDBox.IconColor = Color.White;
+            IDBox.Items.AddRange(new object[] { "STAFF", "DEPARTMENT" });
+            IDBox.ListBackColor = Color.Black;
+            IDBox.ListTextColor = Color.White;
+            IDBox.Location = new Point(35, 53);
+            IDBox.MinimumSize = new Size(200, 30);
+            IDBox.Name = "IDBox";
+            IDBox.Padding = new Padding(1);
+            IDBox.Size = new Size(328, 54);
+            IDBox.TabIndex = 128;
+            IDBox.Texts = "";
+            IDBox.OnSelectedIndexChanged += IDBox_OnSelectedIndexChanged;
+            // 
             // CM_Resident_sDetail_Commercial
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1134,7 +1144,6 @@
         private Label label2;
         private Label label3;
         private Label label5;
-        private Label UserName1;
         private Label label4;
         private CustomComponent.CustomButton customButton21;
         private CustomComponent.CustomButton customButton16;
@@ -1174,5 +1183,6 @@
         private Label label32;
         private Label label33;
         private CustomComponent.CustomComboBox languageSelect;
+        private CustomComponent.CustomComboBox IDBox;
     }
 }
