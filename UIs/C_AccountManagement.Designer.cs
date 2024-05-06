@@ -634,6 +634,7 @@
             Controls.Add(customButton2);
             Controls.Add(customButton19);
             Controls.Add(customButton4);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "C_AccountManagement";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "C_AccountManagement";

@@ -714,6 +714,7 @@
             Controls.Add(customPanel2);
             Controls.Add(customPanel1);
             Controls.Add(headerPanel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "C_Information";
             Text = "C_Information";
             Load += C_Information_Load;
