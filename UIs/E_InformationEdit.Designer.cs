@@ -842,6 +842,7 @@
             Controls.Add(customPanel2);
             Controls.Add(customPanel1);
             Controls.Add(headerPanel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "E_InformationEdit";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "E_InformationEdit";

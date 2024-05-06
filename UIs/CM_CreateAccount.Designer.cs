@@ -680,6 +680,7 @@
             Controls.Add(customButton2);
             Controls.Add(customButton10);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CM_CreateAccount";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CM_CreateAccount";
