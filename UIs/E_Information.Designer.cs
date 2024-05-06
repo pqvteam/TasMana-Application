@@ -812,6 +812,7 @@
             Controls.Add(headerPanel);
             Controls.Add(customPanel2);
             Controls.Add(customPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "E_Information";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "E_Information";

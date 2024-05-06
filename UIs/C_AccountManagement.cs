@@ -1055,5 +1055,11 @@ namespace UIs
             ToastForm show = new ToastForm(type, message);
             show.Show();
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }
