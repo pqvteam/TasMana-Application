@@ -8,11 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using Microsoft.Data.SqlClient;
 using Repositories.Entities;
 using Repositories.Utilities;
 using Services;
 using UIs.CustomComponent;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Diagnostics;
+using OfficeOpenXml.Drawing.Chart;
+using System.IO;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using System.IO.Packaging;
+using Org.BouncyCastle.Crypto.Tls;
 
 namespace UIs
 {
@@ -528,6 +537,240 @@ namespace UIs
             label10.Font = fontSmaller;
             customButton4.Font = fontSmaller;
             cancelButton.Font = fontSmaller;
+        }
+
+        private void customButton4_Click(object sender, EventArgs e)
+        {
+
+            using (ExcelPackage excelPackage = new ExcelPackage())
+            {
+                // Tạo worksheet và đặt tiêu đề
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("PieChart");
+                ExcelWorksheet chartSheet = excelPackage.Workbook.Worksheets.Add("ColunmChart");
+
+                // Merge các ô để tạo tiêu đề
+                worksheet.Cells["A1:C1"].Merge = true;
+                string heading = "Top 5 nhân viên làm việc tốt nhất ";
+                // Đặt tiêu đề "Top 5 nhân viên làm việc tốt nhất"
+                
+
+                // Kết nối với cơ sở dữ liệu và truy vấn dữ liệu
+                DatabaseConnection.Instance.OpenConnection();
+                SqlConnection conn = DatabaseConnection.Instance.GetConnection();
+                string timeType = "YEAR(";
+                string timeSort = "";
+                if (dayButton.Checked)
+                {
+                    timeType = "Day(";
+                    heading += "ngày";
+                }
+                else if (monthButton.Checked)
+                {
+                    timeType = "Month(";
+                    heading += "tháng";
+
+                }
+                else if (yearButton.Checked)
+                {
+                    timeType = "Year(";
+                    heading += "năm";
+
+                }
+                else if (quarterButton.Checked)
+                {
+                    timeType = "datepart(q,";
+                    heading += "quý";
+
+                }
+                timeSort = timeBox.Text;
+                string sql = "";
+                string querytong = "";
+                if (timeSort == "")
+                {
+
+                    sql =
+                   "SELECT NhanSu.hoVaTen, COUNT(*) AS SoLuongCongViecHoanThanh " +
+                   "FROM NhanSu " +
+                   "INNER JOIN NhanViec ON NhanSu.maThanhVien = NhanViec.maThanhVien " +
+                   "INNER JOIN GiaoViec ON NhanViec.maGiaoViec = GiaoViec.maGiaoViec " +
+                   $"WHERE {timeType}GiaoViec.hanHoanThanh) = {timeType}GETDATE()) AND YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) AND tinhTrangCongViec LIKE N'Đã hoàn thành' " +
+                   "GROUP BY NhanSu.hoVaTen " +
+                   "ORDER BY COUNT(*) DESC";
+
+                    querytong = "SELECT COUNT(*) AS TongCongViecHoanThanh " +
+                        "FROM NhanSu " +
+                        "INNER JOIN NhanViec ON NhanSu.maThanhVien = NhanViec.maThanhVien " +
+                        "INNER JOIN GiaoViec ON NhanViec.maGiaoViec = GiaoViec.maGiaoViec " +
+                        $"WHERE {timeType}GiaoViec.hanHoanThanh) = {timeType}GETDATE()) AND YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) AND tinhTrangCongViec LIKE N'Đã hoàn thành'";
+
+
+                }
+                else
+                {
+                    sql =
+                    "SELECT NhanSu.hoVaTen, COUNT(*) AS SoLuongCongViecHoanThanh " +
+                    "FROM NhanSu " +
+                    "INNER JOIN NhanViec ON NhanSu.maThanhVien = NhanViec.maThanhVien " +
+                    "INNER JOIN GiaoViec ON NhanViec.maGiaoViec = GiaoViec.maGiaoViec " +
+                    $"WHERE {timeType}GiaoViec.hanHoanThanh) = '{timeSort}' AND YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) AND tinhTrangCongViec LIKE N'Đã hoàn thành' " +
+                    "GROUP BY NhanSu.hoVaTen " +
+                    "ORDER BY COUNT(*) DESC";
+
+                    querytong = "SELECT COUNT(*) AS TongCongViecHoanThanh " +
+                        "FROM NhanSu " +
+                        "INNER JOIN NhanViec ON NhanSu.maThanhVien = NhanViec.maThanhVien " +
+                        "INNER JOIN GiaoViec ON NhanViec.maGiaoViec = GiaoViec.maGiaoViec " +
+                        $"WHERE {timeType}GiaoViec.hanHoanThanh) = '{timeSort}' AND YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) AND tinhTrangCongViec LIKE N'Đã hoàn thành'";
+
+                    heading +=" "+timeSort;
+
+                }
+
+                worksheet.Cells["A1"].Value = heading;
+
+                worksheet.Cells["A1"].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+
+                MessageBox.Show(querytong);
+                SqlCommand command = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+
+                adapter.Fill(dataTable);
+
+                // Tính tổng số lượng công việc của cả công ty
+                SqlCommand command1 = new SqlCommand(querytong, conn);
+                int tongCongViec = Convert.ToInt32(command1.ExecuteScalar());
+                if (tongCongViec > 0)
+                {
+                    // Thêm dữ liệu vào tệp Excel
+                    int row = 2; // Dòng bắt đầu của dữ liệu
+                    worksheet.Cells[row, 1].Value = "Nhân viên";
+                    worksheet.Cells[row, 2].Value = "Số lượng công việc hoàn thành";
+                    worksheet.Cells[row, 3].Value = "Tỷ lệ (%)";
+                    row++;
+                    foreach (DataRow dataRow in dataTable.Rows)
+                    {
+                        worksheet.Cells[row, 1].Value = dataRow["hoVaTen"].ToString();
+                        worksheet.Cells[row, 2].Value = Convert.ToInt32(dataRow["SoLuongCongViecHoanThanh"]);
+                        double tyLe = Convert.ToDouble(dataRow["SoLuongCongViecHoanThanh"]) / tongCongViec * 100;
+                        worksheet.Cells[row, 3].Value = tyLe;
+                        row++;
+                    }
+
+                    // Vẽ biểu đồ tròn
+                    var pieChart = worksheet.Drawings.AddChart("PieChart", OfficeOpenXml.Drawing.Chart.eChartType.Pie);
+                    pieChart.SetPosition(0, 6, 6, 9);
+                    pieChart.SetSize(600, 400);
+                    pieChart.Series.Add(worksheet.Cells[$"C2:C{row - 1}"], worksheet.Cells[$"A2:A{row - 1}"]);
+                }
+
+                chartSheet.Cells["A1:C1"].Merge = true;
+                chartSheet.Cells["A1"].Value = "Thống kê công việc đúng hạn và trễ hạn trong năm";
+                chartSheet.Cells["A1"].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+
+                // Thêm dữ liệu vào sheet "Biểu đồ"
+                chartSheet.Cells["A2"].Value = "Tháng";
+                chartSheet.Cells["B2"].Value = "Công việc hoàn thành";
+                chartSheet.Cells["C2"].Value = "Công việc trễ hạn";
+
+                // Thực hiện truy vấn để lấy dữ liệu về số lượng công việc hoàn thành và trễ hạn theo tháng trong năm
+                string monthlySQL =
+                    "SELECT MONTH(GiaoViec.hanHoanThanh) AS Thang, " +
+                    "SUM(CASE WHEN dungHan = 1 THEN 1 ELSE 0 END) AS CongViecHoanThanh, " +
+                    "SUM(CASE WHEN dungHan = 0 THEN 1 ELSE 0 END) AS CongViecTreHan " +
+                    "FROM GiaoViec " +
+                    "WHERE YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) " +
+                    "GROUP BY MONTH(GiaoViec.hanHoanThanh) " +
+                    "ORDER BY MONTH(GiaoViec.hanHoanThanh)";
+
+                SqlCommand monthlyCommand = new SqlCommand(monthlySQL, conn);
+                SqlDataAdapter monthlyAdapter = new SqlDataAdapter(monthlyCommand);
+                DataTable monthlyDataTable = new DataTable();
+                monthlyAdapter.Fill(monthlyDataTable);
+
+                // Thêm dữ liệu vào sheet "Biểu đồ"
+                int monthRow = 3; // Dòng bắt đầu của dữ liệu
+                foreach (DataRow monthlyDataRow in monthlyDataTable.Rows)
+                {
+                    int month = Convert.ToInt32(monthlyDataRow["Thang"]);
+                    int completedTasks = Convert.ToInt32(monthlyDataRow["CongViecHoanThanh"]);
+                    int delayedTasks = Convert.ToInt32(monthlyDataRow["CongViecTreHan"]);
+
+                    chartSheet.Cells[monthRow, 1].Value = month;
+                    chartSheet.Cells[monthRow, 2].Value = completedTasks;
+                    chartSheet.Cells[monthRow, 3].Value = delayedTasks;
+
+                    monthRow++;
+                }
+
+                // Vẽ biểu đồ cột kép
+                var columnChart = chartSheet.Drawings.AddChart("ColumnChart", OfficeOpenXml.Drawing.Chart.eChartType.ColumnClustered);
+                columnChart.SetPosition(0, 0, 6, 0);
+                columnChart.SetSize(800, 400);
+                columnChart.Series.Add(chartSheet.Cells[$"B3:B{monthRow - 1}"], chartSheet.Cells[$"A3:A{monthRow - 1}"]);
+                columnChart.Series.Add(chartSheet.Cells[$"C3:C{monthRow - 1}"], chartSheet.Cells[$"A3:A{monthRow - 1}"]);
+
+                // Lưu tệp Excel vào một MemoryStream
+                MemoryStream stream = new MemoryStream();
+                excelPackage.SaveAs(stream);
+
+                // Tạo một tên tạm thời cho file
+                string tempFileName = Path.GetTempFileName();
+                string excelFileName = Path.ChangeExtension(tempFileName, ".xlsx");
+
+                // Ghi MemoryStream ra file Excel tạm thời
+                using (FileStream file = new FileStream(excelFileName, FileMode.Create, FileAccess.Write))
+                {
+                    stream.WriteTo(file);
+                }
+
+                // Mở file Excel bằng Microsoft Excel
+                // Sử dụng đường dẫn đầy đủ của Microsoft Excel
+                string excelPath = GetExcelPath();
+
+                // Kiểm tra xem tệp thực thi Excel có tồn tại không
+                if (File.Exists(excelPath))
+                {
+                    // Mở file Excel bằng Microsoft Excel
+                    System.Diagnostics.Process.Start(excelPath, excelFileName);
+                }
+                else
+                {
+                    MessageBox.Show("Không thể tìm thấy Microsoft Excel trên máy tính của bạn.");
+                }
+
+                // Đóng kết nối cơ sở dữ liệu
+                DatabaseConnection.Instance.CloseConnection();
+            }
+
+
+        }
+
+        private string GetExcelPath()
+        {
+            // Đường dẫn Registry của ứng dụng Excel
+            const string excelPathKey = @"Software\Microsoft\Windows\CurrentVersion\App Paths\excel.exe";
+
+            // Đọc đường dẫn từ Registry
+            using (Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(excelPathKey))
+            {
+                if (key != null)
+                {
+                    Object o = key.GetValue("");
+                    if (o != null)
+                    {
+                        return o.ToString();
+                    }
+                }
+            }
+
+            return null;
+
+        }
+
+        private void timeBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

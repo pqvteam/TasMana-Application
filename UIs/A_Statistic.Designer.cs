@@ -1272,6 +1272,7 @@
             customButton4.Text = "EXPORT TO EXCEL";
             customButton4.TextColor = Color.White;
             customButton4.UseVisualStyleBackColor = false;
+            customButton4.Click += customButton4_Click;
             // 
             // customPanel2
             // 
@@ -1403,6 +1404,7 @@
             timeBox.PlaceholderText = "Enter time...";
             timeBox.Size = new Size(137, 20);
             timeBox.TabIndex = 149;
+            timeBox.TextChanged += timeBox_TextChanged;
             // 
             // dayButton
             // 
