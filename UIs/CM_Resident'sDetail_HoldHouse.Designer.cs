@@ -1196,6 +1196,7 @@
             Controls.Add(customPanel1);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CM_Resident_sDetail";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CM_ResidentsDetail_HoldHouse";
