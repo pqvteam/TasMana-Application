@@ -1648,6 +1648,7 @@
             ClientSize = new Size(1382, 753);
             Controls.Add(mainPanel);
             Controls.Add(headerPanel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "C_AllTaskList";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "C_AllTaskList";

@@ -131,6 +131,7 @@ namespace UIs
                 if (result)
                 {
                     showToast("SUCCESS", "Change password successfully");
+                    this.Close();
                 }
                 else
                 {
