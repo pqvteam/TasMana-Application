@@ -196,6 +196,12 @@ namespace UIs
         {
             venueLabel.Text = venueId;
             venueID = venueId;
+            CanHoService canHoService = new CanHoService();
+            string? customerID = canHoService.findApartment(venueID).MaCuDan;
+            if (customerID != null)
+            {
+                customerLabel.Text = customerID;
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -375,12 +381,6 @@ namespace UIs
         {
             selectDepartment.Text = department;
             sharedProcess.Text = department;
-            CanHoService canHoService = new CanHoService();
-            string? customerID = canHoService.findApartment(venueID).MaCuDan;
-            if (customerID != null)
-            {
-                customerLabel.Text = customerID;
-            }
         }
 
         private void ShowTagForm_TagSelected(string tag)
@@ -435,8 +435,6 @@ namespace UIs
                 label18.Text = "CÔNG TY";
                 label17.Text = "BỘ PHẬN";
                 editReceiverButton.Text = "SỬA";
-                button1.Text = "SỬA";
-                button2.Text = "SỬA";
                 venueEditButton.Text = "SỬA";
                 tagEditButton.Text = "SỬA";
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
@@ -482,8 +480,6 @@ namespace UIs
                 label18.Text = "COMPANY";
                 label17.Text = "DEPARTMENT";
                 editReceiverButton.Text = "EDIT";
-                button1.Text = "EDIT";
-                button2.Text = "EDIT";
                 venueEditButton.Text = "EDIT";
                 tagEditButton.Text = "EDIT";
                 font = new Font("Copperplate Gothic Bold", 10);
@@ -527,8 +523,6 @@ namespace UIs
             label18.Font = font;
             label17.Font = font;
             editReceiverButton.Font = font;
-            button1.Font = font;
-            button2.Font = font;
             venueEditButton.Font = font;
             tagEditButton.Font = font;
 
@@ -575,8 +569,6 @@ namespace UIs
                 label18.Text = "CÔNG TY";
                 label17.Text = "BỘ PHẬN";
                 editReceiverButton.Text = "SỬA";
-                button1.Text = "SỬA";
-                button2.Text = "SỬA";
                 venueEditButton.Text = "SỬA";
                 tagEditButton.Text = "SỬA";
                 font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
@@ -623,8 +615,6 @@ namespace UIs
                 label18.Text = "COMPANY";
                 label17.Text = "DEPARTMENT";
                 editReceiverButton.Text = "EDIT";
-                button1.Text = "EDIT";
-                button2.Text = "EDIT";
                 venueEditButton.Text = "EDIT";
                 tagEditButton.Text = "EDIT";
                 font = new Font("Copperplate Gothic Bold", 10);
@@ -668,8 +658,6 @@ namespace UIs
             label18.Font = font;
             label17.Font = font;
             editReceiverButton.Font = font;
-            button1.Font = font;
-            button2.Font = font;
             venueEditButton.Font = font;
             tagEditButton.Font = font;
 

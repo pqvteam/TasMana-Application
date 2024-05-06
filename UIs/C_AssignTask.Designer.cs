@@ -69,10 +69,8 @@
             venueEditButton = new Button();
             label4 = new Label();
             pictureBox2 = new PictureBox();
-            button2 = new Button();
             label3 = new Label();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
             editReceiverButton = new Button();
             label2 = new Label();
             label1 = new Label();
@@ -97,7 +95,6 @@
             cancelButton = new CustomComponent.CustomButton();
             customPanel1 = new CustomComponent.CustomPanel();
             label14 = new Label();
-            label22 = new Label();
             selectDepartment = new Label();
             departmentMode = new CustomComponent.CustomToggleButton();
             taskHighlight = new CustomComponent.CustomToggleButton();
@@ -499,10 +496,8 @@
             userPanel.Controls.Add(venueEditButton);
             userPanel.Controls.Add(label4);
             userPanel.Controls.Add(pictureBox2);
-            userPanel.Controls.Add(button2);
             userPanel.Controls.Add(label3);
             userPanel.Controls.Add(pictureBox1);
-            userPanel.Controls.Add(button1);
             userPanel.Controls.Add(editReceiverButton);
             userPanel.Controls.Add(label2);
             userPanel.Controls.Add(label1);
@@ -708,20 +703,6 @@
             pictureBox2.TabIndex = 8;
             pictureBox2.TabStop = false;
             // 
-            // button2
-            // 
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.FromArgb(4, 166, 225);
-            button2.Location = new Point(218, 311);
-            button2.Name = "button2";
-            button2.Size = new Size(71, 29);
-            button2.TabIndex = 12;
-            button2.Text = "<EDIT>";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -742,20 +723,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(4, 166, 225);
-            button1.Location = new Point(218, 208);
-            button1.Name = "button1";
-            button1.Size = new Size(71, 29);
-            button1.TabIndex = 11;
-            button1.Text = "<EDIT>";
-            button1.UseVisualStyleBackColor = true;
             // 
             // editReceiverButton
             // 
@@ -1147,7 +1114,6 @@
             customPanel1.BorderRadius = 28;
             customPanel1.BorderWidth = 1;
             customPanel1.Controls.Add(label14);
-            customPanel1.Controls.Add(label22);
             customPanel1.Controls.Add(selectDepartment);
             customPanel1.Controls.Add(departmentMode);
             customPanel1.Controls.Add(taskHighlight);
@@ -1161,7 +1127,7 @@
             customPanel1.GradientAngle = 0F;
             customPanel1.GradientEndColor = Color.White;
             customPanel1.GradientStartColor = Color.White;
-            customPanel1.Location = new Point(7, 46);
+            customPanel1.Location = new Point(3, 3);
             customPanel1.Name = "customPanel1";
             customPanel1.Size = new Size(279, 259);
             customPanel1.TabIndex = 8;
@@ -1176,21 +1142,6 @@
             label14.Size = new Size(249, 19);
             label14.TabIndex = 52;
             label14.Text = "SELECTED DEPARTMENT";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Cursor = Cursors.Hand;
-            label22.Font = new Font("Copperplate Gothic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label22.ForeColor = Color.White;
-            label22.Image = (Image)resources.GetObject("label22.Image");
-            label22.ImageAlign = ContentAlignment.MiddleRight;
-            label22.Location = new Point(5, 4);
-            label22.Name = "label22";
-            label22.Size = new Size(224, 20);
-            label22.TabIndex = 64;
-            label22.Text = "CHANGE PASSWORD";
-            label22.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // selectDepartment
             // 
@@ -1685,12 +1636,10 @@
         private Label label2;
         private Label label1;
         private Label name;
-        private Button button1;
         private PictureBox pictureBox1;
         private Button venueEditButton;
         private Label label4;
         private PictureBox pictureBox2;
-        private Button button2;
         private Label label3;
         private Label label5;
         private PictureBox pictureBox3;
@@ -1758,7 +1707,6 @@
         private CustomComponent.CustomComboBox languageSelect;
         private TableLayoutPanel tableLayoutPanel3;
         private Label label13;
-        private Label label22;
         private TableLayoutPanel tableLayoutPanel4;
         private TableLayoutPanel tableLayoutPanel5;
         private Label label29;

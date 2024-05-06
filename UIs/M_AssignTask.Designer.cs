@@ -77,10 +77,8 @@
             venueEditButton = new Button();
             label4 = new Label();
             pictureBox2 = new PictureBox();
-            button2 = new Button();
             label3 = new Label();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
             editReceiverButton = new Button();
             label2 = new Label();
             label1 = new Label();
@@ -556,10 +554,8 @@
             userPanel.Controls.Add(venueEditButton);
             userPanel.Controls.Add(label4);
             userPanel.Controls.Add(pictureBox2);
-            userPanel.Controls.Add(button2);
             userPanel.Controls.Add(label3);
             userPanel.Controls.Add(pictureBox1);
-            userPanel.Controls.Add(button1);
             userPanel.Controls.Add(editReceiverButton);
             userPanel.Controls.Add(label2);
             userPanel.Controls.Add(label1);
@@ -796,19 +792,6 @@
             pictureBox2.TabIndex = 8;
             pictureBox2.TabStop = false;
             // 
-            // button2
-            // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.FromArgb(4, 166, 225);
-            button2.Location = new Point(218, 315);
-            button2.Name = "button2";
-            button2.Size = new Size(71, 29);
-            button2.TabIndex = 9;
-            button2.Text = "<EDIT>";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -829,19 +812,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(4, 166, 225);
-            button1.Location = new Point(218, 206);
-            button1.Name = "button1";
-            button1.Size = new Size(71, 29);
-            button1.TabIndex = 8;
-            button1.Text = "<EDIT>";
-            button1.UseVisualStyleBackColor = true;
             // 
             // editReceiverButton
             // 
@@ -1511,12 +1481,10 @@
         private Label label2;
         private Label label1;
         private Label name;
-        private Button button1;
         private PictureBox pictureBox1;
         private Button venueEditButton;
         private Label label4;
         private PictureBox pictureBox2;
-        private Button button2;
         private Label label3;
         private Label label5;
         private PictureBox pictureBox3;

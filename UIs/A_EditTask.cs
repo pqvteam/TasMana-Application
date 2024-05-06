@@ -403,8 +403,6 @@ namespace UIs
                 label18.Text = "CÔNG TY";
                 label17.Text = "BỘ PHẬN";
                 editReceiverButton.Text = "SỬA";
-                button1.Text = "SỬA";
-                button2.Text = "SỬA";
                 venueEditButton.Text = "SỬA";
                 tagEditButton.Text = "SỬA";
                 currentFile.Text = "TÀI LIỆU HIỆN TẠI";
@@ -446,8 +444,6 @@ namespace UIs
                 label18.Font = font;
                 label17.Font = font;
                 editReceiverButton.Font = font;
-                button1.Font = font;
-                button2.Font = font;
                 venueEditButton.Font = font;
                 tagEditButton.Font = font;
                 currentFile.Font = font;
@@ -485,8 +481,6 @@ namespace UIs
                 label18.Text = "COMPANY";
                 label17.Text = "DEPARTMENT";
                 editReceiverButton.Text = "EDIT";
-                button1.Text = "EDIT";
-                button2.Text = "EDIT";
                 venueEditButton.Text = "EDIT";
                 tagEditButton.Text = "EDIT";
                 currentFile.Text = "CURRENT FILE";
@@ -526,8 +520,6 @@ namespace UIs
                 label18.Font = font;
                 label17.Font = font;
                 editReceiverButton.Font = font;
-                button1.Font = font;
-                button2.Font = font;
                 venueEditButton.Font = font;
                 tagEditButton.Font = font;
                 currentFile.Font = font;
@@ -573,8 +565,6 @@ namespace UIs
                 label18.Text = "BỘ PHẬN";
                 label17.Text = "CÔNG TY";
                 editReceiverButton.Text = "SỬA";
-                button1.Text = "SỬA";
-                button2.Text = "SỬA";
                 venueEditButton.Text = "SỬA";
                 tagEditButton.Text = "SỬA";
                 currentFile.Text = "TÀI LIỆU HIỆN TẠI";
@@ -616,8 +606,6 @@ namespace UIs
                 label18.Font = font;
                 label17.Font = font;
                 editReceiverButton.Font = font;
-                button1.Font = font;
-                button2.Font = font;
                 venueEditButton.Font = font;
                 tagEditButton.Font = font;
                 currentFile.Font = font;
@@ -656,8 +644,6 @@ namespace UIs
                 label18.Text = "COMPANY";
                 label17.Text = "DEPARTMENT";
                 editReceiverButton.Text = "EDIT";
-                button1.Text = "EDIT";
-                button2.Text = "EDIT";
                 venueEditButton.Text = "EDIT";
                 tagEditButton.Text = "EDIT";
                 currentFile.Text = "CURRENT FILE";
@@ -697,8 +683,6 @@ namespace UIs
                 label18.Font = font;
                 label17.Font = font;
                 editReceiverButton.Font = font;
-                button1.Font = font;
-                button2.Font = font;
                 venueEditButton.Font = font;
                 tagEditButton.Font = font;
                 currentFile.Font = font;

@@ -330,8 +330,6 @@ namespace UIs
                 label18.Text = "CÔNG TY";
                 label17.Text = "BỘ PHẬN";
                 editReceiverButton.Text = "SỬA";
-                button1.Text = "SỬA";
-                button2.Text = "SỬA";
                 venueEditButton.Text = "SỬA";
                 tagEditButton.Text = "SỬA";
                 label13.Text = "ỦY QUYỀN BỞI";
@@ -378,8 +376,6 @@ namespace UIs
                 label18.Text = "COMPANY";
                 label17.Text = "DEPARTMENT";
                 editReceiverButton.Text = "EDIT";
-                button1.Text = "EDIT";
-                button2.Text = "EDIT";
                 venueEditButton.Text = "EDIT";
                 tagEditButton.Text = "EDIT";
                 label13.Text = "AUTHORIZE BY";
@@ -423,8 +419,6 @@ namespace UIs
             label18.Font = font;
             label17.Font = font;
             editReceiverButton.Font = font;
-            button1.Font = font;
-            button2.Font = font;
             venueEditButton.Font = font;
             tagEditButton.Font = font;
             label13.Font = font;
@@ -471,8 +465,6 @@ namespace UIs
                 label18.Text = "CÔNG TY";
                 label17.Text = "BỘ PHẬN";
                 editReceiverButton.Text = "SỬA";
-                button1.Text = "SỬA";
-                button2.Text = "SỬA";
                 venueEditButton.Text = "SỬA";
                 tagEditButton.Text = "SỬA";
                 label13.Text = "ỦY QUYỀN BỞI";
@@ -519,8 +511,6 @@ namespace UIs
                 label18.Text = "COMPANY";
                 label17.Text = "DEPARTMENT";
                 editReceiverButton.Text = "EDIT";
-                button1.Text = "EDIT";
-                button2.Text = "EDIT";
                 venueEditButton.Text = "EDIT";
                 tagEditButton.Text = "EDIT";
                 label13.Text = "AUTHORIZE BY";
@@ -564,8 +554,6 @@ namespace UIs
             label18.Font = font;
             label17.Font = font;
             editReceiverButton.Font = font;
-            button1.Font = font;
-            button2.Font = font;
             venueEditButton.Font = font;
             tagEditButton.Font = font;
             label13.Font = font;

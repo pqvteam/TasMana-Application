@@ -589,11 +589,11 @@ namespace UIs
                 {
 
                     sql =
-                   "SELECT NhanSu.hoVaTen, COUNT(*) AS SoLuongCongViecHoanThanh " +
+                   "SELECT TOP 5 NhanSu.hoVaTen, COUNT(*) AS SoLuongCongViecHoanThanh " +
                    "FROM NhanSu " +
                    "INNER JOIN NhanViec ON NhanSu.maThanhVien = NhanViec.maThanhVien " +
                    "INNER JOIN GiaoViec ON NhanViec.maGiaoViec = GiaoViec.maGiaoViec " +
-                   $"WHERE {timeType}GiaoViec.hanHoanThanh) = {timeType}GETDATE()) AND YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) AND tinhTrangCongViec LIKE N'Đã hoàn thành' " +
+                   $"WHERE {timeType}GiaoViec.hanHoanThanh) = {timeType}GETDATE()) AND YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) AND (tinhTrangCongViec LIKE N'Đã hoàn thành' or tinhTrangCongViec LIKE N'%completed%' )" +
                    "GROUP BY NhanSu.hoVaTen " +
                    "ORDER BY COUNT(*) DESC";
 
@@ -601,18 +601,18 @@ namespace UIs
                         "FROM NhanSu " +
                         "INNER JOIN NhanViec ON NhanSu.maThanhVien = NhanViec.maThanhVien " +
                         "INNER JOIN GiaoViec ON NhanViec.maGiaoViec = GiaoViec.maGiaoViec " +
-                        $"WHERE {timeType}GiaoViec.hanHoanThanh) = {timeType}GETDATE()) AND YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) AND tinhTrangCongViec LIKE N'Đã hoàn thành'";
+                        $"WHERE {timeType}GiaoViec.hanHoanThanh) = {timeType}GETDATE()) AND YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) AND (tinhTrangCongViec LIKE N'Đã hoàn thành' or tinhTrangCongViec LIKE N'%completed%')";
 
 
                 }
                 else
                 {
                     sql =
-                    "SELECT NhanSu.hoVaTen, COUNT(*) AS SoLuongCongViecHoanThanh " +
+                    "SELECT TOP 5 NhanSu.hoVaTen, COUNT(*) AS SoLuongCongViecHoanThanh " +
                     "FROM NhanSu " +
                     "INNER JOIN NhanViec ON NhanSu.maThanhVien = NhanViec.maThanhVien " +
                     "INNER JOIN GiaoViec ON NhanViec.maGiaoViec = GiaoViec.maGiaoViec " +
-                    $"WHERE {timeType}GiaoViec.hanHoanThanh) = '{timeSort}' AND YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) AND tinhTrangCongViec LIKE N'Đã hoàn thành' " +
+                    $"WHERE {timeType}GiaoViec.hanHoanThanh) = '{timeSort}' AND YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) AND (tinhTrangCongViec LIKE N'Đã hoàn thành' or tinhTrangCongViec LIKE N'%completed%')" +
                     "GROUP BY NhanSu.hoVaTen " +
                     "ORDER BY COUNT(*) DESC";
 
@@ -620,7 +620,7 @@ namespace UIs
                         "FROM NhanSu " +
                         "INNER JOIN NhanViec ON NhanSu.maThanhVien = NhanViec.maThanhVien " +
                         "INNER JOIN GiaoViec ON NhanViec.maGiaoViec = GiaoViec.maGiaoViec " +
-                        $"WHERE {timeType}GiaoViec.hanHoanThanh) = '{timeSort}' AND YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) AND tinhTrangCongViec LIKE N'Đã hoàn thành'";
+                        $"WHERE {timeType}GiaoViec.hanHoanThanh) = '{timeSort}' AND YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) AND (tinhTrangCongViec LIKE N'Đã hoàn thành' or tinhTrangCongViec LIKE N'%completed%')";
 
                     heading +=" "+timeSort;
 
@@ -630,7 +630,6 @@ namespace UIs
 
                 worksheet.Cells["A1"].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
 
-                MessageBox.Show(querytong);
                 SqlCommand command = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable dataTable = new DataTable();
