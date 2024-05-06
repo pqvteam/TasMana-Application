@@ -708,6 +708,7 @@
             Controls.Add(customPanel1);
             Controls.Add(customPanel2);
             Controls.Add(headerPanel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "C_InformationEdit";
             Text = "C_InformationEdit";
             Load += C_InformationEdit_Load;

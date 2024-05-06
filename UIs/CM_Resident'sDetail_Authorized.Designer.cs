@@ -47,6 +47,7 @@
             customButton3 = new CustomComponent.CustomButton();
             customButton5 = new CustomComponent.CustomButton();
             customPanel1 = new CustomComponent.CustomPanel();
+            IDBox = new CustomComponent.CustomComboBox();
             label2 = new Label();
             label3 = new Label();
             label5 = new Label();
@@ -86,7 +87,6 @@
             label29 = new Label();
             label30 = new Label();
             label31 = new Label();
-            IDBox = new CustomComponent.CustomComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -465,6 +465,28 @@
             customPanel1.Name = "customPanel1";
             customPanel1.Size = new Size(387, 632);
             customPanel1.TabIndex = 27;
+            // 
+            // IDBox
+            // 
+            IDBox.BackColor = Color.FromArgb(64, 64, 64);
+            IDBox.BorderColor = Color.FromArgb(42, 42, 42);
+            IDBox.BorderSize = 1;
+            IDBox.Cursor = Cursors.Hand;
+            IDBox.DropDownStyle = ComboBoxStyle.DropDown;
+            IDBox.Font = new Font("Segoe UI", 10F);
+            IDBox.ForeColor = Color.White;
+            IDBox.IconColor = Color.White;
+            IDBox.Items.AddRange(new object[] { "STAFF", "DEPARTMENT" });
+            IDBox.ListBackColor = Color.Black;
+            IDBox.ListTextColor = Color.White;
+            IDBox.Location = new Point(35, 48);
+            IDBox.MinimumSize = new Size(200, 30);
+            IDBox.Name = "IDBox";
+            IDBox.Padding = new Padding(1);
+            IDBox.Size = new Size(328, 54);
+            IDBox.TabIndex = 127;
+            IDBox.Texts = "";
+            IDBox.OnSelectedIndexChanged += IDBox_OnSelectedIndexChanged;
             // 
             // label2
             // 
@@ -1033,28 +1055,6 @@
             label31.Text = "INFORMATION";
             label31.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // IDBox
-            // 
-            IDBox.BackColor = Color.FromArgb(64, 64, 64);
-            IDBox.BorderColor = Color.FromArgb(42, 42, 42);
-            IDBox.BorderSize = 1;
-            IDBox.Cursor = Cursors.Hand;
-            IDBox.DropDownStyle = ComboBoxStyle.DropDown;
-            IDBox.Font = new Font("Segoe UI", 10F);
-            IDBox.ForeColor = Color.White;
-            IDBox.IconColor = Color.White;
-            IDBox.Items.AddRange(new object[] { "STAFF", "DEPARTMENT" });
-            IDBox.ListBackColor = Color.Black;
-            IDBox.ListTextColor = Color.White;
-            IDBox.Location = new Point(35, 48);
-            IDBox.MinimumSize = new Size(200, 30);
-            IDBox.Name = "IDBox";
-            IDBox.Padding = new Padding(1);
-            IDBox.Size = new Size(328, 54);
-            IDBox.TabIndex = 127;
-            IDBox.Texts = "";
-            IDBox.OnSelectedIndexChanged += IDBox_OnSelectedIndexChanged;
-            // 
             // CM_Resident_sDetail_Authorized
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1068,6 +1068,7 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CM_Resident_sDetail_Authorized";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CM_Resident_sDetail_Authorized";

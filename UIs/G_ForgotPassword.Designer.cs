@@ -434,6 +434,7 @@
             Controls.Add(pictureBox5);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "G_ForgotPassword";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "G_ForgotPassword";

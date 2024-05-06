@@ -236,6 +236,7 @@
             Controls.Add(pictureBox1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "G_Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login Interface";
