@@ -8,7 +8,9 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text.pdf.parser.clipper;
 using Services;
+using static System.Net.WebRequestMethods;
 
 namespace UIs
 {
@@ -25,16 +27,16 @@ namespace UIs
         {
             string username = box_username.Text;
             string result = service.sendConfirmCode(username);
-            if(result== "The confirmation code has been sent to your email")
+            if (result == "The confirmation code has been sent to your email")
             {
                 showToast("SUCCESS", result);
-            }    
+                panel_forgotPassword.Visible = false;
+                panel_verify.Visible = true;
+            }
             else
             {
                 showToast("ERROR", result);
-            }    
-            panel_forgotPassword.Visible = false;
-            panel_verify.Visible = true;
+            }
         }
 
         private void box_username_Enter(object sender, EventArgs e)
@@ -75,8 +77,11 @@ namespace UIs
             string code = box_NumericCode.Text;
             string result = service.confirmCode(username, code);
             MessageBox.Show("Mật khẩu của bạn là: " + result);
-            panel_verify.Visible = false;
-            panel_resetPassword.Visible = true;
+            if(result != "Incorect OTP!")
+            {
+                panel_verify.Visible = false;
+                panel_resetPassword.Visible = true;
+            }
         }
 
 
@@ -131,7 +136,10 @@ namespace UIs
                 if (result)
                 {
                     showToast("SUCCESS", "Change password successfully");
+                    exitForm = false;
                     this.Close();
+                    G_Login loginInterface = new G_Login();
+                    loginInterface.Show();
                 }
                 else
                 {
@@ -149,14 +157,14 @@ namespace UIs
         {
             string username = box_username.Text;
             string result = service.sendConfirmCode(username);
-            if(result== "The confirmation code has been sent to your email")
+            if (result == "The confirmation code has been sent to your email")
             {
                 showToast("SUCCESS", result);
-            }    
+            }
             else
             {
                 showToast("ERROR", result);
-            }    
+            }
         }
 
         private void box_newPassword_KeyDown(object sender, KeyEventArgs e)
@@ -196,5 +204,6 @@ namespace UIs
             ToastForm show = new ToastForm(type, message);
             show.Show();
         }
+
     }
 }
