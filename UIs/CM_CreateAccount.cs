@@ -165,34 +165,6 @@ namespace UIs
                 return;
             }
 
-            // Kiểm tra ngày sinh
-            if (date.Length <= 0)
-            {
-                showToast("WARNING", "Please enter the correct date format.");
-                birthdateBox.Focus();
-                return;
-            }
-
-            // Chuyển đổi ngày nhập vào thành kiểu DateTime
-            if (!DateTime.TryParse(date, out DateTime inputDate))
-            {
-                showToast("WARNING", "Please enter the correct date");
-                birthdateBox.Focus();
-                return;
-            }
-
-            DateTime currentDate2 = DateTime.Now;
-
-
-            // So sánh ngày nhập vào với ngày hiện tại
-            if (inputDate <= currentDate2)
-            {
-                // Ngày nhập vào không lớn hơn ngày hiện tại
-                showToast("WARNING", "Please enter a date later than the current date");
-                birthdateBox.Focus();
-                return;
-            }
-
 
             if (address.Length <= 0)
             {
