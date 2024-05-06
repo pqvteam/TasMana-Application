@@ -863,6 +863,7 @@
             Controls.Add(customComboBox2);
             Controls.Add(customButton16);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CM_CreateGroup";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CM_CreateGroup";

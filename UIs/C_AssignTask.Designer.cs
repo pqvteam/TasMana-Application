@@ -1631,6 +1631,7 @@
             Controls.Add(sidePanel);
             Controls.Add(headerPanel);
             Controls.Add(mainPanel);
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "C_AssignTask";
             StartPosition = FormStartPosition.CenterScreen;
