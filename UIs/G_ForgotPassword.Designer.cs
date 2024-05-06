@@ -208,7 +208,7 @@
             panel_verify.Controls.Add(pictureBox_mail);
             panel_verify.Controls.Add(pictureBox1);
             panel_verify.Controls.Add(box_NumericCode);
-            panel_verify.Location = new Point(941, 163);
+            panel_verify.Location = new Point(930, 206);
             panel_verify.Name = "panel_verify";
             panel_verify.Size = new Size(458, 476);
             panel_verify.TabIndex = 10;
