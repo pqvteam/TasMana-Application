@@ -719,6 +719,7 @@
             Controls.Add(headerPanel);
             Controls.Add(customPanel2);
             Controls.Add(customPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "M_Information";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "M_Information";

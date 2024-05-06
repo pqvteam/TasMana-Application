@@ -861,5 +861,11 @@ namespace UIs
             A_Statistic a_Statistic = new A_Statistic();
             a_Statistic.ShowDialog();
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }
