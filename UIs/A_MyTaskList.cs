@@ -197,12 +197,12 @@ namespace UIs
             else if (Session.Instance.laQuanLi)
             {
                 string departmentID = Session.Instance.UserName.Split('-')[0];
-                members = giaoViecService.getTaskOfDeparment(departmentID);
+                members = giaoViecService.getTaskOfDeparment(departmentID, Session.Instance.UserName);
             }
             else
             {
                 string departmentID = Session.Instance.UserName.Split('-')[0];
-                members = giaoViecService.getTaskOfDeparment(departmentID);
+                members = giaoViecService.getTaskOfDeparment(departmentID, Session.Instance.UserName);
             }
             int taskQuantity = 0;
             int completedTaskQuantity = 0;

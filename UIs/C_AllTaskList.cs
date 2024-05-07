@@ -89,6 +89,12 @@ namespace UIs
                 grandChart.Enabled = false;
                 grandChart.Visible = false;
             }
+            if (currentUser != null && !Session.Instance.UserName.Contains("GD") && !Session.Instance.laQuanLi)
+            {
+                grandChart.Enabled = false;
+                grandChart.Visible = false;
+                currentPosition.Text = "STAFF";
+            }
             membersGrid.Columns.Add("MaGiaoViec", "ID");
             membersGrid.Columns.Add("TenCongViec", "Name");
             membersGrid.Columns.Add("MoTaCongViec", "Description");
@@ -128,12 +134,12 @@ namespace UIs
             else if (Session.Instance.laQuanLi)
             {
                 string departmentID = Session.Instance.UserName.Split('-')[0];
-                members = giaoViecService.getTaskOfDeparment(departmentID);
+                members = giaoViecService.getTaskOfDeparment(departmentID, Session.Instance.UserName);
             }
             else
             {
                 string departmentID = Session.Instance.UserName.Split('-')[0];
-                members = giaoViecService.getTaskOfDeparment(departmentID);
+                members = giaoViecService.getTaskOfDeparment(departmentID, Session.Instance.UserName);
             }
             int taskQuantity = 0;
             int completedTaskQuantity = 0;
@@ -171,7 +177,7 @@ namespace UIs
         private void hrButton_Click(object sender, EventArgs e)
         {
             membersGrid.Rows.Clear();
-            List<GiaoViec> members = giaoViecService.getTaskOfDeparment("DV");
+            List<GiaoViec> members = giaoViecService.getTaskOfDeparment("DV", Session.Instance.UserName);
             foreach (GiaoViec member in members)
             {
                 List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(
@@ -321,7 +327,7 @@ namespace UIs
         private void seButton_Click(object sender, EventArgs e)
         {
             membersGrid.Rows.Clear();
-            List<GiaoViec> members = giaoViecService.getTaskOfDeparment("AN");
+            List<GiaoViec> members = giaoViecService.getTaskOfDeparment("AN", Session.Instance.UserName);
             foreach (GiaoViec member in members)
             {
                 List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(
@@ -365,7 +371,7 @@ namespace UIs
         private void maButton_Click(object sender, EventArgs e)
         {
             membersGrid.Rows.Clear();
-            List<GiaoViec> members = giaoViecService.getTaskOfDeparment("KT");
+            List<GiaoViec> members = giaoViecService.getTaskOfDeparment("KT", Session.Instance.UserName);
             foreach (GiaoViec member in members)
             {
                 List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(
@@ -387,7 +393,7 @@ namespace UIs
         private void coButton_Click(object sender, EventArgs e)
         {
             membersGrid.Rows.Clear();
-            List<GiaoViec> members = giaoViecService.getTaskOfDeparment("XD");
+            List<GiaoViec> members = giaoViecService.getTaskOfDeparment("XD", Session.Instance.UserName);
             foreach (GiaoViec member in members)
             {
                 List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(
@@ -409,7 +415,7 @@ namespace UIs
         private void fiButton_Click(object sender, EventArgs e)
         {
             membersGrid.Rows.Clear();
-            List<GiaoViec> members = giaoViecService.getTaskOfDeparment("TC");
+            List<GiaoViec> members = giaoViecService.getTaskOfDeparment("TC", Session.Instance.UserName);
             foreach (GiaoViec member in members)
             {
                 List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(
@@ -431,7 +437,7 @@ namespace UIs
         private void saButton_Click(object sender, EventArgs e)
         {
             membersGrid.Rows.Clear();
-            List<GiaoViec> members = giaoViecService.getTaskOfDeparment("VS");
+            List<GiaoViec> members = giaoViecService.getTaskOfDeparment("VS", Session.Instance.UserName);
             foreach (GiaoViec member in members)
             {
                 List<(string name, string ID, string description)> tag = tagService.getTaskTagInfo(

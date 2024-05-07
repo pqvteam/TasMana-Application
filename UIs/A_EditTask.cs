@@ -191,7 +191,7 @@ namespace UIs
                 Convert.ToInt32(this.end.ToString().Split('/')[1])
             );
             receiverLabel.Text = this.receiverID;
-            assignerLabel.Text = this.assignerID;   
+            assignerLabel.Text = this.assignerID;
             if (this.isCEO == 1)
             {
                 authorizeLabel.Visible = false;
@@ -238,6 +238,24 @@ namespace UIs
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            if (receiverID == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select implementor!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (venueID == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select workplace!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (tagName == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select a tag name!");
+                toastForm.ShowDialog();
+                return;
+            }
             string tStaffName = nhanSuService.findMember(receiverID).HoVaTen;
             string tOldStaffName = nhanSuService.findMember(receiverID).HoVaTen;
             string tManagerName = nhanSuService.findMember(Session.Instance.UserName).HoVaTen;
@@ -259,6 +277,30 @@ namespace UIs
             int tMode = taskMode.Checked ? 1 : 0;
             int tIsCEO = Session.Instance.laCEO ? 1 : 0;
             int intime = 1;
+            if (tName == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please enter name!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (tDescription == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please enter description!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (tStatus == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select current status!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (taskStart.Value >= taskEnd.Value)
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select deadline after today!");
+                toastForm.ShowDialog();
+                return;
+            }
 
             bool isSuccess = giaoViecService.updateTask(
                 tDescription,
@@ -721,6 +763,10 @@ namespace UIs
                 showDepartmentForm.DepartmentSelected += ShowDepartmentForm_DepartmentSelected;
                 showDepartmentForm.ShowDialog();
             }
+            if (taskMode.Checked)
+            {
+                taskMode.Checked = false;
+            }
         }
 
         private void customButton22_Click(object sender, EventArgs e)
@@ -802,6 +848,16 @@ namespace UIs
         {
             ToastForm show = new ToastForm(type, message);
             show.Show();
+        }
+
+        private void taskMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (departmentMode.Checked)
+            {
+                departmentMode.Checked = false;
+            }
+            sharedProcess.Text = "";
+            selectDepartment.Text = "";
         }
     }
 }

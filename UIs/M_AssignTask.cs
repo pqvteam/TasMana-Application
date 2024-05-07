@@ -145,6 +145,24 @@ namespace UIs
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            if (receiverID == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select implementor!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (venueID == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select workplace!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (tagName == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select a tag name!");
+                toastForm.ShowDialog();
+                return;
+            }
             string tStaffName = nhanSuService.findMember(receiverID).HoVaTen;
             string tManagerName = nhanSuService.findMember(Session.Instance.UserName).HoVaTen;
             string tManagerID = Session.Instance.UserName;
@@ -154,12 +172,36 @@ namespace UIs
             string tStart = taskStart.Value.ToString("yyyyMMdd");
             string tEnd = taskEnd.Value.ToString("yyyyMMdd");
             string tFile = taskFile.Text;
-            string tStatus = taskStatus.SelectedItem.ToString();
-            string tPriority = taskPriority.SelectedItem.ToString();
+            string tStatus = taskStatus.SelectedItem != null ? taskStatus.SelectedItem.ToString() : "";
+            string tPriority = taskPriority.SelectedItem != null ? taskPriority.SelectedItem.ToString() : "";
             string tSubject = $"THÔNG BÁO GIAO VIỆC - {tName}";
             string tGiaoViec =
                 $"Kính gửi {tStaffName},\nChúng ta đã xác định một công việc mới cần hoàn thành, và tôi muốn giao nhiệm vụ này cho bạn. Dưới đây là thông tin chi tiết về công việc:\nTên công việc: {tName}\nMô tả: {tDescription}\nThời hạn: {tEnd}\nƯu tiên: {tPriority}\nNgười giao việc: {tManagerName}\nXin vui lòng kiểm tra thông tin trên và bắt đầu làm việc ngay khi bạn có thể. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\nQuản lý {tManagerName}";
             string tTo = nhanSuService.findMember(receiverID).Email;
+            if (tName == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please enter name!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (tDescription == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please enter description!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (tStatus == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select current status!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (taskStart.Value >= taskEnd.Value)
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select deadline after today!");
+                toastForm.ShowDialog();
+                return;
+            }
 
             int tMode = taskMode.Checked ? 1 : 0;
             int tIsCEO = 0;
@@ -220,6 +262,12 @@ namespace UIs
         {
             venueLabel.Text = venueId;
             venueID = venueId;
+            CanHoService canHoService = new CanHoService();
+            string? customerID = canHoService.findApartment(venueID) != null ? canHoService.findApartment(venueID).MaCuDan : "";
+            if (customerID != null)
+            {
+                customerLabel.Text = customerID;
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -231,12 +279,6 @@ namespace UIs
         {
             selectDepartment.Text = department;
             sharedDepartment = department;
-            CanHoService canHoService = new CanHoService();
-            string? customerID = canHoService.findApartment(venueID).MaCuDan;
-            if (customerID != null)
-            {
-                customerLabel.Text = customerID;
-            }
         }
 
         private void label13_Click(object sender, EventArgs e) { }
@@ -579,6 +621,10 @@ namespace UIs
                 showDepartmentForm.DepartmentSelected += ShowDepartmentForm_DepartmentSelected;
                 showDepartmentForm.ShowDialog();
             }
+            if (taskMode.Checked)
+            {
+                taskMode.Checked = false;
+            }
         }
 
         private void customButton17_Click(object sender, EventArgs e)
@@ -636,6 +682,15 @@ namespace UIs
         {
             ToastForm show = new ToastForm(type, message);
             show.Show();
+        }
+
+        private void taskMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (departmentMode.Checked)
+            {
+                departmentMode.Checked = false;
+            }
+            selectDepartment.Text = "";
         }
     }
 }

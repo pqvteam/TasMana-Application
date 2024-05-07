@@ -124,6 +124,8 @@ namespace UIs
         private void C_AssignTask_Load(object sender, EventArgs e)
         {
             taskName.Focus();
+            taskStatus.SelectedItem = "Processing";
+            taskPriority.SelectedItem = "Normal";
             assignerLabel.Text = Session.Instance.UserName;
             if (IsValidImageData(Session.Instance.Avatar))
             {
@@ -135,6 +137,24 @@ namespace UIs
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            if (receiverID == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select implementor!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (venueID == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select workplace!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (tagName == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select a tag name!");
+                toastForm.ShowDialog();
+                return;
+            }
             GiaoViecService giaoViecService = new GiaoViecService();
             NhanSuService nhanSuService = new NhanSuService();
             string tCEOID = Session.Instance.UserName;
@@ -146,11 +166,35 @@ namespace UIs
             string tStart = taskStart.Value.ToString("yyyyMMdd");
             string tEnd = taskEnd.Value.ToString("yyyyMMdd");
             string tFile = taskFile.Text;
-            string tStatus = taskStatus.SelectedItem.ToString();
-            string tPriority = taskPriority.SelectedItem.ToString();
+            string tStatus = taskStatus.SelectedItem != null ? taskStatus.SelectedItem.ToString() : "";
+            string tPriority = taskPriority.SelectedItem != null ? taskPriority.SelectedItem.ToString() : "";
             string tSubject = $"THÔNG BÁO GIAO VIỆC - {tName}";
             string tGiaoViec = $"Kính gửi {tReceiverName},\nChúng ta đã xác định một công việc mới cần hoàn thành, và tôi muốn giao nhiệm vụ này cho bạn. Dưới đây là thông tin chi tiết về công việc:\nTên công việc: {tName}\nMô tả: {tDescription}\nThời hạn: {tEnd}\nƯu tiên: {tPriority}\nNgười giao việc: {tCEOName}\nXin vui lòng kiểm tra thông tin trên và bắt đầu làm việc ngay khi bạn có thể. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ nào, đừng ngần ngại liên hệ với tôi.\nCảm ơn bạn đã đảm nhận nhiệm vụ này.\nTrân trọng,\nCEO {tCEOName}";
             string tTo = nhanSuService.findMember(receiverID).Email;
+            if (tName == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please enter name!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (tDescription == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please enter description!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (tStatus == "")
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select current status!");
+                toastForm.ShowDialog();
+                return;
+            }
+            if (taskStart.Value >= taskEnd.Value)
+            {
+                ToastForm toastForm = new ToastForm("WARNING", "Please select deadline after today!");
+                toastForm.ShowDialog();
+                return;
+            }
 
             int tMode = taskMode.Checked ? 1 : 0;
             // Create new form here
@@ -675,7 +719,7 @@ namespace UIs
             cancelButton.Font = fontSmaller;
             saveButton.Font = fontSmaller;
         }
-        
+
         private void customButton17_Click(object sender, EventArgs e)
         {
             C_AccountManagement c_AccountManagement = new C_AccountManagement();
@@ -714,7 +758,7 @@ namespace UIs
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
         }
-        
+
         private void customButton2_Click_1(object sender, EventArgs e)
         {
 
@@ -728,11 +772,25 @@ namespace UIs
                 showDepartmentForm.DepartmentSelected += ShowDepartmentForm_DepartmentSelected;
                 showDepartmentForm.ShowDialog();
             }
+            if (taskMode.Checked)
+            {
+                taskMode.Checked = false;
+            }
         }
         public void showToast(string type, string message)
         {
             ToastForm show = new ToastForm(type, message);
             show.Show();
+        }
+
+        private void taskMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (departmentMode.Checked)
+            {
+                departmentMode.Checked = false;
+            }
+            sharedProcess.Text = "";
+            selectDepartment.Text = "";
         }
     }
 }
