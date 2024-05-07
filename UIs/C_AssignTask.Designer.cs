@@ -1202,6 +1202,7 @@
             taskMode.TabIndex = 9;
             taskMode.TabStop = false;
             taskMode.UseVisualStyleBackColor = true;
+            taskMode.CheckedChanged += taskMode_CheckedChanged;
             // 
             // pictureBox13
             // 

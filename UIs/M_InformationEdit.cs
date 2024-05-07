@@ -177,7 +177,7 @@ namespace UIs
                 label14.Text = "MOBILE";
                 font = new Font("Copperplate Gothic Bold", 14);
 
-                SUBMIT.Text = "EDIT";
+                SUBMIT.Text = "SUBMIT";
                 label7.Text = "PROFILE DETAILS";
                 heading.Text = Session.Instance.laCEO ? "CEO" : "MANAGER";
                 fontLarger = new Font("Copperplate Gothic Bold", 18);
@@ -257,7 +257,7 @@ namespace UIs
                 label14.Text = "MOBILE";
                 font = new Font("Copperplate Gothic Bold", 14);
 
-                SUBMIT.Text = "EDIT";
+                SUBMIT.Text = "SUBMIT";
                 label7.Text = "PROFILE DETAILS";
                 heading.Text = Session.Instance.laCEO ? "CEO" : "MANAGER";
                 fontLarger = new Font("Copperplate Gothic Bold", 18);

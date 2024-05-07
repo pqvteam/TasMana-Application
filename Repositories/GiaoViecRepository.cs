@@ -25,9 +25,9 @@ namespace Repositories
             return db.GiaoViecs.FirstOrDefault(x => x.MaGiaoViec.Equals(assignTaskID));
         }
 
-        public List<GiaoViec> getAllTaskOfDepartment(string departmentID)
+        public List<GiaoViec> getAllTaskOfDepartment(string departmentID, string staffID)
         {
-            return db.GiaoViecs.Where(x => (x.MaGiaoViec.Contains(departmentID) && x.CheDo != false) || x.PhongBanChoPhep == departmentID).ToList();
+            return db.GiaoViecs.Where(x => (x.MaGiaoViec.Contains(departmentID) && x.CheDo != false) || x.PhongBanChoPhep == departmentID || x.MaGiaoViec.Contains(staffID)).ToList();
         }
 
         //public List<GiaoViec> getAllTaskOfStaff(string staffID)

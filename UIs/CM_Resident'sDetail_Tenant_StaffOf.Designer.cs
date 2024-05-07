@@ -484,7 +484,6 @@
             IDBox.Font = new Font("Segoe UI", 10F);
             IDBox.ForeColor = Color.White;
             IDBox.IconColor = Color.White;
-            IDBox.Items.AddRange(new object[] { "STAFF", "DEPARTMENT" });
             IDBox.ListBackColor = Color.Black;
             IDBox.ListTextColor = Color.White;
             IDBox.Location = new Point(35, 48);

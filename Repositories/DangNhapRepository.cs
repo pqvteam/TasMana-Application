@@ -73,19 +73,6 @@ namespace Repositories
                         return true;
                     }
                 }
-                else
-                {
-                    reader.Close();
-                    string sqlCommand1 =
-                        //$"insert into LuuMatKhau(userID,matkhau) values('{username}','{password}')";
-                    $"insert into NhanSu(maThanhVien,matKhau) values('{username}','{password}')";
-                    SqlCommand command1 = new SqlCommand(sqlCommand1, conn);
-                    int reader1 = command1.ExecuteNonQuery();
-                    if (reader1 > 0)
-                    {
-                        return true;
-                    }
-                }
                 return false;
             }
             catch (Exception ex)

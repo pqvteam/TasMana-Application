@@ -1281,6 +1281,7 @@
             taskMode.Size = new Size(60, 30);
             taskMode.TabIndex = 12;
             taskMode.UseVisualStyleBackColor = true;
+            taskMode.CheckedChanged += taskMode_CheckedChanged;
             // 
             // pictureBox13
             // 

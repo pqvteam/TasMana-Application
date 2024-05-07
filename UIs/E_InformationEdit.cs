@@ -317,7 +317,7 @@ namespace UIs
                 label6.Text = "START DATE";
                 font = new Font("Copperplate Gothic Bold", 14);
 
-                SUBMIT.Text = "EDIT";
+                SUBMIT.Text = "SUBMIT";
                 label7.Text = "PROFILE DETAILS";
                 heading.Text = "EMPLOYEE";
                 fontLarger = new Font("Copperplate Gothic Bold", 18);
