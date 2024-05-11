@@ -12,6 +12,8 @@ using Microsoft.IdentityModel.Tokens;
 using Repositories.Entities;
 using Services;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Python.Runtime;
+using System.Diagnostics;
 
 namespace UIs
 {
@@ -21,6 +23,51 @@ namespace UIs
         {
             InitializeComponent();
             this.AcceptButton = button_Login;
+            faceLogin();
+        }
+
+        //static void RunScript(string scriptName)
+        //{
+        //    Runtime.PythonDLL = @"C:\Users\ASUS\AppData\Local\Programs\Python\Python312\python312.dll";
+        //    PythonEngine.Initialize();
+        //    using (Py.GIL())
+        //    {
+        //        var pythonScript = Py.Import(scriptName);
+        //        var result = pythonScript.InvokeMethod("say_hello");
+        //        MessageBox.Show(result.ToString());
+        //    }
+        //}
+
+        private void faceLogin()
+        {
+            var psi = new ProcessStartInfo();
+            psi.FileName = "\"C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\"";
+            var script = "\"D:\\FaceDetect\\03_face_recognition.py\"";
+            psi.Arguments = $"\"{script}";
+            psi.UseShellExecute = false;
+            psi.CreateNoWindow = true;
+            psi.RedirectStandardOutput = true;
+            psi.RedirectStandardError = true;
+            var errors = "";
+            var result = "";
+            using (var process = Process.Start(psi))
+            {
+                errors = process.StandardError.ReadToEnd();
+                result = process.StandardOutput.ReadToEnd();
+            }
+            MessageBox.Show(result);
+            if (result != "")
+            {
+                Session.Instance.UserName = result;
+                Session.Instance.laCEO = true;
+                Session.Instance.laQuanLi = false;
+                Session.Instance.Name = "The Vi";
+                C_AllTaskList all = new C_AllTaskList();
+                all.ShowDialog();
+            } else
+            {
+                MessageBox.Show(errors);
+            }
         }
 
         private void button_Login_Click(object sender, EventArgs e)
