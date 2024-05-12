@@ -43,6 +43,7 @@
             pictureBox1 = new PictureBox();
             elipseControl2 = new CustomComponent.ElipseControl();
             customButton5 = new CustomComponent.CustomButton();
+            customButton1 = new CustomComponent.CustomButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -131,6 +132,7 @@
             // 
             panel1.BackgroundImage = Properties.Resources.background_input_userid;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(customButton1);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(pictureBox_logo);
@@ -224,6 +226,26 @@
             customButton5.UseVisualStyleBackColor = false;
             customButton5.Click += customButton5_Click;
             // 
+            // customButton1
+            // 
+            customButton1.AutoSize = true;
+            customButton1.BackColor = Color.White;
+            customButton1.BackgroundColor = Color.White;
+            customButton1.BorderColor = Color.White;
+            customButton1.BorderRadius = 20;
+            customButton1.BorderSize = 0;
+            customButton1.FlatAppearance.BorderSize = 0;
+            customButton1.FlatStyle = FlatStyle.Flat;
+            customButton1.ForeColor = Color.White;
+            customButton1.Image = (Image)resources.GetObject("customButton1.Image");
+            customButton1.Location = new Point(330, 13);
+            customButton1.Name = "customButton1";
+            customButton1.Size = new Size(93, 88);
+            customButton1.TabIndex = 11;
+            customButton1.TextColor = Color.White;
+            customButton1.UseVisualStyleBackColor = false;
+            customButton1.Click += customButton1_Click;
+            // 
             // G_Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -264,5 +286,6 @@
         private CustomComponent.CustomButton customButton5;
         private Button button2;
         private Button button1;
+        private CustomComponent.CustomButton customButton1;
     }
 }
