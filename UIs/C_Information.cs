@@ -122,7 +122,7 @@ namespace UIs
                 EDIT.Text = "CHỈNH SỬA";
                 label7.Text = "CHI TIẾT THÔNG TIN CÁ NHÂN";
                 fontLarger = new Font("Microsoft Sans Serif", 18, FontStyle.Bold);
- 
+
             }
             else
             {
@@ -289,6 +289,27 @@ namespace UIs
 
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
+        }
+
+        private void customButton8_Click(object sender, EventArgs e)
+        {
+            A_Statistic form = new A_Statistic();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void customButton9_Click(object sender, EventArgs e)
+        {
+            A_Statistic form = new A_Statistic();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

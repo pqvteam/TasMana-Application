@@ -425,6 +425,7 @@
             customButton10.TextColor = Color.White;
             customButton10.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton10.UseVisualStyleBackColor = false;
+            customButton10.Click += customButton10_Click;
             // 
             // customButton11
             // 
@@ -449,6 +450,7 @@
             customButton11.TextColor = Color.White;
             customButton11.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton11.UseVisualStyleBackColor = false;
+            customButton11.Click += customButton11_Click;
             // 
             // customButton13
             // 
@@ -473,6 +475,7 @@
             customButton13.TextColor = Color.White;
             customButton13.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton13.UseVisualStyleBackColor = false;
+            customButton13.Click += customButton13_Click;
             // 
             // customButton14
             // 
@@ -521,6 +524,7 @@
             customButton15.TextColor = Color.White;
             customButton15.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton15.UseVisualStyleBackColor = false;
+            customButton15.Click += customButton15_Click;
             // 
             // customButton16
             // 
@@ -1074,9 +1078,8 @@
             aContent.ForeColor = Color.MediumTurquoise;
             aContent.Location = new Point(30, 265);
             aContent.Name = "aContent";
-            aContent.Size = new Size(90, 16);
+            aContent.Size = new Size(0, 16);
             aContent.TabIndex = 140;
-            aContent.Text = "CONTENT";
             // 
             // oContent
             // 
@@ -1331,7 +1334,7 @@
             label10.BackColor = Color.FromArgb(42, 42, 42);
             label10.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.Yellow;
-            label10.Location = new Point(159, 40);
+            label10.Location = new Point(117, 40);
             label10.Name = "label10";
             label10.Size = new Size(456, 16);
             label10.TabIndex = 142;

@@ -17,7 +17,6 @@ namespace UIs
 {
     public partial class A_MyTaskList : Form
     {
-        GiaoViecService giaoViecService = new GiaoViecService();
         NhanViecService nhanViecService = new NhanViecService();
         PhongBanService phongBanService = new PhongBanService();
         KhuVucLamViecService khuVucLamViecService = new KhuVucLamViecService();
@@ -182,6 +181,7 @@ namespace UIs
 
         private void reload()
         {
+            GiaoViecService giaoViecService = new GiaoViecService();
             if (IsValidImageData(Session.Instance.Avatar))
             {
                 currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
@@ -275,6 +275,7 @@ namespace UIs
             DataGridViewCellEventArgs e
         )
         {
+            GiaoViecService giaoViecService = new GiaoViecService();
             if (e.ColumnIndex == membersGrid.Columns["lnkColumn"].Index && e.RowIndex >= 0)
             {
                 string id = membersGrid.Rows[e.RowIndex].Cells["MaGiaoViec"].Value.ToString();
@@ -284,6 +285,7 @@ namespace UIs
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            GiaoViecService giaoViecService = new GiaoViecService();
             GiaoViec? task = giaoViecService.findAssignedTask(selectedTaskID);
             string implementor = nhanViecService.getInplementor(selectedTaskID);
             string venue = khuVucLamViecService.getVenue(selectedTaskID);
@@ -312,6 +314,7 @@ namespace UIs
                     task.PhongBanChoPhep
                 );
                 editTask.ShowDialog();
+                reload();
             }
         }
 
@@ -474,6 +477,7 @@ namespace UIs
                 selectedTaskStatus
             );
             a_UpdateProcess.ShowDialog();
+            reload();
         }
 
         private void languageSelect_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -609,7 +613,7 @@ namespace UIs
             G_Login g_Login = new G_Login();
             g_Login.ShowDialog();
         }
-        
+
         public void showToast(string type, string message)
         {
             ToastForm show = new ToastForm(type, message);
@@ -636,6 +640,18 @@ namespace UIs
                 A_TaskDetail a_TaskDetail = new A_TaskDetail(id);
                 a_TaskDetail.ShowDialog();
             }
+        }
+
+        private void customButton8_Click(object sender, EventArgs e)
+        {
+            A_Statistic statistic = new A_Statistic();
+            statistic.ShowDialog();
+        }
+
+        private void customButton9_Click(object sender, EventArgs e)
+        {
+            A_Statistic statistic = new A_Statistic();
+            statistic.ShowDialog();
         }
     }
 }

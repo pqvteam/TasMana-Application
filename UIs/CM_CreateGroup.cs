@@ -471,8 +471,6 @@ namespace UIs
                 label5.Text = "BỘ PHẬN";
                 label6.Text = "TÌM KIẾM";
                 label2.Text = "NHÓM TRƯỞNG";
-                groupNameBox.Text = "Nhập tên nhóm";
-                searchBox.Text = "Nhập tên tài khoản";
                 cancelButton.Text = "HỦY";
                 confirmButton.Text = "HOÀN THÀNH";
                 fontSmaller = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
@@ -497,8 +495,6 @@ namespace UIs
                 label5.Text = "DEPARTMENT";
                 label6.Text = "SEARCH";
                 label2.Text = "LEADER";
-                groupNameBox.Text = "Enter a group name";
-                searchBox.Text = "Enter an account name";
                 cancelButton.Text = "CANCEL";
                 confirmButton.Text = "DONE";
                 fontSmaller = new Font("Copperplate Gothic Bold", 10);
@@ -551,8 +547,6 @@ namespace UIs
                 label5.Text = "BỘ PHẬN";
                 label6.Text = "TÌM KIẾM";
                 label2.Text = "NHÓM TRƯỞNG";
-                groupNameBox.Text = "Nhập tên nhóm";
-                searchBox.Text = "Nhập tên tài khoản";
                 cancelButton.Text = "HỦY";
                 confirmButton.Text = "HOÀN THÀNH";
                 fontSmaller = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
@@ -578,8 +572,6 @@ namespace UIs
                 label5.Text = "DEPARTMENT";
                 label6.Text = "SEARCH";
                 label2.Text = "LEADER";
-                groupNameBox.Text = "Enter a group name";
-                searchBox.Text = "Enter an account name";
                 cancelButton.Text = "CANCEL";
                 confirmButton.Text = "DONE";
                 fontSmaller = new Font("Copperplate Gothic Bold", 10);

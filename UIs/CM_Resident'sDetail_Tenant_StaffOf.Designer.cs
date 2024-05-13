@@ -192,7 +192,7 @@
             customButton18.FlatAppearance.BorderSize = 0;
             customButton18.FlatStyle = FlatStyle.Flat;
             customButton18.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton18.ForeColor = Color.White;
+            customButton18.ForeColor = Color.Yellow;
             customButton18.Image = (Image)resources.GetObject("customButton18.Image");
             customButton18.ImageAlign = ContentAlignment.MiddleLeft;
             customButton18.Location = new Point(884, 5);
@@ -201,7 +201,7 @@
             customButton18.TabIndex = 27;
             customButton18.Text = "APARTMENT & RESIDENT";
             customButton18.TextAlign = ContentAlignment.MiddleRight;
-            customButton18.TextColor = Color.White;
+            customButton18.TextColor = Color.Yellow;
             customButton18.UseVisualStyleBackColor = false;
             customButton18.Click += customButton18_Click;
             // 
@@ -251,6 +251,7 @@
             customButton9.TextColor = Color.White;
             customButton9.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton9.UseVisualStyleBackColor = false;
+            customButton9.Click += customButton9_Click;
             // 
             // customButton8
             // 
@@ -274,6 +275,7 @@
             customButton8.TextColor = Color.White;
             customButton8.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton8.UseVisualStyleBackColor = false;
+            customButton8.Click += customButton8_Click;
             // 
             // customButton7
             // 
@@ -394,7 +396,7 @@
             customButton4.BorderSize = 0;
             customButton4.FlatAppearance.BorderSize = 0;
             customButton4.FlatStyle = FlatStyle.Flat;
-            customButton4.ForeColor = Color.White;
+            customButton4.ForeColor = Color.Yellow;
             customButton4.Image = Properties.Resources.tenant_icon;
             customButton4.ImageAlign = ContentAlignment.MiddleLeft;
             customButton4.Location = new Point(760, 3);
@@ -402,7 +404,7 @@
             customButton4.Size = new Size(300, 42);
             customButton4.TabIndex = 23;
             customButton4.Text = "TENANT/STAFF OF HOLDHOUSE";
-            customButton4.TextColor = Color.White;
+            customButton4.TextColor = Color.Yellow;
             customButton4.UseVisualStyleBackColor = false;
             // 
             // customButton3
@@ -1077,6 +1079,7 @@
             Controls.Add(customPanel1);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CM_Resident_sDetail_Tenant_StaffOf";
             StartPosition = FormStartPosition.CenterScreen;

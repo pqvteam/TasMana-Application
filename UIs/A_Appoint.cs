@@ -99,7 +99,6 @@ namespace UIs
                     groupsBox.SelectedItem != null
                         ? groupsBox.SelectedItem.ToString().Split(" - ")[0].Trim()
                         : "";
-                MessageBox.Show(selectedGroup);
                 NhanVien? leader = nhanVienService.getLeaderOfGroup(selectedGroup);
                 if (leader == null) { }
                 else

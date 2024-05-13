@@ -158,6 +158,7 @@
             customButton9.TextColor = Color.White;
             customButton9.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton9.UseVisualStyleBackColor = false;
+            customButton9.Click += customButton9_Click;
             // 
             // customButton8
             // 
@@ -182,6 +183,7 @@
             customButton8.TextColor = Color.White;
             customButton8.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton8.UseVisualStyleBackColor = false;
+            customButton8.Click += customButton8_Click;
             // 
             // customButton7
             // 
@@ -428,7 +430,7 @@
             // 
             // currentUserName
             // 
-            currentUserName.AutoSize = true;
+            currentUserName.AutoEllipsis = true;
             currentUserName.BackColor = Color.FromArgb(42, 42, 42);
             currentUserName.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             currentUserName.ForeColor = Color.White;

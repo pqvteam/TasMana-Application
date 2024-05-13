@@ -223,7 +223,7 @@
             customButton18.FlatAppearance.BorderSize = 0;
             customButton18.FlatStyle = FlatStyle.Flat;
             customButton18.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customButton18.ForeColor = Color.White;
+            customButton18.ForeColor = Color.Yellow;
             customButton18.Image = (Image)resources.GetObject("customButton18.Image");
             customButton18.ImageAlign = ContentAlignment.MiddleLeft;
             customButton18.Location = new Point(884, 5);
@@ -232,7 +232,7 @@
             customButton18.TabIndex = 27;
             customButton18.Text = "APARTMENT & RESIDENT";
             customButton18.TextAlign = ContentAlignment.MiddleRight;
-            customButton18.TextColor = Color.White;
+            customButton18.TextColor = Color.Yellow;
             customButton18.UseVisualStyleBackColor = false;
             customButton18.Click += customButton18_Click;
             // 
@@ -282,6 +282,7 @@
             customButton9.TextColor = Color.White;
             customButton9.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton9.UseVisualStyleBackColor = false;
+            customButton9.Click += customButton9_Click;
             // 
             // customButton8
             // 
@@ -305,6 +306,7 @@
             customButton8.TextColor = Color.White;
             customButton8.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton8.UseVisualStyleBackColor = false;
+            customButton8.Click += customButton8_Click;
             // 
             // customButton7
             // 
@@ -401,7 +403,7 @@
             customButton2.BorderSize = 0;
             customButton2.FlatAppearance.BorderSize = 0;
             customButton2.FlatStyle = FlatStyle.Flat;
-            customButton2.ForeColor = Color.White;
+            customButton2.ForeColor = Color.Yellow;
             customButton2.Image = Properties.Resources.holdhouse_icon;
             customButton2.ImageAlign = ContentAlignment.MiddleLeft;
             customButton2.Location = new Point(254, 3);
@@ -409,7 +411,7 @@
             customButton2.Size = new Size(245, 42);
             customButton2.TabIndex = 21;
             customButton2.Text = "HOLDHOUSE";
-            customButton2.TextColor = Color.White;
+            customButton2.TextColor = Color.Yellow;
             customButton2.UseVisualStyleBackColor = false;
             // 
             // customButton3
@@ -1195,6 +1197,7 @@
             Controls.Add(customPanel1);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CM_Resident_sDetail";
             StartPosition = FormStartPosition.CenterScreen;

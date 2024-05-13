@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C_AllTaskList));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             headerPanel = new Panel();
             languageSelect = new CustomComponent.CustomComboBox();
             panel2 = new Panel();
@@ -46,6 +46,7 @@
             panel1 = new Panel();
             mainPanel = new Panel();
             panel4 = new Panel();
+            cancelButton = new CustomComponent.CustomButton();
             tableLayoutPanel1 = new TableLayoutPanel();
             label8 = new Label();
             label9 = new Label();
@@ -116,7 +117,6 @@
             customPictureBox3 = new CustomComponent.CustomPictureBox();
             rjTextBox2 = new CustomControls.RJControls.RJTextBox();
             timer = new System.Windows.Forms.Timer(components);
-            cancelButton = new CustomComponent.CustomButton();
             headerPanel.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)currentAvatarSmall).BeginInit();
@@ -170,10 +170,10 @@
             languageSelect.Items.AddRange(new object[] { "ENGLISH", "VIETNAMESE" });
             languageSelect.ListBackColor = Color.Black;
             languageSelect.ListTextColor = Color.White;
-            languageSelect.Location = new Point(1105, 5);
+            languageSelect.Location = new Point(1096, 6);
             languageSelect.MinimumSize = new Size(30, 30);
             languageSelect.Name = "languageSelect";
-            languageSelect.Size = new Size(158, 52);
+            languageSelect.Size = new Size(140, 52);
             languageSelect.TabIndex = 49;
             languageSelect.Texts = "";
             languageSelect.OnSelectedIndexChanged += languageSelect_OnSelectedIndexChanged;
@@ -197,7 +197,7 @@
             currentAvatarSmall.Cursor = Cursors.Hand;
             currentAvatarSmall.GradientAngle = 50F;
             currentAvatarSmall.Image = (Image)resources.GetObject("currentAvatarSmall.Image");
-            currentAvatarSmall.Location = new Point(10, 5);
+            currentAvatarSmall.Location = new Point(2, 7);
             currentAvatarSmall.Name = "currentAvatarSmall";
             currentAvatarSmall.Size = new Size(49, 49);
             currentAvatarSmall.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -218,7 +218,7 @@
             customButton22.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customButton22.ForeColor = Color.White;
             customButton22.Image = Properties.Resources.triangle_icon;
-            customButton22.Location = new Point(67, 4);
+            customButton22.Location = new Point(59, 6);
             customButton22.Name = "customButton22";
             customButton22.Size = new Size(51, 51);
             customButton22.TabIndex = 24;
@@ -300,6 +300,7 @@
             customButton9.TextColor = Color.White;
             customButton9.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton9.UseVisualStyleBackColor = false;
+            customButton9.Click += customButton9_Click;
             // 
             // customButton8
             // 
@@ -365,7 +366,7 @@
             customButton14.ForeColor = Color.White;
             customButton14.Image = (Image)resources.GetObject("customButton14.Image");
             customButton14.ImageAlign = ContentAlignment.MiddleLeft;
-            customButton14.Location = new Point(3, 2);
+            customButton14.Location = new Point(34, 2);
             customButton14.Name = "customButton14";
             customButton14.Size = new Size(57, 54);
             customButton14.TabIndex = 38;
@@ -436,6 +437,27 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1382, 694);
             panel4.TabIndex = 58;
+            // 
+            // cancelButton
+            // 
+            cancelButton.BackColor = Color.FromArgb(175, 171, 171);
+            cancelButton.BackgroundColor = Color.FromArgb(175, 171, 171);
+            cancelButton.BorderColor = Color.PaleVioletRed;
+            cancelButton.BorderRadius = 12;
+            cancelButton.BorderSize = 0;
+            cancelButton.Cursor = Cursors.Hand;
+            cancelButton.FlatAppearance.BorderSize = 0;
+            cancelButton.FlatStyle = FlatStyle.Flat;
+            cancelButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cancelButton.ForeColor = Color.White;
+            cancelButton.Location = new Point(1177, 641);
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new Size(176, 48);
+            cancelButton.TabIndex = 81;
+            cancelButton.Text = "CANCEL";
+            cancelButton.TextColor = Color.White;
+            cancelButton.UseVisualStyleBackColor = false;
+            cancelButton.Click += cancelButton_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -670,24 +692,24 @@
             membersGrid.BorderStyle = BorderStyle.None;
             membersGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             membersGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle3.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle1.Font = new Font("Copperplate Gothic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            membersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             membersGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             membersGrid.Cursor = Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(24, 23, 23);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(46, 48, 50);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            membersGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 23, 23);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 48, 50);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            membersGrid.DefaultCellStyle = dataGridViewCellStyle2;
             membersGrid.EnableHeadersVisualStyles = false;
             membersGrid.GridColor = Color.FromArgb(42, 42, 42);
             membersGrid.Location = new Point(363, 437);
@@ -1251,7 +1273,7 @@
             // 
             // currentUserName
             // 
-            currentUserName.AutoSize = true;
+            currentUserName.AutoEllipsis = true;
             currentUserName.BackColor = Color.FromArgb(42, 42, 42);
             currentUserName.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             currentUserName.ForeColor = Color.White;
@@ -1642,27 +1664,6 @@
             timer.Enabled = true;
             timer.Interval = 1000;
             timer.Tick += timer_Tick;
-            // 
-            // cancelButton
-            // 
-            cancelButton.BackColor = Color.FromArgb(175, 171, 171);
-            cancelButton.BackgroundColor = Color.FromArgb(175, 171, 171);
-            cancelButton.BorderColor = Color.PaleVioletRed;
-            cancelButton.BorderRadius = 12;
-            cancelButton.BorderSize = 0;
-            cancelButton.Cursor = Cursors.Hand;
-            cancelButton.FlatAppearance.BorderSize = 0;
-            cancelButton.FlatStyle = FlatStyle.Flat;
-            cancelButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cancelButton.ForeColor = Color.White;
-            cancelButton.Location = new Point(1177, 641);
-            cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(176, 48);
-            cancelButton.TabIndex = 81;
-            cancelButton.Text = "CANCEL";
-            cancelButton.TextColor = Color.White;
-            cancelButton.UseVisualStyleBackColor = false;
-            cancelButton.Click += cancelButton_Click;
             // 
             // C_AllTaskList
             // 

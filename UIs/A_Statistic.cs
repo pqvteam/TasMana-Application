@@ -552,7 +552,7 @@ namespace UIs
                 worksheet.Cells["A1:C1"].Merge = true;
                 string heading = "Top 5 nhân viên làm việc tốt nhất ";
                 // Đặt tiêu đề "Top 5 nhân viên làm việc tốt nhất"
-                
+
 
                 // Kết nối với cơ sở dữ liệu và truy vấn dữ liệu
                 DatabaseConnection.Instance.OpenConnection();
@@ -622,7 +622,7 @@ namespace UIs
                         "INNER JOIN GiaoViec ON NhanViec.maGiaoViec = GiaoViec.maGiaoViec " +
                         $"WHERE {timeType}GiaoViec.hanHoanThanh) = '{timeSort}' AND YEAR(GiaoViec.hanHoanThanh) = YEAR(GETDATE()) AND (tinhTrangCongViec LIKE N'Đã hoàn thành' or tinhTrangCongViec LIKE N'%completed%')";
 
-                    heading +=" "+timeSort;
+                    heading += " " + timeSort;
 
                 }
 
@@ -768,6 +768,32 @@ namespace UIs
         }
 
         private void timeBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customButton15_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void customButton11_Click(object sender, EventArgs e)
+        {
+            C_AccountManagement accountManagement = new C_AccountManagement();
+            this.Hide();
+            accountManagement.ShowDialog();
+            this.Close();
+        }
+
+        private void customButton10_Click(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail detail = new CM_Resident_sDetail();
+            this.Hide();
+            detail.ShowDialog();
+            this.Close();
+        }
+
+        private void customButton13_Click(object sender, EventArgs e)
         {
 
         }

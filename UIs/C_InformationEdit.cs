@@ -276,5 +276,26 @@ namespace UIs
             ToastForm show = new ToastForm(type, message);
             show.Show();
         }
+
+        private void customButton8_Click(object sender, EventArgs e)
+        {
+            A_Statistic form = new A_Statistic();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void customButton9_Click(object sender, EventArgs e)
+        {
+            A_Statistic form = new A_Statistic();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

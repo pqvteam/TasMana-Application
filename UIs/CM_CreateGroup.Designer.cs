@@ -309,7 +309,6 @@
             searchBox.ForeColor = Color.White;
             searchBox.Location = new Point(95, 262);
             searchBox.Name = "searchBox";
-            searchBox.PlaceholderText = "Enter an account name...";
             searchBox.Size = new Size(545, 20);
             searchBox.TabIndex = 106;
             // 
@@ -642,7 +641,6 @@
             groupNameBox.ForeColor = Color.White;
             groupNameBox.Location = new Point(95, 181);
             groupNameBox.Name = "groupNameBox";
-            groupNameBox.PlaceholderText = "Enter a group name...";
             groupNameBox.Size = new Size(589, 20);
             groupNameBox.TabIndex = 104;
             // 

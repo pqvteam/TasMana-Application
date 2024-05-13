@@ -18,7 +18,6 @@ namespace UIs
 {
     public partial class C_AllTaskList : Form
     {
-        GiaoViecService giaoViecService = new GiaoViecService();
         TagService tagService = new TagService();
 
         public C_AllTaskList()
@@ -41,9 +40,9 @@ namespace UIs
 
             GetWeather getWeather = new GetWeather();
             string[] currentWeather = getWeather.getWeatherData("Ho Chi Minh City");
-            //weatherType.Text = currentWeather[1];
-            //weatherTempurature.Text = currentWeather[2];
-            //weatherWindSpeed.Text = currentWeather[3];
+            weatherType.Text = currentWeather[1];
+            weatherTempurature.Text = currentWeather[2];
+            weatherWindSpeed.Text = currentWeather[3];
             weatherLocation.Text = "Ho Chi Minh City";
             //MessageBox.Show($"0: {currentWeather[0]}");
             //MessageBox.Show($"1: {currentWeather[1]}");
@@ -119,6 +118,7 @@ namespace UIs
 
         private void reload()
         {
+            GiaoViecService giaoViecService = new GiaoViecService();
             if (IsValidImageData(Session.Instance.Avatar))
             {
                 currentAvatarSmall.Image = convertByteToImage(Session.Instance.Avatar);
@@ -176,6 +176,7 @@ namespace UIs
 
         private void hrButton_Click(object sender, EventArgs e)
         {
+            GiaoViecService giaoViecService = new GiaoViecService();
             membersGrid.Rows.Clear();
             List<GiaoViec> members = giaoViecService.getTaskOfDeparment("DV", Session.Instance.UserName);
             foreach (GiaoViec member in members)
@@ -326,6 +327,7 @@ namespace UIs
 
         private void seButton_Click(object sender, EventArgs e)
         {
+            GiaoViecService giaoViecService = new GiaoViecService();
             membersGrid.Rows.Clear();
             List<GiaoViec> members = giaoViecService.getTaskOfDeparment("AN", Session.Instance.UserName);
             foreach (GiaoViec member in members)
@@ -348,6 +350,7 @@ namespace UIs
 
         private void customButton18_Click(object sender, EventArgs e)
         {
+            GiaoViecService giaoViecService = new GiaoViecService();
             membersGrid.Rows.Clear();
             List<GiaoViec> members = giaoViecService.getAll();
             foreach (GiaoViec member in members)
@@ -370,6 +373,7 @@ namespace UIs
 
         private void maButton_Click(object sender, EventArgs e)
         {
+            GiaoViecService giaoViecService = new GiaoViecService();
             membersGrid.Rows.Clear();
             List<GiaoViec> members = giaoViecService.getTaskOfDeparment("KT", Session.Instance.UserName);
             foreach (GiaoViec member in members)
@@ -392,6 +396,7 @@ namespace UIs
 
         private void coButton_Click(object sender, EventArgs e)
         {
+            GiaoViecService giaoViecService = new GiaoViecService();
             membersGrid.Rows.Clear();
             List<GiaoViec> members = giaoViecService.getTaskOfDeparment("XD", Session.Instance.UserName);
             foreach (GiaoViec member in members)
@@ -414,6 +419,7 @@ namespace UIs
 
         private void fiButton_Click(object sender, EventArgs e)
         {
+            GiaoViecService giaoViecService = new GiaoViecService();
             membersGrid.Rows.Clear();
             List<GiaoViec> members = giaoViecService.getTaskOfDeparment("TC", Session.Instance.UserName);
             foreach (GiaoViec member in members)
@@ -436,6 +442,7 @@ namespace UIs
 
         private void saButton_Click(object sender, EventArgs e)
         {
+            GiaoViecService giaoViecService = new GiaoViecService();
             membersGrid.Rows.Clear();
             List<GiaoViec> members = giaoViecService.getTaskOfDeparment("VS", Session.Instance.UserName);
             foreach (GiaoViec member in members)
@@ -458,6 +465,7 @@ namespace UIs
 
         private void membersGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            GiaoViecService giaoViecService = new GiaoViecService();
             if (e.ColumnIndex == membersGrid.Columns["lnkColumn"].Index && e.RowIndex >= 0)
             {
                 string id = membersGrid.Rows[e.RowIndex].Cells["MaGiaoViec"].Value.ToString();
@@ -471,11 +479,13 @@ namespace UIs
             {
                 C_AssignTask cassignTask = new C_AssignTask();
                 cassignTask.ShowDialog();
+                reload();
             }
             else
             {
                 M_AssignTask massignTask = new M_AssignTask();
                 massignTask.ShowDialog();
+                reload();
             }
         }
 
@@ -872,6 +882,12 @@ namespace UIs
         {
             this.Close();
 
+        }
+
+        private void customButton9_Click(object sender, EventArgs e)
+        {
+            A_Statistic a_Statistic = new A_Statistic();
+            a_Statistic.ShowDialog();
         }
     }
 }

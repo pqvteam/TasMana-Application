@@ -70,6 +70,8 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            cancelButton = new CustomComponent.CustomButton();
+            customButton1 = new CustomComponent.CustomButton();
             customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)avatarBox).BeginInit();
             customPanel1.SuspendLayout();
@@ -428,6 +430,7 @@
             customButton9.TextColor = Color.White;
             customButton9.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton9.UseVisualStyleBackColor = false;
+            customButton9.Click += customButton9_Click;
             // 
             // customButton8
             // 
@@ -451,6 +454,7 @@
             customButton8.TextColor = Color.White;
             customButton8.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton8.UseVisualStyleBackColor = false;
+            customButton8.Click += customButton8_Click;
             // 
             // customButton7
             // 
@@ -605,6 +609,7 @@
             // headerPanel
             // 
             headerPanel.BackColor = Color.FromArgb(13, 13, 13);
+            headerPanel.Controls.Add(cancelButton);
             headerPanel.Controls.Add(languageSelect);
             headerPanel.Controls.Add(customButton18);
             headerPanel.Controls.Add(customButton17);
@@ -704,12 +709,54 @@
             label3.Text = "INFORMATION";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // cancelButton
+            // 
+            cancelButton.BackColor = Color.FromArgb(175, 171, 171);
+            cancelButton.BackgroundColor = Color.FromArgb(175, 171, 171);
+            cancelButton.BorderColor = Color.PaleVioletRed;
+            cancelButton.BorderRadius = 12;
+            cancelButton.BorderSize = 0;
+            cancelButton.Cursor = Cursors.Hand;
+            cancelButton.FlatAppearance.BorderSize = 0;
+            cancelButton.FlatStyle = FlatStyle.Flat;
+            cancelButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cancelButton.ForeColor = Color.White;
+            cancelButton.Location = new Point(630, 5);
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new Size(122, 48);
+            cancelButton.TabIndex = 53;
+            cancelButton.Text = "CANCEL";
+            cancelButton.TextColor = Color.White;
+            cancelButton.UseVisualStyleBackColor = false;
+            // 
+            // customButton1
+            // 
+            customButton1.BackColor = Color.FromArgb(175, 171, 171);
+            customButton1.BackgroundColor = Color.FromArgb(175, 171, 171);
+            customButton1.BorderColor = Color.PaleVioletRed;
+            customButton1.BorderRadius = 12;
+            customButton1.BorderSize = 0;
+            customButton1.Cursor = Cursors.Hand;
+            customButton1.FlatAppearance.BorderSize = 0;
+            customButton1.FlatStyle = FlatStyle.Flat;
+            customButton1.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customButton1.ForeColor = Color.White;
+            customButton1.Location = new Point(1237, 693);
+            customButton1.Name = "customButton1";
+            customButton1.Size = new Size(122, 48);
+            customButton1.TabIndex = 65;
+            customButton1.Text = "CANCEL";
+            customButton1.TextColor = Color.White;
+            customButton1.UseVisualStyleBackColor = false;
+            customButton1.Click += customButton1_Click;
+            // 
             // C_Information
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(31, 31, 32);
             ClientSize = new Size(1382, 753);
+            Controls.Add(customButton1);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(customPanel2);
             Controls.Add(customPanel1);
@@ -772,5 +819,7 @@
         private Label label3;
         private CustomComponent.CustomButton customButton22;
         private CustomComponent.CustomComboBox languageSelect;
+        private CustomComponent.CustomButton cancelButton;
+        private CustomComponent.CustomButton customButton1;
     }
 }

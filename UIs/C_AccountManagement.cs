@@ -17,7 +17,6 @@ namespace UIs
 {
     public partial class C_AccountManagement : Form
     {
-        NhanSuService nhanSuService = new NhanSuService();
         NhanVienService nhanVienService = new NhanVienService();
         CeoService ceoService = new CeoService();
         QuanLyService quanLyService = new QuanLyService();
@@ -79,6 +78,7 @@ namespace UIs
 
         private void reload()
         {
+            NhanSuService nhanSuService = new NhanSuService();
             List<NhanSu> members = nhanSuService.getAllMembers();
             membersGrid.Rows.Clear();
 
@@ -996,7 +996,9 @@ namespace UIs
         private void customButton7_Click(object sender, EventArgs e)
         {
             C_AllTaskList c_AllTaskList = new C_AllTaskList();
+            this.Hide();
             c_AllTaskList.ShowDialog();
+            this.Close();
         }
 
         private void customButton18_Click(object sender, EventArgs e)
@@ -1060,6 +1062,22 @@ namespace UIs
         {
             this.Close();
 
+        }
+
+        private void customButton8_Click(object sender, EventArgs e)
+        {
+            A_Statistic form = new A_Statistic();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void customButton9_Click(object sender, EventArgs e)
+        {
+            A_Statistic form = new A_Statistic();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
     }
 }

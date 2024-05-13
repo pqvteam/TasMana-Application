@@ -285,19 +285,25 @@ namespace UIs
         private void customButton7_Click(object sender, EventArgs e)
         {
             C_AllTaskList c_AllTaskList = new C_AllTaskList();
+            this.Hide();
             c_AllTaskList.ShowDialog();
+            this.Close();
         }
 
         private void customButton17_Click(object sender, EventArgs e)
         {
             C_AccountManagement c_AccountManagement = new C_AccountManagement();
+            this.Hide();
             c_AccountManagement.ShowDialog();
+            this.Close();
         }
 
         private void customButton18_Click(object sender, EventArgs e)
         {
             CM_Resident_sDetail cM_Resident_SDetail = new CM_Resident_sDetail();
+            this.Hide();
             cM_Resident_SDetail.ShowDialog();
+            this.Close();
         }
 
         private void label39_Click(object sender, EventArgs e)
@@ -344,19 +350,25 @@ namespace UIs
         private void customButton5_Click(object sender, EventArgs e)
         {
             CM_Resident_sDetail_Commercial cM = new CM_Resident_sDetail_Commercial();
+            this.Hide();
             cM.ShowDialog();
+            this.Close();
         }
 
         private void customButton3_Click(object sender, EventArgs e)
         {
             CM_Resident_sDetail_Authorized cM = new CM_Resident_sDetail_Authorized();
+            this.Hide();
             cM.ShowDialog();
+            this.Close();
         }
 
         private void customButton2_Click(object sender, EventArgs e)
         {
-            CM_Resident_sDetail cM_Resident_SDetail = new CM_Resident_sDetail();
-            cM_Resident_SDetail.ShowDialog();
+            CM_Resident_sDetail cM = new CM_Resident_sDetail();
+            this.Hide();
+            cM.ShowDialog();
+            this.Close();
         }
 
         private void IDBox_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -383,5 +395,21 @@ namespace UIs
                 label28.Text = list[14];
             }
         }
+
+        private void customButton8_Click(object sender, EventArgs e)
+        {
+            A_Statistic form = new A_Statistic();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void customButton9_Click(object sender, EventArgs e)
+        {
+            A_Statistic form = new A_Statistic();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
     }
-}
+ }

@@ -68,6 +68,7 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            cancelButton = new CustomComponent.CustomButton();
             ((System.ComponentModel.ISupportInitialize)avatarBox).BeginInit();
             customPanel1.SuspendLayout();
             customPanel2.SuspendLayout();
@@ -560,6 +561,7 @@
             customButton9.TextColor = Color.White;
             customButton9.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton9.UseVisualStyleBackColor = false;
+            customButton9.Click += customButton9_Click;
             // 
             // customButton8
             // 
@@ -583,6 +585,7 @@
             customButton8.TextColor = Color.White;
             customButton8.TextImageRelation = TextImageRelation.ImageBeforeText;
             customButton8.UseVisualStyleBackColor = false;
+            customButton8.Click += customButton8_Click;
             // 
             // customButton7
             // 
@@ -698,16 +701,39 @@
             label3.Text = "INFORMATION";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // cancelButton
+            // 
+            cancelButton.BackColor = Color.FromArgb(175, 171, 171);
+            cancelButton.BackgroundColor = Color.FromArgb(175, 171, 171);
+            cancelButton.BorderColor = Color.PaleVioletRed;
+            cancelButton.BorderRadius = 12;
+            cancelButton.BorderSize = 0;
+            cancelButton.Cursor = Cursors.Hand;
+            cancelButton.FlatAppearance.BorderSize = 0;
+            cancelButton.FlatStyle = FlatStyle.Flat;
+            cancelButton.Font = new Font("Copperplate Gothic Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cancelButton.ForeColor = Color.White;
+            cancelButton.Location = new Point(1245, 693);
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new Size(122, 48);
+            cancelButton.TabIndex = 66;
+            cancelButton.Text = "CANCEL";
+            cancelButton.TextColor = Color.White;
+            cancelButton.UseVisualStyleBackColor = false;
+            cancelButton.Click += cancelButton_Click;
+            // 
             // C_InformationEdit
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(31, 31, 32);
             ClientSize = new Size(1382, 753);
+            Controls.Add(cancelButton);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(customPanel1);
             Controls.Add(customPanel2);
             Controls.Add(headerPanel);
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "C_InformationEdit";
             Text = "C_InformationEdit";
@@ -764,5 +790,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private CustomComponent.CustomButton cancelButton;
     }
 }

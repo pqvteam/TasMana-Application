@@ -386,5 +386,66 @@ namespace UIs
                 label28.Text = list[14];
             }
         }
+
+        private void customButton9_Click(object sender, EventArgs e)
+        {
+            A_Statistic form = new A_Statistic();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void customButton8_Click(object sender, EventArgs e)
+        {
+            A_Statistic form = new A_Statistic();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void customButton7_Click_1(object sender, EventArgs e)
+        {
+            C_AllTaskList form = new C_AllTaskList();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void customButton17_Click_1(object sender, EventArgs e)
+        {
+            C_AccountManagement form = new C_AccountManagement();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void customButton_ApartmentList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customButton2_Click_1(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail form = new CM_Resident_sDetail();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void customButton4_Click_1(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail_Tenant_StaffOf form = new CM_Resident_sDetail_Tenant_StaffOf();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void customButton5_Click_1(object sender, EventArgs e)
+        {
+            CM_Resident_sDetail_Commercial form = new CM_Resident_sDetail_Commercial();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
     }
 }
